@@ -1,0 +1,37 @@
+{
+  "job_kind": "food",
+  "adapter": "pyszne",
+  "city": "Kraków",
+  "venue_label": "Superteam demo venue",
+  "destination_type": "venue",
+  "address_line": "REPLACE_ME, Kraków",
+  "latlon_hint": null,
+  "recipient_name": "REPLACE_ME",
+  "phone": "REPLACE_ME",
+  "contact_email": "fulfillment-demo@mail.buena.ai",
+  "three_ds_email": "fulfillment-demo@mail.buena.ai",
+  "merchant_descriptor": "PYSZNEPL",
+  "selection": {
+    "mode": "agent_curated",
+    "participants": 9,
+    "milk_liters": 2,
+    "milk_fat_percent": 3.2,
+    "beverage_servings_min": 9,
+    "allow_100_percent_juice": true,
+    "allow_office_safe_functional_drinks": true,
+    "include_healthy_snacks": true
+  },
+  "items": [],
+  "note": "Solana PoC — reception / Superteam",
+  "max_pln": 70,
+  "constraints": [
+    "office-safe",
+    "venue-delivery-or-pickup",
+    "no-substitutions",
+    "regular-cow-milk-1l-3.2-percent",
+    "agent-curated",
+    "no-nectar-or-juice-drinks",
+    "functional-drinks-office-safe"
+  ],
+  "prefer_3ds_channel": "email"
+}

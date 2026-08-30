@@ -1,0 +1,8 @@
+From: Altitude Verification <verification@example.invalid>
+To: angel@buena.ai
+Subject: Your synthetic purchase verification code
+Date: Sat, 29 Aug 2026 12:00:00 +0200
+
+This is a synthetic test fixture. Your one-time verification code is 482731.
+It expires in five minutes. Do not share it.
+

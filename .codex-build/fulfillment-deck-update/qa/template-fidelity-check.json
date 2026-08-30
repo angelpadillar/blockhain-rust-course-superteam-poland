@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "checkedAt": "2026-08-30T14:08:12.470Z",
+  "workspace": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update",
+  "finalPptx": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/Fulfillment-Agent-Solana-Demo-Physical-Proof.pptx",
+  "starterPptx": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/template-starter.pptx",
+  "mapPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/template-frame-map.json",
+  "starterLayoutDir": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/template-starter-layout",
+  "finalLayoutDir": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/final-render",
+  "editDir": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update",
+  "issueCount": 0,
+  "issues": []
+}

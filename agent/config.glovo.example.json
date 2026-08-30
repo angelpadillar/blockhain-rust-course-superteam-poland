@@ -1,0 +1,19 @@
+{
+  "job_kind": "food",
+  "adapter": "glovo",
+  "city": "Kraków",
+  "venue_label": "Superteam demo venue",
+  "destination_type": "venue",
+  "address_line": "REPLACE_ME, Kraków",
+  "latlon_hint": null,
+  "recipient_name": "REPLACE_ME",
+  "phone": "REPLACE_ME",
+  "contact_email": "fulfillment-demo@mail.buena.ai",
+  "three_ds_email": "fulfillment-demo@mail.buena.ai",
+  "merchant_descriptor": "GLOVO",
+  "items": [{ "query": "sernik", "qty": 1 }],
+  "note": "Solana PoC — reception",
+  "max_pln": 80,
+  "constraints": ["office-safe", "venue-delivery-or-pickup"],
+  "prefer_3ds_channel": "email"
+}

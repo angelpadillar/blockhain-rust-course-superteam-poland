@@ -1,0 +1,25 @@
+{
+  "protocol": "solana-shipment",
+  "city": "Kraków",
+  "options": [
+    {
+      "job_kind": "merch",
+      "adapter": "local_print",
+      "item": "one same-day custom sticker",
+      "office_safe": true
+    },
+    {
+      "job_kind": "merch",
+      "adapter": "local_print",
+      "item": "one same-day printed tote",
+      "office_safe": true
+    },
+    {
+      "job_kind": "food",
+      "adapter": "wolt",
+      "item": "one small pastry",
+      "office_safe": true
+    }
+  ],
+  "contract_note": "The Solana escrow approves a spec hash; the winning off-chain adapter may differ."
+}

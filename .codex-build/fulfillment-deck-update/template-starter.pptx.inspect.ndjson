@@ -1,0 +1,255 @@
+{"kind":"deck","id":"pr/n2tbly","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/jb4eri","slide":1,"title":"SUPERTEAM KRAKÓW • SOLANA PoC","textShapes":7}
+{"kind":"shape","id":"sh/krq9cvi5","slide":1,"bbox":[0,0,22,720]}
+{"kind":"textbox","id":"sh/3e9kjm5s","slide":1,"text":"SUPERTEAM KRAKÓW • SOLANA PoC","textPreview":"SUPERTEAM KRAKÓW • SOLANA PoC","textChars":29,"textLines":1,"bbox":[76,64,640,24]}
+{"kind":"textbox","id":"sh/2d03qh47","slide":1,"text":"An AI agent bought\ndrinks—and Solana\nrecorded the lifecycle","textPreview":"An AI agent bought | drinks—and Solana | recorded the lifecycle","textChars":59,"textLines":3,"bbox":[76,138,940,300]}
+{"kind":"textbox","id":"sh/hcr2hwnm","slide":1,"text":"Supervised web fulfillment: exact quote approval, email 3DS, purchase evidence, and physical delivery.","textPreview":"Supervised web fulfillment: exact quote approval, email 3DS, purchase evidence, and physical delivery.","textChars":102,"textLines":1,"bbox":[80,482,900,76]}
+{"kind":"shape","id":"sh/gbilorm1","slide":1,"bbox":[80,604,130,32]}
+{"kind":"textbox","id":"sh/fa9kfm5g","slide":1,"text":"REAL ORDER","textPreview":"REAL ORDER","textChars":10,"textLines":1,"bbox":[80,610,130,20]}
+{"kind":"shape","id":"sh/u903mh4v","slide":1,"bbox":[224,604,126,32]}
+{"kind":"textbox","id":"sh/18vmtgnq","slide":1,"text":"REAL CARD","textPreview":"REAL CARD","textChars":9,"textLines":1,"bbox":[224,610,126,20]}
+{"kind":"shape","id":"sh/072l0bm5","slide":1,"bbox":[364,604,154,32]}
+{"kind":"textbox","id":"sh/yp8ral0f","slide":1,"text":"LOCAL SOLANA","textPreview":"LOCAL SOLANA","textChars":12,"textLines":1,"bbox":[364,610,154,20]}
+{"kind":"textbox","id":"sh/jqhs3qh0","slide":1,"text":"30 AUG 2026","textPreview":"30 AUG 2026","textChars":11,"textLines":1,"bbox":[1054,648,154,22]}
+{"kind":"notes","id":"nt/jb4eri","slide":1,"text":"Open with the outcome: the system turned a plain-language intent into a physical delivery. The interesting part is not just browser automation—the system kept payment supervised and recorded each authorization boundary on Solana.\n\n[Sources]\n- Local demo artifacts under agent/out/\n- User-confirmed in-person delivery, 30 Aug 2026"}
+{"kind":"slide","id":"sl/92qrw9","slide":2,"title":"ONE PROTOCOL, MANY ADAPTERS","textShapes":20}
+{"kind":"textbox","id":"sh/w72xwju9","slide":2,"text":"ONE PROTOCOL, MANY ADAPTERS","textPreview":"ONE PROTOCOL, MANY ADAPTERS","textChars":27,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/t8rihw3y","slide":2,"text":"The contract does not care what gets delivered","textPreview":"The contract does not care what gets delivered","textChars":46,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/s7i18rmd","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"shape","id":"sh/fu9kj6l4","slide":2,"bbox":[300,348,72,0]}
+{"kind":"textbox","id":"sh/e90ja14j","slide":2,"text":"›","textPreview":"›","textChars":1,"textLines":1,"bbox":[320,320,32,48]}
+{"kind":"shape","id":"sh/1wb2lw3u","slide":2,"bbox":[590,348,72,0]}
+{"kind":"textbox","id":"sh/0vi1crm9","slide":2,"text":"›","textPreview":"›","textChars":1,"textLines":1,"bbox":[610,320,32,48]}
+{"kind":"shape","id":"sh/nytkn6l0","slide":2,"bbox":[880,348,72,0]}
+{"kind":"textbox","id":"sh/2xkje1kf","slide":2,"text":"›","textPreview":"›","textChars":1,"textLines":1,"bbox":[900,320,32,48]}
+{"kind":"shape","id":"sh/836psn61","slide":2,"bbox":[72,232,230,266]}
+{"kind":"textbox","id":"sh/94z61s7m","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[94,254,46,46]}
+{"kind":"textbox","id":"sh/m1onqd8b","slide":2,"text":"INTENT","textPreview":"INTENT","textChars":6,"textLines":1,"bbox":[94,322,186,22]}
+{"kind":"textbox","id":"sh/72xozipw","slide":2,"text":"“Bring drinks to\nthe demo venue.”","textPreview":"“Bring drinks to | the demo venue.”","textChars":33,"textLines":2,"bbox":[94,364,188,80]}
+{"kind":"shape","id":"sh/w7qpwn6d","slide":2,"bbox":[362,232,230,266]}
+{"kind":"textbox","id":"sh/h8z65s7y","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[384,254,46,46]}
+{"kind":"textbox","id":"sh/u587uxo7","slide":2,"text":"ON-CHAIN GATE","textPreview":"ON-CHAIN GATE","textChars":13,"textLines":1,"bbox":[384,322,186,22]}
+{"kind":"textbox","id":"sh/v6ho3ips","slide":2,"text":"Lock funds. Approve\nspec + exact quote.","textPreview":"Lock funds. Approve | spec + exact quote.","textChars":39,"textLines":2,"bbox":[384,364,188,80]}
+{"kind":"shape","id":"sh/4vap0769","slide":2,"bbox":[652,232,230,266]}
+{"kind":"textbox","id":"sh/5wj69c7u","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[674,254,46,46]}
+{"kind":"textbox","id":"sh/tgvyx8v2","slide":2,"text":"WEB ADAPTER","textPreview":"WEB ADAPTER","textChars":11,"textLines":1,"bbox":[674,322,186,22]}
+{"kind":"textbox","id":"sh/sfmx43uh","slide":2,"text":"Search, checkout,\ncard, email 3DS.","textPreview":"Search, checkout, | card, email 3DS.","textChars":34,"textLines":2,"bbox":[674,364,188,80]}
+{"kind":"shape","id":"sh/redwvydw","slide":2,"bbox":[942,232,230,266]}
+{"kind":"textbox","id":"sh/6d4f2tcb","slide":2,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[964,254,46,46]}
+{"kind":"textbox","id":"sh/14vy18vy","slide":2,"text":"PHYSICAL PROOF","textPreview":"PHYSICAL PROOF","textChars":14,"textLines":1,"bbox":[964,322,186,22]}
+{"kind":"textbox","id":"sh/g3mx8nud","slide":2,"text":"Order status +\nhuman receipt.","textPreview":"Order status + | human receipt.","textChars":29,"textLines":2,"bbox":[964,364,188,80]}
+{"kind":"textbox","id":"sh/f2dgzids","slide":2,"text":"Food today. Local merch tomorrow. The program only sees approved hashes, amounts, and lifecycle events.","textPreview":"Food today. Local merch tomorrow. The program only sees approved hashes, amounts, and lifecycle events.","textChars":103,"textLines":1,"bbox":[162,550,956,58]}
+{"kind":"shape","id":"sh/eh4f6dc7","slide":2,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/h8bepovu","slide":2,"text":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textPreview":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textChars":45,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"notes","id":"nt/92qrw9","slide":2,"text":"Walk left to right. The Solana program is stable while the off-chain adapter changes. In this demo, the adapter was Glovo. The same contract can govern food, local print, handmade goods, or a manual fulfillment path.\n\n[Sources]\n- Repository architecture and agent adapter configuration\n- agent/out/chain-job.json"}
+{"kind":"slide","id":"sl/qw1jn6","slide":3,"title":"BUILDER ARCHITECTURE","textShapes":37}
+{"kind":"textbox","id":"sh/wv2lc7qt","slide":3,"text":"BUILDER ARCHITECTURE","textPreview":"BUILDER ARCHITECTURE","textChars":20,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/s7yhw769","slide":3,"text":"Three planes, one verifiable fulfillment lifecycle","textPreview":"Three planes, one verifiable fulfillment lifecycle","textChars":50,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/t87ips7u","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"shape","id":"sh/u9gjyxof","slide":3,"bbox":[392,374,52,0]}
+{"kind":"textbox","id":"sh/fap0r2p0","slide":3,"text":"↔","textPreview":"↔","textChars":1,"textLines":1,"bbox":[399,346,38,44]}
+{"kind":"shape","id":"sh/gby1076l","slide":3,"bbox":[836,374,52,0]}
+{"kind":"textbox","id":"sh/hc7itc76","slide":3,"text":"↔","textPreview":"↔","textChars":1,"textLines":1,"bbox":[843,346,38,44]}
+{"kind":"shape","id":"sh/2dgj2hob","slide":3,"bbox":[72,196,320,372]}
+{"kind":"textbox","id":"sh/3e90vmpw","slide":3,"text":"CONTROL PLANE","textPreview":"CONTROL PLANE","textChars":13,"textLines":1,"bbox":[96,224,272,22]}
+{"kind":"textbox","id":"sh/fadkv2hs","slide":3,"text":"Solana + Anchor","textPreview":"Solana + Anchor","textChars":15,"textLines":1,"bbox":[96,266,272,42]}
+{"kind":"textbox","id":"sh/e943mxg7","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[96,340,22,26]}
+{"kind":"textbox","id":"sh/1cv2xczy","slide":3,"text":"Campaign + vault PDAs","textPreview":"Campaign + vault PDAs","textChars":21,"textLines":1,"bbox":[126,340,238,28]}
+{"kind":"textbox","id":"sh/gbmlo7yd","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[96,388,22,26]}
+{"kind":"textbox","id":"sh/r6tkrihw","slide":3,"text":"SPL-token escrow","textPreview":"SPL-token escrow","textChars":16,"textLines":1,"bbox":[126,388,238,28]}
+{"kind":"textbox","id":"sh/65k3ixgb","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[96,436,22,26]}
+{"kind":"textbox","id":"sh/t8b2tsz2","slide":3,"text":"Quote/spec hashes","textPreview":"Quote/spec hashes","textChars":17,"textLines":1,"bbox":[126,436,238,28]}
+{"kind":"textbox","id":"sh/s72lknyh","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[96,484,22,26]}
+{"kind":"textbox","id":"sh/b2x43mx0","slide":3,"text":"Lifecycle transactions","textPreview":"Lifecycle transactions","textChars":22,"textLines":1,"bbox":[126,484,238,28]}
+{"kind":"shape","id":"sh/a1o3uhgf","slide":3,"bbox":[444,196,392,372]}
+{"kind":"textbox","id":"sh/69sfip4z","slide":3,"text":"EXECUTION PLANE","textPreview":"EXECUTION PLANE","textChars":15,"textLines":1,"bbox":[468,224,344,22]}
+{"kind":"textbox","id":"sh/7a1wba5k","slide":3,"text":"Local agent","textPreview":"Local agent","textChars":11,"textLines":1,"bbox":[468,266,344,42]}
+{"kind":"textbox","id":"sh/8baxkfm5","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[468,340,22,26]}
+{"kind":"textbox","id":"sh/tcjedk3q","slide":3,"text":"Adapter policy runner","textPreview":"Adapter policy runner","textChars":21,"textLines":1,"bbox":[498,340,306,28]}
+{"kind":"textbox","id":"sh/udcfmp4v","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[468,388,22,26]}
+{"kind":"textbox","id":"sh/velgfulg","slide":3,"text":"Persistent browser","textPreview":"Persistent browser","textChars":18,"textLines":1,"bbox":[498,388,306,28]}
+{"kind":"textbox","id":"sh/gfuxozm1","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[468,436,22,26]}
+{"kind":"textbox","id":"sh/h03yh43m","slide":3,"text":"Human checkpoints","textPreview":"Human checkpoints","textChars":17,"textLines":1,"bbox":[498,436,306,28]}
+{"kind":"textbox","id":"sh/ah8fa54r","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[468,484,22,26]}
+{"kind":"textbox","id":"sh/bihw3q5c","slide":3,"text":"AgentMail 3DS input","textPreview":"AgentMail 3DS input","textChars":19,"textLines":1,"bbox":[498,484,306,28]}
+{"kind":"shape","id":"sh/dw7ip8nu","slide":3,"bbox":[888,196,320,372]}
+{"kind":"textbox","id":"sh/svehg369","slide":3,"text":"EVIDENCE PLANE","textPreview":"EVIDENCE PLANE","textChars":14,"textLines":1,"bbox":[912,224,272,22]}
+{"kind":"textbox","id":"sh/ru50ny5o","slide":3,"text":"Proof artifacts","textPreview":"Proof artifacts","textChars":15,"textLines":1,"bbox":[912,266,272,42]}
+{"kind":"textbox","id":"sh/q9wzeto3","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[912,340,22,26]}
+{"kind":"textbox","id":"sh/107it8n6","slide":3,"text":"Quote + order ID","textPreview":"Quote + order ID","textChars":16,"textLines":1,"bbox":[942,340,238,28]}
+{"kind":"textbox","id":"sh/0zyhk36l","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[912,388,22,26]}
+{"kind":"textbox","id":"sh/fyp0ry50","slide":3,"text":"Screenshots + status","textPreview":"Screenshots + status","textChars":20,"textLines":1,"bbox":[942,388,238,28]}
+{"kind":"textbox","id":"sh/exgzidof","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[912,436,22,26]}
+{"kind":"textbox","id":"sh/h43iho7m","slide":3,"text":"Payment audit","textPreview":"Payment audit","textChars":13,"textLines":1,"bbox":[942,436,238,28]}
+{"kind":"textbox","id":"sh/g3uh8j61","slide":3,"text":"—","textPreview":"—","textChars":1,"textLines":1,"bbox":[912,484,22,26]}
+{"kind":"textbox","id":"sh/kz2lgrqp","slide":3,"text":"Delivery/photo hash","textPreview":"Delivery/photo hash","textChars":19,"textLines":1,"bbox":[942,484,238,28]}
+{"kind":"textbox","id":"sh/lkb2pw7a","slide":3,"text":"Boundary rule: card secrets, OTPs, browser cookies, addresses, and raw email bodies stay off-chain.","textPreview":"Boundary rule: card secrets, OTPs, browser cookies, addresses, and raw email bodies stay off-chain.","textChars":99,"textLines":1,"bbox":[140,606,1000,34]}
+{"kind":"shape","id":"sh/yxk3eh8j","slide":3,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/jytknmp4","slide":3,"text":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textPreview":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textChars":45,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"notes","id":"nt/qw1jn6","slide":3,"text":"This is the implementation split. The Anchor program is the control plane; it owns escrow and approved state. The local agent is the execution plane; it holds browser state and touches merchant systems. JSON evidence and hashes bridge the two. Sensitive data never crosses into Solana.\n\n[Sources]\n- Anchor program and generated IDL in the repository\n- agent/src adapter runner and browser modules\n- agent/out/chain-job.json"}
+{"kind":"slide","id":"sl/7ye9c1","slide":4,"title":"SAFETY MODEL","textShapes":18}
+{"kind":"textbox","id":"sh/e9sja1k3","slide":4,"text":"SAFETY MODEL","textPreview":"SAFETY MODEL","textChars":12,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/fy1ony10","slide":4,"text":"Payment stayed human-controlled","textPreview":"Payment stayed human-controlled","textChars":31,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/ux8nedkf","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"shape","id":"sh/twzml8ju","slide":4,"bbox":[158,334,960,0]}
+{"kind":"shape","id":"sh/svq5c32p","slide":4,"bbox":[206,295,78,78]}
+{"kind":"textbox","id":"sh/7uh4jyl4","slide":4,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[206,316,78,36]}
+{"kind":"textbox","id":"sh/698natkj","slide":4,"text":"CHECKLIST","textPreview":"CHECKLIST","textChars":9,"textLines":1,"bbox":[98,414,294,26]}
+{"kind":"textbox","id":"sh/58zmho3y","slide":4,"text":"Venue, basket, note, cap","textPreview":"Venue, basket, note, cap","textChars":24,"textLines":1,"bbox":[98,460,294,62]}
+{"kind":"shape","id":"sh/k7q58j2d","slide":4,"bbox":[598,295,78,78]}
+{"kind":"textbox","id":"sh/25gni94b","slide":4,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[598,316,78,36]}
+{"kind":"textbox","id":"sh/36p4re5w","slide":4,"text":"QUOTE APPROVAL","textPreview":"QUOTE APPROVAL","textChars":14,"textLines":1,"bbox":[490,414,294,26]}
+{"kind":"textbox","id":"sh/47i5kjmh","slide":4,"text":"25.24 PLN, exact string","textPreview":"25.24 PLN, exact string","textChars":23,"textLines":1,"bbox":[490,460,294,62]}
+{"kind":"shape","id":"sh/p8rmton2","slide":4,"bbox":[990,295,78,78]}
+{"kind":"textbox","id":"sh/u1gne94f","slide":4,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[990,316,78,36]}
+{"kind":"textbox","id":"sh/f2p4ne50","slide":4,"text":"PAY + 3DS","textPreview":"PAY + 3DS","textChars":9,"textLines":1,"bbox":[882,414,294,26]}
+{"kind":"textbox","id":"sh/g3y5gjml","slide":4,"text":"One attempt, email challenge","textPreview":"One attempt, email challenge","textChars":28,"textLines":1,"bbox":[882,460,294,62]}
+{"kind":"shape","id":"sh/h47mponq","slide":4,"bbox":[84,580,190,32]}
+{"kind":"textbox","id":"sh/6xwnap43","slide":4,"text":"DEFAULT: PAY OFF","textPreview":"DEFAULT: PAY OFF","textChars":16,"textLines":1,"bbox":[84,586,190,20]}
+{"kind":"shape","id":"sh/7y54ju5o","slide":4,"bbox":[294,580,228,32]}
+{"kind":"textbox","id":"sh/bilkrqlg","slide":4,"text":"NO PAN / OTP ON-CHAIN","textPreview":"NO PAN / OTP ON-CHAIN","textChars":21,"textLines":1,"bbox":[294,586,228,20]}
+{"kind":"shape","id":"sh/ahcjilkv","slide":4,"bbox":[542,580,188,32]}
+{"kind":"textbox","id":"sh/x432t03m","slide":4,"text":"NO SILENT RETRY","textPreview":"NO SILENT RETRY","textChars":15,"textLines":1,"bbox":[542,586,188,20]}
+{"kind":"shape","id":"sh/w3u1kv21","slide":4,"bbox":[750,580,170,32]}
+{"kind":"textbox","id":"sh/j6lkvals","slide":4,"text":"CAP ENFORCED","textPreview":"CAP ENFORCED","textChars":12,"textLines":1,"bbox":[750,586,170,20]}
+{"kind":"shape","id":"sh/y5cjm5k7","slide":4,"bbox":[940,580,154,32]}
+{"kind":"textbox","id":"sh/l8n2xk3i","slide":4,"text":"ONE ATTEMPT","textPreview":"ONE ATTEMPT","textChars":11,"textLines":1,"bbox":[940,586,154,20]}
+{"kind":"shape","id":"sh/k7ulof2d","slide":4,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/za1kj6l8","slide":4,"text":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textPreview":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textChars":45,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"notes","id":"nt/7ye9c1","slide":4,"text":"Stress that autonomy is bounded. By default, the agent stops before payment. The human approved the exact quote. The card attempt was unique. Secrets stayed off-chain and out of the model transcript.\n\n[Sources]\n- agent/out/quote.json\n- agent/out/payment-attempt.json\n- agent/out/three-ds-audit.json"}
+{"kind":"slide","id":"sl/injrlm","slide":5,"title":"VIDEO","textShapes":6}
+{"kind":"textbox","id":"sh/o761sjyh","slide":5,"text":"VIDEO","textPreview":"VIDEO","textChars":5,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/d4vm9s72","slide":5,"text":"Live demo: intent → checkout → 3DS → delivery","textPreview":"Live demo: intent → checkout → 3DS → delivery","textChars":45,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/c3ml07qh","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"shape","id":"sh/3yt43ip0","slide":5,"bbox":[186,159,908,512]}
+{"kind":"textbox","id":"sh/p0vm5s76","slide":5,"text":"▶","textPreview":"▶","textChars":1,"textLines":1,"bbox":[579,342,122,122]}
+{"kind":"textbox","id":"sh/4zmlwnql","slide":5,"text":"PLAY 1:44 DEMO","textPreview":"PLAY 1:44 DEMO","textChars":14,"textLines":1,"bbox":[512,486,256,42]}
+{"kind":"shape","id":"sh/fatkzipo","slide":5,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/u9k3qd8j","slide":5,"text":"CLICK PLAY • LOCAL VIDEO COMPANION FILE","textPreview":"CLICK PLAY • LOCAL VIDEO COMPANION FILE","textChars":39,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"image","id":"im/6pwjitwj","slide":5,"name":"","geometry":"roundRect","bbox":[187,160,906,510]}
+{"kind":"notes","id":"nt/injrlm","slide":5,"text":"Click the play button to open the edited 1:44 demo clip from the presentation-assets folder. During playback, narrate only the checkpoints: basket under cap, exact approval, card attempt, email 3DS, order confirmation, and delivery.\n\n[Sources]\n- presentation-assets/Poland Agent got hands.m4v"}
+{"kind":"slide","id":"sl/ngdv40","slide":6,"title":"CHECKOUT EVIDENCE","textShapes":10}
+{"kind":"textbox","id":"sh/9sz2pcfq","slide":6,"text":"CHECKOUT EVIDENCE","textPreview":"CHECKOUT EVIDENCE","textChars":17,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/m5gju5g3","slide":6,"text":"The agent built a real basket under a hard cap","textPreview":"The agent built a real basket under a hard cap","textChars":46,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/76p03qho","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"textbox","id":"sh/k3yhsvyx","slide":6,"text":"3 × 1 L","textPreview":"3 × 1 L","textChars":7,"textLines":1,"bbox":[72,190,320,68]}
+{"kind":"textbox","id":"sh/l47i10zi","slide":6,"text":"juices selected\nfor the classroom","textPreview":"juices selected | for the classroom","textChars":33,"textLines":2,"bbox":[72,260,320,54]}
+{"kind":"textbox","id":"sh/y1gzqlgr","slide":6,"text":"25.24 PLN","textPreview":"25.24 PLN","textChars":9,"textLines":1,"bbox":[72,350,320,68]}
+{"kind":"textbox","id":"sh/z2p0zqhc","slide":6,"text":"approved landed quote","textPreview":"approved landed quote","textChars":21,"textLines":1,"bbox":[72,420,320,54]}
+{"kind":"textbox","id":"sh/czehoby1","slide":6,"text":"26.00 PLN","textPreview":"26.00 PLN","textChars":9,"textLines":1,"bbox":[72,510,320,68]}
+{"kind":"textbox","id":"sh/x07ixgz6","slide":6,"text":"maximum allowed","textPreview":"maximum allowed","textChars":15,"textLines":1,"bbox":[72,580,320,54]}
+{"kind":"shape","id":"sh/xgj2tcf2","slide":6,"bbox":[429,175,780,446]}
+{"kind":"shape","id":"sh/be1kr2xw","slide":6,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/ad83ixgb","slide":6,"text":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textPreview":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textChars":45,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"image","id":"im/jm1szi9c","slide":6,"name":"","geometry":"roundRect","bbox":[430,190.23,778,415.54]}
+{"kind":"notes","id":"nt/ngdv40","slide":6,"text":"Point out that the amount shown by the merchant—not a forecast—became the approved quote. The order was three one-litre juices from Duży Ben, delivered to the configured Superteam venue.\n\n[Sources]\n- agent/out/screenshots/glovo-final-checkout.jpg\n- agent/out/quote.json"}
+{"kind":"slide","id":"sl/bbvwgc","slide":7,"title":"PAYMENT AUTHENTICATION","textShapes":14}
+{"kind":"textbox","id":"sh/oj6x83mp","slide":7,"text":"PAYMENT AUTHENTICATION","textPreview":"PAYMENT AUTHENTICATION","textChars":22,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/i9wbulo3","slide":7,"text":"Email 3DS completed without exposing the OTP","textPreview":"Email 3DS completed without exposing the OTP","textChars":44,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/3a5c3q5o","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"shape","id":"sh/sfyt0f65","slide":7,"bbox":[330,360,130,0]}
+{"kind":"shape","id":"sh/dg7utknq","slide":7,"bbox":[820,360,130,0]}
+{"kind":"shape","id":"sh/qdwby5oz","slide":7,"bbox":[72,224,330,284]}
+{"kind":"shape","id":"sh/repc7a5k","slide":7,"bbox":[96,248,44,32]}
+{"kind":"textbox","id":"sh/8jutob61","slide":7,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[96,254,44,20]}
+{"kind":"textbox","id":"sh/tk3axg7m","slide":7,"text":"READ","textPreview":"READ","textChars":4,"textLines":1,"bbox":[96,314,282,34]}
+{"kind":"textbox","id":"sh/5knut0vu","slide":7,"text":"AgentMail detected a fresh\nApata challenge.","textPreview":"AgentMail detected a fresh | Apata challenge.","textChars":43,"textLines":2,"bbox":[96,370,282,88]}
+{"kind":"shape","id":"sh/kjedkve9","slide":7,"bbox":[472,224,330,284]}
+{"kind":"shape","id":"sh/ji5crqxo","slide":7,"bbox":[496,248,44,32]}
+{"kind":"textbox","id":"sh/ihwbilw3","slide":7,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[496,254,44,20]}
+{"kind":"textbox","id":"sh/t8nux0vq","slide":7,"text":"VALIDATE","textPreview":"VALIDATE","textChars":8,"textLines":1,"bbox":[496,314,282,34]}
+{"kind":"textbox","id":"sh/s7edofe5","slide":7,"text":"Merchant = Glovo\nAmount = 25.24 PLN","textPreview":"Merchant = Glovo | Amount = 25.24 PLN","textChars":35,"textLines":2,"bbox":[496,370,282,88]}
+{"kind":"shape","id":"sh/765cvad0","slide":7,"bbox":[872,224,330,284]}
+{"kind":"shape","id":"sh/6lwvm5wf","slide":7,"bbox":[896,248,44,32]}
+{"kind":"textbox","id":"sh/hc7u1kv2","slide":7,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[896,254,44,20]}
+{"kind":"textbox","id":"sh/gbydsfeh","slide":7,"text":"SUBMIT ONCE","textPreview":"SUBMIT ONCE","textChars":11,"textLines":1,"bbox":[896,314,282,34]}
+{"kind":"textbox","id":"sh/0f6x4jmt","slide":7,"text":"Six digits entered only\nafter explicit approval.","textPreview":"Six digits entered only | after explicit approval.","textChars":48,"textLines":2,"bbox":[896,370,282,88]}
+{"kind":"textbox","id":"sh/1gfexo3y","slide":7,"text":"The audit records provider, merchant, currency, amount, mode, and completion time—never the code itself.","textPreview":"The audit records provider, merchant, currency, amount, mode, and completion time—never the code itself.","textChars":104,"textLines":1,"bbox":[144,560,992,56]}
+{"kind":"shape","id":"sh/edof2t4n","slide":7,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/fexwvel8","slide":7,"text":"APATA • EMAIL OTP • SECRET-FREE AUDIT","textPreview":"APATA • EMAIL OTP • SECRET-FREE AUDIT","textChars":37,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"notes","id":"nt/bbvwgc","slide":7,"text":"The mailbox was used as a constrained authentication input. The agent classified the sender, checked the amount and merchant, and submitted exactly once. The audit file contains no OTP.\n\n[Sources]\n- agent/out/three-ds-audit.json\n- agent/out/payment-auth.json"}
+{"kind":"slide","id":"sl/xcox6b","slide":8,"title":"SURFPOOL / SOLANA","textShapes":17}
+{"kind":"textbox","id":"sh/hkzqlcfm","slide":8,"text":"SURFPOOL / SOLANA","textPreview":"SURFPOOL / SOLANA","textChars":17,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/7als3654","slide":8,"text":"Authorization boundaries became on-chain events","textPreview":"Authorization boundaries became on-chain events","textChars":47,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/m9cra14j","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"textbox","id":"sh/h0na90n6","slide":8,"text":"QUOTE APPROVED","textPreview":"QUOTE APPROVED","textChars":14,"textLines":1,"bbox":[72,232,336,22]}
+{"kind":"textbox","id":"sh/gzetgvml","slide":8,"text":"25.24 PLN","textPreview":"25.24 PLN","textChars":9,"textLines":1,"bbox":[72,286,336,76]}
+{"kind":"shape","id":"sh/vyls7q5g","slide":8,"bbox":[72,392,336,0]}
+{"kind":"textbox","id":"sh/uxcbel4v","slide":8,"text":"5pedrWb…f6Rv2","textPreview":"5pedrWb…f6Rv2","textChars":13,"textLines":1,"bbox":[72,420,336,34]}
+{"kind":"textbox","id":"sh/x4jaxwn2","slide":8,"text":"PAYMENT AUTH","textPreview":"PAYMENT AUTH","textChars":12,"textLines":1,"bbox":[472,232,336,22]}
+{"kind":"textbox","id":"sh/c3a94r6h","slide":8,"text":"Apata 3DS","textPreview":"Apata 3DS","textChars":9,"textLines":1,"bbox":[472,286,336,76]}
+{"kind":"shape","id":"sh/2l4rud0v","slide":8,"bbox":[472,392,336,0]}
+{"kind":"textbox","id":"sh/nmd8ni10","slide":8,"text":"YWwoQjV…qevyPE","textPreview":"YWwoQjV…qevyPE","textChars":14,"textLines":1,"bbox":[472,420,336,34]}
+{"kind":"textbox","id":"sh/onm9wnil","slide":8,"text":"PURCHASE","textPreview":"PURCHASE","textChars":8,"textLines":1,"bbox":[872,232,336,22]}
+{"kind":"textbox","id":"sh/povqpsj6","slide":8,"text":"Order 101758048957","textPreview":"Order 101758048957","textChars":18,"textLines":1,"bbox":[872,286,336,76]}
+{"kind":"shape","id":"sh/ap4ryx0r","slide":8,"bbox":[872,392,336,0]}
+{"kind":"textbox","id":"sh/bqx8r21c","slide":8,"text":"CjJT67j…7WTbX","textPreview":"CjJT67j…7WTbX","textChars":13,"textLines":1,"bbox":[872,420,336,34]}
+{"kind":"textbox","id":"sh/cr6907ix","slide":8,"text":"Campaign","textPreview":"Campaign","textChars":8,"textLines":1,"bbox":[72,534,180,20]}
+{"kind":"textbox","id":"sh/xsfqtcji","slide":8,"text":"84FzYjkH…QYzh7N","textPreview":"84FzYjkH…QYzh7N","textChars":15,"textLines":1,"bbox":[72,566,460,36]}
+{"kind":"textbox","id":"sh/ytor2x03","slide":8,"text":"Spec hash","textPreview":"Spec hash","textChars":9,"textLines":1,"bbox":[696,534,180,20]}
+{"kind":"textbox","id":"sh/zux8v218","slide":8,"text":"fa927741…cf0e4","textPreview":"fa927741…cf0e4","textChars":14,"textLines":1,"bbox":[696,566,460,36]}
+{"kind":"shape","id":"sh/vyh8j2xg","slide":8,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/ux87qhgv","slide":8,"text":"VIEW LOCALLY IN SURFPOOL STUDIO • 127.0.0.1:18488","textPreview":"VIEW LOCALLY IN SURFPOOL STUDIO • 127.0.0.1:18488","textChars":49,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"notes","id":"nt/xcox6b","slide":8,"text":"The transaction signatures are real local-Solana transactions. The audience can inspect them in Surfpool Studio. Explain that the on-chain program stores lifecycle evidence and hashes—not personal delivery information or card secrets.\n\n[Sources]\n- agent/out/chain-job.json\n- Payment auth transaction: YWwoQjVTkbiEWQKEXWEtCDpKmtc1ZrUwGk9Lj547uJm5k8Fj7TJ6Bium1K9RRcy7wWoMiuAv2SSjMXyTbqevyPE\n- Purchase transaction: CjJT67jsbsvqUqX3Vbq5yTrBvCqeNbCrqHNfZw8UdebSYhmbfLeCKHQuQq4RrW16EKgGT3AJTnbvzMrkba7WTbX"}
+{"kind":"slide","id":"sl/wtw02m","slide":9,"title":"DELIVERY EVIDENCE","textShapes":10}
+{"kind":"textbox","id":"sh/0n2903md","slide":9,"text":"DELIVERY EVIDENCE","textPreview":"DELIVERY EVIDENCE","textChars":17,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/ehkjit0v","slide":9,"text":"The physical order arrived","textPreview":"The physical order arrived","textChars":26,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/zitkbyhg","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"shape","id":"sh/onmlo3yx","slide":9,"bbox":[71,177,762,446]}
+{"kind":"textbox","id":"sh/ml43mtg7","slide":9,"text":"DELIVERED","textPreview":"DELIVERED","textChars":9,"textLines":1,"bbox":[886,198,300,30]}
+{"kind":"textbox","id":"sh/nmdkfyhs","slide":9,"text":"15:35","textPreview":"15:35","textChars":5,"textLines":1,"bbox":[886,252,300,72]}
+{"kind":"textbox","id":"sh/4ri1cjit","slide":9,"text":"30 Aug 2026","textPreview":"30 Aug 2026","textChars":11,"textLines":1,"bbox":[886,326,300,30]}
+{"kind":"shape","id":"sh/psb254ze","slide":9,"bbox":[886,392,300,0]}
+{"kind":"textbox","id":"sh/dkbq58nm","slide":9,"text":"Order ID","textPreview":"Order ID","textChars":8,"textLines":1,"bbox":[886,424,300,22]}
+{"kind":"textbox","id":"sh/czi9w3mh","slide":9,"text":"101758048957","textPreview":"101758048957","textChars":12,"textLines":1,"bbox":[886,458,300,34]}
+{"kind":"textbox","id":"sh/by983y5w","slide":9,"text":"Merchant status +\nhuman receipt confirmed","textPreview":"Merchant status + | human receipt confirmed","textChars":41,"textLines":2,"bbox":[886,532,300,66]}
+{"kind":"shape","id":"sh/qx0rut4b","slide":9,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/lobq98ny","slide":9,"text":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textPreview":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textChars":45,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"image","id":"im/cfihg3q5","slide":9,"name":"","geometry":"roundRect","bbox":[72,206.2,760,387.6]}
+{"kind":"notes","id":"nt/wtw02m","slide":9,"text":"This run used two sources of delivery evidence: Glovo marked the order Delivered, and the recipient confirmed physical receipt. That matters because merchant status alone can be wrong. A future version should also hash a delivery photo when available.\n\n[Sources]\n- agent/out/screenshots/glovo-delivered.jpg\n- agent/out/delivery-evidence.json"}
+{"kind":"slide","id":"sl/ypmmt8","slide":10,"title":"RECONCILIATION","textShapes":14}
+{"kind":"textbox","id":"sh/ihkfips3","slide":10,"text":"RECONCILIATION","textPreview":"RECONCILIATION","textChars":14,"textLines":1,"bbox":[72,38,620,22]}
+{"kind":"textbox","id":"sh/ozmt83i9","slide":10,"text":"The key result: settlement was blocked","textPreview":"The key result: settlement was blocked","textChars":38,"textLines":1,"bbox":[72,72,1136,82]}
+{"kind":"textbox","id":"sh/9kvu18zu","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,42,48,22]}
+{"kind":"textbox","id":"sh/al4budgf","slide":10,"text":"25.24","textPreview":"25.24","textChars":5,"textLines":1,"bbox":[92,222,280,68]}
+{"kind":"textbox","id":"sh/bmdc3ihk","slide":10,"text":"approved quote\nPLN","textPreview":"approved quote | PLN","textChars":18,"textLines":2,"bbox":[92,292,280,54]}
+{"kind":"textbox","id":"sh/wnmdw3y5","slide":10,"text":"26.09","textPreview":"26.09","textChars":5,"textLines":1,"bbox":[486,222,280,68]}
+{"kind":"textbox","id":"sh/xofu58zq","slide":10,"text":"final merchant charge\nPLN","textPreview":"final merchant charge | PLN","textChars":25,"textLines":2,"bbox":[486,292,280,54]}
+{"kind":"textbox","id":"sh/qpkby90v","slide":10,"text":"+0.85","textPreview":"+0.85","textChars":5,"textLines":1,"bbox":[880,222,280,68]}
+{"kind":"textbox","id":"sh/rqtcrehg","slide":10,"text":"variance\nPLN","textPreview":"variance | PLN","textChars":12,"textLines":2,"bbox":[880,292,280,54]}
+{"kind":"shape","id":"sh/fadwze9g","slide":10,"bbox":[372,276,94,0]}
+{"kind":"textbox","id":"sh/e94fq9sb","slide":10,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[400,244,42,52]}
+{"kind":"shape","id":"sh/1cfy1orm","slide":10,"bbox":[766,276,94,0]}
+{"kind":"textbox","id":"sh/0bmxsja1","slide":10,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[794,244,42,52]}
+{"kind":"shape","id":"sh/rmdwve9k","slide":10,"bbox":[184,482,912,108]}
+{"kind":"textbox","id":"sh/ql4fm9sz","slide":10,"text":"SETTLEMENT BLOCKED","textPreview":"SETTLEMENT BLOCKED","textChars":18,"textLines":1,"bbox":[214,505,330,34]}
+{"kind":"textbox","id":"sh/dovexorq","slide":10,"text":"The final charge was 0.09 PLN above the hard cap. Human reconciliation is required.","textPreview":"The final charge was 0.09 PLN above the hard cap. Human reconciliation is required.","textChars":83,"textLines":1,"bbox":[544,500,520,52]}
+{"kind":"shape","id":"sh/snmxoja5","slide":10,"bbox":[72,675,1136,0]}
+{"kind":"textbox","id":"sh/3itwru9o","slide":10,"text":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textPreview":"SUPERVISED FULFILLMENT • KRAKÓW • 30 AUG 2026","textChars":45,"textLines":1,"bbox":[72,687,1136,16]}
+{"kind":"notes","id":"nt/ypmmt8","slide":10,"text":"Do not hide this edge case—it is the trust story. Glovo's final charged amount was 26.09 PLN, versus the 25.24 PLN approved quote and 26.00 PLN cap. The delivery succeeded, but settlement remained blocked pending human reconciliation.\n\n[Sources]\n- agent/out/amount-reconciliation-exception.json\n- Final Glovo order total recorded by the demo operator"}
+{"kind":"slide","id":"sl/auomae","slide":11,"title":"THE THESIS","textShapes":17}
+{"kind":"shape","id":"sh/6tsnydgj","slide":11,"bbox":[0,0,22,720]}
+{"kind":"textbox","id":"sh/x8r6t8ra","slide":11,"text":"THE THESIS","textPreview":"THE THESIS","textChars":10,"textLines":1,"bbox":[76,60,320,24]}
+{"kind":"textbox","id":"sh/wni5k3ap","slide":11,"text":"A browser can transact where APIs do not exist.\nA protocol decides when it should.","textPreview":"A browser can transact where APIs do not exist. | A protocol decides when it should.","textChars":82,"textLines":2,"bbox":[76,126,1080,160]}
+{"kind":"shape","id":"sh/jatovy9g","slide":11,"bbox":[80,348,1120,0]}
+{"kind":"textbox","id":"sh/y9knmtsv","slide":11,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[80,398,52,36]}
+{"kind":"textbox","id":"sh/lcb6x8rm","slide":11,"text":"RECONCILE","textPreview":"RECONCILE","textChars":9,"textLines":1,"bbox":[148,400,260,26]}
+{"kind":"textbox","id":"sh/kb25o3a1","slide":11,"text":"Make mutable merchant totals\nan explicit protocol state.","textPreview":"Make mutable merchant totals | an explicit protocol state.","textChars":56,"textLines":2,"bbox":[148,454,278,82]}
+{"kind":"textbox","id":"sh/7etozi9c","slide":11,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[464,398,52,36]}
+{"kind":"textbox","id":"sh/6dknqdsr","slide":11,"text":"PROVE","textPreview":"PROVE","textChars":5,"textLines":1,"bbox":[532,400,260,26]}
+{"kind":"textbox","id":"sh/o7u5836d","slide":11,"text":"Hash photos or signed human\nreceipt when available.","textPreview":"Hash photos or signed human | receipt when available.","textChars":51,"textLines":2,"bbox":[532,454,278,82]}
+{"kind":"textbox","id":"sh/9836h87i","slide":11,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[848,398,52,36]}
+{"kind":"textbox","id":"sh/m5sn6to7","slide":11,"text":"EXPAND","textPreview":"EXPAND","textChars":6,"textLines":1,"bbox":[916,400,260,26]}
+{"kind":"textbox","id":"sh/n61ofyps","slide":11,"text":"Add local print, shops, and\nmanual fulfillment adapters.","textPreview":"Add local print, shops, and | manual fulfillment adapters.","textChars":56,"textLines":2,"bbox":[916,454,278,82]}
+{"kind":"shape","id":"sh/wbu5cn69","slide":11,"bbox":[80,610,100,32]}
+{"kind":"textbox","id":"sh/xw36l87u","slide":11,"text":"LOCK","textPreview":"LOCK","textChars":4,"textLines":1,"bbox":[80,616,100,20]}
+{"kind":"textbox","id":"sh/a9cnado3","slide":11,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[190,608,36,32]}
+{"kind":"shape","id":"sh/valojipo","slide":11,"bbox":[236,610,196,32]}
+{"kind":"textbox","id":"sh/kze5gn65","slide":11,"text":"APPROVE SPEC HASH","textPreview":"APPROVE SPEC HASH","textChars":17,"textLines":1,"bbox":[236,616,196,20]}
+{"kind":"textbox","id":"sh/50n6ps7q","slide":11,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[442,608,36,32]}
+{"kind":"shape","id":"sh/tgj69szu","slide":11,"bbox":[488,610,178,32]}
+{"kind":"textbox","id":"sh/sva50nyp","slide":11,"text":"PROVE DELIVERY","textPreview":"PROVE DELIVERY","textChars":14,"textLines":1,"bbox":[488,616,178,20]}
+{"kind":"textbox","id":"sh/ru1o7ih4","slide":11,"text":"The Solana program stayed unchanged.","textPreview":"The Solana program stayed unchanged.","textChars":36,"textLines":1,"bbox":[830,614,378,24]}
+{"kind":"notes","id":"nt/auomae","slide":11,"text":"Close on the protocol, not the delivery app. The value is a reusable authorization and proof layer for physical commerce. Wolt, Glovo, local print, or a human operator can all be adapters without changing the core contract.\n\n[Sources]\n- Repository README talk track\n- Local demo evidence under agent/out/"}

@@ -1,0 +1,38 @@
+{
+  "job_kind": "food",
+  "adapter": "pyszne",
+  "city": "Kraków",
+  "venue_label": "Superteam demo venue",
+  "destination_type": "venue",
+  "address_line": "REPLACE_ME, Kraków",
+  "latlon_hint": null,
+  "recipient_name": "REPLACE_ME",
+  "phone": "REPLACE_ME",
+  "contact_email": "fulfillment-demo@mail.buena.ai",
+  "three_ds_email": "fulfillment-demo@mail.buena.ai",
+  "merchant_descriptor": "PYSZNEPL",
+  "items": [
+    { "query": "Łaciate UHT Milk 3.2% 1L", "qty": 2 },
+    {
+      "query": "Sante Go On Coconut Vitamin Baton with L-carnitine, magnesium, and vitamins coated in milk chocolate 50 g",
+      "qty": 2
+    },
+    {
+      "query": "Mars Bar with nougat filling coated in caramel and chocolate 51 g",
+      "qty": 3
+    },
+    {
+      "query": "Twix Bar with biscuits and caramel coated in chocolate 50 g (2 x 25 g)",
+      "qty": 3
+    }
+  ],
+  "note": "Solana PoC — reception / Superteam",
+  "max_pln": 70,
+  "constraints": [
+    "office-safe",
+    "venue-delivery-or-pickup",
+    "no-substitutions",
+    "regular-cow-milk-1l-3.2-percent"
+  ],
+  "prefer_3ds_channel": "email"
+}

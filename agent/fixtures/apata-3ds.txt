@@ -1,0 +1,7 @@
+From: no-reply@apata.io
+To: angel@buena.ai
+Subject: Confirm your payment
+
+One Time Passcode
+Please confirm your payment of EUR 24.90 to WOLT using the code 123456
+www.apata.com

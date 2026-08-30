@@ -1,0 +1,4 @@
+Slide 8: visible copy changes only. Reason: give Solana builders the stable program identifier while avoiding an unverified devnet-live claim.
+Slide 9: inherited delivery-evidence image replaced with the user-supplied physical proof photograph; image expanded to the inherited media frame. Reason: human-observed physical evidence is stronger than merchant status alone.
+All other slides: preserved.
+

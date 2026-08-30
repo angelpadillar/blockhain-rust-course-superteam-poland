@@ -1,0 +1,8 @@
+Source deck: Fulfillment-Agent-Solana-Demo.pptx
+Slides: 11, 1280 × 720.
+Visual system: white or near-black canvas, Helvetica Neue, blue accent rail, 72 px page margins, 42 px slide titles, compact uppercase kickers, thin footer rule.
+Reusable patterns: evidence slide with dominant image and right-side facts; dark transaction-evidence slide with three columns.
+Inherited structure: the exported source uses the standard Title Slide layout and Master without inherited visible elements. Slide content is local to each source slide.
+Edit contract: preserve slides 1–7 and 10–11. On slide 8, replace the lower-right spec-hash label/value with the stable program ID and revise the footer so it does not claim an unverified live devnet account. On slide 9, replace the Glovo screenshot with the user-supplied physical-delivery photograph and update the title/callout.
+Typography and geometry remain unchanged except the slide 9 image is expanded within the inherited image/frame zone to show the physical goods clearly.
+

@@ -1,0 +1,6 @@
+User photograph: /Users/buena/Downloads/IMG_2922.HEIC
+Original-photo SHA-256: 755a7079604b36c0ec8e37b46fb52f2a83cb55400dd5e136bc254f3dc319d630
+Converted working PNG: .codex-build/fulfillment-deck-update/assets/IMG_2922.png
+Program ID from Anchor.toml, declare_id!, and target/deploy/gift_campaign-keypair.json: F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb
+Devnet verification attempt on 30 Aug 2026: official getAccountInfo returned value=null. Do not show “live on devnet” until a later RPC check returns the executable program account.
+

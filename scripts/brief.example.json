@@ -1,0 +1,21 @@
+{
+  "campaignIntent": "Thank a willing course participant",
+  "officeOnly": true,
+  "researchPolicy": "consented-demo-data-only",
+  "options": [
+    {
+      "sku": "warsaw-paczki-box",
+      "reason": "Easy to share with the Superteam Poland course group"
+    },
+    {
+      "sku": "specialty-coffee-and-croissant",
+      "reason": "A practical morning course gift"
+    },
+    {
+      "sku": "mini-sernik-box",
+      "reason": "A locally recognizable, office-safe dessert"
+    }
+  ],
+  "selectedSku": "specialty-coffee-and-croissant"
+}
+

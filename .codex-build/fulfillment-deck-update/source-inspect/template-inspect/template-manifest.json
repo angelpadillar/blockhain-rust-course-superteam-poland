@@ -1,0 +1,146 @@
+{
+  "sourcePptx": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/Fulfillment-Agent-Solana-Demo.pptx",
+  "workspace": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect",
+  "outDir": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect",
+  "generatedAt": "2026-08-30T14:03:51.367Z",
+  "slideCount": 11,
+  "slideArtifacts": [
+    {
+      "slide": 1,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-01.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-01.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-01.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-01.layout.json"
+    },
+    {
+      "slide": 2,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-02.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-02.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-02.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-02.layout.json"
+    },
+    {
+      "slide": 3,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-03.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-03.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-03.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-03.layout.json"
+    },
+    {
+      "slide": 4,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-04.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-04.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-04.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-04.layout.json"
+    },
+    {
+      "slide": 5,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-05.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-05.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-05.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-05.layout.json"
+    },
+    {
+      "slide": 6,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-06.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-06.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-06.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-06.layout.json"
+    },
+    {
+      "slide": 7,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-07.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-07.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-07.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-07.layout.json"
+    },
+    {
+      "slide": 8,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-08.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-08.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-08.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-08.layout.json"
+    },
+    {
+      "slide": 9,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-09.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-09.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-09.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-09.layout.json"
+    },
+    {
+      "slide": 10,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-10.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-10.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-10.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-10.layout.json"
+    },
+    {
+      "slide": 11,
+      "previewPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/source-slides/source-slide-11.png",
+      "previewRelativePath": "template-inspect/source-slides/source-slide-11.png",
+      "layoutPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/layouts/source-slide-11.layout.json",
+      "layoutRelativePath": "template-inspect/layouts/source-slide-11.layout.json"
+    }
+  ],
+  "inspectPath": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/template-inspect.ndjson",
+  "inspectRelativePath": "template-inspect/template-inspect.ndjson",
+  "inspectTruncated": true,
+  "inspectMetadata": {
+    "revision": "7gf6k1",
+    "target": {
+      "id": "pr/zkih5d"
+    },
+    "kind": {
+      "requested": "slide,textbox,shape,image,table,chart",
+      "tokens": [
+        "slide",
+        "textbox",
+        "shape",
+        "image",
+        "table",
+        "chart"
+      ]
+    },
+    "include": {
+      "tokens": []
+    },
+    "exclude": {
+      "tokens": []
+    },
+    "notices": []
+  },
+  "extractedMedia": [
+    {
+      "entry": "ppt/media/image.jpeg",
+      "path": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/assets/ppt/media/image.jpeg",
+      "relativePath": "template-inspect/assets/ppt/media/image.jpeg",
+      "bytes": 72008
+    },
+    {
+      "entry": "ppt/media/image2.jpeg",
+      "path": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/assets/ppt/media/image2.jpeg",
+      "relativePath": "template-inspect/assets/ppt/media/image2.jpeg",
+      "bytes": 92184
+    },
+    {
+      "entry": "ppt/media/image3.jpeg",
+      "path": "/Users/buena/Documents/ChatGPT/blockhain-rust-course-superteam-poland/.codex-build/fulfillment-deck-update/source-inspect/template-inspect/assets/ppt/media/image3.jpeg",
+      "relativePath": "template-inspect/assets/ppt/media/image3.jpeg",
+      "bytes": 85083
+    }
+  ],
+  "fonts": [
+    "+mj-lt",
+    "+mn-lt",
+    "Calibri",
+    "Calibri Light",
+    "Helvetica Neue"
+  ],
+  "packageParts": {
+    "mediaCount": 3,
+    "slideXmlCount": 11,
+    "chartCount": 0,
+    "tableSlideCount": 0
+  }
+}

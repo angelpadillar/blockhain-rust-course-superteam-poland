@@ -1,0 +1,43 @@
+{
+  "name": "buena-offchain-fulfillment-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Supervised fulfillment adapter runner for the Superteam Solana shipment demo",
+  "license": "MIT",
+  "scripts": {
+    "checklist": "tsx src/cli.ts checklist",
+    "demo:milk": "tsx src/milk-demo.ts",
+    "demo:reset": "tsx src/demo-reset.ts",
+    "order:prepare": "tsx src/cli.ts prepare",
+    "payment:pyszne": "tsx src/pyszne-payment-mcp.ts",
+    "payment:pyszne:profile": "tsx src/pyszne-payment.ts",
+    "payment:pyszne:record-success": "tsx src/pyszne-payment-success.ts",
+    "payment:glovo": "tsx src/glovo-payment-mcp.ts",
+    "payment:glovo:record-success": "tsx src/glovo-payment-success.ts",
+    "payment:reconcile": "tsx src/payment-reconcile.ts",
+    "3ds:poll": "tsx src/three-ds-poll.ts",
+    "3ds:approve": "tsx src/three-ds-approval.ts",
+    "quote:mcp": "tsx src/mcp-quote.ts",
+    "otp:dry-run": "tsx src/otp-dry-run.ts",
+    "mail:check": "tsx src/mail-check.ts",
+    "mail:pyszne-login": "tsx src/pyszne-login-check.ts",
+    "session:reset": "tsx src/reset-wolt-session.ts",
+    "finalize": "tsx src/cli.ts finalize",
+    "test": "tsx --test tests/**/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,json,md}\""
+  },
+  "dependencies": {
+    "agentmail": "^0.5.12",
+    "dotenv": "^17.2.2",
+    "playwright-core": "^1.55.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

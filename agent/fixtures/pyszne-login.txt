@@ -1,0 +1,5 @@
+From: Pyszne.pl <no-reply@pyszne.pl>
+Subject: Log in to Pyszne.pl
+Body:
+Continue your Pyszne.pl sign-in using this synthetic link:
+https://auth.pyszne.pl/account/email-login?token=synthetic-demo-token

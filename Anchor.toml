@@ -1,0 +1,20 @@
+skip_local_validator = true
+
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+gift_campaign = "F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb"
+
+[programs.devnet]
+gift_campaign = "F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test --workspace"

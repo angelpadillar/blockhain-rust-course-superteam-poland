@@ -1,0 +1,28 @@
+{
+  "job_kind": "merch",
+  "adapter": "local_print",
+  "city": "Kraków",
+  "venue_label": "demo venue",
+  "destination_type": "venue",
+  "address_line": "REPLACE_ME, Kraków",
+  "latlon_hint": null,
+  "recipient_name": "REPLACE_ME",
+  "phone": null,
+  "contact_email": "angel@buena.ai",
+  "three_ds_email": "fulfillment-demo@mail.buena.ai",
+  "merchant_descriptor": null,
+  "spec": {
+    "item": "tote or tee or sticker",
+    "design_file": "../designs/demo.png",
+    "text_fallback": "Buena × Solana PoC",
+    "qty": 1,
+    "note": "Solana PoC — reception"
+  },
+  "max_pln": 150,
+  "constraints": [
+    "office-safe",
+    "venue-delivery-or-pickup",
+    "same-day-or-fail"
+  ],
+  "prefer_3ds_channel": "email"
+}

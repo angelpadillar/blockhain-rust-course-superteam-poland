@@ -1,0 +1,7 @@
+From: login@emails.wolt.com
+Subject: Log in to Wolt
+
+Use this secure link to sign in:
+https://wolt.com/en/login?token=synthetic-demo-token
+
+This is a synthetic fixture. It is not a live login link.
