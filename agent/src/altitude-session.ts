@@ -89,7 +89,7 @@ async function commandEnroll(): Promise<void> {
     );
     const { session, authenticatorId } = await addVirtualAuthenticator(page);
     console.log(
-      "Virtual authenticator armed. Click the dashboard's create-passkey control now.",
+      "Virtual authenticator armed. Reload the page once (support checks run at page load), then click the dashboard's create-passkey control.",
     );
     console.log(
       "If 1Password's own dialog appears instead, the extension is intercepting the ceremony: disable it in chrome://extensions, then click create again.",

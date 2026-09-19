@@ -116,7 +116,7 @@ export async function launch(): Promise<BrowserContext> {
   }
   const executablePath = (process.env.ALTITUDE_BROWSER_EXECUTABLE ?? "").trim();
   try {
-    return await chromium.launchPersistentContext(profileDir, {
+    const context = await chromium.launchPersistentContext(profileDir, {
       ...(executablePath
         ? { executablePath }
         : { channel: process.env.BROWSER_CHANNEL ?? "chrome" }),
@@ -124,6 +124,28 @@ export async function launch(): Promise<BrowserContext> {
       viewport: null,
       args,
     });
+    // Capability probes ask the OS, not the CDP virtual authenticator; in
+    // Chrome for Testing they report no platform authenticator and sites
+    // refuse to run the ceremony at all. Report availability so the page
+    // reaches navigator.credentials.*, which the authenticator answers.
+    await context.addInitScript(() => {
+      const spoofed = async () => true;
+      try {
+        PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable =
+          spoofed;
+      } catch {
+        try {
+          Object.defineProperty(
+            PublicKeyCredential,
+            "isUserVerifyingPlatformAuthenticatorAvailable",
+            { value: spoofed },
+          );
+        } catch {
+          // non-writable and non-configurable; the page check stays honest
+        }
+      }
+    });
+    return context;
   } catch (error) {
     const message = (error as Error).message;
     if (/Opening in existing browser session|profile.*in use/i.test(message)) {
