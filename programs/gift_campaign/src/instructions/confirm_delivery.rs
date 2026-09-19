@@ -43,6 +43,11 @@ pub struct ConfirmDelivery<'info> {
 }
 
 pub fn handle_confirm_delivery(ctx: Context<ConfirmDelivery>, pod_hash: [u8; 32]) -> Result<()> {
+    require!(
+        ctx.accounts.campaign.mandate == Pubkey::default()
+            && ctx.accounts.campaign.quote_version == 0,
+        GiftCampaignError::LegacyPathForbidden
+    );
     require_keys_eq!(
         ctx.accounts.delivery_oracle.key(),
         ctx.accounts.config.delivery_oracle,

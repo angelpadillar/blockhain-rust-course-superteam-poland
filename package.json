@@ -8,7 +8,14 @@
     "replay:devnet": "ts-node scripts/fulfillment-chain.ts replay-devnet",
     "fulfillment:chain": "ts-node scripts/fulfillment-chain.ts",
     "format": "prettier --write \"scripts/**/*.ts\" \"*.{json,md}\"",
-    "format:check": "prettier --check \"scripts/**/*.ts\" \"*.{json,md}\""
+    "format:check": "prettier --check \"scripts/**/*.ts\" \"*.{json,md}\"",
+    "demo:trust": "node agent/trust/demo/server.mjs",
+    "test:trust": "node --test agent/trust/evidence.test.mjs agent/trust/demo/*.test.mjs",
+    "demo:gifting": "node agent/trust/integrated/server.mjs",
+    "test:gifting": "node --test agent/trust/integrated/encoding.test.mjs agent/trust/integrated/integration.test.mjs",
+    "build:gifting:bridge": "cargo build --locked --example gifting_bridge",
+    "demo:delio": "node agent/trust/delio/server.mjs",
+    "test:delio": "node --test agent/trust/delio/*.test.mjs agent/trust/delio/sms/*.test.mjs agent/trust/delio/worker/*.test.mjs"
   },
   "dependencies": {
     "@anchor-lang/core": "^1.1.2"

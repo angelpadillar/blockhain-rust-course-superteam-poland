@@ -2,6 +2,7 @@ pub mod constants;
 pub mod errors;
 pub mod events;
 pub mod instructions;
+pub mod mandate;
 pub mod state;
 
 use anchor_lang::prelude::*;
@@ -33,6 +34,57 @@ pub mod gift_campaign {
 
     pub fn approve_gift(ctx: Context<ApproveGift>, gift_hash: [u8; 32]) -> Result<()> {
         instructions::approve_gift::handle_approve_gift(ctx, gift_hash)
+    }
+
+    #[allow(clippy::too_many_arguments)]
+    pub fn authorize_mandate(
+        ctx: Context<AuthorizeMandate>,
+        executor: Pubkey,
+        merchant_hash: [u8; 32],
+        spec_hash: [u8; 32],
+        recipient_hash: [u8; 32],
+        charge_currency: [u8; 3],
+        charge_currency_exponent: u8,
+        max_charge_amount_minor: u64,
+        max_escrow_debit: u64,
+        expires_at: i64,
+    ) -> Result<()> {
+        instructions::authorize_mandate::handle_authorize_mandate(
+            ctx,
+            executor,
+            merchant_hash,
+            spec_hash,
+            recipient_hash,
+            charge_currency,
+            charge_currency_exponent,
+            max_charge_amount_minor,
+            max_escrow_debit,
+            expires_at,
+        )
+    }
+
+    pub fn revoke_mandate(ctx: Context<RevokeMandate>) -> Result<()> {
+        instructions::revoke_mandate::handle_revoke_mandate(ctx)
+    }
+
+    pub fn approve_quote_with_mandate(
+        ctx: Context<ApproveQuoteWithMandate>,
+        quote_version: u32,
+        terms_hash: [u8; 32],
+    ) -> Result<()> {
+        instructions::approve_quote_with_mandate::handle_approve_quote_with_mandate(
+            ctx,
+            quote_version,
+            terms_hash,
+        )
+    }
+
+    pub fn record_payment_attempt_with_mandate(
+        ctx: Context<RecordPaymentAttemptWithMandate>,
+        terms_hash: [u8; 32],
+        payment_attempt_hash: [u8; 32],
+    ) -> Result<()> {
+        instructions::record_payment_attempt_with_mandate::handle_record_payment_attempt_with_mandate(ctx, terms_hash, payment_attempt_hash)
     }
 
     #[allow(clippy::too_many_arguments)]

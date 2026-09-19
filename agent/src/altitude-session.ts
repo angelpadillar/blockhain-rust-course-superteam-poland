@@ -24,9 +24,12 @@ import {
  *   open    - launch the dedicated Altitude profile for manual recon: install
  *             the 1Password extension into the profile once, log in with the
  *             existing passkey, and inspect card/security settings.
- *   enroll  - after that manual login, register an additional passkey on a CDP
- *             virtual authenticator and persist its credential material to the
- *             gitignored agent/out/altitude-passkey.json (mode 0600).
+ *   enroll  - Altitude allows only one passkey per account, so this replaces
+ *             it: after a manual 1Password login the existing passkey is
+ *             deleted, then a new passkey is created on a CDP virtual
+ *             authenticator and persisted to the gitignored
+ *             agent/out/altitude-passkey.json (mode 0600). From then on every
+ *             Altitude login goes through the harness credential.
  *   attest  - inject the stored credential into a fresh virtual authenticator
  *             and open the app, so a WebAuthn ceremony resolves with no human
  *             passkey prompt.
@@ -55,7 +58,7 @@ async function commandOpen(): Promise<void> {
       "  2. First run only: install the 1Password extension into this dedicated profile so passkey prompts can be completed here.",
     );
     console.log(
-      "  3. In security settings, confirm whether a second passkey can be added.",
+      "  3. Altitude allows only one passkey per account; enrollment replaces it (see enroll).",
     );
     console.log(
       "  4. On the card, check whether per-transaction limits can be edited and whether editing re-prompts the passkey.",
@@ -78,15 +81,18 @@ async function commandEnroll(): Promise<void> {
   try {
     const page = await openApp(context);
     console.log(
-      "Log in with the existing passkey (1Password), then open the passkey or security settings in the dashboard.",
+      "Log in with the existing passkey (1Password), open the passkey or security settings, and delete the existing passkey. The session stays signed in; do not close the browser between delete and create.",
     );
     await requireExactConfirmation(
-      "The virtual authenticator will be armed after this confirmation. Any passkey created next is owned by this harness, not 1Password.",
+      "The virtual authenticator will be armed after this confirmation. The next passkey created is owned by this harness, not 1Password.",
       "ENROLL ALTITUDE PASSKEY",
     );
     const { session, authenticatorId } = await addVirtualAuthenticator(page);
     console.log(
-      "Virtual authenticator armed. Click the dashboard's add-passkey control now.",
+      "Virtual authenticator armed. Click the dashboard's create-passkey control now.",
+    );
+    console.log(
+      "If 1Password's own dialog appears instead, the extension is intercepting the ceremony: disable it in chrome://extensions, then click create again.",
     );
     console.log(
       "If the control reports no available authenticator, reload the page once; the authenticator persists across reloads.",
