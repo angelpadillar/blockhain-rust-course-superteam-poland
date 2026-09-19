@@ -23,11 +23,18 @@
     "mail:check": "tsx src/mail-check.ts",
     "mail:pyszne-login": "tsx src/pyszne-login-check.ts",
     "session:reset": "tsx src/reset-wolt-session.ts",
+    "altitude:session": "tsx src/altitude-session.ts",
     "finalize": "tsx src/cli.ts finalize",
     "test": "tsx --test tests/**/*.test.ts",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write \"**/*.{ts,json,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,json,md}\""
+    "format:check": "prettier --check \"**/*.{ts,json,md}\"",
+    "evaluation:worker": "node evaluation/worker.mjs",
+    "evaluation:test": "node --test evaluation/shopping.test.mjs",
+    "jev:start": "npm --prefix jev start",
+    "jev:onboard": "npm --prefix jev run onboard",
+    "jev:test": "npm --prefix jev test",
+    "order:prepare:jev": "node jev/scripts/from-agent.mjs"
   },
   "dependencies": {
     "agentmail": "^0.5.12",
