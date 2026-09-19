@@ -24,6 +24,7 @@
     "mail:pyszne-login": "tsx src/pyszne-login-check.ts",
     "session:reset": "tsx src/reset-wolt-session.ts",
     "altitude:session": "tsx src/altitude-session.ts",
+    "altitude:server": "tsx src/altitude-server.ts",
     "finalize": "tsx src/cli.ts finalize",
     "test": "tsx --test tests/**/*.test.ts",
     "typecheck": "tsc --noEmit",
