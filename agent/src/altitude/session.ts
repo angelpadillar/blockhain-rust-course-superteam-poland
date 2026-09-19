@@ -38,6 +38,7 @@ export interface AltitudePasskeyFile {
 export const CREDENTIAL_NAME = "altitude-passkey.json";
 export const SESSION_ARTIFACT = "altitude-session.json";
 export const ENROLL_TIMEOUT_MS = 5 * 60_000;
+export type AttachMode = "injected" | "supervised";
 
 dotenv.config({ path: envPath, quiet: true });
 
@@ -60,6 +61,10 @@ export function assertAltitudeUrl(raw: string): string {
 
 export function credentialPath(): string {
   return resolve(repoRoot, "agent/out", CREDENTIAL_NAME);
+}
+
+export function hasStoredCredential(): boolean {
+  return existsSync(credentialPath());
 }
 
 export function readStoredCredential(): AltitudePasskeyFile {
@@ -249,16 +254,18 @@ export async function refreshStoredSignCount(
 }
 
 /**
- * A launched profile with the stored passkey injected into a fresh virtual
- * authenticator, so WebAuthn ceremonies resolve without a human prompt.
+ * A launched Altitude profile in either injected mode, where the stored
+ * passkey is added to a fresh virtual authenticator, or supervised mode,
+ * where a human completes the passkey ceremony in the browser window.
  */
 export class AltitudeSession {
   private constructor(
+    readonly mode: AttachMode,
     readonly context: BrowserContext,
     readonly page: Page,
-    readonly cdp: CDPSession,
-    readonly authenticatorId: string,
-    readonly credentialIdPrefix: string,
+    readonly cdp: CDPSession | null,
+    readonly authenticatorId: string | null,
+    readonly credentialIdPrefix: string | null,
     readonly rpId: string | null,
     readonly startedAt: string,
   ) {}
@@ -275,12 +282,33 @@ export class AltitudeSession {
       });
       await page.reload({ waitUntil: "domcontentloaded" });
       return new AltitudeSession(
+        "injected",
         context,
         page,
         session,
         authenticatorId,
         stored.credential.credentialId.slice(0, 16),
         stored.rp_id,
+        new Date().toISOString(),
+      );
+    } catch (error) {
+      await context.close();
+      throw error;
+    }
+  }
+
+  static async attachSupervised(): Promise<AltitudeSession> {
+    const context = await launch();
+    try {
+      const page = await openApp(context);
+      return new AltitudeSession(
+        "supervised",
+        context,
+        page,
+        null,
+        null,
+        null,
+        null,
         new Date().toISOString(),
       );
     } catch (error) {
@@ -296,6 +324,7 @@ export class AltitudeSession {
   }
 
   async syncSignCount(): Promise<number | null> {
+    if (!this.cdp || !this.authenticatorId) return null;
     return refreshStoredSignCount(this.cdp, this.authenticatorId);
   }
 

@@ -1,5 +1,5 @@
 import { writeJson } from "../files.js";
-import type { AltitudeSession } from "./session.js";
+import type { AltitudeSession, AttachMode } from "./session.js";
 
 /**
  * Card command surface exposed by the Altitude daemon.
@@ -14,6 +14,19 @@ export type CardCommand = (typeof CARD_COMMANDS)[number];
 
 export const SETTLEMENT_CURRENCIES = ["USDC", "SOL"] as const;
 export type SettlementCurrency = (typeof SETTLEMENT_CURRENCIES)[number];
+
+export function resolveAttachMode(
+  requested: unknown,
+  credentialStored: boolean,
+): AttachMode {
+  if (requested === undefined || requested === null || requested === "") {
+    return credentialStored ? "injected" : "supervised";
+  }
+  if (requested === "injected" || requested === "supervised") {
+    return requested;
+  }
+  throw new Error('mode must be "injected" or "supervised"');
+}
 
 export interface CardCommandRequest {
   command: CardCommand;

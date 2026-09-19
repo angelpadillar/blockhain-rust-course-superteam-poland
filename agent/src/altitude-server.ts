@@ -10,9 +10,14 @@ import {
   runCardCommand,
   validateCardCommand,
   CARD_COMMANDS,
+  resolveAttachMode,
   type CardCommand,
 } from "./altitude/commands.js";
-import { AltitudeSession, altitudeUrl } from "./altitude/session.js";
+import {
+  AltitudeSession,
+  altitudeUrl,
+  hasStoredCredential,
+} from "./altitude/session.js";
 
 /**
  * Localhost daemon that owns one supervised Altitude browser session.
@@ -23,7 +28,7 @@ import { AltitudeSession, altitudeUrl } from "./altitude/session.js";
  * lands: they validate and observe, and never mutate the account.
  *
  *   GET  /health          daemon and session state
- *   POST /session/attach  launch the profile and inject the passkey
+ *   POST /session/attach  launch the profile in injected or supervised mode
  *   POST /session/close   close the browser
  *   GET  /balance         stubbed balance read
  *   POST /card/<command>  create | fund | freeze | close, all stubbed
@@ -90,10 +95,17 @@ class Daemon {
     if (!this.session) return { attached: false };
     return {
       attached: true,
+      mode: this.session.mode,
       url: this.session.page.url(),
       rp_id: this.session.rpId,
       credential_id_prefix: this.session.credentialIdPrefix,
       started_at: this.session.startedAt,
+      ...(this.session.mode === "supervised"
+        ? {
+            next_step:
+              "complete the passkey login in the browser window, then issue commands",
+          }
+        : {}),
     };
   }
 
@@ -103,10 +115,13 @@ class Daemon {
     return next;
   }
 
-  attach(): Promise<Record<string, unknown>> {
+  attach(mode: "injected" | "supervised"): Promise<Record<string, unknown>> {
     return this.serialize(async () => {
       if (this.session) return this.state();
-      this.session = await AltitudeSession.attach();
+      this.session =
+        mode === "injected"
+          ? await AltitudeSession.attach()
+          : await AltitudeSession.attachSupervised();
       return this.state();
     });
   }
@@ -145,7 +160,13 @@ async function route(
     return;
   }
   if (request.method === "POST" && path === "/session/attach") {
-    send(response, 200, { ok: true, ...(await daemon.attach()) });
+    const body = await readBody(request);
+    const requested =
+      typeof body === "object" && body !== null
+        ? (body as Record<string, unknown>).mode
+        : body;
+    const mode = resolveAttachMode(requested, hasStoredCredential());
+    send(response, 200, { ok: true, ...(await daemon.attach(mode)) });
     return;
   }
   if (request.method === "POST" && path === "/session/close") {

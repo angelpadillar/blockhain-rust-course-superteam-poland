@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
   assertCardAmountWithinCap,
+  resolveAttachMode,
   validateCardCommand,
 } from "../src/altitude/commands.js";
 import { assertAltitudeUrl } from "../src/altitude/session.js";
@@ -16,6 +17,17 @@ test("Altitude target must be an https URL", () => {
     /must be an https URL/,
   );
   assert.throws(() => assertAltitudeUrl("app.altitude.xyz"), /https URL/);
+});
+
+test("Altitude attach mode defaults based on stored credentials", () => {
+  assert.equal(resolveAttachMode(undefined, true), "injected");
+  assert.equal(resolveAttachMode(undefined, false), "supervised");
+  assert.equal(resolveAttachMode("injected", false), "injected");
+  assert.equal(resolveAttachMode("supervised", true), "supervised");
+  assert.throws(
+    () => resolveAttachMode("passkey", true),
+    /mode must be "injected" or "supervised"/,
+  );
 });
 
 test("card funding is capped and settles only in USDC or SOL", () => {

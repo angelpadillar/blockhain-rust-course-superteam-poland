@@ -352,6 +352,15 @@ curl -H "Authorization: Bearer $ALTITUDE_SERVER_TOKEN" -H 'content-type: applica
   -X POST http://127.0.0.1:8787/card/create
 ```
 
+To use the real passkey through the 1Password extension, attach in supervised
+mode and tap the passkey in the browser window before issuing commands:
+
+```bash
+curl -H "Authorization: Bearer $ALTITUDE_SERVER_TOKEN" -H 'content-type: application/json' \
+  -d '{"mode":"supervised"}' \
+  -X POST http://127.0.0.1:8787/session/attach
+```
+
 `/balance` and `/card/create|fund|freeze|close` validate the request against the
 funding policy, screenshot the dashboard and return `status: "stub"` with the
 recon each command still needs. Nothing mutates the Altitude account until those
