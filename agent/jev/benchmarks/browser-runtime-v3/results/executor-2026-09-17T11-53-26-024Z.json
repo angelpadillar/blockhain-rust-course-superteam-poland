@@ -1,0 +1,5533 @@
+{
+  "schemaVersion": 1,
+  "benchmarkKind": "zero_model_execution_benchmark",
+  "startedAt": "2026-09-17T11:53:26.024Z",
+  "seed": 20260917,
+  "protocol": {
+    "repeatsPerCompletionCase": 2,
+    "pairedModes": [
+      "fast",
+      "stepwise"
+    ],
+    "alternatingOrder": true,
+    "expectedStopRepeatsPerMode": 1,
+    "maxMs": 15000,
+    "maxActions": 8,
+    "headless": true,
+    "browserChannel": "chrome",
+    "attemptTiming": "Includes initial page navigation, runtime, and independent fixture verification; excludes context setup and browser launch.",
+    "selectionPolicy": "Deterministic exact goal/context matching plus declared creative-studio-work → Studio shelf semantic oracle; identical policy in both modes.",
+    "modelCalls": 0,
+    "paidApiCalls": 0,
+    "modelSpendUsd": 0,
+    "artificialModelLatencyMs": 0,
+    "scope": "Local neutral fixtures; measures executor behavior only. No general website or model-latency claim."
+  },
+  "sourceHashes": {
+    "benchmark.mjs": "699e080d07f0894ee63931e6b425195534f1aaea034a8cd83d8a75fb55595732",
+    "fixture.mjs": "4af83105dfc2f4132fb45d802a373a77be04617f5907ea6a40e8d8ad56048dd7",
+    "runtime.mjs": "4394932b281cb163298917e220725d27f80c82e8dc92f6af84658aad4c07068e",
+    "browser.mjs": "25d416445ac2c47b1e8d53bf89da64070ad21bc6fc526eb115ff290c5f576273"
+  },
+  "cases": [
+    {
+      "id": "enter-form",
+      "expectation": "complete"
+    },
+    {
+      "id": "live-search",
+      "expectation": "complete"
+    },
+    {
+      "id": "delayed-results",
+      "expectation": "complete"
+    },
+    {
+      "id": "delayed-title",
+      "expectation": "complete"
+    },
+    {
+      "id": "duplicate-labels",
+      "expectation": "complete"
+    },
+    {
+      "id": "node-replacement",
+      "expectation": "complete"
+    },
+    {
+      "id": "unrelated-animation",
+      "expectation": "complete"
+    },
+    {
+      "id": "accessible-cards",
+      "expectation": "complete"
+    },
+    {
+      "id": "semantic-context",
+      "expectation": "complete"
+    },
+    {
+      "id": "empty-result",
+      "expectation": "stop"
+    }
+  ],
+  "attempts": [
+    {
+      "sequence": 1,
+      "caseId": "enter-form",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 287.113,
+        "navigationMs": 66.846,
+        "runtimeMs": 180.299,
+        "verificationMs": 0.641,
+        "totalMs": 247.799
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.9533749999998236,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 47.456208999999944,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 62.80233399999997,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 70.35037499999999,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 99.14095899999984,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 118.17699999999991,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 163.02649999999994,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 179.1719999999998,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 179.95795899999985,
+          "observationMs": 87.01804099999981,
+          "executionMs": 77.31316600000014,
+          "conditionWaitMs": 34.93179199999986,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.261124999999538,
+          "explicitProtocolCalls": 34,
+          "observations": 4,
+          "revalidations": 3,
+          "browserScans": 7,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/db31778483f4a82f3fe6",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.9533749999998236,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 47.456208999999944,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 62.80233399999997,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 70.35037499999999,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 99.14095899999984,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 118.17699999999991,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 163.02649999999994,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 179.1719999999998,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 2,
+      "caseId": "enter-form",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 255.686,
+        "navigationMs": 15.412,
+        "runtimeMs": 1594.705,
+        "verificationMs": 0.706,
+        "totalMs": 1610.852
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3065840000001572,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 26.6467090000001,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 32.88245900000015,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 743.942209,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 773.161542,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 1508.2422090000002,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 1574.646167,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 1593.625667,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 1594.646834,
+          "observationMs": 87.20799999999986,
+          "executionMs": 82.66837399999986,
+          "conditionWaitMs": 52.7707919999998,
+          "settlingMs": 1402.3218329999997,
+          "chooserMs": 0,
+          "eventMs": 0.2130850000000919,
+          "explicitProtocolCalls": 34,
+          "observations": 4,
+          "revalidations": 3,
+          "browserScans": 7,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/db31778483f4a82f3fe6",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3065840000001572,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 26.6467090000001,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 32.88245900000015,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 743.942209,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 773.161542,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 1508.2422090000002,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 1574.646167,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 1593.625667,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 3,
+      "caseId": "enter-form",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 151.733,
+        "navigationMs": 23.327,
+        "runtimeMs": 1568.314,
+        "verificationMs": 0.586,
+        "totalMs": 1592.234
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3516250000002401,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 38.190583999999944,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 53.20329200000015,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 758.800459,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 783.7181250000003,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 1505.8869169999998,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 1549.0692090000002,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 1567.046625,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 1568.2667499999998,
+          "observationMs": 80.93579099999852,
+          "executionMs": 64.47645800000055,
+          "conditionWaitMs": 38.833042000000205,
+          "settlingMs": 1401.4217079999999,
+          "chooserMs": 0,
+          "eventMs": 0.21987499999886495,
+          "explicitProtocolCalls": 34,
+          "observations": 4,
+          "revalidations": 3,
+          "browserScans": 7,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/db31778483f4a82f3fe6",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3516250000002401,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 38.190583999999944,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 53.20329200000015,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 758.800459,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 783.7181250000003,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 1505.8869169999998,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 1549.0692090000002,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 1567.046625,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 4,
+      "caseId": "enter-form",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 173.369,
+        "navigationMs": 28.869,
+        "runtimeMs": 139.26,
+        "verificationMs": 0.53,
+        "totalMs": 168.664
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3326250000000073,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 23.071624999999585,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 34.12304199999926,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 37.02604199999951,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 60.95720799999981,
+          "kind": "press",
+          "ref": "s3:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 81.39204199999949,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 120.94941699999981,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 138.4364169999999,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 139.1819999999998,
+          "observationMs": 62.76791800000137,
+          "executionMs": 60.628082000001086,
+          "conditionWaitMs": 37.85029200000008,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.141460000000734,
+          "explicitProtocolCalls": 34,
+          "observations": 4,
+          "revalidations": 3,
+          "browserScans": 7,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/db31778483f4a82f3fe6",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3326250000000073,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 23.071624999999585,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 34.12304199999926,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 37.02604199999951,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 60.95720799999981,
+            "kind": "press",
+            "ref": "s3:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 81.39204199999949,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 120.94941699999981,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 138.4364169999999,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 5,
+      "caseId": "live-search",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 140.468,
+        "navigationMs": 15.232,
+        "runtimeMs": 830.939,
+        "verificationMs": 0.645,
+        "totalMs": 846.823
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.4413750000003347,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 29.517667000000074,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 41.18525000000045,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 747.622875,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 808.3869169999998,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 829.9788330000001,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 830.7268329999997,
+          "observationMs": 55.27070800000001,
+          "executionMs": 58.29333400000087,
+          "conditionWaitMs": 26.769207999999708,
+          "settlingMs": 701.0524580000001,
+          "chooserMs": 0,
+          "eventMs": 0.15025100000002567,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/aa02375bb6f8018942ee",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.4413750000003347,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 29.517667000000074,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 41.18525000000045,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 747.622875,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 808.3869169999998,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 829.9788330000001,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 6,
+      "caseId": "live-search",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 162.777,
+        "navigationMs": 17.173,
+        "runtimeMs": 126.219,
+        "verificationMs": 0.416,
+        "totalMs": 143.814
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3704999999999927,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 32.74695800000063,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 39.289333000000624,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 55.39208300000064,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 108.04933299999993,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 125.56354100000044,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 126.16366600000038,
+          "observationMs": 65.26062599999932,
+          "executionMs": 51.013459000000694,
+          "conditionWaitMs": 33.486041000000114,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.15129199999955745,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/aa02375bb6f8018942ee",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3704999999999927,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 32.74695800000063,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 39.289333000000624,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 55.39208300000064,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 108.04933299999993,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 125.56354100000044,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 7,
+      "caseId": "live-search",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 121.852,
+        "navigationMs": 19.309,
+        "runtimeMs": 92.398,
+        "verificationMs": 0.377,
+        "totalMs": 112.089
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.26674999999977445,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 27.127707999999984,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 33.42712500000016,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 37.39350000000013,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 75.46062499999971,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 91.84679199999937,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 92.34254199999941,
+          "observationMs": 46.774875999999495,
+          "executionMs": 38.36895899999945,
+          "conditionWaitMs": 20.26795899999979,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.08820800000012241,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/aa02375bb6f8018942ee",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.26674999999977445,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 27.127707999999984,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 33.42712500000016,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 37.39350000000013,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 75.46062499999971,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 91.84679199999937,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 8,
+      "caseId": "live-search",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 135.384,
+        "navigationMs": 11.234,
+        "runtimeMs": 838.134,
+        "verificationMs": 0.796,
+        "totalMs": 850.17
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.22954099999969912,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 24.043541000000005,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 29.9614160000001,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 741.1300410000003,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 816.1700000000001,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 836.9395830000003,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 838.0751250000003,
+          "observationMs": 53.72791599999982,
+          "executionMs": 72.37133300000096,
+          "conditionWaitMs": 30.58508299999994,
+          "settlingMs": 701.1476670000002,
+          "chooserMs": 0,
+          "eventMs": 0.11066399999981513,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/aa02375bb6f8018942ee",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.22954099999969912,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 24.043541000000005,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 29.9614160000001,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 741.1300410000003,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 816.1700000000001,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 836.9395830000003,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 9,
+      "caseId": "delayed-results",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 131.051,
+        "navigationMs": 17.227,
+        "runtimeMs": 787.802,
+        "verificationMs": 0.464,
+        "totalMs": 805.498
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.8381669999998849,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 45.844084000000294,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 51.71491699999933,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 711.183167000001,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 765.1680840000008,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 787.2838339999998,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 787.729209000001,
+          "observationMs": 725.403749000001,
+          "executionMs": 51.234583000001294,
+          "conditionWaitMs": 681.4279580000002,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.179959000000963,
+          "explicitProtocolCalls": 31,
+          "observations": 5,
+          "revalidations": 2,
+          "browserScans": 10,
+          "observerWakeups": 1,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/1445691a67bc961d3509",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.8381669999998849,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 45.844084000000294,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 51.71491699999933,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 711.183167000001,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 765.1680840000008,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 787.2838339999998,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 10,
+      "caseId": "delayed-results",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 157.071,
+        "navigationMs": 17.072,
+        "runtimeMs": 849.843,
+        "verificationMs": 0.648,
+        "totalMs": 867.574
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3087500000001455,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 28.448749999999563,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 41.27774999999929,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 749.7349169999998,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 830.3052090000001,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 849.1092499999995,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 849.7929169999989,
+          "observationMs": 53.61666800000057,
+          "executionMs": 78.82245900000089,
+          "conditionWaitMs": 26.160957999998573,
+          "settlingMs": 700.8800410000003,
+          "chooserMs": 0,
+          "eventMs": 0.13841800000227522,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/1445691a67bc961d3509",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3087500000001455,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 28.448749999999563,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 41.27774999999929,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 749.7349169999998,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 830.3052090000001,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 849.1092499999995,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 11,
+      "caseId": "delayed-results",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 132.762,
+        "navigationMs": 23.515,
+        "runtimeMs": 815.931,
+        "verificationMs": 0.686,
+        "totalMs": 840.139
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.522291999999652,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 26.0072080000009,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 32.590416999999434,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 738.9987079999992,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 794.1721670000006,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 815.2362080000003,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 815.8765000000003,
+          "observationMs": 50.77075100000002,
+          "executionMs": 54.21687500000007,
+          "conditionWaitMs": 25.877791999999317,
+          "settlingMs": 701.405917,
+          "chooserMs": 0,
+          "eventMs": 0.13375000000087311,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/1445691a67bc961d3509",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.522291999999652,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 26.0072080000009,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 32.590416999999434,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 738.9987079999992,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 794.1721670000006,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 815.2362080000003,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 12,
+      "caseId": "delayed-results",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 137.904,
+        "navigationMs": 16.582,
+        "runtimeMs": 808.219,
+        "verificationMs": 0.435,
+        "totalMs": 825.245
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3550409999988915,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 33.01941599999918,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 40.0685829999984,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 708.2729579999996,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 788.7982079999983,
+          "kind": "click",
+          "ref": "s5:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 807.6791659999999,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 808.1810409999998,
+          "observationMs": 718.4927079999998,
+          "executionMs": 77.92987399999947,
+          "conditionWaitMs": 686.9775000000009,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.21054200000071432,
+          "explicitProtocolCalls": 31,
+          "observations": 5,
+          "revalidations": 2,
+          "browserScans": 10,
+          "observerWakeups": 1,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/1445691a67bc961d3509",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3550409999988915,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 33.01941599999918,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 40.0685829999984,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 708.2729579999996,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 788.7982079999983,
+            "kind": "click",
+            "ref": "s5:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 807.6791659999999,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 13,
+      "caseId": "delayed-title",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 146.421,
+        "navigationMs": 14.281,
+        "runtimeMs": 1485.401,
+        "verificationMs": 0.674,
+        "totalMs": 1500.363
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.32358299999941664,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 30.30683300000055,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 41.2143329999999,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 750.9277910000001,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 833.4263329999994,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 1484.795083000001,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 1485.3661250000005,
+          "observationMs": 688.6717930000013,
+          "executionMs": 83.99341600000116,
+          "conditionWaitMs": 659.9151669999992,
+          "settlingMs": 701.0342499999988,
+          "chooserMs": 0,
+          "eventMs": 0.11220700000376382,
+          "explicitProtocolCalls": 31,
+          "observations": 5,
+          "revalidations": 2,
+          "browserScans": 10,
+          "observerWakeups": 1,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/2756a4fbf29bf63693fd",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.32358299999941664,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 30.30683300000055,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 41.2143329999999,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 750.9277910000001,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 833.4263329999994,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 1484.795083000001,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 14,
+      "caseId": "delayed-title",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 153.019,
+        "navigationMs": 18.754,
+        "runtimeMs": 788.794,
+        "verificationMs": 3.405,
+        "totalMs": 810.974
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.7733750000006694,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 30.637124999999287,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 42.60383399999955,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 50.64466700000048,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 137.20116699999926,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 787.8790840000001,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 788.6873340000002,
+          "observationMs": 686.928624000002,
+          "executionMs": 83.02291699999842,
+          "conditionWaitMs": 658.6037500000002,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.16600199999811593,
+          "explicitProtocolCalls": 31,
+          "observations": 5,
+          "revalidations": 2,
+          "browserScans": 10,
+          "observerWakeups": 1,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/2756a4fbf29bf63693fd",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.7733750000006694,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 30.637124999999287,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 42.60383399999955,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 50.64466700000048,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 137.20116699999926,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 787.8790840000001,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 15,
+      "caseId": "delayed-title",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 159.91,
+        "navigationMs": 20.291,
+        "runtimeMs": 764.503,
+        "verificationMs": 1.291,
+        "totalMs": 786.095
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.31016700000145647,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 22.914167000000816,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 28.85912500000086,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 33.90541699999994,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 103.92745900000045,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 763.1573340000014,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 764.4457500000008,
+          "observationMs": 685.3387930000008,
+          "executionMs": 70.02354299999934,
+          "conditionWaitMs": 664.1090839999997,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.14745899999979883,
+          "explicitProtocolCalls": 31,
+          "observations": 5,
+          "revalidations": 2,
+          "browserScans": 10,
+          "observerWakeups": 1,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/2756a4fbf29bf63693fd",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.31016700000145647,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 22.914167000000816,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 28.85912500000086,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 33.90541699999994,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 103.92745900000045,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 763.1573340000014,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 16,
+      "caseId": "delayed-title",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 145.208,
+        "navigationMs": 16.068,
+        "runtimeMs": 1455.291,
+        "verificationMs": 1.123,
+        "totalMs": 1472.493
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3366669999995793,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 32.02179199999955,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 39.49433300000055,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 751.118124999999,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 803.6095420000001,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 1454.1297500000019,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 1455.2535829999997,
+          "observationMs": 690.8210000000036,
+          "executionMs": 51.96691700000156,
+          "conditionWaitMs": 661.2728339999994,
+          "settlingMs": 700.7026670000014,
+          "chooserMs": 0,
+          "eventMs": 0.19641699999556295,
+          "explicitProtocolCalls": 31,
+          "observations": 5,
+          "revalidations": 2,
+          "browserScans": 10,
+          "observerWakeups": 1,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/2756a4fbf29bf63693fd",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3366669999995793,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 32.02179199999955,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 39.49433300000055,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 751.118124999999,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 803.6095420000001,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 1454.1297500000019,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 17,
+      "caseId": "duplicate-labels",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 160.57,
+        "navigationMs": 20.606,
+        "runtimeMs": 143.577,
+        "verificationMs": 0.511,
+        "totalMs": 164.699
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.5649579999990237,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 29.70483299999978,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 37.936499999999796,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 49.597249999998894,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 123.52999999999884,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 142.99345800000083,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 143.51187500000015,
+          "observationMs": 59.70616700000028,
+          "executionMs": 74.78616599999805,
+          "conditionWaitMs": 31.03845900000306,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.1006249999954889,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/dcd6b23f8c6adfbae7a8",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.5649579999990237,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 29.70483299999978,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 37.936499999999796,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 49.597249999998894,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 123.52999999999884,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 142.99345800000083,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 18,
+      "caseId": "duplicate-labels",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 143.744,
+        "navigationMs": 18.338,
+        "runtimeMs": 854.358,
+        "verificationMs": 0.658,
+        "totalMs": 873.37
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.581291999998939,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 25.46479199999885,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 38.30804199999693,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 753.3770420000001,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 834.775999999998,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 853.4927499999976,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 854.3160829999979,
+          "observationMs": 56.1273340000007,
+          "executionMs": 83.50716699999975,
+          "conditionWaitMs": 32.36308300000019,
+          "settlingMs": 701.192332999999,
+          "chooserMs": 0,
+          "eventMs": 0.1544179999982589,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/dcd6b23f8c6adfbae7a8",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.581291999998939,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 25.46479199999885,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 38.30804199999693,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 753.3770420000001,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 834.775999999998,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 853.4927499999976,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 19,
+      "caseId": "duplicate-labels",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 138.555,
+        "navigationMs": 21.269,
+        "runtimeMs": 853.129,
+        "verificationMs": 0.756,
+        "totalMs": 875.159
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.24029200000222772,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 24.46058400000038,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 37.34337500000038,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 748.6554590000014,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 832.3483750000014,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 852.5165420000012,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 853.1087090000001,
+          "observationMs": 52.916542999999365,
+          "executionMs": 80.4164589999964,
+          "conditionWaitMs": 29.403792000000976,
+          "settlingMs": 701.7746249999982,
+          "chooserMs": 0,
+          "eventMs": 0.12829100000817562,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/dcd6b23f8c6adfbae7a8",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.24029200000222772,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 24.46058400000038,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 37.34337500000038,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 748.6554590000014,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 832.3483750000014,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 852.5165420000012,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 20,
+      "caseId": "duplicate-labels",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 134.464,
+        "navigationMs": 19.129,
+        "runtimeMs": 107.403,
+        "verificationMs": 0.472,
+        "totalMs": 127.014
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.6671249999999418,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 27.31708399999843,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 33.75641700000051,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 39.48675000000003,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 88.53095899999971,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 106.74237499999799,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 107.36812500000087,
+          "observationMs": 50.01516800000172,
+          "executionMs": 47.916541000002326,
+          "conditionWaitMs": 23.842874999998457,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.12279299999863724,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/dcd6b23f8c6adfbae7a8",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.6671249999999418,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 27.31708399999843,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 33.75641700000051,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 39.48675000000003,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 88.53095899999971,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 106.74237499999799,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 21,
+      "caseId": "node-replacement",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 130.611,
+        "navigationMs": 16.861,
+        "runtimeMs": 803.397,
+        "verificationMs": 0.465,
+        "totalMs": 820.727
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.46833300000071176,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 22.20220800000243,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 27.306166000002122,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 736.2575830000023,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 781.210500000001,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 802.9099999999999,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 803.3822910000017,
+          "observationMs": 50.09508199999618,
+          "executionMs": 40.61187499999869,
+          "conditionWaitMs": 29.14008300000205,
+          "settlingMs": 701.2706670000007,
+          "chooserMs": 0,
+          "eventMs": 0.16149899999800255,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/08dcb50f0bf3b161b86e",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.46833300000071176,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 22.20220800000243,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 27.306166000002122,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 736.2575830000023,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 781.210500000001,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 802.9099999999999,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 22,
+      "caseId": "node-replacement",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 154.357,
+        "navigationMs": 14.174,
+        "runtimeMs": 115.125,
+        "verificationMs": 0.519,
+        "totalMs": 129.823
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.46541699999943376,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 28.709333999999217,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 35.66191700000127,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 40.06879200000185,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 97.41045899999881,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 114.62595900000088,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 115.09891699999935,
+          "observationMs": 49.31608299999789,
+          "executionMs": 57.244793000001664,
+          "conditionWaitMs": 21.534082999998645,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.16070800000306917,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/08dcb50f0bf3b161b86e",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.46541699999943376,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 28.709333999999217,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 35.66191700000127,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 40.06879200000185,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 97.41045899999881,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 114.62595900000088,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 23,
+      "caseId": "node-replacement",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 135.649,
+        "navigationMs": 23.702,
+        "runtimeMs": 101.335,
+        "verificationMs": 0.619,
+        "totalMs": 125.661
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.270249999997759,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 20.09137499999997,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 26.993083999997907,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 31.95074999999997,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 82.21495899999718,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 100.64099999999962,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 101.31308399999762,
+          "observationMs": 42.65649999999732,
+          "executionMs": 49.391625000000204,
+          "conditionWaitMs": 23.292542000002868,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.1169999999947322,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/08dcb50f0bf3b161b86e",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.270249999997759,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 20.09137499999997,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 26.993083999997907,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 31.95074999999997,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 82.21495899999718,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 100.64099999999962,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 24,
+      "caseId": "node-replacement",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 138.146,
+        "navigationMs": 13.469,
+        "runtimeMs": 848.065,
+        "verificationMs": 0.458,
+        "totalMs": 861.995
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.22333299999809242,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 27.39087500000096,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 33.748499999997875,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 748.3716249999998,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 827.7455000000009,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 847.5813329999983,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 848.0484159999978,
+          "observationMs": 60.36891699999978,
+          "executionMs": 77.58745699999781,
+          "conditionWaitMs": 33.81475000000137,
+          "settlingMs": 700.4759580000027,
+          "chooserMs": 0,
+          "eventMs": 0.1322519999994256,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/08dcb50f0bf3b161b86e",
+          "title": "Moss Trail Sketchbook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.22333299999809242,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 27.39087500000096,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 33.748499999997875,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 748.3716249999998,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 827.7455000000009,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 847.5813329999983,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 25,
+      "caseId": "unrelated-animation",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 162.547,
+        "navigationMs": 27.018,
+        "runtimeMs": 112.287,
+        "verificationMs": 0.494,
+        "totalMs": 139.806
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.45008299999972223,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 29.409082999998645,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 35.34779100000014,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 39.69341599999825,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 93.31679099999747,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 111.35362499999974,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 112.25187499999811,
+          "observationMs": 50.851252000004024,
+          "executionMs": 51.700958000001265,
+          "conditionWaitMs": 22.313042000001587,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.11058500000217464,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/7d13004883942b8d9d21",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.45008299999972223,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 29.409082999998645,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 35.34779100000014,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 39.69341599999825,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 93.31679099999747,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 111.35362499999974,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 26,
+      "caseId": "unrelated-animation",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 135.83,
+        "navigationMs": 16.494,
+        "runtimeMs": 822.614,
+        "verificationMs": 0.636,
+        "totalMs": 839.749
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.7115410000005795,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 27.375332999999955,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 33.598291000002064,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 737.0491250000014,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 804.8533749999988,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 822.0293750000019,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 822.5877499999988,
+          "observationMs": 46.365624999998545,
+          "executionMs": 68.23929099999805,
+          "conditionWaitMs": 20.098291000002064,
+          "settlingMs": 700.4188749999994,
+          "chooserMs": 0,
+          "eventMs": 0.11225099999865051,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/7d13004883942b8d9d21",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.7115410000005795,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 27.375332999999955,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 33.598291000002064,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 737.0491250000014,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 804.8533749999988,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 822.0293750000019,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 27,
+      "caseId": "unrelated-animation",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 136.215,
+        "navigationMs": 16.977,
+        "runtimeMs": 858.015,
+        "verificationMs": 0.738,
+        "totalMs": 875.761
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.36779200000091805,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 26.0915419999983,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 38.16795799999818,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 743.1293750000004,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 837.2748329999995,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 857.1362079999999,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 857.9917080000014,
+          "observationMs": 49.232584000001225,
+          "executionMs": 92.57908300000054,
+          "conditionWaitMs": 23.984165999998368,
+          "settlingMs": 700.7117909999979,
+          "chooserMs": 0,
+          "eventMs": 0.1765430000014021,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/7d13004883942b8d9d21",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.36779200000091805,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 26.0915419999983,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 38.16795799999818,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 743.1293750000004,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 837.2748329999995,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 857.1362079999999,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 28,
+      "caseId": "unrelated-animation",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 131.683,
+        "navigationMs": 14.815,
+        "runtimeMs": 112.188,
+        "verificationMs": 0.392,
+        "totalMs": 127.399
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 1.258417000000918,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 31.635458000000654,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 39.03120800000033,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 43.12275000000227,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 95.17158300000301,
+          "kind": "click",
+          "ref": "s3:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 111.71229200000016,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 112.14325000000099,
+          "observationMs": 50.54854200000409,
+          "executionMs": 52.53849999999875,
+          "conditionWaitMs": 20.536668000000645,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.11625099999946542,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/7d13004883942b8d9d21",
+          "title": "Harbor Grid Planner"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 1.258417000000918,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 31.635458000000654,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 39.03120800000033,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 43.12275000000227,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 95.17158300000301,
+            "kind": "click",
+            "ref": "s3:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 111.71229200000016,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 29,
+      "caseId": "accessible-cards",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 147.322,
+        "navigationMs": 12.153,
+        "runtimeMs": 2472.714,
+        "verificationMs": 0.493,
+        "totalMs": 2485.364
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.23704200000065612,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 26.359458000002633,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 32.43437500000073,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 1653.7789169999996,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 1682.873125000002,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 2417.805500000002,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 2452.1215420000008,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 2472.036500000002,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 2472.688750000001,
+          "observationMs": 997.1104579999992,
+          "executionMs": 54.54845899999782,
+          "conditionWaitMs": 967.9310420000002,
+          "settlingMs": 1401.3453749999971,
+          "chooserMs": 0,
+          "eventMs": 0.2602089999927557,
+          "explicitProtocolCalls": 43,
+          "observations": 7,
+          "revalidations": 3,
+          "browserScans": 13,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/c8e3775db5d837738c7a",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.23704200000065612,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 26.359458000002633,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 32.43437500000073,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 1653.7789169999996,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 1682.873125000002,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 2417.805500000002,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 2452.1215420000008,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 2472.036500000002,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 30,
+      "caseId": "accessible-cards",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 157.216,
+        "navigationMs": 19.953,
+        "runtimeMs": 1050.822,
+        "verificationMs": 0.488,
+        "totalMs": 1071.268
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.5261659999996482,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 24.677625000000262,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 30.35150000000067,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 952.0838750000003,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 977.8899160000001,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 999.6522910000022,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 1032.7100830000018,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 1050.1603749999995,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 1050.8001250000016,
+          "observationMs": 982.6536670000023,
+          "executionMs": 53.13408200000049,
+          "conditionWaitMs": 948.0210829999996,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.2290850000026694,
+          "explicitProtocolCalls": 43,
+          "observations": 7,
+          "revalidations": 3,
+          "browserScans": 13,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/c8e3775db5d837738c7a",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.5261659999996482,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 24.677625000000262,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 30.35150000000067,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 952.0838750000003,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 977.8899160000001,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 999.6522910000022,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 1032.7100830000018,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 1050.1603749999995,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 31,
+      "caseId": "accessible-cards",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 147.093,
+        "navigationMs": 15.146,
+        "runtimeMs": 1064.923,
+        "verificationMs": 0.664,
+        "totalMs": 1080.738
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.33454100000017206,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 26.91479100000288,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 33.3705829999999,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 948.7349160000012,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 974.2368330000027,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 995.6721660000003,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 1044.6597080000029,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 1064.286916000001,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 1064.9001659999994,
+          "observationMs": 980.3296669999945,
+          "executionMs": 69.44175099999848,
+          "conditionWaitMs": 949.7792499999996,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.20291599999836762,
+          "explicitProtocolCalls": 43,
+          "observations": 7,
+          "revalidations": 3,
+          "browserScans": 13,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/c8e3775db5d837738c7a",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.33454100000017206,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 26.91479100000288,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 33.3705829999999,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 948.7349160000012,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 974.2368330000027,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 995.6721660000003,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 1044.6597080000029,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 1064.286916000001,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 32,
+      "caseId": "accessible-cards",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 142.478,
+        "navigationMs": 16.985,
+        "runtimeMs": 2467.826,
+        "verificationMs": 0.801,
+        "totalMs": 2485.617
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.5518339999980526,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 28.488916999998764,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 33.921542000000045,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 1650.101749999998,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 1668.8294590000005,
+          "kind": "press",
+          "ref": "s6:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 2401.2047920000005,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 2446.7849590000005,
+          "kind": "click",
+          "ref": "s8:e1"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 2467.183792,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 2467.8033749999995,
+          "observationMs": 989.13337399999,
+          "executionMs": 59.16645799999969,
+          "conditionWaitMs": 960.2781249999971,
+          "settlingMs": 1402.8420009999973,
+          "chooserMs": 0,
+          "eventMs": 0.20758399999976973,
+          "explicitProtocolCalls": 43,
+          "observations": 7,
+          "revalidations": 3,
+          "browserScans": 13,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/c8e3775db5d837738c7a",
+          "title": "Cedar Arc Journal"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.5518339999980526,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 28.488916999998764,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 33.921542000000045,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 1650.101749999998,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 1668.8294590000005,
+            "kind": "press",
+            "ref": "s6:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 2401.2047920000005,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 2446.7849590000005,
+            "kind": "click",
+            "ref": "s8:e1"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 2467.183792,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 33,
+      "caseId": "semantic-context",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 1,
+      "timings": {
+        "contextSetupMs": 149.286,
+        "navigationMs": 19.611,
+        "runtimeMs": 111.95,
+        "verificationMs": 0.381,
+        "totalMs": 131.946
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3001250000015716,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 28.46100000000297,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 34.143292000000656,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 40.12416700000176,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 94.4363749999975,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 111.49629199999617,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 111.92579200000182,
+          "observationMs": 49.600374000001466,
+          "executionMs": 52.744581999999355,
+          "conditionWaitMs": 21.817000000002736,
+          "settlingMs": 0,
+          "chooserMs": 1.078125,
+          "eventMs": 0.13191700000606943,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 6,
+          "observerWakeups": 1,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 1,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/6b4cc6dbbf7b00fe8a0f",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3001250000015716,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 28.46100000000297,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 34.143292000000656,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 40.12416700000176,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 94.4363749999975,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 111.49629199999617,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 34,
+      "caseId": "semantic-context",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 1,
+      "timings": {
+        "contextSetupMs": 132.337,
+        "navigationMs": 11.6,
+        "runtimeMs": 824.222,
+        "verificationMs": 0.386,
+        "totalMs": 836.211
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.23712499999965075,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 22.12220900000102,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 28.44379199999821,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 739.1201250000013,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 805.0042089999988,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 823.7615839999999,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 824.2057920000007,
+          "observationMs": 48.770417000007,
+          "executionMs": 64.10620900000504,
+          "conditionWaitMs": 27.454791999996814,
+          "settlingMs": 701.7315830000007,
+          "chooserMs": 0.08245800000440795,
+          "eventMs": 0.09620900001027621,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 1,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/6b4cc6dbbf7b00fe8a0f",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.23712499999965075,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 22.12220900000102,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 28.44379199999821,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 739.1201250000013,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 805.0042089999988,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 823.7615839999999,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 35,
+      "caseId": "semantic-context",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "stepwise",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 1,
+      "timings": {
+        "contextSetupMs": 147.119,
+        "navigationMs": 15.867,
+        "runtimeMs": 832.189,
+        "verificationMs": 0.898,
+        "totalMs": 848.962
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.28800000000046566,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 31.351167000000714,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 38.01716699999815,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 749.869958000003,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 812.9151249999995,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 831.4210830000011,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 832.1601250000022,
+          "observationMs": 60.713167000001704,
+          "executionMs": 57.201666999993904,
+          "conditionWaitMs": 30.50095899998996,
+          "settlingMs": 699.602208999997,
+          "chooserMs": 0.08733299999585142,
+          "eventMs": 0.08891600000788458,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 1,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/6b4cc6dbbf7b00fe8a0f",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.28800000000046566,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 31.351167000000714,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 38.01716699999815,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 749.869958000003,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 812.9151249999995,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 831.4210830000011,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 36,
+      "caseId": "semantic-context",
+      "seed": 20260917,
+      "repeat": 2,
+      "mode": "fast",
+      "expectation": "complete",
+      "completed": true,
+      "expectedStopVerified": false,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 1,
+      "timings": {
+        "contextSetupMs": 137.204,
+        "navigationMs": 15.058,
+        "runtimeMs": 120.126,
+        "verificationMs": 0.389,
+        "totalMs": 135.577
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.5343329999959678,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 32.93262500000128,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 47.30204099999537,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 55.22295799999847,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 101.19645799999853,
+          "kind": "click",
+          "ref": "s3:e2"
+        },
+        {
+          "type": "opened",
+          "elapsedMs": 119.63687499999651,
+          "independentlyVerified": false
+        }
+      ],
+      "runtime": {
+        "status": "opened",
+        "reason": null,
+        "metrics": {
+          "totalMs": 120.10325000000012,
+          "observationMs": 58.18024999999761,
+          "executionMs": 47.12700000000768,
+          "conditionWaitMs": 26.216542000001937,
+          "settlingMs": 0,
+          "chooserMs": 0.04258300000219606,
+          "eventMs": 0.10825000001204899,
+          "explicitProtocolCalls": 25,
+          "observations": 3,
+          "revalidations": 2,
+          "browserScans": 5,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 2,
+          "nativeActionsCompleted": 2,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 1,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/items/6b4cc6dbbf7b00fe8a0f",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.5343329999959678,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 32.93262500000128,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 47.30204099999537,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 55.22295799999847,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 101.19645799999853,
+            "kind": "click",
+            "ref": "s3:e2"
+          },
+          {
+            "type": "opened",
+            "elapsedMs": 119.63687499999651,
+            "independentlyVerified": false
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "exactDetailRoute": true,
+          "visibleExactTitle": true,
+          "exactCollection": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 3
+    },
+    {
+      "sequence": 37,
+      "caseId": "empty-result",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "fast",
+      "expectation": "stop",
+      "completed": false,
+      "expectedStopVerified": true,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 133.741,
+        "navigationMs": 11.237,
+        "runtimeMs": 34.736,
+        "verificationMs": 0.342,
+        "totalMs": 46.318
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.45337499999732245,
+          "mode": "fast"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 26.30541699999594,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 31.47141699999338,
+          "kind": "fill",
+          "ref": "s1:e0"
+        }
+      ],
+      "runtime": {
+        "status": "incomplete",
+        "reason": "empty_results",
+        "metrics": {
+          "totalMs": 34.715416999999434,
+          "observationMs": 28.530040999998164,
+          "executionMs": 2.796042000001762,
+          "conditionWaitMs": 2.871541000000434,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0.04837499999121064,
+          "explicitProtocolCalls": 15,
+          "observations": 2,
+          "revalidations": 1,
+          "browserScans": 3,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 1,
+          "nativeActionsCompleted": 1,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 0,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/cases/empty-result",
+          "title": "Paper and Pencil Library"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.45337499999732245,
+            "mode": "fast"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 26.30541699999594,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 31.47141699999338,
+            "kind": "fill",
+            "ref": "s1:e0"
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "stop",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "cataloguePage": true,
+          "visibleEmptyResult": true,
+          "noDetailTitle": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 2
+    },
+    {
+      "sequence": 38,
+      "caseId": "empty-result",
+      "seed": 20260917,
+      "repeat": 1,
+      "mode": "stepwise",
+      "expectation": "stop",
+      "completed": false,
+      "expectedStopVerified": true,
+      "modelCalls": 0,
+      "paidApiCalls": 0,
+      "chooseCalls": 0,
+      "timings": {
+        "contextSetupMs": 135.935,
+        "navigationMs": 20.595,
+        "runtimeMs": 741.254,
+        "verificationMs": 1.156,
+        "totalMs": 763.014
+      },
+      "events": [
+        {
+          "type": "started",
+          "elapsedMs": 0.3099159999983385,
+          "mode": "stepwise"
+        },
+        {
+          "type": "action_planned",
+          "elapsedMs": 25.541582999998354,
+          "kind": "fill",
+          "ref": "s1:e0"
+        },
+        {
+          "type": "action_completed",
+          "elapsedMs": 31.478165999993507,
+          "kind": "fill",
+          "ref": "s1:e0"
+        }
+      ],
+      "runtime": {
+        "status": "incomplete",
+        "reason": "empty_results",
+        "metrics": {
+          "totalMs": 741.2233749999941,
+          "observationMs": 32.273001000001386,
+          "executionMs": 3.395291000000725,
+          "conditionWaitMs": 7.361499999999069,
+          "settlingMs": 701.2612089999966,
+          "chooserMs": 0,
+          "eventMs": 0.040624999994179234,
+          "explicitProtocolCalls": 15,
+          "observations": 2,
+          "revalidations": 1,
+          "browserScans": 3,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 1,
+          "nativeActionsCompleted": 1,
+          "fillAttempts": 1,
+          "pressAttempts": 0,
+          "clickAttempts": 0,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "final": {
+          "url": "http://127.0.0.1:52656/cases/empty-result",
+          "title": "Paper and Pencil Library"
+        },
+        "events": [
+          {
+            "type": "started",
+            "elapsedMs": 0.3099159999983385,
+            "mode": "stepwise"
+          },
+          {
+            "type": "action_planned",
+            "elapsedMs": 25.541582999998354,
+            "kind": "fill",
+            "ref": "s1:e0"
+          },
+          {
+            "type": "action_completed",
+            "elapsedMs": 31.478165999993507,
+            "kind": "fill",
+            "ref": "s1:e0"
+          }
+        ],
+        "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+        "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+      },
+      "verification": {
+        "expectation": "stop",
+        "passed": true,
+        "checks": {
+          "localOrigin": true,
+          "cataloguePage": true,
+          "visibleEmptyResult": true,
+          "noDetailTitle": true
+        }
+      },
+      "withinDeadline": true,
+      "blockedRequests": 0,
+      "fixtureRequests": 2
+    }
+  ],
+  "browserLaunchMs": 733.726,
+  "environment": {
+    "browserVersion": "153.0.8010.48",
+    "nodeVersion": "v24.14.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "finishedAt": "2026-09-17T11:54:02.146Z",
+  "finalSourceHashes": {
+    "benchmark.mjs": "699e080d07f0894ee63931e6b425195534f1aaea034a8cd83d8a75fb55595732",
+    "fixture.mjs": "4af83105dfc2f4132fb45d802a373a77be04617f5907ea6a40e8d8ad56048dd7",
+    "runtime.mjs": "4394932b281cb163298917e220725d27f80c82e8dc92f6af84658aad4c07068e",
+    "browser.mjs": "25d416445ac2c47b1e8d53bf89da64070ad21bc6fc526eb115ff290c5f576273"
+  },
+  "sourceUnchanged": true,
+  "summary": {
+    "arms": {
+      "fast": {
+        "attempted": 18,
+        "completed": 18,
+        "failed": 0,
+        "allAttemptMs": {
+          "n": 18,
+          "median": 154.257,
+          "min": 112.089,
+          "max": 1080.738
+        },
+        "verifiedCompletionMs": {
+          "n": 18,
+          "median": 154.257,
+          "min": 112.089,
+          "max": 1080.738
+        },
+        "navigationMs": {
+          "n": 18,
+          "median": 19.219,
+          "min": 14.174,
+          "max": 66.846
+        },
+        "runtimeMs": {
+          "n": 18,
+          "median": 132.74,
+          "min": 92.398,
+          "max": 1064.923
+        },
+        "verificationMs": {
+          "n": 18,
+          "median": 0.491,
+          "min": 0.377,
+          "max": 3.405
+        }
+      },
+      "stepwise": {
+        "attempted": 18,
+        "completed": 18,
+        "failed": 0,
+        "allAttemptMs": {
+          "n": 18,
+          "median": 870.472,
+          "min": 820.727,
+          "max": 2485.617
+        },
+        "verifiedCompletionMs": {
+          "n": 18,
+          "median": 870.472,
+          "min": 820.727,
+          "max": 2485.617
+        },
+        "navigationMs": {
+          "n": 18,
+          "median": 16.281,
+          "min": 11.234,
+          "max": 23.515
+        },
+        "runtimeMs": {
+          "n": 18,
+          "median": 851.486,
+          "min": 803.397,
+          "max": 2472.714
+        },
+        "verificationMs": {
+          "n": 18,
+          "median": 0.666,
+          "min": 0.386,
+          "max": 1.123
+        }
+      }
+    },
+    "pairs": {
+      "attempted": 18,
+      "bothCompleted": 18,
+      "stepwiseMinusFastMs": {
+        "n": 18,
+        "median": 711.028,
+        "min": 14.894,
+        "max": 1423.57
+      },
+      "stepwiseOverFastRatio": {
+        "n": 18,
+        "median": 6.134,
+        "min": 1.018,
+        "max": 9.44
+      }
+    },
+    "expectedStops": {
+      "fast": {
+        "attempted": 1,
+        "verifiedStops": 1,
+        "totalMs": {
+          "n": 1,
+          "median": 46.318,
+          "min": 46.318,
+          "max": 46.318
+        }
+      },
+      "stepwise": {
+        "attempted": 1,
+        "verifiedStops": 1,
+        "totalMs": {
+          "n": 1,
+          "median": 763.014,
+          "min": 763.014,
+          "max": 763.014
+        }
+      }
+    }
+  }
+}

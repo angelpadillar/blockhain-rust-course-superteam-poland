@@ -1,0 +1,15 @@
+{
+  "adapter": "glovo",
+  "storeUrl": "https://glovoapp.com/pl/pl/krakow/stores/duzy-ben-krk",
+  "merchant": "Duży Ben",
+  "destinationLabel": "Hackathon venue",
+  "expectedAddress": "REPLACE WITH THE VISIBLE DELIVERY STREET AND NUMBER",
+  "privateValues": [],
+  "maxPln": 26,
+  "maxSteps": 30,
+  "maxRunMs": 120000,
+  "maxModelUsd": 0.05,
+  "inputUsdPerMillion": 0.042,
+  "outputUsdPerMillion": 0,
+  "model": "jev-latest"
+}

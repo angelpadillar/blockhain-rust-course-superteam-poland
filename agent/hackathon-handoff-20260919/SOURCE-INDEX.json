@@ -1,0 +1,62 @@
+{
+  "preparedAt": "2026-09-19T07:54:11.364295+00:00",
+  "sources": [
+    {
+      "path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/jev/PROJECT-DIRECTION.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/jev/benchmarks/method-comparison/REPORT.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/jev/BROWSER-SERVICE-HANDOFF.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/.chatgpt-projects/g-p-6aa9333e75ec819191c885b0d61cc0e7/tools/browser-readiness-20260919/VPS-RESULTS.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/.chatgpt-projects/g-p-6aa9333e75ec819191c885b0d61cc0e7/tools/browser-readiness-20260919/vps-deployment-verification.json",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/.chatgpt-projects/g-p-6aa9333e75ec819191c885b0d61cc0e7/captions-editor-camoufox/AUTOMATION.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/.chatgpt-projects/g-p-6aa9333e75ec819191c885b0d61cc0e7/captions-editor-camoufox/README.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/.chatgpt-projects/g-p-6aa9333e75ec819191c885b0d61cc0e7/buena-video-workflow/AUTOMATION.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/.chatgpt-projects/g-p-6aa9333e75ec819191c885b0d61cc0e7/buena-video-workflow/PROOF.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/.chatgpt-projects/g-p-6aa9333e75ec819191c885b0d61cc0e7/captions-editor-eval/LIVE-BENCHMARK.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/trust/README.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/trust/VALIDATION.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/trust/ONCHAIN-VALIDATION.md",
+      "exists": true
+    },
+    {
+      "path": "/Users/buena/.codex/visualizations/2026/09/18/01a0b431-63d1-7d62-bccf-20ac3e2a7dde/buena-landscape-2026-09-18.md",
+      "exists": true
+    }
+  ],
+  "liveVpsRecheck": "Bounded SSH check timed out; other SSH attempt failed at 1Password agent signing, followed by too many authentication failures. Current VPS health unconfirmed; saved Sept19 evidence retained."
+}

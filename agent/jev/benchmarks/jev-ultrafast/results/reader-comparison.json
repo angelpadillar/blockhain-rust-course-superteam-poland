@@ -1,0 +1,114 @@
+{
+  "capturedAt": "2026-09-17T08:38:44.517Z",
+  "upstreamCommit": "452c1ad2dd628008f1d5608f28158d76e49e6cc0",
+  "scope": "Controlled DOM fixtures based on previously observed markup. No model calls, no live Glovo interaction, no end-to-end speed claim. Timing includes Playwright evaluate transport; stock Browser Harness transport is not measured.",
+  "results": [
+    {
+      "fixture": "semantic-product-button",
+      "expected": "Bacardi Blanco 0,7l",
+      "ultrafast": {
+        "targetOffered": true,
+        "actions": [
+          {
+            "kind": "click",
+            "label": "Bacardi Blanco 0,7l"
+          },
+          {
+            "kind": "wait",
+            "label": "Wait for the page to update"
+          }
+        ],
+        "medianReadMs": 0.5767499999992651
+      },
+      "currentAdapter": {
+        "targetOffered": false,
+        "actions": [],
+        "medianReadMs": 1.1673329999994166
+      },
+      "samplesPerReader": 60
+    },
+    {
+      "fixture": "glovo-product-tile",
+      "expected": "Bacardi Blanco 0,7l",
+      "ultrafast": {
+        "targetOffered": false,
+        "actions": [
+          {
+            "kind": "click",
+            "label": "Increase quantity"
+          },
+          {
+            "kind": "wait",
+            "label": "Wait for the page to update"
+          }
+        ],
+        "medianReadMs": 0.5623749999995198
+      },
+      "currentAdapter": {
+        "targetOffered": true,
+        "actions": [
+          {
+            "kind": "click",
+            "label": "Bacardi Blanco 0,7l"
+          }
+        ],
+        "medianReadMs": 1.1171669999994265
+      },
+      "samplesPerReader": 60
+    },
+    {
+      "fixture": "glovo-search-result-row",
+      "expected": "Bacardi Blanco 0,7l",
+      "ultrafast": {
+        "targetOffered": false,
+        "actions": [
+          {
+            "kind": "click",
+            "label": "Increase quantity"
+          },
+          {
+            "kind": "wait",
+            "label": "Wait for the page to update"
+          }
+        ],
+        "medianReadMs": 0.6310000000003129
+      },
+      "currentAdapter": {
+        "targetOffered": true,
+        "actions": [
+          {
+            "kind": "click",
+            "label": "Bacardi Blanco 0,7l"
+          }
+        ],
+        "medianReadMs": 1.481709000000592
+      },
+      "samplesPerReader": 60
+    },
+    {
+      "fixture": "glovo-category-heading",
+      "expected": "Rum i gin",
+      "ultrafast": {
+        "targetOffered": false,
+        "actions": [
+          {
+            "kind": "wait",
+            "label": "Wait for the page to update"
+          }
+        ],
+        "medianReadMs": 0.5479580000001079
+      },
+      "currentAdapter": {
+        "targetOffered": true,
+        "actions": [
+          {
+            "kind": "click",
+            "label": "Rum i gin"
+          }
+        ],
+        "medianReadMs": 1.490208000000166
+      },
+      "samplesPerReader": 60
+    }
+  ]
+}

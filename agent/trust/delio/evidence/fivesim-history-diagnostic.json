@@ -1,0 +1,34 @@
+{
+  "observedAt": 1789812786457,
+  "purpose": "read-only diagnosis before paid dispatch",
+  "httpStatus": 200,
+  "topLevelArray": false,
+  "fields": {
+    "Data": {
+      "type": "array",
+      "length": 14
+    },
+    "ProductNames": {
+      "type": "array",
+      "length": 0
+    },
+    "Statuses": {
+      "type": "array",
+      "length": 0
+    },
+    "Total": "number"
+  },
+  "total": 999999,
+  "rowKeys": [
+    "id",
+    "phone",
+    "operator",
+    "product",
+    "price",
+    "status",
+    "expires",
+    "sms",
+    "created_at",
+    "country"
+  ]
+}

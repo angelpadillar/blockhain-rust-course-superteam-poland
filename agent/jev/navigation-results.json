@@ -1,0 +1,1252 @@
+{
+  "status": "incomplete_live_evaluation",
+  "authorization": {
+    "granted": true,
+    "scope": "Repeat the account holder’s existing 18+/Glovo alcohol-sale-terms declaration solely during this navigation-only case; no basket additions or purchases.",
+    "source": "Explicit user authorization in this task on 16 September 2026"
+  },
+  "summary": {
+    "attempts": 10,
+    "completed": 0,
+    "modelCalls": 35,
+    "estimatedModelUsd": 0.001856442,
+    "inputTokens": 44201,
+    "outputTokens": 10227,
+    "basketActions": 0,
+    "purchaseActions": 0
+  },
+  "notes": "Ten development attempts across changing adapter versions and site conditions. The ninth reached the exact target URL but did not verify a visible title. Its age/terms handler ran with prior explicit authorization. The reader now waits for delayed product rendering; the next live attempt hit Glovo’s problem page before any model call. No verified live completion or comparable cost per completed task is claimed.",
+  "batches": [
+    {
+      "batchId": "2026-09-16T12-34-49-289Z",
+      "capturedAt": "2026-09-16T12:35:02.904Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "browserLaunchMs": 190.70251300000018,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "TimeoutError",
+          "metrics": {
+            "totalMs": 13424.049863999999,
+            "startPageMs": 1635.9405019999995,
+            "modelMs": 1536.578802,
+            "browserMs": 11887.471061999999,
+            "actions": 4,
+            "modelCalls": 5,
+            "inputTokens": 11900,
+            "outputTokens": 3777,
+            "estimatedModelUsd": 0.0004998,
+            "usageComplete": true
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "Search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow",
+              "model": "jev-1.13.0",
+              "modelMs": 585.505244,
+              "actionAndWaitMs": 817.9898549999998,
+              "usage": {
+                "input_tokens": 768,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 2,
+              "action": "Submit search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/search?q=Foczka+Alkohole",
+              "model": "jev-1.13.0",
+              "modelMs": 227.4966999999997,
+              "actionAndWaitMs": 1318.795062000001,
+              "usage": {
+                "input_tokens": 798,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 3,
+              "action": "Open link: Foczka Alkohole\n\n100%\n\n(252)\n\n5,99 zł\n5-20 min",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+              "model": "jev-1.13.0",
+              "modelMs": 225.3240050000004,
+              "actionAndWaitMs": 1551.8089549999986,
+              "usage": {
+                "input_tokens": 1140,
+                "output_tokens": 172
+              },
+              "offeredActions": 17
+            },
+            {
+              "step": 4,
+              "action": "Search for Bacardi Blanco 0,7l",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 260.2549030000009,
+              "actionAndWaitMs": 1538.5269309999985,
+              "usage": {
+                "input_tokens": 5167,
+                "output_tokens": 1889
+              },
+              "offeredActions": 197
+            }
+          ],
+          "verification": {
+            "passed": false,
+            "checks": {
+              "store": true,
+              "productId": false,
+              "externalProductId": false,
+              "visibleProduct": false
+            },
+            "categoryContextMatches": false
+          },
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T12-37-39-144Z",
+      "capturedAt": "2026-09-16T12:37:48.423Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "browserLaunchMs": 171.06100500000048,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "no_navigation_actions",
+          "metrics": {
+            "totalMs": 9107.648473000001,
+            "startPageMs": 1518.3620450000008,
+            "modelMs": 1450.357758,
+            "browserMs": 7657.290715000001,
+            "actions": 5,
+            "modelCalls": 5,
+            "inputTokens": 6135,
+            "outputTokens": 1383,
+            "estimatedModelUsd": 0.00025767,
+            "usageComplete": true
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "Search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow",
+              "model": "jev-1.13.0",
+              "modelMs": 553.8335740000002,
+              "actionAndWaitMs": 822.4439380000003,
+              "usage": {
+                "input_tokens": 768,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 2,
+              "action": "Submit search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/search?q=Foczka+Alkohole",
+              "model": "jev-1.13.0",
+              "modelMs": 224.97860600000058,
+              "actionAndWaitMs": 1333.285742,
+              "usage": {
+                "input_tokens": 798,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 3,
+              "action": "Open link: Foczka Alkohole\n\n100%\n\n(252)\n\n5,99 zł\n10-20 min",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+              "model": "jev-1.13.0",
+              "modelMs": 220.3261220000004,
+              "actionAndWaitMs": 1503.3226369999993,
+              "usage": {
+                "input_tokens": 1141,
+                "output_tokens": 172
+              },
+              "offeredActions": 17
+            },
+            {
+              "step": 4,
+              "action": "Search for Bacardi Blanco 0,7l",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 212.62714700000106,
+              "actionAndWaitMs": 1473.7444480000013,
+              "usage": {
+                "input_tokens": 2259,
+                "output_tokens": 667
+              },
+              "offeredActions": 72
+            },
+            {
+              "step": 5,
+              "action": "Open category: Rum i gin",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 238.44775200000004,
+              "actionAndWaitMs": 1003.6137450000006,
+              "usage": {
+                "input_tokens": 1169,
+                "output_tokens": 218
+              },
+              "offeredActions": 22
+            }
+          ],
+          "verification": {
+            "passed": false,
+            "checks": {
+              "store": true,
+              "productId": false,
+              "externalProductId": false,
+              "visibleProduct": false
+            },
+            "categoryContextMatches": false
+          },
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T12-47-48-588Z",
+      "capturedAt": "2026-09-16T12:47:57.829Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "browserLaunchMs": 176.96772000000055,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "age_confirmation_requires_user",
+          "metrics": {
+            "totalMs": 9063.324197000002,
+            "startPageMs": 1424.0022390000013,
+            "modelMs": 1514.5255330000018,
+            "browserMs": 7548.798664,
+            "actions": 5,
+            "modelCalls": 5,
+            "inputTokens": 6135,
+            "outputTokens": 1383,
+            "estimatedModelUsd": 0.00025767,
+            "usageComplete": true
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "Search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow",
+              "model": "jev-1.13.0",
+              "modelMs": 585.6238329999996,
+              "actionAndWaitMs": 818.2394349999995,
+              "usage": {
+                "input_tokens": 768,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 2,
+              "action": "Submit search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/search?q=Foczka+Alkohole",
+              "model": "jev-1.13.0",
+              "modelMs": 229.8380789999992,
+              "actionAndWaitMs": 1312.1546610000005,
+              "usage": {
+                "input_tokens": 798,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 3,
+              "action": "Open link: Foczka Alkohole\n\n100%\n\n(252)\n\n5,99 zł\n10-20 min",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+              "model": "jev-1.13.0",
+              "modelMs": 237.58918699999958,
+              "actionAndWaitMs": 1522.8887730000006,
+              "usage": {
+                "input_tokens": 1141,
+                "output_tokens": 172
+              },
+              "offeredActions": 17
+            },
+            {
+              "step": 4,
+              "action": "Search for Bacardi Blanco 0,7l",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 231.0560489999989,
+              "actionAndWaitMs": 1481.8415370000002,
+              "usage": {
+                "input_tokens": 2259,
+                "output_tokens": 667
+              },
+              "offeredActions": 72
+            },
+            {
+              "step": 5,
+              "action": "Open category: Rum i gin",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 230.2614930000018,
+              "actionAndWaitMs": 987.104546999999,
+              "usage": {
+                "input_tokens": 1169,
+                "output_tokens": 218
+              },
+              "offeredActions": 22
+            }
+          ],
+          "verification": {
+            "passed": false,
+            "checks": {
+              "store": true,
+              "productId": false,
+              "externalProductId": false,
+              "visibleProduct": false
+            },
+            "categoryContextMatches": false
+          },
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T12-55-59-243Z",
+      "capturedAt": "2026-09-16T12:56:07.462Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "sourceSha256": "2204d6339206848a986d114ffa013eb535bcfebeece095d379a94d06e706795c",
+      "environment": "Hetzner VPS; headed Playwright Chromium; manual preparation and three attempts share one live browser and tab",
+      "setup": "Manual age confirmation, merchant/category preparation and browser launch excluded. Each measured run follows the homepage link before Jev acts.",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "blockedMutations": 0,
+      "results": [
+        {
+          "run": 1,
+          "status": "incomplete",
+          "reason": "destination_requires_setup",
+          "metrics": {
+            "totalMs": 8203.617355000002,
+            "startPageMs": 8203.424159000002,
+            "modelMs": 0,
+            "browserMs": 8203.617355000002,
+            "actions": 0,
+            "modelCalls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "estimatedModelUsd": 0,
+            "usageComplete": true
+          },
+          "steps": [],
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T13-04-08-898Z",
+      "capturedAt": "2026-09-16T13:04:18.235Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "browserLaunchMs": 168.73618299999907,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "age_confirmation_requires_user",
+          "metrics": {
+            "totalMs": 9166.822549000002,
+            "startPageMs": 1426.3105960000012,
+            "modelMs": 1573.2904009999984,
+            "browserMs": 7593.532148000004,
+            "actions": 5,
+            "modelCalls": 5,
+            "inputTokens": 6130,
+            "outputTokens": 1383,
+            "estimatedModelUsd": 0.00025746000000000005,
+            "usageComplete": true
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "Search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow",
+              "model": "jev-1.13.0",
+              "modelMs": 614.2292710000002,
+              "actionAndWaitMs": 811.7118469999987,
+              "usage": {
+                "input_tokens": 768,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 2,
+              "action": "Submit search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/search?q=Foczka+Alkohole",
+              "model": "jev-1.13.0",
+              "modelMs": 234.62499300000127,
+              "actionAndWaitMs": 1331.8677260000004,
+              "usage": {
+                "input_tokens": 798,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 3,
+              "action": "Open link: Foczka Alkohole\n\n100%\n\n(252)\n\n5,99 zł\n10-20 min",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+              "model": "jev-1.13.0",
+              "modelMs": 236.4217260000005,
+              "actionAndWaitMs": 1523.744311999999,
+              "usage": {
+                "input_tokens": 1136,
+                "output_tokens": 172
+              },
+              "offeredActions": 17
+            },
+            {
+              "step": 4,
+              "action": "Search for Bacardi Blanco 0,7l",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 250.6596610000015,
+              "actionAndWaitMs": 1486.7638770000012,
+              "usage": {
+                "input_tokens": 2259,
+                "output_tokens": 667
+              },
+              "offeredActions": 72
+            },
+            {
+              "step": 5,
+              "action": "Open category: Rum i gin",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 237.21259199999986,
+              "actionAndWaitMs": 1010.7772270000023,
+              "usage": {
+                "input_tokens": 1169,
+                "output_tokens": 218
+              },
+              "offeredActions": 22
+            }
+          ],
+          "verification": {
+            "passed": false,
+            "checks": {
+              "store": true,
+              "productId": false,
+              "externalProductId": false,
+              "visibleProduct": false
+            },
+            "categoryContextMatches": false
+          },
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T13-09-27-496Z",
+      "capturedAt": "2026-09-16T13:09:33.981Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "ageConfirmationPolicy": "Account holder explicitly authorized repeating the existing 18+/terms declaration for this navigation-only case. Executed by a fixed browser handler, not a model decision; included in elapsed time.",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "browserLaunchMs": 196.01815200000055,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "model_unavailable",
+          "metrics": {
+            "totalMs": 6288.031669,
+            "startPageMs": 1402.794871,
+            "modelMs": 1264.4313730000013,
+            "browserMs": 5023.600295999999,
+            "actions": 3,
+            "modelCalls": 4,
+            "inputTokens": 3464,
+            "outputTokens": 569,
+            "estimatedModelUsd": 0.000145488,
+            "usageComplete": true,
+            "authorizedAgeConfirmations": 0,
+            "ageConfirmationMs": 0
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "Search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow",
+              "model": "jev-1.13.0",
+              "modelMs": 575.0038829999994,
+              "actionAndWaitMs": 832.3853180000006,
+              "usage": {
+                "input_tokens": 768,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 2,
+              "action": "Submit search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/search?q=Foczka+Alkohole",
+              "model": "jev-1.13.0",
+              "modelMs": 226.05569400000059,
+              "actionAndWaitMs": 1307.36074,
+              "usage": {
+                "input_tokens": 798,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 3,
+              "action": "Open link: Foczka Alkohole\n\n100%\n\n(252)\n\nZaplanuj na: 16:00",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+              "model": "jev-1.13.0",
+              "modelMs": 223.1392450000003,
+              "actionAndWaitMs": 1478.5641879999985,
+              "usage": {
+                "input_tokens": 1139,
+                "output_tokens": 172
+              },
+              "offeredActions": 17
+            }
+          ],
+          "verification": {
+            "passed": false,
+            "checks": {
+              "store": true,
+              "productId": false,
+              "externalProductId": false,
+              "visibleProduct": false
+            },
+            "categoryContextMatches": false
+          },
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T13-11-49-435Z",
+      "capturedAt": "2026-09-16T13:11:56.054Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "ageConfirmationPolicy": "Account holder explicitly authorized repeating the existing 18+/terms declaration for this navigation-only case. Executed by a fixed browser handler, not a model decision; included in elapsed time.",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "browserLaunchMs": 187.56124,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "model_unavailable",
+          "metrics": {
+            "totalMs": 6430.620238999999,
+            "startPageMs": 1450.6400869999989,
+            "modelMs": 1253.2254169999997,
+            "browserMs": 5177.394821999999,
+            "actions": 3,
+            "modelCalls": 4,
+            "inputTokens": 3352,
+            "outputTokens": 537,
+            "estimatedModelUsd": 0.00014078400000000003,
+            "usageComplete": true,
+            "authorizedAgeConfirmations": 0,
+            "ageConfirmationMs": 0
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "Search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow",
+              "model": "jev-1.13.0",
+              "modelMs": 579.8201329999993,
+              "actionAndWaitMs": 826.590295,
+              "usage": {
+                "input_tokens": 768,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 2,
+              "action": "Submit search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/search?q=Foczka+Alkohole",
+              "model": "jev-1.13.0",
+              "modelMs": 225.8807590000015,
+              "actionAndWaitMs": 1356.7926399999997,
+              "usage": {
+                "input_tokens": 798,
+                "output_tokens": 163
+              },
+              "offeredActions": 16
+            },
+            {
+              "step": 3,
+              "action": "Open link: Foczka Alkohole\n\n100%\n\n(252)\n\nZaplanuj na: 16:00",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+              "model": "jev-1.13.0",
+              "modelMs": 230.4778040000001,
+              "actionAndWaitMs": 1540.9758259999999,
+              "usage": {
+                "input_tokens": 1134,
+                "output_tokens": 172
+              },
+              "offeredActions": 17
+            }
+          ],
+          "verification": {
+            "passed": false,
+            "checks": {
+              "store": true,
+              "productId": false,
+              "externalProductId": false,
+              "visibleProduct": false
+            },
+            "categoryContextMatches": false
+          },
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T13-13-38-913Z",
+      "capturedAt": "2026-09-16T13:13:39.241Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "ageConfirmationPolicy": "Account holder explicitly authorized repeating the existing 18+/terms declaration for this navigation-only case. Executed by a fixed browser handler, not a model decision; included in elapsed time.",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "browserLaunchMs": 179.22350000000006,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "merchant_site_unavailable",
+          "metrics": {
+            "totalMs": 148.12908400000015,
+            "startPageMs": 0,
+            "modelMs": 0,
+            "browserMs": 148.12908400000015,
+            "actions": 0,
+            "modelCalls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "estimatedModelUsd": 0,
+            "usageComplete": true,
+            "authorizedAgeConfirmations": 0,
+            "ageConfirmationMs": 0
+          },
+          "steps": [],
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Start-page navigation through independent visible-product verification; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T13-40-50-772Z",
+      "capturedAt": "2026-09-16T13:41:05.676Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "instruction": "From the Kraków homepage, find Foczka Alkohole and open Bacardi Blanco 0,7l. Stop on the product page without adding anything, scheduling an order or purchasing.",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "ageConfirmationPolicy": "Account holder explicitly authorized repeating the existing 18+/terms declaration for this navigation-only case. Fixed handler; included in elapsed time.",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "journalId": "47f6fa5d-c512-4153-a6df-5f52c1a8240c",
+          "browserLaunchMs": 165.75094099999933,
+          "blockedMutations": 3,
+          "status": "incomplete",
+          "reason": "no_navigation_actions",
+          "contract": {
+            "version": 1,
+            "taskId": "krakow-home-to-foczka-bacardi",
+            "adapter": "glovo-krakow",
+            "mode": "view_product",
+            "requestedInstruction": "From the Kraków homepage, find Foczka Alkohole and open Bacardi Blanco 0,7l. Stop on the product page without adding anything, scheduling an order or purchasing.",
+            "objective": "Find Foczka Alkohole, then open Bacardi Blanco 0,7l from the Kraków homepage.",
+            "startUrl": "https://glovoapp.com/pl/pl/krakow",
+            "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+            "merchant": "Foczka Alkohole",
+            "product": "Bacardi Blanco 0,7l",
+            "completion": [
+              "matching_store",
+              "matching_product_id",
+              "matching_external_product_id",
+              "visible_exact_product_title"
+            ],
+            "constraints": {
+              "basketChanges": false,
+              "purchases": false,
+              "scheduledOrders": false,
+              "accountChanges": false,
+              "directTargetNavigation": false
+            },
+            "limits": {
+              "maxSteps": 20,
+              "maxRunMs": 120000,
+              "maxModelUsd": 0.02
+            }
+          },
+          "metrics": {
+            "totalMs": 14518.065171999999,
+            "startPageMs": 1668.838068,
+            "modelMs": 1975.6421610000016,
+            "browserMs": 11982.107613999995,
+            "journalMs": 560.3153970000021,
+            "actions": 7,
+            "modelActions": 7,
+            "policyActions": 0,
+            "modelCalls": 7,
+            "inputTokens": 7085,
+            "outputTokens": 1195,
+            "estimatedModelUsd": 0.00029757,
+            "usageComplete": true,
+            "authorizedAgeConfirmations": 1,
+            "ageConfirmationMs": 1241.7809400000006
+          },
+          "steps": [
+            {
+              "step": 1,
+              "actor": "jev",
+              "stage": "find_merchant",
+              "action": "Search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow",
+              "model": "jev-1.13.0",
+              "modelMs": 613.7148900000002,
+              "actionAndWaitMs": 841.5090099999998,
+              "usage": {
+                "input_tokens": 735,
+                "output_tokens": 145
+              },
+              "decision": {
+                "choice": "a4",
+                "confidence": 0.94,
+                "probabilities": {
+                  "a1": 0,
+                  "a12": 0,
+                  "a8": 0,
+                  "a2": 0.01,
+                  "a3": 0.02,
+                  "a13": 0,
+                  "a11": 0,
+                  "a0": 0,
+                  "a4": 0.95,
+                  "a9": 0,
+                  "a7": 0,
+                  "a6": 0,
+                  "a10": 0,
+                  "unavailable": 0.02,
+                  "a5": 0
+                },
+                "selectedProbability": 0.95
+              },
+              "offeredActions": 14
+            },
+            {
+              "step": 2,
+              "actor": "jev",
+              "stage": "find_merchant",
+              "action": "Submit search for Foczka Alkohole",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/search?q=Foczka+Alkohole",
+              "model": "jev-1.13.0",
+              "modelMs": 247.4438399999999,
+              "actionAndWaitMs": 1355.6558960000002,
+              "usage": {
+                "input_tokens": 765,
+                "output_tokens": 145
+              },
+              "decision": {
+                "choice": "a4",
+                "confidence": 0.87,
+                "probabilities": {
+                  "a11": 0,
+                  "a8": 0,
+                  "a10": 0,
+                  "a6": 0,
+                  "a5": 0,
+                  "a1": 0,
+                  "a13": 0,
+                  "a7": 0,
+                  "a2": 0.02,
+                  "a12": 0,
+                  "a3": 0.03,
+                  "a9": 0,
+                  "unavailable": 0.06,
+                  "a4": 0.89,
+                  "a0": 0
+                },
+                "selectedProbability": 0.89
+              },
+              "offeredActions": 14
+            },
+            {
+              "step": 3,
+              "actor": "jev",
+              "stage": "find_product",
+              "action": "Open link: Foczka Alkohole\n\n100%\n\n(252)\n\n5,99 zł\n10-20 min",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra",
+              "model": "jev-1.13.0",
+              "modelMs": 217.081596,
+              "actionAndWaitMs": 1526.6244879999995,
+              "usage": {
+                "input_tokens": 638,
+                "output_tokens": 61
+              },
+              "decision": {
+                "choice": "a3",
+                "confidence": 0.5,
+                "probabilities": {
+                  "a3": 0.61,
+                  "a0": 0,
+                  "a1": 0.18,
+                  "a2": 0,
+                  "unavailable": 0.21
+                },
+                "selectedProbability": 0.61
+              },
+              "offeredActions": 4
+            },
+            {
+              "step": 4,
+              "actor": "jev",
+              "stage": "find_product",
+              "action": "Search for Bacardi Blanco 0,7l",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 230.49700099999973,
+              "actionAndWaitMs": 1495.984993,
+              "usage": {
+                "input_tokens": 1063,
+                "output_tokens": 199
+              },
+              "decision": {
+                "choice": "a1",
+                "confidence": 0.56,
+                "probabilities": {
+                  "a15": 0,
+                  "a1": 0.59,
+                  "a2": 0.03,
+                  "a8": 0,
+                  "a12": 0,
+                  "a3": 0,
+                  "a11": 0,
+                  "a13": 0.02,
+                  "a0": 0,
+                  "a18": 0,
+                  "a4": 0,
+                  "a14": 0,
+                  "a7": 0,
+                  "a9": 0,
+                  "a19": 0,
+                  "a6": 0,
+                  "a10": 0.34,
+                  "unavailable": 0.02,
+                  "a17": 0,
+                  "a16": 0,
+                  "a5": 0
+                },
+                "selectedProbability": 0.59
+              },
+              "offeredActions": 20
+            },
+            {
+              "step": 5,
+              "actor": "jev",
+              "stage": "find_product",
+              "action": "Open category: Rum i gin",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "model": "jev-1.13.0",
+              "modelMs": 224.28359499999897,
+              "actionAndWaitMs": 1001.8222270000006,
+              "usage": {
+                "input_tokens": 1145,
+                "output_tokens": 200
+              },
+              "decision": {
+                "choice": "a10",
+                "confidence": 0.48,
+                "probabilities": {
+                  "a16": 0,
+                  "a10": 0.52,
+                  "a11": 0,
+                  "a5": 0,
+                  "a15": 0,
+                  "a18": 0,
+                  "a1": 0.04,
+                  "a2": 0.32,
+                  "a8": 0,
+                  "unavailable": 0.09,
+                  "a17": 0,
+                  "a0": 0,
+                  "a7": 0,
+                  "a4": 0,
+                  "a14": 0,
+                  "a12": 0,
+                  "a6": 0,
+                  "a3": 0,
+                  "a13": 0.02,
+                  "a19": 0,
+                  "a9": 0.01
+                },
+                "selectedProbability": 0.52
+              },
+              "offeredActions": 20
+            },
+            {
+              "kind": "authorized_site_confirmation",
+              "action": "Repeat age/terms confirmation explicitly authorized by the account holder",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?search=Bacardi+Blanco+0%2C7l",
+              "actionAndWaitMs": 1241.8079319999997
+            },
+            {
+              "step": 7,
+              "actor": "jev",
+              "stage": "find_product",
+              "action": "Open category: Rum i gin",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353",
+              "model": "jev-1.13.0",
+              "modelMs": 230.0431979999994,
+              "actionAndWaitMs": 2017.195639999998,
+              "usage": {
+                "input_tokens": 1291,
+                "output_tokens": 209
+              },
+              "decision": {
+                "choice": "a10",
+                "confidence": 0.44,
+                "probabilities": {
+                  "a11": 0.03,
+                  "a6": 0,
+                  "a10": 0.48,
+                  "a8": 0,
+                  "a13": 0,
+                  "a1": 0.03,
+                  "a5": 0,
+                  "a19": 0,
+                  "a2": 0.09999999999999999,
+                  "a20": 0,
+                  "a7": 0,
+                  "a18": 0,
+                  "a17": 0,
+                  "a16": 0,
+                  "a12": 0,
+                  "a3": 0,
+                  "a15": 0,
+                  "a9": 0,
+                  "unavailable": 0.36,
+                  "a0": 0,
+                  "a14": 0,
+                  "a4": 0
+                },
+                "selectedProbability": 0.48
+              },
+              "offeredActions": 21
+            },
+            {
+              "step": 8,
+              "actor": "jev",
+              "stage": "find_product",
+              "action": "Open product: Bacardi Blanco 0,7l",
+              "pageAfter": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+              "model": "jev-1.13.0",
+              "modelMs": 212.2724930000004,
+              "actionAndWaitMs": 943.6009180000001,
+              "usage": {
+                "input_tokens": 1448,
+                "output_tokens": 236
+              },
+              "decision": {
+                "choice": "a23",
+                "confidence": 0.55,
+                "probabilities": {
+                  "a11": 0.01,
+                  "a8": 0,
+                  "a10": 0.11,
+                  "a6": 0,
+                  "a13": 0,
+                  "a1": 0.09,
+                  "a5": 0,
+                  "a23": 0.58,
+                  "a2": 0,
+                  "a20": 0,
+                  "a7": 0,
+                  "a18": 0,
+                  "a22": 0,
+                  "a19": 0,
+                  "a17": 0,
+                  "a16": 0,
+                  "a21": 0,
+                  "a12": 0.01,
+                  "a3": 0,
+                  "a15": 0,
+                  "a9": 0,
+                  "unavailable": 0.2,
+                  "a4": 0,
+                  "a14": 0,
+                  "a0": 0
+                },
+                "selectedProbability": 0.58
+              },
+              "offeredActions": 24
+            }
+          ],
+          "verification": {
+            "passed": false,
+            "checks": {
+              "store": true,
+              "productId": true,
+              "externalProductId": true,
+              "visibleProduct": false
+            },
+            "categoryContextMatches": true
+          },
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Homepage navigation through independent product verification, including journal writes; browser launch and account setup excluded."
+        }
+      ]
+    },
+    {
+      "batchId": "2026-09-16T13-46-13-151Z",
+      "capturedAt": "2026-09-16T13:46:13.701Z",
+      "task": {
+        "id": "krakow-home-to-foczka-bacardi",
+        "instruction": "From the Kraków homepage, find Foczka Alkohole and open Bacardi Blanco 0,7l. Stop on the product page without adding anything, scheduling an order or purchasing.",
+        "startUrl": "https://glovoapp.com/pl/pl/krakow",
+        "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+        "merchant": "Foczka Alkohole",
+        "product": "Bacardi Blanco 0,7l",
+        "maxSteps": 20,
+        "maxRunMs": 120000,
+        "maxModelUsd": 0.02
+      },
+      "environment": "Hetzner VPS, Playwright Chromium, existing manually configured Glovo account",
+      "ageConfirmationPolicy": "Account holder explicitly authorized repeating the existing 18+/terms declaration for this navigation-only case. Fixed handler; included in elapsed time.",
+      "pricing": {
+        "inputUsdPerMillion": 0.042,
+        "outputUsdPerMillion": 0,
+        "scope": "Estimated model API cost only; excludes VPS, setup and operator time."
+      },
+      "results": [
+        {
+          "run": 1,
+          "journalId": "91871787-f161-4640-aaa9-8e0df772b3bb",
+          "browserLaunchMs": 168.5707910000001,
+          "blockedMutations": 0,
+          "status": "incomplete",
+          "reason": "merchant_site_unavailable",
+          "contract": {
+            "version": 1,
+            "taskId": "krakow-home-to-foczka-bacardi",
+            "adapter": "glovo-krakow",
+            "mode": "view_product",
+            "requestedInstruction": "From the Kraków homepage, find Foczka Alkohole and open Bacardi Blanco 0,7l. Stop on the product page without adding anything, scheduling an order or purchasing.",
+            "objective": "Find Foczka Alkohole, then open Bacardi Blanco 0,7l from the Kraków homepage.",
+            "startUrl": "https://glovoapp.com/pl/pl/krakow",
+            "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+            "merchant": "Foczka Alkohole",
+            "product": "Bacardi Blanco 0,7l",
+            "completion": [
+              "matching_store",
+              "matching_product_id",
+              "matching_external_product_id",
+              "visible_exact_product_title"
+            ],
+            "constraints": {
+              "basketChanges": false,
+              "purchases": false,
+              "scheduledOrders": false,
+              "accountChanges": false,
+              "directTargetNavigation": false
+            },
+            "limits": {
+              "maxSteps": 20,
+              "maxRunMs": 120000,
+              "maxModelUsd": 0.02
+            }
+          },
+          "metrics": {
+            "totalMs": 239.618797000001,
+            "startPageMs": 0,
+            "modelMs": 0,
+            "browserMs": 214.16202500000145,
+            "journalMs": 25.456771999999546,
+            "actions": 0,
+            "modelActions": 0,
+            "policyActions": 0,
+            "modelCalls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "estimatedModelUsd": 0,
+            "usageComplete": true,
+            "authorizedAgeConfirmations": 0,
+            "ageConfirmationMs": 0
+          },
+          "steps": [],
+          "finalUrl": "https://glovoapp.com/pl/pl/krakow",
+          "basketActions": 0,
+          "purchaseActions": 0,
+          "timingScope": "Homepage navigation through independent product verification, including journal writes; browser launch and account setup excluded."
+        }
+      ]
+    }
+  ]
+}

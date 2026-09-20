@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-09-19T13:35:31.825316+00:00",
+  "approvedBy": "user",
+  "approvedAction": "Allow identitytoolkit.googleapis.com in the isolated Delio worker and retry the existing user-purchased activation",
+  "host": "identitytoolkit.googleapis.com",
+  "scope": "buena-delio-worker only",
+  "wildcard": false,
+  "newActivationPurchaseAuthorized": false,
+  "basis": "Observed Delio signup POST request to this host failed; official Google documentation identifies this host as the phone-authentication service.",
+  "reference": "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/accounts/sendVerificationCode"
+}

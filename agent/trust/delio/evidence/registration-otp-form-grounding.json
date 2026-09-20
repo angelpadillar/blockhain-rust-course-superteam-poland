@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-09-19T13:39:21.479920+00:00",
+  "captureObservedAt": 1789825022419,
+  "status": "saved_otp_view_grounded_classifier_fixed_offline_only",
+  "observed": {
+    "inputCount": 4,
+    "inputType": "text",
+    "inputMode": "numeric",
+    "allInputsEmpty": true,
+    "maxlengthAttributeObserved": false,
+    "oneTimeCodeAutocompleteObserved": false,
+    "codeEntryPrompt": true,
+    "codeSentPrompt": true,
+    "resendPrompt": true,
+    "newRegistrationPrompt": false,
+    "existingAccountPrompt": false
+  },
+  "targetedRegistrationTestsPassed": 38,
+  "localChangedSourceSha256": {
+    "registration.mjs": "349802867fa88882638767f85bce6273aabb88bd19355ff00e1bd48a1942e12a",
+    "registration.test.mjs": "ed9c5f3dc1f256d5074cefd4a700af1fd13b049e903680db9d17d4f3c271f9e8"
+  },
+  "deployed": false,
+  "workerReloaded": false,
+  "browserActionsByAgent": 0,
+  "privateOtpOrPhoneExported": false,
+  "newAccountVerified": false,
+  "scope": "Inspecting saved artifact only. OTP verification is not proof of a newly registered customer; require subsequent explicit new-registration evidence."
+}

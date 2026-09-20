@@ -1,0 +1,11 @@
+{
+  "name": "captions-editor-semantic-evaluation",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node src/run.mjs",
+    "benchmark": "node src/run.mjs --live"
+  }
+}

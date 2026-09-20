@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "sessionId": "3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+  "scenario": "expired",
+  "status": "rejected",
+  "mandate": {
+    "type": "mandate",
+    "at": 1789653349249,
+    "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+    "currency": "PLN",
+    "maxTotalMinor": 5000,
+    "expiresAt": 1789654549249,
+    "allowedMerchantIds": [
+      "paper-harbor"
+    ]
+  },
+  "quote": {
+    "type": "quote",
+    "at": 1789653349249,
+    "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+    "quoteId": "quote-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+    "merchantId": "paper-harbor",
+    "currency": "PLN",
+    "totalMinor": 2990,
+    "items": [
+      {
+        "itemId": "copper-finch-notebook",
+        "title": "Copper Finch Notebook",
+        "quantity": 1,
+        "unitPriceMinor": 2490
+      }
+    ],
+    "feesMinor": 500,
+    "expiresAt": 1789653949249
+  },
+  "quoteHash": "edea46efc1f1853183e7efb3e355d30d45fd241c9b080085462d0b7cd0eb70b1",
+  "approval": null,
+  "execution": null,
+  "confirmation": null,
+  "rejection": {
+    "type": "rejection",
+    "at": 1789654100136,
+    "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+    "quoteId": "quote-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+    "rejectionId": "reject-3ed31b9b-ae79-4436-bbf4-cf273a058b27-1",
+    "reason": "quote_expired"
+  },
+  "observedQuote": null,
+  "chain": [
+    {
+      "hash": "e9f42cdd9b55bf6d7f312937efbf635448062da6eea39ef239af9e389f2e43fc",
+      "index": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "record": {
+        "allowedMerchantIds": [
+          "paper-harbor"
+        ],
+        "at": 1789653349249,
+        "currency": "PLN",
+        "expiresAt": 1789654549249,
+        "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "maxTotalMinor": 5000,
+        "type": "mandate"
+      },
+      "version": 1
+    },
+    {
+      "hash": "30b33036c71637f9fb0ca5046810143704324a187f1e5150784409d5d9934757",
+      "index": 1,
+      "prevHash": "e9f42cdd9b55bf6d7f312937efbf635448062da6eea39ef239af9e389f2e43fc",
+      "record": {
+        "at": 1789653349249,
+        "currency": "PLN",
+        "expiresAt": 1789653949249,
+        "feesMinor": 500,
+        "items": [
+          {
+            "itemId": "copper-finch-notebook",
+            "quantity": 1,
+            "title": "Copper Finch Notebook",
+            "unitPriceMinor": 2490
+          }
+        ],
+        "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "merchantId": "paper-harbor",
+        "quoteId": "quote-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "totalMinor": 2990,
+        "type": "quote"
+      },
+      "version": 1
+    },
+    {
+      "hash": "bd6963c1b4d434aa402a6168e151fda626f1d8a5197c8208ae70938d37fab5fa",
+      "index": 2,
+      "prevHash": "30b33036c71637f9fb0ca5046810143704324a187f1e5150784409d5d9934757",
+      "record": {
+        "at": 1789654100136,
+        "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "quoteId": "quote-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "reason": "quote_expired",
+        "rejectionId": "reject-3ed31b9b-ae79-4436-bbf4-cf273a058b27-1",
+        "type": "rejection"
+      },
+      "version": 1
+    },
+    {
+      "version": 1,
+      "index": 3,
+      "prevHash": "bd6963c1b4d434aa402a6168e151fda626f1d8a5197c8208ae70938d37fab5fa",
+      "record": {
+        "at": 1789654100136,
+        "eventHash": "30b33036c71637f9fb0ca5046810143704324a187f1e5150784409d5d9934757",
+        "evidence": {
+          "observationSha256": "3b061f3244cd6032fddc57fbe0e4b7d97d5b46b920ecaf2b266de42b3e147bff",
+          "screenshotSha256": "b9aafb49df4bfa78ca11a2d96a5a5ff1e1da8fb622c62ca5c724363ba7d88fb8"
+        },
+        "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "quoteId": "quote-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "stage": "quote",
+        "type": "boundary_evidence"
+      },
+      "hash": "43f89876d7b91f38052da43f9a5d84a368acc6c98d55a00b5c39c8f819fcc6f5"
+    }
+  ],
+  "createdAt": 1789653349249,
+  "clockOffsetMs": 660000,
+  "sequence": 1,
+  "scope": "Local simulated trust demonstration. No payment, wallet signing, delivery, or on-chain deployment.",
+  "now": 1789654100136,
+  "merchantName": "Paper Harbor",
+  "recipient": "Alex · welcome gift",
+  "verification": {
+    "valid": true,
+    "integrityValid": true,
+    "artifactsValid": true,
+    "boundaryComplete": true,
+    "requireBoundaryEvidence": true,
+    "boundaries": [
+      {
+        "index": 1,
+        "stage": "quote",
+        "eventHash": "30b33036c71637f9fb0ca5046810143704324a187f1e5150784409d5d9934757",
+        "mandateId": "demo-mandate-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "quoteId": "quote-3ed31b9b-ae79-4436-bbf4-cf273a058b27",
+        "hasScreenshot": true,
+        "hasObservation": true,
+        "observationMatchesRecord": true,
+        "complete": true
+      }
+    ],
+    "issues": [],
+    "headHash": "43f89876d7b91f38052da43f9a5d84a368acc6c98d55a00b5c39c8f819fcc6f5",
+    "anchored": false,
+    "recordCount": 4,
+    "confirmedOrders": 0,
+    "approvalAuthenticated": false,
+    "merchantFactsVerified": false,
+    "meaning": "Integrity and recorded mandate/quote/approval/execution correlations only. Hashes do not authenticate an approver or prove merchant facts. An external trusted head is required to detect rewritten history or a removed tail."
+  },
+  "boundaryArtifacts": [
+    {
+      "stage": "quote",
+      "eventHash": "30b33036c71637f9fb0ca5046810143704324a187f1e5150784409d5d9934757",
+      "screenshotSha256": "b9aafb49df4bfa78ca11a2d96a5a5ff1e1da8fb622c62ca5c724363ba7d88fb8",
+      "observationSha256": "3b061f3244cd6032fddc57fbe0e4b7d97d5b46b920ecaf2b266de42b3e147bff",
+      "screenshotPath": "expired-quote.jpg",
+      "observationPath": "expired-quote.observation.json"
+    }
+  ],
+  "boundaryScope": "Real local browser captures attached to simulated events. No wallet signature, real merchant fact attestation, or chain deployment.",
+  "headHashToAnchorSeparately": "43f89876d7b91f38052da43f9a5d84a368acc6c98d55a00b5c39c8f819fcc6f5"
+}

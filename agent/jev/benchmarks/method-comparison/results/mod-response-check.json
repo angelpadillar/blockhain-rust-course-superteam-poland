@@ -1,0 +1,19 @@
+{
+  "sourceCommit": "a39e04dc28ebd560050c9c18daed3b080b67b018",
+  "scope": "Pure helper reproduction using a synthetic provider response. No API calls or hooks.",
+  "requestKeys": [
+    "q0"
+  ],
+  "advisory": {
+    "question": "Which navigation operation makes progress?",
+    "probabilities": {
+      "Open details": 0.95,
+      "Wait": 0.05
+    },
+    "choice": "Open details",
+    "confidence": 0.9,
+    "wouldAnswer": true
+  },
+  "autoAnswerResult": null,
+  "interpretation": "The batch request asks for q0; the auto-answer helper reads answers.pick and returns null for this valid batch-shaped response."
+}

@@ -1,0 +1,218 @@
+{
+  "purpose": "Offline browser capability test; not a Captions export",
+  "startedAt": "2026-09-19T03:18:58.005Z",
+  "checks": {
+    "pinnedUpstreamVersion": true,
+    "fileCapabilities": true,
+    "sensitiveGatesClosed": true,
+    "domSnapshot": true,
+    "hiddenFileInputMetadata": true,
+    "nativeCheckboxMetadata": true,
+    "customCheckboxMetadata": true,
+    "switchMetadata": true,
+    "unnamedSwitchContext": true,
+    "disabledMetadata": true,
+    "pngScreenshot": true,
+    "bridge_upload": true,
+    "bridge_prompt": true,
+    "bridge_disable-media": true,
+    "bridge_voice-off": true,
+    "bridge_extra-off": true,
+    "bridge_deep-middle-off": true,
+    "bridge_edit": true,
+    "bridge_download": true,
+    "switchesRemainOff": true,
+    "onlyIntendedDeepSwitchChanged": true,
+    "checkboxRemainsOff": true,
+    "fileInput": true,
+    "downloadBytesMatch": true,
+    "verticalDimensions": true,
+    "duration": true,
+    "fullDecode": true
+  },
+  "artifacts": "/app/state/fixture-w3gbBJ",
+  "readinessExperiment": {
+    "controlDelayMs": 800,
+    "readySelection": true
+  },
+  "stepTimings": [
+    {
+      "requestHash": "da5178b261865bf25ebe8923c9608b99cb6d7c3e18b7f91fcbe48f147a0b3efe",
+      "jobId": "fixture",
+      "stepId": "upload",
+      "stepHash": "a25cf78793ccfecaa9115abd6325694446723aa22e68b7a5df8e3d037d9b72e3",
+      "operation": "upload",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 8.150335000000268,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMs": 33.28277699999944,
+      "verificationMs": 27.93511899999976,
+      "totalMs": 101.70824799999991
+    },
+    {
+      "requestHash": "68ac9f109aa392d717cd7fbaa4c861fa077cc30d8b167be0ff5f1b9cb5b09185",
+      "jobId": "fixture",
+      "stepId": "prompt",
+      "stepHash": "f15fbaf0e2c3350fa83659282f25e70fe958f74478a8ec750ecf259611768631",
+      "operation": "fill_prompt",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 7.868682000000263,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMs": 83.49206099999992,
+      "verificationMs": 12.930647000000135,
+      "totalMs": 120.89781500000026
+    },
+    {
+      "requestHash": "7cad97ef6a512620b4c2805d6aabd696e5167b9b68184b6aff49227af56f46c7",
+      "jobId": "fixture",
+      "stepId": "disable-media",
+      "stepHash": "af44877c800db5e3eb2167115c984d4498f9224aee7399691b07bfdf11a0e1b9",
+      "operation": "uncheck",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 9.416586999999708,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMs": 49.97937000000002,
+      "verificationMs": 12.953719000000092,
+      "totalMs": 90.90524299999925
+    },
+    {
+      "requestHash": "5c76befaa432653f5af042bf9ccfc71814f4610b8d9faf1b4df9cc62bc21080a",
+      "jobId": "fixture",
+      "stepId": "voice-off",
+      "stepHash": "315f075e2b43d8076c475d6bc7b4714b676a95c30f7486f4cdd9e2eca03c297d",
+      "operation": "uncheck",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 8.362267000000429,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMethod": "click-observed-on-switch",
+      "actionMs": 40.52646499999992,
+      "verificationMs": 14.352395000000797,
+      "totalMs": 77.24835499999972
+    },
+    {
+      "requestHash": "2bdae2b318099b1f4f58213f3e4184cff9e7168e47ca6a604272822e0239293a",
+      "jobId": "fixture",
+      "stepId": "extra-off",
+      "stepHash": "208a80fa9269852a1baa92d26b639971e65f136c558e07252701ffc3626facd8",
+      "operation": "uncheck",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 5.318127999999888,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMethod": "click-observed-on-switch",
+      "actionMs": 45.97484900000018,
+      "verificationMs": 12.666921000000002,
+      "totalMs": 89.27289700000074
+    },
+    {
+      "requestHash": "301e7afc33b040457c866544a20c7293734740d2b62144c9627e80fcc5603645",
+      "jobId": "fixture",
+      "stepId": "deep-middle-off",
+      "stepHash": "b77c6794ab8455977ec9872cb6fa76436d0c823f93539313830e8a5d5fbf1b53",
+      "operation": "uncheck",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 8.171057999999903,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMethod": "click-observed-on-switch",
+      "actionMs": 39.7135760000001,
+      "verificationMs": 12.588522000000012,
+      "totalMs": 75.02290600000015
+    },
+    {
+      "requestHash": "e879a803506c112a0788e38e35e61a6424df8e81b0b916f57ffdf30f80c94449",
+      "jobId": "fixture",
+      "stepId": "edit",
+      "stepHash": "8b167013c8896e14d441c476f11b0d72d9ba2e3e5ae4e3ce9e231cb2491c6683",
+      "operation": "click",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 7.559395999999651,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMs": 38.53296800000044,
+      "verificationMs": 13.328515999999581,
+      "totalMs": 75.27115200000026
+    },
+    {
+      "requestHash": "3fe6e349cd4434b2580096571eaf678c527d5060ef14acd42a272e88e968882f",
+      "jobId": "fixture",
+      "stepId": "download",
+      "stepHash": "a320c01cc017d0f1ae3fab9bff7a099253bb52a92344d9176b52ec8d5bb32486",
+      "operation": "export",
+      "outcome": "verified_postcondition",
+      "selectionMethod": "exact-single-match",
+      "observeMs": 5.296349000000191,
+      "selectionMs": 0,
+      "retries": 0,
+      "actionMs": 56.50941199999943,
+      "artifact": "/app/state/fixture-w3gbBJ/exports/fixture/export.mp4",
+      "sha256": "deba72f056e81e845e05ab0edda9e5cd848849aac7133ca72a622d0dde89ad6f",
+      "verificationMs": 9.22785500000009,
+      "totalMs": 112.91233400000056
+    }
+  ],
+  "readinessSelections": [
+    {
+      "stepId": "upload",
+      "method": "exact-single-match",
+      "observations": 6,
+      "readinessMs": 805.0222229999999
+    },
+    {
+      "stepId": "prompt",
+      "method": "exact-single-match",
+      "observations": 1,
+      "readinessMs": 8.891871999999239
+    },
+    {
+      "stepId": "disable-media",
+      "method": "exact-single-match",
+      "observations": 1,
+      "readinessMs": 10.40074900000036
+    },
+    {
+      "stepId": "voice-off",
+      "method": "exact-single-match",
+      "observations": 1,
+      "readinessMs": 9.220132999999805
+    },
+    {
+      "stepId": "extra-off",
+      "method": "exact-single-match",
+      "observations": 1,
+      "readinessMs": 6.058559999999488
+    },
+    {
+      "stepId": "deep-middle-off",
+      "method": "exact-single-match",
+      "observations": 1,
+      "readinessMs": 9.225930999999946
+    },
+    {
+      "stepId": "edit",
+      "method": "exact-single-match",
+      "observations": 1,
+      "readinessMs": 8.53904700000021
+    },
+    {
+      "stepId": "download",
+      "method": "exact-single-match",
+      "observations": 1,
+      "readinessMs": 6.331374000000324
+    }
+  ],
+  "sha256": "deba72f056e81e845e05ab0edda9e5cd848849aac7133ca72a622d0dde89ad6f",
+  "status": "passed",
+  "wallTimeSeconds": 6.706
+}

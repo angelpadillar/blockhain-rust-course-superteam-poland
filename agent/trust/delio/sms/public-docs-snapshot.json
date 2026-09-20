@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-09-19T09:01:43.425373+00:00",
+  "authUsed": false,
+  "requests": [
+    {
+      "url": "https://5sim.net/v1/guest/countries",
+      "errorType": "HTTPError",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://5sim.net/v1/guest/products/poland/any",
+      "errorType": "HTTPError",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://5sim.net/v1/guest/prices?country=poland",
+      "errorType": "HTTPError",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://5sim.net/v1/guest/prices?product=delio",
+      "errorType": "HTTPError",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

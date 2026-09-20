@@ -1,0 +1,38 @@
+[
+  {
+    "scenario": "merchant_mismatch",
+    "status": "rejected",
+    "integrityValid": true,
+    "boundaryComplete": true,
+    "confirmedOrders": 0,
+    "head": "a08c2e52e3e8d846bb87253b5cf415ba326ac54fe00b92c7811f145c96d3c181",
+    "output": "trust-layer/demo/evidence-captures/sealed-merchant_mismatch.json"
+  },
+  {
+    "scenario": "happy",
+    "status": "rejected",
+    "integrityValid": true,
+    "boundaryComplete": true,
+    "confirmedOrders": 1,
+    "head": "61c7cbb974332e6dbdfa31329d24b81c41ff20012de1ff0eb5da9733e35f5416",
+    "output": "trust-layer/demo/evidence-captures/sealed-happy.json"
+  },
+  {
+    "scenario": "price_increase",
+    "status": "rejected",
+    "integrityValid": true,
+    "boundaryComplete": true,
+    "confirmedOrders": 0,
+    "head": "c2b9374418354f798a40e9c94096927c376313742a46b47b7b62fb3bcba90e5b",
+    "output": "trust-layer/demo/evidence-captures/sealed-price_increase.json"
+  },
+  {
+    "scenario": "expired",
+    "status": "rejected",
+    "integrityValid": true,
+    "boundaryComplete": true,
+    "confirmedOrders": 0,
+    "head": "43f89876d7b91f38052da43f9a5d84a368acc6c98d55a00b5c39c8f819fcc6f5",
+    "output": "trust-layer/demo/evidence-captures/sealed-expired.json"
+  }
+]

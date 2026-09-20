@@ -1,0 +1,10 @@
+*
+!package.json
+!package-lock.json
+!src/
+!src/**
+!scripts/
+!scripts/**
+!cases/
+!cases/*.json
+!Dockerfile

@@ -1,0 +1,18 @@
+{
+  "purpose": "Provider integration probe on a public synthetic goal; no browser task.",
+  "success": false,
+  "reason": "secret_item_unavailable",
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  }
+}

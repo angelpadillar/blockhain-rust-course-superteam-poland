@@ -1,0 +1,23 @@
+name: buena-multilogin
+services:
+  launcher:
+    image: public.ecr.aws/d3n0b1o9/mlx-launcher@sha256:396cdfe9803e2d7c569c6682617813626df461361fea9d56b5c0c0898e067d8e
+    restart: unless-stopped
+    cpus: 6
+    mem_limit: 12g
+    shm_size: 1g
+    ports:
+      - "127.0.0.1:45001:45001"
+      - "127.0.0.1:45003:45003"
+  worker:
+    profiles: [worker]
+    build: .
+    network_mode: service:launcher
+    depends_on: [launcher]
+    read_only: true
+    tmpfs:
+      - /tmp
+    volumes:
+      - ./private:/data
+    cpus: 2
+    mem_limit: 1g

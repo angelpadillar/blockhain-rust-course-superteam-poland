@@ -1,0 +1,35 @@
+name: captions-editor-agent
+x-common: &common
+  build: .
+  image: buena-captions-editor-agent:20260918-3
+  init: true
+  user: "1000:1000"
+  cpus: 2
+  mem_limit: 4g
+  pids_limit: 512
+  shm_size: 1g
+  restart: "no"
+  security_opt:
+    - no-new-privileges:true
+    - seccomp=./config/chromium-seccomp.json
+  volumes:
+    - /data/captions-editor-agent/state:/app/data
+    - /data/captions-editor-agent/assets:/app/assets:ro
+    - /data/captions-editor-agent/config/editor.json:/app/config/editor.json:ro
+    - /data/captions-editor-agent/secrets:/run/secrets:ro
+  environment:
+    EDITOR_CONFIG: /app/config/editor.json
+    EDITOR_TOKEN_FILE: /run/secrets/service_token
+    VNC_PASSWORD_FILE: /run/secrets/vnc_password
+services:
+  worker:
+    <<: *common
+    profiles: [worker]
+    ports: ["100.121.5.10:8792:8792"]
+  onboarding:
+    <<: *common
+    profiles: [onboarding]
+    command: ["node","src/desktop.mjs"]
+    ports: ["100.121.5.10:6092:6080"]
+    healthcheck:
+      disable: true

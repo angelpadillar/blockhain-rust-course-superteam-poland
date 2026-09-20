@@ -1,0 +1,28 @@
+{
+  "frozenAt": "2026-09-17T10:34:45.971Z",
+  "version": 2,
+  "sequence": [
+    "baseline",
+    "candidate",
+    "candidate",
+    "baseline",
+    "baseline",
+    "candidate"
+  ],
+  "plannedRunsPerArm": 3,
+  "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+  "sourceHashes": {
+    "baseline": "bcb88f2bfbd52b5c7e9ab7837c30873076fcc11a77c3b105ccf342f53f1faa89",
+    "candidate": "6dc773912b5e5281fd2e7c871405c7ef6c8a5d5373b370719096cb0d8644eeef",
+    "harness": "aadfbcf1a951ad2078dcc16238e23a11cac0d1fa9d8d02607e48247910caa56d"
+  },
+  "taskSha256": "f951e54a2977938ef22e460a44b015254d32b45da1a44ffe7f128426aa4b2569",
+  "limits": {
+    "maxStepsPerRun": 20,
+    "maxRunMs": 120000,
+    "maxModelUsdPerRun": 0.02
+  },
+  "design": "Three adjacent pairs in B/C, C/B, B/C order; fixed before live requests; fresh Chromium context for each run, same persistent profile and process-shared Jev client. No warm-up calls.",
+  "timing": "Navigation total includes homepage through verification and journals. fullAttemptMs includes launch, navigation, close and pending diagnostic flush; excludes terminal journal and batch writes.",
+  "stopping": "Continue ordinary incomplete navigation attempts. Stop the batch on setup/challenge, provider/usage failures, journaling failures or cancellation; preserve the partial sequence."
+}

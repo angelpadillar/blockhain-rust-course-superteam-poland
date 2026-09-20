@@ -1,0 +1,15 @@
+{
+  "kind": "approval",
+  "observedAt": 1789807677361,
+  "origin": "http://127.0.0.1:53260",
+  "pathname": "/evidence-view/0e656124-e6a9-40b2-8f99-740b97ab4914",
+  "title": "Confirmed local Solana approval · Buena",
+  "mandateId": "AaZ9np7YFTByD66qcRKQMP3drrpKXszcq9ELDHHjGyXt",
+  "quoteId": "0e656124-e6a9-40b2-8f99-740b97ab4914",
+  "eventHash": "ef1d5ce1c2a9fb86a8a4bbd8ac7e56693bc4cbe6d63f40296e5580bc2879774e",
+  "quoteHash": "15b8269d37d313a91e480224413ca77946f768e3e74f94053d5ce5333f6125d5",
+  "merchantId": "krakow-coffee-lab-demo",
+  "currency": "PLN",
+  "totalMinor": 12900,
+  "approvalId": "0e656124-e6a9-40b2-8f99-740b97ab4914"
+}

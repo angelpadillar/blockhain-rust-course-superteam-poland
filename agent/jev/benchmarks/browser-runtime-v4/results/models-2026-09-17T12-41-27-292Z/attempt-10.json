@@ -1,0 +1,537 @@
+{
+  "attempt": 10,
+  "caseId": "direct-link-delayed-heading",
+  "repeat": 1,
+  "inputMode": "structured",
+  "status": "completed",
+  "events": [
+    {
+      "plannedSteps": 2,
+      "type": "workflow_started",
+      "elapsedMs": 0.2802080000001297
+    },
+    {
+      "step": 1,
+      "operation": "open_link",
+      "targetText": "Cedar Workshop",
+      "type": "step_started",
+      "elapsedMs": 5.087750000002416
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000019950000000000004,
+        "latencyMs": 216.500082999999,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 475,
+        "outputTokens": 47,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 1,
+      "operation": "open_link",
+      "kind": "click",
+      "ref": "s1:e1",
+      "type": "action_planned",
+      "elapsedMs": 259.8622080000023
+    },
+    {
+      "step": 1,
+      "operation": "open_link",
+      "kind": "click",
+      "ref": "s1:e1",
+      "type": "action_completed",
+      "elapsedMs": 310.00837500000125
+    },
+    {
+      "step": 1,
+      "operation": "open_link",
+      "evidence": {
+        "before": {
+          "url": "http://127.0.0.1:59725/cases/direct-link-delayed-heading",
+          "title": "Independent Paper Market"
+        },
+        "after": {
+          "url": "http://127.0.0.1:59725/shop/338c96904d8696b3088d",
+          "title": "Cedar Workshop"
+        },
+        "urlChanged": true,
+        "visibleExactHeading": true,
+        "originPreserved": true,
+        "independentlyVerified": false
+      },
+      "type": "step_completed",
+      "elapsedMs": 336.06258300000263
+    },
+    {
+      "step": 2,
+      "operation": "search_and_open",
+      "targetText": "Harbor Grid Planner",
+      "type": "step_started",
+      "elapsedMs": 341.33795800000007
+    },
+    {
+      "type": "started",
+      "elapsedMs": 347.4320829999997,
+      "mode": "fast",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 0.1492919999982405
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 354.17312500000116,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 6.902125000000524
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 362.2017500000002,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 14.913291999997455
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 367.78575000000274,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 20.504417000000103
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 389.13950000000114,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 41.83350000000064
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 414.91270799999984,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 67.62591699999757
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 451.153666000002,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 103.84208299999955
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 1103.179500000002,
+      "independentlyVerified": false,
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 755.8556250000001
+    },
+    {
+      "step": 2,
+      "operation": "search_and_open",
+      "evidence": {
+        "before": {
+          "url": "http://127.0.0.1:59725/shop/338c96904d8696b3088d",
+          "title": "Cedar Workshop"
+        },
+        "after": {
+          "url": "http://127.0.0.1:59725/entry/509d7b5f1360ae1b9261",
+          "title": "Harbor Grid Planner"
+        },
+        "urlChanged": true,
+        "visibleExactHeading": true,
+        "originPreserved": true,
+        "independentlyVerified": false
+      },
+      "type": "step_completed",
+      "elapsedMs": 1116.9608750000007
+    },
+    {
+      "completedSteps": 2,
+      "independentlyVerified": false,
+      "type": "workflow_completed",
+      "elapsedMs": 1122.456416000001
+    }
+  ],
+  "journalMs": 87.87687499999083,
+  "journalWrites": 20,
+  "blockedRequests": 0,
+  "contextSetupMs": 249.21829200000138,
+  "planningMs": 0.17558400000052643,
+  "navigationMs": 10.728417000002082,
+  "publicGoal": "Open \"Cedar Workshop\" in the district for creative studio work, then search within that shop for \"Harbor Grid Planner\" and open its details.",
+  "plan": {
+    "steps": [
+      {
+        "operation": "open_link",
+        "targetText": "Cedar Workshop",
+        "context": "the shop for creative studio work"
+      },
+      {
+        "operation": "search_and_open",
+        "query": "Harbor Grid Planner",
+        "targetText": "Harbor Grid Planner"
+      }
+    ]
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000019950000000000004,
+        "latencyMs": 216.500082999999,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 475,
+        "outputTokens": 47,
+        "costBasis": "estimated"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 216.500082999999,
+    "inputTokens": 475,
+    "outputTokens": 47,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.000019950000000000004,
+    "knownCostUsd": 0.000019950000000000004,
+    "costBasis": "includes_estimates",
+    "screenshotCalls": 0
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "failedStep": null,
+    "steps": [
+      {
+        "step": 1,
+        "operation": "open_link",
+        "targetText": "Cedar Workshop",
+        "status": "completed",
+        "reason": null,
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/cases/direct-link-delayed-heading",
+            "title": "Independent Paper Market"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/shop/338c96904d8696b3088d",
+            "title": "Cedar Workshop"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "metrics": {
+          "totalMs": 336.31275000000096,
+          "observationMs": 46.035917000001064,
+          "executionMs": 34.002291000000696,
+          "conditionWaitMs": 20.9320000000007,
+          "settlingMs": 0,
+          "chooserMs": 225.44075000000157,
+          "eventMs": 0,
+          "explicitProtocolCalls": 12,
+          "observations": 2,
+          "revalidations": 1,
+          "browserScans": 3,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 1,
+          "nativeActionsCompleted": 1,
+          "fillAttempts": 0,
+          "pressAttempts": 0,
+          "clickAttempts": 1,
+          "chooserCalls": 1,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        }
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "targetText": "Harbor Grid Planner",
+        "status": "completed",
+        "reason": null,
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/shop/338c96904d8696b3088d",
+            "title": "Cedar Workshop"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/entry/509d7b5f1360ae1b9261",
+            "title": "Harbor Grid Planner"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "metrics": {
+          "totalMs": 781.0997090000019,
+          "observationMs": 680.1380419999987,
+          "executionMs": 46.89141700000255,
+          "conditionWaitMs": 675.0517069999951,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0,
+          "explicitProtocolCalls": 46,
+          "observations": 8,
+          "revalidations": 3,
+          "browserScans": 13,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "runtimeStatus": "opened"
+      }
+    ],
+    "metrics": {
+      "totalMs": 1128.2462500000001,
+      "observationMs": 726.1739589999997,
+      "executionMs": 80.89370800000324,
+      "conditionWaitMs": 695.9837069999958,
+      "settlingMs": 0,
+      "chooserMs": 225.44075000000157,
+      "eventMs": 70.55087699999785,
+      "explicitProtocolCalls": 63,
+      "observations": 10,
+      "revalidations": 4,
+      "browserScans": 16,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 4,
+      "nativeActionsCompleted": 4,
+      "fillAttempts": 1,
+      "pressAttempts": 1,
+      "clickAttempts": 2,
+      "chooserCalls": 1,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:59725/entry/509d7b5f1360ae1b9261",
+      "title": "Harbor Grid Planner"
+    },
+    "events": [
+      {
+        "plannedSteps": 2,
+        "type": "workflow_started",
+        "elapsedMs": 0.2802080000001297
+      },
+      {
+        "step": 1,
+        "operation": "open_link",
+        "targetText": "Cedar Workshop",
+        "type": "step_started",
+        "elapsedMs": 5.087750000002416
+      },
+      {
+        "step": 1,
+        "operation": "open_link",
+        "kind": "click",
+        "ref": "s1:e1",
+        "type": "action_planned",
+        "elapsedMs": 259.8622080000023
+      },
+      {
+        "step": 1,
+        "operation": "open_link",
+        "kind": "click",
+        "ref": "s1:e1",
+        "type": "action_completed",
+        "elapsedMs": 310.00837500000125
+      },
+      {
+        "step": 1,
+        "operation": "open_link",
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/cases/direct-link-delayed-heading",
+            "title": "Independent Paper Market"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/shop/338c96904d8696b3088d",
+            "title": "Cedar Workshop"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "type": "step_completed",
+        "elapsedMs": 336.06258300000263
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "targetText": "Harbor Grid Planner",
+        "type": "step_started",
+        "elapsedMs": 341.33795800000007
+      },
+      {
+        "type": "started",
+        "elapsedMs": 347.4320829999997,
+        "mode": "fast",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 0.1492919999982405
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 354.17312500000116,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 6.902125000000524
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 362.2017500000002,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 14.913291999997455
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 367.78575000000274,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 20.504417000000103
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 389.13950000000114,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 41.83350000000064
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 414.91270799999984,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 67.62591699999757
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 451.153666000002,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 103.84208299999955
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 1103.179500000002,
+        "independentlyVerified": false,
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 755.8556250000001
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/shop/338c96904d8696b3088d",
+            "title": "Cedar Workshop"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/entry/509d7b5f1360ae1b9261",
+            "title": "Harbor Grid Planner"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "type": "step_completed",
+        "elapsedMs": 1116.9608750000007
+      },
+      {
+        "completedSteps": 2,
+        "independentlyVerified": false,
+        "type": "workflow_completed",
+        "elapsedMs": 1122.456416000001
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": false,
+    "scope": "At most four compiled native search/open or exact-link steps; each requires a changed URL and an observed exact target heading. Completion is not independent task verification.",
+    "metricScope": "Counters add explicit wrapper and v3 operations; internal Playwright traffic is excluded. Observation includes browser waits, and condition/event/request timing can overlap. Journal event time is recorded at workflow level, not added again to step eventMs. No fixed inter-step settling or model calls are added."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "correctMerchant": true,
+      "correctDistrict": true
+    }
+  },
+  "verificationMs": 1.307542000002286,
+  "verifiedSuccess": true,
+  "taskMs": 1140.3433750000004,
+  "providerSettlementMs": 0.0015839999978197739,
+  "finalizationMs": 4.976542000000336,
+  "totalMs": 1145.3213340000002,
+  "cleanupMs": 7.370999999999185
+}

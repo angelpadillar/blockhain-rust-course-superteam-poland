@@ -1,0 +1,12 @@
+import {readFile} from 'node:fs/promises';
+const token=(await readFile('/run/secrets/service_token','utf8')).trim();
+const headers={Authorization:`Bearer ${token}`};
+const get=async route=>{ const r=await fetch('http://127.0.0.1:8793/'+route,{headers,signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Read failed: '+r.status);return r.json();};
+const status=await get('status');
+if(status.status!=='ready_for_observation'||!status.healthy)throw Error('Browser startup not complete');
+const config=JSON.parse(await readFile('/app/config/editor.json','utf8'));
+const state=JSON.parse(await readFile('/app/state/automation/'+config.resumeJobId+'.json','utf8'));
+const snapshot=await get('snapshot');
+const report={health:status,resumedRecordedProject:snapshot.url===state.boundUrl,controlsObserved:snapshot.elements.length,signInControls:snapshot.elements.filter(e=>/^sign in|^log in/i.test(e.name||'')).length,projectControls:snapshot.elements.filter(e=>/^(?:Download|Share|Export|Create Share Link)$/i.test(e.name||'')).map(e=>e.name)};
+console.log(JSON.stringify(report));
+if(!report.resumedRecordedProject||!report.controlsObserved||report.signInControls)process.exit(1);

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "provider": "5sim",
+  "country": "poland",
+  "product": "zabkajush",
+  "operator": "virtual53",
+  "recordedAt": "2026-09-19T13:31:17.316Z",
+  "purpose": "Public API versus separately user-reported website rate comparison",
+  "requests": [
+    {
+      "url": "https://5sim.net/v1/guest/prices?country=poland",
+      "method": "GET",
+      "authUsed": false,
+      "startedAt": "2026-09-19T13:31:17.107Z",
+      "observedAt": "2026-09-19T13:31:17.223Z",
+      "durationMs": 115,
+      "httpStatus": 200,
+      "responseSha256": "ffe6a610efac4663440973c198761090bb4465bc39ca4dc392d1f9497eab9d24",
+      "targetPresent": true,
+      "entry": {
+        "cost": 0.1538,
+        "count": 22,
+        "ratePresent": true,
+        "rate": 0,
+        "rateState": "explicit_zero"
+      }
+    },
+    {
+      "url": "https://5sim.net/v1/guest/prices?country=poland&product=zabkajush",
+      "method": "GET",
+      "authUsed": false,
+      "startedAt": "2026-09-19T13:31:17.126Z",
+      "observedAt": "2026-09-19T13:31:17.316Z",
+      "durationMs": 190,
+      "httpStatus": 200,
+      "responseSha256": "fa1f8578ffda56cd9be8fadd1245e8bde933436f0e3df3ffb95ea94a98418a22",
+      "targetPresent": true,
+      "entry": {
+        "cost": 0.1538,
+        "count": 22,
+        "ratePresent": true,
+        "rate": 0,
+        "rateState": "explicit_zero"
+      }
+    }
+  ],
+  "userReportedWebsite": {
+    "ratePercent": 68.85,
+    "priceUsd": "0.1538",
+    "observedAt": null,
+    "independentlyObserved": false,
+    "source": "User report relayed in task; no website browser inspection performed"
+  },
+  "documentation": {
+    "url": "https://5sim.net/docs#prices-by-country-and-product",
+    "checkedDate": "2026-09-19",
+    "rateMeaning": "Delivery percentage; the documentation says it is omitted when below 20 percent or when there are too few orders.",
+    "missingRateInterpretation": "Unknown, not a measured zero.",
+    "explicitZeroInterpretation": "The API explicitly returned numeric zero; this does not establish the true delivery chance or explain the website discrepancy."
+  },
+  "limitations": [
+    "No account, order, phone, SMS, credentials or personal data were queried or saved.",
+    "Public GET requests only; no purchase or account mutation.",
+    "The endpoint does not supply a sample size or measurement window.",
+    "The endpoint does not identify price currency; USD is supplied only by the user-reported website price in this comparison.",
+    "The website rate has not been independently observed by this task, and the timing/scope of its measurement is unknown.",
+    "Any API-versus-website mismatch is an observed discrepancy between these sources, not a diagnosed cause.",
+    "A single reported successful activation cannot validate a population delivery percentage; neither API refresh timing nor the website/API statistical scope is established."
+  ],
+  "afterRecordedAt": "2026-09-19T13:50:32.562Z",
+  "afterRequests": [
+    {
+      "url": "https://5sim.net/v1/guest/prices?country=poland",
+      "method": "GET",
+      "authUsed": false,
+      "startedAt": "2026-09-19T13:50:32.410Z",
+      "observedAt": "2026-09-19T13:50:32.562Z",
+      "durationMs": 151,
+      "httpStatus": 200,
+      "responseSha256": "460ca295c6934205a9d3be6050c4126a8c77e772ca29330ea590ce060946796c",
+      "targetPresent": true,
+      "entry": {
+        "cost": 0.1538,
+        "count": 20,
+        "ratePresent": true,
+        "rate": 0,
+        "rateState": "explicit_zero"
+      }
+    },
+    {
+      "url": "https://5sim.net/v1/guest/prices?country=poland&product=zabkajush",
+      "method": "GET",
+      "authUsed": false,
+      "startedAt": "2026-09-19T13:50:32.429Z",
+      "observedAt": "2026-09-19T13:50:32.557Z",
+      "durationMs": 128,
+      "httpStatus": 200,
+      "responseSha256": "344296533070c85aa9967069582c6b24ca51a3b92a87af27fab643504a0b981d",
+      "targetPresent": true,
+      "entry": {
+        "cost": 0.1538,
+        "count": 20,
+        "ratePresent": true,
+        "rate": 0,
+        "rateState": "explicit_zero"
+      }
+    }
+  ],
+  "snapshotLabels": {
+    "requests": "Initial public API snapshot",
+    "afterRequests": "One final public API snapshot; no retries"
+  },
+  "comparison": {
+    "beforeObservedAt": "2026-09-19T13:31:17.316Z",
+    "afterObservedAt": "2026-09-19T13:50:32.562Z",
+    "websiteRatePercent": 68.85,
+    "websiteRateSource": "User-reported; not independently inspected",
+    "beforeRates": [
+      {
+        "url": "https://5sim.net/v1/guest/prices?country=poland",
+        "rateState": "explicit_zero",
+        "rate": 0
+      },
+      {
+        "url": "https://5sim.net/v1/guest/prices?country=poland&product=zabkajush",
+        "rateState": "explicit_zero",
+        "rate": 0
+      }
+    ],
+    "afterRates": [
+      {
+        "url": "https://5sim.net/v1/guest/prices?country=poland",
+        "rateState": "explicit_zero",
+        "rate": 0
+      },
+      {
+        "url": "https://5sim.net/v1/guest/prices?country=poland&product=zabkajush",
+        "rateState": "explicit_zero",
+        "rate": 0
+      }
+    ],
+    "conclusion": "Numeric zero and a missing field remain distinct. The separately reported website rate is not validated by these API readings or by one successful activation.",
+    "causalAttribution": null
+  }
+}

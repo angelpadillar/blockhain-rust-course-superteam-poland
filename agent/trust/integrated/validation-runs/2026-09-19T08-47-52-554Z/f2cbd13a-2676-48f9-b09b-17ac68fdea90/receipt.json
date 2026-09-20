@@ -1,0 +1,506 @@
+{
+  "runId": "f2cbd13a-2676-48f9-b09b-17ac68fdea90",
+  "scenario": "happy",
+  "phase": "blocked",
+  "environment": {
+    "chain": "Local Solana execution — LiteSVM",
+    "merchant": "Simulated merchant fulfillment",
+    "signer": "Ephemeral demo sender and oracle keys; no wallet connection",
+    "browser": "Isolated Playwright fixture browser; existing production adapters unchanged",
+    "decisionMode": "Fixed evidence-backed fixture recommendation; no live model call",
+    "settlement": "Fictional token: 1 PLN = 1 demo token, zero protocol fee; no real FX or funds"
+  },
+  "recipient": {
+    "name": "Marta",
+    "commitmentId": "fictional-marta-demo",
+    "brief": "Fictional demo brief: Marta enjoys pour-over coffee, trying independent roasters and weekend cycling. Avoid alcohol."
+  },
+  "recommendation": {
+    "name": "Weekend Coffee Discovery Set",
+    "reason": "A coffee tasting set matches Marta’s stated interest in pour-over coffee and discovering roasters. It contains no alcohol.",
+    "evidence": [
+      {
+        "label": "Recipient preference",
+        "text": "Enjoys pour-over coffee and independent roasters.",
+        "source": "Explicitly fictional demo recipient brief"
+      },
+      {
+        "label": "Product fit",
+        "text": "Three 100 g whole-bean coffees",
+        "source": "Simulated merchant catalogue — not live research"
+      }
+    ]
+  },
+  "authorization": {
+    "confirmed": true,
+    "termsHash": "52ce8ffaf390235665084c4f9e368646f674ac90cd4b8bda6e185ffecad6973d",
+    "campaignAddress": "AREDkV4qgmBp8QXFFZNRTnGGUi1FZFQde3hSEYQArAxK",
+    "mandateAddress": "8cbsHDKA8RCTAHw3CdSpmZYZwm13C1sowwfXxjhbpSPD",
+    "status": "Not authorized"
+  },
+  "chain": {
+    "transactions": [
+      {
+        "accepted": true,
+        "computeUnits": 150,
+        "error": null,
+        "label": "fixture_airdrop",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success"
+        ],
+        "signature": "5tLhRi4e5o3kRYy8LUCBCqCJxsHWXScaT9BPJSm54JHDtXLxrBF6NJGaZv5xyFGZhGKuDzmnXJub7TxXu8dUkmf",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 150,
+        "error": null,
+        "label": "fixture_airdrop",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success"
+        ],
+        "signature": "3kvemMJMEHCEzJYHMnG33pnuJyEJ9yPS1Wto2Ne8gVMPWCMt1KGVnYuPBg7JbJF5z3f8QXncF94qkQ8VoRdUSJCM",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 150,
+        "error": null,
+        "label": "fixture_airdrop",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success"
+        ],
+        "signature": "Jcqi7ZYpbUR7hij3NxboPYWb8sxTEpxi4yUkHfCPWhEAxdn7qFqr9RC9u1pkfbzWEmxdquYBw2dagwhJxAv3eL5",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 150,
+        "error": null,
+        "label": "fixture_airdrop",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success"
+        ],
+        "signature": "2jTt1Ztb9YTB3jgiDBZ4bSxnXcyi82fwDdTngmotegdR3nxyCPHAMWjDuGudy9ji6aDiYdFhnMP4u7XLRsMWC7xr",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 150,
+        "error": null,
+        "label": "fixture_airdrop",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success"
+        ],
+        "signature": "2KC8rS3ycqac8yHHEGfNDT8NeP2uXGHCZuc8mBjnKyjeGxy5agrQNDM17z4wSB6VvebQb1oKbyNmAHpyxEnzh6tW",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 150,
+        "error": null,
+        "label": "fixture_airdrop",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success"
+        ],
+        "signature": "51ms255YaDrXrfbw5QMiSGAmWQqYmyvobrNVwnC3g2jRSrn7iSFFNud9Ug4gbBDCB5Z6EmZJtpAjYkD9yxruqmMs",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 2929,
+        "error": null,
+        "label": "create_demo_mint",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [1]",
+          "Program log: Instruction: InitializeMint2",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 2779 of 202850 compute units",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success"
+        ],
+        "signature": "THTW9MnRGqNqupbbqZvt71AXWCgx4VW4RbfQFit3pfHnHThPFLFvTQMUocc3u1YRacJ9WgegiTXEFQVzfUJFXfD",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 8852,
+        "error": null,
+        "label": "fund_demo_tokens",
+        "logs": [
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [1]",
+          "Program log: Instruction: InitializeAccount3",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4212 of 402850 compute units",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [1]",
+          "Program log: Instruction: MintTo",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4490 of 398638 compute units",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success"
+        ],
+        "signature": "3cKVVy6pES9c7zyBGLrGABxVV7k8U1hk8AGK8YWv7GRHx4XoMFnFvSBPxCKXWFSmQQE1Fyj5RijbWPJMvgjy6RSq",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 8596,
+        "error": null,
+        "label": "initialize_program_config",
+        "logs": [
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb invoke [1]",
+          "Program log: Instruction: Initialize",
+          "Program 11111111111111111111111111111111 invoke [2]",
+          "Program 11111111111111111111111111111111 success",
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb consumed 8596 of 200000 compute units",
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb success"
+        ],
+        "signature": "5VNpkkDtTDjkynTStH3RgBCzVG2pQgkRViyu9UuDjjEbXCmYFcKdt3wMNztqwhWuDS4Htr74N2zVEWMTvoMtTDCT",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 41263,
+        "error": null,
+        "label": "create_funded_campaign",
+        "logs": [
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb invoke [1]",
+          "Program log: Instruction: CreateCampaign",
+          "Program 11111111111111111111111111111111 invoke [2]",
+          "Program 11111111111111111111111111111111 success",
+          "Program 11111111111111111111111111111111 invoke [2]",
+          "Program 11111111111111111111111111111111 success",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+          "Program log: Instruction: InitializeAccount3",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4214 of 175834 compute units",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+          "Program log: Instruction: Transfer",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 166467 compute units",
+          "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+          "Program data: CWJFPTWDQJiL7hHH4smrEBgohu1MruIew/f4+vK38nBZ67ZN01OOpKuppvugumVdOOukaR2w7vCcg2sucN2zoGknrnLm1Q30AQAAAAAAAABAYrAHAAAAAMNPrmoAAAAA",
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb consumed 41263 of 200000 compute units",
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb success"
+        ],
+        "signature": "61o1v8pRA5aJUvcF3b4UQLZQGeTHuLyEXnXT8agwhVY5NJysgfW5hKQiv6bVstuJZ9PVKTE2fe5QsHt3pMxVKAwK",
+        "success": true
+      },
+      {
+        "accepted": true,
+        "computeUnits": 8239,
+        "error": null,
+        "label": "submit_quote",
+        "logs": [
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb invoke [1]",
+          "Program log: Instruction: SubmitQuote",
+          "Program data: z2L7avl8fiiL7hHH4smrEBgohu1MruIew/f4+vK38nBZ67ZN01OOpAEAAACjxGxTYuWZ1BinryeM+KmuijFatcBRRRhZWT2T2FSNinzXy6grB6qUNBtZu5aYUfSefWJH4UPolZSx6HOi2xK+UExOAmQyAAAAAAAAUExOAmQyAAAAAAAAQEIPAAAAAABAYrAHAAAAAMNPrmoAAAAA",
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb consumed 8239 of 200000 compute units",
+          "Program F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb success"
+        ],
+        "signature": "4TMtrgjpEZUMVMVbMV6cALTWTD91bvwB1MRC4gNKcXPhM9M1Bz7YwZnTAz6WRMsPAztLMiZf2Rt9LCcoKvp4fyFw",
+        "success": true
+      }
+    ],
+    "accountState": {
+      "balances": {
+        "senderDemoTokenUnits": "0",
+        "vaultDemoTokenUnits": "129000000"
+      },
+      "bridgePoisoned": false,
+      "campaign": {
+        "adapter": 0,
+        "authenticatedAmountMinor": "0",
+        "budget": "129000000",
+        "bump": 249,
+        "chargeCurrency": "PLN",
+        "chargeCurrencyExponent": 2,
+        "chargedAmountMinor": "0",
+        "createdAt": "1789807679",
+        "currency": "PLN",
+        "currencyExponent": 2,
+        "deliveryFeeMinor": "0",
+        "expiresAt": "1789808579",
+        "fulfillmentHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "giftHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "itemSubtotalMinor": "12900",
+        "jobKind": 0,
+        "landedTotalMinor": "12900",
+        "mandate": "11111111111111111111111111111111",
+        "maxTotalMinor": "12900",
+        "merchantHash": "9c5cc2f344832a0438edeae05ba47418ab65a8a4d846cfe57541cbbb3ef23a37",
+        "nonce": "1",
+        "orderIdHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "otherFeesMinor": "0",
+        "paymentAttemptHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "paymentAttemptedAt": "0",
+        "paymentAuthHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "paymentAuthenticatedAt": "0",
+        "podHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "purchaseHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "purchasedAt": "0",
+        "quoteCapturedAt": "1789807679",
+        "quoteExpiresAt": "1789808579",
+        "quoteHash": "7cd7cba82b07aa94341b59bb969851f49e7d6247e143e89594b1e873a2db12be",
+        "quoteVersion": 1,
+        "quotedChargeAmountMinor": "12900",
+        "researchHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "sender": "CZ6kwjohCXt8ntux7KtFLC1zV77p3fsjb9h4yzU8iM1m",
+        "serviceFeeMinor": "0",
+        "settlementAmount": "129000000",
+        "settlementUnitsPerChargeUnitMicros": "1000000",
+        "smallOrderFeeMinor": "0",
+        "specHash": "a3c46c5362e599d418a7af278cf8a9ae8a315ab5c051451859593d93d8548d8a",
+        "spent": "0",
+        "status": "Quoted",
+        "tipMinor": "0",
+        "vaultBump": 255
+      },
+      "clockUnixSeconds": "1789807679",
+      "config": {
+        "allowedMint": "9WnWkGaPwDpiryDaVN8Y4Ku4niLQ87RF1edi28SBxwey",
+        "authority": "AcwxpGR3vSPrgnqywyP5MCYu3pk4GSx3yaHob8RBQMsg",
+        "bump": 255,
+        "deliveryOracle": "75xzy3MZVXUwXBN9UZyXwV6HchFvZbc85dVcyMMasYMh",
+        "feeBps": 0,
+        "researchOracle": "ANdtPiuRAG4xgXMM76umf69E8kj4eiH3ssq2qTaEE6nN",
+        "treasury": "DjA8feGZ4aGxdc2Pn1U5nwLMTPmdaX5YsPniMYy4iWf5"
+      },
+      "mandate": null
+    },
+    "publicKeys": {
+      "campaign": "AREDkV4qgmBp8QXFFZNRTnGGUi1FZFQde3hSEYQArAxK",
+      "config": "9hCEnNbHQwNAKft58oT4J2FYGjiWoVhGKgyjunwrWpGG",
+      "executor": "5sEZGeEufEkw43iuEFjGC1YZi2m6C6uiUMLteXFcsKnV",
+      "fixturePayer": "AcwxpGR3vSPrgnqywyP5MCYu3pk4GSx3yaHob8RBQMsg",
+      "fulfillmentOracle": "75xzy3MZVXUwXBN9UZyXwV6HchFvZbc85dVcyMMasYMh",
+      "mandate": "8cbsHDKA8RCTAHw3CdSpmZYZwm13C1sowwfXxjhbpSPD",
+      "mint": "9WnWkGaPwDpiryDaVN8Y4Ku4niLQ87RF1edi28SBxwey",
+      "program": "F1dNhkpGn5eVL9xWcsnRUf3jevAJdDCU7UN5u7YAEhYb",
+      "researchOracle": "ANdtPiuRAG4xgXMM76umf69E8kj4eiH3ssq2qTaEE6nN",
+      "sender": "CZ6kwjohCXt8ntux7KtFLC1zV77p3fsjb9h4yzU8iM1m",
+      "senderToken": "DzDqMak4pNgAbhGvTfszwyBLiZpyacPHg5mjt9ue79mP",
+      "treasury": "DjA8feGZ4aGxdc2Pn1U5nwLMTPmdaX5YsPniMYy4iWf5",
+      "vault": "FJntABmgG6edB1V3fRbLuCfv23457AjfSuwNc9DoK43r"
+    },
+    "binarySha256": "5f04b46558cf0427dda612e53f6bec921bb67fc7e08b10f4a868e08113e12e00",
+    "backend": "LiteSVM local Solana"
+  },
+  "execution": {
+    "status": "not_started",
+    "dispatchCount": 0
+  },
+  "verification": {
+    "ok": false,
+    "checks": []
+  },
+  "events": [
+    {
+      "at": "2026-09-19T08:47:59.286Z",
+      "type": "quote",
+      "message": "Browser quote recorded; JavaScript and Rust agree on the exact authorization bytes. No sender authorization yet."
+    },
+    {
+      "at": "2026-09-19T08:47:59.291Z",
+      "type": "rejected",
+      "message": "Execution requires confirmed local Solana account state; an approval flag alone is insufficient."
+    }
+  ],
+  "evidence": {
+    "artifacts": [
+      {
+        "stage": "quote",
+        "screenshotSha256": "5c8ec9d30fef3a79e96d6d3581c510dcef9636cf050552251d6db218b06ccaa6",
+        "observationSha256": "3885d91d501f98a9a7ec98d28dfda67b456bff72ad2e0a1e1d429c483cd030d8",
+        "url": "/artifacts/f2cbd13a-2676-48f9-b09b-17ac68fdea90/quote-5c8ec9d30fef.png",
+        "observationUrl": "/artifacts/f2cbd13a-2676-48f9-b09b-17ac68fdea90/quote-5c8ec9d30fef.json"
+      }
+    ],
+    "encodingMatched": true,
+    "canonicalByteLength": 602,
+    "ledger": [
+      {
+        "hash": "88393709da4cdafcb8004d3769b834c83023bbd6fcaa3df78fcdfb168ff1b74d",
+        "index": 0,
+        "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "record": {
+          "allowedMerchantIds": [
+            "krakow-coffee-lab-demo"
+          ],
+          "at": 1789807679247,
+          "currency": "PLN",
+          "expiresAt": 1789808579000,
+          "mandateId": "8cbsHDKA8RCTAHw3CdSpmZYZwm13C1sowwfXxjhbpSPD",
+          "maxTotalMinor": 12900,
+          "type": "mandate"
+        },
+        "version": 1
+      },
+      {
+        "hash": "e84583f42c955fc74ff40ec8bd80734b6fea513810d553277c5dbf973403da47",
+        "index": 1,
+        "prevHash": "88393709da4cdafcb8004d3769b834c83023bbd6fcaa3df78fcdfb168ff1b74d",
+        "record": {
+          "at": 1789807679247,
+          "currency": "PLN",
+          "expiresAt": 1789808579000,
+          "items": [
+            {
+              "itemId": "coffee-discovery-3x100g",
+              "quantity": 1,
+              "title": "Weekend Coffee Discovery Set",
+              "unitPriceMinor": 12900
+            }
+          ],
+          "mandateId": "8cbsHDKA8RCTAHw3CdSpmZYZwm13C1sowwfXxjhbpSPD",
+          "merchantId": "krakow-coffee-lab-demo",
+          "quoteId": "f2cbd13a-2676-48f9-b09b-17ac68fdea90",
+          "totalMinor": 12900,
+          "type": "quote"
+        },
+        "version": 1
+      },
+      {
+        "hash": "c086e5c3d9d75f1e5876ea3fd1862e6e94d2da63fabe7143a36498285e3d6511",
+        "index": 2,
+        "prevHash": "e84583f42c955fc74ff40ec8bd80734b6fea513810d553277c5dbf973403da47",
+        "record": {
+          "at": 1789807679285,
+          "eventHash": "e84583f42c955fc74ff40ec8bd80734b6fea513810d553277c5dbf973403da47",
+          "evidence": {
+            "observationSha256": "3885d91d501f98a9a7ec98d28dfda67b456bff72ad2e0a1e1d429c483cd030d8",
+            "screenshotSha256": "5c8ec9d30fef3a79e96d6d3581c510dcef9636cf050552251d6db218b06ccaa6"
+          },
+          "mandateId": "8cbsHDKA8RCTAHw3CdSpmZYZwm13C1sowwfXxjhbpSPD",
+          "quoteId": "f2cbd13a-2676-48f9-b09b-17ac68fdea90",
+          "stage": "quote",
+          "type": "boundary_evidence"
+        },
+        "version": 1
+      },
+      {
+        "version": 1,
+        "index": 3,
+        "prevHash": "c086e5c3d9d75f1e5876ea3fd1862e6e94d2da63fabe7143a36498285e3d6511",
+        "record": {
+          "at": 1789807679291,
+          "mandateId": "8cbsHDKA8RCTAHw3CdSpmZYZwm13C1sowwfXxjhbpSPD",
+          "quoteId": "f2cbd13a-2676-48f9-b09b-17ac68fdea90",
+          "reason": "confirmed_mandate_required",
+          "rejectionId": "8adc3d96-8aca-4d68-b34e-158269d5d339",
+          "type": "rejection"
+        },
+        "hash": "e9f3d7c32045b3d9c63ee2de45ca97db42ec86957068e4f5b53491767fcc45d1"
+      }
+    ],
+    "validation": {
+      "valid": true,
+      "integrityValid": true,
+      "artifactsValid": true,
+      "boundaryComplete": true,
+      "requireBoundaryEvidence": true,
+      "boundaries": [
+        {
+          "index": 1,
+          "stage": "quote",
+          "eventHash": "e84583f42c955fc74ff40ec8bd80734b6fea513810d553277c5dbf973403da47",
+          "mandateId": "8cbsHDKA8RCTAHw3CdSpmZYZwm13C1sowwfXxjhbpSPD",
+          "quoteId": "f2cbd13a-2676-48f9-b09b-17ac68fdea90",
+          "hasScreenshot": true,
+          "hasObservation": true,
+          "observationMatchesRecord": true,
+          "complete": true
+        }
+      ],
+      "issues": [],
+      "headHash": "e9f3d7c32045b3d9c63ee2de45ca97db42ec86957068e4f5b53491767fcc45d1",
+      "anchored": false,
+      "recordCount": 4,
+      "confirmedOrders": 0,
+      "approvalAuthenticated": false,
+      "merchantFactsVerified": false,
+      "meaning": "Integrity and recorded mandate/quote/approval/execution correlations only. Hashes do not authenticate an approver or prove merchant facts. An external trusted head is required to detect rewritten history or a removed tail."
+    },
+    "persistence": "Private local artifacts; no external trusted head or public explorer",
+    "canonicalInputs": {
+      "campaign": {
+        "adapter": 0,
+        "chargeCurrency": "PLN",
+        "chargeCurrencyExponent": 2,
+        "currency": "PLN",
+        "currencyExponent": 2,
+        "deliveryFeeMinor": "0",
+        "expiresAt": "1789808579",
+        "itemSubtotalMinor": "12900",
+        "jobKind": 0,
+        "landedTotalMinor": "12900",
+        "maxTotalMinor": "12900",
+        "merchantHash": "9c5cc2f344832a0438edeae05ba47418ab65a8a4d846cfe57541cbbb3ef23a37",
+        "otherFeesMinor": "0",
+        "quoteCapturedAt": "1789807679",
+        "quoteExpiresAt": "1789808579",
+        "quoteHash": "7cd7cba82b07aa94341b59bb969851f49e7d6247e143e89594b1e873a2db12be",
+        "quoteVersion": 1,
+        "quotedChargeAmountMinor": "12900",
+        "serviceFeeMinor": "0",
+        "settlementAmount": "129000000",
+        "settlementUnitsPerChargeUnitMicros": "1000000",
+        "smallOrderFeeMinor": "0",
+        "specHash": "a3c46c5362e599d418a7af278cf8a9ae8a315ab5c051451859593d93d8548d8a",
+        "tipMinor": "0"
+      },
+      "campaignKey": "8bee11c7e2c9ab10182886ed4caee21ec3f7f8faf2b7f27059ebb64dd3538ea4",
+      "config": {
+        "allowedMint": "7e7ecce91234378125cd9c6acf9b6d8fd1f3fade6d4d035f214d97eb39fec74a",
+        "feeBps": 0
+      },
+      "mandate": {
+        "campaign": "8bee11c7e2c9ab10182886ed4caee21ec3f7f8faf2b7f27059ebb64dd3538ea4",
+        "chargeCurrency": "PLN",
+        "chargeCurrencyExponent": 2,
+        "executor": "484d1dcc6566405f3b1104f1246efabad6af072cd10403a10aee7acf85768396",
+        "expiresAt": "1789808579",
+        "maxChargeAmountMinor": "12900",
+        "maxEscrowDebit": "129000000",
+        "merchantHash": "9c5cc2f344832a0438edeae05ba47418ab65a8a4d846cfe57541cbbb3ef23a37",
+        "recipientHash": "9015df3a3a01276321deca54f904b2bd0e150080f724c8d4a79057cf11e084f0",
+        "sender": "aba9a6fba0ba655d38eba4691db0eef09c836b2e70ddb3a06927ae72e6d50df4",
+        "specHash": "a3c46c5362e599d418a7af278cf8a9ae8a315ab5c051451859593d93d8548d8a"
+      },
+      "mandateKey": "71208f98591e44869cf9761e2f7c62f4031d65fb6172e13511a9410467f32204",
+      "programId": "d02cbed1e1f3f815ef8d3e51cd70bbf114f8af99534b4031044a66a147b83640"
+    }
+  },
+  "quote": {
+    "merchantId": "krakow-coffee-lab-demo",
+    "merchant": "Kraków Coffee Lab — demo",
+    "itemId": "coffee-discovery-3x100g",
+    "item": "Weekend Coffee Discovery Set",
+    "variant": "Three 100 g whole-bean coffees",
+    "quantity": 1,
+    "recipientId": "fictional-marta-demo",
+    "recipient": "Marta",
+    "currency": "PLN",
+    "totalMinor": 12900,
+    "expiresAt": 1789808579,
+    "termsHash": "52ce8ffaf390235665084c4f9e368646f674ac90cd4b8bda6e185ffecad6973d"
+  },
+  "observedQuote": {
+    "merchantId": "krakow-coffee-lab-demo",
+    "merchant": "Kraków Coffee Lab — demo",
+    "itemId": "coffee-discovery-3x100g",
+    "item": "Weekend Coffee Discovery Set",
+    "variant": "Three 100 g whole-bean coffees",
+    "quantity": 1,
+    "recipientId": "fictional-marta-demo",
+    "recipient": "Marta",
+    "currency": "PLN",
+    "totalMinor": 12900
+  },
+  "error": "confirmed_mandate_required"
+}

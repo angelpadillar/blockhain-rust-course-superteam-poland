@@ -1,0 +1,20 @@
+{
+  "adapter": "browser-runtime-v4",
+  "frozen": true,
+  "files": {
+    "benchmark.mjs": "88b832126f6343c5a97f5fae304901abb3dd7cbbb20446577ea9330424bfa7b6",
+    "fixture.mjs": "cf8be07e670ebc54683a92b3d5aaf962b01aaa99c91cb8b9512cbe428b3ae3c7",
+    "fixture.test.mjs": "e871e4213b6fef6ab9bd1187de4ec8c52d95ebc1cbe876957602aacdbd15d55d",
+    "planner.mjs": "8bddc1c6eaaffc43217b95c53f00031421422b39d7afa9dc4a0a875dd5e16adf",
+    "planner.test.mjs": "fefcbdb63bd0a4e1113ec78d8c71522d23588b9e325ee597ee0edd0d7c9a29f2",
+    "public-smoke.mjs": "bab8f1e94c1dcc81cac4c420f5e96c792bfd39713713faab5f1fca39f98df23b",
+    "run.mjs": "ce74c345644dadd81fbadde5954360e601702a5c13bb703d4f1aac42c8a717a1",
+    "search.mjs": "7eec70bb9baf086d73387924736277fe4cb9c45787bbaf6f6a08b60369a25164",
+    "search.test.mjs": "1938ef4950124137bae3279ce2b2015d51c6f7e7fc7bc1b81e41ee307486d6d1",
+    "session.mjs": "2663d61e41ee545ea0b2fd5b147a03942b45ef954f0958819147016e663309ec",
+    "session.test.mjs": "2f30808e2d81f94d6d040f95e629fb8384da2b6bd636b3ca1f8b0c782179a8fb",
+    "workflow.mjs": "e03ffba2edda076923dbef4188c11d84be4f9c93b646e5c63a9aa744ac3e7106",
+    "workflow.test.mjs": "aa57bbda9a582a76b1dda44c8cfb5220ddf1ee47877246025c75127cbf2ae5bc"
+  },
+  "note": "Read-only execution adapter. Amazon cart measurement is isolated; no new browser engine promoted to production."
+}

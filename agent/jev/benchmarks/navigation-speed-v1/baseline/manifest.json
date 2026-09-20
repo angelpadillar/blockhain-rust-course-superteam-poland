@@ -1,0 +1,50 @@
+{
+  "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+  "scope": "Frozen pre-candidate source used by the prior three successful runs. No private config or credentials.",
+  "files": [
+    {
+      "path": "src/navigation.mjs",
+      "sha256": "20d3d8aa341009de63c7708b6fb4f13c32d645ef591316bc45849dfeb2100bc3"
+    },
+    {
+      "path": "src/navigation-journal.mjs",
+      "sha256": "5b65640ea65b69d0d06cdece619935fc65375cd82e12b9970eac9aec1e24a2b7"
+    },
+    {
+      "path": "src/navigation-diagnostics.mjs",
+      "sha256": "fa1a743c33e2ab4334182faa0438e5d674e623d90e08016892ed255ad5915638"
+    },
+    {
+      "path": "src/storage.mjs",
+      "sha256": "e76e9846be42791ed8234ec73cefb287cfde6b7e9b7276a66a38492239d1efa5"
+    },
+    {
+      "path": "src/jev.mjs",
+      "sha256": "52c3b304815f7904cca3a94b919bec91d370b00d18eae8bb1d754e9b586e6464"
+    },
+    {
+      "path": "src/glovo.mjs",
+      "sha256": "4d355e733321a5bc9c9a3a7d846ebd42e98935d2603aade1a486376418016694"
+    },
+    {
+      "path": "src/config.mjs",
+      "sha256": "6b705e52b539f8c6a2030c87da7210cabb133b53135ea79b896ee598e96c448c"
+    },
+    {
+      "path": "src/policy.mjs",
+      "sha256": "8376ddb78c2789389f24b34265749dd4cf4acc54631528efb25e692098677620"
+    },
+    {
+      "path": "scripts/navigation-eval.mjs",
+      "sha256": "c440b4e1ee0b9a88087b351465b15707c0a9eafc0f2e939138220527976fbd64"
+    },
+    {
+      "path": "scripts/navigation-desktop.mjs",
+      "sha256": "2167092112e6f027e29c71e94ee5bbc91c909c2f3ba221743701c6fced235d7d"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "ec03a03d6048231f94368147f057f24c3ee045d0787c1ba603758ad9f3204ba7"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+FROM buena-captions-editor-camoufox:0.1.29-7
+COPY --chown=pwuser:pwuser src/automation.mjs src/observe-server.mjs /app/src/
+COPY --chown=pwuser:pwuser scripts/selftest.mjs /app/scripts/selftest.mjs
+COPY --chown=pwuser:pwuser tests /app/tests
+RUN node --test /app/tests/*.test.mjs

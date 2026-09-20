@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-19T09:41:59.622226Z",
+  "status": "worker_ready_access_blocked",
+  "merchant": "delio.com.pl",
+  "coverage": "unverified",
+  "authenticatedOwner": false,
+  "exactAddressCandidateSelected": true,
+  "postcodeMatchedDuringSelection": true,
+  "deliveryConfirmed": false,
+  "deliverySlotVerified": false,
+  "deliveryCommitment": null,
+  "cartMutations": 0,
+  "checkoutVerifiedQuotes": 0,
+  "modelCalls": 0,
+  "modelCostUsd": 0,
+  "probes": [
+    {
+      "operation": "homepage",
+      "outcome": "observed",
+      "browserRuntimeMs": 5162,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "address_dialog_early",
+      "outcome": "no_dialog_proof",
+      "browserRuntimeMs": 4860,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "address_dialog_ready",
+      "outcome": "observed",
+      "browserRuntimeMs": 5003,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "address_config",
+      "outcome": "private_config_unreadable",
+      "browserRuntimeMs": 4918,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "address_suggestions",
+      "outcome": "snapshot_truncated",
+      "browserRuntimeMs": 10412,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "address_screenshot",
+      "outcome": "blank_suggestions_observed",
+      "browserRuntimeMs": 10499,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "core_diagnostics",
+      "outcome": "inspection_failed",
+      "browserRuntimeMs": 8298,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "full_network_diagnostics",
+      "outcome": "map_dependency_failed_and_input_ambiguous",
+      "browserRuntimeMs": 5978,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "reviewed_map_retry",
+      "outcome": "street_city_candidate_observed",
+      "browserRuntimeMs": 6598,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "fixed_worker_status",
+      "outcome": "blocked_owner_and_delivery_unverified",
+      "browserRuntimeMs": 4711,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "address_candidate_match",
+      "outcome": "multiple_place_variants_stopped",
+      "browserRuntimeMs": 6773,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "exact_address_attempt",
+      "outcome": "snapshot_omitted_input",
+      "browserRuntimeMs": 5299,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "address_native_click",
+      "outcome": "native_click_timeout_outcome_uncertain",
+      "browserRuntimeMs": 11151,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "exact_address_selection",
+      "outcome": "street_building_city_postcode_selected",
+      "browserRuntimeMs": 7255,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "delivery_confirmation",
+      "outcome": "actual_confirmation_control_still_loading",
+      "browserRuntimeMs": 6755,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "delivery_confirmation_native_click",
+      "outcome": "native_control_timeout",
+      "browserRuntimeMs": 12111,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "visible_delivery_confirmation_inspection",
+      "outcome": "native_selector_uncertainty",
+      "browserRuntimeMs": 6517,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    {
+      "operation": "restored_worker_status",
+      "outcome": "precise_known_access_blockers",
+      "browserRuntimeMs": 4300,
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    }
+  ],
+  "totalMeasuredBrowserRuntimeMs": 126600,
+  "lastAttempt": {
+    "operation": "restored_worker_status",
+    "browserStarted": true,
+    "outcome": "merchant_login_required_and_delivery_confirmation_unverified",
+    "browserRuntimeMs": 4300
+  },
+  "worker": {
+    "container": "buena-delio-worker",
+    "currentlyRunning": true,
+    "requiresSourceSyncBeforeStart": false,
+    "capabilities": {
+      "observeCart": false,
+      "mutateCart": false,
+      "quote": false
+    },
+    "api": "private_container_loopback_only",
+    "manualDesktop": {
+      "url": "http://100.121.5.10:6094/vnc.html",
+      "httpStatus": 200,
+      "rfbReachable": true,
+      "passwordRequired": true,
+      "idleCloseMs": 300000
+    },
+    "unauthenticatedRpc": {
+      "status": 401,
+      "code": "unauthorized"
+    },
+    "publishedBindings": [
+      {
+        "hostIp": "100.121.5.10",
+        "hostPort": 6094,
+        "containerPort": 6080
+      }
+    ],
+    "existingServiceTouched": false
+  },
+  "publicArtifact": {
+    "path": "public-home.png",
+    "observedAt": 1789809077324,
+    "sha256": "1406aa3b13802d1152dd835152f4311d4619dbb33ddca1db454250e6cbf51cf5",
+    "privacy": "Fresh-profile public homepage, visually reviewed; no supplied address, account or OTP visible"
+  },
+  "privateArtifacts": "Address snapshots/screenshots stay in isolated private worker storage; not included here.",
+  "sourceHashes": {
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352",
+    "server.mjs": "006b43f6d6784e9a976e3f4fc229269c66052a823dcae4b8611166a08e4f9230",
+    "policy.mjs": "3aa161f56db84228a58753079510a7dacfed03252b55d3903ad37767ffa2f9a8",
+    "probe.mjs": "78e913b6e280cd751d28791d821ccd81b595589de9645210e1c615725ad63a6c",
+    "inspect-access.mjs": "950391749d6c9aedc9b16a0ac19bbbbf2d2c9cacc6ecf905828d1b23a949d40c",
+    "network-probe.mjs": "9d62dd363ad89d722a8de002314a65b2ec8d96d7317f7d7842e47e0d482cba05",
+    "vendor/mcp.mjs": "3fb3821720393caa72d74bfc81547b49e4ce5e4b9da7602dcc5a5379c20f87f9",
+    "vendor/display.mjs": "1d9c77e052a7e667c37d377381aba02a979fe52e3032b5de18100130a6eae88c",
+    "vendor/lock.mjs": "828d741453696b015c1020ef4e215387c0be8c541b2fa0e2ca29cb0dfe15b7be"
+  },
+  "limitations": [
+    "No coverage denial has been established.",
+    "Candidate identity does not complete delivery confirmation or verify a slot.",
+    "Runtime totals are development probe observations, including failures; they are not an end-to-end purchase benchmark.",
+    "Model cost is zero; VPS/browser infrastructure costs are not priced here.",
+    "Final native address confirmation is an unresolved automation control step; it is not evidence of merchant coverage denial."
+  ],
+  "blockers": [
+    "merchant_login_required",
+    "delivery_confirmation_unverified",
+    "delivery_address_required",
+    "cart_operations_not_calibrated"
+  ],
+  "sshAgentInterruption": {
+    "occurred": true,
+    "resolved": true,
+    "failedUploadStartedBrowser": false
+  },
+  "clientIntegrationFix": {
+    "knownBlockerPreviouslyExitedNonzero": true,
+    "fixed": true,
+    "knownApplicationReplyExitCode": 0,
+    "uncertainTransportExitCode": 1,
+    "uncertainTransportOmitsDispatchedClaim": true,
+    "offlineClientTests": 5
+  },
+  "validation": {
+    "policyTests": 5,
+    "clientTests": 5,
+    "passed": 10,
+    "failed": 0
+  },
+  "frontendVerification": {
+    "reportedBy": "parent_controller",
+    "passed": true,
+    "allFourBlockersDisplayed": true,
+    "attempts": [
+      {
+        "controllerRuntimeMs": 386,
+        "outcome": "transport_unknown",
+        "retained": true,
+        "knownCostUsd": null
+      },
+      {
+        "controllerRuntimeMs": 377,
+        "outcome": "known_access_blockers",
+        "dispatched": false,
+        "knownCostUsd": 0
+      }
+    ],
+    "includedInBrowserProbeTotals": false
+  },
+  "sshControlConnection": {
+    "leftActiveForOperator": true,
+    "controlPersistSeconds": 600,
+    "expirySemantics": "SSH ControlPersist inactivity timeout; it is not a guarantee that the connection remains available for a fixed wall-clock period."
+  }
+}

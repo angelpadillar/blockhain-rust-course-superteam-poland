@@ -1,0 +1,19 @@
+{
+  "source": "cached_public_catalog",
+  "sourceUrl": "https://delio.com.pl/",
+  "cacheRetrievedAt": "2026-09-19T09:06:00Z",
+  "observedAt": null,
+  "location": null,
+  "currency": "PLN",
+  "note": "Public web-index snapshot retrieved on this date; merchant observation time and delivery location are unknown. Prices and stock require live checkout verification.",
+  "items": [
+    {"productId":"A0000953","title":"Masło Polskie extra","packSize":"200 g","unitPriceMinor":429,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0000953-maslo-polskie-extra"},
+    {"productId":"A0000926","title":"Ser gouda w plastrach","packSize":"150 g","unitPriceMinor":569,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0000926-ser-gouda-w-plastrach"},
+    {"productId":"A0000730","title":"Piątnica serek wiejski","packSize":"200 g","unitPriceMinor":259,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0000730-piatnica-serek-wiejski"},
+    {"productId":"A0002856","title":"Piątnica mleko ekologiczne 3,9%","packSize":"1 l","unitPriceMinor":749,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0002856-piatnica-mleko-ekologiczne-3-9"},
+    {"productId":"A0000840","title":"Chleb tostowy pszenny","packSize":"500 g","unitPriceMinor":249,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0000840-chleb-tostowy-pszenny"},
+    {"productId":"A0000843","title":"Piątnica Skyr naturalny","packSize":"150 g","unitPriceMinor":359,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0000843-piatnica-skyr-jogurt-typu-islandzkiego-naturalny"},
+    {"productId":"A0000450","title":"Makaron piórka Lubella","packSize":"400 g","unitPriceMinor":619,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0000450-makaron-piorka-lubella"},
+    {"productId":"A0010858","title":"Ręcznik kuchenny Regina","packSize":"2 szt.","unitPriceMinor":669,"currency":"PLN","stock":"not_verified","observedAt":null,"sourceUrl":"https://delio.com.pl/products/A0010858-recznik-kuchenny-regina"}
+  ]
+}

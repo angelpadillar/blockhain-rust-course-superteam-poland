@@ -1,0 +1,123 @@
+{
+  "scope": "One normal homepage navigation; observe for eight seconds; no inputs, reloads, model calls or cache changes.",
+  "status": "completed",
+  "modelCalls": 0,
+  "inputActions": 0,
+  "blockedMutations": 0,
+  "samples": [
+    {
+      "elapsedAfterNavigationMs": 192.26615700000002,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 863.175148,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 1413.981598,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 1927.7082560000001,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 2458.94668,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 2989.3065290000004,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 3503.9604290000007,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 4038.605004,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 4568.88798,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 5083.866227,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 5621.161257000001,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 6144.383661,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 6680.352035,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 7212.142597,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 7745.544404,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    },
+    {
+      "elapsedAfterNavigationMs": 8279.129912,
+      "homepage": true,
+      "siteUnavailable": false,
+      "controlCount": 24,
+      "headingCount": 1
+    }
+  ],
+  "navigationHttpStatus": 200,
+  "totalMs": 9024.889396
+}

@@ -1,0 +1,7 @@
+node_modules/
+private/
+reports/
+*.local.json
+.env
+.env.*
+!.env.example

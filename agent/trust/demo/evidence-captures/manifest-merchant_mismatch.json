@@ -1,0 +1,14 @@
+[
+  {
+    "stage": "quote",
+    "eventHash": "d2a64e1f4b94182a6624cf44abc62bb70e3e5a05dd14bf341bd3b8be540a6091",
+    "screenshotPath": "merchant-quote.jpg",
+    "observationPath": "merchant-quote.observation.json"
+  },
+  {
+    "stage": "approval",
+    "eventHash": "a06f4645cdc9a9849e291a08abb99abc6defc36bd7bd4c38b3467a85d5f4260a",
+    "screenshotPath": "merchant-approval.jpg",
+    "observationPath": "merchant-approval.observation.json"
+  }
+]

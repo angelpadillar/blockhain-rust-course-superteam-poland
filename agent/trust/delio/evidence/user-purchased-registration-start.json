@@ -1,0 +1,176 @@
+{
+  "observedAt": 1789824773957,
+  "controllerRuntimeMs": 7975,
+  "purchaseMadeByThisCall": false,
+  "result": {
+    "ok": true,
+    "result": {
+      "status": "phone_submit_returned",
+      "smsSubmitAttempted": true,
+      "needsReconciliation": true,
+      "observedFieldOrder": [
+        "phone"
+      ],
+      "otpFieldObserved": false,
+      "emailFieldObserved": false,
+      "accountCreated": false,
+      "newAccountVerified": false,
+      "marketingSelected": false,
+      "importedActivation": true,
+      "approvalId": "user-order-1094850855",
+      "previousIntentPreserved": true,
+      "implicitTermsAcceptedByContinue": true,
+      "artifacts": [
+        {
+          "id": "registration-1789824772290-6ad6ad341783",
+          "observationSha256": "6ad6ad34178360e374202d44449f2a2530da486f6b4ca69e17866461184c2b92",
+          "screenshotSha256": "72304e5413ad9d77df4079883e8aa15297cfabe82ca900193af2b81023ada2cd",
+          "private": true
+        },
+        {
+          "id": "registration-1789824772586-c1599df1af8c",
+          "observationSha256": "c1599df1af8c8f82fc96fea9942acaafaf2b52cc4b1c390ed933641719466c99",
+          "screenshotSha256": "fd104b8c93b873e7933dca30bdb4895cb0756f605e51bef6158461046a74e540",
+          "private": true
+        },
+        {
+          "id": "registration-1789824773860-e0a65bf9308e",
+          "observationSha256": "e0a65bf9308e508542fd139cbe34717765f73a88a3f7aee9b6864c9dd3b46655",
+          "screenshotSha256": "b2bfc81df622484e2c6d3d9b0c576b264e5aad6e6dcc13f4042a253e947a5aa9",
+          "private": true
+        }
+      ],
+      "networkDiagnostics": {
+        "available": true,
+        "hosts": [
+          {
+            "hostname": "delio.com.pl",
+            "event": "response",
+            "method": "GET",
+            "status": 200,
+            "policyBlocked": false,
+            "count": 114
+          },
+          {
+            "hostname": "www.googletagmanager.com",
+            "event": "request",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 2
+          },
+          {
+            "hostname": "www.googletagmanager.com",
+            "event": "request_failed",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 2
+          },
+          {
+            "hostname": "delio.com.pl",
+            "event": "request",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 66
+          },
+          {
+            "hostname": "cdn.sanity.io",
+            "event": "request",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 4
+          },
+          {
+            "hostname": "cdn.sanity.io",
+            "event": "request_failed",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 4
+          },
+          {
+            "hostname": "cdn-cookieyes.com",
+            "event": "request",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 1
+          },
+          {
+            "hostname": "cdn-cookieyes.com",
+            "event": "request_failed",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 1
+          },
+          {
+            "hostname": "cdn.growthbook.io",
+            "event": "request",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 1
+          },
+          {
+            "hostname": "cdn.growthbook.io",
+            "event": "request_failed",
+            "method": "GET",
+            "status": null,
+            "policyBlocked": false,
+            "count": 1
+          },
+          {
+            "hostname": "delio.com.pl",
+            "event": "request",
+            "method": "POST",
+            "status": null,
+            "policyBlocked": false,
+            "count": 1
+          },
+          {
+            "hostname": "delio.com.pl",
+            "event": "response",
+            "method": "POST",
+            "status": 200,
+            "policyBlocked": false,
+            "count": 1
+          },
+          {
+            "hostname": "identitytoolkit.googleapis.com",
+            "event": "request",
+            "method": "POST",
+            "status": null,
+            "policyBlocked": false,
+            "count": 1
+          },
+          {
+            "hostname": "identitytoolkit.googleapis.com",
+            "event": "request_failed",
+            "method": "POST",
+            "status": null,
+            "policyBlocked": false,
+            "count": 1
+          }
+        ],
+        "scope": "Hostname aggregates only; a failed request alone does not establish a policy block."
+      },
+      "observedAt": 1789824773921,
+      "evidenceRefs": [
+        {
+          "id": "539c809e6d22b020b6233bc9e82e0eddd2d00880bc689b557b4d785191b701d6",
+          "observedAt": 1789824773921
+        }
+      ],
+      "browserRuntimeMs": 6953,
+      "modelCalls": 0,
+      "usage": {
+        "modelCalls": 0,
+        "modelCostUsd": 0
+      }
+    }
+  }
+}

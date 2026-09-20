@@ -1,0 +1,18 @@
+{
+  "purpose": "Isolated noVNC clipboard canaries only",
+  "checks": {
+    "authenticatedRfbConnection": true,
+    "deviceToRemoteExactCanary": true,
+    "remoteCopyExactCanary": true,
+    "localClipboardWasDistinct": true,
+    "remoteToIndependentLocalClipboardExactCanary": true
+  },
+  "artifacts": "/app/state/clipboard-JlxG0r",
+  "syntheticOutgoing": {
+    "name": "Your device → VPS",
+    "ref": "e9",
+    "role": "textbox"
+  },
+  "status": "passed",
+  "wallTimeSeconds": 30.015
+}

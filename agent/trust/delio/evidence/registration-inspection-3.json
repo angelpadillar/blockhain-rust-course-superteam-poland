@@ -1,0 +1,61 @@
+{
+  "recordedAt": "2026-09-19T10:04:32.224071+00:00",
+  "operation": "inspectRegistration",
+  "controllerRuntimeMs": 5022,
+  "clientExitCode": 0,
+  "response": {
+    "ok": true,
+    "result": {
+      "status": "registration_inspected",
+      "fields": [
+        {
+          "ordinal": 1,
+          "kind": "phone",
+          "inputType": "tel",
+          "required": false,
+          "source": "scoped_form_markup"
+        }
+      ],
+      "fieldsTruncated": false,
+      "observedFieldOrder": [
+        "phone"
+      ],
+      "emailFieldObserved": false,
+      "phoneFieldObserved": true,
+      "passwordFieldObserved": false,
+      "otpFieldObserved": false,
+      "termsMentionObserved": true,
+      "privacyMentionObserved": true,
+      "registrationEntryObserved": false,
+      "googleOptionObserved": true,
+      "appleOptionObserved": false,
+      "accountCreated": false,
+      "otpRequested": false,
+      "fieldsFilled": false,
+      "termsAccepted": false,
+      "laterFieldOrderVerified": false,
+      "navigationClicks": 1,
+      "inspectionScope": "Current sign-in/registration entry only; later fields require a separate authorized flow.",
+      "noCartOperationDispatched": true,
+      "observedAt": 1789812272200,
+      "evidenceRefs": [
+        {
+          "id": "a3ffbfde03a3f609bc38fb638ce4baf10f73de7cab315032f53736a4aa67a09a",
+          "observedAt": 1789812272200
+        }
+      ],
+      "browserRuntimeMs": 4847,
+      "modelCalls": 0,
+      "usage": {
+        "modelCalls": 0,
+        "modelCostUsd": 0
+      }
+    }
+  },
+  "sourceHashes": {
+    "server.mjs": "399426a977f815bd23df363f07b3ff1f73976be3cff08aa05c746753f668a9b4",
+    "policy.mjs": "453964b1c1d833622200053c96d01fa6c0200aaca75a4bb9a425272bb9e2288c",
+    "registration.mjs": "f2e0172e0d175c7ddecbbad48a088753471ad8a67dca10dfc64bd87771feb577",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352"
+  }
+}

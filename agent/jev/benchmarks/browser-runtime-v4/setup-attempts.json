@@ -1,0 +1,9 @@
+{
+  "scope": "Setup failures observed from terminal tool results, before fixture cohorts or model requests began. These are not task-completion attempts.",
+  "attempts": [
+    { "phase": "first_model_cohort_setup", "reason": "stdin_timeout", "modelCalls": 0, "knownCostUsd": 0, "resolution": "v4 hidden-input grace period increased from 60 to 180 seconds; the next launch produced the retained first model cohort" },
+    { "phase": "corrected_planner_retest_setup_1", "reason": "secret_item_unavailable", "modelCalls": 0, "knownCostUsd": 0 },
+    { "phase": "corrected_planner_retest_setup_2", "reason": "secret_item_unavailable", "modelCalls": 0, "knownCostUsd": 0 }
+  ],
+  "retestStatus": "Corrected readonly-workflow-2 planner has passed local tests but has not completed a live-model workflow cohort. A new 1Password authorization is required."
+}

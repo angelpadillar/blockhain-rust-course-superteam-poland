@@ -1,0 +1,35 @@
+{
+  "observedAt": "2026-09-19T10:42:32.279166+00:00",
+  "status": "virtual53_same_phone_recovery_deployed_not_executed_by_agent",
+  "worker": "running",
+  "sourceSha256": {
+    "server.mjs": "74ee9f90b5061e871c12ef8294d7ad98dd73f36668686d9b1a32b47edb276472",
+    "policy.mjs": "28c3ea616dcad3bccb013c27fb294ece375c6e703c21dd8b96528b9d7976847d",
+    "registration.mjs": "f1b1c0c2946bcd7ef4c1f445d3b95bfbcfb603398525bbed35b848fc8141995c",
+    "registration-actions.mjs": "2850f7c8a93ce9ec8b2212eb7c6b1cccabc253bf0897a224691d6e65391233c2"
+  },
+  "workerTestsPassed": 42,
+  "localAndRemoteSyntaxPassed": true,
+  "operation": "resumeRegistration",
+  "allowedApprovalId": "virtual53-test",
+  "requiredFollowupCount": 1,
+  "maxTotalSubmitsForThisActivation": 2,
+  "minimumCooldownMs": 60000,
+  "requiresControllerFreshSmsZeroActiveUnexpiredCheck": true,
+  "preservesOlderActivationHistory": true,
+  "preservesFirstNativeReturnedOutcomeAsUnverified": true,
+  "diagnosis": {
+    "observedMaskedValueLength": 11,
+    "observedDigitsCount": 9,
+    "threeGroupsOfThree": true,
+    "currentPhoneHmacMatched": true,
+    "activeInvalidMarkerObserved": false,
+    "alertRoleObserved": false,
+    "challengeObserved": false,
+    "otpFieldObserved": false,
+    "focusExposedByNativeSnapshot": false,
+    "privateRawTextExportBlocked": true
+  },
+  "registrationActionsByAgent": 0,
+  "newAccountVerified": false
+}

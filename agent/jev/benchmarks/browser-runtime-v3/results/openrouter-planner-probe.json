@@ -1,0 +1,43 @@
+{
+  "purpose": "Provider integration probe on a public synthetic goal; no browser task.",
+  "success": true,
+  "task": {
+    "query": "Aurora Lamp home office collection",
+    "targetText": "Aurora Lamp",
+    "context": "home office collection"
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000263,
+        "latencyMs": 1096.714959,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000263,
+        "inputTokens": 123,
+        "outputTokens": 35,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 1096.714959,
+    "inputTokens": 123,
+    "outputTokens": 35,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0000263,
+    "knownCostUsd": 0.0000263,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  }
+}

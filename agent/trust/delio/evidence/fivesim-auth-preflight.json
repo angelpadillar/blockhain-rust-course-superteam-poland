@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "endpoint": "/v1/user/profile",
+      "method": "GET",
+      "authenticated": true,
+      "paidOperation": false,
+      "status": 200,
+      "credentialAccepted": true,
+      "currencyFieldPresent": false,
+      "balanceFieldPresent": true,
+      "elapsedMs": 124
+    },
+    {
+      "endpoint": "/v1/guest/products/poland/any",
+      "method": "GET",
+      "authenticated": true,
+      "paidOperation": false,
+      "status": 403,
+      "elapsedMs": 48
+    }
+  ],
+  "smsPurchased": 0,
+  "credentialValuesRecorded": false
+}

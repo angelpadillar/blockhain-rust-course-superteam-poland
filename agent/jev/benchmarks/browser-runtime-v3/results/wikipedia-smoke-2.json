@@ -1,0 +1,61 @@
+{
+  "version": 3,
+  "startedAt": "2026-09-17T12:08:47.849Z",
+  "status": "incomplete",
+  "reason": "secret_item_unavailable",
+  "guide": "openrouter-dom",
+  "goal": "Use the main search results form to find Black hole and open its article.",
+  "startUrl": "https://en.wikipedia.org/w/index.php?title=Special:Search&search=astronomy&fulltext=1",
+  "events": [],
+  "guard": {
+    "blockedRequests": 0
+  },
+  "verifiedSuccess": false,
+  "verification": {
+    "requested": true,
+    "passed": null
+  },
+  "limits": {
+    "maxCalls": 6,
+    "maxUsd": 0.01,
+    "maxRuntimeMs": 15000,
+    "maxActions": 8,
+    "maxAttemptMs": 45000
+  },
+  "scope": "Native search followed by a newly observed exact result link. Opened is not independently verified unless external checks pass.",
+  "timingScope": "Task total overlaps planning and initial navigation; browser/context setup, credential access and cleanup are separate. Nested runtime times may overlap.",
+  "costScope": "OpenRouter account charge plus estimated Jev tokens; excludes browser infrastructure and unreported upstream charges.",
+  "sourceSha256": "9c3b4d6f1eec2ac16e3ec32672d6159d9c7c71dd9b5c639d9aa876a715533c38",
+  "sourceFiles": [
+    "run.mjs",
+    "browser.mjs",
+    "runtime.mjs",
+    "providers.mjs",
+    "planner.mjs",
+    "credentials.mjs",
+    "../../src/jev.mjs",
+    "../../src/storage.mjs",
+    "../../src/glovo.mjs",
+    "../../src/config.mjs",
+    "../../src/policy.mjs",
+    "../../src/dom.mjs",
+    "../../package.json",
+    "../../package-lock.json"
+  ],
+  "totalMs": null,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "cleanupMs": 0.10762500000419095,
+  "sourceUnchanged": true
+}

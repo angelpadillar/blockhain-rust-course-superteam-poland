@@ -1,0 +1,12 @@
+import { settings } from './config.mjs';
+import { createService } from './server.mjs';
+import { runEditor } from './runner.mjs';
+import { createJev } from './jev.mjs';
+import { onboarded } from './browser.mjs';
+import { startDisplay } from './display.mjs';
+const {config,dataDir,token,typesafeKey}=await settings();
+const stopDisplay=await startDisplay();const decide=createJev({apiKey:typesafeKey});
+const service=await createService({config,dataDir,token,ready:()=>onboarded(dataDir),runner:args=>runEditor({...args,config,dataDir,decide})});
+service.server.listen(Number(process.env.PORT||8792),process.env.HOST||'0.0.0.0');
+console.log('Captions test editor controller ready; purchase and publishing actions disabled.');
+let stopping=false;for(const event of ['SIGTERM','SIGINT'])process.on(event,async()=>{if(stopping)return;stopping=true;await service.close();stopDisplay();process.exit(0);});

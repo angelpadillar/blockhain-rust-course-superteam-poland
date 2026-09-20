@@ -1,0 +1,71 @@
+{
+  "attempt": 1,
+  "arm": "preflight",
+  "repeat": 1,
+  "status": "not_verified",
+  "events": [
+    {
+      "type": "request_blocked",
+      "reason": "outside_origin",
+      "stop": false
+    },
+    {
+      "type": "request_blocked",
+      "reason": "outside_origin",
+      "stop": false
+    }
+  ],
+  "verifiedSuccess": false,
+  "setupMs": 1473.4495829999998,
+  "browserVersion": "153.0.8010.48",
+  "navigationMs": 1508.443875,
+  "runtime": {
+    "status": "preflight_only"
+  },
+  "initial": "",
+  "guard": {
+    "allowed": 2,
+    "aborted": 2,
+    "unrelatedMutationAborts": 0,
+    "dangerousAborts": 0,
+    "authorizedMutations": 0
+  },
+  "verification": {
+    "passed": false,
+    "checks": {
+      "cartPage": false,
+      "exactProduct": false,
+      "quantityOne": false,
+      "oneCartItem": false,
+      "noCheckout": true
+    },
+    "observation": {
+      "url": "https://www.amazon.pl/",
+      "title": "",
+      "text": ""
+    }
+  },
+  "evidence": {
+    "stage": "cart_preparation_only",
+    "screenshot": "attempt-1.png",
+    "screenshotSha256": "57f45d88e654eeca054ff1cc37c39a437cb6e4b6ea2a6f59cf08a6228670107a",
+    "observationSha256": "6540523b1ddf8672f6f919f266d95d646385868877259d1e3735f19d0af5a542",
+    "approval": null,
+    "confirmation": null
+  },
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "totalMs": 1583.60475,
+  "cleanupMs": 102.80820900000026
+}
