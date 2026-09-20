@@ -76,7 +76,7 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
       extraSelector: spec.extraControls || '', componentSelector: spec.componentSelector || '',
       purposeMap: spec.purposeMap || null });
   let installed = false, status = 'incomplete', reason = null, escalation = null, snapshot = null;
-  let final = { url: page.url(), title: '' }, sinkFailed = false, consecutiveAbstains = 0, consecutiveWaits = 0, prematureDoneCount = 0;
+  let final = { url: page.url(), title: '' }, sinkFailed = false, consecutiveAbstains = 0, consecutiveWaits = 0, prematureDoneCount = 0, emptySnaps = 0;
   const remaining = () => Math.max(0, maxMs - (performance.now() - started));
   const check = () => {
     combined.throwIfAborted();
@@ -242,7 +242,15 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
       const candidateSets = heads(snapshot);
       const total = Object.values(candidateSets).reduce((n, list) => n + list.length, 0);
       row.candidates = total; row.controls = snapshot.data.controls.length;
-      if (total === 0) { reason = 'no_candidates'; row.outcome = 'no_candidates'; break; }
+      if (total === 0) {
+        // Transient empty states — a loading skeleton or a modal still
+        // rendering — are not proof the page is dead. Give the page a
+        // bounded beat and re-observe twice before declaring it.
+        emptySnaps = (emptySnaps || 0) + 1;
+        if (emptySnaps <= 2) { row.outcome = 'empty_snapshot'; await bounded(() => new Promise(r => setTimeout(r, 400))); stepNumber--; continue; }
+        reason = 'no_candidates'; row.outcome = 'no_candidates'; break;
+      }
+      emptySnaps = 0;
       if (metrics.jevCalls >= maxModelCalls) { reason = 'model_call_budget'; row.outcome = 'budget'; break; }
       const request = buildStepRequest({ spec, snapshot, candidates: candidateSets, step: stepNumber, history });
       row.offered = request.actions.slice(0, 30).map(a => a.id);
@@ -369,7 +377,14 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
           default: { // click
             await emit('action_planned', { step: stepNumber, operation: 'click', ref: decision.ref });
             before = await bounded(() => session.execute(snapshot, picked, 'click', '', Math.min(3000, remaining())));
-            const settled = await postcondition(before, { type: 'change', beforeUrl: snapshot.data.url, beforeTitle: snapshot.data.title }, Math.min(800, remaining()));
+            // Clicking the spec's named target opens a detail view (modal or
+            // page): wait for the open state, not just any change — URL
+            // params can update well before the content renders.
+            const isTarget = spec.targetText && norm(picked.what) === norm(spec.targetText);
+            const goal = isTarget
+              ? { type: 'product_opened', text: spec.targetText, beforeUrl: snapshot.data.url }
+              : { type: 'change', beforeUrl: snapshot.data.url, beforeTitle: snapshot.data.title };
+            const settled = await postcondition(before, goal, Math.min(isTarget ? 1600 : 800, remaining()));
             row.outcome = settled?.data?.ready ? 'clicked' : 'click_no_change'; break;
           }
         }

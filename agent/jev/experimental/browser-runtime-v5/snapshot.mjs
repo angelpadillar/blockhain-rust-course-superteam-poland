@@ -203,6 +203,15 @@ export function inspectPage(body, options) {
         || (goal.heading ? [...body.querySelectorAll('h1,h2,h3,[role="heading"]')].filter(visible).some(h => norm(h.innerText).includes(norm(goal.heading))) : false);
       case 'results': return emptyResults || (controlsChanged && controls.some(c => c.fresh))
         || options.freshDocument || location.href !== goal.beforeUrl;
+      // A named thing should now be OPEN — a dialog carrying its name (Glovo
+      // product modal) or a navigated page showing it as a heading. URL params
+      // update before content renders, so neither signal alone suffices.
+      case 'product_opened': {
+        const d = activeDialog();
+        if (d && norm(d.innerText || '').includes(norm(goal.text))) return true;
+        return options.freshDocument || (location.href !== goal.beforeUrl
+          && [...body.querySelectorAll('h1,h2,h3,[role="heading"]')].filter(visible).some(h => norm(h.innerText).includes(norm(goal.text))));
+      }
       case 'value': {
         const node = options.selected?.isConnected ? options.selected : nodes[goal.nodeIndex];
         if (!node) return false;

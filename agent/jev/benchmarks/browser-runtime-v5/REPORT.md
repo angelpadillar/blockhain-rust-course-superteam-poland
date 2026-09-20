@@ -37,3 +37,19 @@ Executor overhead is small: the offline arm shows ~10 ms per atomic snapshot, ~3
 Limits per attempt: 30 steps, 40 actions, 40 model calls, $0.05 known-spend, 90 s; batch stops on accounting failure. All 16 attempts across the two arms are retained in the result directories; the failed conditioned-question cohort is retained separately.
 
 These are four synthetic cases on a stateful local fixture. They establish the loop's correctness, its deterministic-first economics, and the question-shape effect under `jev-latest` — they do not establish performance on unseen sites, and `two-cheapest` passes *because* a deterministic tool replaces a model judgment the model demonstrably gets wrong. The Glovo live route is the planned next arm before any production claim.
+
+## Live arm: the Glovo Kraków navigation route
+
+The same unmodified runtime was driven against production Glovo via a declarative adapter (`glovo.mjs`): stage-aware candidate filtering replicating the v3 route's offerable set, deterministic handlers for the closed-store notice and the task-scoped age confirmation, a mutation/navigation request guard, and `doneWhen = url=/stores/ ∧ url=productId=… ∧ url=externalProductId=… ∧ text=<product>` — the URL half plus visible text, with the stricter v3 `verifyNavigation` (store slug, both product ids, exact visible dialog title) as independent verification.
+
+**First verified pass** ([batch](../navigation-v5/glovo-v5-2026-09-20T14-40-25-811Z/), retained on the VPS evidence volume): `reached_target`, all four verification checks true — 14.06 s task time, 19 steps, 14 Jev calls, $0.00103, vs the v3 route's 13.6 s median. Path: homepage search → merchant click → deterministic closed-store dismiss → `Rum i gin` → age confirm → subcategory → product tile → modal → `done_when`.
+
+The live arm surfaced five failure classes the fixtures could not, each fixed without weakening a safety invariant:
+
+1. **Dialog scope hides the page.** Any visible `[role=dialog]` scopes the snapshot — Glovo's closed-store modal re-appears on `?search=` URLs, shrinking the observable page to ~18 modal controls.
+2. **False affordances burn steps.** The in-store search accepts typed input but `?search=` renders the unfiltered menu; the model repeatedly chased it. Removing that control from in-store candidates (homepage search unaffected) made the category path the only one offered.
+3. **Navigation grammar drift.** Glovo's `section`/`sectionId` scroll params postdate `navigationUrl`'s param whitelist; a same-store link carrying them was denied as `outside_navigation_scope`. The adapter wraps the shared grammar — it does not modify it.
+4. **Handlers racing dialogs.** An open dialog that is *not* the age gate made the age handler's `waitFor` time out into `retry` until the handler budget died post-goal — `count()` before `waitFor` distinguishes "absent" from "animating".
+5. **Skeleton snapshots.** URL params update before modal content renders; a `no_candidates` snapshot mid-transition was fatal one beat too early. Empty snapshots now get two bounded re-observations, and clicking the spec's named target waits on a `product_opened` goal (dialog bearing the name, or navigated page showing it as a heading) instead of any-change.
+
+Model cost for the verified run was $0.00103 — the route remains deterministic-first where the site is deterministic (dialogs, guards), and Jev spends its calls only on navigation ambiguity (search box vs links vs categories). Live reliability is not yet established: the run above is the first pass amid Glovo's IP-level bot protection (the "Oh, no!" error page gates batches and is reported as `merchant_site_unavailable`, not a runtime failure).
