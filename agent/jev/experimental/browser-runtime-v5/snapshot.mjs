@@ -22,7 +22,7 @@ export function inspectPage(body, options) {
     'article', '[role="article"]', '[role="listitem"]', '[role="row"]', 'li', 'tr',
     '[role="group"]', '[role="region"]', 'section', 'form', 'dialog', '[role="dialog"]',
     '[itemscope]', '[data-testid]', '[data-test-id]',
-  ].join(',');
+  ].join(',') + (options.componentSelector ? `,${options.componentSelector}` : '');
 
   const norm = value => String(value || '').normalize('NFKC').replace(/\s+/g, ' ').trim().toLowerCase();
   const denyTerms = (options.deny || []).map(term => String(term).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
@@ -120,7 +120,7 @@ export function inspectPage(body, options) {
     scans++;
     const dialog = activeDialog();
     const scope = dialog || body;
-    const nodes = [...scope.querySelectorAll(CONTROL_SELECTOR)];
+    const nodes = [...scope.querySelectorAll(CONTROL_SELECTOR + (options.extraSelector ? `,${options.extraSelector}` : ''))];
     const baseline = options.baseline;
     const controls = [];
     let eligible = 0;
@@ -133,7 +133,10 @@ export function inspectPage(body, options) {
       if (denied(what)) continue;
       if (tag === 'a' && (!safe(node.href) || node.hasAttribute('download'))) continue;
       const editable = node.matches('input,textarea,[contenteditable="true"]') && !['checkbox', 'radio', 'button', 'submit', 'reset', 'image', 'hidden', 'file', 'password', 'range', 'color'].includes(type);
-      const supports = supportsOf(node, tag, type, role);
+      let supports = supportsOf(node, tag, type, role);
+      // Site adapters may declare extra clickable pseudo-controls (Glovo
+      // product titles render as h3/p inside clickable tiles).
+      if (!supports.length && options.extraSelector && node.matches(options.extraSelector)) supports = ['click'];
       if (!supports.length) continue;
       const region = node.closest('section[aria-label],[role="region"][aria-label],form[aria-label],nav[aria-label]');
       const where = [node.closest('main,[role="main"]') && 'main', node.closest('nav,[role="navigation"]') && 'navigation',
@@ -146,6 +149,21 @@ export function inspectPage(body, options) {
       const control = { nodeIndex: index, kind: kindOf(node, tag, type, role, editable), what, role: role || tag,
         where, component, supports, tag, type, name: node.getAttribute('name') || '',
         value: editable ? (node.value ?? '') : '', inViewport: inViewport(node), fresh: Boolean(fresh) };
+      // Adapter-declared purpose (e.g. Glovo product tile vs category row):
+      // first matching selector wins — checked against ancestors AND the
+      // element's own class list (search-result rows carry the marker class
+      // on the title node itself, not a wrapper).
+      if (options.purposeMap) {
+        const ownClass = typeof node.className === 'string' ? node.className : '';
+        const found = options.purposeMap.find(entry => {
+          try {
+            if (node.closest(entry.selector)) return true;
+            // [class*="X"] fragments also match the element's own classes.
+            return [...entry.selector.matchAll(/\[class\*="([^"]+)"\]/g)].some(m => ownClass.includes(m[1]));
+          } catch { return false; }
+        });
+        if (found) control.purpose = found.purpose;
+      }
       if (tag === 'a') control.href = node.href;
       if (tag === 'select') control.options = [...node.options].slice(0, 24)
         .map((option, i) => ({ index: i, label: option.label.trim().slice(0, 80), selected: option.selected }));
@@ -183,7 +201,7 @@ export function inspectPage(body, options) {
       case 'change': return options.freshDocument || location.href !== goal.beforeUrl || document.title !== goal.beforeTitle || controlsChanged;
       case 'opened': return options.freshDocument || location.href !== goal.beforeUrl
         || (goal.heading ? [...body.querySelectorAll('h1,h2,h3,[role="heading"]')].filter(visible).some(h => norm(h.innerText).includes(norm(goal.heading))) : false);
-      case 'results': return emptyResults || (controlsChanged && controls.some(c => c.fresh && ['link', 'choice', 'card'].includes(c.kind)))
+      case 'results': return emptyResults || (controlsChanged && controls.some(c => c.fresh))
         || options.freshDocument || location.href !== goal.beforeUrl;
       case 'value': {
         const node = options.selected?.isConnected ? options.selected : nodes[goal.nodeIndex];

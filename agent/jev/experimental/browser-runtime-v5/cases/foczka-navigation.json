@@ -1,0 +1,11 @@
+{
+  "id": "krakow-home-to-foczka-bacardi",
+  "instruction": "From the Kraków homepage, find Foczka Alkohole and open Bacardi Blanco 0,7l. Stop on the product page without adding anything, scheduling an order or purchasing.",
+  "startUrl": "https://glovoapp.com/pl/pl/krakow",
+  "targetUrl": "https://glovoapp.com/pl/pl/krakow/stores/foczka-alkohole-biezanow-prokocim-kra?content=rum-i-gin-sc.21755204%2Fgin-i-rum-c.21755353&productId=4611686018614338744&externalProductId=d14683f8-6c34-409f-816a-c700fb32291a",
+  "merchant": "Foczka Alkohole",
+  "product": "Bacardi Blanco 0,7l",
+  "maxSteps": 20,
+  "maxRunMs": 120000,
+  "maxModelUsd": 0.02
+}

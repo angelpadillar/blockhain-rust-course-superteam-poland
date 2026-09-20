@@ -41,6 +41,24 @@ export function validateSpec(spec) {
     requireValue(text(note, 300), 'invalid_note');
     return note.trim();
   }).slice(0, 12);
+  // Adapter-declared extra clickable pseudo-controls (bounded charset so the
+  // spec stays a declarative contract, not arbitrary page code).
+  const selectorText = value => typeof value === 'string' && value.length >= 1
+    && value.length <= 500 && /^[a-zA-Z0-9_*,.=\[\]()"'':# >+~|-]{1,500}$/.test(value);
+  if (spec.extraControls !== undefined) requireValue(selectorText(spec.extraControls), 'invalid_extra_controls');
+  if (spec.componentSelector !== undefined) requireValue(selectorText(spec.componentSelector), 'invalid_component_selector');
+  if (spec.purposeMap !== undefined) {
+    requireValue(Array.isArray(spec.purposeMap) && spec.purposeMap.length >= 1 && spec.purposeMap.length <= 8
+      && spec.purposeMap.every(entry => entry && /^[a-z][a-z_]{1,29}$/.test(entry.purpose)
+        && selectorText(entry.selector)), 'invalid_purpose_map');
+  }
+  if (spec.targetText !== undefined) requireValue(text(spec.targetText, 200), 'invalid_target_text');
+  if (spec.cap !== undefined) requireValue(Number.isInteger(spec.cap) && spec.cap >= 20 && spec.cap <= 400, 'invalid_cap');
+  // Adapter-side candidate scoping (e.g. Glovo's stage-aware link rules) is
+  // code supplied by the trusted caller, like handlers — never model output.
+  if (spec.filterControls !== undefined) requireValue(typeof spec.filterControls === 'function', 'invalid_filter_controls');
+  requireValue((spec.handlers || []).every(h => h && typeof h.name === 'string' && /^[a-z][a-z0-9_]{1,60}$/.test(h.name)
+    && typeof h.when === 'function' && typeof h.act === 'function'), 'invalid_handler');
   return {
     goal: spec.goal.trim(),
     doneWhen: compiledDoneWhen ? { clauses: spec.doneWhen, compiled: compiledDoneWhen } : null,
@@ -59,6 +77,12 @@ export function validateSpec(spec) {
       allowDestructive: Boolean(policy.allowDestructive),
     },
     handlers: Array.isArray(spec.handlers) ? spec.handlers.slice(0, 8) : [],
+    extraControls: spec.extraControls || '',
+    componentSelector: spec.componentSelector || '',
+    purposeMap: spec.purposeMap || null,
+    targetText: spec.targetText || '',
+    filterControls: spec.filterControls || null,
+    cap: spec.cap ?? null,
   };
 }
 

@@ -27,7 +27,8 @@ export function createSession(page, origin, task, metrics, signal, options = {})
   }
   function inspectOptions(extra = {}) {
     return { origin, deny: options.deny || [], denyPath: options.denyPath || '', cap, textCap,
-      targetText: task.targetText || '', ...extra };
+      extraSelector: options.extraSelector || '', componentSelector: options.componentSelector || '',
+      purposeMap: options.purposeMap || null, targetText: task.targetText || '', ...extra };
   }
   async function capture({ baseline, goal, waitMs = 0 } = {}) {
     signal.throwIfAborted();
@@ -58,7 +59,7 @@ export function createSession(page, origin, task, metrics, signal, options = {})
     return snapshot.data.controls.find(control => `s${snapshot.id}:e${control.nodeIndex}` === candidate?.ref);
   }
   const semantics = item => item && JSON.stringify([item.kind, item.what, item.role, item.where,
-    item.component, item.supports, item.href, item.value, item.tag, item.type, item.name]);
+    item.component, item.supports, item.href, item.value, item.tag, item.type, item.name, item.purpose]);
   async function execute(snapshot, candidate, kind, value, timeout) {
     signal.throwIfAborted();
     const old = control(snapshot, candidate);

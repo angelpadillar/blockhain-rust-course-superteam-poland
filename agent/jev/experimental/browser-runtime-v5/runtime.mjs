@@ -19,7 +19,11 @@ const KNOWN_REASONS = new Set(['action_limit', 'step_limit', 'time_limit', 'abor
   'forbidden_request', 'download_blocked', 'popup_blocked', 'event_sink_failed', 'uncertain_execution',
   'stale_limit', 'browser_error', 'invalid_model_answer', 'invalid_spec', 'target_unresolved', 'done_unverified',
   'destructive_blocked', 'model_blocked', 'model_call_budget', 'cancelled', 'cancelled_or_timed_out',
-  'provider_network_error', 'provider_usage_missing', 'no_candidates']);
+  'provider_network_error', 'provider_usage_missing', 'no_candidates', 'repeated_action_limit',
+  'model_cost_budget', 'previous_usage_incomplete',
+  'browser_challenge', 'merchant_site_unavailable', 'unexpected_age_confirmation_terms',
+  'unexpected_age_confirmation_controls', 'age_confirmation_not_authorized_for_case', 'age_confirmation_requires_user',
+  'age_confirmation_wrong_store', 'age_confirmation_dialog_not_found']);
 
 function allowedRequest(request, origin) {
   if (!['GET', 'HEAD', 'OPTIONS'].includes(request.method())) return false;
@@ -46,7 +50,8 @@ function freshMetrics() {
  * by policy.mjs; `onEvent` is the durable-event sink (a failed write stops
  * the run, matching the journaled-execution invariant). */
 export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () => {}, signal,
-  maxSteps = 30, maxActions = 40, maxMs = 90000, maxModelCalls = 40 }) {
+  maxSteps = 30, maxActions = 40, maxMs = 90000, maxModelCalls = 40,
+  allowedUrl: allowedUrlOption, requestFilter } = {}) {
   const spec = validateSpec(rawSpec);
   requireValue(typeof decide === 'function', 'decider_required');
   requireValue(Number.isInteger(maxSteps) && maxSteps >= 1 && maxSteps <= 60
@@ -58,18 +63,20 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
   const origin = new URL(page.url()).origin;
   const metrics = freshMetrics(), steps = [], events = [], history = [];
   const denyPathRegex = spec.policy.denyPath ? new RegExp(`\\/(?:${spec.policy.denyPath})(?:\\/|$)`, 'i') : null;
-  const allowedUrl = url => {
+  const allowedUrl = allowedUrlOption || (url => {
     try {
       const u = new URL(url);
       return ['http:', 'https:'].includes(u.protocol) && u.origin === origin && !u.username && !u.password
         && !(denyPathRegex && denyPathRegex.test(u.pathname));
     } catch { return false; }
-  };
+  });
   requireValue(allowedUrl(page.url()), 'outside_navigation_scope');
-  const session = createSession(page, origin, {}, metrics, combined,
-    { deny: spec.policy.deny, denyPath: spec.policy.denyPath, allowedUrl, cap: spec.cap ?? 120 });
+  const session = createSession(page, origin, { targetText: spec.targetText }, metrics, combined,
+    { deny: spec.policy.deny, denyPath: spec.policy.denyPath, allowedUrl, cap: spec.cap ?? 120,
+      extraSelector: spec.extraControls || '', componentSelector: spec.componentSelector || '',
+      purposeMap: spec.purposeMap || null });
   let installed = false, status = 'incomplete', reason = null, escalation = null, snapshot = null;
-  let final = { url: page.url(), title: '' }, sinkFailed = false, consecutiveAbstains = 0, prematureDoneCount = 0;
+  let final = { url: page.url(), title: '' }, sinkFailed = false, consecutiveAbstains = 0, consecutiveWaits = 0, prematureDoneCount = 0;
   const remaining = () => Math.max(0, maxMs - (performance.now() - started));
   const check = () => {
     combined.throwIfAborted();
@@ -103,8 +110,16 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
   const guard = async route => {
     const request = route.request();
     metrics.protocolCalls++;
-    if (combined.aborted || !allowedRequest(request, origin)) {
-      if (!combined.aborted) { metrics.blockedRequests++; stop.abort(new RuntimeError('forbidden_request')); }
+    // A site adapter's filter owns the verdict: 'allow' continues, 'deny'
+    // quietly aborts the request (e.g. a tracker's iframe navigation —
+    // counted, never fatal), 'fatal' stops the run. undefined falls
+    // through to the default same-origin/static rule, whose denial is fatal.
+    const verdict = requestFilter
+      ? await requestFilter(request, { mainFrame: request.frame() === page.mainFrame() }) : undefined;
+    const allowed = verdict === undefined ? allowedRequest(request, origin) : verdict === 'allow';
+    if (combined.aborted || !allowed || verdict === 'fatal') {
+      metrics.blockedRequests++;
+      if (!combined.aborted && verdict !== 'deny') stop.abort(new RuntimeError('forbidden_request'));
       await route.abort().catch(() => {});
     } else await route.fallback().catch(() => {});
   };
@@ -112,7 +127,18 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
   const popup = item => { stop.abort(new RuntimeError('popup_blocked')); metrics.protocolCalls++; void item.close().catch(() => {}); };
 
   async function capture(options = {}) {
-    check(); snapshot = await session.capture(options);
+    check();
+    // An in-flight navigation can destroy the execution context mid-evaluate;
+    // that is a transient page state, not a failure — observe again.
+    for (let attempt = 0; ; attempt++) {
+      try {
+        snapshot = await session.capture(options);
+        break;
+      } catch (error) {
+        if (attempt >= 2 || !/Execution context was destroyed|Cannot find context|different JavaScript context/.test(error.message || '')) throw error;
+        await new Promise(resolve => setTimeout(resolve, 150));
+      }
+    }
     final = { url: snapshot.data.url, title: snapshot.data.title };
     return snapshot;
   }
@@ -142,7 +168,11 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
     } finally { metrics.settleMs += performance.now() - waiting; }
   }
   function heads(snap) {
-    const allowed = snap.data.controls;
+    // Adapter scoping runs before policy avoid: it is the trusted caller's
+    // candidate contract (e.g. Glovo only ever offers the target store's
+    // links and the exact product tile). Both filters intersect.
+    const allowed = spec.filterControls ? spec.filterControls(snap.data, snap.data.controls) : snap.data.controls;
+    requireValue(Array.isArray(allowed), 'invalid_spec');
     const click = constrain(allowed.filter(c => c.supports.includes('click')), spec.policy)
       .map(c => ({ ref: `s${snap.id}:e${c.nodeIndex}`, control: c }));
     const fill = constrain(allowed.filter(c => c.supports.includes('fill')), spec.policy)
@@ -183,6 +213,14 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
           const before = metrics.nativeActionAttempts;
           await emit('handler_fired', { step: stepNumber, name: handler.name });
           const acted = await bounded(() => handler.act({ session, snapshot, page, signal: combined }));
+          // 'retry': the screen was mid-transition (dialog animating, node
+          // detached) — re-observe next step, on its own bounded budget
+          // (separate from dispatch staleness — both mean "page moved").
+          if (acted === 'retry') {
+            metrics.handlerRetries = (metrics.handlerRetries || 0) + 1; row.outcome = 'handler_retry';
+            if (metrics.handlerRetries >= 4) { reason = 'stale_limit'; break; }
+            handled = true; break;
+          }
           if (acted) {
             row.picker = 'deterministic'; row.operation = handler.name; row.outcome = 'handled';
             metrics.deterministicSteps++;
@@ -192,6 +230,7 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
           void before;
         }
       }
+      if (reason) break;
       if (handled) continue;
       // ---- deterministic finish check (independent done) ----
       if (spec.doneWhen) {
@@ -202,9 +241,11 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
       // ---- constrain + one batched decision ----
       const candidateSets = heads(snapshot);
       const total = Object.values(candidateSets).reduce((n, list) => n + list.length, 0);
+      row.candidates = total; row.controls = snapshot.data.controls.length;
       if (total === 0) { reason = 'no_candidates'; row.outcome = 'no_candidates'; break; }
       if (metrics.jevCalls >= maxModelCalls) { reason = 'model_call_budget'; row.outcome = 'budget'; break; }
       const request = buildStepRequest({ spec, snapshot, candidates: candidateSets, step: stepNumber, history });
+      row.offered = request.actions.slice(0, 30).map(a => a.id);
       const pickStart = performance.now();
       metrics.jevCalls++;
       const answers = await bounded(() => decide(request, combined));
@@ -255,6 +296,20 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
         continue;
       }
       consecutiveAbstains = 0;
+      // Same semantic action on the same URL caps at two attempts — the v3
+      // loop guard. A page that did not change is not worth a third try.
+      // Consecutive 'wait's are capped too: a model stalling on an empty
+      // candidate set otherwise burns the whole step budget.
+      if (decision.operation === 'wait') {
+        consecutiveWaits++;
+        if (consecutiveWaits >= 3) { reason = 'repeated_action_limit'; row.outcome = 'repeated_action_limit'; break; }
+      } else consecutiveWaits = 0;
+      if (['click', 'fill', 'select', 'press'].includes(decision.operation) && picked) {
+        const dupKey = `${decision.operation}|${norm(picked.what)}|${norm(picked.component?.label)}|${snapshot.data.url}`;
+        if (history.filter(item => item.key === dupKey).length >= 2) {
+          reason = 'repeated_action_limit'; row.outcome = 'repeated_action_limit'; break;
+        }
+      }
       // ---- execute ----
       if (metrics.nativeActionAttempts >= maxActions) { reason = 'action_limit'; row.outcome = 'action_limit'; break; }
       const actionStart = performance.now();
@@ -288,7 +343,12 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
             }
             await emit('action_planned', { step: stepNumber, operation: 'fill', ref: decision.ref });
             before = await bounded(() => session.execute(snapshot, picked, 'fill', value, Math.min(3000, remaining())));
-            const settled = await postcondition(before, { type: 'value', nodeIndex: picked.control.nodeIndex, value }, Math.min(300, remaining()));
+            // Search-kind inputs live-filter on sites like Glovo: wait for the
+            // result list, not just the field value, so the next snapshot
+            // sees filtered candidates rather than a mid-render state.
+            const goal = picked.control.kind === 'search' || picked.control.live
+              ? { type: 'results' } : { type: 'value', nodeIndex: picked.control.nodeIndex, value };
+            const settled = await postcondition(before, goal, Math.min(goal.type === 'results' ? 800 : 300, remaining()));
             row.outcome = settled?.data?.ready ? 'filled' : 'fill_unconfirmed';
             break;
           }
@@ -315,7 +375,9 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
         }
       } catch (error) {
         if (error instanceof StaleBeforeDispatch) {
-          if (metrics.staleRefreshes >= 2) { reason = 'stale_limit'; row.outcome = 'stale_limit'; break; }
+          // Staleness is the mechanism working — the page legitimately moved
+          // under the pick. The cap bounds pathological churn only.
+          if (metrics.staleRefreshes >= 8) { reason = 'stale_limit'; row.outcome = 'stale_limit'; break; }
           metrics.staleRefreshes++; row.outcome = 'stale_refreshed';
           await emit('stale_refreshed', { step: stepNumber });
           const fresh = await capture();
@@ -350,7 +412,7 @@ export async function runLoop({ page, spec: rawSpec, decide, onEvent = async () 
   } catch (error) {
     reason = abortReason(error);
     if (reason === 'browser_error' && process.env.V5_DEBUG) console.error('v5 raw error:', error);
-    escalation = { reason, permittedContext: permittedContext(steps.at(-1)),
+    escalation = { reason, pageUrl: page.url(), permittedContext: permittedContext(steps.at(-1)),
       completedSteps: steps.filter(s => s.outcome && !['no_candidates'].includes(s.outcome)).map(s => ({ step: s.step, operation: s.operation, target: s.what })),
       uncertainAction: reason === 'uncertain_execution', automaticRetryAllowed: false };
   } finally {

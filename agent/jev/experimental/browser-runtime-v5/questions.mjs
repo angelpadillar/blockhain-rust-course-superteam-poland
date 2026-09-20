@@ -37,7 +37,8 @@ export function buildActions({ spec, snapshot, candidates }) {
     if (spec.values && Object.keys(spec.values).length) {
       push(`fill@${item.ref}`, 'fill', item.ref, `type a supplied value into ${describeCandidate(item.control)}`, item);
     }
-    if (item.control.submit || item.control.live || item.control.kind === 'search') {
+    if ((item.control.submit || item.control.live || item.control.kind === 'search')
+      && item.control.supports.includes('press')) {
       push(`press@${item.ref}`, 'press', item.ref, `press Enter on ${describeCandidate(item.control)} to submit`, item);
     }
   }
