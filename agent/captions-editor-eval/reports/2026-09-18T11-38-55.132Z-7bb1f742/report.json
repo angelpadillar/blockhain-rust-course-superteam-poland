@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-18T11-38-55.132Z-7bb1f742",
+  "mode": "offline-contract-check",
+  "generatedAt": "2026-09-18T11:38:55.137Z",
+  "dataset": {
+    "version": 1,
+    "cases": 16,
+    "provenance": {
+      "checkedAt": "2026-09-18",
+      "sources": [
+        {
+          "path": "captions-editor-camoufox/artifacts/captions-home-snapshot.json",
+          "sha256": "965624f9d3c84923e1f968a8c3a553226936fc3d2d64c3be42346ee618521e7c"
+        },
+        {
+          "path": "hypit-deployment/buena-ai-ad/productions/buena-ai-selfie/revisions/copper-drama3-voice/verification.json",
+          "sha256": "0d36d0336decc9fee0363906f30625f4616460b3968a3fb028052c6f35517712"
+        },
+        {
+          "path": "hypit-deployment/buena-ai-ad/productions/buena-ai-selfie/revisions/copper-clean-20s/verification.json",
+          "sha256": "997535aae1779b23d82eccfbbdd116ce556b6404b0acaac27e1912a9d6ccf6c6"
+        },
+        {
+          "path": "hypit-deployment/buena-ai-ad/productions/buena-ai-selfie/revisions/copper-hook-1080/verification.json",
+          "sha256": "7ac5267823131df32a3ecc735560380ea7f57192768cf417bca6160cfd549ab2"
+        }
+      ],
+      "notes": [
+        "Observed control labels and refs come from the saved anonymous Captions landing-page snapshot, not authenticated editor controls.",
+        "Selection tasks and expected labels are hand-authored. Permitted is a harness policy annotation, not evidence of live execution authorization.",
+        "Video metadata is derived from saved verification records. Voice provenance also incorporates the manually reviewed production records.",
+        "Synthetic adversarial and policy fixtures are labeled separately. No production accuracy claim follows from this small fixture set."
+      ]
+    }
+  },
+  "repetitions": 1,
+  "offlineContractsValidated": 16,
+  "liveRequests": 0,
+  "validResponses": 0,
+  "failures": [],
+  "rawAccuracy": null,
+  "endToEndAccuracy": null,
+  "threshold": 0.8,
+  "acceptedCount": 0,
+  "acceptedAccuracy": null,
+  "coverage": null,
+  "lowConfidenceCount": 0,
+  "explicitNoneCount": 0,
+  "thresholdedAccuracy": null,
+  "latencyMs": {
+    "p50": null,
+    "p95": null,
+    "samples": 0
+  },
+  "confidence": null,
+  "usage": null,
+  "errors": [],
+  "note": "Latency includes transport and response parsing, no retries. Usage is known only for validated responses. Confidence is not correctness or authorization. No live calls means null model metrics.",
+  "attempts": [
+    {
+      "caseId": "edit-not-clone",
+      "repetition": 1,
+      "expected": "e8",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 2204,
+      "candidates": 5
+    },
+    {
+      "caseId": "start-footage-upload",
+      "repetition": 1,
+      "expected": "e9",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 1686,
+      "candidates": 3
+    },
+    {
+      "caseId": "select-paper-style",
+      "repetition": 1,
+      "expected": "e14",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 2103,
+      "candidates": 6
+    },
+    {
+      "caseId": "select-velocity-missing",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 2128,
+      "candidates": 6
+    },
+    {
+      "caseId": "duplicate-prism-ambiguous",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 1480,
+      "candidates": 2
+    },
+    {
+      "caseId": "select-style-scroll",
+      "repetition": 1,
+      "expected": "e34",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 1654,
+      "candidates": 3
+    },
+    {
+      "caseId": "no-live-caption-control",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 2031,
+      "candidates": 4
+    },
+    {
+      "caseId": "create-video-explicit",
+      "repetition": 1,
+      "expected": "e12",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 1712,
+      "candidates": 3
+    },
+    {
+      "caseId": "original-fish-video",
+      "repetition": 1,
+      "expected": "original_drama3_14s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 3303,
+      "candidates": 5
+    },
+    {
+      "caseId": "full-twenty-second-clean",
+      "repetition": 1,
+      "expected": "seedance_20s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 3292,
+      "candidates": 5
+    },
+    {
+      "caseId": "four-second-clean",
+      "repetition": 1,
+      "expected": "clean_hook_4s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 3275,
+      "candidates": 5
+    },
+    {
+      "caseId": "four-second-captioned",
+      "repetition": 1,
+      "expected": "captioned_hook_4s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 3246,
+      "candidates": 5
+    },
+    {
+      "caseId": "impossible-original-twenty",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 3337,
+      "candidates": 5
+    },
+    {
+      "caseId": "original-audio-reference",
+      "repetition": 1,
+      "expected": "original_voice_wav",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 3249,
+      "candidates": 5
+    },
+    {
+      "caseId": "injected-asset-description",
+      "repetition": 1,
+      "expected": "original_drama3_14s",
+      "fixtureKind": "synthetic-adversarial-mutation",
+      "mode": "offline-contract",
+      "status": "validated",
+      "requestBytes": 3350,
+      "candidates": 5
+    },
+    {
+      "caseId": "all-candidates-policy-blocked",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "synthetic-policy-boundary",
+      "mode": "local-policy",
+      "status": "validated",
+      "choice": "none",
+      "requestBytes": 1145,
+      "candidates": 0
+    }
+  ],
+  "limitations": [
+    "Static selection evaluation only: no browser execution or editor export.",
+    "Small hand-labeled fixture set; not a production accuracy estimate.",
+    "Expected labels and fixture explanations are never sent to the model.",
+    "Existing 0.8 threshold is illustrative until evaluated on representative real observations."
+  ]
+}

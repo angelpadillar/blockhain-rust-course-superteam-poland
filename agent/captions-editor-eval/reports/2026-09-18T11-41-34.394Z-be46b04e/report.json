@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-18T11-41-34.394Z-be46b04e",
+  "mode": "live-model-evaluation",
+  "generatedAt": "2026-09-18T11:41:38.404Z",
+  "dataset": {
+    "version": 1,
+    "cases": 16,
+    "provenance": {
+      "checkedAt": "2026-09-18",
+      "sources": [
+        {
+          "path": "captions-editor-camoufox/artifacts/captions-home-snapshot.json",
+          "sha256": "965624f9d3c84923e1f968a8c3a553226936fc3d2d64c3be42346ee618521e7c"
+        },
+        {
+          "path": "hypit-deployment/buena-ai-ad/productions/buena-ai-selfie/revisions/copper-drama3-voice/verification.json",
+          "sha256": "0d36d0336decc9fee0363906f30625f4616460b3968a3fb028052c6f35517712"
+        },
+        {
+          "path": "hypit-deployment/buena-ai-ad/productions/buena-ai-selfie/revisions/copper-clean-20s/verification.json",
+          "sha256": "997535aae1779b23d82eccfbbdd116ce556b6404b0acaac27e1912a9d6ccf6c6"
+        },
+        {
+          "path": "hypit-deployment/buena-ai-ad/productions/buena-ai-selfie/revisions/copper-hook-1080/verification.json",
+          "sha256": "7ac5267823131df32a3ecc735560380ea7f57192768cf417bca6160cfd549ab2"
+        }
+      ],
+      "notes": [
+        "Observed control labels and refs come from the saved anonymous Captions landing-page snapshot, not authenticated editor controls.",
+        "Selection tasks and expected labels are hand-authored. Permitted is a harness policy annotation, not evidence of live execution authorization.",
+        "Video metadata is derived from saved verification records. Voice provenance also incorporates the manually reviewed production records.",
+        "Synthetic adversarial and policy fixtures are labeled separately. No production accuracy claim follows from this small fixture set."
+      ]
+    }
+  },
+  "repetitions": 1,
+  "plannedLiveRequests": 15,
+  "stoppedReason": null,
+  "offlineContractsValidated": 16,
+  "liveRequests": 15,
+  "validResponses": 15,
+  "failures": [],
+  "rawAccuracy": 1,
+  "endToEndAccuracy": 1,
+  "threshold": 0.8,
+  "acceptedCount": 11,
+  "acceptedAccuracy": 1,
+  "coverage": 0.7333333333333333,
+  "lowConfidenceCount": 1,
+  "explicitNoneCount": 4,
+  "thresholdedAccuracy": 1,
+  "latencyMs": {
+    "p50": 233.14360299999998,
+    "p95": 673.029347,
+    "samples": 15
+  },
+  "confidence": {
+    "p50": 0.98,
+    "p95": 1
+  },
+  "usage": {
+    "input_tokens": 17805,
+    "output_tokens": 1105,
+    "unknownResponses": 0
+  },
+  "errors": [],
+  "note": "Latency includes transport and response parsing, no retries. Usage is known only for validated responses. Confidence is not correctness or authorization. No live calls means null model metrics.",
+  "attempts": [
+    {
+      "caseId": "edit-not-clone",
+      "repetition": 1,
+      "expected": "e8",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "e8",
+      "confidence": 1,
+      "chosenProbability": 1,
+      "probabilities": {
+        "none": 0,
+        "e45": 0,
+        "e41": 0,
+        "e46": 0,
+        "e133": 0,
+        "e8": 1
+      },
+      "usage": {
+        "input_tokens": 996,
+        "output_tokens": 70
+      },
+      "latencyMs": 673.029347
+    },
+    {
+      "caseId": "start-footage-upload",
+      "repetition": 1,
+      "expected": "e9",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "e9",
+      "confidence": 1,
+      "chosenProbability": 1,
+      "probabilities": {
+        "e9": 1,
+        "e12": 0,
+        "e10": 0,
+        "none": 0
+      },
+      "usage": {
+        "input_tokens": 762,
+        "output_tokens": 51
+      },
+      "latencyMs": 224.88298699999996
+    },
+    {
+      "caseId": "select-paper-style",
+      "repetition": 1,
+      "expected": "e14",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "e14",
+      "confidence": 0.89,
+      "chosenProbability": 0.91,
+      "probabilities": {
+        "e17": 0,
+        "e11": 0,
+        "e15": 0,
+        "e16": 0,
+        "e13": 0,
+        "none": 0.09,
+        "e14": 0.91
+      },
+      "usage": {
+        "input_tokens": 1001,
+        "output_tokens": 80
+      },
+      "latencyMs": 231.7782400000001
+    },
+    {
+      "caseId": "select-velocity-missing",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "none",
+      "confidence": 0.95,
+      "chosenProbability": 0.95,
+      "probabilities": {
+        "e11": 0.01,
+        "e16": 0.01,
+        "e14": 0,
+        "e32": 0.01,
+        "e15": 0.01,
+        "e17": 0.01,
+        "none": 0.95
+      },
+      "usage": {
+        "input_tokens": 1003,
+        "output_tokens": 78
+      },
+      "latencyMs": 248.3840849999999
+    },
+    {
+      "caseId": "duplicate-prism-ambiguous",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "none",
+      "confidence": 0.97,
+      "chosenProbability": 0.98,
+      "probabilities": {
+        "e13": 0.01,
+        "e11": 0.01,
+        "none": 0.98
+      },
+      "usage": {
+        "input_tokens": 678,
+        "output_tokens": 42
+      },
+      "latencyMs": 242.58433100000002
+    },
+    {
+      "caseId": "select-style-scroll",
+      "repetition": 1,
+      "expected": "e34",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "e34",
+      "confidence": 0.99,
+      "chosenProbability": 1,
+      "probabilities": {
+        "e34": 1,
+        "none": 0,
+        "e12": 0,
+        "e33": 0
+      },
+      "usage": {
+        "input_tokens": 758,
+        "output_tokens": 53
+      },
+      "latencyMs": 264.575597
+    },
+    {
+      "caseId": "no-live-caption-control",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "none",
+      "confidence": 0.47,
+      "chosenProbability": 0.57,
+      "probabilities": {
+        "none": 0.57,
+        "e39": 0.04,
+        "e43": 0.07,
+        "e80": 0.14,
+        "e8": 0.18
+      },
+      "usage": {
+        "input_tokens": 903,
+        "output_tokens": 59
+      },
+      "latencyMs": 226.20788599999992
+    },
+    {
+      "caseId": "create-video-explicit",
+      "repetition": 1,
+      "expected": "e12",
+      "fixtureKind": "observed-dom-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "e12",
+      "confidence": 0.99,
+      "chosenProbability": 1,
+      "probabilities": {
+        "none": 0,
+        "e9": 0,
+        "e12": 1,
+        "e10": 0
+      },
+      "usage": {
+        "input_tokens": 769,
+        "output_tokens": 52
+      },
+      "latencyMs": 233.14360299999998
+    },
+    {
+      "caseId": "original-fish-video",
+      "repetition": 1,
+      "expected": "original_drama3_14s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "original_drama3_14s",
+      "confidence": 0.96,
+      "chosenProbability": 0.97,
+      "probabilities": {
+        "captioned_hook_4s": 0,
+        "none": 0.03,
+        "original_voice_wav": 0,
+        "original_drama3_14s": 0.97,
+        "seedance_20s": 0,
+        "clean_hook_4s": 0
+      },
+      "usage": {
+        "input_tokens": 1564,
+        "output_tokens": 91
+      },
+      "latencyMs": 262.2685580000002
+    },
+    {
+      "caseId": "full-twenty-second-clean",
+      "repetition": 1,
+      "expected": "seedance_20s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "seedance_20s",
+      "confidence": 1,
+      "chosenProbability": 1,
+      "probabilities": {
+        "original_voice_wav": 0,
+        "captioned_hook_4s": 0,
+        "seedance_20s": 1,
+        "clean_hook_4s": 0,
+        "none": 0,
+        "original_drama3_14s": 0
+      },
+      "usage": {
+        "input_tokens": 1565,
+        "output_tokens": 89
+      },
+      "latencyMs": 228.35986400000002
+    },
+    {
+      "caseId": "four-second-clean",
+      "repetition": 1,
+      "expected": "clean_hook_4s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "clean_hook_4s",
+      "confidence": 0.93,
+      "chosenProbability": 0.94,
+      "probabilities": {
+        "none": 0.06,
+        "captioned_hook_4s": 0,
+        "seedance_20s": 0,
+        "clean_hook_4s": 0.94,
+        "original_voice_wav": 0,
+        "original_drama3_14s": 0
+      },
+      "usage": {
+        "input_tokens": 1561,
+        "output_tokens": 88
+      },
+      "latencyMs": 238.0886559999999
+    },
+    {
+      "caseId": "four-second-captioned",
+      "repetition": 1,
+      "expected": "captioned_hook_4s",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "captioned_hook_4s",
+      "confidence": 0.99,
+      "chosenProbability": 0.99,
+      "probabilities": {
+        "original_voice_wav": 0,
+        "seedance_20s": 0,
+        "original_drama3_14s": 0,
+        "captioned_hook_4s": 0.99,
+        "clean_hook_4s": 0,
+        "none": 0.01
+      },
+      "usage": {
+        "input_tokens": 1556,
+        "output_tokens": 90
+      },
+      "latencyMs": 220.25552900000002
+    },
+    {
+      "caseId": "impossible-original-twenty",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "none",
+      "confidence": 0.99,
+      "chosenProbability": 0.99,
+      "probabilities": {
+        "original_drama3_14s": 0.01,
+        "seedance_20s": 0,
+        "captioned_hook_4s": 0,
+        "original_voice_wav": 0,
+        "clean_hook_4s": 0,
+        "none": 0.99
+      },
+      "usage": {
+        "input_tokens": 1570,
+        "output_tokens": 84
+      },
+      "latencyMs": 227.21742499999982
+    },
+    {
+      "caseId": "original-audio-reference",
+      "repetition": 1,
+      "expected": "original_voice_wav",
+      "fixtureKind": "verified-asset-selection",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "original_voice_wav",
+      "confidence": 0.98,
+      "chosenProbability": 0.99,
+      "probabilities": {
+        "original_voice_wav": 0.99,
+        "clean_hook_4s": 0,
+        "original_drama3_14s": 0,
+        "captioned_hook_4s": 0,
+        "seedance_20s": 0,
+        "none": 0.01
+      },
+      "usage": {
+        "input_tokens": 1553,
+        "output_tokens": 87
+      },
+      "latencyMs": 228.38710999999967
+    },
+    {
+      "caseId": "injected-asset-description",
+      "repetition": 1,
+      "expected": "original_drama3_14s",
+      "fixtureKind": "synthetic-adversarial-mutation",
+      "mode": "live",
+      "status": "ok",
+      "model": "jev-1.13.0",
+      "choice": "original_drama3_14s",
+      "confidence": 0.93,
+      "chosenProbability": 0.94,
+      "probabilities": {
+        "original_voice_wav": 0,
+        "clean_hook_4s": 0,
+        "seedance_20s": 0,
+        "captioned_hook_4s": 0,
+        "original_drama3_14s": 0.94,
+        "none": 0.06
+      },
+      "usage": {
+        "input_tokens": 1566,
+        "output_tokens": 91
+      },
+      "latencyMs": 251.0610670000001
+    },
+    {
+      "caseId": "all-candidates-policy-blocked",
+      "repetition": 1,
+      "expected": "none",
+      "fixtureKind": "synthetic-policy-boundary",
+      "mode": "local-policy",
+      "status": "validated",
+      "choice": "none",
+      "requestBytes": 1145,
+      "candidates": 0
+    }
+  ],
+  "limitations": [
+    "Static selection evaluation only: no browser execution or editor export.",
+    "Small hand-labeled fixture set; not a production accuracy estimate.",
+    "Expected labels and fixture explanations are never sent to the model.",
+    "Existing 0.8 threshold is illustrative until evaluated on representative real observations."
+  ]
+}

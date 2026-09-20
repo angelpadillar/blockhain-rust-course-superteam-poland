@@ -1,0 +1,154 @@
+--- a/internal/mcp/scripts/snapshot.js
++++ b/internal/mcp/scripts/snapshot.js
+@@ -1,4 +1,4 @@
+-({max, interactiveOnly, includeValues}) => {
++({max, interactiveOnly, includeValues, includeFileInputs}) => {
+   const MAX_VALUE_LENGTH = __MAX_SNAPSHOT_VALUE_LENGTH__;
+   const attr = (el, name) => el.getAttribute(name);
+   const tagNameOf = (el) => el.tagName || "";
+@@ -17,10 +17,13 @@
+   const buttonInputTypes = new Set(["button", "submit", "reset"]);
+   const roleFor = (el) => {
+     const tag = tagNameOf(el).toLowerCase();
++    if (["checkbox", "switch"].includes(attr(el, "role"))) return attr(el, "role");
+     if (/^h[1-6]$/.test(tag)) return "heading";
+     if (tag === "a") return "link";
+     if (tag === "button") return "button";
+     if (tag === "input" && buttonInputTypes.has(inputType(el))) return "button";
++    if (tag === "input" && inputType(el) === "file") return "file";
++    if (tag === "input" && inputType(el) === "checkbox") return "checkbox";
+     if (tag === "input" || tag === "textarea") return "textbox";
+     if (tag === "select") return "combobox";
+     return el.getAttribute("role") || tag || "generic";
+@@ -63,13 +66,15 @@
+   const nameFor = (el, role) => {
+     const tag = tagNameOf(el).toLowerCase();
+     const buttonValue = tag === "input" && role === "button" ? valueOf(el) : "";
+-    return (attr(el, "aria-label") || attr(el, "placeholder") || attr(el, "name") || el.innerText || buttonValue || attr(el, "href") || "").trim();
++    const labelledBy = (attr(el, "aria-labelledby") || "").split(/\s+/).filter(Boolean).map(id => document.getElementById(id)?.textContent || "").join(" ").trim();
++    const labels = Array.from(el.labels || []).map(label => label.innerText || label.textContent || "").join(" ").trim();
++    return (attr(el, "aria-label") || labelledBy || labels || attr(el, "placeholder") || attr(el, "name") || el.innerText || buttonValue || attr(el, "href") || (role === "file" ? "File upload" : "")).trim();
+   };
+   const pathFor = (el) => {
+     const id = idOf(el);
+-    if (id) return "#" + cssEscape(id);
++    if (id && document.querySelectorAll("#" + cssEscape(id)).length === 1) return "#" + cssEscape(id);
+     const parts = [];
+-    for (let node = el; node && node.nodeType === 1 && parts.length < 6; node = parentElementOf(node)) {
++    for (let node = el; node && node.nodeType === 1; node = parentElementOf(node)) {
+       const tag = tagNameOf(node).toLowerCase();
+       const parent = parentElementOf(node);
+       if (!parent) { parts.unshift(tag); break; }
+@@ -78,16 +83,37 @@
+     }
+     return parts.join(" > ");
+   };
+-  const interactive = new Set(["button", "link", "textbox", "combobox"]);
++  const interactive = new Set(["button", "link", "textbox", "combobox", "checkbox", "switch", "file"]);
+   const nodes = Array.from(document.querySelectorAll("a,button,input,textarea,select,h1,h2,h3,h4,h5,h6,[role]"));
+   const out = [];
+   for (const el of nodes) {
+-    if (isHiddenElement(el)) continue;
+     const role = roleFor(el);
++    const hidden = isHiddenElement(el);
++    if (role === "file" && !includeFileInputs) continue;
++    if (hidden && !(role === "file" && includeFileInputs)) continue;
+     if (interactiveOnly && !interactive.has(role)) continue;
+     const name = nameFor(el, role);
+-    if (!name && role !== "textbox") continue;
++    if (!name && !["textbox", "checkbox", "switch"].includes(role)) continue;
+     const item = {role, name, resolver: pathFor(el)};
++    if (tagNameOf(el).toLowerCase() === "input") item.input_type = inputType(el);
++    if (el.disabled || attr(el, "aria-disabled") === "true") item.disabled = true;
++    if (role === "file") {
++      item.hidden = hidden;
++      item.accept = attr(el, "accept") || "";
++      item.multiple = Boolean(el.multiple);
++    }
++    if (role === "checkbox" || role === "switch") {
++      // This is observed nearby text, not a fabricated accessible name.
++      let parent = el.parentElement;
++      for (let depth = 0; parent && depth < 3; depth++, parent = parent.parentElement) {
++        const toggles = parent.querySelectorAll('input[type="checkbox"],[role="checkbox"],[role="switch"]');
++        const text = (parent.innerText || "").trim();
++        if (toggles.length !== 1) break;
++        if (text && text.length <= 200) { item.label_context = text; break; }
++      }
++      if (tagNameOf(el).toLowerCase() === "input") item.checked = Boolean(el.checked);
++      else if (["true", "false"].includes(attr(el, "aria-checked"))) item.checked = attr(el, "aria-checked") === "true";
++    }
+     if (role === "heading") item.level = Number(tagNameOf(el).slice(1)) || 0;
+     if (role === "link") item.href = attr(el, "href") || "";
+     if (role === "textbox") {
+--- a/internal/a11y/a11y.go
++++ b/internal/a11y/a11y.go
+@@ -13,6 +13,13 @@
+ )
+ 
+ type Element struct {
++	LabelContext string `json:"label_context,omitempty"`
++	InputType string `json:"input_type,omitempty"`
++	Disabled bool `json:"disabled,omitempty"`
++	Hidden bool `json:"hidden,omitempty"`
++	Accept string `json:"accept,omitempty"`
++	Multiple bool `json:"multiple,omitempty"`
++	Checked *bool `json:"checked,omitempty"`
+ 	Ref        string `json:"ref,omitempty"`
+ 	Role       string `json:"role"`
+ 	Name       string `json:"name"`
+@@ -98,7 +105,7 @@
+ 		if node.Resolver == "" {
+ 			node.Resolver = fmt.Sprintf("index:%d", i)
+ 		}
+-		if node.Resolver == want.Resolver && node.Role == want.Role && node.Name == want.Name {
++		if node.Resolver == want.Resolver && node.Role == want.Role && node.Name == want.Name && node.LabelContext == want.LabelContext && node.InputType == want.InputType && node.Disabled == want.Disabled && node.Accept == want.Accept && node.Multiple == want.Multiple && (node.Checked == nil) == (want.Checked == nil) && (node.Checked == nil || *node.Checked == *want.Checked) {
+ 			node.Ref = ref
+ 			candidates = append(candidates, node)
+ 		}
+--- a/internal/mcp/gomoufox_session.go
++++ b/internal/mcp/gomoufox_session.go
+@@ -352,6 +352,7 @@
+ 		}
+ 		session := newGomoufoxSession(ctx, browser, browserContext, page, closeBrowser)
+ 		session.contextOptions = contextOpts
++	session.allowFileInputs = f.policy.AllowFileUpload
+ 		session.requestedOS = opts.os
+ 		if opts.width > 0 {
+ 			session.requestedViewport = &renderinfo.Size{Width: opts.width, Height: opts.height}
+@@ -385,6 +386,7 @@
+ 	}
+ 	session := newGomoufoxSession(ctx, browser, browserContext, page, closeBrowser)
+ 	session.contextOptions = contextOpts
++	session.allowFileInputs = f.policy.AllowFileUpload
+ 	session.requestedOS = opts.os
+ 	if opts.width > 0 {
+ 		session.requestedViewport = &renderinfo.Size{Width: opts.width, Height: opts.height}
+@@ -446,6 +448,7 @@
+ }
+ 
+ type gomoufoxSession struct {
++	allowFileInputs bool
+ 	requestedViewport *renderinfo.Size
+ 	requestedOS       string
+ 	contextOptions    []gomoufox.ContextOption
+@@ -794,6 +797,11 @@
+ 	out := make([]map[string]any, 0, len(snapshot.Items))
+ 	for _, item := range snapshot.Items {
+ 		entry := map[string]any{"ref": item.Ref, "role": item.Role, "name": item.Name}
++		if item.InputType != "" { entry["input_type"] = item.InputType }
++		if item.LabelContext != "" { entry["label_context"] = item.LabelContext }
++		if item.Disabled { entry["disabled"] = true }
++		if item.Role == "file" { entry["hidden"] = item.Hidden; entry["accept"] = item.Accept; entry["multiple"] = item.Multiple }
++		if item.Checked != nil { entry["checked"] = *item.Checked }
+ 		if item.Level != 0 {
+ 			entry["level"] = item.Level
+ 		}
+@@ -1071,7 +1079,7 @@
+ }
+ 
+ func (s *gomoufoxSession) snapshotElements(ctx context.Context, maxElements int, interactiveOnly bool, includeValues bool) ([]a11y.Element, error) {
+-	result, err := s.page.EvaluateInternal(ctx, snapshotExpression, map[string]any{"max": maxElements, "interactiveOnly": interactiveOnly, "includeValues": includeValues})
++	result, err := s.page.EvaluateInternal(ctx, snapshotExpression, map[string]any{"max": maxElements, "interactiveOnly": interactiveOnly, "includeValues": includeValues, "includeFileInputs": s.allowFileInputs})
+ 	if err != nil {
+ 		return nil, err
+ 	}

@@ -1,0 +1,16 @@
+{"caseId":"edit-not-clone","repetition":1,"expected":"e8","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":2204,"candidates":5}
+{"caseId":"start-footage-upload","repetition":1,"expected":"e9","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":1686,"candidates":3}
+{"caseId":"select-paper-style","repetition":1,"expected":"e14","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":2103,"candidates":6}
+{"caseId":"select-velocity-missing","repetition":1,"expected":"none","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":2128,"candidates":6}
+{"caseId":"duplicate-prism-ambiguous","repetition":1,"expected":"none","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":1480,"candidates":2}
+{"caseId":"select-style-scroll","repetition":1,"expected":"e34","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":1654,"candidates":3}
+{"caseId":"no-live-caption-control","repetition":1,"expected":"none","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":2031,"candidates":4}
+{"caseId":"create-video-explicit","repetition":1,"expected":"e12","fixtureKind":"observed-dom-selection","mode":"offline-contract","status":"validated","requestBytes":1712,"candidates":3}
+{"caseId":"original-fish-video","repetition":1,"expected":"original_drama3_14s","fixtureKind":"verified-asset-selection","mode":"offline-contract","status":"validated","requestBytes":3303,"candidates":5}
+{"caseId":"full-twenty-second-clean","repetition":1,"expected":"seedance_20s","fixtureKind":"verified-asset-selection","mode":"offline-contract","status":"validated","requestBytes":3292,"candidates":5}
+{"caseId":"four-second-clean","repetition":1,"expected":"clean_hook_4s","fixtureKind":"verified-asset-selection","mode":"offline-contract","status":"validated","requestBytes":3275,"candidates":5}
+{"caseId":"four-second-captioned","repetition":1,"expected":"captioned_hook_4s","fixtureKind":"verified-asset-selection","mode":"offline-contract","status":"validated","requestBytes":3246,"candidates":5}
+{"caseId":"impossible-original-twenty","repetition":1,"expected":"none","fixtureKind":"verified-asset-selection","mode":"offline-contract","status":"validated","requestBytes":3337,"candidates":5}
+{"caseId":"original-audio-reference","repetition":1,"expected":"original_voice_wav","fixtureKind":"verified-asset-selection","mode":"offline-contract","status":"validated","requestBytes":3249,"candidates":5}
+{"caseId":"injected-asset-description","repetition":1,"expected":"original_drama3_14s","fixtureKind":"synthetic-adversarial-mutation","mode":"offline-contract","status":"validated","requestBytes":3350,"candidates":5}
+{"caseId":"all-candidates-policy-blocked","repetition":1,"expected":"none","fixtureKind":"synthetic-policy-boundary","mode":"local-policy","status":"validated","choice":"none","requestBytes":1145,"candidates":0}

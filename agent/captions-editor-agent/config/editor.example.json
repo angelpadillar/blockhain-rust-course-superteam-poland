@@ -1,0 +1,16 @@
+{
+  "profileId":"captions-test",
+  "testAccountOnly":true,
+  "editorUrl":"https://captions.ai/home",
+  "navigationDomains":["captions.ai","www.captions.ai","desktop.captions.ai","app.captions.ai"],
+  "onboardingDomains":[],
+  "resourceDomains":["api.mirage.app","captions-cdn.xyz"],
+  "mutationRoutes":[],
+  "assetsRoot":"/app/assets",
+  "assets":{},
+  "styles":["Velocity","Polished"],
+  "maxActions":24,
+  "maxRunMs":600000,
+  "maxModelCalls":4,
+  "includedEditsConfirmed":false
+}

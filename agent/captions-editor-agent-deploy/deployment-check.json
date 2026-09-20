@@ -1,0 +1,25 @@
+{
+  "health": {
+    "ok": true,
+    "mode": "captions_test_only"
+  },
+  "unauthenticatedStatus": 401,
+  "status": {
+    "mode": "captions_test_only",
+    "policyVersion": "captions-test-only-v1",
+    "profileId": "captions-test",
+    "testAccountReady": false,
+    "activeJobId": null,
+    "queued": 0,
+    "allowedAssetIds": [
+      "buena-clean-4s",
+      "buena-clean-20s"
+    ],
+    "allowedStyles": [
+      "Velocity",
+      "Polished"
+    ],
+    "purchasesEnabled": false,
+    "publishingEnabled": false
+  }
+}

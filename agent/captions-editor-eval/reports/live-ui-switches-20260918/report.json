@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "startedAt": "2026-09-18T12:20:56.405Z",
+  "status": "completed",
+  "projectionHash": "adb4876378a8b3f252124672af1020a67b3d9a3630d4999581548ab627f415b2",
+  "observationId": "e9dfa3a5-1019-421e-bee1-dc0942741da8",
+  "capturedAt": "2026-09-18T12:17:32.417384+00:00",
+  "candidates": [
+    {
+      "ref": "e9",
+      "role": "switch",
+      "name": "",
+      "labelContext": "Voiceover Only",
+      "checked": false,
+      "disabled": false
+    },
+    {
+      "ref": "e10",
+      "role": "switch",
+      "name": "",
+      "labelContext": "AUTO TRIM\nTrim filler and silences",
+      "checked": false,
+      "disabled": false
+    },
+    {
+      "ref": "e15",
+      "role": "switch",
+      "name": "",
+      "labelContext": "Generate media",
+      "checked": true,
+      "disabled": false
+    }
+  ],
+  "expectedRef": "e15",
+  "liveRequests": 1,
+  "browserActions": 0,
+  "expectedId": "c2",
+  "rawChoice": "c2",
+  "returnedChoice": "c2",
+  "selectedRef": "e15",
+  "passed": true,
+  "confidence": 0.94,
+  "probabilities": {
+    "c0": 0,
+    "none": 0.05,
+    "c2": 0.95,
+    "c1": 0
+  },
+  "latencyMs": 616.5469310000001,
+  "usage": {
+    "input_tokens": 640,
+    "output_tokens": 49
+  },
+  "note": "One semantic selection over actual supplied toggle metadata; this does not turn any toggle off or verify an edit. Reobserve before acting.",
+  "finishedAt": "2026-09-18T12:20:57.031Z"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "deployed",
+  "oldImage": "buena-captions-editor-camoufox:0.1.29-7",
+  "newImage": "buena-captions-editor-camoufox:0.1.29-9",
+  "health": {
+    "status": "starting",
+    "engine": "gomoufox",
+    "expectedVersion": "0.1.29",
+    "upstreamPatch": "observed-inputs-v3",
+    "automatedEditing": true,
+    "typesafeConfigured": true,
+    "runtimeAlive": true,
+    "healthy": true
+  },
+  "routeProbe": {
+    "status": 409,
+    "error": "unknown_job"
+  },
+  "rollback": "/opt/captions-editor-bench/20260919-readiness/rollback",
+  "seconds": 5.030404041521251,
+  "workflowHelperUpdated": true
+}

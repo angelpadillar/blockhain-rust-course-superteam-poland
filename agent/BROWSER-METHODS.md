@@ -64,12 +64,13 @@ adapter that "Przejdź do kasy" opens the summary without paying.
 [Evaluation](evaluation/REPORT.md) ·
 [Method comparison](jev/benchmarks/method-comparison/REPORT.md)
 
-### C. `buena-delio-worker` — Delio.com.pl adapter (VPS-only, NOT in this repo)
+### C. `agent/delio-worker` — Delio.com.pl adapter
 
-Lives at `/opt/buena-delio-worker` on `buena-prod-01`; state in
-`/data/buena-delio`. Camoufox/Firefox persistent profile, same
-observe→Jev-choice→verify loop, plus registration automation and
-coupon/quote probing. VNC desktop on `100.121.5.10:6094`.
+Imported from `/opt/buena-delio-worker` on `buena-prod-01` (state stays
+on the VPS in `/data/buena-delio`). Camoufox/Firefox persistent
+profile, same observe→Jev-choice→verify loop, plus registration
+automation (`registration.mjs`) and coupon/quote probing. VNC desktop
+on `100.121.5.10:6094`.
 
 Evidence: `state/jev/jev-cart-choices.jsonl` — **78 real Jev choices**
 (e.g. correct "Dodaj do koszyka" among neighboring products,
@@ -78,24 +79,30 @@ snapshots exist. `current-status.json` reports **blocked**:
 merchant session, delivery confirmation and cart calibration all
 unverified — an authenticated owner session was never proven.
 
-**Action:** this source is not committed anywhere; it should be
-imported before further work.
+### D. `agent/captions-editor` — Captions AI editor bridge (VPS, live)
 
-### D. Captions-editor bridge — Captions AI editor (VPS, live)
-
-Source lives outside this repo (`captions-editor-camoufox` project);
-image `buena-captions-editor-camoufox:0.1.29-9` runs the Delio worker
-too. Loopback-only HTTP bridge on the persistent Camoufox profile:
+Imported from the `captions-editor-camoufox` project; the deployed
+image `buena-captions-editor-camoufox:0.1.29-9` also hosts the Delio
+worker. Loopback-only HTTP bridge on the persistent Camoufox profile:
 `GET /snapshot` → `POST /select` (exact unique match = **0 model
 calls**; ambiguous → one Jev call at ≥0.8 confidence) → `POST /actions`
-(idempotency key + postcondition + receipt). Bounded job policy —
-upload, fill_prompt, click, uncheck, export — nothing else is
-expressible. Export is `exported_unverified` until media validation.
+(idempotency key + postcondition + receipt) → `POST /select-ready`
+with an observation-retry budget. Bounded job policy — upload,
+fill_prompt, click, uncheck, export — nothing else is expressible.
+Export is `exported_unverified` until media validation.
 
 This is the most restrictive variant: the caller cannot supply
 selectors, text, or navigation — only choose among policy-permitted
 steps. It is the closest existing thing to a safe "any use case"
 contract.
+
+### E. `agent/captions-editor-agent` — earlier Chromium editor adapter
+
+The predecessor of D on Chromium instead of Camoufox: same queue,
+policy and verifier; narrower control set (accessible buttons, file
+selection, numeric trim fields). Recorded **0 verified live exports** —
+its selectors were never calibrated against the signed-in editor.
+Superseded by D, retained for comparison.
 
 ## Experimental runtimes (in `agent/jev`)
 
@@ -107,6 +114,8 @@ contract.
 | **Navigation speed v1** (richer Jev prompt) | **0/2** — chose `unavailable` despite an offered submit | Prompt regression: richer structured criteria did worse than the concise baseline |
 | **Navigation speed v2** (baseline prompt + fresh element binding) | 0/1 live (Glovo outage stopped the cohort) | Unproven; keep as next candidate |
 | **shopping-head-to-head-v5** (Jev vs Flash Lite vs Mahmoud policy, Amazon.pl guest) | Preflight only | No comparison results yet |
+| **`agent/captions-editor-eval`** (Jev control/asset selection fixtures) | **15/15** live choices, p50 233 ms, p95 673 ms | Static observed labels, not browser execution |
+| **`agent/browser-readiness-20260919`** | Desktop OCR-vs-accessibility fixtures: **14/16** completed, ~3.4 s median | The only real OCR-vs-DOM comparison run. Follow-up with readiness waits regressed to **9/16** — not deployed. Comet/X11 desktop fixtures, not the shipping adapter |
 
 ## External methods reviewed (not ours)
 
@@ -149,8 +158,10 @@ The reusable core already exists implicitly in four codebases:
 
 1. Extract that loop into one shared runtime (site adapters supply
    observation + permission + verification; the loop is site-agnostic).
-2. Import `buena-delio-worker` and the captions bridge into version
-   control alongside `agent/jev` — currently VPS/external only.
+2. ~~Import `buena-delio-worker` and the captions bridge into version
+   control~~ — done: `agent/delio-worker`, `agent/captions-editor`,
+   `agent/captions-editor-agent` (+`-deploy`), `agent/captions-editor-eval`,
+   `agent/browser-readiness-20260919`, `agent/hackathon-handoff-20260919`.
 3. Fix and re-evaluate the NL→plan compiler (v4's real gap) with
    held-out wordings.
 4. Add OCR/screenshot fallback only behind the DOM reader's "cannot

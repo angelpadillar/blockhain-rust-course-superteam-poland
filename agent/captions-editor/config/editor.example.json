@@ -1,0 +1,16 @@
+{
+  "initialUrl": "https://captions.ai/home",
+  "stateDir": "/app/state",
+  "allowedHosts": [
+    "captions.ai",
+    "www.captions.ai",
+    "as.captions.ai",
+    "internal.captions-api.com",
+    "api.mirage.app",
+    "api.workos.com",
+    "auth.mirage.app",
+    "workos.imgix.net",
+    "captions-cdn.xyz",
+    "storage.googleapis.com"
+  ]
+}

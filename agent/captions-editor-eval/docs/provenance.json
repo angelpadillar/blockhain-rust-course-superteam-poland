@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-09-18",
+  "sources": [
+    {
+      "file": "llms.txt",
+      "url": "https://docs.typesafe.ai/llms.txt",
+      "sha256": "abbf7382d4b4941689686cab53389055ceca4d8226e2663233416eaa81fe5d68"
+    },
+    {
+      "file": "api.md",
+      "url": "https://docs.typesafe.ai/api",
+      "sha256": "b9b205096ac164e26f7797a52551c72f2bb3d270dffd923dc7180af3b1a21ae8"
+    },
+    {
+      "file": "choice.md",
+      "url": "https://docs.typesafe.ai/primitives/choice",
+      "sha256": "5ba42269e9a07ac5b1220ee6b6c69f060f57b6a7ff619cfedcb916acfb6c92c5"
+    },
+    {
+      "file": "function_calling.md",
+      "url": "https://docs.typesafe.ai/cookbooks/function_calling",
+      "sha256": "5447823489575a93adc3943627461fa8b904e5692bfed3395caa21a50458fe40"
+    }
+  ]
+}
