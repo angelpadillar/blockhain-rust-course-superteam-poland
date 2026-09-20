@@ -361,8 +361,13 @@ curl -H "Authorization: Bearer $ALTITUDE_SERVER_TOKEN" -H 'content-type: applica
   -X POST http://127.0.0.1:8787/session/attach
 ```
 
-`/balance` and `/card/create|fund|freeze|close` validate the request against the
-funding policy, screenshot the dashboard and return `status: "stub"` with the
-recon each command still needs. Nothing mutates the Altitude account until those
-selectors are known. Set `ALTITUDE_BROWSER_EXECUTABLE` when Chrome is not at the
-channel's default path, as on a VPS.
+`/balance`, `/card/create`, and `/card/freeze` use the observed dashboard
+locators. Set `ALTITUDE_LIVE_CARD_OPS=1` to enable card mutations; by default,
+create fills the form and cancels, while freeze reports a preview. Set
+`ALTITUDE_CARDHOLDER_EMAIL` to the 3DS mailbox member selected for new cards
+and optionally set `ALTITUDE_CARD_LIMIT_FREQUENCY` to `All time`, `7 day`,
+`30 day`, or `Per authorization`. A create request with `reveal: true` writes
+`agent/out/altitude-card-<reference>.env` for sourcing into the payment agent
+(`CARD_PAN`, `CARD_EXP`, `CARD_CVC`, and `CARD_NAME`). `fund` and `close` remain
+stubs. Set `ALTITUDE_BROWSER_EXECUTABLE` when Chrome is not at the channel's
+default path, as on a VPS.

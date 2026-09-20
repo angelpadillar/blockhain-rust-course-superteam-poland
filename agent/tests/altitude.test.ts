@@ -2,7 +2,12 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
   assertCardAmountWithinCap,
+  parseCardRows,
+  parseLast4,
+  parseRevealedCard,
+  parseSpendableBalance,
   resolveAttachMode,
+  resolveLimitFrequency,
   validateCardCommand,
 } from "../src/altitude/commands.js";
 import { assertAltitudeUrl } from "../src/altitude/session.js";
@@ -27,6 +32,100 @@ test("Altitude attach mode defaults based on stored credentials", () => {
   assert.throws(
     () => resolveAttachMode("passkey", true),
     /mode must be "injected" or "supervised"/,
+  );
+});
+
+test("Altitude dashboard parsers read balance and card rows", () => {
+  assert.equal(
+    parseSpendableBalance("Spendable balance\n$10.81\nTop up"),
+    10.81,
+  );
+  assert.equal(parseSpendableBalance("No balance loaded"), null);
+  assert.equal(parseSpendableBalance("$1,234.50"), 1234.5);
+
+  const rows = parseCardRows(`Angel Housing
+•••• 6766
+Active
+$10,000.00 / 7 days
+Natalia
+•••• 8539
+Active
+$10.00 / 30 days
+SOL-FULFILL-DEMO-01
+•••• 2027
+Active
+$40.00 Per authorization`);
+  assert.deepEqual(rows, [
+    {
+      cardholder: null,
+      name: "Angel Housing",
+      last4: "6766",
+      status: "Active",
+      limit: "$10,000.00 / 7 days",
+    },
+    {
+      cardholder: null,
+      name: "Natalia",
+      last4: "8539",
+      status: "Active",
+      limit: "$10.00 / 30 days",
+    },
+    {
+      cardholder: null,
+      name: "SOL-FULFILL-DEMO-01",
+      last4: "2027",
+      status: "Active",
+      limit: "$40.00 Per authorization",
+    },
+  ]);
+  assert.equal(parseLast4("•••• •••• •••• 9243"), "9243");
+  assert.deepEqual(
+    parseRevealedCard("4413 6965 4615 9243\n10/31\n052\nCardholder"),
+    { pan: "4413 6965 4615 9243", exp: "10/31", cvv: "052" },
+  );
+  assert.equal(parseRevealedCard("4413 6965 4615 9243\n10/31"), null);
+});
+
+test("Altitude card settings validate frequency and reveal", () => {
+  assert.equal(resolveLimitFrequency(undefined), "Per authorization");
+  assert.equal(resolveLimitFrequency("7 day"), "7 day");
+  assert.throws(() => resolveLimitFrequency("weekly"), /must be one of/);
+
+  const create = validateCardCommand(
+    {
+      command: "create",
+      reference: "order-1042",
+      amount_usd: 50,
+      reveal: true,
+    },
+    200,
+  );
+  assert.equal(create.reveal, true);
+  assert.throws(
+    () =>
+      validateCardCommand(
+        {
+          command: "create",
+          reference: "order-1042",
+          amount_usd: 50,
+          reveal: "yes",
+        },
+        200,
+      ),
+    /reveal is only supported/,
+  );
+  assert.throws(
+    () =>
+      validateCardCommand(
+        {
+          command: "freeze",
+          reference: "order-1042",
+          card_id: "2027",
+          reveal: true,
+        },
+        200,
+      ),
+    /reveal is only supported/,
   );
 });
 

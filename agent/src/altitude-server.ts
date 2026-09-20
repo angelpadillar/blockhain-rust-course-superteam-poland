@@ -10,7 +10,9 @@ import {
   runCardCommand,
   validateCardCommand,
   CARD_COMMANDS,
+  isLiveCardOps,
   resolveAttachMode,
+  resolveLimitFrequency,
   type CardCommand,
 } from "./altitude/commands.js";
 import {
@@ -23,15 +25,15 @@ import {
  * Localhost daemon that owns one supervised Altitude browser session.
  *
  * The session is the persistent Chrome profile with the stored passkey
- * injected into a virtual authenticator, so callers issue commands instead of
- * driving the dashboard by hand. Card actions are stubs until dashboard recon
- * lands: they validate and observe, and never mutate the account.
+ * injected into a virtual authenticator, or a supervised browser window where
+ * a human completes login. Balance, create, and freeze use live dashboard
+ * flows behind a dry-run gate; fund and close remain stubs.
  *
  *   GET  /health          daemon and session state
  *   POST /session/attach  launch the profile in injected or supervised mode
  *   POST /session/close   close the browser
- *   GET  /balance         stubbed balance read
- *   POST /card/<command>  create | fund | freeze | close, all stubbed
+ *   GET  /balance         live balance read (dry-run is not applicable)
+ *   POST /card/<command>  live create/freeze; stubbed fund/close
  */
 
 const HOST = "127.0.0.1";
@@ -156,7 +158,15 @@ async function route(
   const path = url.pathname.replace(/\/+$/, "") || "/";
 
   if (request.method === "GET" && (path === "/" || path === "/health")) {
-    send(response, 200, { ok: true, target: altitudeUrl(), ...daemon.state() });
+    send(response, 200, {
+      ok: true,
+      target: altitudeUrl(),
+      live_card_ops: isLiveCardOps(),
+      card_limit_frequency: resolveLimitFrequency(
+        process.env.ALTITUDE_CARD_LIMIT_FREQUENCY,
+      ),
+      ...daemon.state(),
+    });
     return;
   }
   if (request.method === "POST" && path === "/session/attach") {
