@@ -91,7 +91,7 @@ function escapeRegExp(value: string): string {
 function moneyAfterLabel(text: string): number | null {
   const labels =
     /(?:Spendable balance|Cards account balance)[\s\S]*?\$([0-9,]+\.\d{2})/i;
-  const match = text.match(labels) ?? text.match(/\$([0-9,]+\.\d{2})/);
+  const match = text.match(labels);
   if (!match) return null;
   const value = Number(match[1]!.replaceAll(",", ""));
   return Number.isFinite(value) ? value : null;

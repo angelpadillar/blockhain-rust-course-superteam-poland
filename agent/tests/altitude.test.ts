@@ -41,7 +41,11 @@ test("Altitude dashboard parsers read balance and card rows", () => {
     10.81,
   );
   assert.equal(parseSpendableBalance("No balance loaded"), null);
-  assert.equal(parseSpendableBalance("$1,234.50"), 1234.5);
+  assert.equal(
+    parseSpendableBalance("Spendable balance\n$1,234.50\nTop up"),
+    1234.5,
+  );
+  assert.equal(parseSpendableBalance("Angel Test\n$100.00 / 7 days"), null);
 
   const rows = parseCardRows(`Angel Housing
 •••• 6766
