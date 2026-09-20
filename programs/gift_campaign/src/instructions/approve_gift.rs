@@ -14,6 +14,10 @@ pub struct ApproveGift<'info> {
 }
 
 pub fn handle_approve_gift(ctx: Context<ApproveGift>, gift_hash: [u8; 32]) -> Result<()> {
+    require!(
+        ctx.accounts.campaign.mandate == Pubkey::default(),
+        GiftCampaignError::MandateRequired
+    );
     require_keys_eq!(
         ctx.accounts.sender.key(),
         ctx.accounts.campaign.sender,

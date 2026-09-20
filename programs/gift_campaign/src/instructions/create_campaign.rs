@@ -68,6 +68,7 @@ pub fn handle_create_campaign(
 
     let campaign = &mut ctx.accounts.campaign;
     campaign.sender = ctx.accounts.sender.key();
+    campaign.mandate = Pubkey::default();
     campaign.nonce = nonce;
     campaign.budget = budget;
     campaign.spent = 0;

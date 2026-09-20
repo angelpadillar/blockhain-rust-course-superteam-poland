@@ -332,3 +332,42 @@ ANCHOR_PROVIDER_URL=http://127.0.0.1:8899 \
 FULFILLMENT_ORACLE_WALLET="$PWD/.demo/fulfillment-oracle.json" \
 yarn fulfillment:chain settle "/absolute/path/to/proof-photo.jpg"
 ```
+
+## Altitude session daemon
+
+`npm run altitude:session -- open|enroll|attest|forget` is the supervised
+harness: enroll registers a harness-owned passkey on a CDP virtual
+authenticator and stores it in the gitignored `agent/out/altitude-passkey.json`,
+attest re-injects it so a WebAuthn ceremony resolves with no human prompt.
+
+`npm run altitude:server` keeps that session open behind a loopback daemon so
+callers issue commands instead of driving the dashboard:
+
+```bash
+ALTITUDE_SERVER_TOKEN=... ALTITUDE_MAX_CARD_USD=200 npm run altitude:server
+curl -H "Authorization: Bearer $ALTITUDE_SERVER_TOKEN" -X POST http://127.0.0.1:8787/session/attach
+curl -H "Authorization: Bearer $ALTITUDE_SERVER_TOKEN" http://127.0.0.1:8787/balance
+curl -H "Authorization: Bearer $ALTITUDE_SERVER_TOKEN" -H 'content-type: application/json' \
+  -d '{"reference":"order-1042","amount_usd":50,"currency":"USDC"}' \
+  -X POST http://127.0.0.1:8787/card/create
+```
+
+To use the real passkey through the 1Password extension, attach in supervised
+mode and tap the passkey in the browser window before issuing commands:
+
+```bash
+curl -H "Authorization: Bearer $ALTITUDE_SERVER_TOKEN" -H 'content-type: application/json' \
+  -d '{"mode":"supervised"}' \
+  -X POST http://127.0.0.1:8787/session/attach
+```
+
+`/balance`, `/card/create`, and `/card/freeze` use the observed dashboard
+locators. Set `ALTITUDE_LIVE_CARD_OPS=1` to enable card mutations; by default,
+create fills the form and cancels, while freeze reports a preview. Set
+`ALTITUDE_CARDHOLDER_EMAIL` to the 3DS mailbox member selected for new cards
+and optionally set `ALTITUDE_CARD_LIMIT_FREQUENCY` to `All time`, `7 day`,
+`30 day`, or `Per authorization`. A create request with `reveal: true` writes
+`agent/out/altitude-card-<reference>.env` for sourcing into the payment agent
+(`CARD_PAN`, `CARD_EXP`, `CARD_CVC`, and `CARD_NAME`). `fund` and `close` remain
+stubs. Set `ALTITUDE_BROWSER_EXECUTABLE` when Chrome is not at the channel's
+default path, as on a VPS.

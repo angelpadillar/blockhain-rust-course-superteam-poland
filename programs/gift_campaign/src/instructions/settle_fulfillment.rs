@@ -65,10 +65,9 @@ pub fn handle_settle_fulfillment(
     for hash in [pod_hash, fulfillment_hash] {
         require!(hash != [0; 32], GiftCampaignError::ZeroHash);
     }
-    require!(
-        Clock::get()?.unix_timestamp <= ctx.accounts.campaign.expires_at,
-        GiftCampaignError::CampaignExpired
-    );
+    // Expiry bounds NEW payment attempts. A purchase already recorded by the
+    // fulfillment oracle must remain settleable after delayed physical delivery;
+    // otherwise Purchased cannot be settled or cancelled and escrow is stranded.
 
     let operator_payment = ctx.accounts.campaign.settlement_amount;
     let fee = operator_payment

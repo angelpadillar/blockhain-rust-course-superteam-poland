@@ -22,6 +22,10 @@ pub fn handle_record_payment_attempt(
     quote_hash: [u8; 32],
     payment_attempt_hash: [u8; 32],
 ) -> Result<()> {
+    require!(
+        ctx.accounts.campaign.mandate == Pubkey::default(),
+        GiftCampaignError::MandateRequired
+    );
     require_keys_eq!(
         ctx.accounts.fulfillment_oracle.key(),
         ctx.accounts.config.delivery_oracle,

@@ -40,4 +40,20 @@ pub enum GiftCampaignError {
     UnsupportedCurrency,
     #[msg("The escrow budget cannot cover the exact settlement and protocol fee")]
     InsufficientEscrowBudget,
+    #[msg("Mandate-bound campaigns must use mandate approval and attempt instructions")]
+    MandateRequired,
+    #[msg("The campaign or mandate binding does not match")]
+    MandateMismatch,
+    #[msg("The mandate is revoked or already consumed")]
+    InactiveMandate,
+    #[msg("The mandate or quote has expired")]
+    MandateExpired,
+    #[msg("Only the sender-designated executor may exercise this mandate")]
+    UnauthorizedExecutor,
+    #[msg("Quote terms exceed the sender's mandate")]
+    MandateLimitExceeded,
+    #[msg("The exact domain-separated quote commitment does not match")]
+    TermsMismatch,
+    #[msg("Modern quoted campaigns cannot use legacy delivery settlement")]
+    LegacyPathForbidden,
 }

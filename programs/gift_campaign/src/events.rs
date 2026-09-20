@@ -1,6 +1,38 @@
 use anchor_lang::prelude::*;
 
 #[event]
+pub struct MandateAuthorized {
+    pub campaign: Pubkey,
+    pub mandate: Pubkey,
+    pub sender: Pubkey,
+    pub executor: Pubkey,
+    pub expires_at: i64,
+}
+
+#[event]
+pub struct MandateRevoked {
+    pub campaign: Pubkey,
+    pub mandate: Pubkey,
+}
+
+#[event]
+pub struct MandateQuoteApproved {
+    pub campaign: Pubkey,
+    pub mandate: Pubkey,
+    pub quote_version: u32,
+    pub terms_hash: [u8; 32],
+}
+
+#[event]
+pub struct MandateConsumed {
+    pub campaign: Pubkey,
+    pub mandate: Pubkey,
+    pub terms_hash: [u8; 32],
+    pub payment_attempt_hash: [u8; 32],
+    pub consumed_at: i64,
+}
+
+#[event]
 pub struct CampaignCreated {
     pub campaign: Pubkey,
     pub sender: Pubkey,

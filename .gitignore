@@ -13,6 +13,7 @@ agent/out/
 agent/chrome-profile/
 agent/glovo-profile/
 agent/pyszne-profile/
+agent/altitude-profile/
 agent/node_modules/
 agent/dist/
 agent/playwright-report/

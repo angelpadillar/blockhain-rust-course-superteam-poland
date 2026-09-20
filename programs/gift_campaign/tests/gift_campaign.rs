@@ -53,6 +53,9 @@ struct Fixture {
     config: Pubkey,
 }
 
+#[path = "cases/mandate.rs"]
+mod mandate_cases;
+
 impl Fixture {
     fn new() -> Self {
         let mut svm = LiteSVM::new();
