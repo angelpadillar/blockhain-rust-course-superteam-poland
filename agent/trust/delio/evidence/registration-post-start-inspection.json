@@ -1,0 +1,67 @@
+{
+  "recordedAt": "2026-09-19T10:17:45.469232+00:00",
+  "operation": "inspectRegistrationState",
+  "controllerRuntimeMs": 293,
+  "clientExitCode": 0,
+  "response": {
+    "ok": true,
+    "result": {
+      "status": "registration_state_observed",
+      "fields": [
+        {
+          "ordinal": 1,
+          "kind": "phone",
+          "inputType": "tel",
+          "required": false,
+          "source": "scoped_form_markup"
+        }
+      ],
+      "fieldsTruncated": false,
+      "observedFieldOrder": [
+        "phone"
+      ],
+      "emailFieldObserved": false,
+      "phoneFieldObserved": true,
+      "passwordFieldObserved": false,
+      "otpFieldObserved": false,
+      "termsMentionObserved": true,
+      "privacyMentionObserved": true,
+      "registrationEntryObserved": false,
+      "googleOptionObserved": false,
+      "appleOptionObserved": false,
+      "laterFieldOrderVerified": false,
+      "artifacts": [
+        {
+          "id": "registration-1789813065405-467220e7bb5f",
+          "observationSha256": "467220e7bb5fa7b5b6eb6a2c990d34f566243d3e0d531f89ae1c97d6d7211531",
+          "screenshotSha256": "fed0d0a5eb741729929f8bd938c7fae7f3bcf923bf988e5dff12174349a91637",
+          "private": true
+        }
+      ],
+      "noActionsDispatched": true,
+      "navigationClicks": 0,
+      "newAccountVerified": false,
+      "inspectionScope": "Current registration view only; this observation does not prove account creation or prior actions.",
+      "observedAt": 1789813065438,
+      "evidenceRefs": [
+        {
+          "id": "5228ed624db16de74405a04c8b89d72b5ca12132beb292c3fc198ac762894d3d",
+          "observedAt": 1789813065438
+        }
+      ],
+      "browserRuntimeMs": 131,
+      "modelCalls": 0,
+      "usage": {
+        "modelCalls": 0,
+        "modelCostUsd": 0
+      }
+    }
+  },
+  "sourceHashes": {
+    "server.mjs": "44003d18da110cac3a57124498230b03e852dd779f5d0e26638fffd001f8e997",
+    "policy.mjs": "233a65609f39152bc309318c575e88842093ed8303e9a1faeb6fed7cb7e14a9d",
+    "registration.mjs": "945f643e486ff18f66c0083fc6a11c6458fdeea8ec982c1b806768c61e4c61ee",
+    "registration-actions.mjs": "73c32bce0dd40c71cbd2ea5c451f4de42caaf8ed2ddb31971d10784626bce3e6",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352"
+  }
+}

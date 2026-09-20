@@ -1,0 +1,27 @@
+{
+  "checks": [
+    {
+      "observedAt": 1789814356512,
+      "operator": "virtual53",
+      "providerStatus": "RECEIVED",
+      "smsCount": 0,
+      "grossCostUsd": 0.1538,
+      "refundVerified": false,
+      "verificationCodeExposed": false
+    },
+    {
+      "observedAt": 1789814540539,
+      "operator": "virtual53",
+      "providerStatus": "TIMEOUT",
+      "smsCount": 0,
+      "grossCostUsd": 0.1538,
+      "refundVerified": false,
+      "verificationCodeExposed": false
+    }
+  ],
+  "latestStatus": "TIMEOUT",
+  "smsCount": 0,
+  "sameNumberRetryDispatched": false,
+  "retryStoppedBy": "fresh_provider_terminal_status",
+  "merchantAccountVerified": false
+}

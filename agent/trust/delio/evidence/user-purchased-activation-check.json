@@ -1,0 +1,11 @@
+{
+  "observedAt": 1789824566613,
+  "httpStatus": 200,
+  "ownedOrderMatches": true,
+  "status": "RECEIVED",
+  "smsCount": 0,
+  "price": 0.1538,
+  "operator": "virtual53",
+  "expiresAt": "2026-09-19T13:47:41.130971Z",
+  "apiReadMs": 163
+}

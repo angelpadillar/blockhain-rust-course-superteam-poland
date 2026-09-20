@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-19",
+  "host": "Darwin arm64",
+  "artifacts": {
+    "gifting_bridge": {
+      "sha256": "73c0fda433d35de670a0f55227e0bcb29d906f34d955282094dde2cde8d0e532",
+      "bytes": 27849376
+    },
+    "gift_campaign.so": {
+      "sha256": "5f04b46558cf0427dda612e53f6bec921bb67fc7e08b10f4a868e08113e12e00",
+      "bytes": 425568
+    }
+  },
+  "frozenBrowserV4Unchanged": true,
+  "contractSourceUnchanged": true
+}

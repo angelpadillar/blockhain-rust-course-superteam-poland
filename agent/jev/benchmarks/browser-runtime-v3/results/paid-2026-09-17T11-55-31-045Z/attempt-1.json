@@ -1,0 +1,230 @@
+{
+  "attempt": 1,
+  "suite": "goal_pipeline",
+  "caseId": "enter-form",
+  "repeat": 1,
+  "mode": "stepwise",
+  "guide": "jev",
+  "planner": "openrouter",
+  "status": "completed",
+  "events": [
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000257,
+        "latencyMs": 1177.2199170000022,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000257,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    },
+    {
+      "type": "started",
+      "elapsedMs": 3.2438750000001164,
+      "mode": "stepwise"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 55.11133300000074,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 121.95495800000208,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 837.8521660000042,
+      "kind": "press",
+      "ref": "s3:e0"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 881.1646660000042,
+      "kind": "press",
+      "ref": "s3:e0"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 1624.217875000002,
+      "kind": "click",
+      "ref": "s5:e1"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 1686.2442500000034,
+      "kind": "click",
+      "ref": "s5:e1"
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 1707.0448749999996,
+      "independentlyVerified": false
+    }
+  ],
+  "contextSetupMs": 262.1765000000014,
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000257,
+        "latencyMs": 1177.2199170000022,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000257,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 1177.2199170000022,
+    "inputTokens": 141,
+    "outputTokens": 29,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0000257,
+    "knownCostUsd": 0.0000257,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "navigationMs": 65.28095800000301,
+  "planningMs": 1193.323166000002,
+  "goal": "Find Copper Finch Notebook and open its details.",
+  "compiledTask": {
+    "query": "Copper Finch Notebook",
+    "targetText": "Copper Finch Notebook",
+    "context": "details"
+  },
+  "runtime": {
+    "status": "opened",
+    "reason": null,
+    "metrics": {
+      "totalMs": 1712.8890830000018,
+      "observationMs": 106.32183299999451,
+      "executionMs": 132.89341599999898,
+      "conditionWaitMs": 52.61262500000157,
+      "settlingMs": 1403.1969160000008,
+      "chooserMs": 0,
+      "eventMs": 38.869083000012324,
+      "explicitProtocolCalls": 34,
+      "observations": 4,
+      "revalidations": 3,
+      "browserScans": 7,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 3,
+      "nativeActionsCompleted": 3,
+      "fillAttempts": 1,
+      "pressAttempts": 1,
+      "clickAttempts": 1,
+      "chooserCalls": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:52852/items/62e93b23be3f963d24ea",
+      "title": "Copper Finch Notebook"
+    },
+    "events": [
+      {
+        "type": "started",
+        "elapsedMs": 3.2438750000001164,
+        "mode": "stepwise"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 55.11133300000074,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 121.95495800000208,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 837.8521660000042,
+        "kind": "press",
+        "ref": "s3:e0"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 881.1646660000042,
+        "kind": "press",
+        "ref": "s3:e0"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 1624.217875000002,
+        "kind": "click",
+        "ref": "s5:e1"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 1686.2442500000034,
+        "kind": "click",
+        "ref": "s5:e1"
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 1707.0448749999996,
+        "independentlyVerified": false
+      }
+    ],
+    "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+    "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+  },
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "exactCollection": true
+    }
+  },
+  "verifiedSuccess": true,
+  "reason": null,
+  "totalMs": 2907.642958000004
+}

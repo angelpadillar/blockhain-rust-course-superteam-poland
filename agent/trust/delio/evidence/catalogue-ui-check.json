@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-09-19T10:08:42.134Z",
+  "origin": "http://127.0.0.1:4319",
+  "operatorAdmission": true,
+  "couponPanel": {
+    "code": "z5913",
+    "discountClaimMinor": 7500,
+    "minimumClaimMinor": 15000,
+    "merchantAccepted": false,
+    "expiryVerified": false
+  },
+  "browsingRegions": [
+    "Kraków",
+    "Warsaw"
+  ],
+  "regionIsDeliveryProof": false,
+  "search": {
+    "query": "maslo",
+    "matchedTitle": "Masło Polskie extra",
+    "resultCount": 1
+  },
+  "cartEditsEnabled": false,
+  "merchantOrderSubmitted": false,
+  "renderedPhoto": {
+    "alt": "Masło Polskie extra, 200 g",
+    "loaded": true,
+    "naturalWidth": 700,
+    "naturalHeight": 700,
+    "method": "Read-only DOM observation of displayed product image"
+  }
+}

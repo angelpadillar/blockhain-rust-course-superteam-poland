@@ -1,0 +1,191 @@
+{
+  "version": 5,
+  "status": "finished",
+  "task": {
+    "goal": "Search Amazon.pl from its homepage for \"BIC Cristal niebieski 10\". Open the exact product \"BIC Cristal Original Długopisy kulkowe, średnia końcówka (1 mm) - niebieskie, pudełko 10 sztuk\". Add exactly 1 pack to the empty guest cart, only if the item price is at most 25 PLN. View the cart and verify the exact item and quantity, then stop. Reject optional cookies. Never sign in, buy, enter checkout, or pay.",
+    "startURL": "https://www.amazon.pl/",
+    "texts": [
+      "BIC Cristal niebieski 10",
+      "BIC Cristal Original Długopisy kulkowe, średnia końcówka (1 mm) - niebieskie, pudełko 10 sztuk",
+      "10",
+      "1",
+      "25"
+    ]
+  },
+  "startedAt": "2026-09-17T13:44:25.762Z",
+  "source": {
+    "files": {
+      "amazon-benchmark.mjs": "8863aa28144404c1e4ac74d164c5276064c92d3329e90047770869079cc59cfb",
+      "browser.mjs": "d8f2626e3e3665fc5e3ba84e37f6dbae886cdc6efae6c0685b3ac8c784ed0fcf",
+      "deciders.mjs": "650e9e1cfb49a603918e74a8005e39cfad81b7f76e14618061cf881d8c9f59d4",
+      "fixtures/index.mjs": "cbedb73d1bd59dc43f3297963d824bbf61abc681208a5d364d5feac3fcd5e048",
+      "fixtures/index.test.mjs": "198c389403df41e2f7fb7057cbc10eda8bf98e9e78725aaa8f140de2315d7533",
+      "runtime.mjs": "0ebf227161d9e35c7545c0f574ec949bb01e7087dbb6ef281ebdeaa52ad72669",
+      "safety.mjs": "308d4d5dd70ab84b58418439a260db65671ca2c5af7d3827f9f1e24ab1bd8738",
+      "safety.test.mjs": "f2109367e6a784054fc0f569556b46ea134c0663b8d2254083823127d1dcd5a0",
+      "upstream/mahmoud/agent.mjs": "afc51a1417c1ff6c8b0a11d6b7d383d8c2249b716ea0e056a75fd5e138afde32",
+      "upstream/mahmoud/jev.mjs": "edfc736443a9c1ac6eb41049ba883edb84c3e0d922021e268a4df8945f07984d",
+      "upstream/mahmoud/package.json": "57f77199ff2c158c3e9b3396f40aa0e02283a42012bceb0eb8d1f3e6ac314424",
+      "upstream/mahmoud/snapshot.mjs": "caca442be69913656f7b716b50ac94033d26f65035423d1a05ed837e3b48a93b",
+      "upstream/mahmoud-policy.mjs": "45963f2784e37018b384be2176238ebcbf10de85ec0de77b4bce5c1265ed9b6f",
+      "upstream/mahmoud-policy.test.mjs": "89bf5d63297a3d68d76ffb9dfa9cf8b54ecf6aa9b57cd1392408acd9bdb7a039",
+      "upstream/manifest.json": "46c5fd809420bae43f29eca96998bb3402cce4540981924251900467df0e9134"
+    },
+    "sha256": "f31acf8510f24a48fd3e5ce43a1124c70e67e1e610c2d9cd5685f3404f574e8c"
+  },
+  "upstream": {
+    "repository": "https://github.com/MahmoudAdelbghany/jev-browser",
+    "revision": "20c27dd96df3140cf162c936fbb7aa742c50edc6",
+    "version": "0.1.0",
+    "scope": "Normalized decision policy, including upstream corrective retry; shared observation and execution, not upstream end-to-end browser."
+  },
+  "methodology": {
+    "workload": "One Amazon.pl cold guest search→exact product→one-pack cart task; no checkout. Two repetitions in reversed arm order.",
+    "ranking": [
+      "verified_success",
+      "time_per_verified_success_including_failures",
+      "model_cost_per_verified_success_including_failures"
+    ],
+    "observation": "Shared observed DOM and literal text slots; Jev joint-action vs Gemini Flash Lite joint-action vs normalized Mahmoud decision policy. Not end-to-end repository comparison.",
+    "timing": "From initial homepage navigation through final independent verification and hashed screenshot receipt; fresh browser and context setup, credential access and cleanup reported separately.",
+    "cost": "Jev input-token estimate plus OpenRouter returned charge. Infrastructure/proxies not instrumented: excluded, never claimed zero. No network retries; upstream corrective model retry included.",
+    "budget": "12 model requests/attempt, $0.02 known-spend threshold/attempt, $0.15/cohort; stop after unknown billing. No performance tuning/retest cohort."
+  },
+  "results": [
+    {
+      "attempt": 1,
+      "arm": "preflight",
+      "repeat": 1,
+      "status": "not_verified",
+      "events": [
+        {
+          "type": "request_blocked",
+          "reason": "outside_origin",
+          "stop": false
+        },
+        {
+          "type": "blocked_request_scope",
+          "reason": "outside_origin",
+          "origin": "https://1c5c1ecf7303.7a63328c.eu-central-1.token.awswaf.com",
+          "pathname": "/1c5c1ecf7303/6b6c41544fa4/76236bda14e8/inputs",
+          "method": "GET",
+          "resourceType": "fetch"
+        },
+        {
+          "type": "request_blocked",
+          "reason": "outside_origin",
+          "stop": false
+        },
+        {
+          "type": "blocked_request_scope",
+          "reason": "outside_origin",
+          "origin": "https://1c5c1ecf7303.7a63328c.eu-central-1.token.awswaf.com",
+          "pathname": "/1c5c1ecf7303/6b6c41544fa4/76236bda14e8/report",
+          "method": "POST",
+          "resourceType": "fetch"
+        },
+        {
+          "type": "request_blocked",
+          "reason": "outside_origin",
+          "stop": false
+        },
+        {
+          "type": "blocked_request_scope",
+          "reason": "outside_origin",
+          "origin": "https://1c5c1ecf7303.7a63328c.eu-central-1.token.awswaf.com",
+          "pathname": "/1c5c1ecf7303/6b6c41544fa4/76236bda14e8/inputs",
+          "method": "GET",
+          "resourceType": "fetch"
+        },
+        {
+          "type": "request_blocked",
+          "reason": "outside_origin",
+          "stop": false
+        },
+        {
+          "type": "blocked_request_scope",
+          "reason": "outside_origin",
+          "origin": "https://1c5c1ecf7303.7a63328c.eu-central-1.token.awswaf.com",
+          "pathname": "/1c5c1ecf7303/6b6c41544fa4/76236bda14e8/report",
+          "method": "POST",
+          "resourceType": "fetch"
+        },
+        {
+          "type": "request_blocked",
+          "reason": "outside_origin",
+          "stop": false
+        },
+        {
+          "type": "blocked_request_scope",
+          "reason": "outside_origin",
+          "origin": "https://1c5c1ecf7303.7a63328c.eu-central-1.token.awswaf.com",
+          "pathname": "/1c5c1ecf7303/6b6c41544fa4/76236bda14e8/inputs",
+          "method": "GET",
+          "resourceType": "fetch"
+        },
+        {
+          "type": "request_blocked",
+          "reason": "outside_origin",
+          "stop": false
+        },
+        {
+          "type": "blocked_request_scope",
+          "reason": "outside_origin",
+          "origin": "https://1c5c1ecf7303.7a63328c.eu-central-1.token.awswaf.com",
+          "pathname": "/1c5c1ecf7303/6b6c41544fa4/76236bda14e8/report",
+          "method": "POST",
+          "resourceType": "fetch"
+        }
+      ],
+      "verifiedSuccess": false,
+      "setupMs": 933.5829170000002,
+      "browserVersion": "153.0.8010.48",
+      "navigationMs": 9947.430833,
+      "reason": "site_did_not_render",
+      "errorName": "Error",
+      "verification": {
+        "passed": false,
+        "checks": {
+          "cartPage": false,
+          "exactProduct": false,
+          "quantityOne": false,
+          "oneCartItem": false,
+          "noCheckout": true
+        },
+        "observation": {
+          "url": "https://www.amazon.pl/",
+          "title": "",
+          "text": ""
+        }
+      },
+      "evidence": {
+        "stage": "cart_preparation_only",
+        "screenshot": "attempt-1.png",
+        "screenshotSha256": "57f45d88e654eeca054ff1cc37c39a437cb6e4b6ea2a6f59cf08a6228670107a",
+        "observationSha256": "6540523b1ddf8672f6f919f266d95d646385868877259d1e3735f19d0af5a542",
+        "approval": null,
+        "confirmation": null
+      },
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "totalMs": 10006.5715,
+      "cleanupMs": 118.4135409999999
+    }
+  ],
+  "infrastructureCostUsd": null,
+  "proxyCostUsd": null,
+  "nodeVersion": "v24.14.0",
+  "plannedAttempts": 1,
+  "sourceUnchanged": true
+}

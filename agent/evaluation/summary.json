@@ -1,0 +1,426 @@
+{
+  "createdAt": "2026-09-16T08:41:54.587Z",
+  "site": "https://glovoapp.com/pl/pl/krakow/stores/duzy-ben-krk",
+  "task": {
+    "products": [
+      {
+        "query": "Hortex Tropical Duo Napój wieloowocowy czerwone winogrono gujawa 1 L",
+        "qty": 1
+      },
+      {
+        "query": "Hortex Tropical Duo Napój wieloowocowy kiwi limonka 1 L",
+        "qty": 1
+      },
+      {
+        "query": "Tymbark Napój owocowy jabłko mięta 1 l",
+        "qty": 1
+      }
+    ],
+    "maxPln": 26
+  },
+  "purchasesMade": 0,
+  "cleanup": {
+    "completedAt": "2026-09-16T08:37:58.828Z",
+    "emptyCart": true,
+    "purchasesMade": 0
+  },
+  "runs": [
+    {
+      "provider": "codex",
+      "label": "codex-store",
+      "stopped": "done",
+      "verdict": "passed_before_purchase",
+      "steps": 5,
+      "actions": 4,
+      "wallMs": 80439,
+      "observationMs": 331.0346249998547,
+      "decisionMs": 66725,
+      "executionMs": 7195.164582000114,
+      "activeMs": 74251.19920699997,
+      "apiMs": null,
+      "usage": null,
+      "estimatedModelUsd": null,
+      "requestChars": 90488,
+      "responseChars": 476,
+      "protocolVersion": 1,
+      "independentVerification": null
+    },
+    {
+      "provider": "codex",
+      "label": "codex-final",
+      "stopped": "done",
+      "verdict": "passed_before_purchase",
+      "steps": 5,
+      "actions": 4,
+      "wallMs": 59204,
+      "observationMs": 714.5318339988589,
+      "decisionMs": 47323,
+      "executionMs": 11155.209542000666,
+      "activeMs": 59192.741375999525,
+      "apiMs": null,
+      "usage": null,
+      "estimatedModelUsd": null,
+      "requestChars": 90714,
+      "responseChars": 476,
+      "protocolVersion": 3,
+      "independentVerification": {
+        "passed": true,
+        "correctCart": true,
+        "checkoutVisible": true,
+        "checkoutUnits": 3,
+        "totalPln": 25.24,
+        "withinBudget": true,
+        "rows": [
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy czerwone winogrono gujawa 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy kiwi limonka 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Tymbark Napój owocowy jabłko mięta 1 l",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          }
+        ]
+      }
+    },
+    {
+      "provider": "jev",
+      "label": "jev-store",
+      "stopped": "done",
+      "verdict": "failed_premature_completion",
+      "steps": 4,
+      "actions": 3,
+      "wallMs": 18207,
+      "observationMs": 338.3955839993432,
+      "decisionMs": 2778,
+      "executionMs": 5447.7104589995,
+      "activeMs": 8564.106042998843,
+      "apiMs": {
+        "min": 268,
+        "median": 821,
+        "p95": 953,
+        "max": 953,
+        "mean": 580
+      },
+      "usage": {
+        "input_tokens": 30153,
+        "output_tokens": 1519
+      },
+      "estimatedModelUsd": 0.0012664260000000002,
+      "requestChars": 85102,
+      "responseChars": 2430,
+      "protocolVersion": 1,
+      "independentVerification": {
+        "passed": false,
+        "correctCart": true,
+        "checkoutVisible": false,
+        "checkoutUnits": null,
+        "totalPln": null,
+        "withinBudget": false,
+        "rows": [
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy czerwone winogrono gujawa 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy kiwi limonka 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Tymbark Napój owocowy jabłko mięta 1 l",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          }
+        ]
+      }
+    },
+    {
+      "provider": "jev",
+      "label": "jev-strict-1",
+      "stopped": "unavailable",
+      "verdict": "failed_premature_unavailable",
+      "steps": 4,
+      "actions": 3,
+      "wallMs": 7960,
+      "observationMs": 220.90916699916124,
+      "decisionMs": 2161,
+      "executionMs": 5570.616167001426,
+      "activeMs": 7952.5253340005875,
+      "apiMs": {
+        "min": 267,
+        "median": 278,
+        "p95": 834,
+        "max": 834,
+        "mean": 412.75
+      },
+      "usage": {
+        "input_tokens": 30053,
+        "output_tokens": 1494
+      },
+      "estimatedModelUsd": 0.0012622260000000002,
+      "requestChars": 84718,
+      "responseChars": 2408,
+      "protocolVersion": 2,
+      "independentVerification": {
+        "passed": false,
+        "correctCart": true,
+        "checkoutVisible": false,
+        "checkoutUnits": null,
+        "totalPln": null,
+        "withinBudget": false,
+        "rows": [
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy czerwone winogrono gujawa 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy kiwi limonka 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Tymbark Napój owocowy jabłko mięta 1 l",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          }
+        ]
+      }
+    },
+    {
+      "provider": "jev",
+      "label": "jev-guided-1",
+      "stopped": "done",
+      "verdict": "passed_before_purchase",
+      "steps": 5,
+      "actions": 4,
+      "wallMs": 10566,
+      "observationMs": 821.0833330005407,
+      "decisionMs": 2558,
+      "executionMs": 7175.076999999583,
+      "activeMs": 10554.160333000124,
+      "apiMs": {
+        "min": 263,
+        "median": 313,
+        "p95": 822,
+        "max": 822,
+        "mean": 407.6
+      },
+      "usage": {
+        "input_tokens": 31982,
+        "output_tokens": 1528
+      },
+      "estimatedModelUsd": 0.0013432440000000002,
+      "requestChars": 90676,
+      "responseChars": 2652,
+      "protocolVersion": 3,
+      "independentVerification": {
+        "passed": true,
+        "correctCart": true,
+        "checkoutVisible": true,
+        "checkoutUnits": 3,
+        "totalPln": 25.24,
+        "withinBudget": true,
+        "rows": [
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy czerwone winogrono gujawa 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy kiwi limonka 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Tymbark Napój owocowy jabłko mięta 1 l",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          }
+        ]
+      }
+    },
+    {
+      "provider": "jev",
+      "label": "jev-guided-2",
+      "stopped": "done",
+      "verdict": "passed_before_purchase",
+      "steps": 5,
+      "actions": 4,
+      "wallMs": 9617,
+      "observationMs": 543.8217909997329,
+      "decisionMs": 2455,
+      "executionMs": 6608.629959999584,
+      "activeMs": 9607.451750999317,
+      "apiMs": {
+        "min": 233,
+        "median": 258,
+        "p95": 850,
+        "max": 850,
+        "mean": 392.4
+      },
+      "usage": {
+        "input_tokens": 31993,
+        "output_tokens": 1528
+      },
+      "estimatedModelUsd": 0.001343706,
+      "requestChars": 90714,
+      "responseChars": 2627,
+      "protocolVersion": 3,
+      "independentVerification": {
+        "passed": true,
+        "correctCart": true,
+        "checkoutVisible": true,
+        "checkoutUnits": 3,
+        "totalPln": 25.24,
+        "withinBudget": true,
+        "rows": [
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy czerwone winogrono gujawa 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy kiwi limonka 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Tymbark Napój owocowy jabłko mięta 1 l",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          }
+        ]
+      }
+    },
+    {
+      "provider": "jev",
+      "label": "jev-guided-3",
+      "stopped": "done",
+      "verdict": "passed_before_purchase",
+      "steps": 5,
+      "actions": 4,
+      "wallMs": 11717,
+      "observationMs": 336.6101269982755,
+      "decisionMs": 2685,
+      "executionMs": 8681.044250999577,
+      "activeMs": 11702.654377997853,
+      "apiMs": {
+        "min": 239,
+        "median": 275,
+        "p95": 828,
+        "max": 828,
+        "mean": 411.8
+      },
+      "usage": {
+        "input_tokens": 32138,
+        "output_tokens": 1528
+      },
+      "estimatedModelUsd": 0.0013497960000000001,
+      "requestChars": 91223,
+      "responseChars": 2657,
+      "protocolVersion": 3,
+      "independentVerification": {
+        "passed": true,
+        "correctCart": true,
+        "checkoutVisible": true,
+        "checkoutUnits": 3,
+        "totalPln": 25.24,
+        "withinBudget": true,
+        "rows": [
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy czerwone winogrono gujawa 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Hortex Tropical Duo Napój wieloowocowy kiwi limonka 1 L",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          },
+          {
+            "product": "Tymbark Napój owocowy jabłko mięta 1 l",
+            "expected": 1,
+            "observed": 1,
+            "matched": true
+          }
+        ]
+      }
+    }
+  ],
+  "finalJev": {
+    "attempts": 3,
+    "passed": 3,
+    "meanWallMs": 10633.333333333334,
+    "meanActiveMs": 10621.422153999098,
+    "minWallMs": 9617,
+    "maxWallMs": 11717,
+    "meanObservationMs": 567.1717503328497,
+    "meanDecisionMs": 2566,
+    "meanExecutionMs": 7488.250403666248,
+    "meanModelUsd": 0.0013455820000000003,
+    "api": {
+      "calls": 15,
+      "meanMs": 403.93333333333334,
+      "medianMs": 304,
+      "p95Ms": 850,
+      "minMs": 233,
+      "maxMs": 850
+    }
+  },
+  "allJev": {
+    "attempts": 5,
+    "passed": 3,
+    "calls": 23,
+    "estimatedModelUsd": 0.006565398000000001
+  },
+  "llmCostScenario": {
+    "measured": false,
+    "inputTokens": 32000,
+    "outputTokens": 250,
+    "cachedInputTokens": 0,
+    "note": "Illustrative API budget for five compact choice responses; not the Codex bill. Tokenizers, reasoning, context, retries and caching vary.",
+    "perTaskUsd": {
+      "gpt-5.6-luna": 0.0067,
+      "gpt-5.6-sol": 0.133,
+      "gpt-6-astra": 0.3325
+    }
+  },
+  "pricingSources": [
+    "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+    "https://developers.openai.com/api/docs/pricing"
+  ],
+  "limitations": [
+    "Single familiar merchant; exact products already visible in the signed-in order-again section.",
+    "Destination and authentication were prepared before timing. No timed search or login was needed.",
+    "Codex reference includes assistant/tool orchestration and prior context; not standalone LLM API latency.",
+    "Two initial Jev failures were retained. Three final trials reuse the same account and task; not a reliability estimate.",
+    "Model costs exclude Codex supervision, browser infrastructure, development, cart reset and setup.",
+    "Final adapter disallows all actions on checkout and gates completion on visible summary markers."
+  ]
+}

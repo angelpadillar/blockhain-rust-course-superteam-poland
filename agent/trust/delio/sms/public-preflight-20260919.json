@@ -1,0 +1,139 @@
+{
+  "provider": "5sim",
+  "country": "poland",
+  "observedAt": 1789811572748,
+  "authUsed": false,
+  "currency": null,
+  "currencyVerified": false,
+  "conversionVerified": false,
+  "requests": [
+    {
+      "url": "https://5sim.net/v1/guest/products/poland/any",
+      "observedAt": 1789811572685,
+      "durationMs": 69,
+      "httpStatus": 200,
+      "ok": true
+    },
+    {
+      "url": "https://5sim.net/v1/guest/prices?country=poland",
+      "observedAt": 1789811572743,
+      "durationMs": 102,
+      "httpStatus": 200,
+      "ok": true
+    }
+  ],
+  "candidates": [
+    {
+      "product": "zabkajush",
+      "identifierObserved": true,
+      "merchantCompatible": null,
+      "category": "activation",
+      "stock": 28885,
+      "price": "0.1",
+      "offers": [
+        {
+          "operator": "virtual51",
+          "count": 8989,
+          "price": "0.1269",
+          "rate": 0
+        },
+        {
+          "operator": "virtual53",
+          "count": 2,
+          "price": "0.1538",
+          "rate": 0
+        },
+        {
+          "operator": "virtual58",
+          "count": 1916,
+          "price": "0.1026",
+          "rate": 0
+        },
+        {
+          "operator": "virtual59",
+          "count": 8989,
+          "price": "0.1282",
+          "rate": null
+        },
+        {
+          "operator": "virtual60",
+          "count": 8989,
+          "price": "0.1282",
+          "rate": null
+        },
+        {
+          "operator": "virtual66",
+          "count": 0,
+          "price": "0.133",
+          "rate": null
+        }
+      ],
+      "offersTruncated": false
+    }
+  ],
+  "candidatesTruncated": false,
+  "complete": true,
+  "rateMeaning": "Provider historical SMS delivery percentage; missing means below 20% or insufficient orders, not zero.",
+  "limitations": [
+    "No sample size or measurement window is supplied by this endpoint.",
+    "Stock and price may change before purchase; a listed product does not prove Delio compatibility.",
+    "Price responses contain no currency field; current official provider announcements establish website and balance USD denomination. Budget conversion remains an explicit operator attestation.",
+    "maxPrice is documented only for operator=any; ranking does not enforce the purchased operator."
+  ],
+  "executionLocation": "isolated_worker_public_http_only",
+  "recordedAt": "2026-09-19T09:52:52.769876+00:00",
+  "purchaseRequests": 0,
+  "credentialRequests": 0,
+  "executionSourceSha256": "4fc995c96bb5679ad3e2cb98742aab6c4d89e0932f10ac5612821b5bf9cced7f",
+  "initialPublicProbes": [
+    {
+      "client": "python_urllib_from_vps",
+      "url": "https://5sim.net/v1/guest/products/poland/any",
+      "httpStatus": 403,
+      "durationMs": 38
+    },
+    {
+      "client": "python_urllib_from_vps",
+      "url": "https://5sim.net/v1/guest/prices?country=poland",
+      "httpStatus": 403,
+      "durationMs": 25
+    }
+  ],
+  "currencyEvidence": {
+    "websiteAndBalanceCurrency": "USD",
+    "sources": [
+      "https://5sim.net/products",
+      "https://t.me/news_en_5sim/1945",
+      "https://t.me/news_en_5sim/1947"
+    ],
+    "officialChannelLinkedFrom": "https://5sim.net/products",
+    "apiCurrencyFieldPresent": false,
+    "basis": "Provider-announced migration of website prices and customer balances to USD. Earlier terms refer to coins.",
+    "automaticPurchaseAuthorization": false
+  },
+  "findings": {
+    "polandActivationIdentifier": "zabkajush",
+    "delioCompatibilityGuaranteed": false,
+    "stockObserved": 28885,
+    "availableOffers": 5,
+    "availableOffersReportingRateAtLeast90": 0,
+    "availableOffersReportingZeroRate": 3,
+    "availableOffersMissingRate": 2,
+    "sampleSizeReported": false,
+    "measurementWindowReported": false,
+    "priceCapUsd": "0.20",
+    "purchaseCount": 0
+  },
+  "finalSourceHashes": {
+    "discovery.mjs": "583c648a25424227df2296e3466d1574528f90651081de394debe22ef6127e0f",
+    "fivesim.mjs": "ed0bc8891dd721996773d7e46b5ede8de980a04214b4d0067ff842ce967e272d",
+    "discovery.test.mjs": "0b3286a386116fdb4045d8610ee7490988ff882ec666c8e72f6a1790e965bb62",
+    "fivesim.test.mjs": "86651704152fdaeb0833069c20f82c74ce558c78e41dac0fde254dae0e3704cb"
+  },
+  "validation": {
+    "offlineTestsPassed": 26,
+    "offlineTestsFailed": 0,
+    "command": "node --test trust-layer/delio/sms/*.test.mjs"
+  },
+  "executionSourceNote": "The recorded execution hash predates a documentation-only limitation sentence update; final runtime and test hashes are listed separately."
+}

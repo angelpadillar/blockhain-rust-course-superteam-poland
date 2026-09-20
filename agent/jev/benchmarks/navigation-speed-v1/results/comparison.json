@@ -1,0 +1,1541 @@
+{
+  "schemaVersion": 1,
+  "protocol": {
+    "name": "navigation-speed-v1",
+    "allocation": "prespecified_counterbalanced_not_randomized",
+    "plannedSequence": [
+      "baseline",
+      "candidate",
+      "candidate",
+      "baseline",
+      "baseline",
+      "candidate"
+    ],
+    "observedSequence": [
+      "baseline",
+      "candidate",
+      "candidate",
+      "baseline",
+      "baseline"
+    ],
+    "plannedAttemptCount": 6,
+    "observedAttemptCount": 5,
+    "unobservedAttemptCount": 1,
+    "observedOrderMatchesPlannedPrefix": true,
+    "allPlannedAttemptsRecorded": false,
+    "limits": {
+      "maxStepsPerRun": 20,
+      "maxRunMs": 120000,
+      "maxModelUsdPerRun": 0.02
+    },
+    "sourceHashes": {
+      "baseline": "eef360c49787ce934ec8eb198e633a0b43a420dea84ca73cdb9eebba2e998d98",
+      "candidate": "ed1ddf423f8560cc23cb1002a1fc944d6aa2f545444566c9d392d2a025d11562",
+      "harness": "01150c8a6da9549db56b038e10425641941863fec1de36699231095bfbfc776f",
+      "journal": null,
+      "diagnostics": null,
+      "lockfile": null
+    },
+    "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a"
+  },
+  "batchSha256": "d65f4d4429aa6d65dadf8de2027d9da95f902e9b87df55070d75883296823f8f",
+  "pricing": {
+    "inputUsdPerMillion": 0.042,
+    "outputUsdPerMillion": 0
+  },
+  "arms": {
+    "baseline": {
+      "attemptCount": 3,
+      "verifiedSuccessCount": 2,
+      "failedOrUnverifiedCount": 1,
+      "unfinishedAttemptCount": 0,
+      "statusCounts": {
+        "incomplete": 1,
+        "reached_target": 2
+      },
+      "failureReasonCounts": {
+        "merchant_site_unavailable": 1
+      },
+      "missingJournalCount": 0,
+      "nonterminalJournalCount": 0,
+      "navigationTimeMs": {
+        "verifiedCompleted": {
+          "sampleCount": 2,
+          "total": 28229.977807000003,
+          "median": 14114.988903500001,
+          "range": [
+            13356.373240000004,
+            14873.604566999998
+          ]
+        },
+        "failedOrUnverified": {
+          "sampleCount": 1,
+          "total": 109.33455200000026,
+          "median": 109.33455200000026,
+          "range": [
+            109.33455200000026,
+            109.33455200000026
+          ]
+        },
+        "allFinalizedAttempts": {
+          "sampleCount": 3,
+          "total": 28339.312359000003,
+          "median": 13356.373240000004,
+          "range": [
+            109.33455200000026,
+            14873.604566999998
+          ]
+        },
+        "partialRecordedElapsedLowerBounds": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        }
+      },
+      "fullAttemptTimeMs": {
+        "verifiedCompleted": {
+          "sampleCount": 2,
+          "total": 28707.282636000004,
+          "median": 14353.641318000002,
+          "range": [
+            13532.788607000002,
+            15174.494029000001
+          ]
+        },
+        "failedOrUnverified": {
+          "sampleCount": 1,
+          "total": 265.58145199999854,
+          "median": 265.58145199999854,
+          "range": [
+            265.58145199999854,
+            265.58145199999854
+          ]
+        },
+        "allAttempts": {
+          "sampleCount": 3,
+          "total": 28972.864088000002,
+          "median": 13532.788607000002,
+          "range": [
+            265.58145199999854,
+            15174.494029000001
+          ]
+        }
+      },
+      "browserLaunchTimeMs": {
+        "sampleCount": 3,
+        "total": 320.7968049999963,
+        "median": 74.5022869999957,
+        "range": [
+          69.39990000000034,
+          176.89461800000026
+        ]
+      },
+      "phaseTimeMs": {
+        "startPageMs": {
+          "sampleCount": 3,
+          "total": 3595.859674000003,
+          "median": 1406.6185590000023,
+          "range": [
+            0,
+            2189.2411150000007
+          ]
+        },
+        "modelMs": {
+          "sampleCount": 3,
+          "total": 3858.985141000001,
+          "median": 1746.6450650000043,
+          "range": [
+            0,
+            2112.3400759999968
+          ]
+        },
+        "browserMs": {
+          "sampleCount": 3,
+          "total": 23365.068241000008,
+          "median": 11074.753560000005,
+          "range": [
+            83.59831499999564,
+            12206.716366000006
+          ]
+        },
+        "journalMs": {
+          "sampleCount": 3,
+          "total": 1115.2589769999959,
+          "median": 534.9746149999955,
+          "range": [
+            25.73623700000462,
+            554.5481249999957
+          ]
+        },
+        "ageConfirmationMs": {
+          "sampleCount": 3,
+          "total": 2403.290082000003,
+          "median": 1198.4146580000015,
+          "range": [
+            0,
+            1204.8754240000017
+          ]
+        },
+        "readinessMs": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "observeMs": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "executionMs": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        }
+      },
+      "counts": {
+        "actions": {
+          "sampleCount": 3,
+          "total": 14,
+          "median": 7,
+          "range": [
+            0,
+            7
+          ]
+        },
+        "modelActions": {
+          "sampleCount": 3,
+          "total": 14,
+          "median": 7,
+          "range": [
+            0,
+            7
+          ]
+        },
+        "policyActions": {
+          "sampleCount": 3,
+          "total": 0,
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "modelCalls": {
+          "sampleCount": 3,
+          "total": 14,
+          "median": 7,
+          "range": [
+            0,
+            7
+          ]
+        },
+        "inputTokens": {
+          "sampleCount": 3,
+          "total": 14990,
+          "median": 7495,
+          "range": [
+            0,
+            7495
+          ]
+        },
+        "outputTokens": {
+          "sampleCount": 3,
+          "total": 2390,
+          "median": 1195,
+          "range": [
+            0,
+            1195
+          ]
+        },
+        "authorizedAgeConfirmations": {
+          "sampleCount": 3,
+          "total": 2,
+          "median": 1,
+          "range": [
+            0,
+            1
+          ]
+        },
+        "productOpenRollbacks": {
+          "sampleCount": 3,
+          "total": 0,
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "executionAttempts": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "staleSnapshots": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "staleRecoveries": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "fastReadinessCount": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "fallbackReadinessCount": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "completionReadinessCount": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "readinessTimeoutCount": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        }
+      },
+      "blockedMutations": {
+        "sampleCount": 3,
+        "total": 0,
+        "median": 0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "usageCompleteCount": 3,
+      "modelCostUsd": {
+        "recordedAttemptCosts": {
+          "sampleCount": 3,
+          "total": 0.00062958,
+          "median": 0.00031479,
+          "range": [
+            0,
+            0.00031479
+          ]
+        },
+        "knownRecordedTotal": 0.00062958,
+        "allAttemptsComplete": true,
+        "estimatedTotal": 0.00062958,
+        "allAttemptCostPerVerifiedSuccess": 0.00031479,
+        "verifiedCompletedAttemptCosts": {
+          "sampleCount": 2,
+          "total": 0.00062958,
+          "median": 0.00031479,
+          "range": [
+            0.00031479,
+            0.00031479
+          ]
+        },
+        "failedOrUnverifiedAttemptCosts": {
+          "sampleCount": 1,
+          "total": 0,
+          "median": 0,
+          "range": [
+            0,
+            0
+          ]
+        }
+      },
+      "sourceHashes": {
+        "knownCount": 3,
+        "allAttemptsHaveHash": true,
+        "consistent": true,
+        "distinct": [
+          "eef360c49787ce934ec8eb198e633a0b43a420dea84ca73cdb9eebba2e998d98"
+        ]
+      },
+      "baselineSourceHashes": {
+        "knownCount": 3,
+        "allAttemptsHaveHash": true,
+        "consistent": true,
+        "distinct": [
+          "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a"
+        ]
+      },
+      "sourceMatchesProtocol": {
+        "matchingCount": 3,
+        "mismatchingCount": 0,
+        "unknownCount": 0
+      },
+      "baselineSourceMatchesProtocol": {
+        "matchingCount": 3,
+        "mismatchingCount": 0,
+        "unknownCount": 0
+      },
+      "models": {
+        "requested": [
+          "jev-latest"
+        ],
+        "distinct": [
+          "jev-1.13.0"
+        ],
+        "responseEventCount": 14,
+        "knownVersionCount": 14,
+        "allResponseVersionsKnown": true,
+        "consistent": true,
+        "expectedVersion": "jev-1.13.0",
+        "matchesExpected": true
+      }
+    },
+    "candidate": {
+      "attemptCount": 2,
+      "verifiedSuccessCount": 0,
+      "failedOrUnverifiedCount": 2,
+      "unfinishedAttemptCount": 0,
+      "statusCounts": {
+        "incomplete": 2
+      },
+      "failureReasonCounts": {
+        "model_unavailable": 2
+      },
+      "missingJournalCount": 0,
+      "nonterminalJournalCount": 0,
+      "navigationTimeMs": {
+        "verifiedCompleted": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "failedOrUnverified": {
+          "sampleCount": 2,
+          "total": 5411.4726189999965,
+          "median": 2705.7363094999982,
+          "range": [
+            2638.6106899999977,
+            2772.861928999999
+          ]
+        },
+        "allFinalizedAttempts": {
+          "sampleCount": 2,
+          "total": 5411.4726189999965,
+          "median": 2705.7363094999982,
+          "range": [
+            2638.6106899999977,
+            2772.861928999999
+          ]
+        },
+        "partialRecordedElapsedLowerBounds": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        }
+      },
+      "fullAttemptTimeMs": {
+        "verifiedCompleted": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "failedOrUnverified": {
+          "sampleCount": 2,
+          "total": 5747.595975999997,
+          "median": 2873.7979879999984,
+          "range": [
+            2814.38494,
+            2933.211035999997
+          ]
+        },
+        "allAttempts": {
+          "sampleCount": 2,
+          "total": 5747.595975999997,
+          "median": 2873.7979879999984,
+          "range": [
+            2814.38494,
+            2933.211035999997
+          ]
+        }
+      },
+      "browserLaunchTimeMs": {
+        "sampleCount": 2,
+        "total": 146.3539030000029,
+        "median": 73.17695150000145,
+        "range": [
+          69.05497900000046,
+          77.29892400000244
+        ]
+      },
+      "phaseTimeMs": {
+        "startPageMs": {
+          "sampleCount": 2,
+          "total": 2605.034585999998,
+          "median": 1302.517292999999,
+          "range": [
+            1234.6387289999984,
+            1370.3958569999995
+          ]
+        },
+        "modelMs": {
+          "sampleCount": 2,
+          "total": 959.7113640000025,
+          "median": 479.85568200000125,
+          "range": [
+            469.0751560000026,
+            490.6362079999999
+          ]
+        },
+        "browserMs": {
+          "sampleCount": 2,
+          "total": 4142.381734999988,
+          "median": 2071.190867499994,
+          "range": [
+            2002.7327629999927,
+            2139.6489719999954
+          ]
+        },
+        "journalMs": {
+          "sampleCount": 2,
+          "total": 309.37952000000587,
+          "median": 154.68976000000293,
+          "range": [
+            142.57674900000347,
+            166.8027710000024
+          ]
+        },
+        "ageConfirmationMs": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "readinessMs": {
+          "sampleCount": 2,
+          "total": 3549.945964000006,
+          "median": 1774.972982000003,
+          "range": [
+            1769.9633680000043,
+            1779.9825960000016
+          ]
+        },
+        "observeMs": {
+          "sampleCount": 2,
+          "total": 1730.666116999997,
+          "median": 865.3330584999985,
+          "range": [
+            861.7335850000054,
+            868.9325319999916
+          ]
+        },
+        "executionMs": {
+          "sampleCount": 2,
+          "total": 36.14011999999639,
+          "median": 18.070059999998193,
+          "range": [
+            17.831060999997135,
+            18.30905899999925
+          ]
+        }
+      },
+      "counts": {
+        "actions": {
+          "sampleCount": 2,
+          "total": 2,
+          "median": 1.0,
+          "range": [
+            1,
+            1
+          ]
+        },
+        "modelActions": {
+          "sampleCount": 2,
+          "total": 2,
+          "median": 1.0,
+          "range": [
+            1,
+            1
+          ]
+        },
+        "policyActions": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "modelCalls": {
+          "sampleCount": 2,
+          "total": 4,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "inputTokens": {
+          "sampleCount": 2,
+          "total": 6184,
+          "median": 3092.0,
+          "range": [
+            3092,
+            3092
+          ]
+        },
+        "outputTokens": {
+          "sampleCount": 2,
+          "total": 584,
+          "median": 292.0,
+          "range": [
+            292,
+            292
+          ]
+        },
+        "authorizedAgeConfirmations": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "productOpenRollbacks": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "executionAttempts": {
+          "sampleCount": 2,
+          "total": 2,
+          "median": 1.0,
+          "range": [
+            1,
+            1
+          ]
+        },
+        "staleSnapshots": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "staleRecoveries": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "fastReadinessCount": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "fallbackReadinessCount": {
+          "sampleCount": 2,
+          "total": 4,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "completionReadinessCount": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "readinessTimeoutCount": {
+          "sampleCount": 2,
+          "total": 0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        }
+      },
+      "blockedMutations": {
+        "sampleCount": 2,
+        "total": 0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "usageCompleteCount": 2,
+      "modelCostUsd": {
+        "recordedAttemptCosts": {
+          "sampleCount": 2,
+          "total": 0.00025972800000000003,
+          "median": 0.00012986400000000002,
+          "range": [
+            0.00012986400000000002,
+            0.00012986400000000002
+          ]
+        },
+        "knownRecordedTotal": 0.00025972800000000003,
+        "allAttemptsComplete": true,
+        "estimatedTotal": 0.00025972800000000003,
+        "allAttemptCostPerVerifiedSuccess": null,
+        "verifiedCompletedAttemptCosts": {
+          "sampleCount": 0,
+          "total": null,
+          "median": null,
+          "range": null
+        },
+        "failedOrUnverifiedAttemptCosts": {
+          "sampleCount": 2,
+          "total": 0.00025972800000000003,
+          "median": 0.00012986400000000002,
+          "range": [
+            0.00012986400000000002,
+            0.00012986400000000002
+          ]
+        }
+      },
+      "sourceHashes": {
+        "knownCount": 2,
+        "allAttemptsHaveHash": true,
+        "consistent": true,
+        "distinct": [
+          "ed1ddf423f8560cc23cb1002a1fc944d6aa2f545444566c9d392d2a025d11562"
+        ]
+      },
+      "baselineSourceHashes": {
+        "knownCount": 2,
+        "allAttemptsHaveHash": true,
+        "consistent": true,
+        "distinct": [
+          "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a"
+        ]
+      },
+      "sourceMatchesProtocol": {
+        "matchingCount": 2,
+        "mismatchingCount": 0,
+        "unknownCount": 0
+      },
+      "baselineSourceMatchesProtocol": {
+        "matchingCount": 2,
+        "mismatchingCount": 0,
+        "unknownCount": 0
+      },
+      "models": {
+        "requested": [
+          "jev-latest"
+        ],
+        "distinct": [
+          "jev-1.13.0"
+        ],
+        "responseEventCount": 4,
+        "knownVersionCount": 4,
+        "allResponseVersionsKnown": true,
+        "consistent": true,
+        "expectedVersion": "jev-1.13.0",
+        "matchesExpected": true
+      }
+    }
+  },
+  "unassignedAttemptCount": 0,
+  "allAttempts": {
+    "attemptCount": 5,
+    "verifiedSuccessCount": 2,
+    "failedOrUnverifiedCount": 3,
+    "unfinishedAttemptCount": 0,
+    "statusCounts": {
+      "incomplete": 3,
+      "reached_target": 2
+    },
+    "failureReasonCounts": {
+      "merchant_site_unavailable": 1,
+      "model_unavailable": 2
+    },
+    "missingJournalCount": 0,
+    "nonterminalJournalCount": 0,
+    "navigationTimeMs": {
+      "verifiedCompleted": {
+        "sampleCount": 2,
+        "total": 28229.977807000003,
+        "median": 14114.988903500001,
+        "range": [
+          13356.373240000004,
+          14873.604566999998
+        ]
+      },
+      "failedOrUnverified": {
+        "sampleCount": 3,
+        "total": 5520.807170999997,
+        "median": 2638.6106899999977,
+        "range": [
+          109.33455200000026,
+          2772.861928999999
+        ]
+      },
+      "allFinalizedAttempts": {
+        "sampleCount": 5,
+        "total": 33750.784977999996,
+        "median": 2772.861928999999,
+        "range": [
+          109.33455200000026,
+          14873.604566999998
+        ]
+      },
+      "partialRecordedElapsedLowerBounds": {
+        "sampleCount": 0,
+        "total": null,
+        "median": null,
+        "range": null
+      }
+    },
+    "fullAttemptTimeMs": {
+      "verifiedCompleted": {
+        "sampleCount": 2,
+        "total": 28707.282636000004,
+        "median": 14353.641318000002,
+        "range": [
+          13532.788607000002,
+          15174.494029000001
+        ]
+      },
+      "failedOrUnverified": {
+        "sampleCount": 3,
+        "total": 6013.177427999995,
+        "median": 2814.38494,
+        "range": [
+          265.58145199999854,
+          2933.211035999997
+        ]
+      },
+      "allAttempts": {
+        "sampleCount": 5,
+        "total": 34720.460064,
+        "median": 2933.211035999997,
+        "range": [
+          265.58145199999854,
+          15174.494029000001
+        ]
+      }
+    },
+    "browserLaunchTimeMs": {
+      "sampleCount": 5,
+      "total": 467.1507079999992,
+      "median": 74.5022869999957,
+      "range": [
+        69.05497900000046,
+        176.89461800000026
+      ]
+    },
+    "phaseTimeMs": {
+      "startPageMs": {
+        "sampleCount": 5,
+        "total": 6200.894260000001,
+        "median": 1370.3958569999995,
+        "range": [
+          0,
+          2189.2411150000007
+        ]
+      },
+      "modelMs": {
+        "sampleCount": 5,
+        "total": 4818.6965050000035,
+        "median": 490.6362079999999,
+        "range": [
+          0,
+          2112.3400759999968
+        ]
+      },
+      "browserMs": {
+        "sampleCount": 5,
+        "total": 27507.449975999996,
+        "median": 2139.6489719999954,
+        "range": [
+          83.59831499999564,
+          12206.716366000006
+        ]
+      },
+      "journalMs": {
+        "sampleCount": 5,
+        "total": 1424.6384970000017,
+        "median": 166.8027710000024,
+        "range": [
+          25.73623700000462,
+          554.5481249999957
+        ]
+      },
+      "ageConfirmationMs": {
+        "sampleCount": 5,
+        "total": 2403.290082000003,
+        "median": 0,
+        "range": [
+          0,
+          1204.8754240000017
+        ]
+      },
+      "readinessMs": {
+        "sampleCount": 2,
+        "total": 3549.945964000006,
+        "median": 1774.972982000003,
+        "range": [
+          1769.9633680000043,
+          1779.9825960000016
+        ]
+      },
+      "observeMs": {
+        "sampleCount": 2,
+        "total": 1730.666116999997,
+        "median": 865.3330584999985,
+        "range": [
+          861.7335850000054,
+          868.9325319999916
+        ]
+      },
+      "executionMs": {
+        "sampleCount": 2,
+        "total": 36.14011999999639,
+        "median": 18.070059999998193,
+        "range": [
+          17.831060999997135,
+          18.30905899999925
+        ]
+      }
+    },
+    "counts": {
+      "actions": {
+        "sampleCount": 5,
+        "total": 16,
+        "median": 1,
+        "range": [
+          0,
+          7
+        ]
+      },
+      "modelActions": {
+        "sampleCount": 5,
+        "total": 16,
+        "median": 1,
+        "range": [
+          0,
+          7
+        ]
+      },
+      "policyActions": {
+        "sampleCount": 5,
+        "total": 0,
+        "median": 0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "modelCalls": {
+        "sampleCount": 5,
+        "total": 18,
+        "median": 2,
+        "range": [
+          0,
+          7
+        ]
+      },
+      "inputTokens": {
+        "sampleCount": 5,
+        "total": 21174,
+        "median": 3092,
+        "range": [
+          0,
+          7495
+        ]
+      },
+      "outputTokens": {
+        "sampleCount": 5,
+        "total": 2974,
+        "median": 292,
+        "range": [
+          0,
+          1195
+        ]
+      },
+      "authorizedAgeConfirmations": {
+        "sampleCount": 5,
+        "total": 2,
+        "median": 0,
+        "range": [
+          0,
+          1
+        ]
+      },
+      "productOpenRollbacks": {
+        "sampleCount": 5,
+        "total": 0,
+        "median": 0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "executionAttempts": {
+        "sampleCount": 2,
+        "total": 2,
+        "median": 1.0,
+        "range": [
+          1,
+          1
+        ]
+      },
+      "staleSnapshots": {
+        "sampleCount": 2,
+        "total": 0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "staleRecoveries": {
+        "sampleCount": 2,
+        "total": 0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "fastReadinessCount": {
+        "sampleCount": 2,
+        "total": 0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "fallbackReadinessCount": {
+        "sampleCount": 2,
+        "total": 4,
+        "median": 2.0,
+        "range": [
+          2,
+          2
+        ]
+      },
+      "completionReadinessCount": {
+        "sampleCount": 2,
+        "total": 0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "readinessTimeoutCount": {
+        "sampleCount": 2,
+        "total": 0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      }
+    },
+    "blockedMutations": {
+      "sampleCount": 5,
+      "total": 0,
+      "median": 0,
+      "range": [
+        0,
+        0
+      ]
+    },
+    "usageCompleteCount": 5,
+    "modelCostUsd": {
+      "recordedAttemptCosts": {
+        "sampleCount": 5,
+        "total": 0.0008893080000000001,
+        "median": 0.00012986400000000002,
+        "range": [
+          0,
+          0.00031479
+        ]
+      },
+      "knownRecordedTotal": 0.0008893080000000001,
+      "allAttemptsComplete": true,
+      "estimatedTotal": 0.0008893080000000001,
+      "allAttemptCostPerVerifiedSuccess": 0.00044465400000000006,
+      "verifiedCompletedAttemptCosts": {
+        "sampleCount": 2,
+        "total": 0.00062958,
+        "median": 0.00031479,
+        "range": [
+          0.00031479,
+          0.00031479
+        ]
+      },
+      "failedOrUnverifiedAttemptCosts": {
+        "sampleCount": 3,
+        "total": 0.00025972800000000003,
+        "median": 0.00012986400000000002,
+        "range": [
+          0,
+          0.00012986400000000002
+        ]
+      }
+    },
+    "sourceHashes": {
+      "knownCount": 5,
+      "allAttemptsHaveHash": true,
+      "consistent": false,
+      "distinct": [
+        "ed1ddf423f8560cc23cb1002a1fc944d6aa2f545444566c9d392d2a025d11562",
+        "eef360c49787ce934ec8eb198e633a0b43a420dea84ca73cdb9eebba2e998d98"
+      ]
+    },
+    "baselineSourceHashes": {
+      "knownCount": 5,
+      "allAttemptsHaveHash": true,
+      "consistent": true,
+      "distinct": [
+        "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a"
+      ]
+    },
+    "sourceMatchesProtocol": {
+      "matchingCount": 5,
+      "mismatchingCount": 0,
+      "unknownCount": 0
+    },
+    "baselineSourceMatchesProtocol": {
+      "matchingCount": 5,
+      "mismatchingCount": 0,
+      "unknownCount": 0
+    },
+    "models": {
+      "requested": [
+        "jev-latest"
+      ],
+      "distinct": [
+        "jev-1.13.0"
+      ],
+      "responseEventCount": 18,
+      "knownVersionCount": 18,
+      "allResponseVersionsKnown": true,
+      "consistent": true,
+      "expectedVersion": "jev-1.13.0",
+      "matchesExpected": true
+    }
+  },
+  "pairedComparison": {
+    "pairs": [
+      {
+        "pair": 1,
+        "attemptCount": 2,
+        "bothVerified": false,
+        "navigationDeltaMs": null,
+        "navigationSpeedup": null,
+        "fullAttemptDeltaMs": null,
+        "fullAttemptSpeedup": null
+      },
+      {
+        "pair": 2,
+        "attemptCount": 2,
+        "bothVerified": false,
+        "navigationDeltaMs": null,
+        "navigationSpeedup": null,
+        "fullAttemptDeltaMs": null,
+        "fullAttemptSpeedup": null
+      },
+      {
+        "pair": 3,
+        "attemptCount": 1,
+        "bothVerified": false,
+        "navigationDeltaMs": null,
+        "navigationSpeedup": null,
+        "fullAttemptDeltaMs": null,
+        "fullAttemptSpeedup": null
+      }
+    ],
+    "bothVerifiedPairCount": 0,
+    "navigationDeltaMs": {
+      "sampleCount": 0,
+      "total": null,
+      "median": null,
+      "range": null
+    },
+    "navigationSpeedup": {
+      "sampleCount": 0,
+      "total": null,
+      "median": null,
+      "range": null
+    },
+    "fullAttemptDeltaMs": {
+      "sampleCount": 0,
+      "total": null,
+      "median": null,
+      "range": null
+    },
+    "fullAttemptSpeedup": {
+      "sampleCount": 0,
+      "total": null,
+      "median": null,
+      "range": null
+    }
+  },
+  "attempts": [
+    {
+      "run": 1,
+      "pair": 1,
+      "arm": "baseline",
+      "status": "reached_target",
+      "reason": null,
+      "verifiedSuccess": true,
+      "independentVerificationPassed": true,
+      "verificationChecks": {
+        "store": true,
+        "productId": true,
+        "externalProductId": true,
+        "visibleProduct": true
+      },
+      "hasJournal": true,
+      "hasTerminalJournalResult": true,
+      "usageComplete": true,
+      "journalSha256": "3bae4063bd2e97125db8f7e9c3151f8176179ca25cbd97d7e6b39c6df1987ed4",
+      "recordedSourceSha256": "eef360c49787ce934ec8eb198e633a0b43a420dea84ca73cdb9eebba2e998d98",
+      "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+      "requestedModel": "jev-latest",
+      "observedModels": {
+        "responseEventCount": 7,
+        "knownVersionCount": 7,
+        "distinct": [
+          "jev-1.13.0"
+        ]
+      },
+      "browserLaunchMs": 176.89461800000026,
+      "fullAttemptMs": 15174.494029000001,
+      "blockedMutations": 0,
+      "recordedModelResponseEvents": 7,
+      "metricsFinal": true,
+      "metrics": {
+        "totalMs": 14873.604566999998,
+        "startPageMs": 2189.2411150000007,
+        "modelMs": 2112.3400759999968,
+        "browserMs": 12206.716366000006,
+        "journalMs": 554.5481249999957,
+        "ageConfirmationMs": 1204.8754240000017,
+        "readinessMs": null,
+        "observeMs": null,
+        "executionMs": null,
+        "actions": 7,
+        "modelActions": 7,
+        "policyActions": 0,
+        "modelCalls": 7,
+        "inputTokens": 7495,
+        "outputTokens": 1195,
+        "authorizedAgeConfirmations": 1,
+        "productOpenRollbacks": 0,
+        "executionAttempts": null,
+        "staleSnapshots": null,
+        "staleRecoveries": null,
+        "fastReadinessCount": null,
+        "fallbackReadinessCount": null,
+        "completionReadinessCount": null,
+        "readinessTimeoutCount": null,
+        "estimatedModelUsd": 0.00031479
+      },
+      "sourceMatchesProtocol": true,
+      "baselineSourceMatchesProtocol": true
+    },
+    {
+      "run": 2,
+      "pair": 1,
+      "arm": "candidate",
+      "status": "incomplete",
+      "reason": "model_unavailable",
+      "verifiedSuccess": false,
+      "independentVerificationPassed": false,
+      "verificationChecks": {
+        "store": false,
+        "productId": false,
+        "externalProductId": false,
+        "visibleProduct": false
+      },
+      "hasJournal": true,
+      "hasTerminalJournalResult": true,
+      "usageComplete": true,
+      "journalSha256": "feebd2e34e4ca4fdeb7fb1889906d03938ca51c1dac3777db767ef306c7f1f73",
+      "recordedSourceSha256": "ed1ddf423f8560cc23cb1002a1fc944d6aa2f545444566c9d392d2a025d11562",
+      "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+      "requestedModel": "jev-latest",
+      "observedModels": {
+        "responseEventCount": 2,
+        "knownVersionCount": 2,
+        "distinct": [
+          "jev-1.13.0"
+        ]
+      },
+      "browserLaunchMs": 69.05497900000046,
+      "fullAttemptMs": 2933.211035999997,
+      "blockedMutations": 0,
+      "recordedModelResponseEvents": 2,
+      "metricsFinal": true,
+      "metrics": {
+        "totalMs": 2772.861928999999,
+        "startPageMs": 1370.3958569999995,
+        "modelMs": 490.6362079999999,
+        "browserMs": 2139.6489719999954,
+        "journalMs": 142.57674900000347,
+        "ageConfirmationMs": 0,
+        "readinessMs": 1779.9825960000016,
+        "observeMs": 868.9325319999916,
+        "executionMs": 18.30905899999925,
+        "actions": 1,
+        "modelActions": 1,
+        "policyActions": 0,
+        "modelCalls": 2,
+        "inputTokens": 3092,
+        "outputTokens": 292,
+        "authorizedAgeConfirmations": 0,
+        "productOpenRollbacks": 0,
+        "executionAttempts": 1,
+        "staleSnapshots": 0,
+        "staleRecoveries": 0,
+        "fastReadinessCount": 0,
+        "fallbackReadinessCount": 2,
+        "completionReadinessCount": 0,
+        "readinessTimeoutCount": 0,
+        "estimatedModelUsd": 0.00012986400000000002
+      },
+      "sourceMatchesProtocol": true,
+      "baselineSourceMatchesProtocol": true
+    },
+    {
+      "run": 3,
+      "pair": 2,
+      "arm": "candidate",
+      "status": "incomplete",
+      "reason": "model_unavailable",
+      "verifiedSuccess": false,
+      "independentVerificationPassed": false,
+      "verificationChecks": {
+        "store": false,
+        "productId": false,
+        "externalProductId": false,
+        "visibleProduct": false
+      },
+      "hasJournal": true,
+      "hasTerminalJournalResult": true,
+      "usageComplete": true,
+      "journalSha256": "fb55a6a920781ea073f7ea57a5019e2985b7bbd2a8943e3c6530bc11d964270d",
+      "recordedSourceSha256": "ed1ddf423f8560cc23cb1002a1fc944d6aa2f545444566c9d392d2a025d11562",
+      "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+      "requestedModel": "jev-latest",
+      "observedModels": {
+        "responseEventCount": 2,
+        "knownVersionCount": 2,
+        "distinct": [
+          "jev-1.13.0"
+        ]
+      },
+      "browserLaunchMs": 77.29892400000244,
+      "fullAttemptMs": 2814.38494,
+      "blockedMutations": 0,
+      "recordedModelResponseEvents": 2,
+      "metricsFinal": true,
+      "metrics": {
+        "totalMs": 2638.6106899999977,
+        "startPageMs": 1234.6387289999984,
+        "modelMs": 469.0751560000026,
+        "browserMs": 2002.7327629999927,
+        "journalMs": 166.8027710000024,
+        "ageConfirmationMs": 0,
+        "readinessMs": 1769.9633680000043,
+        "observeMs": 861.7335850000054,
+        "executionMs": 17.831060999997135,
+        "actions": 1,
+        "modelActions": 1,
+        "policyActions": 0,
+        "modelCalls": 2,
+        "inputTokens": 3092,
+        "outputTokens": 292,
+        "authorizedAgeConfirmations": 0,
+        "productOpenRollbacks": 0,
+        "executionAttempts": 1,
+        "staleSnapshots": 0,
+        "staleRecoveries": 0,
+        "fastReadinessCount": 0,
+        "fallbackReadinessCount": 2,
+        "completionReadinessCount": 0,
+        "readinessTimeoutCount": 0,
+        "estimatedModelUsd": 0.00012986400000000002
+      },
+      "sourceMatchesProtocol": true,
+      "baselineSourceMatchesProtocol": true
+    },
+    {
+      "run": 4,
+      "pair": 2,
+      "arm": "baseline",
+      "status": "reached_target",
+      "reason": null,
+      "verifiedSuccess": true,
+      "independentVerificationPassed": true,
+      "verificationChecks": {
+        "store": true,
+        "productId": true,
+        "externalProductId": true,
+        "visibleProduct": true
+      },
+      "hasJournal": true,
+      "hasTerminalJournalResult": true,
+      "usageComplete": true,
+      "journalSha256": "11f336637dea86cf55766bb72fb52a89af7221e05d173d16bd993680b82580fc",
+      "recordedSourceSha256": "eef360c49787ce934ec8eb198e633a0b43a420dea84ca73cdb9eebba2e998d98",
+      "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+      "requestedModel": "jev-latest",
+      "observedModels": {
+        "responseEventCount": 7,
+        "knownVersionCount": 7,
+        "distinct": [
+          "jev-1.13.0"
+        ]
+      },
+      "browserLaunchMs": 69.39990000000034,
+      "fullAttemptMs": 13532.788607000002,
+      "blockedMutations": 0,
+      "recordedModelResponseEvents": 7,
+      "metricsFinal": true,
+      "metrics": {
+        "totalMs": 13356.373240000004,
+        "startPageMs": 1406.6185590000023,
+        "modelMs": 1746.6450650000043,
+        "browserMs": 11074.753560000005,
+        "journalMs": 534.9746149999955,
+        "ageConfirmationMs": 1198.4146580000015,
+        "readinessMs": null,
+        "observeMs": null,
+        "executionMs": null,
+        "actions": 7,
+        "modelActions": 7,
+        "policyActions": 0,
+        "modelCalls": 7,
+        "inputTokens": 7495,
+        "outputTokens": 1195,
+        "authorizedAgeConfirmations": 1,
+        "productOpenRollbacks": 0,
+        "executionAttempts": null,
+        "staleSnapshots": null,
+        "staleRecoveries": null,
+        "fastReadinessCount": null,
+        "fallbackReadinessCount": null,
+        "completionReadinessCount": null,
+        "readinessTimeoutCount": null,
+        "estimatedModelUsd": 0.00031479
+      },
+      "sourceMatchesProtocol": true,
+      "baselineSourceMatchesProtocol": true
+    },
+    {
+      "run": 5,
+      "pair": 3,
+      "arm": "baseline",
+      "status": "incomplete",
+      "reason": "merchant_site_unavailable",
+      "verifiedSuccess": false,
+      "independentVerificationPassed": null,
+      "verificationChecks": {
+        "store": null,
+        "productId": null,
+        "externalProductId": null,
+        "visibleProduct": null
+      },
+      "hasJournal": true,
+      "hasTerminalJournalResult": true,
+      "usageComplete": true,
+      "journalSha256": "078de228a1931092b9df9911008ca3d5ec37b221fde6a441793a009c3231e9cf",
+      "recordedSourceSha256": "eef360c49787ce934ec8eb198e633a0b43a420dea84ca73cdb9eebba2e998d98",
+      "baselineSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+      "requestedModel": "jev-latest",
+      "observedModels": {
+        "responseEventCount": 0,
+        "knownVersionCount": 0,
+        "distinct": []
+      },
+      "browserLaunchMs": 74.5022869999957,
+      "fullAttemptMs": 265.58145199999854,
+      "blockedMutations": 0,
+      "recordedModelResponseEvents": 0,
+      "metricsFinal": true,
+      "metrics": {
+        "totalMs": 109.33455200000026,
+        "startPageMs": 0,
+        "modelMs": 0,
+        "browserMs": 83.59831499999564,
+        "journalMs": 25.73623700000462,
+        "ageConfirmationMs": 0,
+        "readinessMs": null,
+        "observeMs": null,
+        "executionMs": null,
+        "actions": 0,
+        "modelActions": 0,
+        "policyActions": 0,
+        "modelCalls": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "authorizedAgeConfirmations": 0,
+        "productOpenRollbacks": 0,
+        "executionAttempts": null,
+        "staleSnapshots": null,
+        "staleRecoveries": null,
+        "fastReadinessCount": null,
+        "fallbackReadinessCount": null,
+        "completionReadinessCount": null,
+        "readinessTimeoutCount": null,
+        "estimatedModelUsd": 0
+      },
+      "sourceMatchesProtocol": true,
+      "baselineSourceMatchesProtocol": true
+    }
+  ],
+  "methodology": {
+    "scope": "Offline allowlist analysis of the private batch and its per-run durable journals; no live calls.",
+    "success": "Success requires a terminal journal with reached_target, verification.passed=true and all four independent checks explicitly true. Missing journals and unverified runs remain counted attempts.",
+    "timing": "Completed navigation and failed/unverified navigation times are separate and use finalized metrics only. Nonterminal snapshots are reported separately as elapsed lower bounds, never completed or failed speed samples. Navigation totalMs excludes browser launch. fullAttemptMs is reported only when recorded: before browser launch through close and diagnostic flush, excluding terminal journal and final batch writing. Missing durations remain null and statistics state available sample counts.",
+    "phases": "Phase statistics cover attempts with finalized metrics. Baseline-only missing candidate metrics are null, never zero. readinessMs includes observeMs; startPageMs and ageConfirmationMs overlap other phases. browserMs is a residual, not an isolated browser measurement. Phase totals must not be summed. Counts from nonterminal snapshots can be lower bounds.",
+    "cost": "Estimated model API cost excludes infrastructure and operator time. All-attempt cost per verified success includes failures. It is withheld if any attempt lacks finalized metrics, complete usage or recorded cost. Final batch metrics can preserve known costs after a terminal journal-write failure. Known recorded totals may be lower bounds when usage is incomplete; no missing call is treated as free.",
+    "pairs": "Adjacent pairs contain one baseline and one candidate in the prescribed order. Only pairs with two independently verified successes contribute speed comparisons. Delta=baseline-candidate milliseconds; speedup=baseline/candidate, so values above one favor candidate. Failures still count in attempt, reliability and cost totals.",
+    "limits": "Six prespecified counterbalanced attempts (three per arm) are descriptive, not randomized evidence or a population speedup estimate. Early stopping leaves later attempts unobserved, not successful or failed. No significance claim is made.",
+    "models": "Actual model versions come only from model_response_received events, restricted to the jev model-name syntax. A requested alias is not evidence of the model served. Version disagreement or missing version evidence limits comparison; matchesExpected checks the predeclared jev-1.13.0 expectation.",
+    "state": "Each attempt launches Chromium with the same persistent profile. Fresh browser contexts are not fresh accounts or fully cold sessions: cookies, local storage, disk/network caches and site state can carry over. Sequential order and variable site/network load can confound paired differences.",
+    "privacy": "Only fixed enum labels, allowlisted numeric fields, booleans, bounded jev model-version names and SHA-256 digests are emitted. Task/account labels, environment strings, URLs, IDs, input paths, request/response content and arbitrary source-hash labels are omitted."
+  },
+  "analyzerSha256": "72d47f564ec971fd6e1db21e9308830cc0ffa81b7ee0fff4841a155e619281ed"
+}

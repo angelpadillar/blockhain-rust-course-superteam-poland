@@ -1,0 +1,17 @@
+[
+  {
+    "receipt": "trust-layer/demo/receipts/49bee3db-3057-4698-bdb3-5a7e14a33e93.json",
+    "manifest": "trust-layer/demo/evidence-captures/manifest-merchant_mismatch.json",
+    "output": "trust-layer/demo/evidence-captures/sealed-merchant_mismatch.json"
+  },
+  {
+    "receipt": "trust-layer/demo/receipts/6f847fb4-93e5-454d-a566-89c203b518ef.json",
+    "manifest": "trust-layer/demo/evidence-captures/manifest-happy.json",
+    "output": "trust-layer/demo/evidence-captures/sealed-happy.json"
+  },
+  {
+    "receipt": "trust-layer/demo/receipts/4e9c2b83-6c4e-413d-b249-a67c4f096a16.json",
+    "manifest": "trust-layer/demo/evidence-captures/manifest-price_increase.json",
+    "output": "trust-layer/demo/evidence-captures/sealed-price_increase.json"
+  }
+]

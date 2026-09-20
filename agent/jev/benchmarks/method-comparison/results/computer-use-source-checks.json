@@ -1,0 +1,23 @@
+{
+  "sourceCommit": "ccde756a3145cd177e6a7396ddbab48286afaf75",
+  "scope": "Synthetic offline checks. No API requests, screenshots, desktop input or hook installation.",
+  "smallScreenChange": {
+    "imagePixels": [
+      256,
+      256
+    ],
+    "changedPatchPixels": [
+      32,
+      32
+    ],
+    "blackToWhite": true,
+    "changedTilesReported": 0,
+    "interpretation": "This concrete small change is missed by the tile mean threshold; not an OCR accuracy benchmark."
+  },
+  "noneStop": {
+    "keepsGoing": false,
+    "outcomeLabel": "completed",
+    "interpretation": "A none decision leaves the default completed label. Independent verification is required for completion metrics."
+  },
+  "configuredInterStepDelaySeconds": 2.0
+}

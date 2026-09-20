@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "researchedOn": "2026-09-19",
+  "scope": "Public official-source research only; no account, address, receipt image, token or checkout session retained.",
+  "receiptReport": {
+    "source": "User receipt description relayed by task owner; image not independently inspected by this researcher",
+    "code": "z5913",
+    "advertisedDiscountMinor": 7500,
+    "minimumBasketMinor": 15000,
+    "currency": "PLN",
+    "firstOrderOnly": true,
+    "tentativeExpiryDate": "2026-11-18",
+    "expiryVerified": false,
+    "expiresAt": null,
+    "expiryTimeZone": null
+  },
+  "officialSources": [
+    {
+      "url": "https://jush.pl/regulaminy/",
+      "title": "Jush regulations index",
+      "finding": "No matching 75 PLN receipt offer or z5913 terms were located among the listed promotions. The first-order 70 PLN offer appears under ended promotions.",
+      "doesNotProve": "This does not prove the receipt code is invalid or that no separate offer exists."
+    },
+    {
+      "url": "https://jush.pl/regulaminy/regulamin-akcji-70-zlotych-rabatu-na-pierwsze-zamowienie-delio/",
+      "title": "First-order 70 PLN Delio promotion",
+      "sections": ["1", "2.1-2.8", "2.11"],
+      "finding": "Different expired offer: 70 PLN against a 150 PLN minimum, from 19 November 2025 to 31 March 2026. It requires an active account without completed orders in Delio or other app services; the participant can benefit once. Excluded goods and packaging do not count toward its minimum. This offer cannot establish this receipt's 75 PLN amount, dates or product exclusions.",
+      "appliedToReceipt": false
+    },
+    {
+      "url": "https://jush.pl/regulamin-sprzedazy-w-zabce-jush/",
+      "title": "Platform sales regulations effective 19 June 2026",
+      "sections": ["1.9", "4.1-4.4", "4.9", "6.1"],
+      "finding": "The platform includes Jush and the Delio website. Normal registration verifies a phone and customer details; delivery details are needed for orders. Customers must provide truthful, current details. These general rules do not establish z5913 eligibility."
+    }
+  ],
+  "researchLimits": {
+    "matchingOfficialTermsFound": false,
+    "searches": ["z5913 Delio", "Delio 75 PLN receipt", "Delio 18.11.2026", "official Jush/Delio/Zabka 75 first order regulations"],
+    "unknowns": ["Exact campaign period", "Whether 18.11.2026 was read correctly", "Expiry time and authoritative time zone", "Qualifying product exclusions", "Whether account creation must fall within a campaign period", "This person's first-order eligibility", "Merchant acceptance of this code"],
+    "expiryPolicy": "No November expiry instant is fabricated. A Warsaw deadline requires matching dated evidence before enforcement.",
+    "accountPolicy": "One account per person is the pilot policy. A new phone number does not establish a new eligible person. Legitimate new customers may complete normal registration; existing users sign in.",
+    "discountPolicy": "Receipt eligibility is provisional. Only an observed verified current checkout quote bound to the same account/cart and exact code determines accepted discount. Cached estimates never subtract 75 PLN."
+  }
+}

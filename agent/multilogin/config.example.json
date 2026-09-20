@@ -1,0 +1,17 @@
+{
+  "folderId": "REPLACE_WITH_MULTILOGIN_FOLDER_ID",
+  "launcherUrl": "https://launcher.mlx.yt:45001",
+  "cdpHost": "127.0.0.1",
+  "osType": "macos",
+  "cloudStorage": true,
+  "headless": false,
+  "maxAccounts": 6,
+  "maxProxySwitches": 1,
+  "maxSteps": 20,
+  "maxSeconds": 180,
+  "verifyRestart": true,
+  "proxyMode": "multilogin",
+  "proxyCountry": null,
+  "seedSites": ["https://www.amazon.pl/", "https://www.ebay.com/"],
+  "proxyPool": []
+}

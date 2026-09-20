@@ -1,0 +1,16 @@
+[
+  {
+    "platform": "instagram",
+    "characterId": "character-001",
+    "username": "REPLACE_WITH_USERNAME",
+    "password": "REPLACE_WITH_PASSWORD",
+    "totp": "REPLACE_WITH_BASE32_SECRET_OR_OTPAUTH_URI"
+  },
+  {
+    "platform": "youtube",
+    "characterId": "character-001",
+    "username": "REPLACE_WITH_GOOGLE_EMAIL",
+    "password": "REPLACE_WITH_PASSWORD",
+    "recoveryEmail": "OPTIONAL_RECOVERY_EMAIL"
+  }
+]

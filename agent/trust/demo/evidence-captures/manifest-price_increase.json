@@ -1,0 +1,14 @@
+[
+  {
+    "stage": "quote",
+    "eventHash": "fc3b9b3d5014879ddc1a3ba532b3fc9dd085ad94f5c661eb683821fe0b16a800",
+    "screenshotPath": "price-quote.jpg",
+    "observationPath": "price-quote.observation.json"
+  },
+  {
+    "stage": "approval",
+    "eventHash": "32b6a58d1409a21758128c2bb9deec92ca59cd1c191f77bd306cb4951507a618",
+    "screenshotPath": "price-approval.jpg",
+    "observationPath": "price-approval.observation.json"
+  }
+]

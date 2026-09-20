@@ -1,0 +1,44 @@
+services:
+  jev-browser:
+    build: .
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${JEV_BIND_IP:-127.0.0.1}:8787:8787"
+    environment:
+      TYPESAFE_API_KEY: ${TYPESAFE_API_KEY:-}
+      JEV_SERVICE_TOKEN: ${JEV_SERVICE_TOKEN:-}
+      JEV_CONFIG: /app/config.local.json
+    volumes:
+      - jev-data:/app/data
+      - ./config.local.json:/app/config.local.json:ro
+    shm_size: 1gb
+    mem_limit: 2g
+    cpus: 2
+    security_opt:
+      - no-new-privileges:true
+      - seccomp=./seccomp_profile.json
+    stop_grace_period: 45s
+
+  onboarding:
+    build: .
+    profiles: [onboarding]
+    init: true
+    command: ["node", "src/desktop.mjs"]
+    healthcheck:
+      disable: true
+    ports:
+      - "${JEV_BIND_IP:-127.0.0.1}:6088:6080"
+      - "${JEV_BIND_IP:-127.0.0.1}:6089:6081"
+    environment:
+      JEV_CONFIG: /app/config.local.json
+    volumes:
+      - jev-data:/app/data
+      - ./config.local.json:/app/config.local.json:ro
+    shm_size: 1gb
+    mem_limit: 2g
+    security_opt:
+      - no-new-privileges:true
+      - seccomp=./seccomp_profile.json
+volumes:
+  jev-data:

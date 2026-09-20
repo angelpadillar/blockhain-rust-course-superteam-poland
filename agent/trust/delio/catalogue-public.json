@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-09-19T09:49:57Z",
+  "retrievalMethod": "Public pages read through the web tool; indexed page contents may predate retrieval.",
+  "imageOrigins": ["https://delio.com.pl"],
+  "underlyingImageOrigin": "https://images.prod.lait.app",
+  "imageStatus": "Exact image links observed on public pages; image fetches returned web cache miss. Image bytes were not downloaded or verified.",
+  "merchantObservedAt": null,
+  "deliveryScope": null,
+  "categorySource": "Local browsing groups, not verified merchant regional inventory.",
+  "products": [
+    {
+      "productId": "A0000953", "categoryId": "dairy",
+      "sourceUrl": "https://delio.com.pl/products/A0000953-maslo-polskie-extra",
+      "sourcePageUsed": "https://delio.com.pl/products/A0000953-maslo-polskie-extra",
+      "imageAlt": "Masło Polskie extra, 200 g",
+      "imageUrl": "https://delio.com.pl/_next/image?q=75&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_7_1_0_5710087cd71cf0ea13796143a35f0365db2c6804_e546d8ad135eb733ecc952f64c25ee41cdb68b29-large.png&w=1920"
+    },
+    {
+      "productId": "A0000926", "categoryId": "dairy",
+      "sourceUrl": "https://delio.com.pl/products/A0000926-ser-gouda-w-plastrach",
+      "sourcePageUsed": "https://delio.com.pl/products/A0000926-ser-gouda-w-plastrach",
+      "imageAlt": "Ser gouda w plastrach, 150 g",
+      "imageUrl": "https://delio.com.pl/_next/image?q=75&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_a_2_2_fa22c0139135966ec1f029c707716dc22169efa6_bb__5CRfUnpIApUSujT4aEqUw__-large.png&w=1920"
+    },
+    {
+      "productId": "A0000730", "categoryId": "dairy",
+      "sourceUrl": "https://delio.com.pl/products/A0000730-piatnica-serek-wiejski",
+      "sourcePageUsed": "https://delio.com.pl/products/A0000730-piatnica-serek-wiejski",
+      "imageAlt": "Piątnica serek wiejski, 200 g",
+      "imageUrl": "https://delio.com.pl/_next/image?q=75&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_c_9_f_4c9fd71075fd70c194e485cbbb6b99f501b91d85_cd3bdcfa0dc3ad2ecfe1062d36d457dc146f48de-large.png&w=1920"
+    },
+    {
+      "productId": "A0002856", "categoryId": "dairy",
+      "sourceUrl": "https://delio.com.pl/products/A0002856-piatnica-mleko-ekologiczne-3-9",
+      "sourcePageUsed": "https://delio.com.pl/products/A0002856-piatnica-mleko-ekologiczne-3-9",
+      "imageAlt": "Piątnica mleko ekologiczne 3,9%, 1 l",
+      "imageUrl": "https://delio.com.pl/_next/image?q=75&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_4_0_c_e40c652a245355e5b09e8c72cc9efefd410a0d6a_G5JHcWzXE_fNTg__-large.png&w=1920"
+    },
+    {
+      "productId": "A0000840", "categoryId": "bakery",
+      "sourceUrl": "https://delio.com.pl/products/A0000840-chleb-tostowy-pszenny",
+      "sourcePageUsed": "https://delio.com.pl/products/A0000840-chleb-tostowy-pszenny",
+      "imageAlt": "Chleb tostowy pszenny, 500 g",
+      "imageUrl": "https://delio.com.pl/_next/image?q=75&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_a_e_5_aae5f77dbb954d862bb33d4178d6fbb3b3e5eb30_d6640ed52f6529119ff6150d9cf6f85c1068122a-large.png&w=1920"
+    },
+    {
+      "productId": "A0000843", "categoryId": "dairy",
+      "sourceUrl": "https://delio.com.pl/products/A0000843-piatnica-skyr-jogurt-typu-islandzkiego-naturalny",
+      "sourcePageUsed": "https://delio.com.pl/products/A0000843-piatnica-skyr-jogurt-typu-islandzkiego-naturalny",
+      "imageAlt": "Piątnica Skyr naturalny, 150 g",
+      "imageUrl": "https://delio.com.pl/_next/image?q=75&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_3_5_9_2359e6ba67cee422edadd08219a4016baeb499ba_bb_5ee4f2be7536cf0cb4a4c7cfd91e5f20-large.png&w=1920"
+    },
+    {
+      "productId": "A0000450", "categoryId": "pantry",
+      "sourceUrl": "https://delio.com.pl/products/A0000450-makaron-piorka-lubella",
+      "sourcePageUsed": "https://delio.com.pl/products/A0000450-makaron-piorka-lubella",
+      "imageAlt": "Makaron piórka Lubella, 400 g",
+      "imageUrl": "https://delio.com.pl/_next/image?q=75&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_a_3_5_fa357f25c33ac4adbffbd4b3b49f84331cd5a92a_5900049006375-large.png&w=1920"
+    },
+    {
+      "productId": "A0010858", "categoryId": "household",
+      "sourceUrl": "https://delio.com.pl/products/A0010858-recznik-kuchenny-regina",
+      "sourcePageUsed": "https://delio.com.pl/",
+      "sourceNote": "Product page was unavailable through the web tool; the homepage paired this exact product link and photo.",
+      "imageAlt": "Ręcznik kuchenny Regina, 2 szt.",
+      "imageUrl": "https://delio.com.pl/_next/image?q=80&url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_e_8_c_1e8cf6a3dc4167c87b88a7196da951b9c056a4c1_bb_72151fe27952521a5c434ee140cbb185-small.png&w=1920"
+    }
+  ]
+}

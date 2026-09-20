@@ -1,0 +1,18 @@
+{
+  "observedAt": 1789813418126,
+  "httpStatus": 200,
+  "product": "zabkajush",
+  "operator": "virtual53",
+  "offer": {
+    "price": 0.1538,
+    "count": 4,
+    "rate": 0
+  },
+  "durationMs": 211,
+  "userReported": {
+    "priceUsd": 0.1538,
+    "ratePercent": 69.01,
+    "stock": 4
+  },
+  "purchaseMade": false
+}

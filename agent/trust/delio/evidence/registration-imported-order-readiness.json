@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-09-19T13:32:21.549891+00:00",
+  "status": "imported_order_operation_deployed",
+  "operation": "startImportedRegistration",
+  "approvalId": "user-order-1094850855",
+  "activationOrderId": "1094850855",
+  "workerTestsPassed": 48,
+  "worker": "running",
+  "remoteSyntaxPassed": true,
+  "verifiedDeployedSourceSha256": {
+    "server.mjs": "e843660a195592385c148904943809a2d9690ab0b34d524d61f6f6704d691c2b",
+    "policy.mjs": "c9ea1e9a898feddcec11d62f781cf670b3bde70d13c49cb2f7f1a1ba770dbc35",
+    "registration-actions.mjs": "79ca645f83f5464ce65de797d5a23ac3d5d21c92777a30eda324567d0facb415",
+    "network-diagnostics.mjs": "fca415555a3265ee9aaeae41a1ce84ee2d408a5f662d1286248407a078c0a1a4"
+  },
+  "maxImportedSubmits": 1,
+  "preservesCompletePriorHistory": true,
+  "purchasesByWorker": 0,
+  "registrationActionsByAgent": 0,
+  "newAccountVerified": false,
+  "networkDiagnostics": "hostname/event/method/status/count only; no request data",
+  "transportNote": "Prior SSH control socket refused connection; authenticated fallback completed upload and reload."
+}

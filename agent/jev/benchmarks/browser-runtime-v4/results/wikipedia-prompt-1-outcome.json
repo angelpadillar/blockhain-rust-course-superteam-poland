@@ -1,0 +1,14 @@
+{
+  "attemptArtifact": "wikipedia-prompt-1.json",
+  "status": "interrupted",
+  "verifiedSuccess": false,
+  "processExitCode": 1,
+  "reason": "unhandled_cancelled_rejection_during_cleanup",
+  "evidence": "The process printed CliError: cancelled from the session's final cleanup. Its durable journal ends at a planned search Enter; no successful action outcome or final verification was persisted.",
+  "totalMs": null,
+  "modelCallAttemptsRecorded": 1,
+  "providerResponsesRecorded": 1,
+  "knownOpenRouterChargeUsd": 0.0000487,
+  "billingScope": "One recorded completed planning response. This does not reconstruct an unpersisted task outcome.",
+  "retention": "The original interrupted receipt is preserved without modification. The separate v4 session/search fixes require a new attempt and new source identity."
+}

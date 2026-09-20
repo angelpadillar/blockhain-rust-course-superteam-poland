@@ -1,0 +1,75 @@
+{
+  "test": "Real Jev API + real Playwright + controlled local shop; not a live Glovo measurement",
+  "capturedAt": "2026-09-16T10:06:50.320Z",
+  "ordersSubmitted": 0,
+  "status": "ready_for_review",
+  "paymentExecuted": false,
+  "metrics": {
+    "wallMs": 5791.982125000002,
+    "browserMs": 4384.976042000009,
+    "modelMs": 1403.1369169999998,
+    "modelCalls": 4,
+    "actions": 4,
+    "inputTokens": 2156,
+    "outputTokens": 196,
+    "estimatedModelUsd": 9.055200000000001e-05,
+    "usageComplete": true,
+    "inputUsdPerMillion": 0.042,
+    "outputUsdPerMillion": 0,
+    "infrastructureUsd": null,
+    "steps": [
+      {
+        "step": 1,
+        "choice": "a0",
+        "action": "Search for Test apple juice 1 L",
+        "model": "jev-1.13.0",
+        "modelMs": 681.3302919999987,
+        "browserMs": 841.0430420000012,
+        "inputTokens": 469,
+        "outputTokens": 45
+      },
+      {
+        "step": 2,
+        "choice": "a1",
+        "action": "Submit search for Test apple juice 1 L",
+        "model": "jev-1.13.0",
+        "modelMs": 225.68520799999897,
+        "browserMs": 807.2849999999999,
+        "inputTokens": 548,
+        "outputTokens": 53
+      },
+      {
+        "step": 3,
+        "choice": "a2",
+        "action": "Add one Test apple juice 1 L. In basket: 0; requested: 1.",
+        "model": "jev-1.13.0",
+        "modelMs": 232.40699999999924,
+        "browserMs": 843.810125,
+        "inputTokens": 565,
+        "outputTokens": 53
+      },
+      {
+        "step": 4,
+        "choice": "a1",
+        "action": "Open the final order summary. This is required and does not place or pay for the order.",
+        "model": "jev-1.13.0",
+        "modelMs": 263.58945900000253,
+        "browserMs": 880.1828749999986,
+        "inputTokens": 574,
+        "outputTokens": 45
+      }
+    ]
+  },
+  "verification": {
+    "passed": true,
+    "checks": {
+      "allowedSite": true,
+      "checkout": true,
+      "exactBasket": true,
+      "itemCount": true,
+      "merchant": true,
+      "destination": true,
+      "withinBudget": true
+    }
+  }
+}

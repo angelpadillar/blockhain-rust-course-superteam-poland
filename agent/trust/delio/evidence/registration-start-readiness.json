@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-09-19T10:12:33.630865+00:00",
+  "status": "start_registration_deployed_not_executed",
+  "rootCoordinatesPhonePurchase": true,
+  "realPhoneActionsInThisSubtask": 0,
+  "offlineTests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "groundedCapture": "registration-inspection-4.json",
+  "observedPhoneContract": {
+    "phoneCount": 1,
+    "phoneFormCount": 1,
+    "submitCount": 1,
+    "maxLength": 11,
+    "phoneRequiredLabel": true,
+    "checkboxCount": 0,
+    "implicitTermsObserved": true,
+    "marketingSelected": false,
+    "readyAtCapture": true,
+    "phoneEntryEmpty": true
+  },
+  "sourceHashes": {
+    "server.mjs": "3d32d4cb64afbc7ab78f3c27e159ee72c02c91f8b987c1b662ec41281cf04c3f",
+    "policy.mjs": "33daa377aa491ca948e8a48a6d921b871a532163d67685b30763fac70ec9bb91",
+    "registration.mjs": "466cf8acf9ba83f7c2f9e24608b6414c5a6de733feb0f4bf33ed2bcb00b02f70",
+    "registration-actions.mjs": "73c32bce0dd40c71cbd2ea5c451f4de42caaf8ed2ddb31971d10784626bce3e6",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352"
+  },
+  "limitations": [
+    "A fresh inspection is required before purchase; captured readiness is not a lasting reservation.",
+    "No OTP completion, existing-account adoption, cart access or merchant order is implemented by this registration start."
+  ]
+}

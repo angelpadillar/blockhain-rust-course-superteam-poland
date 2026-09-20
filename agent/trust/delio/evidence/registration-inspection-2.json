@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-09-19T10:02:58.153748+00:00",
+  "operation": "inspectRegistration",
+  "controllerRuntimeMs": 9247,
+  "clientExitCode": 0,
+  "response": {
+    "ok": false,
+    "code": "registration_inspection_failed",
+    "dispatched": false,
+    "blockers": [
+      {
+        "code": "registration_inspection_failed",
+        "message": "Registration inspection stopped. No customer details were entered and no SMS or cart operation was requested."
+      }
+    ],
+    "result": {
+      "status": "registration_inspection_stopped",
+      "observedAt": 1789812178125,
+      "browserRuntimeMs": 9082,
+      "modelCalls": 0,
+      "usage": {
+        "modelCalls": 0,
+        "modelCostUsd": 0
+      },
+      "nativeFailure": {
+        "tool": "browser_wait_for",
+        "code": "timeout",
+        "reason": "timeout"
+      }
+    }
+  },
+  "sourceHashes": {
+    "server.mjs": "399426a977f815bd23df363f07b3ff1f73976be3cff08aa05c746753f668a9b4",
+    "policy.mjs": "453964b1c1d833622200053c96d01fa6c0200aaca75a4bb9a425272bb9e2288c",
+    "registration.mjs": "a2678cc6e65e21544f6df985086c820c7af3a3cb92002ca4a461ecdd4706ebd9",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352"
+  }
+}

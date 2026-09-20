@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "journalSha256": "da1010ca593aae89e355966e0bcedb17af9bd22e7ba84d7a22484d4e62ecc112",
+  "recordedSourceSha256": "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a",
+  "outcome": {
+    "status": "reached_target",
+    "reason": null,
+    "independentVerificationPassed": true,
+    "checks": {
+      "store": true,
+      "productId": true,
+      "externalProductId": true,
+      "visibleProduct": true
+    },
+    "categoryContextMatches": true
+  },
+  "recordedMetrics": {
+    "totalMs": 13245.442868999999,
+    "startPageMs": 1315.3203649999996,
+    "modelMs": 1790.795143000003,
+    "browserMs": 10897.257451000012,
+    "journalMs": 557.3902749999834,
+    "actions": 7,
+    "modelActions": 7,
+    "policyActions": 0,
+    "modelCalls": 7,
+    "inputTokens": 7495,
+    "outputTokens": 1195,
+    "estimatedModelUsd": 0.00031479,
+    "authorizedAgeConfirmations": 1,
+    "ageConfirmationMs": 1207.6605819999968,
+    "productOpenRollbacks": 0
+  },
+  "browserLaunchMs": 77.7970589999968,
+  "usageComplete": true,
+  "cost": {
+    "estimatedModelUsd": 0.00031479,
+    "costPerVerifiedSuccessUsd": 0.00031479,
+    "note": "Single verified success with complete recorded model usage; excludes infrastructure and operator time."
+  },
+  "blockedMutations": {
+    "recordedCount": 0,
+    "diagnosticEventCount": 0,
+    "hasDiagnosticEvents": false,
+    "undetailedRequestCount": 0,
+    "aggregateMatchesDiagnosticCount": true,
+    "byMethod": {},
+    "byEndpointClass": {},
+    "byEndpointTemplate": {},
+    "withoutEndpointTemplateCount": 0,
+    "byActionSequenceAndType": [],
+    "byCompletedStepOutcome": [
+      {
+        "outcome": "age_confirmation_dismissed",
+        "completedSteps": 1,
+        "completedStepsWithBlockedRequests": 0,
+        "blockedRequests": 0
+      },
+      {
+        "outcome": "completion_verified",
+        "completedSteps": 1,
+        "completedStepsWithBlockedRequests": 0,
+        "blockedRequests": 0
+      },
+      {
+        "outcome": "page_changed",
+        "completedSteps": 6,
+        "completedStepsWithBlockedRequests": 0,
+        "blockedRequests": 0
+      }
+    ],
+    "causalLinkEstablished": false
+  },
+  "completedSteps": [
+    {
+      "actionSequence": 1,
+      "actionType": "fill",
+      "outcome": "page_changed",
+      "elapsedMs": 2472.005530000002,
+      "actionAndWaitMs": 826.595183999998,
+      "modelMs": 249.54073599999538,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 2,
+      "actionType": "press",
+      "outcome": "page_changed",
+      "elapsedMs": 4087.371113000001,
+      "actionAndWaitMs": 1300.3338969999968,
+      "modelMs": 274.6663649999973,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 3,
+      "actionType": "click",
+      "outcome": "page_changed",
+      "elapsedMs": 5781.425090000004,
+      "actionAndWaitMs": 1417.1070489999984,
+      "modelMs": 237.96995500000048,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 4,
+      "actionType": "fill",
+      "outcome": "page_changed",
+      "elapsedMs": 7639.629583000002,
+      "actionAndWaitMs": 1504.3749339999995,
+      "modelMs": 282.3342809999958,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 5,
+      "actionType": "click",
+      "outcome": "page_changed",
+      "elapsedMs": 8935.325264,
+      "actionAndWaitMs": 1006.529423,
+      "modelMs": 243.69628199999715,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 6,
+      "actionType": "authorized_site_confirmation",
+      "outcome": "age_confirmation_dismissed",
+      "elapsedMs": 10172.518296000002,
+      "actionAndWaitMs": 1207.662003999998,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 7,
+      "actionType": "click",
+      "outcome": "page_changed",
+      "elapsedMs": 12543.323167000002,
+      "actionAndWaitMs": 2084.419514999994,
+      "modelMs": 238.92377100000158,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 8,
+      "actionType": "click",
+      "outcome": "completion_verified",
+      "elapsedMs": 13225.677670000005,
+      "actionAndWaitMs": 336.2284329999966,
+      "modelMs": 263.54138200000307,
+      "productTransition": {
+        "targetIdsAfterExecute": true,
+        "targetIdsObservedDuringWait": true,
+        "targetIdsObservedInNavigation": true,
+        "targetIdsAfterWait": true,
+        "visibleExactTitleAfterWait": true
+      },
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    }
+  ],
+  "methodology": {
+    "scope": "Offline allowlist summary of one saved journal; no browser or API calls.",
+    "correlation": "Blocked requests are joined only by their recorded actionSequence to completed steps and recorded outcomes. Association during an action/observation is correlation, not evidence that a blocked request caused an outcome or rollback.",
+    "missingEvidence": "Legacy aggregate counts cannot be attributed. Missing action sequence is unattributed; a recorded sequence without a completed step is no_completed_step. Missing recorded outcomes are unrecorded; they are not inferred from private page data.",
+    "metrics": "Metrics are copied from allowlisted numeric fields. browserLaunchMs is separate from navigation totalMs and null when unrecorded. browserMs is a residual including non-browser overhead; startPageMs and ageConfirmationMs overlap other totals. Missing booleans are null, not false.",
+    "privacy": "Only fixed enum labels, numeric metrics/counts/sequences, verification booleans, SHA-256 digests and independently sanitized endpoint templates are emitted. Templates retain at most 24 fixed allowlisted path literals; all other segments become :segment. Hosts, queries, raw URLs, names, labels, account values, IDs, request data, headers and bodies are omitted.",
+    "limitations": "One journal does not establish a success rate, successful-run speedup, or causal effect. Cost per success is unavailable on failed runs."
+  }
+}

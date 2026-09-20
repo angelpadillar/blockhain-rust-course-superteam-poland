@@ -1,0 +1,206 @@
+{
+  "attempt": 20,
+  "suite": "semantic_guidance",
+  "caseId": "semantic-context",
+  "repeat": 2,
+  "mode": "fast",
+  "guide": "openrouter-dom",
+  "planner": "none_fixed_task",
+  "status": "completed",
+  "events": [
+    {
+      "type": "started",
+      "elapsedMs": 5.483416000002762,
+      "mode": "fast"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 36.63233300000138,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 48.376625000004424,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000194,
+        "latencyMs": 1676.0742080000055,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000194,
+        "inputTokens": 158,
+        "outputTokens": 9,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 1746.3994999999995,
+      "kind": "click",
+      "ref": "s3:e2"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 1798.9093330000032,
+      "kind": "click",
+      "ref": "s3:e2"
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 1820.5196660000074,
+      "independentlyVerified": false
+    }
+  ],
+  "contextSetupMs": 162.94066599999496,
+  "planningMs": 0.6711249999934807,
+  "navigationMs": 18.592957999993814,
+  "goal": "Find Copper Finch Notebook from the shelf for creative studio work and open its details.",
+  "compiledTask": {
+    "query": "Copper Finch",
+    "targetText": "Copper Finch Notebook",
+    "context": "the shelf for creative studio work"
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000194,
+        "latencyMs": 1676.0742080000055,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000194,
+        "inputTokens": 158,
+        "outputTokens": 9,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 1676.0742080000055,
+    "inputTokens": 158,
+    "outputTokens": 9,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0000194,
+    "knownCostUsd": 0.0000194,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "runtime": {
+    "status": "opened",
+    "reason": null,
+    "metrics": {
+      "totalMs": 1825.7329580000078,
+      "observationMs": 49.82908400001179,
+      "executionMs": 46.058333999986644,
+      "conditionWaitMs": 23.721249999987776,
+      "settlingMs": 0,
+      "chooserMs": 1687.7059160000063,
+      "eventMs": 24.29574999999022,
+      "explicitProtocolCalls": 25,
+      "observations": 3,
+      "revalidations": 2,
+      "browserScans": 5,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 2,
+      "nativeActionsCompleted": 2,
+      "fillAttempts": 1,
+      "pressAttempts": 0,
+      "clickAttempts": 1,
+      "chooserCalls": 1,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:52852/items/5c71dd0d2fa786f81338",
+      "title": "Copper Finch Notebook"
+    },
+    "events": [
+      {
+        "type": "started",
+        "elapsedMs": 5.483416000002762,
+        "mode": "fast"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 36.63233300000138,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 48.376625000004424,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 1746.3994999999995,
+        "kind": "click",
+        "ref": "s3:e2"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 1798.9093330000032,
+        "kind": "click",
+        "ref": "s3:e2"
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 1820.5196660000074,
+        "independentlyVerified": false
+      }
+    ],
+    "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+    "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+  },
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "exactCollection": true
+    }
+  },
+  "verifiedSuccess": true,
+  "reason": null,
+  "totalMs": 1845.0069999999978
+}

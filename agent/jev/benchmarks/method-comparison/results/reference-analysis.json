@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "journalSha256": "3e5b15afaf652e0f1332b7f7b898caba5a26aee6ffb6b1aa76eee9aec560a5e0",
+  "recordedSourceSha256": "678b6511ceca19252e90f4de609ed1cbae9f828bbe57a15566635f39012a6df6",
+  "outcome": {
+    "status": "incomplete",
+    "reason": "step_limit",
+    "independentVerificationPassed": false,
+    "checks": {
+      "store": true,
+      "productId": false,
+      "externalProductId": false,
+      "visibleProduct": false
+    }
+  },
+  "recordedMetrics": {
+    "totalMs": 41432.03948199999,
+    "startPageMs": 1495.2299860000003,
+    "modelMs": 5047.167138999997,
+    "browserMs": 35017.437315000025,
+    "journalMs": 1367.4350279999726,
+    "actions": 19,
+    "modelActions": 19,
+    "policyActions": 0,
+    "modelCalls": 19,
+    "inputTokens": 26446,
+    "outputTokens": 3773,
+    "estimatedModelUsd": 0.001110732,
+    "authorizedAgeConfirmations": 1,
+    "ageConfirmationMs": 1212.5119640000012
+  },
+  "completedActionCounts": {
+    "authorized_confirmation": 1,
+    "category": 7,
+    "link": 1,
+    "product": 6,
+    "search_fill": 3,
+    "search_submit": 2
+  },
+  "timing": {
+    "postActionTotals": {
+      "recordedActionAndWaitMs": 33748.97,
+      "recordedModelLatencyMs": 5046.682,
+      "reconstructedActionExecutionMs": 1333.698,
+      "reconstructedReadinessMs": 32199.428,
+      "interveningJournalMs": 215.844
+    },
+    "byActionKind": {
+      "authorized_confirmation": {
+        "count": 1,
+        "recordedActionAndWaitMs": 1212.525,
+        "recordedModelLatencyMs": 0,
+        "reconstructedActionExecutionMs": 80.9,
+        "reconstructedReadinessMs": 1118.541,
+        "interveningJournalMs": 13.084
+      },
+      "category": {
+        "count": 7,
+        "recordedActionAndWaitMs": 9421.868,
+        "recordedModelLatencyMs": 1772.593,
+        "reconstructedActionExecutionMs": 323.697,
+        "reconstructedReadinessMs": 9027.498,
+        "interveningJournalMs": 70.674
+      },
+      "link": {
+        "count": 1,
+        "recordedActionAndWaitMs": 1541.138,
+        "recordedModelLatencyMs": 211.448,
+        "reconstructedActionExecutionMs": 48.468,
+        "reconstructedReadinessMs": 1483.526,
+        "interveningJournalMs": 9.144
+      },
+      "product": {
+        "count": 6,
+        "recordedActionAndWaitMs": 15618.825,
+        "recordedModelLatencyMs": 1526.625,
+        "reconstructedActionExecutionMs": 745.0,
+        "reconstructedReadinessMs": 14798.11,
+        "interveningJournalMs": 75.716
+      },
+      "search_fill": {
+        "count": 3,
+        "recordedActionAndWaitMs": 3828.191,
+        "recordedModelLatencyMs": 1064.688,
+        "reconstructedActionExecutionMs": 100.956,
+        "reconstructedReadinessMs": 3698.597,
+        "interveningJournalMs": 28.638
+      },
+      "search_submit": {
+        "count": 2,
+        "recordedActionAndWaitMs": 2126.422,
+        "recordedModelLatencyMs": 471.329,
+        "reconstructedActionExecutionMs": 34.678,
+        "reconstructedReadinessMs": 2073.156,
+        "interveningJournalMs": 18.589
+      }
+    },
+    "medianRecordedModelLatencyMs": 244.546,
+    "firstSettledTargetCategory": {
+      "step": 7,
+      "elapsedMs": 13022.97
+    },
+    "elapsedAfterFirstSettledTargetCategoryMs": 28409.069,
+    "categoryClicksAfterFirstSettledTargetCategory": 5
+  },
+  "productEvidence": {
+    "clicks": 6,
+    "correctIdsImmediatelyAfterClick": 6,
+    "observedUrlRollbacks": 6,
+    "settledVisibleExactTitles": 0
+  },
+  "blockedMutations": {
+    "recordedCount": 24,
+    "requestTimingOrEndpointEvidenceAvailable": false,
+    "causalLinkToProductRollbackEstablished": false
+  },
+  "implementationDerivedStabilityFloor": {
+    "knownReferenceSource": true,
+    "readinessCallsInCompletedPath": 21,
+    "perCallFloorMs": 700,
+    "minimumCombinedSettlingMs": 14700,
+    "additionalToRecordedTime": false
+  },
+  "steps": [
+    {
+      "step": 1,
+      "kind": "search_fill",
+      "completedElapsedMs": 2947.083,
+      "recordedActionAndWaitMs": 833.777,
+      "recordedModelLatencyMs": 575.666,
+      "reconstructedActionExecutionMs": 38.599,
+      "reconstructedReadinessMs": 786.315,
+      "interveningJournalMs": 8.863
+    },
+    {
+      "step": 2,
+      "kind": "search_submit",
+      "completedElapsedMs": 4563.995,
+      "recordedActionAndWaitMs": 1297.022,
+      "recordedModelLatencyMs": 256.784,
+      "reconstructedActionExecutionMs": 18.746,
+      "reconstructedReadinessMs": 1269.269,
+      "interveningJournalMs": 9.007
+    },
+    {
+      "step": 3,
+      "kind": "link",
+      "completedElapsedMs": 6356.564,
+      "recordedActionAndWaitMs": 1541.138,
+      "recordedModelLatencyMs": 211.448,
+      "reconstructedActionExecutionMs": 48.468,
+      "reconstructedReadinessMs": 1483.526,
+      "interveningJournalMs": 9.144
+    },
+    {
+      "step": 4,
+      "kind": "search_fill",
+      "completedElapsedMs": 8130.032,
+      "recordedActionAndWaitMs": 1495.999,
+      "recordedModelLatencyMs": 218.245,
+      "reconstructedActionExecutionMs": 28.241,
+      "reconstructedReadinessMs": 1457.459,
+      "interveningJournalMs": 10.299
+    },
+    {
+      "step": 5,
+      "kind": "category",
+      "completedElapsedMs": 9406.86,
+      "recordedActionAndWaitMs": 1002.572,
+      "recordedModelLatencyMs": 226.802,
+      "reconstructedActionExecutionMs": 42.629,
+      "reconstructedReadinessMs": 949.269,
+      "interveningJournalMs": 10.675
+    },
+    {
+      "step": 6,
+      "kind": "authorized_confirmation",
+      "completedElapsedMs": 10680.401,
+      "recordedActionAndWaitMs": 1212.525,
+      "recordedModelLatencyMs": 0,
+      "reconstructedActionExecutionMs": 80.9,
+      "reconstructedReadinessMs": 1118.541,
+      "interveningJournalMs": 13.084
+    },
+    {
+      "step": 7,
+      "kind": "category",
+      "completedElapsedMs": 13022.97,
+      "recordedActionAndWaitMs": 2051.565,
+      "recordedModelLatencyMs": 241.247,
+      "reconstructedActionExecutionMs": 69.649,
+      "reconstructedReadinessMs": 1972.974,
+      "interveningJournalMs": 8.943
+    },
+    {
+      "step": 8,
+      "kind": "product",
+      "completedElapsedMs": 15905.26,
+      "recordedActionAndWaitMs": 2580.052,
+      "recordedModelLatencyMs": 248.252,
+      "reconstructedActionExecutionMs": 122.957,
+      "reconstructedReadinessMs": 2437.017,
+      "interveningJournalMs": 20.078,
+      "productTransition": {
+        "plannedWithTargetIds": false,
+        "executedWithTargetIds": true,
+        "executedInTargetStore": true,
+        "settledWithTargetIds": false,
+        "settledWithVisibleExactTitle": false,
+        "settledInTargetCategory": true,
+        "observedUrlRollback": true
+      }
+    },
+    {
+      "step": 9,
+      "kind": "product",
+      "completedElapsedMs": 18732.211,
+      "recordedActionAndWaitMs": 2556.99,
+      "recordedModelLatencyMs": 225.162,
+      "reconstructedActionExecutionMs": 112.613,
+      "reconstructedReadinessMs": 2434.838,
+      "interveningJournalMs": 9.538,
+      "productTransition": {
+        "plannedWithTargetIds": false,
+        "executedWithTargetIds": true,
+        "executedInTargetStore": true,
+        "settledWithTargetIds": false,
+        "settledWithVisibleExactTitle": false,
+        "settledInTargetCategory": true,
+        "observedUrlRollback": true
+      }
+    },
+    {
+      "step": 10,
+      "kind": "category",
+      "completedElapsedMs": 20461.489,
+      "recordedActionAndWaitMs": 1393.406,
+      "recordedModelLatencyMs": 245.582,
+      "reconstructedActionExecutionMs": 37.273,
+      "reconstructedReadinessMs": 1347.049,
+      "interveningJournalMs": 9.084
+    },
+    {
+      "step": 11,
+      "kind": "product",
+      "completedElapsedMs": 23348.466,
+      "recordedActionAndWaitMs": 2572.668,
+      "recordedModelLatencyMs": 252.286,
+      "reconstructedActionExecutionMs": 112.623,
+      "reconstructedReadinessMs": 2447.674,
+      "interveningJournalMs": 12.372,
+      "productTransition": {
+        "plannedWithTargetIds": false,
+        "executedWithTargetIds": true,
+        "executedInTargetStore": true,
+        "settledWithTargetIds": false,
+        "settledWithVisibleExactTitle": false,
+        "settledInTargetCategory": true,
+        "observedUrlRollback": true
+      }
+    },
+    {
+      "step": 12,
+      "kind": "product",
+      "completedElapsedMs": 26252.895,
+      "recordedActionAndWaitMs": 2602.245,
+      "recordedModelLatencyMs": 244.546,
+      "reconstructedActionExecutionMs": 160.256,
+      "reconstructedReadinessMs": 2432.75,
+      "interveningJournalMs": 9.238,
+      "productTransition": {
+        "plannedWithTargetIds": false,
+        "executedWithTargetIds": true,
+        "executedInTargetStore": true,
+        "settledWithTargetIds": false,
+        "settledWithVisibleExactTitle": false,
+        "settledInTargetCategory": true,
+        "observedUrlRollback": true
+      }
+    },
+    {
+      "step": 13,
+      "kind": "category",
+      "completedElapsedMs": 27646.104,
+      "recordedActionAndWaitMs": 1072.764,
+      "recordedModelLatencyMs": 278.81,
+      "reconstructedActionExecutionMs": 31.764,
+      "reconstructedReadinessMs": 1027.15,
+      "interveningJournalMs": 13.849
+    },
+    {
+      "step": 14,
+      "kind": "category",
+      "completedElapsedMs": 29370.793,
+      "recordedActionAndWaitMs": 1408.115,
+      "recordedModelLatencyMs": 243.338,
+      "reconstructedActionExecutionMs": 41.69,
+      "reconstructedReadinessMs": 1357.072,
+      "interveningJournalMs": 9.353
+    },
+    {
+      "step": 15,
+      "kind": "category",
+      "completedElapsedMs": 30797.795,
+      "recordedActionAndWaitMs": 1075.309,
+      "recordedModelLatencyMs": 294.411,
+      "reconstructedActionExecutionMs": 47.952,
+      "reconstructedReadinessMs": 1018.007,
+      "interveningJournalMs": 9.351
+    },
+    {
+      "step": 16,
+      "kind": "category",
+      "completedElapsedMs": 32507.271,
+      "recordedActionAndWaitMs": 1418.137,
+      "recordedModelLatencyMs": 242.402,
+      "reconstructedActionExecutionMs": 52.741,
+      "reconstructedReadinessMs": 1355.977,
+      "interveningJournalMs": 9.419
+    },
+    {
+      "step": 17,
+      "kind": "product",
+      "completedElapsedMs": 35393.747,
+      "recordedActionAndWaitMs": 2568.075,
+      "recordedModelLatencyMs": 230.152,
+      "reconstructedActionExecutionMs": 113.963,
+      "reconstructedReadinessMs": 2438.755,
+      "interveningJournalMs": 15.357,
+      "productTransition": {
+        "plannedWithTargetIds": false,
+        "executedWithTargetIds": true,
+        "executedInTargetStore": true,
+        "settledWithTargetIds": false,
+        "settledWithVisibleExactTitle": false,
+        "settledInTargetCategory": true,
+        "observedUrlRollback": true
+      }
+    },
+    {
+      "step": 18,
+      "kind": "product",
+      "completedElapsedMs": 38511.223,
+      "recordedActionAndWaitMs": 2738.796,
+      "recordedModelLatencyMs": 326.227,
+      "reconstructedActionExecutionMs": 122.588,
+      "reconstructedReadinessMs": 2607.075,
+      "interveningJournalMs": 9.133,
+      "productTransition": {
+        "plannedWithTargetIds": false,
+        "executedWithTargetIds": true,
+        "executedInTargetStore": true,
+        "settledWithTargetIds": false,
+        "settledWithVisibleExactTitle": false,
+        "settledInTargetCategory": true,
+        "observedUrlRollback": true
+      }
+    },
+    {
+      "step": 19,
+      "kind": "search_fill",
+      "completedElapsedMs": 40326.793,
+      "recordedActionAndWaitMs": 1498.415,
+      "recordedModelLatencyMs": 270.776,
+      "reconstructedActionExecutionMs": 34.116,
+      "reconstructedReadinessMs": 1454.823,
+      "interveningJournalMs": 9.476
+    },
+    {
+      "step": 20,
+      "kind": "search_submit",
+      "completedElapsedMs": 41414.3,
+      "recordedActionAndWaitMs": 829.4,
+      "recordedModelLatencyMs": 214.545,
+      "reconstructedActionExecutionMs": 15.931,
+      "reconstructedReadinessMs": 803.888,
+      "interveningJournalMs": 9.581
+    }
+  ],
+  "methodology": {
+    "scope": "Offline saved-journal analysis; no browser, server or API calls.",
+    "recordedMetrics": "Copied numeric metrics. browserMs is totalMs minus modelMs minus journalMs, so it includes non-browser overhead. startPageMs and ageConfirmationMs overlap these totals.",
+    "reconstruction": "For each paired planned/executed/completed action: actionStart = completed.elapsedMs - entry.actionAndWaitMs; actionExecution = executed.elapsedMs - actionStart; readiness = completed.elapsedMs - executed.elapsedMs - (completed.metrics.journalMs - executed.metrics.journalMs). Small bookkeeping overhead remains.",
+    "postActionCoverage": "Reconstructed readiness excludes initial homepage readiness. Reconstructed action execution includes revalidation and local overhead. Recorded actionAndWaitMs includes the intervening journal write.",
+    "rollback": "Both expected product IDs were present at action_executed but absent at step_completed in the same store. This proves an observed URL transition and rollback, not the cause or whether a title appeared transiently between observations.",
+    "stabilityFloor": "Derived from the known reference source's 700 ms stable-observation requirement, once for initial readiness and once per completed action. This is an implementation lower bound, not measured sleep duration; it is included in recorded time. Unknown source hashes receive no floor estimate.",
+    "blockedMutations": "Only an aggregate blocked request count was saved. Requests cannot be attributed to actions, endpoints or rollbacks; the count is non-causal evidence.",
+    "privacy": "Only numeric metrics, fixed enum labels, verification booleans and SHA-256 digests are emitted. Raw URLs, product/store names, page text, addresses, account values, control labels, payloads and headers are omitted.",
+    "limitations": "One incomplete run. This is not a successful-run latency, causal experiment, browser speedup estimate or success-rate comparison."
+  }
+}

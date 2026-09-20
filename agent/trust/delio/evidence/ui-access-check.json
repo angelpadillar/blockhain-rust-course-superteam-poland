@@ -1,0 +1,68 @@
+{
+  "recordedAt": "2026-09-19T09:40:43.573007+00:00",
+  "verification": "Authenticated local UI to controller to restored private worker; correct blockers rendered",
+  "localInterface": "http://127.0.0.1:4319/",
+  "merchantStatus": "blocked",
+  "blockers": [
+    {
+      "code": "merchant_login_required",
+      "message": "Delio displays a sign-in control. An authenticated owner session is not established."
+    },
+    {
+      "code": "delivery_confirmation_unverified",
+      "message": "The exact address candidate and postcode were observed, but native address confirmation did not complete. Manual confirmation is required; coverage and delivery slot remain unverified."
+    },
+    {
+      "code": "delivery_address_required",
+      "message": "Delio requests a delivery address. The exact address and delivery slot are not yet verified."
+    },
+    {
+      "code": "cart_operations_not_calibrated",
+      "message": "Account cart reading, cart edits and checkout quotation are not yet calibrated against an authenticated merchant page."
+    }
+  ],
+  "capabilities": {
+    "observeCart": false,
+    "mutateCart": false,
+    "quote": false
+  },
+  "attempts": [
+    {
+      "operation": "observeCart",
+      "outcome": "uncertain_or_failed",
+      "runtimeMs": 386,
+      "modelCalls": {
+        "status": "known",
+        "value": 0
+      },
+      "cost": {
+        "status": "unknown",
+        "amountUsd": null
+      }
+    },
+    {
+      "operation": "observeCart",
+      "outcome": "not_dispatched",
+      "runtimeMs": 377,
+      "modelCalls": {
+        "status": "known",
+        "value": 0
+      },
+      "cost": {
+        "status": "known",
+        "amountUsd": 0
+      }
+    }
+  ],
+  "controllerAttemptRuntimeMs": 763,
+  "verifiedCheckoutQuotes": 0,
+  "cartMutations": 0,
+  "smsPurchases": 0,
+  "merchantOrders": 0,
+  "notes": [
+    "The first attempt exposed a client exit-code integration bug and remains recorded as uncertain.",
+    "After the fix, a valid merchant blocker is application data rather than a transport failure.",
+    "Controller timings are separate from diagnostic probe totals; this is not a successful checkout benchmark.",
+    "No delivery address, phone, OTP or credential is included."
+  ]
+}

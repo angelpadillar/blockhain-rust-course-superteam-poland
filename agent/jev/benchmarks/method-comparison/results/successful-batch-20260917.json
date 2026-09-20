@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "runCount": 3,
+  "statusCounts": {
+    "reached_target": 3
+  },
+  "verifiedSuccessCount": 3,
+  "sourceHashes": {
+    "knownCount": 3,
+    "allRunsHaveHash": true,
+    "consistent": true,
+    "distinct": [
+      "bc6cb6125007d2b18af7e8297668f5e60c09cb704b2523e5f1c4118d960f1e7a"
+    ]
+  },
+  "navigationTimeMs": {
+    "sampleCount": 3,
+    "total": 40730.84754999999,
+    "mean": 13576.94918333333,
+    "median": 13588.668836999997,
+    "range": [
+      13245.442868999999,
+      13896.735843999999
+    ]
+  },
+  "browserLaunchTimeMs": {
+    "sampleCount": 3,
+    "total": 368.2205059999942,
+    "mean": 122.74016866666473,
+    "median": 81.68757699999696,
+    "range": [
+      77.7970589999968,
+      208.73587000000043
+    ]
+  },
+  "modelTimeMs": {
+    "sampleCount": 3,
+    "total": 5921.355745000001,
+    "mean": 1973.7852483333336,
+    "median": 1915.6958799999993,
+    "range": [
+      1790.795143000003,
+      2214.8647219999984
+    ]
+  },
+  "modelCalls": {
+    "sampleCount": 3,
+    "total": 21,
+    "mean": 7.0,
+    "median": 7,
+    "range": [
+      7,
+      7
+    ]
+  },
+  "modelUsage": {
+    "completeRunCount": 3,
+    "allRunsComplete": true,
+    "inputTokens": {
+      "sampleCount": 3,
+      "total": 22485,
+      "mean": 7495.0,
+      "median": 7495,
+      "range": [
+        7495,
+        7495
+      ]
+    },
+    "outputTokens": {
+      "sampleCount": 3,
+      "total": 3585,
+      "mean": 1195.0,
+      "median": 1195,
+      "range": [
+        1195,
+        1195
+      ]
+    }
+  },
+  "modelCostUsd": {
+    "sampleCount": 3,
+    "total": 0.00094437,
+    "mean": 0.00031479,
+    "median": 0.00031479,
+    "range": [
+      0.00031479,
+      0.00031479
+    ],
+    "allRunCostsAndUsageComplete": true,
+    "totalCostPerVerifiedSuccess": 0.00031479
+  },
+  "runs": [
+    {
+      "run": 1,
+      "status": "reached_target",
+      "verifiedSuccess": true,
+      "usageComplete": true,
+      "browserLaunchMs": 208.73587000000043,
+      "totalMs": 13896.735843999999,
+      "modelMs": 2214.8647219999984,
+      "modelCalls": 7,
+      "estimatedModelUsd": 0.00031479,
+      "inputTokens": 7495,
+      "outputTokens": 1195
+    },
+    {
+      "run": 2,
+      "status": "reached_target",
+      "verifiedSuccess": true,
+      "usageComplete": true,
+      "browserLaunchMs": 81.68757699999696,
+      "totalMs": 13588.668836999997,
+      "modelMs": 1915.6958799999993,
+      "modelCalls": 7,
+      "estimatedModelUsd": 0.00031479,
+      "inputTokens": 7495,
+      "outputTokens": 1195
+    },
+    {
+      "run": 3,
+      "status": "reached_target",
+      "verifiedSuccess": true,
+      "usageComplete": true,
+      "browserLaunchMs": 77.7970589999968,
+      "totalMs": 13245.442868999999,
+      "modelMs": 1790.795143000003,
+      "modelCalls": 7,
+      "estimatedModelUsd": 0.00031479,
+      "inputTokens": 7495,
+      "outputTokens": 1195
+    }
+  ],
+  "methodology": {
+    "scope": "Offline aggregation of explicit saved public summaries; no live browser or API calls.",
+    "timing": "Navigation time is recorded totalMs, from homepage navigation through verification including journal writes. Browser launch is reported separately and is never inferred or added to navigation time. Missing values remain null; each statistic reports its available sample count.",
+    "cost": "Estimated model API costs only, excluding infrastructure, setup and operator time. Total cost per verified success divides all included attempt costs by verified successes, and is unavailable with no verified success or incomplete cost/usage evidence.",
+    "verification": "A verified success requires recorded reached_target status and an explicitly true independent verification result.",
+    "privacy": "Only fixed status labels, numeric values, booleans and validated source SHA-256 hashes are retained. Input paths, journal identifiers, URLs, names, labels, account values and request data are omitted.",
+    "limitations": "This small sample of the recorded task does not establish a general success rate or cold-session performance. No Astra head-to-head benchmark is contained here; these results do not establish an Astra speedup or a causal comparison."
+  }
+}

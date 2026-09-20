@@ -1,0 +1,57 @@
+{
+  "scope": "Synthetic development decisions, not held out, no browser actions",
+  "reports": [
+    {
+      "file": "prompt-development-20260917T085251Z.json",
+      "candidateSha256": "c93da771a17ef45bd82a9381ae2850f698de49207c833113b109e2db615ce184",
+      "summary": {
+        "candidate-v1": {
+          "passed": 22,
+          "n": 24,
+          "medianMs": 257.8295834991877,
+          "inputTokens": 37426,
+          "estimatedJevUsd": 0.001571892,
+          "models": [
+            "jev-1.13.0"
+          ]
+        },
+        "stock": {
+          "passed": 21,
+          "n": 24,
+          "medianMs": 262.64849949984637,
+          "inputTokens": 31204,
+          "estimatedJevUsd": 0.001310568,
+          "models": [
+            "jev-1.13.0"
+          ]
+        }
+      }
+    },
+    {
+      "file": "prompt-development-20260917T085451Z.json",
+      "candidateSha256": "586a98b43e91d4c285aa06c3d02d66293c8b231b9f580a65684de56ba95b7af7",
+      "summary": {
+        "candidate-v2": {
+          "passed": 24,
+          "n": 24,
+          "medianMs": 282.33335400182114,
+          "inputTokens": 41638,
+          "estimatedJevUsd": 0.001748796,
+          "models": [
+            "jev-1.13.0"
+          ]
+        },
+        "stock": {
+          "passed": 22,
+          "n": 24,
+          "medianMs": 295.73660399910295,
+          "inputTokens": 31204,
+          "estimatedJevUsd": 0.001310568,
+          "models": [
+            "jev-1.13.0"
+          ]
+        }
+      }
+    }
+  ]
+}

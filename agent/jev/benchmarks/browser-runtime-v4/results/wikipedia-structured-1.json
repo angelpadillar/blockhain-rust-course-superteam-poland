@@ -1,0 +1,439 @@
+{
+  "version": 4,
+  "startedAt": "2026-09-17T12:45:12.931Z",
+  "status": "incomplete",
+  "reason": "forbidden_request",
+  "guide": "none",
+  "goal": "From the main search results, find Black hole and open its article.",
+  "startUrl": "https://en.wikipedia.org/w/index.php?title=Special:Search&search=astronomy&fulltext=1",
+  "events": [
+    {
+      "plannedSteps": 1,
+      "type": "workflow_started",
+      "elapsedMs": 0.4932499999999891
+    },
+    {
+      "step": 1,
+      "operation": "search_and_open",
+      "targetText": "Black hole",
+      "type": "step_started",
+      "elapsedMs": 4.933457999999973
+    }
+  ],
+  "guard": {
+    "blockedRequests": 0,
+    "observedForbiddenRequests": 1,
+    "requestObservations": [
+      {
+        "method": "POST",
+        "resourceType": "other",
+        "navigation": false,
+        "origin": "https://en.wikipedia.org",
+        "pathname": "/ins-502b/v2/events"
+      }
+    ]
+  },
+  "verifiedSuccess": false,
+  "verification": {
+    "requested": true,
+    "urlMatches": false,
+    "titleMatches": false,
+    "passed": false
+  },
+  "limits": {
+    "maxCalls": 6,
+    "maxUsd": 0.01,
+    "maxRuntimeMs": 30000,
+    "maxActions": 12,
+    "maxAttemptMs": 45000
+  },
+  "scope": "Native search followed by a newly observed exact result link. Opened is not independently verified unless external checks pass.",
+  "timingScope": "Task total overlaps planning and initial navigation; browser/context setup, credential access and cleanup are separate. Nested runtime times may overlap.",
+  "costScope": "OpenRouter account charge plus estimated Jev tokens; excludes browser infrastructure and unreported upstream charges.",
+  "sourceSha256": "604d5f5098ccd89557f41cf5d1e5e16269b6ddbd5861bd3b0e0e36aa83cbb589",
+  "sourceFiles": [
+    "session.mjs",
+    "search.mjs",
+    "../browser-runtime-v3/browser.mjs",
+    "../browser-runtime-v3/providers.mjs",
+    "../browser-runtime-v3/planner.mjs",
+    "../browser-runtime-v3/credentials.mjs",
+    "../../src/jev.mjs",
+    "../../src/storage.mjs",
+    "../../src/glovo.mjs",
+    "../../src/config.mjs",
+    "../../src/policy.mjs",
+    "../../src/dom.mjs",
+    "../../package.json",
+    "../../package-lock.json"
+  ],
+  "browserLaunchMs": 657.144125,
+  "browserVersion": "153.0.8010.48",
+  "contextSetupMs": 245.73570899999993,
+  "compiledTask": {
+    "steps": [
+      {
+        "operation": "search_and_open",
+        "query": "Black hole",
+        "targetText": "Black hole",
+        "context": "main"
+      }
+    ]
+  },
+  "planningMs": 4.374665999999934,
+  "initialNavigationMs": 932.7191659999999,
+  "runtime": {
+    "status": "incomplete",
+    "reason": "forbidden_request",
+    "failedStep": 1,
+    "steps": [
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Black hole",
+        "status": "incomplete",
+        "reason": "forbidden_request",
+        "evidence": null,
+        "metrics": {
+          "totalMs": 142.95795899999985,
+          "observationMs": 136.6282500000002,
+          "executionMs": 0,
+          "conditionWaitMs": 0,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0,
+          "explicitProtocolCalls": 5,
+          "observations": 1,
+          "revalidations": 0,
+          "browserScans": 1,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 0,
+          "nativeActionsCompleted": 0,
+          "fillAttempts": 0,
+          "pressAttempts": 0,
+          "clickAttempts": 0,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "runtimeStatus": "incomplete"
+      }
+    ],
+    "metrics": {
+      "totalMs": 147.98091699999986,
+      "observationMs": 136.6282500000002,
+      "executionMs": 0,
+      "conditionWaitMs": 0,
+      "settlingMs": 0,
+      "chooserMs": 0,
+      "eventMs": 8.048749999999472,
+      "explicitProtocolCalls": 14,
+      "observations": 1,
+      "revalidations": 0,
+      "browserScans": 1,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 0,
+      "nativeActionsCompleted": 0,
+      "fillAttempts": 0,
+      "pressAttempts": 0,
+      "clickAttempts": 0,
+      "chooserCalls": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 1
+    },
+    "final": {
+      "url": "https://en.wikipedia.org/w/index.php?title=Special:Search&search=astronomy&fulltext=1&ns0=1",
+      "title": "astronomy - Search results - Wikipedia"
+    },
+    "events": [
+      {
+        "plannedSteps": 1,
+        "type": "workflow_started",
+        "elapsedMs": 0.4932499999999891
+      },
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Black hole",
+        "type": "step_started",
+        "elapsedMs": 4.933457999999973
+      }
+    ],
+    "escalation": {
+      "reason": "forbidden_request",
+      "failedStep": 1,
+      "permittedContext": {
+        "origin": "https://en.wikipedia.org",
+        "title": "astronomy - Search results - Wikipedia",
+        "requestedStep": {
+          "operation": "search_and_open",
+          "query": "Black hole",
+          "targetText": "Black hole",
+          "context": "main"
+        },
+        "permittedOperations": [
+          "search_and_open",
+          "open_link"
+        ],
+        "controls": [
+          {
+            "what": "Jump to content",
+            "role": "link",
+            "where": [],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Search",
+            "role": "link",
+            "where": [
+              "search"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Help",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Search",
+            "role": "searchbox",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "fill",
+              "press"
+            ]
+          },
+          {
+            "what": "Next page",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Astronomy",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "History of astronomy",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Astronomy (disambiguation)",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Sun",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Sun (astronomy)",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Radio astronomy",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Video astronomy",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Barycenter (astronomy)",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Epoch (astronomy)",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Babylonian astronomy",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Milky Way",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Milky Way (astronomy)",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Astronomy & Astrophysics",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Patronage in astronomy",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Solar System",
+            "role": "link",
+            "where": [
+              "main"
+            ],
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "independentlyVerified": false
+      },
+      "completedSteps": [],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "scope": "At most four compiled native search/open or exact-link steps; each requires a changed URL and an observed exact target heading. Completion is not independent task verification.",
+    "metricScope": "Counters add explicit wrapper and v3 operations; internal Playwright traffic is excluded. Observation includes browser waits, and condition/event/request timing can overlap. Journal event time is recorded at workflow level, not added again to step eventMs. No fixed inter-step settling or model calls are added.",
+    "workflowStatus": "incomplete"
+  },
+  "final": {
+    "url": "https://en.wikipedia.org/w/index.php?title=Special:Search&search=astronomy&fulltext=1&ns0=1",
+    "title": "astronomy - Search results - Wikipedia"
+  },
+  "totalMs": 1092.5897909999999,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "cleanupStatus": "completed",
+  "cleanupMs": 113.18479099999968,
+  "sourceUnchanged": true,
+  "smokeSourceUnchanged": true,
+  "receiptType": "public_site_smoke",
+  "attempt": 1,
+  "plannedAttempts": 1,
+  "smokeSourceSha256": "088f8a7e728a1427ae61c15516247b3e559d671afee9836852cc692f87be4350",
+  "smokeSourceHashes": {
+    "public-smoke.mjs": "bab8f1e94c1dcc81cac4c420f5e96c792bfd39713713faab5f1fca39f98df23b",
+    "workflow.mjs": "e03ffba2edda076923dbef4188c11d84be4f9c93b646e5c63a9aa744ac3e7106",
+    "session.mjs": "2663d61e41ee545ea0b2fd5b147a03942b45ef954f0958819147016e663309ec",
+    "search.mjs": "7eec70bb9baf086d73387924736277fe4cb9c45787bbaf6f6a08b60369a25164",
+    "../browser-runtime-v3/browser.mjs": "25d416445ac2c47b1e8d53bf89da64070ad21bc6fc526eb115ff290c5f576273",
+    "../browser-runtime-v3/runtime.mjs": "4394932b281cb163298917e220725d27f80c82e8dc92f6af84658aad4c07068e",
+    "../browser-runtime-v3/providers.mjs": "569c48c956aefa0b31759cbbcc623220a1084fd898cebead0357c49cb4bed28a",
+    "../browser-runtime-v3/planner.mjs": "465818d04da5900dfe92351f1bd2a2c0064f017430cde97afe83c8545997ed22",
+    "../../src/storage.mjs": "e76e9846be42791ed8234ec73cefb287cfde6b7e9b7276a66a38492239d1efa5",
+    "../../src/glovo.mjs": "4d355e733321a5bc9c9a3a7d846ebd42e98935d2603aade1a486376418016694",
+    "../../src/jev.mjs": "52c3b304815f7904cca3a94b919bec91d370b00d18eae8bb1d754e9b586e6464",
+    "../../src/config.mjs": "6b705e52b539f8c6a2030c87da7210cabb133b53135ea79b896ee598e96c448c",
+    "../../src/policy.mjs": "8376ddb78c2789389f24b34265749dd4cf4acc54631528efb25e692098677620",
+    "../../src/dom.mjs": "4b275dfbbccdc6602a430f7bfbecda83796ef921181a5bdd9288bf6717be04a9",
+    "../../package.json": "8cf56dc14f7d70026c9965a56733c17decbab8dc752ae8f3a125470849febaf3",
+    "../../package-lock.json": "ec03a03d6048231f94368147f057f24c3ee045d0787c1ba603758ad9f3204ba7"
+  },
+  "planning": "Precompiled public text plan; no planner call and no OpenRouter credentials.",
+  "guidance": "No chooser and no model API calls; ambiguity stops.",
+  "methodology": "One attempt from Wikipedia Special:Search results already seeded with astronomy/fulltext=1. This is not a homepage-start or general web benchmark. Failures are retained and never automatically retried.",
+  "independentVerification": "After workflow completion only: exact public article URL and document title, plus the workflow own visible-heading evidence. Expected answers never enter the plan or chooser input."
+}

@@ -1,0 +1,183 @@
+{
+  "version": 4,
+  "startedAt": "2026-09-17T12:20:37.013Z",
+  "status": "running",
+  "reason": null,
+  "guide": "openrouter-dom",
+  "goal": "Use the main search results form to search for Black hole and open its article.",
+  "startUrl": "https://en.wikipedia.org/w/index.php?title=Special:Search&search=astronomy&fulltext=1",
+  "events": [
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000487,
+        "latencyMs": 923.0231249999997,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000487,
+        "inputTokens": 267,
+        "outputTokens": 55,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    },
+    {
+      "plannedSteps": 1,
+      "type": "workflow_started",
+      "elapsedMs": 0.4987909999999829
+    },
+    {
+      "step": 1,
+      "operation": "search_and_open",
+      "targetText": "Black hole",
+      "type": "step_started",
+      "elapsedMs": 3.7035000000014406
+    },
+    {
+      "type": "started",
+      "elapsedMs": 47.91129100000035,
+      "mode": "fast",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 0.45750000000043656
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 63.99537500000042,
+      "kind": "fill",
+      "ref": "s1:e32",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 16.56025000000045
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 103.5697080000009,
+      "kind": "fill",
+      "ref": "s1:e32",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 56.08766699999978
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 121.84379100000115,
+      "kind": "press",
+      "ref": "s3:e32",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 74.4051670000008
+    }
+  ],
+  "guard": {
+    "blockedRequests": 0
+  },
+  "verifiedSuccess": false,
+  "verification": {
+    "requested": true,
+    "passed": null
+  },
+  "limits": {
+    "maxCalls": 6,
+    "maxUsd": 0.01,
+    "maxRuntimeMs": 15000,
+    "maxActions": 8,
+    "maxAttemptMs": 45000
+  },
+  "scope": "Up to four continuous read-only search_and_open or open_link operations, with fresh references and per-operation heading evidence; final task verification is external.",
+  "timingScope": "Task total overlaps planning and initial navigation; browser/context setup, credential access and cleanup are separate. Nested runtime times may overlap.",
+  "costScope": "OpenRouter account charge plus estimated Jev tokens; excludes browser infrastructure and unreported upstream charges.",
+  "sourceSha256": "9c3b4d6f1eec2ac16e3ec32672d6159d9c7c71dd9b5c639d9aa876a715533c38",
+  "sourceFiles": [
+    "run.mjs",
+    "browser.mjs",
+    "runtime.mjs",
+    "providers.mjs",
+    "planner.mjs",
+    "credentials.mjs",
+    "../../src/jev.mjs",
+    "../../src/storage.mjs",
+    "../../src/glovo.mjs",
+    "../../src/config.mjs",
+    "../../src/policy.mjs",
+    "../../src/dom.mjs",
+    "../../package.json",
+    "../../package-lock.json"
+  ],
+  "browserLaunchMs": 1265.6063329999997,
+  "browserVersion": "153.0.8010.48",
+  "contextSetupMs": 231.839750000001,
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000487,
+        "latencyMs": 923.0231249999997,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000487,
+        "inputTokens": 267,
+        "outputTokens": 55,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 923.0231249999997,
+    "inputTokens": 267,
+    "outputTokens": 55,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0000487,
+    "knownCostUsd": 0.0000487,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "compiledTask": {
+    "steps": [
+      {
+        "operation": "search_and_open",
+        "query": "Black hole",
+        "targetText": "Black hole"
+      }
+    ]
+  },
+  "planningMs": 940.502375,
+  "initialNavigationMs": 1346.8676250000008,
+  "workflowSourceSha256": "13bbd0006ac011eacd0a08ff2f9514ad55e59b238a56993955ad7d20e6c295c6",
+  "workflowSourceFiles": [
+    "run.mjs",
+    "planner.mjs",
+    "workflow.mjs"
+  ]
+}

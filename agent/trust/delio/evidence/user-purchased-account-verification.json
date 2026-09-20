@@ -1,0 +1,59 @@
+{
+  "accountPageObserved": true,
+  "firstNameMatches": true,
+  "lastNameMatches": true,
+  "dateOfBirthMatches": true,
+  "emailMatches": true,
+  "phoneMatches": true,
+  "newProfileFlowObserved": true,
+  "optionalMarketingSelected": false,
+  "verifiedAccountProfile": true,
+  "verificationObservedAt": "2026-09-19T13:52:26.640361+00:00",
+  "recordedAt": "2026-09-19T13:53:07.019892+00:00",
+  "profileObservedAt": 1789825675085,
+  "artifacts": [
+    {
+      "stage": "profile",
+      "observationSha256": "0de42b5cb2f7c0246f5008fd914a79e6f13df86b004a804b3cdd6f92054283a2",
+      "screenshotSha256": "5215ad7d72508143c8945fb0b3f1af0631464ec1a1e6094282f4bf1d67de8d72",
+      "observedAt": 1789825675085,
+      "hashesVerified": true
+    },
+    {
+      "stage": "onboarding",
+      "observationSha256": "3cee877f26c20bcfdbc54974e0d11be801ad9f3791b71c3ad974be5e820f8c8a",
+      "screenshotSha256": "8fc172f521075ab7a3e88c54752144eccc05d506850c6fa6e274d1b4227e0660",
+      "observedAt": 1789825532872,
+      "hashesVerified": true
+    }
+  ],
+  "profileEvidenceRef": "a5de36bc37dfeed92ff51b621b0ec263e4cac8397ad5c6d710ff7483399e7721",
+  "onboardingEvidence": {
+    "earlierThanProfile": true,
+    "distinctFromProfilePage": true,
+    "registrationPathObserved": false,
+    "newRegistrationPromptObserved": false,
+    "personalDataPromptObserved": true,
+    "firstNameFieldObserved": true,
+    "lastNameFieldObserved": true,
+    "emailFieldObserved": true
+  },
+  "newProfileFlowBasis": "Operator observed OTP acceptance followed by new personal-data entry and optional-consent step; an earlier distinct personal-data capture and matching final account profile corroborate the assisted flow.",
+  "optionalMarketingBasis": "Operator-recorded optional-consent UI choice; no optional marketing selected.",
+  "operatorRecordHashes": {
+    "profileInputRecord": "be30feea42f04dd3e2bd5732fdcc295b62a78f5ad843031a183c2deccc90d6d8",
+    "profileSubmitRecord": "4fa74055bedef39f42143647ed9865e24c3e51b020f95363e60c6e417a4a293d",
+    "marketingChoiceRecord": "96a3672de8620fb24bbd0a12965b6645c4ee1e936eef928251299288d7200f86"
+  },
+  "verificationMethod": "Ephemeral keyed fingerprints, compared locally; key and field fingerprints are not persisted.",
+  "expectedPersonalDetailsSentToVps": false,
+  "browserActionsByVerifier": 0,
+  "orderHistoryOrCartRead": false,
+  "workerReloaded": false,
+  "limitations": [
+    "Profile field matches were independently checked against saved merchant-rendered markup.",
+    "New-profile flow and unchecked optional-consent action include operator UI observations; generic current-view classifier alone is not account-creation proof.",
+    "Artifact hashes establish correspondence and integrity, not independent truth of merchant claims."
+  ],
+  "verificationRecordSha256": "63de2a3855108ee10930fc3557bbd16f15164bdb90019dcccdce3070e8e77531"
+}

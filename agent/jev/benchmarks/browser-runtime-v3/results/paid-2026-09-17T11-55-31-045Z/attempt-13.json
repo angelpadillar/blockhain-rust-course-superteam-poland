@@ -1,0 +1,252 @@
+{
+  "attempt": 13,
+  "suite": "goal_pipeline",
+  "caseId": "semantic-context",
+  "repeat": 1,
+  "mode": "stepwise",
+  "guide": "jev",
+  "planner": "openrouter",
+  "status": "completed",
+  "events": [
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000284,
+        "latencyMs": 564.075791999996,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000284,
+        "inputTokens": 148,
+        "outputTokens": 34,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    },
+    {
+      "type": "started",
+      "elapsedMs": 0.7103750000023865,
+      "mode": "stepwise"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 23.41166599999997,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 36.64095800000359,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000020118000000000003,
+        "latencyMs": 2923.111082999996,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 479,
+        "outputTokens": 47,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 3689.0074160000004,
+      "kind": "click",
+      "ref": "s3:e2"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 3744.5701250000056,
+      "kind": "click",
+      "ref": "s3:e2"
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 3771.1456250000047,
+      "independentlyVerified": false
+    }
+  ],
+  "contextSetupMs": 140.23666600000433,
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000284,
+        "latencyMs": 564.075791999996,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000284,
+        "inputTokens": 148,
+        "outputTokens": 34,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      },
+      {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000020118000000000003,
+        "latencyMs": 2923.111082999996,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 479,
+        "outputTokens": 47,
+        "costBasis": "estimated"
+      }
+    ],
+    "modelCalls": 2,
+    "modelMs": 3487.186874999992,
+    "inputTokens": 627,
+    "outputTokens": 81,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.000048518,
+    "knownCostUsd": 0.000048518,
+    "costBasis": "includes_estimates",
+    "screenshotCalls": 0
+  },
+  "navigationMs": 22.994707999998354,
+  "planningMs": 573.2922909999979,
+  "goal": "Find Copper Finch Notebook from the shelf for creative studio work and open its details.",
+  "compiledTask": {
+    "query": "Copper Finch Notebook",
+    "targetText": "Copper Finch Notebook",
+    "context": "creative studio work"
+  },
+  "runtime": {
+    "status": "opened",
+    "reason": null,
+    "metrics": {
+      "totalMs": 3775.072791000006,
+      "observationMs": 47.76237499999115,
+      "executionMs": 48.22270800000115,
+      "conditionWaitMs": 28.992500000007567,
+      "settlingMs": 701.0030830000032,
+      "chooserMs": 2938.8009999999995,
+      "eventMs": 25.060043000004953,
+      "explicitProtocolCalls": 25,
+      "observations": 3,
+      "revalidations": 2,
+      "browserScans": 5,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 2,
+      "nativeActionsCompleted": 2,
+      "fillAttempts": 1,
+      "pressAttempts": 0,
+      "clickAttempts": 1,
+      "chooserCalls": 1,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:52852/items/5c71dd0d2fa786f81338",
+      "title": "Copper Finch Notebook"
+    },
+    "events": [
+      {
+        "type": "started",
+        "elapsedMs": 0.7103750000023865,
+        "mode": "stepwise"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 23.41166599999997,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 36.64095800000359,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 3689.0074160000004,
+        "kind": "click",
+        "ref": "s3:e2"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 3744.5701250000056,
+        "kind": "click",
+        "ref": "s3:e2"
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 3771.1456250000047,
+        "independentlyVerified": false
+      }
+    ],
+    "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+    "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+  },
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "exactCollection": true
+    }
+  },
+  "verifiedSuccess": true,
+  "reason": null,
+  "totalMs": 4348.888207999997
+}

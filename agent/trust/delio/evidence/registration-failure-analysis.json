@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-09-19T10:19:34.671331+00:00",
+  "inspectionReceipt": "registration-post-start-inspection.json",
+  "operation": "inspectRegistrationState",
+  "browserRuntimeMs": 131,
+  "intent": {
+    "stage": "needs_reconciliation",
+    "smsSubmitAttempted": true,
+    "privateArtifactBoundaries": 2,
+    "createdAt": 1789813029217,
+    "observedAt": 1789813033446
+  },
+  "currentView": {
+    "phoneFieldObserved": true,
+    "phoneDigitCount": 9,
+    "matchesPrivateBoundPhone": true,
+    "polishPrefixObserved": true,
+    "otpFieldObserved": false,
+    "emailFieldObserved": false,
+    "submitCount": 1,
+    "submitEnabled": true,
+    "submitNativeRefObserved": true,
+    "visibleValidationErrorObserved": false
+  },
+  "conclusions": [
+    "Phone fill and private value verification succeeded.",
+    "The durable intent reached the stage before SMS submission.",
+    "The request outcome is uncertain; current phone view does not prove the SMS request was not dispatched.",
+    "The initial action handler did not persist the upstream native failure details; a selector timeout cannot be established as fact."
+  ],
+  "actionsByThisInspection": {
+    "navigation": 0,
+    "fills": 0,
+    "submits": 0,
+    "smsPurchases": 0,
+    "intentDeleted": false,
+    "intentModified": false
+  },
+  "nextStep": "Provider polling or explicit same-intent reconciliation; no automatic retry."
+}

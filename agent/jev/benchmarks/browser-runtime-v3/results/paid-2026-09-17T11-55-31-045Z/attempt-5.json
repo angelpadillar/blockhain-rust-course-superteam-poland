@@ -1,0 +1,206 @@
+{
+  "attempt": 5,
+  "suite": "goal_pipeline",
+  "caseId": "live-search",
+  "repeat": 1,
+  "mode": "stepwise",
+  "guide": "jev",
+  "planner": "openrouter",
+  "status": "completed",
+  "events": [
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000266,
+        "latencyMs": 556.9333750000005,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000266,
+        "inputTokens": 142,
+        "outputTokens": 31,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    },
+    {
+      "type": "started",
+      "elapsedMs": 1.8706249999959255,
+      "mode": "stepwise"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 34.387166000000434,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 46.52074999999604,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 758.1438750000016,
+      "kind": "click",
+      "ref": "s3:e1"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 804.4302499999976,
+      "kind": "click",
+      "ref": "s3:e1"
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 831.3845000000001,
+      "independentlyVerified": false
+    }
+  ],
+  "contextSetupMs": 179.19374999999854,
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000266,
+        "latencyMs": 556.9333750000005,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000266,
+        "inputTokens": 142,
+        "outputTokens": 31,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 556.9333750000005,
+    "inputTokens": 142,
+    "outputTokens": 31,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0000266,
+    "knownCostUsd": 0.0000266,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "navigationMs": 27.37750000000233,
+  "planningMs": 570.6813750000001,
+  "goal": "Find Moss Trail Sketchbook and open its details.",
+  "compiledTask": {
+    "query": "Moss Trail Sketchbook",
+    "targetText": "Moss Trail Sketchbook",
+    "context": "details"
+  },
+  "runtime": {
+    "status": "opened",
+    "reason": null,
+    "metrics": {
+      "totalMs": 837.3097500000003,
+      "observationMs": 55.5408749999915,
+      "executionMs": 42.06450000000041,
+      "conditionWaitMs": 28.092083000003186,
+      "settlingMs": 701.2550829999964,
+      "chooserMs": 0,
+      "eventMs": 26.334876000015356,
+      "explicitProtocolCalls": 25,
+      "observations": 3,
+      "revalidations": 2,
+      "browserScans": 5,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 2,
+      "nativeActionsCompleted": 2,
+      "fillAttempts": 1,
+      "pressAttempts": 0,
+      "clickAttempts": 1,
+      "chooserCalls": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:52852/items/8764254809360c367e45",
+      "title": "Moss Trail Sketchbook"
+    },
+    "events": [
+      {
+        "type": "started",
+        "elapsedMs": 1.8706249999959255,
+        "mode": "stepwise"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 34.387166000000434,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 46.52074999999604,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 758.1438750000016,
+        "kind": "click",
+        "ref": "s3:e1"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 804.4302499999976,
+        "kind": "click",
+        "ref": "s3:e1"
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 831.3845000000001,
+        "independentlyVerified": false
+      }
+    ],
+    "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+    "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+  },
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "exactCollection": true
+    }
+  },
+  "verifiedSuccess": true,
+  "reason": null,
+  "totalMs": 1410.5057080000042
+}
