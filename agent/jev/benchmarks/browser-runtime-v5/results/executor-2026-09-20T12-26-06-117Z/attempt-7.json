@@ -1,0 +1,2080 @@
+{
+  "attempt": 7,
+  "caseId": "delivery-form",
+  "runId": "run-8f65099ecd",
+  "repeat": 1,
+  "picker": "oracle",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.47287499999947613
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "ref": "s1:e0",
+      "type": "action_planned",
+      "elapsedMs": 34.757165999999415
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 50.61774999999761
+    },
+    {
+      "step": 2,
+      "operation": "fill",
+      "ref": "s4:e1",
+      "type": "action_planned",
+      "elapsedMs": 56.06383300000016
+    },
+    {
+      "step": 2,
+      "operation": "fill",
+      "target": "Street address",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 66.88612499999726
+    },
+    {
+      "step": 3,
+      "operation": "fill",
+      "ref": "s7:e2",
+      "type": "action_planned",
+      "elapsedMs": 71.95129099999758
+    },
+    {
+      "step": 3,
+      "operation": "fill",
+      "target": "City",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 83.64879099999962
+    },
+    {
+      "step": 4,
+      "operation": "select",
+      "ref": "s10:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 112.75970799999777
+    },
+    {
+      "step": 4,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 530.5793749999975
+    },
+    {
+      "step": 5,
+      "operation": "select",
+      "ref": "s13:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 543.9632079999974
+    },
+    {
+      "step": 5,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 972.3812499999985
+    },
+    {
+      "step": 6,
+      "operation": "select",
+      "ref": "s16:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 984.1372080000001
+    },
+    {
+      "step": 6,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 1406.514916
+    },
+    {
+      "step": 7,
+      "operation": "select",
+      "ref": "s19:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 1418.6065830000007
+    },
+    {
+      "step": 7,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 1839.5472499999996
+    },
+    {
+      "step": 8,
+      "operation": "fill",
+      "ref": "s22:e0",
+      "type": "action_planned",
+      "elapsedMs": 1851.1682499999988
+    },
+    {
+      "step": 8,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 1866.840874999998
+    },
+    {
+      "step": 9,
+      "operation": "fill",
+      "ref": "s25:e1",
+      "type": "action_planned",
+      "elapsedMs": 1875.2517499999994
+    },
+    {
+      "step": 9,
+      "operation": "fill",
+      "target": "Street address",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 1891.9314159999994
+    },
+    {
+      "step": 10,
+      "operation": "fill",
+      "ref": "s28:e2",
+      "type": "action_planned",
+      "elapsedMs": 1900.0678329999973
+    },
+    {
+      "step": 10,
+      "operation": "fill",
+      "target": "City",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 1911.899125
+    },
+    {
+      "step": 11,
+      "operation": "select",
+      "ref": "s31:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 1917.6306659999973
+    },
+    {
+      "step": 11,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 2333.4859579999975
+    },
+    {
+      "step": 12,
+      "operation": "select",
+      "ref": "s34:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 2345.465333
+    },
+    {
+      "step": 12,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 2765.8611249999994
+    },
+    {
+      "step": 13,
+      "operation": "select",
+      "ref": "s37:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 2778.636957999999
+    },
+    {
+      "step": 13,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 3199.298583
+    },
+    {
+      "step": 14,
+      "operation": "select",
+      "ref": "s40:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 3212.4862079999984
+    },
+    {
+      "step": 14,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 3631.115915999999
+    },
+    {
+      "step": 15,
+      "operation": "fill",
+      "ref": "s43:e0",
+      "type": "action_planned",
+      "elapsedMs": 3643.752457999999
+    },
+    {
+      "step": 15,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 3662.8940829999992
+    },
+    {
+      "step": 16,
+      "operation": "fill",
+      "ref": "s46:e1",
+      "type": "action_planned",
+      "elapsedMs": 3671.185125
+    },
+    {
+      "step": 16,
+      "operation": "fill",
+      "target": "Street address",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 3683.888665999999
+    },
+    {
+      "step": 17,
+      "operation": "fill",
+      "ref": "s49:e2",
+      "type": "action_planned",
+      "elapsedMs": 3691.685207999999
+    },
+    {
+      "step": 17,
+      "operation": "fill",
+      "target": "City",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 3703.597665999998
+    },
+    {
+      "step": 18,
+      "operation": "select",
+      "ref": "s52:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 3711.196499999998
+    },
+    {
+      "step": 18,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 4130.387749999998
+    },
+    {
+      "step": 19,
+      "operation": "select",
+      "ref": "s55:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 4152.056207999998
+    },
+    {
+      "step": 19,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 4572.592000000001
+    },
+    {
+      "step": 20,
+      "operation": "select",
+      "ref": "s58:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 4584.002708
+    },
+    {
+      "step": 20,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 5002.124666
+    },
+    {
+      "step": 21,
+      "operation": "select",
+      "ref": "s61:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 5013.406916
+    },
+    {
+      "step": 21,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 5434.698332999997
+    },
+    {
+      "step": 22,
+      "operation": "fill",
+      "ref": "s64:e0",
+      "type": "action_planned",
+      "elapsedMs": 5452.113708000001
+    },
+    {
+      "step": 22,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 5471.341250000001
+    },
+    {
+      "step": 23,
+      "operation": "fill",
+      "ref": "s67:e1",
+      "type": "action_planned",
+      "elapsedMs": 5481.137790999997
+    },
+    {
+      "step": 23,
+      "operation": "fill",
+      "target": "Street address",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 5494.4961250000015
+    },
+    {
+      "step": 24,
+      "operation": "fill",
+      "ref": "s70:e2",
+      "type": "action_planned",
+      "elapsedMs": 5502.078333000001
+    },
+    {
+      "step": 24,
+      "operation": "fill",
+      "target": "City",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 5514.106166000001
+    },
+    {
+      "step": 25,
+      "operation": "select",
+      "ref": "s73:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 5521.664915999998
+    },
+    {
+      "step": 25,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 5937.370707999999
+    },
+    {
+      "step": 26,
+      "operation": "select",
+      "ref": "s76:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 5950.743207999996
+    },
+    {
+      "step": 26,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 6375.435874999999
+    },
+    {
+      "step": 27,
+      "operation": "select",
+      "ref": "s79:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 6387.695791000002
+    },
+    {
+      "step": 27,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 6807.764665999999
+    },
+    {
+      "step": 28,
+      "operation": "select",
+      "ref": "s82:e3:o0",
+      "type": "action_planned",
+      "elapsedMs": 6819.960083000002
+    },
+    {
+      "step": 28,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+      "outcome": "select_no_change",
+      "type": "step_completed",
+      "elapsedMs": 7243.641832999998
+    },
+    {
+      "step": 29,
+      "operation": "fill",
+      "ref": "s85:e0",
+      "type": "action_planned",
+      "elapsedMs": 7256.104415999998
+    },
+    {
+      "step": 29,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 7271.975166
+    },
+    {
+      "step": 30,
+      "operation": "fill",
+      "ref": "s88:e1",
+      "type": "action_planned",
+      "elapsedMs": 7280.258874999996
+    },
+    {
+      "step": 30,
+      "operation": "fill",
+      "target": "Street address",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 7293.593124999996
+    }
+  ],
+  "journalMs": 320.9366729999783,
+  "journalWrites": 63,
+  "blockedRequests": 0,
+  "contextSetupMs": 137.0322500000002,
+  "navigationMs": 21.12591700000121,
+  "spec": {
+    "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "values": {
+      "fullname": "Ada Byron",
+      "street": "12 Analytical Lane",
+      "town": "Warsaw"
+    }
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "step_limit",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s1:e0",
+        "what": "Full name",
+        "snapMs": 23.601208000000042,
+        "pickMs": 0.10108399999808171,
+        "actMs": 15.849957999998878,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s1:e0",
+          "valueKey": "fullname",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s4:e1",
+        "what": "Street address",
+        "snapMs": 2.3996670000015,
+        "pickMs": 0.10645800000202144,
+        "actMs": 10.813791000000492,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s4:e1",
+          "valueKey": "street",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 3,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s7:e2",
+        "what": "City",
+        "snapMs": 2.3232089999983145,
+        "pickMs": 0.09370800000033341,
+        "actMs": 11.689416000001074,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s7:e2",
+          "valueKey": "town",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s10:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 3.2465420000007725,
+        "pickMs": 0.10816699999850243,
+        "actMs": 417.67316700000083,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s10:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 5,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s13:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 6.351707999998325,
+        "pickMs": 0.09033300000010058,
+        "actMs": 428.3929169999974,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s13:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 6,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s16:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 6.185916999998881,
+        "pickMs": 0.11008399999991525,
+        "actMs": 422.3200829999987,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s16:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 7,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s19:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 6.360457999999198,
+        "pickMs": 0.10716700000193669,
+        "actMs": 420.8870410000018,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s19:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 8,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s22:e0",
+        "what": "Full name",
+        "snapMs": 6.13329099999828,
+        "pickMs": 0.09166600000025937,
+        "actMs": 15.662666999996873,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s22:e0",
+          "valueKey": "fullname",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 9,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s25:e1",
+        "what": "Street address",
+        "snapMs": 3.7243340000022727,
+        "pickMs": 0.08958400000119582,
+        "actMs": 16.660500000001775,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s25:e1",
+          "valueKey": "street",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 10,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s28:e2",
+        "what": "City",
+        "snapMs": 3.7028749999990396,
+        "pickMs": 0.06795799999963492,
+        "actMs": 11.812792000000627,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s28:e2",
+          "valueKey": "town",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 11,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s31:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 2.4989580000001297,
+        "pickMs": 0.06591699999989942,
+        "actMs": 415.8004580000015,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s31:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 12,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s34:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 5.710624999999709,
+        "pickMs": 0.0931250000030559,
+        "actMs": 420.3444159999999,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s34:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 13,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s37:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 6.268665999999939,
+        "pickMs": 0.11066699999719276,
+        "actMs": 420.6075000000019,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s37:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 14,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s40:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 5.774916999998823,
+        "pickMs": 0.06320799999957671,
+        "actMs": 418.5806250000023,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s40:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 15,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s43:e0",
+        "what": "Full name",
+        "snapMs": 7.057458999999653,
+        "pickMs": 0.11220800000228337,
+        "actMs": 19.131749999996828,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s43:e0",
+          "valueKey": "fullname",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 16,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s46:e1",
+        "what": "Street address",
+        "snapMs": 3.821124999998574,
+        "pickMs": 0.05866599999717437,
+        "actMs": 12.690832999996928,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s46:e1",
+          "valueKey": "street",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 17,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s49:e2",
+        "what": "City",
+        "snapMs": 3.684207999998762,
+        "pickMs": 0.06429099999877508,
+        "actMs": 11.90400000000227,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s49:e2",
+          "valueKey": "town",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 18,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s52:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 2.8220409999994445,
+        "pickMs": 0.05104099999880418,
+        "actMs": 419.1241250000021,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s52:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 19,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s55:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 12.07591599999796,
+        "pickMs": 0.1040419999990263,
+        "actMs": 420.4832499999975,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s55:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 20,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s58:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 5.4262089999974705,
+        "pickMs": 0.0821670000004815,
+        "actMs": 418.0901670000021,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s58:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 21,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s61:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 6.1117079999967245,
+        "pickMs": 0.08375000000160071,
+        "actMs": 421.1872079999994,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s61:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 22,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s64:e0",
+        "what": "Full name",
+        "snapMs": 10.3627919999999,
+        "pickMs": 0.0944999999992433,
+        "actMs": 19.203542000002926,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s64:e0",
+          "valueKey": "fullname",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 23,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s67:e1",
+        "what": "Street address",
+        "snapMs": 4.10399999999936,
+        "pickMs": 0.060499999999592546,
+        "actMs": 13.346707999997307,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s67:e1",
+          "valueKey": "street",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 24,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s70:e2",
+        "what": "City",
+        "snapMs": 2.708666999998968,
+        "pickMs": 0.04479200000059791,
+        "actMs": 12.018917000001238,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s70:e2",
+          "valueKey": "town",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 25,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s73:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 3.2789169999959995,
+        "pickMs": 0.051874999997380655,
+        "actMs": 415.65629199999967,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s73:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 26,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s76:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 7.865832999996201,
+        "pickMs": 0.10912500000267755,
+        "actMs": 424.65070799999376,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s76:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 27,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s79:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 6.699915999997756,
+        "pickMs": 0.0697920000020531,
+        "actMs": 420.01324999999633,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s79:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 28,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s82:e3:o0",
+        "what": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "snapMs": 6.330999999998312,
+        "pickMs": 0.08483300000079907,
+        "actMs": 423.6345000000001,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "select_no_change",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s82:e3:o0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 29,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s85:e0",
+        "what": "Full name",
+        "snapMs": 6.490041999997629,
+        "pickMs": 0.08437499999854481,
+        "actMs": 15.86133300000074,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s85:e0",
+          "valueKey": "fullname",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 30,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s88:e1",
+        "what": "Street address",
+        "snapMs": 3.492083000004641,
+        "pickMs": 0.05816699999559205,
+        "actMs": 13.32179200000246,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s88:e1",
+          "valueKey": "street",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      }
+    ],
+    "metrics": {
+      "totalMs": 7299.901666000002,
+      "snapMs": 6767.307371000003,
+      "pickMs": 0,
+      "actMs": 53.70828999999503,
+      "settleMs": 6606.582377999999,
+      "eventMs": 316.210581000003,
+      "protocolCalls": 362,
+      "observations": 60,
+      "revalidations": 30,
+      "browserScans": 106,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 30,
+      "nativeActionsCompleted": 30,
+      "jevCalls": 30,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 26,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "fillAttempts": 14,
+      "selectAttempts": 16
+    },
+    "final": {
+      "url": "http://127.0.0.1:57611/s/run-8f65099ecd/review",
+      "title": "Delivery details"
+    },
+    "events": [
+      {
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.47287499999947613
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "ref": "s1:e0",
+        "type": "action_planned",
+        "elapsedMs": 34.757165999999415
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 50.61774999999761
+      },
+      {
+        "step": 2,
+        "operation": "fill",
+        "ref": "s4:e1",
+        "type": "action_planned",
+        "elapsedMs": 56.06383300000016
+      },
+      {
+        "step": 2,
+        "operation": "fill",
+        "target": "Street address",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 66.88612499999726
+      },
+      {
+        "step": 3,
+        "operation": "fill",
+        "ref": "s7:e2",
+        "type": "action_planned",
+        "elapsedMs": 71.95129099999758
+      },
+      {
+        "step": 3,
+        "operation": "fill",
+        "target": "City",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 83.64879099999962
+      },
+      {
+        "step": 4,
+        "operation": "select",
+        "ref": "s10:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 112.75970799999777
+      },
+      {
+        "step": 4,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 530.5793749999975
+      },
+      {
+        "step": 5,
+        "operation": "select",
+        "ref": "s13:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 543.9632079999974
+      },
+      {
+        "step": 5,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 972.3812499999985
+      },
+      {
+        "step": 6,
+        "operation": "select",
+        "ref": "s16:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 984.1372080000001
+      },
+      {
+        "step": 6,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 1406.514916
+      },
+      {
+        "step": 7,
+        "operation": "select",
+        "ref": "s19:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 1418.6065830000007
+      },
+      {
+        "step": 7,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 1839.5472499999996
+      },
+      {
+        "step": 8,
+        "operation": "fill",
+        "ref": "s22:e0",
+        "type": "action_planned",
+        "elapsedMs": 1851.1682499999988
+      },
+      {
+        "step": 8,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 1866.840874999998
+      },
+      {
+        "step": 9,
+        "operation": "fill",
+        "ref": "s25:e1",
+        "type": "action_planned",
+        "elapsedMs": 1875.2517499999994
+      },
+      {
+        "step": 9,
+        "operation": "fill",
+        "target": "Street address",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 1891.9314159999994
+      },
+      {
+        "step": 10,
+        "operation": "fill",
+        "ref": "s28:e2",
+        "type": "action_planned",
+        "elapsedMs": 1900.0678329999973
+      },
+      {
+        "step": 10,
+        "operation": "fill",
+        "target": "City",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 1911.899125
+      },
+      {
+        "step": 11,
+        "operation": "select",
+        "ref": "s31:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 1917.6306659999973
+      },
+      {
+        "step": 11,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 2333.4859579999975
+      },
+      {
+        "step": 12,
+        "operation": "select",
+        "ref": "s34:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 2345.465333
+      },
+      {
+        "step": 12,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 2765.8611249999994
+      },
+      {
+        "step": 13,
+        "operation": "select",
+        "ref": "s37:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 2778.636957999999
+      },
+      {
+        "step": 13,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 3199.298583
+      },
+      {
+        "step": 14,
+        "operation": "select",
+        "ref": "s40:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 3212.4862079999984
+      },
+      {
+        "step": 14,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 3631.115915999999
+      },
+      {
+        "step": 15,
+        "operation": "fill",
+        "ref": "s43:e0",
+        "type": "action_planned",
+        "elapsedMs": 3643.752457999999
+      },
+      {
+        "step": 15,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 3662.8940829999992
+      },
+      {
+        "step": 16,
+        "operation": "fill",
+        "ref": "s46:e1",
+        "type": "action_planned",
+        "elapsedMs": 3671.185125
+      },
+      {
+        "step": 16,
+        "operation": "fill",
+        "target": "Street address",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 3683.888665999999
+      },
+      {
+        "step": 17,
+        "operation": "fill",
+        "ref": "s49:e2",
+        "type": "action_planned",
+        "elapsedMs": 3691.685207999999
+      },
+      {
+        "step": 17,
+        "operation": "fill",
+        "target": "City",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 3703.597665999998
+      },
+      {
+        "step": 18,
+        "operation": "select",
+        "ref": "s52:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 3711.196499999998
+      },
+      {
+        "step": 18,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 4130.387749999998
+      },
+      {
+        "step": 19,
+        "operation": "select",
+        "ref": "s55:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 4152.056207999998
+      },
+      {
+        "step": 19,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 4572.592000000001
+      },
+      {
+        "step": 20,
+        "operation": "select",
+        "ref": "s58:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 4584.002708
+      },
+      {
+        "step": 20,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 5002.124666
+      },
+      {
+        "step": 21,
+        "operation": "select",
+        "ref": "s61:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 5013.406916
+      },
+      {
+        "step": 21,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 5434.698332999997
+      },
+      {
+        "step": 22,
+        "operation": "fill",
+        "ref": "s64:e0",
+        "type": "action_planned",
+        "elapsedMs": 5452.113708000001
+      },
+      {
+        "step": 22,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 5471.341250000001
+      },
+      {
+        "step": 23,
+        "operation": "fill",
+        "ref": "s67:e1",
+        "type": "action_planned",
+        "elapsedMs": 5481.137790999997
+      },
+      {
+        "step": 23,
+        "operation": "fill",
+        "target": "Street address",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 5494.4961250000015
+      },
+      {
+        "step": 24,
+        "operation": "fill",
+        "ref": "s70:e2",
+        "type": "action_planned",
+        "elapsedMs": 5502.078333000001
+      },
+      {
+        "step": 24,
+        "operation": "fill",
+        "target": "City",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 5514.106166000001
+      },
+      {
+        "step": 25,
+        "operation": "select",
+        "ref": "s73:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 5521.664915999998
+      },
+      {
+        "step": 25,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 5937.370707999999
+      },
+      {
+        "step": 26,
+        "operation": "select",
+        "ref": "s76:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 5950.743207999996
+      },
+      {
+        "step": 26,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 6375.435874999999
+      },
+      {
+        "step": 27,
+        "operation": "select",
+        "ref": "s79:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 6387.695791000002
+      },
+      {
+        "step": 27,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 6807.764665999999
+      },
+      {
+        "step": 28,
+        "operation": "select",
+        "ref": "s82:e3:o0",
+        "type": "action_planned",
+        "elapsedMs": 6819.960083000002
+      },
+      {
+        "step": 28,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Choose…",
+        "outcome": "select_no_change",
+        "type": "step_completed",
+        "elapsedMs": 7243.641832999998
+      },
+      {
+        "step": 29,
+        "operation": "fill",
+        "ref": "s85:e0",
+        "type": "action_planned",
+        "elapsedMs": 7256.104415999998
+      },
+      {
+        "step": 29,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 7271.975166
+      },
+      {
+        "step": 30,
+        "operation": "fill",
+        "ref": "s88:e1",
+        "type": "action_planned",
+        "elapsedMs": 7280.258874999996
+      },
+      {
+        "step": 30,
+        "operation": "fill",
+        "target": "Street address",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 7293.593124999996
+      }
+    ],
+    "escalation": {
+      "reason": "step_limit",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:57611",
+        "title": "Delivery details",
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "controls": [
+          {
+            "what": "Full name",
+            "role": "input",
+            "kind": "field",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "fill",
+              "press"
+            ]
+          },
+          {
+            "what": "Street address",
+            "role": "input",
+            "kind": "field",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "fill",
+              "press"
+            ]
+          },
+          {
+            "what": "City",
+            "role": "input",
+            "kind": "field",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "fill",
+              "press"
+            ]
+          },
+          {
+            "what": "ShippingChoose…Standard courierExpress courier",
+            "role": "select",
+            "kind": "select",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "select"
+            ]
+          },
+          {
+            "what": "Save and review",
+            "role": "button",
+            "kind": "button",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": "fill",
+          "target": "Street address"
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [
+        {
+          "step": 1,
+          "operation": "fill",
+          "target": "Full name"
+        },
+        {
+          "step": 2,
+          "operation": "fill",
+          "target": "Street address"
+        },
+        {
+          "step": 3,
+          "operation": "fill",
+          "target": "City"
+        },
+        {
+          "step": 4,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 5,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 6,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 7,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 8,
+          "operation": "fill",
+          "target": "Full name"
+        },
+        {
+          "step": 9,
+          "operation": "fill",
+          "target": "Street address"
+        },
+        {
+          "step": 10,
+          "operation": "fill",
+          "target": "City"
+        },
+        {
+          "step": 11,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 12,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 13,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 14,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 15,
+          "operation": "fill",
+          "target": "Full name"
+        },
+        {
+          "step": 16,
+          "operation": "fill",
+          "target": "Street address"
+        },
+        {
+          "step": 17,
+          "operation": "fill",
+          "target": "City"
+        },
+        {
+          "step": 18,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 19,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 20,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 21,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 22,
+          "operation": "fill",
+          "target": "Full name"
+        },
+        {
+          "step": 23,
+          "operation": "fill",
+          "target": "Street address"
+        },
+        {
+          "step": 24,
+          "operation": "fill",
+          "target": "City"
+        },
+        {
+          "step": 25,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 26,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 27,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 28,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Choose…"
+        },
+        {
+          "step": 29,
+          "operation": "fill",
+          "target": "Full name"
+        },
+        {
+          "step": 30,
+          "operation": "fill",
+          "target": "Street address"
+        }
+      ],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "step_limit",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "submission": {}
+    }
+  },
+  "verificationMs": 0.08950000000186265,
+  "verifiedSuccess": false,
+  "taskMs": 7321.2926670000015,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 3.2896250000048894,
+  "totalMs": 7324.583209000004,
+  "cleanupMs": 5.137374999998428
+}

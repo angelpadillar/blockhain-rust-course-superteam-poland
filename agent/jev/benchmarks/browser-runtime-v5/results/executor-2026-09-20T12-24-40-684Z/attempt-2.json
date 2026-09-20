@@ -1,0 +1,136 @@
+{
+  "attempt": 2,
+  "caseId": "merchant-item",
+  "runId": "run-c9e5930685",
+  "repeat": 2,
+  "picker": "oracle",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.3284999999999627
+    }
+  ],
+  "journalMs": 11.011625999999978,
+  "journalWrites": 3,
+  "blockedRequests": 0,
+  "contextSetupMs": 102.91904199999999,
+  "navigationMs": 13.667291999999975,
+  "spec": {
+    "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+    "doneWhen": [
+      "heading=Copper Finch Notebook"
+    ],
+    "values": {
+      "shop_query": "Paper Harbor",
+      "item_query": "Copper Finch Notebook"
+    }
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "browser_error",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": null,
+        "ref": null,
+        "what": null,
+        "snapMs": 0,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": null
+      }
+    ],
+    "metrics": {
+      "totalMs": 30.87962499999992,
+      "snapMs": 0,
+      "pickMs": 0,
+      "actMs": 0,
+      "settleMs": 0,
+      "eventMs": 3.226541999999995,
+      "protocolCalls": 3,
+      "observations": 0,
+      "revalidations": 0,
+      "browserScans": 0,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 0,
+      "nativeActionsCompleted": 0,
+      "jevCalls": 0,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:57556/s/run-c9e5930685/home",
+      "title": ""
+    },
+    "events": [
+      {
+        "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.3284999999999627
+      }
+    ],
+    "escalation": {
+      "reason": "browser_error",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:57556",
+        "title": "",
+        "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+        "controls": [],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": null,
+          "target": null
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "heading=Copper Finch Notebook"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "browser_error",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "lastEntry": null,
+      "lastEntryShop": null
+    }
+  },
+  "verificationMs": 0.0040840000000343935,
+  "verifiedSuccess": false,
+  "taskMs": 44.684375000000045,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 4.326875000000086,
+  "totalMs": 49.01195900000005,
+  "cleanupMs": 3.1994170000000395
+}

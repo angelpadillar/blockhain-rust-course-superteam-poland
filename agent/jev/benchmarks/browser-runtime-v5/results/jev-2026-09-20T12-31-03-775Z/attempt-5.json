@@ -1,0 +1,2013 @@
+{
+  "attempt": 5,
+  "caseId": "two-cheapest",
+  "runId": "run-c128d39c2f",
+  "repeat": 1,
+  "picker": "jev",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.42133300000023155
+    },
+    {
+      "step": 1,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 34.58491700000013
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00006426000000000001,
+        "latencyMs": 276.02620900000056,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1530,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 2,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 345.5901670000003
+    },
+    {
+      "step": 2,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scrolled",
+      "type": "step_completed",
+      "elapsedMs": 378.4828750000006
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000065688,
+        "latencyMs": 216.9812920000004,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1564,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 3,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 613.7329580000005
+    },
+    {
+      "step": 3,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 1031.8521250000003
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000067116,
+        "latencyMs": 288.06108399999994,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1598,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 4,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 1341.4570830000002
+    },
+    {
+      "step": 4,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 1757.439292
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 4,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 4,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00006854400000000001,
+        "latencyMs": 231.81254200000058,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1632,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 5,
+      "operation": "scroll_up",
+      "type": "action_planned",
+      "elapsedMs": 2013.473833
+    },
+    {
+      "step": 5,
+      "operation": "scroll_up",
+      "target": null,
+      "outcome": "scrolled",
+      "type": "step_completed",
+      "elapsedMs": 2023.6197500000007
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 5,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 5,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007068600000000001,
+        "latencyMs": 255.34850000000006,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1683,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 6,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 2305.389083
+    },
+    {
+      "step": 6,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scrolled",
+      "type": "step_completed",
+      "elapsedMs": 2315.7255000000005
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 6,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 6,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007211400000000001,
+        "latencyMs": 320.5530830000007,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1717,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 7,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 2658.213667000001
+    },
+    {
+      "step": 7,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 3079.072792
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 7,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 7,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072072,
+        "latencyMs": 263.75825000000077,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1716,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 8,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 3364.460750000001
+    },
+    {
+      "step": 8,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 3784.1799170000004
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 8,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 8,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072072,
+        "latencyMs": 304.02170899999874,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1716,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 9,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 4118.569875
+    },
+    {
+      "step": 9,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 4539.47275
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 9,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 9,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007211400000000001,
+        "latencyMs": 217.15179200000057,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1717,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 10,
+      "operation": "scroll_up",
+      "type": "action_planned",
+      "elapsedMs": 4782.171792
+    },
+    {
+      "step": 10,
+      "operation": "scroll_up",
+      "target": null,
+      "outcome": "scrolled",
+      "type": "step_completed",
+      "elapsedMs": 4799.6527080000005
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 10,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 10,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072156,
+        "latencyMs": 230.86154200000055,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1718,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 11,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 5053.8165
+    },
+    {
+      "step": 11,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scrolled",
+      "type": "step_completed",
+      "elapsedMs": 5076.914750000001
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 11,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 11,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072198,
+        "latencyMs": 264.9930829999994,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1719,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 12,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 5363.944625000001
+    },
+    {
+      "step": 12,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 5784.611083000001
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 12,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 12,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007224000000000001,
+        "latencyMs": 256.48545899999954,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1720,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 13,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 6064.279917000001
+    },
+    {
+      "step": 13,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 6485.946542000001
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 13,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 13,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007228200000000001,
+        "latencyMs": 261.4805000000015,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1721,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 14,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 6769.195833000001
+    },
+    {
+      "step": 14,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 7188.311291999999
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 14,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 14,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072324,
+        "latencyMs": 219.61454199999935,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1722,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 15,
+      "operation": "scroll_down",
+      "type": "action_planned",
+      "elapsedMs": 7437.245417000001
+    },
+    {
+      "step": 15,
+      "operation": "scroll_down",
+      "target": null,
+      "outcome": "scroll_no_change",
+      "type": "step_completed",
+      "elapsedMs": 7856.022542
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 15,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 15,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072366,
+        "latencyMs": 287.51358400000026,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1723,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 16,
+      "operation": "scroll_up",
+      "type": "action_planned",
+      "elapsedMs": 8170.1155420000005
+    },
+    {
+      "step": 16,
+      "operation": "scroll_up",
+      "target": null,
+      "outcome": "scrolled",
+      "type": "step_completed",
+      "elapsedMs": 8183.4055419999995
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 16,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 16,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072366,
+        "latencyMs": 332.5991669999985,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1723,
+        "outputTokens": 326,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 17,
+      "operation": "click",
+      "ref": "s33:e9",
+      "type": "action_planned",
+      "elapsedMs": 8536.640749999999
+    },
+    {
+      "step": 17,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 8618.737167
+    },
+    {
+      "step": 18,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 8626.236708
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 17,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 17,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000076104,
+        "latencyMs": 275.37316699999974,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1812,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 19,
+      "operation": "click",
+      "ref": "s38:e10",
+      "type": "action_planned",
+      "elapsedMs": 8961.712625
+    },
+    {
+      "step": 19,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 9054.531625
+    },
+    {
+      "step": 20,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 9061.05675
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 18,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 18,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007917,
+        "latencyMs": 299.3112090000013,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1885,
+        "outputTokens": 326,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 21,
+      "operation": "click",
+      "ref": "s43:e1",
+      "type": "action_planned",
+      "elapsedMs": 9419.469042
+    },
+    {
+      "step": 21,
+      "operation": "click",
+      "target": "View bag (2)",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 9494.9215
+    }
+  ],
+  "journalMs": 385.47650100000556,
+  "journalWrites": 78,
+  "blockedRequests": 0,
+  "contextSetupMs": 130.25337500000023,
+  "navigationMs": 22.31579199999942,
+  "spec": {
+    "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "values": {}
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00006426000000000001,
+        "latencyMs": 276.02620900000056,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1530,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000065688,
+        "latencyMs": 216.9812920000004,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1564,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000067116,
+        "latencyMs": 288.06108399999994,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1598,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 4,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00006854400000000001,
+        "latencyMs": 231.81254200000058,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1632,
+        "outputTokens": 309,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 5,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007068600000000001,
+        "latencyMs": 255.34850000000006,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1683,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 6,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007211400000000001,
+        "latencyMs": 320.5530830000007,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1717,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 7,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072072,
+        "latencyMs": 263.75825000000077,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1716,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 8,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072072,
+        "latencyMs": 304.02170899999874,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1716,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 9,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007211400000000001,
+        "latencyMs": 217.15179200000057,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1717,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 10,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072156,
+        "latencyMs": 230.86154200000055,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1718,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 11,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072198,
+        "latencyMs": 264.9930829999994,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1719,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 12,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007224000000000001,
+        "latencyMs": 256.48545899999954,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1720,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 13,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007228200000000001,
+        "latencyMs": 261.4805000000015,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1721,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 14,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072324,
+        "latencyMs": 219.61454199999935,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1722,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 15,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072366,
+        "latencyMs": 287.51358400000026,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1723,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 16,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000072366,
+        "latencyMs": 332.5991669999985,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1723,
+        "outputTokens": 326,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 17,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000076104,
+        "latencyMs": 275.37316699999974,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1812,
+        "outputTokens": 327,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 18,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00007917,
+        "latencyMs": 299.3112090000013,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1885,
+        "outputTokens": 326,
+        "costBasis": "estimated"
+      }
+    ],
+    "modelCalls": 18,
+    "modelMs": 4801.946714000002,
+    "inputTokens": 30616,
+    "outputTokens": 5812,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0012858719999999998,
+    "knownCostUsd": 0.0012858719999999998,
+    "costBasis": "includes_estimates",
+    "screenshotCalls": 0
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "steps": [
+      {
+        "step": 1,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 28.925124999999753,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.479584000000614,
+        "pickMs": 287.40216599999985,
+        "actMs": 32.93737499999952,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scrolled",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.79,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 3,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.889083999999457,
+        "pickMs": 224.73512500000015,
+        "actMs": 418.1297079999995,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.74,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 7.832666999999674,
+        "pickMs": 296.1564580000004,
+        "actMs": 416.0078330000006,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.56,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 5,
+        "picker": "jev",
+        "operation": "scroll_up",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.011083999999755,
+        "pickMs": 240.47945900000013,
+        "actMs": 10.16820800000005,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scrolled",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_up",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.36,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 6,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.996417000000292,
+        "pickMs": 271.94845799999985,
+        "actMs": 10.350957999999991,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scrolled",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.44,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 7,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.742625000000771,
+        "pickMs": 331.845875,
+        "actMs": 420.9082500000004,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.5,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 8,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 7.247957999999926,
+        "pickMs": 273.11004200000025,
+        "actMs": 419.6809580000008,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.43,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 9,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.75537500000064,
+        "pickMs": 318.0619999999999,
+        "actMs": 420.93024999999943,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.5,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 10,
+        "picker": "jev",
+        "operation": "scroll_up",
+        "ref": null,
+        "what": null,
+        "snapMs": 8.669584000001123,
+        "pickMs": 228.4878750000007,
+        "actMs": 17.53650000000016,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scrolled",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_up",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.34,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 11,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 6.953833000001396,
+        "pickMs": 242.74612500000148,
+        "actMs": 23.13566600000013,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scrolled",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.44,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 12,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.853790999999546,
+        "pickMs": 275.34112500000083,
+        "actMs": 420.6989159999994,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.45,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 13,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.202250000000276,
+        "pickMs": 265.07733400000143,
+        "actMs": 421.6915420000005,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.43,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 14,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 7.9722079999992275,
+        "pickMs": 270.59429099999943,
+        "actMs": 419.1357079999998,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.39,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 15,
+        "picker": "jev",
+        "operation": "scroll_down",
+        "ref": null,
+        "what": null,
+        "snapMs": 10.753666000000521,
+        "pickMs": 231.1264999999985,
+        "actMs": 418.8087080000005,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scroll_no_change",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_down",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.33,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 16,
+        "picker": "jev",
+        "operation": "scroll_up",
+        "ref": null,
+        "what": null,
+        "snapMs": 6.828166000001147,
+        "pickMs": 300.73941600000035,
+        "actMs": 13.33154099999956,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "scrolled",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "scroll_up",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.48,
+          "targetProbability": null
+        }
+      },
+      {
+        "step": 17,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s33:e9",
+        "what": "Add to bag",
+        "snapMs": 6.053916999999274,
+        "pickMs": 342.80366700000013,
+        "actMs": 82.01708299999882,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s33:e9",
+          "valueKey": null,
+          "operationProbability": 0.38,
+          "targetProbability": 0.92
+        }
+      },
+      {
+        "step": 18,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.950833999999304,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 19,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s38:e10",
+        "what": "Add to bag",
+        "snapMs": 4.615417000000889,
+        "pickMs": 287.05916699999943,
+        "actMs": 92.87312500000007,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s38:e10",
+          "valueKey": null,
+          "operationProbability": 0.58,
+          "targetProbability": 0.38
+        }
+      },
+      {
+        "step": 20,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.9252919999998994,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 21,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s43:e1",
+        "what": "View bag (2)",
+        "snapMs": 4.36504099999911,
+        "pickMs": 311.9007499999989,
+        "actMs": 75.4837920000009,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s43:e1",
+          "valueKey": null,
+          "operationProbability": 0.83,
+          "targetProbability": 0.86
+        }
+      },
+      {
+        "step": 22,
+        "picker": "jev",
+        "operation": "done",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.150499999999738,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "done_when_satisfied",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalMs": 9506.003166999999,
+      "snapMs": 4011.4263739999988,
+      "pickMs": 0,
+      "actMs": 240.80008100000305,
+      "settleMs": 3857.4862099999955,
+      "eventMs": 187.72504299999946,
+      "protocolCalls": 176,
+      "observations": 40,
+      "revalidations": 6,
+      "browserScans": 55,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 21,
+      "nativeActionsCompleted": 21,
+      "jevCalls": 18,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 3,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "clickAttempts": 6,
+      "scrollDownAttempts": 12,
+      "scrollUpAttempts": 3
+    },
+    "final": {
+      "url": "http://127.0.0.1:57782/s/run-c128d39c2f/bag",
+      "title": "Your bag"
+    },
+    "events": [
+      {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.42133300000023155
+      },
+      {
+        "step": 1,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 34.58491700000013
+      },
+      {
+        "step": 2,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 345.5901670000003
+      },
+      {
+        "step": 2,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scrolled",
+        "type": "step_completed",
+        "elapsedMs": 378.4828750000006
+      },
+      {
+        "step": 3,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 613.7329580000005
+      },
+      {
+        "step": 3,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 1031.8521250000003
+      },
+      {
+        "step": 4,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 1341.4570830000002
+      },
+      {
+        "step": 4,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 1757.439292
+      },
+      {
+        "step": 5,
+        "operation": "scroll_up",
+        "type": "action_planned",
+        "elapsedMs": 2013.473833
+      },
+      {
+        "step": 5,
+        "operation": "scroll_up",
+        "target": null,
+        "outcome": "scrolled",
+        "type": "step_completed",
+        "elapsedMs": 2023.6197500000007
+      },
+      {
+        "step": 6,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 2305.389083
+      },
+      {
+        "step": 6,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scrolled",
+        "type": "step_completed",
+        "elapsedMs": 2315.7255000000005
+      },
+      {
+        "step": 7,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 2658.213667000001
+      },
+      {
+        "step": 7,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 3079.072792
+      },
+      {
+        "step": 8,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 3364.460750000001
+      },
+      {
+        "step": 8,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 3784.1799170000004
+      },
+      {
+        "step": 9,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 4118.569875
+      },
+      {
+        "step": 9,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 4539.47275
+      },
+      {
+        "step": 10,
+        "operation": "scroll_up",
+        "type": "action_planned",
+        "elapsedMs": 4782.171792
+      },
+      {
+        "step": 10,
+        "operation": "scroll_up",
+        "target": null,
+        "outcome": "scrolled",
+        "type": "step_completed",
+        "elapsedMs": 4799.6527080000005
+      },
+      {
+        "step": 11,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 5053.8165
+      },
+      {
+        "step": 11,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scrolled",
+        "type": "step_completed",
+        "elapsedMs": 5076.914750000001
+      },
+      {
+        "step": 12,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 5363.944625000001
+      },
+      {
+        "step": 12,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 5784.611083000001
+      },
+      {
+        "step": 13,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 6064.279917000001
+      },
+      {
+        "step": 13,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 6485.946542000001
+      },
+      {
+        "step": 14,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 6769.195833000001
+      },
+      {
+        "step": 14,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 7188.311291999999
+      },
+      {
+        "step": 15,
+        "operation": "scroll_down",
+        "type": "action_planned",
+        "elapsedMs": 7437.245417000001
+      },
+      {
+        "step": 15,
+        "operation": "scroll_down",
+        "target": null,
+        "outcome": "scroll_no_change",
+        "type": "step_completed",
+        "elapsedMs": 7856.022542
+      },
+      {
+        "step": 16,
+        "operation": "scroll_up",
+        "type": "action_planned",
+        "elapsedMs": 8170.1155420000005
+      },
+      {
+        "step": 16,
+        "operation": "scroll_up",
+        "target": null,
+        "outcome": "scrolled",
+        "type": "step_completed",
+        "elapsedMs": 8183.4055419999995
+      },
+      {
+        "step": 17,
+        "operation": "click",
+        "ref": "s33:e9",
+        "type": "action_planned",
+        "elapsedMs": 8536.640749999999
+      },
+      {
+        "step": 17,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 8618.737167
+      },
+      {
+        "step": 18,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 8626.236708
+      },
+      {
+        "step": 19,
+        "operation": "click",
+        "ref": "s38:e10",
+        "type": "action_planned",
+        "elapsedMs": 8961.712625
+      },
+      {
+        "step": 19,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 9054.531625
+      },
+      {
+        "step": 20,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 9061.05675
+      },
+      {
+        "step": 21,
+        "operation": "click",
+        "ref": "s43:e1",
+        "type": "action_planned",
+        "elapsedMs": 9419.469042
+      },
+      {
+        "step": 21,
+        "operation": "click",
+        "target": "View bag (2)",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 9494.9215
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": true,
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "bag": [
+        "429f741bbab487f5",
+        "ae06f2ca293673e4"
+      ],
+      "wanted": [
+        "429f741bbab487f5",
+        "d0012786d26a1878"
+      ]
+    }
+  },
+  "verificationMs": 0.09658399999898393,
+  "verifiedSuccess": false,
+  "taskMs": 9528.489582999999,
+  "finalizationMs": 5.104500000001281,
+  "totalMs": 9533.595833,
+  "cleanupMs": 5.40679099999943
+}

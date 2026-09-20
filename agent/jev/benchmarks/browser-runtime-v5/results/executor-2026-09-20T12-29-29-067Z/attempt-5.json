@@ -1,0 +1,1540 @@
+{
+  "attempt": 5,
+  "caseId": "two-cheapest",
+  "runId": "run-bc5c9f520e",
+  "repeat": 1,
+  "picker": "oracle",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.27408399999967514
+    },
+    {
+      "step": 1,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 23.65212500000007
+    },
+    {
+      "step": 2,
+      "operation": "click",
+      "ref": "s3:e9",
+      "type": "action_planned",
+      "elapsedMs": 54.85608400000001
+    },
+    {
+      "step": 2,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 127.58395900000005
+    },
+    {
+      "step": 3,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 134.20295899999974
+    },
+    {
+      "step": 4,
+      "operation": "click",
+      "ref": "s8:e8",
+      "type": "action_planned",
+      "elapsedMs": 167.79949999999963
+    },
+    {
+      "step": 4,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 228.15558399999964
+    },
+    {
+      "step": 5,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 235.6458749999997
+    },
+    {
+      "step": 6,
+      "operation": "click",
+      "ref": "s13:e10",
+      "type": "action_planned",
+      "elapsedMs": 250.44454199999973
+    },
+    {
+      "step": 6,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 309.4158339999999
+    },
+    {
+      "step": 7,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 314.84429199999977
+    },
+    {
+      "step": 8,
+      "operation": "click",
+      "ref": "s18:e13",
+      "type": "action_planned",
+      "elapsedMs": 334.8207089999996
+    },
+    {
+      "step": 8,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 392.8665839999999
+    },
+    {
+      "step": 9,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 399.8284169999997
+    },
+    {
+      "step": 10,
+      "operation": "click",
+      "ref": "s23:e13",
+      "type": "action_planned",
+      "elapsedMs": 417.34858399999985
+    },
+    {
+      "step": 10,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 473.87424999999985
+    },
+    {
+      "step": 11,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 481.3055839999997
+    },
+    {
+      "step": 12,
+      "operation": "click",
+      "ref": "s28:e13",
+      "type": "action_planned",
+      "elapsedMs": 500.33500000000004
+    },
+    {
+      "step": 12,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 562.3674169999999
+    },
+    {
+      "step": 13,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 569.2662089999999
+    },
+    {
+      "step": 14,
+      "operation": "click",
+      "ref": "s33:e13",
+      "type": "action_planned",
+      "elapsedMs": 600.8636669999996
+    },
+    {
+      "step": 14,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 657.4124999999999
+    },
+    {
+      "step": 15,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 665.2455419999997
+    },
+    {
+      "step": 16,
+      "operation": "click",
+      "ref": "s38:e13",
+      "type": "action_planned",
+      "elapsedMs": 683.98875
+    },
+    {
+      "step": 16,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 743.2407089999997
+    },
+    {
+      "step": 17,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 750.5949169999999
+    },
+    {
+      "step": 18,
+      "operation": "click",
+      "ref": "s43:e13",
+      "type": "action_planned",
+      "elapsedMs": 785.6785839999998
+    },
+    {
+      "step": 18,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 838.2280000000001
+    },
+    {
+      "step": 19,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 844.0750419999999
+    },
+    {
+      "step": 20,
+      "operation": "click",
+      "ref": "s48:e13",
+      "type": "action_planned",
+      "elapsedMs": 867.6667089999996
+    },
+    {
+      "step": 20,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 923.3936249999997
+    },
+    {
+      "step": 21,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 930.5101249999998
+    },
+    {
+      "step": 22,
+      "operation": "click",
+      "ref": "s53:e13",
+      "type": "action_planned",
+      "elapsedMs": 950.7824169999999
+    },
+    {
+      "step": 22,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 1010.5882499999998
+    },
+    {
+      "step": 23,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1017.416334
+    },
+    {
+      "step": 24,
+      "operation": "click",
+      "ref": "s58:e13",
+      "type": "action_planned",
+      "elapsedMs": 1051.0461249999998
+    },
+    {
+      "step": 24,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 1107.0394589999996
+    },
+    {
+      "step": 25,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1114.1205
+    },
+    {
+      "step": 26,
+      "operation": "click",
+      "ref": "s63:e13",
+      "type": "action_planned",
+      "elapsedMs": 1132.7973339999999
+    },
+    {
+      "step": 26,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 1187.7124169999997
+    },
+    {
+      "step": 27,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1196.5985
+    },
+    {
+      "step": 28,
+      "operation": "click",
+      "ref": "s68:e13",
+      "type": "action_planned",
+      "elapsedMs": 1216.8754589999999
+    },
+    {
+      "step": 28,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 1277.5627089999998
+    },
+    {
+      "step": 29,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1283.9962919999998
+    },
+    {
+      "step": 30,
+      "operation": "click",
+      "ref": "s73:e13",
+      "type": "action_planned",
+      "elapsedMs": 1317.2833339999997
+    },
+    {
+      "step": 30,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 1374.987709
+    }
+  ],
+  "journalMs": 179.4182490000003,
+  "journalWrites": 48,
+  "blockedRequests": 0,
+  "contextSetupMs": 104.93062499999996,
+  "navigationMs": 22.843209000000115,
+  "spec": {
+    "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "values": {}
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "step_limit",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 18.38354199999958,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s3:e9",
+        "what": "Add to bag",
+        "snapMs": 6.974582999999711,
+        "pickMs": 0.27874999999994543,
+        "actMs": 72.71366699999999,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s3:e9",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 3,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.518333000000439,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s8:e8",
+        "what": "Add to bag",
+        "snapMs": 3.773833000000195,
+        "pickMs": 0.05391700000018318,
+        "actMs": 60.33533299999999,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s8:e8",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 5,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.341458999999759,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 6,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s13:e10",
+        "what": "Add to bag",
+        "snapMs": 3.813999999999851,
+        "pickMs": 0.06595800000013696,
+        "actMs": 58.95195799999965,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s13:e10",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 7,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.937333999999737,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 8,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s18:e13",
+        "what": "Add to bag",
+        "snapMs": 4.034333000000061,
+        "pickMs": 0.07274999999981446,
+        "actMs": 58.03108300000031,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s18:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 9,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.75,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 10,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s23:e13",
+        "what": "Add to bag",
+        "snapMs": 3.7207499999999527,
+        "pickMs": 0.04870799999980591,
+        "actMs": 56.50483299999996,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s23:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 11,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.3198749999996835,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 12,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s28:e13",
+        "what": "Add to bag",
+        "snapMs": 3.7575839999999516,
+        "pickMs": 0.049082999999882304,
+        "actMs": 62.0305000000003,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s28:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 13,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.4568340000000717,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 14,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s33:e13",
+        "what": "Add to bag",
+        "snapMs": 3.692959000000428,
+        "pickMs": 0.058708000000024185,
+        "actMs": 56.53587500000003,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s33:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 15,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.3074169999999867,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 16,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s38:e13",
+        "what": "Add to bag",
+        "snapMs": 3.743582999999944,
+        "pickMs": 0.0715410000002521,
+        "actMs": 59.22583399999985,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s38:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 17,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.5864999999998872,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 18,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s43:e13",
+        "what": "Add to bag",
+        "snapMs": 4.746416999999838,
+        "pickMs": 0.05820799999992232,
+        "actMs": 52.51237499999979,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s43:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 19,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.319332999999915,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 20,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s48:e13",
+        "what": "Add to bag",
+        "snapMs": 3.9358750000001237,
+        "pickMs": 0.06737500000008367,
+        "actMs": 55.7135830000002,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s48:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 21,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.6008750000000873,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 22,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s53:e13",
+        "what": "Add to bag",
+        "snapMs": 3.89449999999988,
+        "pickMs": 0.05291699999997945,
+        "actMs": 59.79270799999995,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s53:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 23,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.4974999999999454,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 24,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s58:e13",
+        "what": "Add to bag",
+        "snapMs": 3.779333999999835,
+        "pickMs": 0.07341699999960838,
+        "actMs": 55.97245900000007,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s58:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 25,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.2996250000001055,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 26,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s63:e13",
+        "what": "Add to bag",
+        "snapMs": 3.3918750000002547,
+        "pickMs": 0.044499999999970896,
+        "actMs": 54.900125000000116,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s63:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 27,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.7322079999999005,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 28,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s68:e13",
+        "what": "Add to bag",
+        "snapMs": 3.50058399999989,
+        "pickMs": 0.04837499999985084,
+        "actMs": 60.67133300000023,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s68:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 29,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.3995420000001104,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 30,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s73:e13",
+        "what": "Add to bag",
+        "snapMs": 3.5514579999999114,
+        "pickMs": 0.04383299999972223,
+        "actMs": 57.69300000000021,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s73:e13",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      }
+    ],
+    "metrics": {
+      "totalMs": 1382.7435839999998,
+      "snapMs": 351.52095900000086,
+      "pickMs": 0,
+      "actMs": 743.6856249999992,
+      "settleMs": 243.08466499999986,
+      "eventMs": 174.24483500000088,
+      "protocolCalls": 332,
+      "observations": 45,
+      "revalidations": 30,
+      "browserScans": 75,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 30,
+      "nativeActionsCompleted": 30,
+      "jevCalls": 15,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 11,
+      "deterministicSteps": 15,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "clickAttempts": 30
+    },
+    "final": {
+      "url": "http://127.0.0.1:57726/s/run-bc5c9f520e/listing?added=8120a0a6b4226496",
+      "title": "Stationery listing"
+    },
+    "events": [
+      {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.27408399999967514
+      },
+      {
+        "step": 1,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 23.65212500000007
+      },
+      {
+        "step": 2,
+        "operation": "click",
+        "ref": "s3:e9",
+        "type": "action_planned",
+        "elapsedMs": 54.85608400000001
+      },
+      {
+        "step": 2,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 127.58395900000005
+      },
+      {
+        "step": 3,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 134.20295899999974
+      },
+      {
+        "step": 4,
+        "operation": "click",
+        "ref": "s8:e8",
+        "type": "action_planned",
+        "elapsedMs": 167.79949999999963
+      },
+      {
+        "step": 4,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 228.15558399999964
+      },
+      {
+        "step": 5,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 235.6458749999997
+      },
+      {
+        "step": 6,
+        "operation": "click",
+        "ref": "s13:e10",
+        "type": "action_planned",
+        "elapsedMs": 250.44454199999973
+      },
+      {
+        "step": 6,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 309.4158339999999
+      },
+      {
+        "step": 7,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 314.84429199999977
+      },
+      {
+        "step": 8,
+        "operation": "click",
+        "ref": "s18:e13",
+        "type": "action_planned",
+        "elapsedMs": 334.8207089999996
+      },
+      {
+        "step": 8,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 392.8665839999999
+      },
+      {
+        "step": 9,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 399.8284169999997
+      },
+      {
+        "step": 10,
+        "operation": "click",
+        "ref": "s23:e13",
+        "type": "action_planned",
+        "elapsedMs": 417.34858399999985
+      },
+      {
+        "step": 10,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 473.87424999999985
+      },
+      {
+        "step": 11,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 481.3055839999997
+      },
+      {
+        "step": 12,
+        "operation": "click",
+        "ref": "s28:e13",
+        "type": "action_planned",
+        "elapsedMs": 500.33500000000004
+      },
+      {
+        "step": 12,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 562.3674169999999
+      },
+      {
+        "step": 13,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 569.2662089999999
+      },
+      {
+        "step": 14,
+        "operation": "click",
+        "ref": "s33:e13",
+        "type": "action_planned",
+        "elapsedMs": 600.8636669999996
+      },
+      {
+        "step": 14,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 657.4124999999999
+      },
+      {
+        "step": 15,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 665.2455419999997
+      },
+      {
+        "step": 16,
+        "operation": "click",
+        "ref": "s38:e13",
+        "type": "action_planned",
+        "elapsedMs": 683.98875
+      },
+      {
+        "step": 16,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 743.2407089999997
+      },
+      {
+        "step": 17,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 750.5949169999999
+      },
+      {
+        "step": 18,
+        "operation": "click",
+        "ref": "s43:e13",
+        "type": "action_planned",
+        "elapsedMs": 785.6785839999998
+      },
+      {
+        "step": 18,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 838.2280000000001
+      },
+      {
+        "step": 19,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 844.0750419999999
+      },
+      {
+        "step": 20,
+        "operation": "click",
+        "ref": "s48:e13",
+        "type": "action_planned",
+        "elapsedMs": 867.6667089999996
+      },
+      {
+        "step": 20,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 923.3936249999997
+      },
+      {
+        "step": 21,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 930.5101249999998
+      },
+      {
+        "step": 22,
+        "operation": "click",
+        "ref": "s53:e13",
+        "type": "action_planned",
+        "elapsedMs": 950.7824169999999
+      },
+      {
+        "step": 22,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 1010.5882499999998
+      },
+      {
+        "step": 23,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1017.416334
+      },
+      {
+        "step": 24,
+        "operation": "click",
+        "ref": "s58:e13",
+        "type": "action_planned",
+        "elapsedMs": 1051.0461249999998
+      },
+      {
+        "step": 24,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 1107.0394589999996
+      },
+      {
+        "step": 25,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1114.1205
+      },
+      {
+        "step": 26,
+        "operation": "click",
+        "ref": "s63:e13",
+        "type": "action_planned",
+        "elapsedMs": 1132.7973339999999
+      },
+      {
+        "step": 26,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 1187.7124169999997
+      },
+      {
+        "step": 27,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1196.5985
+      },
+      {
+        "step": 28,
+        "operation": "click",
+        "ref": "s68:e13",
+        "type": "action_planned",
+        "elapsedMs": 1216.8754589999999
+      },
+      {
+        "step": 28,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 1277.5627089999998
+      },
+      {
+        "step": 29,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1283.9962919999998
+      },
+      {
+        "step": 30,
+        "operation": "click",
+        "ref": "s73:e13",
+        "type": "action_planned",
+        "elapsedMs": 1317.2833339999997
+      },
+      {
+        "step": 30,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 1374.987709
+      }
+    ],
+    "escalation": {
+      "reason": "step_limit",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:57726",
+        "title": "Stationery listing",
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "controls": [
+          {
+            "what": "Accept cookies",
+            "role": "button",
+            "kind": "button",
+            "where": [],
+            "component": {
+              "kind": "dialog",
+              "label": "Cookie consent",
+              "text": ""
+            },
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [
+        {
+          "step": 1,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 3,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 5,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 7,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 8,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 9,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 10,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 11,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 12,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 13,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 14,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 15,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 16,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 17,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 18,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 19,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 20,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 21,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 22,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 23,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 24,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 25,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 26,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 27,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 28,
+          "operation": "click",
+          "target": "Add to bag"
+        },
+        {
+          "step": 29,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 30,
+          "operation": "click",
+          "target": "Add to bag"
+        }
+      ],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "step_limit",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "bag": [
+        "429f741bbab487f5",
+        "d0012786d26a1878",
+        "ae06f2ca293673e4",
+        "8120a0a6b4226496"
+      ],
+      "wanted": [
+        "429f741bbab487f5",
+        "d0012786d26a1878"
+      ]
+    }
+  },
+  "verificationMs": 0.023875000000316504,
+  "verifiedSuccess": false,
+  "taskMs": 1405.7831250000004,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 3.899499999999989,
+  "totalMs": 1409.6837920000003,
+  "cleanupMs": 4.327041000000008
+}

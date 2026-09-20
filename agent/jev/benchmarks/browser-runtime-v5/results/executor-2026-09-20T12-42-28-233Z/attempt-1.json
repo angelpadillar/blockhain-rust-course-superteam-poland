@@ -1,0 +1,482 @@
+{
+  "attempt": 1,
+  "caseId": "merchant-item",
+  "runId": "run-3c27bd26a0",
+  "repeat": 1,
+  "picker": "oracle",
+  "status": "completed",
+  "events": [
+    {
+      "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 1.485125000000039
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "ref": "s1:e0",
+      "type": "action_planned",
+      "elapsedMs": 40.761333000000036
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "target": "Search shops",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 54.06370800000002
+    },
+    {
+      "step": 2,
+      "operation": "press",
+      "ref": "s4:e0",
+      "type": "action_planned",
+      "elapsedMs": 60.643958
+    },
+    {
+      "step": 2,
+      "operation": "press",
+      "target": "Search shops",
+      "outcome": "submitted",
+      "type": "step_completed",
+      "elapsedMs": 109.88695800000005
+    },
+    {
+      "step": 3,
+      "operation": "click",
+      "ref": "s7:e2",
+      "type": "action_planned",
+      "elapsedMs": 118.34391600000004
+    },
+    {
+      "step": 3,
+      "operation": "click",
+      "target": "Paper Harbor",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 169.954208
+    },
+    {
+      "step": 4,
+      "operation": "fill",
+      "ref": "s10:e0",
+      "type": "action_planned",
+      "elapsedMs": 176.570333
+    },
+    {
+      "step": 4,
+      "operation": "fill",
+      "target": "Search this shop",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 189.76454100000012
+    },
+    {
+      "step": 5,
+      "operation": "press",
+      "ref": "s13:e0",
+      "type": "action_planned",
+      "elapsedMs": 195.2499160000001
+    },
+    {
+      "step": 5,
+      "operation": "press",
+      "target": "Search this shop",
+      "outcome": "submitted",
+      "type": "step_completed",
+      "elapsedMs": 242.66662499999995
+    },
+    {
+      "step": 6,
+      "operation": "click",
+      "ref": "s16:e2",
+      "type": "action_planned",
+      "elapsedMs": 248.47212500000012
+    },
+    {
+      "step": 6,
+      "operation": "click",
+      "target": "Copper Finch Notebook",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 293.07208300000013
+    }
+  ],
+  "journalMs": 55.06641499999989,
+  "journalWrites": 15,
+  "blockedRequests": 0,
+  "contextSetupMs": 216.16220799999996,
+  "navigationMs": 26.66095800000005,
+  "spec": {
+    "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+    "doneWhen": [
+      "heading=Copper Finch Notebook"
+    ],
+    "values": {
+      "shop_query": {
+        "text": "Paper Harbor",
+        "reveal": true
+      },
+      "item_query": {
+        "text": "Copper Finch Notebook",
+        "reveal": true
+      }
+    }
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s1:e0",
+        "what": "Search shops",
+        "snapMs": 32.66158299999995,
+        "pickMs": 0.19604099999992286,
+        "actMs": 13.267334000000005,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Copper Finch Notebook",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s1:e0",
+          "valueKey": "shop_query",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "press",
+        "ref": "s4:e0",
+        "what": "Search shops",
+        "snapMs": 2.6031249999999773,
+        "pickMs": 0.09962499999994634,
+        "actMs": 49.189457999999945,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "submitted",
+        "doneWhen": [
+          {
+            "clause": "heading=Copper Finch Notebook",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "press",
+          "ref": "s4:e0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 3,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s7:e2",
+        "what": "Paper Harbor",
+        "snapMs": 3.4473749999999654,
+        "pickMs": 0.1359589999999571,
+        "actMs": 51.58600000000001,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "heading=Copper Finch Notebook",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s7:e2",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s10:e0",
+        "what": "Search this shop",
+        "snapMs": 3.3228750000000673,
+        "pickMs": 0.08854100000007747,
+        "actMs": 13.165292000000022,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Copper Finch Notebook",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s10:e0",
+          "valueKey": "item_query",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 5,
+        "picker": "jev",
+        "operation": "press",
+        "ref": "s13:e0",
+        "what": "Search this shop",
+        "snapMs": 2.9441669999998794,
+        "pickMs": 0.04574999999999818,
+        "actMs": 47.376667,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "submitted",
+        "doneWhen": [
+          {
+            "clause": "heading=Copper Finch Notebook",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "press",
+          "ref": "s13:e0",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 6,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s16:e2",
+        "what": "Copper Finch Notebook",
+        "snapMs": 3.105957999999873,
+        "pickMs": 0.04662500000017644,
+        "actMs": 44.56958400000008,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "heading=Copper Finch Notebook",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s16:e2",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 7,
+        "picker": "jev",
+        "operation": "done",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.8375840000001062,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "done_when_satisfied",
+        "doneWhen": [
+          {
+            "clause": "heading=Copper Finch Notebook",
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalMs": 300.543583,
+      "snapMs": 132.4937480000002,
+      "pickMs": 0,
+      "actMs": 87.98066600000016,
+      "settleMs": 84.38179199999979,
+      "eventMs": 48.261580999999865,
+      "protocolCalls": 81,
+      "observations": 13,
+      "revalidations": 6,
+      "browserScans": 19,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 6,
+      "nativeActionsCompleted": 6,
+      "jevCalls": 6,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "fillAttempts": 2,
+      "pressAttempts": 2,
+      "clickAttempts": 2
+    },
+    "final": {
+      "url": "http://127.0.0.1:58364/s/run-3c27bd26a0/entry/c905699bf85e2910",
+      "title": "Copper Finch Notebook"
+    },
+    "events": [
+      {
+        "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 1.485125000000039
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "ref": "s1:e0",
+        "type": "action_planned",
+        "elapsedMs": 40.761333000000036
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "target": "Search shops",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 54.06370800000002
+      },
+      {
+        "step": 2,
+        "operation": "press",
+        "ref": "s4:e0",
+        "type": "action_planned",
+        "elapsedMs": 60.643958
+      },
+      {
+        "step": 2,
+        "operation": "press",
+        "target": "Search shops",
+        "outcome": "submitted",
+        "type": "step_completed",
+        "elapsedMs": 109.88695800000005
+      },
+      {
+        "step": 3,
+        "operation": "click",
+        "ref": "s7:e2",
+        "type": "action_planned",
+        "elapsedMs": 118.34391600000004
+      },
+      {
+        "step": 3,
+        "operation": "click",
+        "target": "Paper Harbor",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 169.954208
+      },
+      {
+        "step": 4,
+        "operation": "fill",
+        "ref": "s10:e0",
+        "type": "action_planned",
+        "elapsedMs": 176.570333
+      },
+      {
+        "step": 4,
+        "operation": "fill",
+        "target": "Search this shop",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 189.76454100000012
+      },
+      {
+        "step": 5,
+        "operation": "press",
+        "ref": "s13:e0",
+        "type": "action_planned",
+        "elapsedMs": 195.2499160000001
+      },
+      {
+        "step": 5,
+        "operation": "press",
+        "target": "Search this shop",
+        "outcome": "submitted",
+        "type": "step_completed",
+        "elapsedMs": 242.66662499999995
+      },
+      {
+        "step": 6,
+        "operation": "click",
+        "ref": "s16:e2",
+        "type": "action_planned",
+        "elapsedMs": 248.47212500000012
+      },
+      {
+        "step": 6,
+        "operation": "click",
+        "target": "Copper Finch Notebook",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 293.07208300000013
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": true,
+    "doneWhen": [
+      "heading=Copper Finch Notebook"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "detail": {
+      "lastEntry": "c905699bf85e2910",
+      "lastEntryShop": "b57d06218d0fee9d"
+    }
+  },
+  "verificationMs": 0.040291000000024724,
+  "verifiedSuccess": true,
+  "taskMs": 328.26583300000004,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 2.768666999999823,
+  "totalMs": 331.03824999999995,
+  "cleanupMs": 4.922874999999976
+}
