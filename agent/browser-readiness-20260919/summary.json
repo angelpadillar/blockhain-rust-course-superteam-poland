@@ -1,0 +1,74 @@
+{
+  "live": {
+    "attempted": 16,
+    "passed": 14,
+    "performedActions": 15,
+    "stoppedBeforeAction": 1,
+    "medianWallSeconds": 3.39853714601486,
+    "failures": [
+      {
+        "case": "plain",
+        "mode": "full",
+        "repeat": 0,
+        "error": "Target absent from perception"
+      },
+      {
+        "case": "similar",
+        "mode": "ax_first",
+        "repeat": 1,
+        "error": "postcondition_not_verified"
+      }
+    ]
+  },
+  "guarded": {
+    "attempted": 16,
+    "passed": 9,
+    "performedActions": 10,
+    "stoppedBeforeAction": 6,
+    "medianWallSeconds": 4.528168958495371,
+    "failures": [
+      {
+        "case": "similar",
+        "mode": "full",
+        "repeat": 0,
+        "error": "Selected control became missing or ambiguous"
+      },
+      {
+        "case": "canvas",
+        "mode": "ax_first",
+        "repeat": 0,
+        "error": "Context changed during readiness wait"
+      },
+      {
+        "case": "reordered",
+        "mode": "full",
+        "repeat": 1,
+        "error": "postcondition_not_verified"
+      },
+      {
+        "case": "similar",
+        "mode": "ax_first",
+        "repeat": 1,
+        "error": "Context changed during readiness wait"
+      },
+      {
+        "case": "similar",
+        "mode": "full",
+        "repeat": 1,
+        "error": "Focus or page changed"
+      },
+      {
+        "case": "canvas",
+        "mode": "ax_first",
+        "repeat": 1,
+        "error": "Context changed during readiness wait"
+      },
+      {
+        "case": "canvas",
+        "mode": "full",
+        "repeat": 1,
+        "error": "Context changed during readiness wait"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+#buena_clipboard_open { position: fixed; right: 16px; bottom: 16px; z-index: 11000; padding: 11px 17px; border: 1px solid #93c5fd; border-radius: 12px; background: #152238; color: #fff; font: 600 15px system-ui,sans-serif; cursor: pointer; box-shadow: 0 3px 20px #0007; }
+#buena_clipboard_panel { position: fixed; z-index: 11001; right: 16px; bottom: 68px; width: min(390px,calc(100vw - 54px)); max-height: calc(100dvh - 105px); overflow-y: auto; padding: 18px; border: 1px solid #64748b; border-radius: 14px; background: #152238; color: #fff; box-shadow: 0 12px 40px #0008; font: 14px/1.45 system-ui,sans-serif; }
+#buena_clipboard_panel[hidden] { display: none; }
+#buena_clipboard_panel header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; font-size: 18px; }
+#buena_clipboard_panel label { display: block; font-weight: 700; margin-top: 8px; }
+#buena_clipboard_panel p { margin: 7px 0; color: #cbd5e1; }
+#buena_clipboard_panel textarea { display: block; box-sizing: border-box; width: 100%; resize: vertical; padding: 9px; margin: 8px 0; border: 1px solid #64748b; border-radius: 7px; background: #0f172a; color: #fff; font: 14px/1.4 system-ui,sans-serif; }
+#buena_clipboard_panel button { padding: 8px 12px; border: 1px solid #7dd3fc; border-radius: 7px; color: #fff; background: #075985; font: 600 14px system-ui,sans-serif; cursor: pointer; }
+#buena_clipboard_panel button:disabled { opacity: .5; cursor: default; }
+#buena_clipboard_panel #buena_clipboard_close { padding: 1px 9px; font-size: 23px; background: none; border: none; }
+#buena_clipboard_panel hr { border: none; border-top: 1px solid #475569; margin: 17px 0; }
+#buena_clipboard_status { min-height: 22px; padding-top: 8px; }

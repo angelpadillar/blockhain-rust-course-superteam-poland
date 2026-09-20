@@ -1,0 +1,7 @@
+{
+  "httpStatus": 409,
+  "result": {
+    "error": "test_account_onboarding_required"
+  },
+  "wallSeconds": 0.015
+}

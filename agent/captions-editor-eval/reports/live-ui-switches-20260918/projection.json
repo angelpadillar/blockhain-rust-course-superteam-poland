@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "observationId": "e9dfa3a5-1019-421e-bee1-dc0942741da8",
+  "capturedAt": "2026-09-18T12:17:32.417384+00:00",
+  "expectedRef": "e15",
+  "candidates": [
+    {
+      "ref": "e9",
+      "role": "switch",
+      "name": "",
+      "labelContext": "Voiceover Only",
+      "checked": false,
+      "disabled": false
+    },
+    {
+      "ref": "e10",
+      "role": "switch",
+      "name": "",
+      "labelContext": "AUTO TRIM\nTrim filler and silences",
+      "checked": false,
+      "disabled": false
+    },
+    {
+      "ref": "e15",
+      "role": "switch",
+      "name": "",
+      "labelContext": "Generate media",
+      "checked": true,
+      "disabled": false
+    }
+  ]
+}

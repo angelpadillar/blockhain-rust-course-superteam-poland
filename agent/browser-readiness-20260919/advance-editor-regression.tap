@@ -1,0 +1,14 @@
+✔ readiness is GET-only, unique and enabled; render waits cause no selection (1.485959ms)
+✔ wrong origin/project, unexpected next step and unresolved receipts stop (0.166417ms)
+✔ file metadata and observed switch label disambiguate exact controls (0.12875ms)
+✔ observed export paywall controls block even when Download is enabled (0.14925ms)
+✔ lost action response reuses the exact journaled request without selecting again (13.660583ms)
+✔ delayed render navigation requires immutable latest verified click and exact child path (2.300875ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 86.51725

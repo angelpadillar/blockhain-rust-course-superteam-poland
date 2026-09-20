@@ -1,0 +1,49 @@
+name: captions-editor-camoufox
+x-common: &common
+  build: .
+  image: buena-captions-editor-camoufox:0.1.29-9
+  platform: linux/amd64
+  init: true
+  user: "1001:1001"
+  cpus: 2
+  mem_limit: 4g
+  pids_limit: 512
+  shm_size: 1g
+  restart: "no"
+  security_opt:
+    - no-new-privileges:true
+    - seccomp=./config/browser-seccomp.json
+  stop_grace_period: 30s
+services:
+  onboarding:
+    <<: *common
+    profiles: [onboarding]
+    ports:
+      - "100.121.5.10:6093:6080"
+    volumes:
+      - /data/captions-editor-camoufox/state:/app/state
+      - /data/captions-editor-camoufox/config:/app/config:ro
+      - /data/captions-editor-camoufox/assets:/app/assets:ro
+      - /data/captions-editor-camoufox/secrets:/run/secrets:ro
+    environment:
+      CANDIDATE_CONFIG: /app/config/editor.json
+      CANDIDATE_TOKEN_FILE: /run/secrets/service_token
+      VNC_PASSWORD_FILE: /run/secrets/vnc_password
+      CANDIDATE_AUTOMATION: "1"
+      CANDIDATE_JOBS_FILE: /app/config/jobs.json
+      TYPESAFE_KEY_FILE: /run/secrets/typesafe_key
+    healthcheck:
+      test: ["CMD", "node", "scripts/observe.mjs", "status"]
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 3
+  selftest:
+    <<: *common
+    profiles: [selftest]
+    command: ["scripts/selftest.mjs"]
+    network_mode: none
+    volumes:
+      - /data/captions-editor-camoufox/fixtures:/app/state
+    environment:
+      FIXTURE_ROOT: /app/state

@@ -1,0 +1,20 @@
+{
+  "purpose": "Offline browser capability test; not a Captions export",
+  "startedAt": "2026-09-18T11:09:15.094Z",
+  "checks": {
+    "pinnedUpstreamVersion": true,
+    "fileCapabilities": true,
+    "sensitiveGatesClosed": true,
+    "domSnapshot": true,
+    "pngScreenshot": true,
+    "fileInput": true,
+    "downloadBytesMatch": true,
+    "verticalDimensions": true,
+    "duration": true,
+    "fullDecode": true
+  },
+  "artifacts": "/app/state/fixture-gA4zsl",
+  "sha256": "deba72f056e81e845e05ab0edda9e5cd848849aac7133ca72a622d0dde89ad6f",
+  "status": "passed",
+  "wallTimeSeconds": 4.838
+}

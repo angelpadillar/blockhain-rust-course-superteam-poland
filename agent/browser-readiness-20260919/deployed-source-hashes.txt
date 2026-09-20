@@ -1,0 +1,9 @@
+9267021631d669936529664cd58a235ed7da9d0fab8b4e4984ed4369f45dc284  /app/src/automation.mjs
+4a7c2caf7fed21bb643cc42a4aaf7db8fcca81942008fa4851bb9f4383ef8ba2  /app/src/config.mjs
+af60319ada232ae34ec0612fee2d30578a0da39948fbfc254700aa9ec41554c8  /app/src/display.mjs
+0902bbc1ba41e51c5800b70ceb748561de01cb93813b5e70b295edd911f08514  /app/src/jev.mjs
+828d741453696b015c1020ef4e215387c0be8c541b2fa0e2ca29cb0dfe15b7be  /app/src/lock.mjs
+3fb3821720393caa72d74bfc81547b49e4ce5e4b9da7602dcc5a5379c20f87f9  /app/src/mcp.mjs
+bdb36cf234f85e8ee42d4e3f7adc1f0c49ab5f9a63cdd5ea27abd3f66ceacbba  /app/src/network.mjs
+a25074e09453d58c21de7abc586af17d6d59f92ef71f3476311f83808e6f0587  /app/src/observe-server.mjs
+819a92f1cc7c2b7eecefaad76fd2db4aa628dac683cac019178f36bac736c595  /app/src/onboarding.mjs

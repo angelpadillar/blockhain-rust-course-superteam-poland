@@ -1,0 +1,18 @@
+{
+  "full": {
+    "passed": 7,
+    "attempted": 8,
+    "medianWallSeconds": 3.39853714601486,
+    "medianPerceptionSeconds": 0.25912997948762495,
+    "modelCalls": 7,
+    "visualPasses": 8
+  },
+  "ax_first": {
+    "passed": 7,
+    "attempted": 8,
+    "medianWallSeconds": 3.400502521006274,
+    "medianPerceptionSeconds": 0.2535989580064779,
+    "modelCalls": 8,
+    "visualPasses": 8
+  }
+}
