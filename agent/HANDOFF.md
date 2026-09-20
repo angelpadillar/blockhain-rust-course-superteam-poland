@@ -23,18 +23,18 @@ not browser control.
 
 ## Layout under `agent/`
 
-| Dir | What | Live state |
-| --- | --- | --- |
-| `multilogin/` | Multilogin X account pilot: one cloud profile per account, Playwright-over-CDP, Instagram + YouTube/Google adapters, local TOTP, bounded proxy rotation, stop/reopen identity verification | **Deployed and running** on the VPS |
-| `jev/` | Glovo prepare-only adapter + experimental runtimes (v3/v4) + all benchmarks | Persistent Glovo profile saved on VPS (`jev-hackathon` compose project, stopped) |
-| `delio-worker/` | Delio.com.pl adapter, Camoufox profile, registration + cart/quote/coupon probes | Snapshot — **live copy runs on the VPS**, resync before editing |
-| `captions-editor/` | Captions AI editor bridge (Camoufox/gomoufox 0.1.29-9), snapshot/select/action tokens, bounded job policy | Snapshot of deployed project |
-| `captions-editor-agent/` (+`-deploy/`) | Earlier Chromium editor adapter | Superseded by `captions-editor/`; 0 verified live exports |
-| `captions-editor-eval/` | Jev selection eval | 15/15 live choices, p50 233 ms |
-| `browser-readiness-20260919/` | Readiness benchmark incl. OCR-vs-accessibility desktop comparison | Evidence archive |
-| `trust/` | Approval/evidence prototype — mandatory screenshot receipts at quote/approval/confirmation | Prototype, not wired to payments |
-| `evaluation/` | Earlier live Glovo benchmark (Jev vs supervised Codex, ~5.6×) | Evidence archive |
-| `hackathon-handoff-20260919/` | Prior handoff bundle | Context |
+| Dir                                    | What                                                                                                                                                                                       | Live state                                                                       |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| `multilogin/`                          | Multilogin X account pilot: one cloud profile per account, Playwright-over-CDP, Instagram + YouTube/Google adapters, local TOTP, bounded proxy rotation, stop/reopen identity verification | **Deployed and running** on the VPS                                              |
+| `jev/`                                 | Glovo prepare-only adapter + experimental runtimes (v3/v4) + all benchmarks                                                                                                                | Persistent Glovo profile saved on VPS (`jev-hackathon` compose project, stopped) |
+| `delio-worker/`                        | Delio.com.pl adapter, Camoufox profile, registration + cart/quote/coupon probes                                                                                                            | Snapshot — **live copy runs on the VPS**, resync before editing                  |
+| `captions-editor/`                     | Captions AI editor bridge (Camoufox/gomoufox 0.1.29-9), snapshot/select/action tokens, bounded job policy                                                                                  | Snapshot of deployed project                                                     |
+| `captions-editor-agent/` (+`-deploy/`) | Earlier Chromium editor adapter                                                                                                                                                            | Superseded by `captions-editor/`; 0 verified live exports                        |
+| `captions-editor-eval/`                | Jev selection eval                                                                                                                                                                         | 15/15 live choices, p50 233 ms                                                   |
+| `browser-readiness-20260919/`          | Readiness benchmark incl. OCR-vs-accessibility desktop comparison                                                                                                                          | Evidence archive                                                                 |
+| `trust/`                               | Approval/evidence prototype — mandatory screenshot receipts at quote/approval/confirmation                                                                                                 | Prototype, not wired to payments                                                 |
+| `evaluation/`                          | Earlier live Glovo benchmark (Jev vs supervised Codex, ~5.6×)                                                                                                                              | Evidence archive                                                                 |
+| `hackathon-handoff-20260919/`          | Prior handoff bundle                                                                                                                                                                       | Context                                                                          |
 
 ## VPS layout (`root@100.121.5.10`, host `buena-prod-01`)
 

@@ -34,11 +34,11 @@ One isolated cloud browser profile per account; Playwright over CDP;
 platform login adapters (Instagram, YouTube/Google); local TOTP;
 bounded proxy rotation; stop/reopen identity verification.
 
-| Evidence | Result |
-| --- | --- |
-| Instagram batch (5 profiles, concurrent) | 4 completed, 1 checkpoint |
-| YouTube run (2 accounts) | 1 completed + restart-verified, 1 `signin_rejected` |
-| Jev calls in final runs | **0** — fully deterministic on known screens |
+| Evidence                                 | Result                                              |
+| ---------------------------------------- | --------------------------------------------------- |
+| Instagram batch (5 profiles, concurrent) | 4 completed, 1 checkpoint                           |
+| YouTube run (2 accounts)                 | 1 completed + restart-verified, 1 `signin_rejected` |
+| Jev calls in final runs                  | **0** — fully deterministic on known screens        |
 
 Success driver: deterministic handling of every observed Google/IG
 screen; Jev reserved for genuinely unknown controls. Failure mode is
@@ -51,12 +51,12 @@ Task contract → restricted observed controls → Jev choice → Playwright
 → independent verifier. One onboarded persistent profile on the VPS
 (`jev-hackathon` compose project, currently stopped).
 
-| Evidence | Result |
-| --- | --- |
+| Evidence                                   | Result                                                                                   |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------- |
 | Live shopping eval (final adapter, 3 reps) | 3/3 passed, **10.6 s avg**, ~$0.00135/run — vs supervised Codex reference 59.2 s (~5.6×) |
-| Live navigation eval | 3/3, median **13.589 s**, $0.00031/attempt |
-| Controlled-shop smoke | ready_for_review in 5.79 s, 4/4 Jev calls |
-| Browser fixture suite | 21–27 tests pass per release |
+| Live navigation eval                       | 3/3, median **13.589 s**, $0.00031/attempt                                               |
+| Controlled-shop smoke                      | ready_for_review in 5.79 s, 4/4 Jev calls                                                |
+| Browser fixture suite                      | 21–27 tests pass per release                                                             |
 
 Known limits: merchant-specific markup; earlier dev runs failed twice
 (premature `done` at p=0.72, then `unavailable`); fixed by teaching the
@@ -106,24 +106,24 @@ Superseded by D, retained for comparison.
 
 ## Experimental runtimes (in `agent/jev`)
 
-| Method | Result | Note |
-| --- | --- | --- |
-| **v3 fast goal pipeline** (Gemini Flash Lite planner → steps; Jev for ambiguity) | 8/8 fixtures @ **0.929 s** median | Fixture-only; planner cost ~$0.000016/task |
-| **v3 guide comparison** | Jev 1/2 (one 15 s provider timeout), OpenRouter DOM 2/2, DOM+PNG 2/2 | Image input showed **no accuracy gain** on a text-sufficient fixture |
-| **v4 continuous workflow** | Structured plans 6/6 @ 0.643 s; **prose plans 0/6** | Planner copied merchant name into product constraint (4×), chose search for a link page (2×). Corrected planner never ran live (1Password blocks) |
-| **Navigation speed v1** (richer Jev prompt) | **0/2** — chose `unavailable` despite an offered submit | Prompt regression: richer structured criteria did worse than the concise baseline |
-| **Navigation speed v2** (baseline prompt + fresh element binding) | 0/1 live (Glovo outage stopped the cohort) | Unproven; keep as next candidate |
-| **shopping-head-to-head-v5** (Jev vs Flash Lite vs Mahmoud policy, Amazon.pl guest) | Preflight only | No comparison results yet |
-| **`agent/captions-editor-eval`** (Jev control/asset selection fixtures) | **15/15** live choices, p50 233 ms, p95 673 ms | Static observed labels, not browser execution |
-| **`agent/browser-readiness-20260919`** | Desktop OCR-vs-accessibility fixtures: **14/16** completed, ~3.4 s median | The only real OCR-vs-DOM comparison run. Follow-up with readiness waits regressed to **9/16** — not deployed. Comet/X11 desktop fixtures, not the shipping adapter |
+| Method                                                                              | Result                                                                    | Note                                                                                                                                                               |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **v3 fast goal pipeline** (Gemini Flash Lite planner → steps; Jev for ambiguity)    | 8/8 fixtures @ **0.929 s** median                                         | Fixture-only; planner cost ~$0.000016/task                                                                                                                         |
+| **v3 guide comparison**                                                             | Jev 1/2 (one 15 s provider timeout), OpenRouter DOM 2/2, DOM+PNG 2/2      | Image input showed **no accuracy gain** on a text-sufficient fixture                                                                                               |
+| **v4 continuous workflow**                                                          | Structured plans 6/6 @ 0.643 s; **prose plans 0/6**                       | Planner copied merchant name into product constraint (4×), chose search for a link page (2×). Corrected planner never ran live (1Password blocks)                  |
+| **Navigation speed v1** (richer Jev prompt)                                         | **0/2** — chose `unavailable` despite an offered submit                   | Prompt regression: richer structured criteria did worse than the concise baseline                                                                                  |
+| **Navigation speed v2** (baseline prompt + fresh element binding)                   | 0/1 live (Glovo outage stopped the cohort)                                | Unproven; keep as next candidate                                                                                                                                   |
+| **shopping-head-to-head-v5** (Jev vs Flash Lite vs Mahmoud policy, Amazon.pl guest) | Preflight only                                                            | No comparison results yet                                                                                                                                          |
+| **`agent/captions-editor-eval`** (Jev control/asset selection fixtures)             | **15/15** live choices, p50 233 ms, p95 673 ms                            | Static observed labels, not browser execution                                                                                                                      |
+| **`agent/browser-readiness-20260919`**                                              | Desktop OCR-vs-accessibility fixtures: **14/16** completed, ~3.4 s median | The only real OCR-vs-DOM comparison run. Follow-up with readiness waits regressed to **9/16** — not deployed. Comet/X11 desktop fixtures, not the shipping adapter |
 
 ## External methods reviewed (not ours)
 
-| Source | Approach | Finding |
-| --- | --- | --- |
+| Source                          | Approach                                                            | Finding                                                                                                                                                                                                                                         |
+| ------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `awlevin/typesafe-computer-use` | macOS accessibility + Vision OCR → Jev action choice → native input | The "Jev + OCR" design. Author-reported ~1.5 s/step; cannot run on Linux VPS (macOS-only AX/Quartz); our checks found a stale-OCR-cache miss on small changes and an outcome label that defaults to `completed` — needs an independent verifier |
-| `browser-use/jev-ultrafast` | DOM → batched Jev operation+target selection → CDP harness | Same family as ours; no live success evidence collected |
-| `BeLazy167/typesafe-mod` | Claude Code hooks routing multiple-choice decisions to Jev | Not a browser agent; useful idea: batch independent decisions, return uncertainty to the main agent |
+| `browser-use/jev-ultrafast`     | DOM → batched Jev operation+target selection → CDP harness          | Same family as ours; no live success evidence collected                                                                                                                                                                                         |
+| `BeLazy167/typesafe-mod`        | Claude Code hooks routing multiple-choice decisions to Jev          | Not a browser agent; useful idea: batch independent decisions, return uncertainty to the main agent                                                                                                                                             |
 
 ## What the evidence says
 

@@ -3,3 +3,16 @@ out/
 chrome-profile/
 dist/
 
+# Imported pilot projects and evidence archives; each keeps its own formatting.
+browser-readiness-20260919/
+captions-editor/
+captions-editor-agent/
+captions-editor-agent-deploy/
+captions-editor-eval/
+delio-worker/
+evaluation/
+hackathon-handoff-20260919/
+jev/
+multilogin/
+trust/
+
