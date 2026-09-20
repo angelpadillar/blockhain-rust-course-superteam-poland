@@ -1,7 +1,7 @@
 import { chmodSync, writeFileSync } from "node:fs";
 import { writeJson, outputPath, ensureOutputDirectories } from "../files.js";
 import type { AltitudeSession, AttachMode } from "./session.js";
-import type { Page } from "playwright-core";
+import type { Locator, Page } from "playwright-core";
 
 /**
  * Card command surface exposed by the Altitude daemon.
@@ -103,7 +103,7 @@ export function parseSpendableBalance(text: string): number | null {
 
 export function parseCardRows(text: string): CardSummary[] {
   const lines = text
-    .split(/\r?\n/)
+    .split(/\r?\n|\t/)
     .map((line) => line.trim())
     .filter(Boolean);
   const rows: CardSummary[] = [];
@@ -118,7 +118,7 @@ export function parseCardRows(text: string): CardSummary[] {
     const preceding = lines[cardNameIndex - 1] ?? "";
     const cardholder =
       cardNameIndex > 0 &&
-      !/^(?:Spendable balance|Cards account balance|Top up|Withdraw|Issue)$/i.test(
+      !/^(?:Spendable balance|Cards account balance|Top up|Withdraw|Issue|Cardholder|Card|Card name|Name|Status|Limit)$/i.test(
         preceding,
       ) &&
       !/^(?:Active|Frozen|Closed|Pending|Blocked|Canceled|Cancelled)$/i.test(
@@ -186,6 +186,17 @@ export function isLiveCardOps(): boolean {
   return process.env.ALTITUDE_LIVE_CARD_OPS?.trim() === "1";
 }
 
+export function panelShowsMember(
+  text: string,
+  email: string,
+  memberName: string,
+): boolean {
+  return (
+    (email !== "" && text.includes(email)) ||
+    (memberName !== "" && text.includes(memberName))
+  );
+}
+
 export interface DashboardFlowOptions {
   screenshot?: (name: string) => Promise<string>;
   live?: boolean;
@@ -206,6 +217,12 @@ async function pageText(page: Page): Promise<string> {
     : page.locator("body").innerText();
 }
 
+async function cardRowsFromPage(page: Page): Promise<CardSummary[]> {
+  const mainRows = parseCardRows(await pageText(page));
+  if (mainRows.length > 0) return mainRows;
+  return parseCardRows(await page.locator("body").innerText());
+}
+
 export async function gotoManageCards(page: Page): Promise<void> {
   const manage = page.getByRole("link", { name: "Manage cards", exact: true });
   if (!(await manage.isVisible().catch(() => false))) {
@@ -222,6 +239,26 @@ export async function gotoManageCards(page: Page): Promise<void> {
       "dashboard not reachable — is the supervised session logged in?",
     );
   }
+  await page
+    .getByText(/••••\s*\d{4}/)
+    .first()
+    .waitFor({ state: "visible", timeout: 10_000 })
+    .catch(() => undefined);
+}
+
+function iconControl(page: Page, label: RegExp): Locator {
+  return page
+    .getByRole("button")
+    .filter({ hasText: label })
+    .or(
+      page
+        .getByText(label)
+        .locator(
+          "xpath=ancestor-or-self::*[self::button or @role='button'][1]",
+        ),
+    )
+    .or(page.getByText(label))
+    .first();
 }
 
 export async function openCardPanel(page: Page, cardId: string): Promise<void> {
@@ -229,8 +266,7 @@ export async function openCardPanel(page: Page, cardId: string): Promise<void> {
     .getByText(new RegExp(escapeRegExp(cardId), "i"))
     .first()
     .click();
-  const panelReady = page
-    .getByRole("button", { name: /^(Freeze|Unfreeze)$/ })
+  const panelReady = iconControl(page, /^(Freeze|Unfreeze)$/)
     .or(page.getByText("Frozen", { exact: true }))
     .first();
   await panelReady.waitFor({ state: "visible", timeout: 15_000 });
@@ -375,7 +411,7 @@ export async function readBalanceFrom(
     await gotoManageCards(page);
     const text = await pageText(page);
     const spendable = parseSpendableBalance(text);
-    const cards = parseCardRows(text);
+    const cards = await cardRowsFromPage(page);
     observed.screenshot = await screenshot(options, "altitude-balance.png");
     return {
       ok: spendable !== null,
@@ -422,27 +458,29 @@ async function selectCardholder(page: Page, email: string): Promise<void> {
   const input = page.getByPlaceholder("Member name or email to invite");
   await input.click();
   await input.fill(email);
-  const option = page.getByText(email, { exact: false }).last();
+  const roleOptions = page.getByRole("option").filter({ hasText: email });
+  const option =
+    (await roleOptions.count()) > 0
+      ? roleOptions.last()
+      : page.getByText(email, { exact: false }).last();
   const optionText = await option.innerText();
   const memberName = optionText.replace(email, "").trim();
   await option.click();
-  const deadline = Date.now() + 5_000;
-  while (Date.now() < deadline) {
-    const value = await input.inputValue().catch(() => "");
-    const parentText = await input
-      .locator("xpath=..")
-      .innerText()
-      .catch(() => "");
-    if (
-      value.includes(email) ||
-      parentText.includes(email) ||
-      (memberName !== "" && parentText.includes(memberName))
-    ) {
-      return;
-    }
-    await page.waitForTimeout(100);
+  await option
+    .waitFor({ state: "hidden", timeout: 5_000 })
+    .catch(() => undefined);
+  const panelLocator = page
+    .getByText("Issue a new virtual card", { exact: true })
+    .locator("xpath=ancestor::*[.//button[normalize-space()='Issue card']][1]");
+  const panel =
+    (await panelLocator.count()) > 0
+      ? await panelLocator.innerText()
+      : await pageText(page);
+  if (!panelShowsMember(panel, email, memberName)) {
+    throw new Error(
+      "cardholder selection did not contain the configured email",
+    );
   }
-  throw new Error("cardholder selection did not contain the configured email");
 }
 
 function writeCardSecrets(
@@ -493,7 +531,7 @@ export async function createCardOn(
       throw new Error("ALTITUDE_CARDHOLDER_EMAIL must be set for card create");
     }
     await gotoManageCards(page);
-    const existing = parseCardRows(await pageText(page)).find(
+    const existing = (await cardRowsFromPage(page)).find(
       (card) => card.name === request.reference,
     );
     if (existing) {
@@ -551,9 +589,10 @@ export async function createCardOn(
       name: new RegExp(escapeRegExp(request.reference), "i"),
     });
     await heading.waitFor({ state: "visible", timeout: 30_000 });
-    await page
-      .getByRole("button", { name: "Freeze", exact: true })
-      .waitFor({ state: "visible", timeout: 30_000 });
+    await iconControl(page, /^Freeze$/).waitFor({
+      state: "visible",
+      timeout: 30_000,
+    });
     const panelText = await pageText(page);
     const card: NonNullable<CardCommandResult["card"]> = {
       name: request.reference,
@@ -563,12 +602,11 @@ export async function createCardOn(
     };
     observed.screenshot = await screenshot(options, "altitude-card-create.png");
     if (request.reveal) {
-      await page
-        .getByRole("button", { name: "Show details", exact: true })
-        .click();
-      await page
-        .getByRole("button", { name: "Hide details", exact: true })
-        .waitFor({ state: "visible", timeout: 15_000 });
+      await iconControl(page, /^Show details$/).click();
+      await iconControl(page, /^Hide details$/).waitFor({
+        state: "visible",
+        timeout: 15_000,
+      });
       const details = await pageText(page);
       const revealed = parseRevealedCard(details);
       if (!revealed) {
@@ -580,9 +618,7 @@ export async function createCardOn(
         revealed,
       );
       card.secrets_path = secretsPath;
-      await page
-        .getByRole("button", { name: "Hide details", exact: true })
-        .click();
+      await iconControl(page, /^Hide details$/).click();
     }
     return {
       ok: true,
@@ -594,6 +630,12 @@ export async function createCardOn(
       at: new Date().toISOString(),
     };
   } catch (error) {
+    observed.url = page.url();
+    observed.screenshot = await safeScreenshot(
+      page,
+      options,
+      "altitude-card-create-error.png",
+    );
     return {
       ok: false,
       status,
@@ -621,7 +663,7 @@ export async function freezeCardOn(
   const observed = { url: page.url(), screenshot: "" };
   try {
     await gotoManageCards(page);
-    const summary = parseCardRows(await pageText(page)).find(
+    const summary = (await cardRowsFromPage(page)).find(
       (card) => card.name === cardId || card.last4 === cardId,
     );
     await openCardPanel(page, cardId);
@@ -643,7 +685,7 @@ export async function freezeCardOn(
         note: "freeze preview only; set ALTITUDE_LIVE_CARD_OPS=1 to freeze",
       };
     }
-    await page.getByRole("button", { name: "Freeze", exact: true }).click();
+    await iconControl(page, /^Freeze$/).click();
     const dialog = page.getByRole("dialog");
     let dialogVisible = false;
     try {
@@ -655,8 +697,7 @@ export async function freezeCardOn(
     if (dialogVisible) {
       await dialog.getByRole("button", { name: /freeze|confirm/i }).click();
     }
-    const frozen = page
-      .getByRole("button", { name: "Unfreeze", exact: true })
+    const frozen = iconControl(page, /^Unfreeze$/)
       .or(page.getByText("Frozen", { exact: true }))
       .first();
     await frozen.waitFor({ state: "visible", timeout: 15_000 });
@@ -676,6 +717,12 @@ export async function freezeCardOn(
       at: new Date().toISOString(),
     };
   } catch (error) {
+    observed.url = page.url();
+    observed.screenshot = await safeScreenshot(
+      page,
+      options,
+      "altitude-card-freeze-error.png",
+    );
     return {
       ok: false,
       status,

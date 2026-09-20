@@ -1,146 +1,226 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Altitude dashboard fixture</title>
+    <style>
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
   <body>
     <nav>
-      <a href="#cards" id="cards-link">Cards</a>
-      <a href="#manage-cards" id="manage-link">Manage cards</a>
+      <a href="#home">Home</a>
+      <a href="#cards">Cards</a>
+      <a href="#manage-cards">Manage cards</a>
       <a href="#transactions">Transactions</a>
     </nav>
     <main>
       <section id="manage-cards">
         <h1>Manage cards</h1>
-        <div>Spendable balance</div>
-        <div>$10.81</div>
-        <button type="button">Top up</button>
-        <button type="button">Withdraw</button>
-        <button type="button" id="issue-button">Issue</button>
-        <div id="card-table">
-          <div role="row" data-card-row>
-            <div>Angel Housing</div>
-            <div>•••• 6766</div>
-            <div>Active</div>
-            <div>$10,000.00 / 7 days</div>
-          </div>
-          <div role="row" data-card-row>
-            <div>Natalia</div>
-            <div>•••• 8539</div>
-            <div>Active</div>
-            <div>$10.00 / 30 days</div>
-          </div>
-          <div role="row" data-card-row>
-            <div>SOL-FULFILL-DEMO-01</div>
-            <div>•••• 2027</div>
-            <div>Active</div>
-            <div>$100.00 / 7 days</div>
-          </div>
+        <div>
+          <strong>Spendable balance</strong>
+          <span>$10.81</span>
+          <button type="button">Top up</button>
+          <button type="button">Withdraw</button>
+          <button id="issue-button" type="button">Issue</button>
         </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Cardholder</th>
+              <th>Card</th>
+              <th>Status</th>
+              <th>Limit</th>
+            </tr>
+          </thead>
+          <tbody id="card-rows"></tbody>
+        </table>
       </section>
       <section id="issue-panel" hidden>
         <h2>Issue a new virtual card</h2>
-        <label>Card name</label>
-        <input placeholder="What will this card be used for?" />
-        <label>Cardholder</label>
-        <input
-          role="combobox"
-          placeholder="Member name or email to invite"
-          id="cardholder"
-        />
-        <div id="member-options" hidden>
+        <label>
+          Card name
+          <input
+            id="card-name"
+            placeholder="What will this card be used for?"
+          />
+        </label>
+        <label>
+          Cardholder
+          <input id="cardholder" placeholder="Member name or email to invite" />
+        </label>
+        <div id="member-options" role="listbox" hidden>
           <div role="option">Fulfillment Demo fulfillment-demo@example.com</div>
-          <div role="option">Other Member other@example.com</div>
+          <div role="option">Angel Padilla-Ramos angel@example.com</div>
         </div>
-        <label>Limit amount</label>
-        <input placeholder="0.00" />
-        <label>Frequency</label>
-        <button type="button" role="combobox" id="frequency">
-          Per authorization
-        </button>
-        <div id="frequency-options" hidden>
-          <div role="option">All time</div>
-          <div role="option">7 day</div>
-          <div role="option">30 day</div>
-          <div role="option">Per authorization</div>
+        <div id="selected-member"></div>
+        <label>
+          Limit amount
+          <input id="amount" placeholder="0.00" />
+        </label>
+        <div>
+          <span>Frequency</span>
+          <button id="frequency" type="button" role="combobox">
+            Per authorization
+          </button>
+          <div id="frequency-options" hidden>
+            <div role="option">All time</div>
+            <div role="option">7 day</div>
+            <div role="option">30 day</div>
+            <div role="option">Per authorization</div>
+          </div>
         </div>
-        <button type="button" id="cancel-button">Cancel</button>
-        <button type="button" id="issue-card-button">Issue card</button>
+        <button id="cancel-button" type="button">Cancel</button>
+        <button id="issue-card-button" type="button">Issue card</button>
       </section>
-      <section id="detail-panel" hidden>
-        <h2 id="detail-name"></h2>
-        <div>Issued on September 19, 2026</div>
-        <div>Active</div>
-        <div>Cards account balance</div>
-        <div>Spending limit</div>
-        <div>$50.00 Per authorization</div>
-        <div>•••• •••• •••• 9243</div>
-        <button type="button" id="freeze-button">Freeze</button>
-      </section>
+      <section id="detail-panel" hidden></section>
     </main>
     <script>
-      const issuePanel = document.getElementById("issue-panel");
+      const cards = [
+        {
+          holder: "Fulfillment Demo",
+          name: "SOL-FULFILL-DEMO-01",
+          last4: "2027",
+          status: "Active",
+          limit: "$100.00 / 7 days",
+        },
+        {
+          holder: "Angel Housing",
+          name: "Angel Housing",
+          last4: "6766",
+          status: "Active",
+          limit: "$10,000.00 / 7 days",
+        },
+        {
+          holder: "Natalia",
+          name: "Natalia",
+          last4: "8539",
+          status: "Active",
+          limit: "$10.00 / 30 days",
+        },
+      ];
+      const cardRows = document.getElementById("card-rows");
       const detailPanel = document.getElementById("detail-panel");
-      const cardTable = document.getElementById("card-table");
+      const issuePanel = document.getElementById("issue-panel");
       const memberOptions = document.getElementById("member-options");
-      const frequencyOptions = document.getElementById("frequency-options");
-      const cardholder = document.getElementById("cardholder");
-      const frequency = document.getElementById("frequency");
+      const selectedMember = document.getElementById("selected-member");
+      const cardholderInput = document.getElementById("cardholder");
 
-      document.getElementById("issue-button").onclick = () => {
+      function iconButton(id, caption, handler) {
+        const button = document.createElement("button");
+        button.id = id;
+        button.type = "button";
+        button.innerHTML = `<svg aria-hidden="true" viewBox="0 0 10 10"></svg><span aria-hidden="true">${caption}</span>`;
+        button.addEventListener("click", handler);
+        return button;
+      }
+
+      function showDetail(card) {
+        detailPanel.hidden = false;
+        detailPanel.replaceChildren();
+        const heading = document.createElement("h2");
+        heading.textContent = card.name;
+        detailPanel.append(
+          heading,
+          document.createTextNode("Issued on 2026-09-19"),
+          document.createElement("br"),
+          document.createTextNode(card.status),
+          document.createElement("br"),
+          document.createTextNode("Cards account balance"),
+          document.createElement("br"),
+          document.createTextNode("•••• •••• •••• 9243"),
+          document.createElement("br"),
+        );
+        detailPanel.append(
+          iconButton(
+            "freeze",
+            card.status === "Frozen" ? "Unfreeze" : "Freeze",
+            () => {
+              card.status = "Frozen";
+              showDetail(card);
+              renderRows();
+            },
+          ),
+          iconButton("show-details", "Show details", () => {
+            const details = document.createElement("div");
+            details.id = "revealed-details";
+            details.innerText = "4413 6965 4615 9243\n10/31\n052\nCardholder";
+            detailPanel.append(details);
+            const hide = iconButton("hide-details", "Hide details", () => {
+              details.remove();
+              hide.remove();
+              detailPanel.append(
+                iconButton("show-details", "Show details", () => {
+                  details.hidden = false;
+                }),
+              );
+            });
+            detailPanel.append(hide);
+          }),
+        );
+      }
+
+      function renderRows() {
+        cardRows.replaceChildren();
+        for (const card of cards) {
+          const row = document.createElement("tr");
+          row.innerHTML = `<td>${card.holder}</td><td>${card.name} •••• ${card.last4}</td><td>${card.status}</td><td>${card.limit}</td>`;
+          row.addEventListener("click", () => showDetail(card));
+          cardRows.append(row);
+        }
+      }
+
+      renderRows();
+
+      document.getElementById("issue-button").addEventListener("click", () => {
         issuePanel.hidden = false;
-      };
-      document.getElementById("cancel-button").onclick = () => {
-        issuePanel.hidden = true;
-      };
-      cardholder.oninput = () => {
-        memberOptions.hidden = false;
-      };
-      memberOptions.querySelectorAll('[role="option"]').forEach((option) => {
-        option.onclick = () => {
-          cardholder.value = option.textContent.split(" ").pop();
-          memberOptions.hidden = true;
-        };
       });
-      frequency.onclick = () => {
-        frequencyOptions.hidden = false;
-      };
-      frequencyOptions.querySelectorAll('[role="option"]').forEach((option) => {
-        option.onclick = () => {
+      document.getElementById("cancel-button").addEventListener("click", () => {
+        issuePanel.hidden = true;
+      });
+      cardholderInput.addEventListener("input", () => {
+        memberOptions.hidden = cardholderInput.value === "";
+      });
+      for (const option of memberOptions.querySelectorAll("[role=option]")) {
+        option.addEventListener("click", () => {
+          const email = option.textContent.trim().split(" ").at(-1);
+          selectedMember.textContent = option.textContent
+            .trim()
+            .replace(` ${email}`, "");
+          cardholderInput.value = "";
+          memberOptions.hidden = true;
+        });
+      }
+      const frequency = document.getElementById("frequency");
+      const frequencyOptions = document.getElementById("frequency-options");
+      frequency.addEventListener("click", () => {
+        frequencyOptions.hidden = !frequencyOptions.hidden;
+      });
+      for (const option of frequencyOptions.querySelectorAll("[role=option]")) {
+        option.addEventListener("click", () => {
           frequency.textContent = option.textContent;
           frequencyOptions.hidden = true;
-        };
-      });
-      cardTable.querySelectorAll("[data-card-row]").forEach((row) => {
-        row.onclick = () => {
-          document.getElementById("detail-name").textContent =
-            row.children[0].textContent;
-          detailPanel.hidden = false;
-        };
-      });
-      document.getElementById("issue-card-button").onclick = () => {
-        const name = document.querySelector(
-          '[placeholder="What will this card be used for?"]',
-        ).value;
-        const row = document.createElement("div");
-        row.setAttribute("role", "row");
-        row.setAttribute("data-card-row", "");
-        row.innerHTML =
-          "<div>" +
-          name +
-          "</div><div>•••• 9243</div><div>Active</div><div>$50.00 Per authorization</div>";
-        cardTable.appendChild(row);
-        row.onclick = () => {
-          document.getElementById("detail-name").textContent = name;
-          detailPanel.hidden = false;
-        };
-        document.getElementById("detail-name").textContent = name;
-        issuePanel.hidden = true;
-        detailPanel.hidden = false;
-      };
-      document.getElementById("freeze-button").onclick = (event) => {
-        event.target.textContent = "Unfreeze";
-        const status = document.createElement("div");
-        status.textContent = "Frozen";
-        detailPanel.appendChild(status);
-      };
+        });
+      }
+      document
+        .getElementById("issue-card-button")
+        .addEventListener("click", () => {
+          const name = document.getElementById("card-name").value;
+          const amount = document.getElementById("amount").value;
+          const card = {
+            holder: selectedMember.textContent,
+            name,
+            last4: "9243",
+            status: "Active",
+            limit: `$${Number(amount).toFixed(2)} ${frequency.textContent.trim()}`,
+          };
+          cards.push(card);
+          issuePanel.hidden = true;
+          renderRows();
+          showDetail(card);
+        });
     </script>
   </body>
 </html>
