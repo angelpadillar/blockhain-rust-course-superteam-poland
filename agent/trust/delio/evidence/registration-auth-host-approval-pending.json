@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-09-19T13:35:08.837885+00:00",
+  "status": "configuration_change_awaiting_explicit_approval",
+  "workerTestsPassed": 50,
+  "sourceUploaded": true,
+  "workerReloaded": false,
+  "configurationChangeExecuted": false,
+  "requestedExactAuthHost": "identitytoolkit.googleapis.com",
+  "configurationScope": "isolated buena-delio-worker only",
+  "reason": "Automatic approval review requires explicit authorization for this persistent external-authentication-host allowlist addition.",
+  "correctiveSubmitExecutedByAgent": false,
+  "sourceSha256": {
+    "server.mjs": "0d94d585afc15e7d58678510e696397c6ea5ec78c7e20cebf8f4ec69a697ebc2",
+    "policy.mjs": "168b140dfb32421e345c1fa4a448b99d3cbcdbe7fbaaf34e85080e640b7863c6",
+    "registration-actions.mjs": "35bccc7a1c417424e4ec4672403a2c330b41adffb3936dca65358f9235a16b9c"
+  },
+  "evidenceInterpretation": "Observed request failure, not yet proved policy cause; no retrospective success claim."
+}

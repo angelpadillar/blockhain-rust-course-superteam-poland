@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/MahmoudAdelbghany/jev-browser",
+  "revision": "20c27dd96df3140cf162c936fbb7aa742c50edc6",
+  "packageVersion": "0.1.0",
+  "declaredLicense": "ISC",
+  "scope": "Normalized decision-policy adapter; not an upstream end-to-end browser benchmark",
+  "copiedFilesUnmodified": true,
+  "sourceSha256": {
+    "mahmoud/agent.mjs": "afc51a1417c1ff6c8b0a11d6b7d383d8c2249b716ea0e056a75fd5e138afde32",
+    "mahmoud/snapshot.mjs": "caca442be69913656f7b716b50ac94033d26f65035423d1a05ed837e3b48a93b",
+    "mahmoud/jev.mjs": "edfc736443a9c1ac6eb41049ba883edb84c3e0d922021e268a4df8945f07984d",
+    "mahmoud/package.json": "57f77199ff2c158c3e9b3396f40aa0e02283a42012bceb0eb8d1f3e6ac314424",
+    "mahmoud-policy.mjs": "45963f2784e37018b384be2176238ebcbf10de85ec0de77b4bce5c1265ed9b6f",
+    "mahmoud-policy.test.mjs": "89bf5d63297a3d68d76ffb9dfa9cf8b54ecf6aa9b57cd1392408acd9bdb7a039"
+  },
+  "validation": {
+    "command": "node --test hackathon/jev/experimental/shopping-head-to-head-v5/upstream/mahmoud-policy.test.mjs",
+    "passed": 8,
+    "failed": 0,
+    "networkCalls": 0,
+    "browserCalls": 0
+  },
+  "sharedDependencies": [
+    "../../browser-runtime-v3/providers.mjs",
+    "../../../src/jev.mjs",
+    "../../../src/config.mjs"
+  ]
+}

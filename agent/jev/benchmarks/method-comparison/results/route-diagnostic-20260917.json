@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "journalSha256": "f8cd582a47a28e38ea768fbbe0504a5363f2d8c672878658405f2d536b7f2f73",
+  "recordedSourceSha256": "4f273aa391ae7331be88bf310499ae439518fc75d20e3a48e592f24e6bd87b09",
+  "outcome": {
+    "status": "incomplete",
+    "reason": "product_open_rollback_limit",
+    "independentVerificationPassed": false,
+    "checks": {
+      "store": true,
+      "productId": false,
+      "externalProductId": false,
+      "visibleProduct": false
+    },
+    "categoryContextMatches": true
+  },
+  "recordedMetrics": {
+    "totalMs": 19902.968670000002,
+    "startPageMs": 1395.0332150000013,
+    "modelMs": 3312.18274,
+    "browserMs": 15882.948291999997,
+    "journalMs": 707.8376380000045,
+    "actions": 8,
+    "modelActions": 8,
+    "policyActions": 0,
+    "modelCalls": 8,
+    "inputTokens": 9188,
+    "outputTokens": 1431,
+    "estimatedModelUsd": 0.000385896,
+    "authorizedAgeConfirmations": 1,
+    "ageConfirmationMs": 1203.5776819999992,
+    "productOpenRollbacks": 2
+  },
+  "usageComplete": true,
+  "cost": {
+    "estimatedModelUsd": 0.000385896,
+    "costPerVerifiedSuccessUsd": null,
+    "note": "Cost per success is unavailable for a failed or unverified run, or when usage/cost is incomplete."
+  },
+  "blockedMutations": {
+    "recordedCount": 8,
+    "diagnosticEventCount": 8,
+    "hasDiagnosticEvents": true,
+    "undetailedRequestCount": 0,
+    "aggregateMatchesDiagnosticCount": true,
+    "byMethod": {
+      "POST": 8
+    },
+    "byEndpointClass": {
+      "address": 8
+    },
+    "byEndpointTemplate": {
+      "/v4/stores/:segment/addresses/:segment/products/:segment/view": 8
+    },
+    "withoutEndpointTemplateCount": 0,
+    "byActionSequenceAndType": [
+      {
+        "actionSequence": 8,
+        "actionType": "click",
+        "count": 4
+      },
+      {
+        "actionSequence": 9,
+        "actionType": "click",
+        "count": 4
+      }
+    ],
+    "byCompletedStepOutcome": [
+      {
+        "outcome": "age_confirmation_dismissed",
+        "completedSteps": 1,
+        "completedStepsWithBlockedRequests": 0,
+        "blockedRequests": 0
+      },
+      {
+        "outcome": "page_changed",
+        "completedSteps": 6,
+        "completedStepsWithBlockedRequests": 0,
+        "blockedRequests": 0
+      },
+      {
+        "outcome": "product_open_rolled_back",
+        "completedSteps": 2,
+        "completedStepsWithBlockedRequests": 2,
+        "blockedRequests": 8
+      }
+    ],
+    "causalLinkEstablished": false
+  },
+  "completedSteps": [
+    {
+      "actionSequence": 1,
+      "actionType": "fill",
+      "outcome": "page_changed",
+      "elapsedMs": 2962.475037,
+      "actionAndWaitMs": 832.2823880000014,
+      "modelMs": 631.859226999999,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 2,
+      "actionType": "press",
+      "outcome": "page_changed",
+      "elapsedMs": 5704.574686000002,
+      "actionAndWaitMs": 1448.8187640000033,
+      "modelMs": 1216.2328880000005,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 3,
+      "actionType": "click",
+      "outcome": "page_changed",
+      "elapsedMs": 7552.302390999999,
+      "actionAndWaitMs": 1521.2099710000002,
+      "modelMs": 261.82104400000026,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 4,
+      "actionType": "fill",
+      "outcome": "page_changed",
+      "elapsedMs": 9387.152785,
+      "actionAndWaitMs": 1488.5266910000028,
+      "modelMs": 285.45244600000296,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 5,
+      "actionType": "click",
+      "outcome": "page_changed",
+      "elapsedMs": 10666.754474,
+      "actionAndWaitMs": 993.0799569999981,
+      "modelMs": 234.86107099999936,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 6,
+      "actionType": "authorized_site_confirmation",
+      "outcome": "age_confirmation_dismissed",
+      "elapsedMs": 11905.240526,
+      "actionAndWaitMs": 1203.5905299999977,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 7,
+      "actionType": "click",
+      "outcome": "page_changed",
+      "elapsedMs": 14177.842308000001,
+      "actionAndWaitMs": 1965.4051669999972,
+      "modelMs": 238.17739699999947,
+      "blockedRequests": 0,
+      "blockedByMethod": {},
+      "blockedByEndpointClass": {},
+      "blockedByEndpointTemplate": {},
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 8,
+      "actionType": "click",
+      "outcome": "product_open_rolled_back",
+      "elapsedMs": 17042.070109,
+      "actionAndWaitMs": 2585.7332810000007,
+      "modelMs": 227.0035680000001,
+      "productTransition": {
+        "targetIdsAfterExecute": true,
+        "targetIdsObservedDuringWait": true,
+        "targetIdsObservedInNavigation": true,
+        "targetIdsAfterWait": false,
+        "visibleExactTitleAfterWait": false
+      },
+      "blockedRequests": 4,
+      "blockedByMethod": {
+        "POST": 4
+      },
+      "blockedByEndpointClass": {
+        "address": 4
+      },
+      "blockedByEndpointTemplate": {
+        "/v4/stores/:segment/addresses/:segment/products/:segment/view": 4
+      },
+      "blockedWithoutEndpointTemplate": 0
+    },
+    {
+      "actionSequence": 9,
+      "actionType": "click",
+      "outcome": "product_open_rolled_back",
+      "elapsedMs": 19882.133464,
+      "actionAndWaitMs": 2571.163517000001,
+      "modelMs": 216.4166839999998,
+      "productTransition": {
+        "targetIdsAfterExecute": true,
+        "targetIdsObservedDuringWait": true,
+        "targetIdsObservedInNavigation": true,
+        "targetIdsAfterWait": false,
+        "visibleExactTitleAfterWait": false
+      },
+      "blockedRequests": 4,
+      "blockedByMethod": {
+        "POST": 4
+      },
+      "blockedByEndpointClass": {
+        "address": 4
+      },
+      "blockedByEndpointTemplate": {
+        "/v4/stores/:segment/addresses/:segment/products/:segment/view": 4
+      },
+      "blockedWithoutEndpointTemplate": 0
+    }
+  ],
+  "methodology": {
+    "scope": "Offline allowlist summary of one saved journal; no browser or API calls.",
+    "correlation": "Blocked requests are joined only by their recorded actionSequence to completed steps and recorded outcomes. Association during an action/observation is correlation, not evidence that a blocked request caused an outcome or rollback.",
+    "missingEvidence": "Legacy aggregate counts cannot be attributed. Missing action sequence is unattributed; a recorded sequence without a completed step is no_completed_step. Missing recorded outcomes are unrecorded; they are not inferred from private page data.",
+    "metrics": "Metrics are copied from allowlisted numeric fields. browserMs is a residual including non-browser overhead; startPageMs and ageConfirmationMs overlap other totals. Missing booleans are null, not false.",
+    "privacy": "Only fixed enum labels, numeric metrics/counts/sequences, verification booleans, SHA-256 digests and independently sanitized endpoint templates are emitted. Templates retain at most 24 fixed allowlisted path literals; all other segments become :segment. Hosts, queries, raw URLs, names, labels, account values, IDs, request data, headers and bodies are omitted.",
+    "limitations": "One journal does not establish a success rate, successful-run speedup, or causal effect. Cost per success is unavailable on failed runs."
+  }
+}

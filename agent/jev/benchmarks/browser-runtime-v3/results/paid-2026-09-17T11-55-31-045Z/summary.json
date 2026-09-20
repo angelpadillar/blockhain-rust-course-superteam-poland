@@ -1,0 +1,6460 @@
+{
+  "schemaVersion": 1,
+  "batchId": "2026-09-17T11-55-31-045Z",
+  "sourceSha256": "712809979b43a43d10ac5addaf725f54a33127d6dab046a53a09b580d1d37d35",
+  "sourceUnchanged": true,
+  "nodeVersion": "v26.8.1",
+  "sourceFiles": [
+    "browser.mjs",
+    "runtime.mjs",
+    "providers.mjs",
+    "planner.mjs",
+    "credentials.mjs",
+    "fixture.mjs",
+    "paid-benchmark.mjs",
+    "../../src/jev.mjs",
+    "../../src/storage.mjs",
+    "../../src/glovo.mjs",
+    "../../src/config.mjs",
+    "../../src/policy.mjs",
+    "../../src/dom.mjs",
+    "../../package.json",
+    "../../package-lock.json"
+  ],
+  "batchStatus": "partial",
+  "stopReason": "accounting_or_batch_budget",
+  "plannedAttempts": 25,
+  "observedAttempts": 22,
+  "unattempted": 3,
+  "browserLaunchMs": 684.8304160000007,
+  "browserVersion": "153.0.8010.48",
+  "interpretation": [
+    "Controlled synthetic search-and-open fixtures; not Glovo, an unseen-site benchmark, or general instruction-following evidence.",
+    "Goal-pipeline arms share the real planner and new executor; stepwise adds 700 ms nonterminal waits. It is not the old deployed baseline.",
+    "Semantic guidance uses the same fixed public task without goal planning; its image arm is DOM plus screenshot, not image-only.",
+    "Costs include all recorded attempts and failures: OpenRouter reported account charges plus Jev token-based estimates. BYOK upstream amounts are separate, not added twice.",
+    "Missing cost or unfinished evidence is unknown, never zero. Model call attempts include durable pending reservations; responses received confirm API activity separately.",
+    "Total timing excludes browser/context setup, context close and final evidence writes. Planning overlaps initial navigation; observation and condition waits overlap. Do not add these components.",
+    "Small repeated samples and successful matched pairs are descriptive only. Excluding failed pairs from timing does not erase failures from success or cost totals.",
+    "Actual guidance/image activations are reported; rows with zero guide calls cannot support a guide comparison. Fresh contexts share one browser and do not prove cold caches."
+  ],
+  "allAttempts": {
+    "attempts": 22,
+    "successes": 21,
+    "terminalFailures": 1,
+    "unfinishedAttempts": 0,
+    "failureReasons": {
+      "provider_network_error": 1
+    },
+    "completedTotalMs": {
+      "count": 21,
+      "total": 37575.285579999996,
+      "median": 1435.227374999995,
+      "range": [
+        532.3419580000045,
+        4348.888207999997
+      ]
+    },
+    "failedTotalMs": {
+      "count": 1,
+      "total": 15082.22649999999,
+      "median": 15082.22649999999,
+      "range": [
+        15082.22649999999,
+        15082.22649999999
+      ]
+    },
+    "allTerminalTotalMs": {
+      "count": 22,
+      "total": 52657.512079999986,
+      "median": 1455.1543334999988,
+      "range": [
+        532.3419580000045,
+        15082.22649999999
+      ]
+    },
+    "completedRuntimeMs": {
+      "count": 21,
+      "total": 27073.793833000018,
+      "median": 837.3097500000003,
+      "range": [
+        145.9684999999954,
+        3981.6520419999943
+      ]
+    },
+    "allAttemptModelMs": {
+      "count": 22,
+      "total": 39131.972458,
+      "median": 645.6485834999985,
+      "range": [
+        362.98016700000153,
+        15003.917207999999
+      ]
+    },
+    "timingsAllAttempts": {
+      "planningMs": {
+        "count": 22,
+        "total": 10408.007829999973,
+        "median": 582.8535830000001,
+        "range": [
+          0.11920799998915754,
+          1193.323166000002
+        ]
+      },
+      "navigationMs": {
+        "count": 22,
+        "total": 408.33283199997095,
+        "median": 14.168125000000146,
+        "range": [
+          10.6909169999999,
+          65.28095800000301
+        ]
+      },
+      "contextSetupMs": {
+        "count": 22,
+        "total": 2965.0364170000103,
+        "median": 125.1855205000029,
+        "range": [
+          102.82491700000537,
+          262.1765000000014
+        ]
+      }
+    },
+    "runtimeMetricsAllTerminalAttempts": {
+      "observationMs": {
+        "count": 22,
+        "total": 3737.8854629999987,
+        "median": 54.80141650000223,
+        "range": [
+          25.002791999999317,
+          688.3040010000113
+        ]
+      },
+      "executionMs": {
+        "count": 22,
+        "total": 1063.730706999966,
+        "median": 45.55606249999255,
+        "range": [
+          3.4914580000040587,
+          132.89341599999898
+        ]
+      },
+      "conditionWaitMs": {
+        "count": 22,
+        "total": 3109.4615839999897,
+        "median": 27.01264550000269,
+        "range": [
+          7.268083000002662,
+          659.880084000004
+        ]
+      },
+      "settlingMs": {
+        "count": 22,
+        "total": 7012.953791,
+        "median": 0.0,
+        "range": [
+          0,
+          1403.1969160000008
+        ]
+      },
+      "chooserMs": {
+        "count": 22,
+        "total": 29333.865581,
+        "median": 0.0,
+        "range": [
+          0,
+          15011.435165999996
+        ]
+      },
+      "eventMs": {
+        "count": 22,
+        "total": 643.6955430000598,
+        "median": 26.968020500007697,
+        "range": [
+          10.55899900001532,
+          52.765834000012546
+        ]
+      },
+      "explicitProtocolCalls": {
+        "count": 22,
+        "total": 597.0,
+        "median": 25.0,
+        "range": [
+          15,
+          34
+        ]
+      },
+      "observations": {
+        "count": 22,
+        "total": 76.0,
+        "median": 3.0,
+        "range": [
+          2,
+          5
+        ]
+      },
+      "revalidations": {
+        "count": 22,
+        "total": 47.0,
+        "median": 2.0,
+        "range": [
+          1,
+          3
+        ]
+      },
+      "browserScans": {
+        "count": 22,
+        "total": 133.0,
+        "median": 5.0,
+        "range": [
+          3,
+          10
+        ]
+      },
+      "observerWakeups": {
+        "count": 22,
+        "total": 3.0,
+        "median": 0.0,
+        "range": [
+          0,
+          1
+        ]
+      },
+      "nativeActionAttempts": {
+        "count": 22,
+        "total": 47.0,
+        "median": 2.0,
+        "range": [
+          1,
+          3
+        ]
+      },
+      "nativeActionsCompleted": {
+        "count": 22,
+        "total": 47.0,
+        "median": 2.0,
+        "range": [
+          1,
+          3
+        ]
+      },
+      "chooserCalls": {
+        "count": 22,
+        "total": 10.0,
+        "median": 0.0,
+        "range": [
+          0,
+          1
+        ]
+      },
+      "staleRefreshes": {
+        "count": 22,
+        "total": 0.0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      },
+      "blockedRequests": {
+        "count": 22,
+        "total": 0.0,
+        "median": 0.0,
+        "range": [
+          0,
+          0
+        ]
+      }
+    },
+    "costComplete": false,
+    "allAttemptCostUsd": null,
+    "knownCostLowerBoundUsd": 0.000624544,
+    "costPerVerifiedSuccessUsdIncludingFailures": null,
+    "usageComplete": false,
+    "inputTokens": null,
+    "outputTokens": null,
+    "knownInputTokens": 5833,
+    "knownOutputTokens": 775,
+    "costByBasisKnownUsd": {
+      "provider_reported": 0.00052387,
+      "estimated": 0.000100674
+    },
+    "byokCallAttempts": 0,
+    "knownUpstreamInferenceCostUsdSeparate": 0.00052387,
+    "modelCallAttempts": 26,
+    "responsesReceived": 25,
+    "activations": {
+      "plannerCallAttempts": 16,
+      "guideCallAttempts": 10,
+      "guideResponsesReceived": 9,
+      "imageCallAttempts": 2,
+      "imageResponsesReceived": 2,
+      "runtimeChooserInvocations": 10
+    },
+    "attemptsWithGuideActivated": 10,
+    "actualModelsByProvider": {
+      "openrouter": [
+        "google/gemini-2.5-flash-lite"
+      ],
+      "typesafe": [
+        "jev-1.13.0"
+      ]
+    }
+  },
+  "groups": [
+    {
+      "suite": "goal_pipeline",
+      "groupBy": "mode",
+      "group": "fast",
+      "attempts": 8,
+      "successes": 8,
+      "terminalFailures": 0,
+      "unfinishedAttempts": 0,
+      "failureReasons": {},
+      "completedTotalMs": {
+        "count": 8,
+        "total": 8197.368748999994,
+        "median": 929.3563125000001,
+        "range": [
+          765.3126660000053,
+          1435.227374999995
+        ]
+      },
+      "failedTotalMs": {
+        "count": 0,
+        "total": null,
+        "median": null,
+        "range": null
+      },
+      "allTerminalTotalMs": {
+        "count": 8,
+        "total": 8197.368748999994,
+        "median": 929.3563125000001,
+        "range": [
+          765.3126660000053,
+          1435.227374999995
+        ]
+      },
+      "completedRuntimeMs": {
+        "count": 8,
+        "total": 3236.6994579999955,
+        "median": 312.1736454999955,
+        "range": [
+          145.9684999999954,
+          767.1243749999994
+        ]
+      },
+      "allAttemptModelMs": {
+        "count": 8,
+        "total": 5597.299582,
+        "median": 614.0425415000027,
+        "range": [
+          525.3234999999986,
+          1139.1652909999975
+        ]
+      },
+      "timingsAllAttempts": {
+        "planningMs": {
+          "count": 8,
+          "total": 4953.747831999994,
+          "median": 611.1357499999976,
+          "range": [
+            540.0008749999979,
+            686.9051660000041
+          ]
+        },
+        "navigationMs": {
+          "count": 8,
+          "total": 130.4719589999877,
+          "median": 13.762500000000728,
+          "range": [
+            10.6909169999999,
+            28.555499999994936
+          ]
+        },
+        "contextSetupMs": {
+          "count": 8,
+          "total": 1057.6635420000166,
+          "median": 126.24870800000281,
+          "range": [
+            104.87299999999959,
+            181.42233299999498
+          ]
+        }
+      },
+      "runtimeMetricsAllTerminalAttempts": {
+        "observationMs": {
+          "count": 8,
+          "total": 1684.4655859999912,
+          "median": 56.079978999998275,
+          "range": [
+            48.08037499999773,
+            676.6667090000046
+          ]
+        },
+        "executionMs": {
+          "count": 8,
+          "total": 422.4391659999892,
+          "median": 54.214271500000905,
+          "range": [
+            36.55379199999879,
+            59.56574899999396
+          ]
+        },
+        "conditionWaitMs": {
+          "count": 8,
+          "total": 1463.130208999988,
+          "median": 28.58264599999893,
+          "range": [
+            22.365541999992274,
+            651.1780420000068
+          ]
+        },
+        "settlingMs": {
+          "count": 8,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "chooserMs": {
+          "count": 8,
+          "total": 764.5935410000093,
+          "median": 0.0,
+          "range": [
+            0,
+            476.9479580000043
+          ]
+        },
+        "eventMs": {
+          "count": 8,
+          "total": 258.3968360000217,
+          "median": 27.92693749999671,
+          "range": [
+            24.71333400000003,
+            52.765834000012546
+          ]
+        },
+        "explicitProtocolCalls": {
+          "count": 8,
+          "total": 230.0,
+          "median": 28.0,
+          "range": [
+            25,
+            34
+          ]
+        },
+        "observations": {
+          "count": 8,
+          "total": 30.0,
+          "median": 3.5,
+          "range": [
+            3,
+            5
+          ]
+        },
+        "revalidations": {
+          "count": 8,
+          "total": 18.0,
+          "median": 2.0,
+          "range": [
+            2,
+            3
+          ]
+        },
+        "browserScans": {
+          "count": 8,
+          "total": 53.0,
+          "median": 6.0,
+          "range": [
+            5,
+            10
+          ]
+        },
+        "observerWakeups": {
+          "count": 8,
+          "total": 1.0,
+          "median": 0.0,
+          "range": [
+            0,
+            1
+          ]
+        },
+        "nativeActionAttempts": {
+          "count": 8,
+          "total": 18.0,
+          "median": 2.0,
+          "range": [
+            2,
+            3
+          ]
+        },
+        "nativeActionsCompleted": {
+          "count": 8,
+          "total": 18.0,
+          "median": 2.0,
+          "range": [
+            2,
+            3
+          ]
+        },
+        "chooserCalls": {
+          "count": 8,
+          "total": 2.0,
+          "median": 0.0,
+          "range": [
+            0,
+            1
+          ]
+        },
+        "staleRefreshes": {
+          "count": 8,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "blockedRequests": {
+          "count": 8,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        }
+      },
+      "costComplete": true,
+      "allAttemptCostUsd": 0.000253036,
+      "knownCostLowerBoundUsd": 0.000253036,
+      "costPerVerifiedSuccessUsdIncludingFailures": 3.16295e-05,
+      "usageComplete": true,
+      "inputTokens": 2102,
+      "outputTokens": 340,
+      "knownInputTokens": 2102,
+      "knownOutputTokens": 340,
+      "costByBasisKnownUsd": {
+        "provider_reported": 0.0002128,
+        "estimated": 4.0236000000000006e-05
+      },
+      "byokCallAttempts": 0,
+      "knownUpstreamInferenceCostUsdSeparate": 0.0002128,
+      "modelCallAttempts": 10,
+      "responsesReceived": 10,
+      "activations": {
+        "plannerCallAttempts": 8,
+        "guideCallAttempts": 2,
+        "guideResponsesReceived": 2,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 2
+      },
+      "attemptsWithGuideActivated": 2,
+      "actualModelsByProvider": {
+        "openrouter": [
+          "google/gemini-2.5-flash-lite"
+        ],
+        "typesafe": [
+          "jev-1.13.0"
+        ]
+      },
+      "byCase": {
+        "delayed-title": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 2736.681958999994,
+            "median": 1368.340979499997,
+            "range": [
+              1301.4545839999992,
+              1435.227374999995
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 2736.681958999994,
+            "median": 1368.340979499997,
+            "range": [
+              1301.4545839999992,
+              1435.227374999995
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 1527.7669999999998,
+            "median": 763.8834999999999,
+            "range": [
+              760.6426250000004,
+              767.1243749999994
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 1179.8803749999934,
+            "median": 589.9401874999967,
+            "range": [
+              525.3234999999986,
+              654.5568749999948
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1207.1697499999937,
+              "median": 603.5848749999968,
+              "range": [
+                540.0008749999979,
+                667.1688749999958
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 40.76674999999523,
+              "median": 20.383374999997613,
+              "range": [
+                12.211250000000291,
+                28.555499999994936
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 298.9254159999982,
+              "median": 149.4627079999991,
+              "range": [
+                117.50308300000324,
+                181.42233299999498
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 1348.6167520000017,
+              "median": 674.3083760000009,
+              "range": [
+                671.9500429999971,
+                676.6667090000046
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 108.5795000000071,
+              "median": 54.28975000000355,
+              "range": [
+                51.49445800000103,
+                57.08504200000607
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 1301.7465830000074,
+              "median": 650.8732915000037,
+              "range": [
+                650.5685410000006,
+                651.1780420000068
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 51.80900099998689,
+              "median": 25.904500499993446,
+              "range": [
+                24.71333400000003,
+                27.09566699998686
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 62.0,
+              "median": 31.0,
+              "range": [
+                31,
+                31
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 10.0,
+              "median": 5.0,
+              "range": [
+                5,
+                5
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 19.0,
+              "median": 9.5,
+              "range": [
+                9,
+                10
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 1.0,
+              "median": 0.5,
+              "range": [
+                0,
+                1
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 5.14e-05,
+          "knownCostLowerBoundUsd": 5.14e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 2.57e-05,
+          "usageComplete": true,
+          "inputTokens": 282,
+          "outputTokens": 58,
+          "knownInputTokens": 282,
+          "knownOutputTokens": 58,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.14e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.14e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 0,
+            "guideResponsesReceived": 0,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 0
+          },
+          "attemptsWithGuideActivated": 0,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        },
+        "enter-form": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 1540.616249000006,
+            "median": 770.308124500003,
+            "range": [
+              765.3126660000053,
+              775.3035830000008
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 1540.616249000006,
+            "median": 770.308124500003,
+            "range": [
+              765.3126660000053,
+              775.3035830000008
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 332.8152489999993,
+            "median": 166.40762449999966,
+            "range": [
+              158.03491600000416,
+              174.78033299999515
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 1182.0481660000078,
+            "median": 591.0240830000039,
+            "range": [
+              586.9120830000029,
+              595.1360830000049
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1206.470666000001,
+              "median": 603.2353330000005,
+              "range": [
+                599.8882910000029,
+                606.5823749999981
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 37.28650000000198,
+              "median": 18.64325000000099,
+              "range": [
+                13.02637500000128,
+                24.2601250000007
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 246.69266700001026,
+              "median": 123.34633350000513,
+              "range": [
+                122.25020900000527,
+                124.44245800000499
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 125.44625099999394,
+              "median": 62.72312549999697,
+              "range": [
+                56.50804199999402,
+                68.93820899999992
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 104.33500099999219,
+              "median": 52.167500499996095,
+              "range": [
+                50.60533299999224,
+                53.72966799999995
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 69.20012599999609,
+              "median": 34.600062999998045,
+              "range": [
+                33.073334000000614,
+                36.126791999995476
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 72.9328340000211,
+              "median": 36.46641700001055,
+              "range": [
+                34.872293000000354,
+                38.06054100002075
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 68.0,
+              "median": 34.0,
+              "range": [
+                34,
+                34
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 8.0,
+              "median": 4.0,
+              "range": [
+                4,
+                4
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 14.0,
+              "median": 7.0,
+              "range": [
+                7,
+                7
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 5.14e-05,
+          "knownCostLowerBoundUsd": 5.14e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 2.57e-05,
+          "usageComplete": true,
+          "inputTokens": 282,
+          "outputTokens": 58,
+          "knownInputTokens": 282,
+          "knownOutputTokens": 58,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.14e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.14e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 0,
+            "guideResponsesReceived": 0,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 0
+          },
+          "attemptsWithGuideActivated": 0,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        },
+        "live-search": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 1558.7326659999962,
+            "median": 779.3663329999981,
+            "range": [
+              767.0477909999972,
+              791.684874999999
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 1558.7326659999962,
+            "median": 779.3663329999981,
+            "range": [
+              767.0477909999972,
+              791.684874999999
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 319.9397089999984,
+            "median": 159.9698544999992,
+            "range": [
+              145.9684999999954,
+              173.971209000003
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 1215.3706670000029,
+            "median": 607.6853335000014,
+            "range": [
+              582.4216670000023,
+              632.9490000000005
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1237.5131249999977,
+              "median": 618.7565624999988,
+              "range": [
+                592.4148750000022,
+                645.0982499999955
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 25.718041999993147,
+              "median": 12.859020999996574,
+              "range": [
+                11.219416999992973,
+                14.498625000000175
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 279.1175010000079,
+              "median": 139.55875050000395,
+              "range": [
+                131.98545900000317,
+                147.13204200000473
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 99.92645799999445,
+              "median": 49.96322899999723,
+              "range": [
+                48.08037499999773,
+                51.846082999996725
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 113.40512399999716,
+              "median": 56.70256199999858,
+              "range": [
+                54.69887500000186,
+                58.706248999995296
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 45.27891699998872,
+              "median": 22.63945849999436,
+              "range": [
+                22.365541999992274,
+                22.91337499999645
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 80.5371240000095,
+              "median": 40.26856200000475,
+              "range": [
+                27.771289999996952,
+                52.765834000012546
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 50.0,
+              "median": 25.0,
+              "range": [
+                25,
+                25
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 10.0,
+              "median": 5.0,
+              "range": [
+                5,
+                5
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 5.32e-05,
+          "knownCostLowerBoundUsd": 5.32e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 2.66e-05,
+          "usageComplete": true,
+          "inputTokens": 284,
+          "outputTokens": 62,
+          "knownInputTokens": 284,
+          "knownOutputTokens": 62,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.32e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.32e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 0,
+            "guideResponsesReceived": 0,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 0
+          },
+          "attemptsWithGuideActivated": 0,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        },
+        "semantic-context": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 2361.3378749999974,
+            "median": 1180.6689374999987,
+            "range": [
+              1067.027750000001,
+              1294.3101249999963
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 2361.3378749999974,
+            "median": 1180.6689374999987,
+            "range": [
+              1067.027750000001,
+              1294.3101249999963
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 1056.177499999998,
+            "median": 528.088749999999,
+            "range": [
+              449.5669579999958,
+              606.6105420000022
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 2020.0003739999956,
+            "median": 1010.0001869999978,
+            "range": [
+              880.8350829999981,
+              1139.1652909999975
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1302.5942910000012,
+              "median": 651.2971455000006,
+              "range": [
+                615.6891249999971,
+                686.9051660000041
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 26.70066699999734,
+              "median": 13.35033349999867,
+              "range": [
+                10.6909169999999,
+                16.00974999999744
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 232.92795800000022,
+              "median": 116.46397900000011,
+              "range": [
+                104.87299999999959,
+                128.05495800000062
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 110.47612500000105,
+              "median": 55.238062500000524,
+              "range": [
+                54.82420899999852,
+                55.65191600000253
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 96.11954099999275,
+              "median": 48.059770499996375,
+              "range": [
+                36.55379199999879,
+                59.56574899999396
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 46.90458299999591,
+              "median": 23.452291499997955,
+              "range": [
+                22.81262499999866,
+                24.09195799999725
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 764.5935410000093,
+              "median": 382.29677050000464,
+              "range": [
+                287.645583000005,
+                476.9479580000043
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 53.11787700000423,
+              "median": 26.558938500002114,
+              "range": [
+                25.035292000007757,
+                28.08258499999647
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 50.0,
+              "median": 25.0,
+              "range": [
+                25,
+                25
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 10.0,
+              "median": 5.0,
+              "range": [
+                5,
+                5
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 2.0,
+              "median": 1.0,
+              "range": [
+                1,
+                1
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 9.7036e-05,
+          "knownCostLowerBoundUsd": 9.7036e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 4.8518e-05,
+          "usageComplete": true,
+          "inputTokens": 1254,
+          "outputTokens": 162,
+          "knownInputTokens": 1254,
+          "knownOutputTokens": 162,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.68e-05,
+            "estimated": 4.0236000000000006e-05
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.68e-05,
+          "modelCallAttempts": 4,
+          "responsesReceived": 4,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 2,
+            "guideResponsesReceived": 2,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 2
+          },
+          "attemptsWithGuideActivated": 2,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": [
+              "jev-1.13.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "suite": "goal_pipeline",
+      "groupBy": "mode",
+      "group": "stepwise",
+      "attempts": 8,
+      "successes": 8,
+      "terminalFailures": 0,
+      "unfinishedAttempts": 0,
+      "failureReasons": {},
+      "completedTotalMs": {
+        "count": 8,
+        "total": 18497.796956000006,
+        "median": 2051.4609784999993,
+        "range": [
+          1410.5057080000042,
+          4348.888207999997
+        ]
+      },
+      "failedTotalMs": {
+        "count": 0,
+        "total": null,
+        "median": null,
+        "range": null
+      },
+      "allTerminalTotalMs": {
+        "count": 8,
+        "total": 18497.796956000006,
+        "median": 2051.4609784999993,
+        "range": [
+          1410.5057080000042,
+          4348.888207999997
+        ]
+      },
+      "completedRuntimeMs": {
+        "count": 8,
+        "total": 13036.904125000023,
+        "median": 1477.5976250000022,
+        "range": [
+          827.2330420000071,
+          3775.072791000006
+        ]
+      },
+      "allAttemptModelMs": {
+        "count": 8,
+        "total": 8749.540875999992,
+        "median": 624.6626670000005,
+        "range": [
+          522.7187080000003,
+          3487.186874999992
+        ]
+      },
+      "timingsAllAttempts": {
+        "planningMs": {
+          "count": 8,
+          "total": 5452.58079,
+          "median": 597.274937000002,
+          "range": [
+            535.6079580000005,
+            1193.323166000002
+          ]
+        },
+        "navigationMs": {
+          "count": 8,
+          "total": 182.76920700000483,
+          "median": 14.227728999998362,
+          "range": [
+            11.211499999997613,
+            65.28095800000301
+          ]
+        },
+        "contextSetupMs": {
+          "count": 8,
+          "total": 1167.2892500000016,
+          "median": 127.05591650000133,
+          "range": [
+            105.61462500000198,
+            262.1765000000014
+          ]
+        }
+      },
+      "runtimeMetricsAllTerminalAttempts": {
+        "observationMs": {
+          "count": 8,
+          "total": 1804.895875999995,
+          "median": 80.93135399999301,
+          "range": [
+            47.76237499999115,
+            688.3040010000113
+          ]
+        },
+        "executionMs": {
+          "count": 8,
+          "total": 411.0038329999952,
+          "median": 43.186666999998124,
+          "range": [
+            32.776749999997264,
+            132.89341599999898
+          ]
+        },
+        "conditionWaitMs": {
+          "count": 8,
+          "total": 1522.667209000021,
+          "median": 37.38222950000636,
+          "range": [
+            25.933208000002196,
+            659.880084000004
+          ]
+        },
+        "settlingMs": {
+          "count": 8,
+          "total": 7012.953791,
+          "median": 701.4178124999962,
+          "range": [
+            700.6113339999938,
+            1403.1969160000008
+          ]
+        },
+        "chooserMs": {
+          "count": 8,
+          "total": 3419.3015000000014,
+          "median": 0.0,
+          "range": [
+            0,
+            2938.8009999999995
+          ]
+        },
+        "eventMs": {
+          "count": 8,
+          "total": 253.89387500003795,
+          "median": 28.419583000002604,
+          "range": [
+            25.060043000004953,
+            40.729665999991994
+          ]
+        },
+        "explicitProtocolCalls": {
+          "count": 8,
+          "total": 227.0,
+          "median": 26.5,
+          "range": [
+            25,
+            34
+          ]
+        },
+        "observations": {
+          "count": 8,
+          "total": 29.0,
+          "median": 3.5,
+          "range": [
+            3,
+            5
+          ]
+        },
+        "revalidations": {
+          "count": 8,
+          "total": 18.0,
+          "median": 2.0,
+          "range": [
+            2,
+            3
+          ]
+        },
+        "browserScans": {
+          "count": 8,
+          "total": 52.0,
+          "median": 6.0,
+          "range": [
+            5,
+            10
+          ]
+        },
+        "observerWakeups": {
+          "count": 8,
+          "total": 2.0,
+          "median": 0.0,
+          "range": [
+            0,
+            1
+          ]
+        },
+        "nativeActionAttempts": {
+          "count": 8,
+          "total": 18.0,
+          "median": 2.0,
+          "range": [
+            2,
+            3
+          ]
+        },
+        "nativeActionsCompleted": {
+          "count": 8,
+          "total": 18.0,
+          "median": 2.0,
+          "range": [
+            2,
+            3
+          ]
+        },
+        "chooserCalls": {
+          "count": 8,
+          "total": 2.0,
+          "median": 0.0,
+          "range": [
+            0,
+            1
+          ]
+        },
+        "staleRefreshes": {
+          "count": 8,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "blockedRequests": {
+          "count": 8,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        }
+      },
+      "costComplete": true,
+      "allAttemptCostUsd": 0.000253036,
+      "knownCostLowerBoundUsd": 0.000253036,
+      "costPerVerifiedSuccessUsdIncludingFailures": 3.16295e-05,
+      "usageComplete": true,
+      "inputTokens": 2102,
+      "outputTokens": 340,
+      "knownInputTokens": 2102,
+      "knownOutputTokens": 340,
+      "costByBasisKnownUsd": {
+        "provider_reported": 0.0002128,
+        "estimated": 4.0236000000000006e-05
+      },
+      "byokCallAttempts": 0,
+      "knownUpstreamInferenceCostUsdSeparate": 0.0002128,
+      "modelCallAttempts": 10,
+      "responsesReceived": 10,
+      "activations": {
+        "plannerCallAttempts": 8,
+        "guideCallAttempts": 2,
+        "guideResponsesReceived": 2,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 2
+      },
+      "attemptsWithGuideActivated": 2,
+      "actualModelsByProvider": {
+        "openrouter": [
+          "google/gemini-2.5-flash-lite"
+        ],
+        "typesafe": [
+          "jev-1.13.0"
+        ]
+      },
+      "byCase": {
+        "delayed-title": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 4063.9886660000047,
+            "median": 2031.9943330000024,
+            "range": [
+              2014.7702500000014,
+              2049.2184160000033
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 4063.9886660000047,
+            "median": 2031.9943330000024,
+            "range": [
+              2014.7702500000014,
+              2049.2184160000033
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 2955.1952500000043,
+            "median": 1477.5976250000022,
+            "range": [
+              1476.8288749999992,
+              1478.366375000005
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 1080.692833000001,
+            "median": 540.3464165000005,
+            "range": [
+              522.7187080000003,
+              557.9741250000006
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1106.9148329999953,
+              "median": 553.4574164999976,
+              "range": [
+                535.6079580000005,
+                571.3068749999948
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 27.58295800000633,
+              "median": 13.791479000003164,
+              "range": [
+                13.745333000006212,
+                13.837625000000116
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 225.9558759999927,
+              "median": 112.97793799999636,
+              "range": [
+                109.84808399999747,
+                116.10779199999524
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 1376.515169000013,
+              "median": 688.2575845000065,
+              "range": [
+                688.2111680000016,
+                688.3040010000113
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 77.44916699999885,
+              "median": 38.724583499999426,
+              "range": [
+                33.07070800000656,
+                44.37845899999229
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 1312.6609590000007,
+              "median": 656.3304795000004,
+              "range": [
+                652.7808749999967,
+                659.880084000004
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 1402.528542,
+              "median": 701.264271,
+              "range": [
+                700.6113339999938,
+                701.9172080000062
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 68.96416599999793,
+              "median": 34.482082999998966,
+              "range": [
+                29.869541000000027,
+                39.094624999997905
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 59.0,
+              "median": 29.5,
+              "range": [
+                28,
+                31
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 9.0,
+              "median": 4.5,
+              "range": [
+                4,
+                5
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 18.0,
+              "median": 9.0,
+              "range": [
+                8,
+                10
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 2.0,
+              "median": 1.0,
+              "range": [
+                1,
+                1
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 5.14e-05,
+          "knownCostLowerBoundUsd": 5.14e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 2.57e-05,
+          "usageComplete": true,
+          "inputTokens": 282,
+          "outputTokens": 58,
+          "knownInputTokens": 282,
+          "knownOutputTokens": 58,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.14e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.14e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 0,
+            "guideResponsesReceived": 0,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 0
+          },
+          "attemptsWithGuideActivated": 0,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        },
+        "enter-form": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 5145.629541000002,
+            "median": 2572.814770500001,
+            "range": [
+              2237.986582999998,
+              2907.642958000004
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 5145.629541000002,
+            "median": 2572.814770500001,
+            "range": [
+              2237.986582999998,
+              2907.642958000004
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 3328.8956250000047,
+            "median": 1664.4478125000023,
+            "range": [
+              1616.0065420000028,
+              1712.8890830000018
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 1789.804959000001,
+            "median": 894.9024795000005,
+            "range": [
+              612.5850419999988,
+              1177.2199170000022
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1814.580749000008,
+              "median": 907.290374500004,
+              "range": [
+                621.257583000006,
+                1193.323166000002
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 76.49245800000062,
+              "median": 38.24622900000031,
+              "range": [
+                11.211499999997613,
+                65.28095800000301
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 367.7911250000034,
+              "median": 183.8955625000017,
+              "range": [
+                105.61462500000198,
+                262.1765000000014
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 215.84920799999236,
+              "median": 107.92460399999618,
+              "range": [
+                106.32183299999451,
+                109.52737499999785
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 177.20224999999482,
+              "median": 88.60112499999741,
+              "range": [
+                44.30883399999584,
+                132.89341599999898
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 98.38458400000673,
+              "median": 49.19229200000336,
+              "range": [
+                45.771959000005154,
+                52.61262500000157
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 2805.574416000003,
+              "median": 1402.7872080000016,
+              "range": [
+                1402.3775000000023,
+                1403.1969160000008
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 79.59874900000432,
+              "median": 39.79937450000216,
+              "range": [
+                38.869083000012324,
+                40.729665999991994
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 68.0,
+              "median": 34.0,
+              "range": [
+                34,
+                34
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 8.0,
+              "median": 4.0,
+              "range": [
+                4,
+                4
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 14.0,
+              "median": 7.0,
+              "range": [
+                7,
+                7
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 5.14e-05,
+          "knownCostLowerBoundUsd": 5.14e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 2.57e-05,
+          "usageComplete": true,
+          "inputTokens": 282,
+          "outputTokens": 58,
+          "knownInputTokens": 282,
+          "knownOutputTokens": 58,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.14e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.14e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 0,
+            "guideResponsesReceived": 0,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 0
+          },
+          "attemptsWithGuideActivated": 0,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        },
+        "live-search": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 2885.587000000007,
+            "median": 1442.7935000000034,
+            "range": [
+              1410.5057080000042,
+              1475.0812920000026
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 2885.587000000007,
+            "median": 1442.7935000000034,
+            "range": [
+              1410.5057080000042,
+              1475.0812920000026
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 1664.5427920000075,
+            "median": 832.2713960000037,
+            "range": [
+              827.2330420000071,
+              837.3097500000003
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 1193.6736670000028,
+            "median": 596.8368335000014,
+            "range": [
+              556.9333750000005,
+              636.7402920000022
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1217.8104999999996,
+              "median": 608.9052499999998,
+              "range": [
+                570.6813750000001,
+                647.1291249999995
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 41.08125000000291,
+              "median": 20.540625000001455,
+              "range": [
+                13.703750000000582,
+                27.37750000000233
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 305.12233299999934,
+              "median": 152.56116649999967,
+              "range": [
+                125.9285830000008,
+                179.19374999999854
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 109.99049999999261,
+              "median": 54.995249999996304,
+              "range": [
+                54.449625000001106,
+                55.5408749999915
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 75.35295800000313,
+              "median": 37.676479000001564,
+              "range": [
+                33.28845800000272,
+                42.06450000000041
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 54.02529100000538,
+              "median": 27.01264550000269,
+              "range": [
+                25.933208000002196,
+                28.092083000003186
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 1402.2672079999975,
+              "median": 701.1336039999987,
+              "range": [
+                701.0121250000011,
+                701.2550829999964
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 53.30129200002557,
+              "median": 26.650646000012784,
+              "range": [
+                26.334876000015356,
+                26.966416000010213
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 50.0,
+              "median": 25.0,
+              "range": [
+                25,
+                25
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 10.0,
+              "median": 5.0,
+              "range": [
+                5,
+                5
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 5.32e-05,
+          "knownCostLowerBoundUsd": 5.32e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 2.66e-05,
+          "usageComplete": true,
+          "inputTokens": 284,
+          "outputTokens": 62,
+          "knownInputTokens": 284,
+          "knownOutputTokens": 62,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.32e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.32e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 0,
+            "guideResponsesReceived": 0,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 0
+          },
+          "attemptsWithGuideActivated": 0,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        },
+        "semantic-context": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 6402.591748999992,
+            "median": 3201.295874499996,
+            "range": [
+              2053.7035409999953,
+              4348.888207999997
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 6402.591748999992,
+            "median": 3201.295874499996,
+            "range": [
+              2053.7035409999953,
+              4348.888207999997
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 5088.270458000006,
+            "median": 2544.135229000003,
+            "range": [
+              1313.1976670000004,
+              3775.072791000006
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 4685.369416999987,
+            "median": 2342.6847084999936,
+            "range": [
+              1198.182541999995,
+              3487.186874999992
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 1313.2747079999972,
+              "median": 656.6373539999986,
+              "range": [
+                573.2922909999979,
+                739.9824169999993
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 37.61254099999496,
+              "median": 18.80627049999748,
+              "range": [
+                14.617832999996608,
+                22.994707999998354
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 268.4199160000062,
+              "median": 134.2099580000031,
+              "range": [
+                128.18325000000186,
+                140.23666600000433
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 102.5409989999971,
+              "median": 51.27049949999855,
+              "range": [
+                47.76237499999115,
+                54.77862400000595
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 80.99945799999841,
+              "median": 40.499728999999206,
+              "range": [
+                32.776749999997264,
+                48.22270800000115
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 57.596375000008265,
+              "median": 28.798187500004133,
+              "range": [
+                28.6038750000007,
+                28.992500000007567
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 1402.5836249999993,
+              "median": 701.2918124999997,
+              "range": [
+                701.0030830000032,
+                701.5805419999961
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 3419.3015000000014,
+              "median": 1709.6507500000007,
+              "range": [
+                480.5005000000019,
+                2938.8009999999995
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 52.02966800001013,
+              "median": 26.014834000005067,
+              "range": [
+                25.060043000004953,
+                26.96962500000518
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 50.0,
+              "median": 25.0,
+              "range": [
+                25,
+                25
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 10.0,
+              "median": 5.0,
+              "range": [
+                5,
+                5
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 2.0,
+              "median": 1.0,
+              "range": [
+                1,
+                1
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 9.7036e-05,
+          "knownCostLowerBoundUsd": 9.7036e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 4.8518e-05,
+          "usageComplete": true,
+          "inputTokens": 1254,
+          "outputTokens": 162,
+          "knownInputTokens": 1254,
+          "knownOutputTokens": 162,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.68e-05,
+            "estimated": 4.0236000000000006e-05
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.68e-05,
+          "modelCallAttempts": 4,
+          "responsesReceived": 4,
+          "activations": {
+            "plannerCallAttempts": 2,
+            "guideCallAttempts": 2,
+            "guideResponsesReceived": 2,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 2
+          },
+          "attemptsWithGuideActivated": 2,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": [
+              "jev-1.13.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "suite": "semantic_guidance",
+      "groupBy": "guide",
+      "group": "jev",
+      "attempts": 2,
+      "successes": 1,
+      "terminalFailures": 1,
+      "unfinishedAttempts": 0,
+      "failureReasons": {
+        "provider_network_error": 1
+      },
+      "completedTotalMs": {
+        "count": 1,
+        "total": 532.3419580000045,
+        "median": 532.3419580000045,
+        "range": [
+          532.3419580000045,
+          532.3419580000045
+        ]
+      },
+      "failedTotalMs": {
+        "count": 1,
+        "total": 15082.22649999999,
+        "median": 15082.22649999999,
+        "range": [
+          15082.22649999999,
+          15082.22649999999
+        ]
+      },
+      "allTerminalTotalMs": {
+        "count": 2,
+        "total": 15614.568457999994,
+        "median": 7807.284228999997,
+        "range": [
+          532.3419580000045,
+          15082.22649999999
+        ]
+      },
+      "completedRuntimeMs": {
+        "count": 1,
+        "total": 513.4357080000045,
+        "median": 513.4357080000045,
+        "range": [
+          513.4357080000045,
+          513.4357080000045
+        ]
+      },
+      "allAttemptModelMs": {
+        "count": 2,
+        "total": 15366.897375,
+        "median": 7683.4486875,
+        "range": [
+          362.98016700000153,
+          15003.917207999999
+        ]
+      },
+      "timingsAllAttempts": {
+        "planningMs": {
+          "count": 2,
+          "total": 0.2934169999862206,
+          "median": 0.1467084999931103,
+          "range": [
+            0.11920799998915754,
+            0.17420899999706307
+          ]
+        },
+        "navigationMs": {
+          "count": 2,
+          "total": 37.030582999992475,
+          "median": 18.515291499996238,
+          "range": [
+            18.420500000000175,
+            18.6100829999923
+          ]
+        },
+        "contextSetupMs": {
+          "count": 2,
+          "total": 242.86612599998625,
+          "median": 121.43306299999313,
+          "range": [
+            120.08570899999177,
+            122.78041699999449
+          ]
+        }
+      },
+      "runtimeMetricsAllTerminalAttempts": {
+        "observationMs": {
+          "count": 2,
+          "total": 70.09329199999775,
+          "median": 35.04664599999887,
+          "range": [
+            25.002791999999317,
+            45.09049999999843
+          ]
+        },
+        "executionMs": {
+          "count": 2,
+          "total": 47.43333300000086,
+          "median": 23.71666650000043,
+          "range": [
+            3.4914580000040587,
+            43.9418749999968
+          ]
+        },
+        "conditionWaitMs": {
+          "count": 2,
+          "total": 32.014624000003096,
+          "median": 16.007312000001548,
+          "range": [
+            7.268083000002662,
+            24.746541000000434
+          ]
+        },
+        "settlingMs": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "chooserMs": {
+          "count": 2,
+          "total": 15385.219581999998,
+          "median": 7692.609790999999,
+          "range": [
+            373.78441600000224,
+            15011.435165999996
+          ]
+        },
+        "eventMs": {
+          "count": 2,
+          "total": 35.132041000018944,
+          "median": 17.566020500009472,
+          "range": [
+            10.55899900001532,
+            24.573042000003625
+          ]
+        },
+        "explicitProtocolCalls": {
+          "count": 2,
+          "total": 40.0,
+          "median": 20.0,
+          "range": [
+            15,
+            25
+          ]
+        },
+        "observations": {
+          "count": 2,
+          "total": 5.0,
+          "median": 2.5,
+          "range": [
+            2,
+            3
+          ]
+        },
+        "revalidations": {
+          "count": 2,
+          "total": 3.0,
+          "median": 1.5,
+          "range": [
+            1,
+            2
+          ]
+        },
+        "browserScans": {
+          "count": 2,
+          "total": 8.0,
+          "median": 4.0,
+          "range": [
+            3,
+            5
+          ]
+        },
+        "observerWakeups": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "nativeActionAttempts": {
+          "count": 2,
+          "total": 3.0,
+          "median": 1.5,
+          "range": [
+            1,
+            2
+          ]
+        },
+        "nativeActionsCompleted": {
+          "count": 2,
+          "total": 3.0,
+          "median": 1.5,
+          "range": [
+            1,
+            2
+          ]
+        },
+        "chooserCalls": {
+          "count": 2,
+          "total": 2.0,
+          "median": 1.0,
+          "range": [
+            1,
+            1
+          ]
+        },
+        "staleRefreshes": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "blockedRequests": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        }
+      },
+      "costComplete": false,
+      "allAttemptCostUsd": null,
+      "knownCostLowerBoundUsd": 2.0202e-05,
+      "costPerVerifiedSuccessUsdIncludingFailures": null,
+      "usageComplete": false,
+      "inputTokens": null,
+      "outputTokens": null,
+      "knownInputTokens": 481,
+      "knownOutputTokens": 47,
+      "costByBasisKnownUsd": {
+        "provider_reported": 0.0,
+        "estimated": 2.0202e-05
+      },
+      "byokCallAttempts": 0,
+      "knownUpstreamInferenceCostUsdSeparate": 0.0,
+      "modelCallAttempts": 2,
+      "responsesReceived": 1,
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 2,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 2
+      },
+      "attemptsWithGuideActivated": 2,
+      "actualModelsByProvider": {
+        "openrouter": [],
+        "typesafe": [
+          "jev-1.13.0"
+        ]
+      },
+      "byCase": {
+        "semantic-context": {
+          "attempts": 2,
+          "successes": 1,
+          "terminalFailures": 1,
+          "unfinishedAttempts": 0,
+          "failureReasons": {
+            "provider_network_error": 1
+          },
+          "completedTotalMs": {
+            "count": 1,
+            "total": 532.3419580000045,
+            "median": 532.3419580000045,
+            "range": [
+              532.3419580000045,
+              532.3419580000045
+            ]
+          },
+          "failedTotalMs": {
+            "count": 1,
+            "total": 15082.22649999999,
+            "median": 15082.22649999999,
+            "range": [
+              15082.22649999999,
+              15082.22649999999
+            ]
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 15614.568457999994,
+            "median": 7807.284228999997,
+            "range": [
+              532.3419580000045,
+              15082.22649999999
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 1,
+            "total": 513.4357080000045,
+            "median": 513.4357080000045,
+            "range": [
+              513.4357080000045,
+              513.4357080000045
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 15366.897375,
+            "median": 7683.4486875,
+            "range": [
+              362.98016700000153,
+              15003.917207999999
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 0.2934169999862206,
+              "median": 0.1467084999931103,
+              "range": [
+                0.11920799998915754,
+                0.17420899999706307
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 37.030582999992475,
+              "median": 18.515291499996238,
+              "range": [
+                18.420500000000175,
+                18.6100829999923
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 242.86612599998625,
+              "median": 121.43306299999313,
+              "range": [
+                120.08570899999177,
+                122.78041699999449
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 70.09329199999775,
+              "median": 35.04664599999887,
+              "range": [
+                25.002791999999317,
+                45.09049999999843
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 47.43333300000086,
+              "median": 23.71666650000043,
+              "range": [
+                3.4914580000040587,
+                43.9418749999968
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 32.014624000003096,
+              "median": 16.007312000001548,
+              "range": [
+                7.268083000002662,
+                24.746541000000434
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 15385.219581999998,
+              "median": 7692.609790999999,
+              "range": [
+                373.78441600000224,
+                15011.435165999996
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 35.132041000018944,
+              "median": 17.566020500009472,
+              "range": [
+                10.55899900001532,
+                24.573042000003625
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 40.0,
+              "median": 20.0,
+              "range": [
+                15,
+                25
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 5.0,
+              "median": 2.5,
+              "range": [
+                2,
+                3
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 3.0,
+              "median": 1.5,
+              "range": [
+                1,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 8.0,
+              "median": 4.0,
+              "range": [
+                3,
+                5
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 3.0,
+              "median": 1.5,
+              "range": [
+                1,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 3.0,
+              "median": 1.5,
+              "range": [
+                1,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 2.0,
+              "median": 1.0,
+              "range": [
+                1,
+                1
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": false,
+          "allAttemptCostUsd": null,
+          "knownCostLowerBoundUsd": 2.0202e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": null,
+          "usageComplete": false,
+          "inputTokens": null,
+          "outputTokens": null,
+          "knownInputTokens": 481,
+          "knownOutputTokens": 47,
+          "costByBasisKnownUsd": {
+            "provider_reported": 0.0,
+            "estimated": 2.0202e-05
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 0.0,
+          "modelCallAttempts": 2,
+          "responsesReceived": 1,
+          "activations": {
+            "plannerCallAttempts": 0,
+            "guideCallAttempts": 2,
+            "guideResponsesReceived": 1,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 2
+          },
+          "attemptsWithGuideActivated": 2,
+          "actualModelsByProvider": {
+            "openrouter": [],
+            "typesafe": [
+              "jev-1.13.0"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "suite": "semantic_guidance",
+      "groupBy": "guide",
+      "group": "openrouter-dom",
+      "attempts": 2,
+      "successes": 2,
+      "terminalFailures": 0,
+      "unfinishedAttempts": 0,
+      "failureReasons": {},
+      "completedTotalMs": {
+        "count": 2,
+        "total": 3130.3775000000023,
+        "median": 1565.1887500000012,
+        "range": [
+          1285.3705000000045,
+          1845.0069999999978
+        ]
+      },
+      "failedTotalMs": {
+        "count": 0,
+        "total": null,
+        "median": null,
+        "range": null
+      },
+      "allTerminalTotalMs": {
+        "count": 2,
+        "total": 3130.3775000000023,
+        "median": 1565.1887500000012,
+        "range": [
+          1285.3705000000045,
+          1845.0069999999978
+        ]
+      },
+      "completedRuntimeMs": {
+        "count": 2,
+        "total": 3097.792917000006,
+        "median": 1548.896458500003,
+        "range": [
+          1272.0599589999983,
+          1825.7329580000078
+        ]
+      },
+      "allAttemptModelMs": {
+        "count": 2,
+        "total": 2822.770000000004,
+        "median": 1411.385000000002,
+        "range": [
+          1146.6957919999986,
+          1676.0742080000055
+        ]
+      },
+      "timingsAllAttempts": {
+        "planningMs": {
+          "count": 2,
+          "total": 0.8499999999912689,
+          "median": 0.4249999999956344,
+          "range": [
+            0.1788749999977881,
+            0.6711249999934807
+          ]
+        },
+        "navigationMs": {
+          "count": 2,
+          "total": 31.326040999992983,
+          "median": 15.663020499996492,
+          "range": [
+            12.73308299999917,
+            18.592957999993814
+          ]
+        },
+        "contextSetupMs": {
+          "count": 2,
+          "total": 266.64324900000065,
+          "median": 133.32162450000033,
+          "range": [
+            103.70258300000569,
+            162.94066599999496
+          ]
+        }
+      },
+      "runtimeMetricsAllTerminalAttempts": {
+        "observationMs": {
+          "count": 2,
+          "total": 91.25241700001061,
+          "median": 45.626208500005305,
+          "range": [
+            41.42333299999882,
+            49.82908400001179
+          ]
+        },
+        "executionMs": {
+          "count": 2,
+          "total": 86.33162499998434,
+          "median": 43.16581249999217,
+          "range": [
+            40.2732909999977,
+            46.058333999986644
+          ]
+        },
+        "conditionWaitMs": {
+          "count": 2,
+          "total": 45.88129199998366,
+          "median": 22.94064599999183,
+          "range": [
+            22.160041999995883,
+            23.721249999987776
+          ]
+        },
+        "settlingMs": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "chooserMs": {
+          "count": 2,
+          "total": 2844.443333000003,
+          "median": 1422.2216665000014,
+          "range": [
+            1156.7374169999966,
+            1687.7059160000063
+          ]
+        },
+        "eventMs": {
+          "count": 2,
+          "total": 45.02895699998044,
+          "median": 22.51447849999022,
+          "range": [
+            20.733206999990216,
+            24.29574999999022
+          ]
+        },
+        "explicitProtocolCalls": {
+          "count": 2,
+          "total": 50.0,
+          "median": 25.0,
+          "range": [
+            25,
+            25
+          ]
+        },
+        "observations": {
+          "count": 2,
+          "total": 6.0,
+          "median": 3.0,
+          "range": [
+            3,
+            3
+          ]
+        },
+        "revalidations": {
+          "count": 2,
+          "total": 4.0,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "browserScans": {
+          "count": 2,
+          "total": 10.0,
+          "median": 5.0,
+          "range": [
+            5,
+            5
+          ]
+        },
+        "observerWakeups": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "nativeActionAttempts": {
+          "count": 2,
+          "total": 4.0,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "nativeActionsCompleted": {
+          "count": 2,
+          "total": 4.0,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "chooserCalls": {
+          "count": 2,
+          "total": 2.0,
+          "median": 1.0,
+          "range": [
+            1,
+            1
+          ]
+        },
+        "staleRefreshes": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "blockedRequests": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        }
+      },
+      "costComplete": true,
+      "allAttemptCostUsd": 3.88e-05,
+      "knownCostLowerBoundUsd": 3.88e-05,
+      "costPerVerifiedSuccessUsdIncludingFailures": 1.94e-05,
+      "usageComplete": true,
+      "inputTokens": 316,
+      "outputTokens": 18,
+      "knownInputTokens": 316,
+      "knownOutputTokens": 18,
+      "costByBasisKnownUsd": {
+        "provider_reported": 3.88e-05,
+        "estimated": 0.0
+      },
+      "byokCallAttempts": 0,
+      "knownUpstreamInferenceCostUsdSeparate": 3.88e-05,
+      "modelCallAttempts": 2,
+      "responsesReceived": 2,
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 2,
+        "guideResponsesReceived": 2,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 2
+      },
+      "attemptsWithGuideActivated": 2,
+      "actualModelsByProvider": {
+        "openrouter": [
+          "google/gemini-2.5-flash-lite"
+        ],
+        "typesafe": []
+      },
+      "byCase": {
+        "semantic-context": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 3130.3775000000023,
+            "median": 1565.1887500000012,
+            "range": [
+              1285.3705000000045,
+              1845.0069999999978
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 3130.3775000000023,
+            "median": 1565.1887500000012,
+            "range": [
+              1285.3705000000045,
+              1845.0069999999978
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 3097.792917000006,
+            "median": 1548.896458500003,
+            "range": [
+              1272.0599589999983,
+              1825.7329580000078
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 2822.770000000004,
+            "median": 1411.385000000002,
+            "range": [
+              1146.6957919999986,
+              1676.0742080000055
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 0.8499999999912689,
+              "median": 0.4249999999956344,
+              "range": [
+                0.1788749999977881,
+                0.6711249999934807
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 31.326040999992983,
+              "median": 15.663020499996492,
+              "range": [
+                12.73308299999917,
+                18.592957999993814
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 266.64324900000065,
+              "median": 133.32162450000033,
+              "range": [
+                103.70258300000569,
+                162.94066599999496
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 91.25241700001061,
+              "median": 45.626208500005305,
+              "range": [
+                41.42333299999882,
+                49.82908400001179
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 86.33162499998434,
+              "median": 43.16581249999217,
+              "range": [
+                40.2732909999977,
+                46.058333999986644
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 45.88129199998366,
+              "median": 22.94064599999183,
+              "range": [
+                22.160041999995883,
+                23.721249999987776
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 2844.443333000003,
+              "median": 1422.2216665000014,
+              "range": [
+                1156.7374169999966,
+                1687.7059160000063
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 45.02895699998044,
+              "median": 22.51447849999022,
+              "range": [
+                20.733206999990216,
+                24.29574999999022
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 50.0,
+              "median": 25.0,
+              "range": [
+                25,
+                25
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 10.0,
+              "median": 5.0,
+              "range": [
+                5,
+                5
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 2.0,
+              "median": 1.0,
+              "range": [
+                1,
+                1
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 3.88e-05,
+          "knownCostLowerBoundUsd": 3.88e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 1.94e-05,
+          "usageComplete": true,
+          "inputTokens": 316,
+          "outputTokens": 18,
+          "knownInputTokens": 316,
+          "knownOutputTokens": 18,
+          "costByBasisKnownUsd": {
+            "provider_reported": 3.88e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 3.88e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 0,
+            "guideCallAttempts": 2,
+            "guideResponsesReceived": 2,
+            "imageCallAttempts": 0,
+            "imageResponsesReceived": 0,
+            "runtimeChooserInvocations": 2
+          },
+          "attemptsWithGuideActivated": 2,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        }
+      }
+    },
+    {
+      "suite": "semantic_guidance",
+      "groupBy": "guide",
+      "group": "openrouter-dom-image",
+      "attempts": 2,
+      "successes": 2,
+      "terminalFailures": 0,
+      "unfinishedAttempts": 0,
+      "failureReasons": {},
+      "completedTotalMs": {
+        "count": 2,
+        "total": 7217.40041699999,
+        "median": 3608.700208499995,
+        "range": [
+          3221.022791999989,
+          3996.377625000001
+        ]
+      },
+      "failedTotalMs": {
+        "count": 0,
+        "total": null,
+        "median": null,
+        "range": null
+      },
+      "allTerminalTotalMs": {
+        "count": 2,
+        "total": 7217.40041699999,
+        "median": 3608.700208499995,
+        "range": [
+          3221.022791999989,
+          3996.377625000001
+        ]
+      },
+      "completedRuntimeMs": {
+        "count": 2,
+        "total": 7188.961624999989,
+        "median": 3594.4808124999945,
+        "range": [
+          3207.3095829999947,
+          3981.6520419999943
+        ]
+      },
+      "allAttemptModelMs": {
+        "count": 2,
+        "total": 6595.4646250000005,
+        "median": 3297.7323125000003,
+        "range": [
+          3018.2035000000033,
+          3577.2611249999973
+        ]
+      },
+      "timingsAllAttempts": {
+        "planningMs": {
+          "count": 2,
+          "total": 0.5357910000020638,
+          "median": 0.2678955000010319,
+          "range": [
+            0.12220800000068266,
+            0.41358300000138115
+          ]
+        },
+        "navigationMs": {
+          "count": 2,
+          "total": 26.735041999992973,
+          "median": 13.367520999996486,
+          "range": [
+            13.144541999994544,
+            13.590499999998428
+          ]
+        },
+        "contextSetupMs": {
+          "count": 2,
+          "total": 230.57425000000512,
+          "median": 115.28712500000256,
+          "range": [
+            102.82491700000537,
+            127.74933299999975
+          ]
+        }
+      },
+      "runtimeMetricsAllTerminalAttempts": {
+        "observationMs": {
+          "count": 2,
+          "total": 87.17829200000415,
+          "median": 43.589146000002074,
+          "range": [
+            40.31883400001243,
+            46.85945799999172
+          ]
+        },
+        "executionMs": {
+          "count": 2,
+          "total": 96.52274999999645,
+          "median": 48.261374999998225,
+          "range": [
+            45.053790999998455,
+            51.468958999997994
+          ]
+        },
+        "conditionWaitMs": {
+          "count": 2,
+          "total": 45.768249999993714,
+          "median": 22.884124999996857,
+          "range": [
+            22.49404200000572,
+            23.274207999987993
+          ]
+        },
+        "settlingMs": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "chooserMs": {
+          "count": 2,
+          "total": 6920.307624999987,
+          "median": 3460.1538124999934,
+          "range": [
+            3073.637791999994,
+            3846.6698329999927
+          ]
+        },
+        "eventMs": {
+          "count": 2,
+          "total": 51.24383400000079,
+          "median": 25.621917000000394,
+          "range": [
+            24.424959000003582,
+            26.818874999997206
+          ]
+        },
+        "explicitProtocolCalls": {
+          "count": 2,
+          "total": 50.0,
+          "median": 25.0,
+          "range": [
+            25,
+            25
+          ]
+        },
+        "observations": {
+          "count": 2,
+          "total": 6.0,
+          "median": 3.0,
+          "range": [
+            3,
+            3
+          ]
+        },
+        "revalidations": {
+          "count": 2,
+          "total": 4.0,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "browserScans": {
+          "count": 2,
+          "total": 10.0,
+          "median": 5.0,
+          "range": [
+            5,
+            5
+          ]
+        },
+        "observerWakeups": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "nativeActionAttempts": {
+          "count": 2,
+          "total": 4.0,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "nativeActionsCompleted": {
+          "count": 2,
+          "total": 4.0,
+          "median": 2.0,
+          "range": [
+            2,
+            2
+          ]
+        },
+        "chooserCalls": {
+          "count": 2,
+          "total": 2.0,
+          "median": 1.0,
+          "range": [
+            1,
+            1
+          ]
+        },
+        "staleRefreshes": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "blockedRequests": {
+          "count": 2,
+          "total": 0.0,
+          "median": 0.0,
+          "range": [
+            0,
+            0
+          ]
+        }
+      },
+      "costComplete": true,
+      "allAttemptCostUsd": 5.947e-05,
+      "knownCostLowerBoundUsd": 5.947e-05,
+      "costPerVerifiedSuccessUsdIncludingFailures": 2.9735e-05,
+      "usageComplete": true,
+      "inputTokens": 832,
+      "outputTokens": 30,
+      "knownInputTokens": 832,
+      "knownOutputTokens": 30,
+      "costByBasisKnownUsd": {
+        "provider_reported": 5.947e-05,
+        "estimated": 0.0
+      },
+      "byokCallAttempts": 0,
+      "knownUpstreamInferenceCostUsdSeparate": 5.947e-05,
+      "modelCallAttempts": 2,
+      "responsesReceived": 2,
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 2,
+        "guideResponsesReceived": 2,
+        "imageCallAttempts": 2,
+        "imageResponsesReceived": 2,
+        "runtimeChooserInvocations": 2
+      },
+      "attemptsWithGuideActivated": 2,
+      "actualModelsByProvider": {
+        "openrouter": [
+          "google/gemini-2.5-flash-lite"
+        ],
+        "typesafe": []
+      },
+      "byCase": {
+        "semantic-context": {
+          "attempts": 2,
+          "successes": 2,
+          "terminalFailures": 0,
+          "unfinishedAttempts": 0,
+          "failureReasons": {},
+          "completedTotalMs": {
+            "count": 2,
+            "total": 7217.40041699999,
+            "median": 3608.700208499995,
+            "range": [
+              3221.022791999989,
+              3996.377625000001
+            ]
+          },
+          "failedTotalMs": {
+            "count": 0,
+            "total": null,
+            "median": null,
+            "range": null
+          },
+          "allTerminalTotalMs": {
+            "count": 2,
+            "total": 7217.40041699999,
+            "median": 3608.700208499995,
+            "range": [
+              3221.022791999989,
+              3996.377625000001
+            ]
+          },
+          "completedRuntimeMs": {
+            "count": 2,
+            "total": 7188.961624999989,
+            "median": 3594.4808124999945,
+            "range": [
+              3207.3095829999947,
+              3981.6520419999943
+            ]
+          },
+          "allAttemptModelMs": {
+            "count": 2,
+            "total": 6595.4646250000005,
+            "median": 3297.7323125000003,
+            "range": [
+              3018.2035000000033,
+              3577.2611249999973
+            ]
+          },
+          "timingsAllAttempts": {
+            "planningMs": {
+              "count": 2,
+              "total": 0.5357910000020638,
+              "median": 0.2678955000010319,
+              "range": [
+                0.12220800000068266,
+                0.41358300000138115
+              ]
+            },
+            "navigationMs": {
+              "count": 2,
+              "total": 26.735041999992973,
+              "median": 13.367520999996486,
+              "range": [
+                13.144541999994544,
+                13.590499999998428
+              ]
+            },
+            "contextSetupMs": {
+              "count": 2,
+              "total": 230.57425000000512,
+              "median": 115.28712500000256,
+              "range": [
+                102.82491700000537,
+                127.74933299999975
+              ]
+            }
+          },
+          "runtimeMetricsAllTerminalAttempts": {
+            "observationMs": {
+              "count": 2,
+              "total": 87.17829200000415,
+              "median": 43.589146000002074,
+              "range": [
+                40.31883400001243,
+                46.85945799999172
+              ]
+            },
+            "executionMs": {
+              "count": 2,
+              "total": 96.52274999999645,
+              "median": 48.261374999998225,
+              "range": [
+                45.053790999998455,
+                51.468958999997994
+              ]
+            },
+            "conditionWaitMs": {
+              "count": 2,
+              "total": 45.768249999993714,
+              "median": 22.884124999996857,
+              "range": [
+                22.49404200000572,
+                23.274207999987993
+              ]
+            },
+            "settlingMs": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "chooserMs": {
+              "count": 2,
+              "total": 6920.307624999987,
+              "median": 3460.1538124999934,
+              "range": [
+                3073.637791999994,
+                3846.6698329999927
+              ]
+            },
+            "eventMs": {
+              "count": 2,
+              "total": 51.24383400000079,
+              "median": 25.621917000000394,
+              "range": [
+                24.424959000003582,
+                26.818874999997206
+              ]
+            },
+            "explicitProtocolCalls": {
+              "count": 2,
+              "total": 50.0,
+              "median": 25.0,
+              "range": [
+                25,
+                25
+              ]
+            },
+            "observations": {
+              "count": 2,
+              "total": 6.0,
+              "median": 3.0,
+              "range": [
+                3,
+                3
+              ]
+            },
+            "revalidations": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "browserScans": {
+              "count": 2,
+              "total": 10.0,
+              "median": 5.0,
+              "range": [
+                5,
+                5
+              ]
+            },
+            "observerWakeups": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "nativeActionAttempts": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "nativeActionsCompleted": {
+              "count": 2,
+              "total": 4.0,
+              "median": 2.0,
+              "range": [
+                2,
+                2
+              ]
+            },
+            "chooserCalls": {
+              "count": 2,
+              "total": 2.0,
+              "median": 1.0,
+              "range": [
+                1,
+                1
+              ]
+            },
+            "staleRefreshes": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            },
+            "blockedRequests": {
+              "count": 2,
+              "total": 0.0,
+              "median": 0.0,
+              "range": [
+                0,
+                0
+              ]
+            }
+          },
+          "costComplete": true,
+          "allAttemptCostUsd": 5.947e-05,
+          "knownCostLowerBoundUsd": 5.947e-05,
+          "costPerVerifiedSuccessUsdIncludingFailures": 2.9735e-05,
+          "usageComplete": true,
+          "inputTokens": 832,
+          "outputTokens": 30,
+          "knownInputTokens": 832,
+          "knownOutputTokens": 30,
+          "costByBasisKnownUsd": {
+            "provider_reported": 5.947e-05,
+            "estimated": 0.0
+          },
+          "byokCallAttempts": 0,
+          "knownUpstreamInferenceCostUsdSeparate": 5.947e-05,
+          "modelCallAttempts": 2,
+          "responsesReceived": 2,
+          "activations": {
+            "plannerCallAttempts": 0,
+            "guideCallAttempts": 2,
+            "guideResponsesReceived": 2,
+            "imageCallAttempts": 2,
+            "imageResponsesReceived": 2,
+            "runtimeChooserInvocations": 2
+          },
+          "attemptsWithGuideActivated": 2,
+          "actualModelsByProvider": {
+            "openrouter": [
+              "google/gemini-2.5-flash-lite"
+            ],
+            "typesafe": []
+          }
+        }
+      }
+    }
+  ],
+  "successfulMatchedPipelinePairs": [
+    {
+      "caseId": "delayed-title",
+      "repeat": 1,
+      "stepwiseTotalMs": 2014.7702500000014,
+      "fastTotalMs": 1301.4545839999992,
+      "savedMs": 713.3156660000022,
+      "stepwiseOverFast": 1.548091093434577
+    },
+    {
+      "caseId": "delayed-title",
+      "repeat": 2,
+      "stepwiseTotalMs": 2049.2184160000033,
+      "fastTotalMs": 1435.227374999995,
+      "savedMs": 613.9910410000084,
+      "stepwiseOverFast": 1.4278005364829462
+    },
+    {
+      "caseId": "enter-form",
+      "repeat": 1,
+      "stepwiseTotalMs": 2907.642958000004,
+      "fastTotalMs": 765.3126660000053,
+      "savedMs": 2142.3302919999987,
+      "stepwiseOverFast": 3.799287646965435
+    },
+    {
+      "caseId": "enter-form",
+      "repeat": 2,
+      "stepwiseTotalMs": 2237.986582999998,
+      "fastTotalMs": 775.3035830000008,
+      "savedMs": 1462.6829999999973,
+      "stepwiseOverFast": 2.886593886668515
+    },
+    {
+      "caseId": "live-search",
+      "repeat": 1,
+      "stepwiseTotalMs": 1410.5057080000042,
+      "fastTotalMs": 767.0477909999972,
+      "savedMs": 643.457917000007,
+      "stepwiseOverFast": 1.838875914317064
+    },
+    {
+      "caseId": "live-search",
+      "repeat": 2,
+      "stepwiseTotalMs": 1475.0812920000026,
+      "fastTotalMs": 791.684874999999,
+      "savedMs": 683.3964170000036,
+      "stepwiseOverFast": 1.8632177253607434
+    },
+    {
+      "caseId": "semantic-context",
+      "repeat": 1,
+      "stepwiseTotalMs": 4348.888207999997,
+      "fastTotalMs": 1294.3101249999963,
+      "savedMs": 3054.5780830000003,
+      "stepwiseOverFast": 3.3600047809252893
+    },
+    {
+      "caseId": "semantic-context",
+      "repeat": 2,
+      "stepwiseTotalMs": 2053.7035409999953,
+      "fastTotalMs": 1067.027750000001,
+      "savedMs": 986.6757909999942,
+      "stepwiseOverFast": 1.9246955301771609
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "suite": "goal_pipeline",
+      "caseId": "enter-form",
+      "repeat": 1,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 2907.642958000004,
+      "navigationMs": 65.28095800000301,
+      "planningMs": 1193.323166000002,
+      "contextSetupMs": 262.1765000000014,
+      "runtimeMs": 1712.8890830000018,
+      "runtimeMetrics": {
+        "observationMs": 106.32183299999451,
+        "executionMs": 132.89341599999898,
+        "conditionWaitMs": 52.61262500000157,
+        "settlingMs": 1403.1969160000008,
+        "chooserMs": 0,
+        "eventMs": 38.869083000012324,
+        "explicitProtocolCalls": 34,
+        "observations": 4,
+        "revalidations": 3,
+        "browserScans": 7,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 3,
+        "nativeActionsCompleted": 3,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 1177.2199170000022,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 1177.2199170000022
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 2,
+      "suite": "goal_pipeline",
+      "caseId": "enter-form",
+      "repeat": 1,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 765.3126660000053,
+      "navigationMs": 24.2601250000007,
+      "planningMs": 606.5823749999981,
+      "contextSetupMs": 124.44245800000499,
+      "runtimeMs": 158.03491600000416,
+      "runtimeMetrics": {
+        "observationMs": 56.50804199999402,
+        "executionMs": 50.60533299999224,
+        "conditionWaitMs": 33.073334000000614,
+        "settlingMs": 0,
+        "chooserMs": 0,
+        "eventMs": 34.872293000000354,
+        "explicitProtocolCalls": 34,
+        "observations": 4,
+        "revalidations": 3,
+        "browserScans": 7,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 3,
+        "nativeActionsCompleted": 3,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 595.1360830000049,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 595.1360830000049
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 3,
+      "suite": "goal_pipeline",
+      "caseId": "enter-form",
+      "repeat": 2,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 775.3035830000008,
+      "navigationMs": 13.02637500000128,
+      "planningMs": 599.8882910000029,
+      "contextSetupMs": 122.25020900000527,
+      "runtimeMs": 174.78033299999515,
+      "runtimeMetrics": {
+        "observationMs": 68.93820899999992,
+        "executionMs": 53.72966799999995,
+        "conditionWaitMs": 36.126791999995476,
+        "settlingMs": 0,
+        "chooserMs": 0,
+        "eventMs": 38.06054100002075,
+        "explicitProtocolCalls": 34,
+        "observations": 4,
+        "revalidations": 3,
+        "browserScans": 7,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 3,
+        "nativeActionsCompleted": 3,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 586.9120830000029,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 586.9120830000029
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 4,
+      "suite": "goal_pipeline",
+      "caseId": "enter-form",
+      "repeat": 2,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 2237.986582999998,
+      "navigationMs": 11.211499999997613,
+      "planningMs": 621.257583000006,
+      "contextSetupMs": 105.61462500000198,
+      "runtimeMs": 1616.0065420000028,
+      "runtimeMetrics": {
+        "observationMs": 109.52737499999785,
+        "executionMs": 44.30883399999584,
+        "conditionWaitMs": 45.771959000005154,
+        "settlingMs": 1402.3775000000023,
+        "chooserMs": 0,
+        "eventMs": 40.729665999991994,
+        "explicitProtocolCalls": 34,
+        "observations": 4,
+        "revalidations": 3,
+        "browserScans": 7,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 3,
+        "nativeActionsCompleted": 3,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 612.5850419999988,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 612.5850419999988
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 5,
+      "suite": "goal_pipeline",
+      "caseId": "live-search",
+      "repeat": 1,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1410.5057080000042,
+      "navigationMs": 27.37750000000233,
+      "planningMs": 570.6813750000001,
+      "contextSetupMs": 179.19374999999854,
+      "runtimeMs": 837.3097500000003,
+      "runtimeMetrics": {
+        "observationMs": 55.5408749999915,
+        "executionMs": 42.06450000000041,
+        "conditionWaitMs": 28.092083000003186,
+        "settlingMs": 701.2550829999964,
+        "chooserMs": 0,
+        "eventMs": 26.334876000015356,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 142,
+            "outputTokens": 31,
+            "latencyMs": 556.9333750000005,
+            "costUsd": 2.66e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.66e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.66e-05,
+        "knownCostUsd": 2.66e-05,
+        "inputTokens": 142,
+        "outputTokens": 31,
+        "knownInputTokens": 142,
+        "knownOutputTokens": 31,
+        "modelMs": 556.9333750000005
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 6,
+      "suite": "goal_pipeline",
+      "caseId": "live-search",
+      "repeat": 1,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 767.0477909999972,
+      "navigationMs": 14.498625000000175,
+      "planningMs": 592.4148750000022,
+      "contextSetupMs": 147.13204200000473,
+      "runtimeMs": 173.971209000003,
+      "runtimeMetrics": {
+        "observationMs": 48.08037499999773,
+        "executionMs": 58.706248999995296,
+        "conditionWaitMs": 22.91337499999645,
+        "settlingMs": 0,
+        "chooserMs": 0,
+        "eventMs": 52.765834000012546,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 142,
+            "outputTokens": 31,
+            "latencyMs": 582.4216670000023,
+            "costUsd": 2.66e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.66e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.66e-05,
+        "knownCostUsd": 2.66e-05,
+        "inputTokens": 142,
+        "outputTokens": 31,
+        "knownInputTokens": 142,
+        "knownOutputTokens": 31,
+        "modelMs": 582.4216670000023
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 7,
+      "suite": "goal_pipeline",
+      "caseId": "live-search",
+      "repeat": 2,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 791.684874999999,
+      "navigationMs": 11.219416999992973,
+      "planningMs": 645.0982499999955,
+      "contextSetupMs": 131.98545900000317,
+      "runtimeMs": 145.9684999999954,
+      "runtimeMetrics": {
+        "observationMs": 51.846082999996725,
+        "executionMs": 54.69887500000186,
+        "conditionWaitMs": 22.365541999992274,
+        "settlingMs": 0,
+        "chooserMs": 0,
+        "eventMs": 27.771289999996952,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 142,
+            "outputTokens": 31,
+            "latencyMs": 632.9490000000005,
+            "costUsd": 2.66e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.66e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.66e-05,
+        "knownCostUsd": 2.66e-05,
+        "inputTokens": 142,
+        "outputTokens": 31,
+        "knownInputTokens": 142,
+        "knownOutputTokens": 31,
+        "modelMs": 632.9490000000005
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 8,
+      "suite": "goal_pipeline",
+      "caseId": "live-search",
+      "repeat": 2,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1475.0812920000026,
+      "navigationMs": 13.703750000000582,
+      "planningMs": 647.1291249999995,
+      "contextSetupMs": 125.9285830000008,
+      "runtimeMs": 827.2330420000071,
+      "runtimeMetrics": {
+        "observationMs": 54.449625000001106,
+        "executionMs": 33.28845800000272,
+        "conditionWaitMs": 25.933208000002196,
+        "settlingMs": 701.0121250000011,
+        "chooserMs": 0,
+        "eventMs": 26.966416000010213,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 142,
+            "outputTokens": 31,
+            "latencyMs": 636.7402920000022,
+            "costUsd": 2.66e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.66e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.66e-05,
+        "knownCostUsd": 2.66e-05,
+        "inputTokens": 142,
+        "outputTokens": 31,
+        "knownInputTokens": 142,
+        "knownOutputTokens": 31,
+        "modelMs": 636.7402920000022
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 9,
+      "suite": "goal_pipeline",
+      "caseId": "delayed-title",
+      "repeat": 1,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 2014.7702500000014,
+      "navigationMs": 13.837625000000116,
+      "planningMs": 535.6079580000005,
+      "contextSetupMs": 109.84808399999747,
+      "runtimeMs": 1478.366375000005,
+      "runtimeMetrics": {
+        "observationMs": 688.3040010000113,
+        "executionMs": 44.37845899999229,
+        "conditionWaitMs": 652.7808749999967,
+        "settlingMs": 700.6113339999938,
+        "chooserMs": 0,
+        "eventMs": 29.869541000000027,
+        "explicitProtocolCalls": 28,
+        "observations": 4,
+        "revalidations": 2,
+        "browserScans": 8,
+        "observerWakeups": 1,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 522.7187080000003,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 522.7187080000003
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 10,
+      "suite": "goal_pipeline",
+      "caseId": "delayed-title",
+      "repeat": 1,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1301.4545839999992,
+      "navigationMs": 12.211250000000291,
+      "planningMs": 540.0008749999979,
+      "contextSetupMs": 117.50308300000324,
+      "runtimeMs": 760.6426250000004,
+      "runtimeMetrics": {
+        "observationMs": 671.9500429999971,
+        "executionMs": 51.49445800000103,
+        "conditionWaitMs": 650.5685410000006,
+        "settlingMs": 0,
+        "chooserMs": 0,
+        "eventMs": 27.09566699998686,
+        "explicitProtocolCalls": 31,
+        "observations": 5,
+        "revalidations": 2,
+        "browserScans": 9,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 525.3234999999986,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 525.3234999999986
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 11,
+      "suite": "goal_pipeline",
+      "caseId": "delayed-title",
+      "repeat": 2,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1435.227374999995,
+      "navigationMs": 28.555499999994936,
+      "planningMs": 667.1688749999958,
+      "contextSetupMs": 181.42233299999498,
+      "runtimeMs": 767.1243749999994,
+      "runtimeMetrics": {
+        "observationMs": 676.6667090000046,
+        "executionMs": 57.08504200000607,
+        "conditionWaitMs": 651.1780420000068,
+        "settlingMs": 0,
+        "chooserMs": 0,
+        "eventMs": 24.71333400000003,
+        "explicitProtocolCalls": 31,
+        "observations": 5,
+        "revalidations": 2,
+        "browserScans": 10,
+        "observerWakeups": 1,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 654.5568749999948,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 654.5568749999948
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 12,
+      "suite": "goal_pipeline",
+      "caseId": "delayed-title",
+      "repeat": 2,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 2049.2184160000033,
+      "navigationMs": 13.745333000006212,
+      "planningMs": 571.3068749999948,
+      "contextSetupMs": 116.10779199999524,
+      "runtimeMs": 1476.8288749999992,
+      "runtimeMetrics": {
+        "observationMs": 688.2111680000016,
+        "executionMs": 33.07070800000656,
+        "conditionWaitMs": 659.880084000004,
+        "settlingMs": 701.9172080000062,
+        "chooserMs": 0,
+        "eventMs": 39.094624999997905,
+        "explicitProtocolCalls": 31,
+        "observations": 5,
+        "revalidations": 2,
+        "browserScans": 10,
+        "observerWakeups": 1,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 141,
+            "outputTokens": 29,
+            "latencyMs": 557.9741250000006,
+            "costUsd": 2.57e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.57e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.57e-05,
+        "knownCostUsd": 2.57e-05,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "knownInputTokens": 141,
+        "knownOutputTokens": 29,
+        "modelMs": 557.9741250000006
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 0,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 0
+      },
+      "guidanceComparisonActivated": false
+    },
+    {
+      "attempt": 13,
+      "suite": "goal_pipeline",
+      "caseId": "semantic-context",
+      "repeat": 1,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 4348.888207999997,
+      "navigationMs": 22.994707999998354,
+      "planningMs": 573.2922909999979,
+      "contextSetupMs": 140.23666600000433,
+      "runtimeMs": 3775.072791000006,
+      "runtimeMetrics": {
+        "observationMs": 47.76237499999115,
+        "executionMs": 48.22270800000115,
+        "conditionWaitMs": 28.992500000007567,
+        "settlingMs": 701.0030830000032,
+        "chooserMs": 2938.8009999999995,
+        "eventMs": 25.060043000004953,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 148,
+            "outputTokens": 34,
+            "latencyMs": 564.075791999996,
+            "costUsd": 2.84e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.84e-05
+          },
+          {
+            "number": 2,
+            "provider": "typesafe",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "jev-latest",
+            "actualModel": "jev-1.13.0",
+            "actualProvider": null,
+            "providerTag": null,
+            "usageComplete": true,
+            "inputTokens": 479,
+            "outputTokens": 47,
+            "latencyMs": 2923.111082999996,
+            "costUsd": 2.0118000000000003e-05,
+            "costBasis": "estimated",
+            "isByok": null,
+            "upstreamInferenceCostUsd": null
+          }
+        ],
+        "modelCallAttempts": 2,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 4.8518e-05,
+        "knownCostUsd": 4.8518e-05,
+        "inputTokens": 627,
+        "outputTokens": 81,
+        "knownInputTokens": 627,
+        "knownOutputTokens": 81,
+        "modelMs": 3487.186874999992
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 14,
+      "suite": "goal_pipeline",
+      "caseId": "semantic-context",
+      "repeat": 1,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1294.3101249999963,
+      "navigationMs": 16.00974999999744,
+      "planningMs": 686.9051660000041,
+      "contextSetupMs": 128.05495800000062,
+      "runtimeMs": 606.6105420000022,
+      "runtimeMetrics": {
+        "observationMs": 54.82420899999852,
+        "executionMs": 36.55379199999879,
+        "conditionWaitMs": 22.81262499999866,
+        "settlingMs": 0,
+        "chooserMs": 476.9479580000043,
+        "eventMs": 25.035292000007757,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 148,
+            "outputTokens": 34,
+            "latencyMs": 674.787249999994,
+            "costUsd": 2.84e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.84e-05
+          },
+          {
+            "number": 2,
+            "provider": "typesafe",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "jev-latest",
+            "actualModel": "jev-1.13.0",
+            "actualProvider": null,
+            "providerTag": null,
+            "usageComplete": true,
+            "inputTokens": 479,
+            "outputTokens": 47,
+            "latencyMs": 464.3780410000036,
+            "costUsd": 2.0118000000000003e-05,
+            "costBasis": "estimated",
+            "isByok": null,
+            "upstreamInferenceCostUsd": null
+          }
+        ],
+        "modelCallAttempts": 2,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 4.8518e-05,
+        "knownCostUsd": 4.8518e-05,
+        "inputTokens": 627,
+        "outputTokens": 81,
+        "knownInputTokens": 627,
+        "knownOutputTokens": 81,
+        "modelMs": 1139.1652909999975
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 15,
+      "suite": "goal_pipeline",
+      "caseId": "semantic-context",
+      "repeat": 2,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1067.027750000001,
+      "navigationMs": 10.6909169999999,
+      "planningMs": 615.6891249999971,
+      "contextSetupMs": 104.87299999999959,
+      "runtimeMs": 449.5669579999958,
+      "runtimeMetrics": {
+        "observationMs": 55.65191600000253,
+        "executionMs": 59.56574899999396,
+        "conditionWaitMs": 24.09195799999725,
+        "settlingMs": 0,
+        "chooserMs": 287.645583000005,
+        "eventMs": 28.08258499999647,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 148,
+            "outputTokens": 34,
+            "latencyMs": 604.0007499999992,
+            "costUsd": 2.84e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.84e-05
+          },
+          {
+            "number": 2,
+            "provider": "typesafe",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "jev-latest",
+            "actualModel": "jev-1.13.0",
+            "actualProvider": null,
+            "providerTag": null,
+            "usageComplete": true,
+            "inputTokens": 479,
+            "outputTokens": 47,
+            "latencyMs": 276.8343329999989,
+            "costUsd": 2.0118000000000003e-05,
+            "costBasis": "estimated",
+            "isByok": null,
+            "upstreamInferenceCostUsd": null
+          }
+        ],
+        "modelCallAttempts": 2,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 4.8518e-05,
+        "knownCostUsd": 4.8518e-05,
+        "inputTokens": 627,
+        "outputTokens": 81,
+        "knownInputTokens": 627,
+        "knownOutputTokens": 81,
+        "modelMs": 880.8350829999981
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 16,
+      "suite": "goal_pipeline",
+      "caseId": "semantic-context",
+      "repeat": 2,
+      "mode": "stepwise",
+      "guide": "jev",
+      "planner": "openrouter",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 2053.7035409999953,
+      "navigationMs": 14.617832999996608,
+      "planningMs": 739.9824169999993,
+      "contextSetupMs": 128.18325000000186,
+      "runtimeMs": 1313.1976670000004,
+      "runtimeMetrics": {
+        "observationMs": 54.77862400000595,
+        "executionMs": 32.776749999997264,
+        "conditionWaitMs": 28.6038750000007,
+        "settlingMs": 701.5805419999961,
+        "chooserMs": 480.5005000000019,
+        "eventMs": 26.96962500000518,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "plan",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 148,
+            "outputTokens": 34,
+            "latencyMs": 728.3175839999967,
+            "costUsd": 2.84e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 2.84e-05
+          },
+          {
+            "number": 2,
+            "provider": "typesafe",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "jev-latest",
+            "actualModel": "jev-1.13.0",
+            "actualProvider": null,
+            "providerTag": null,
+            "usageComplete": true,
+            "inputTokens": 479,
+            "outputTokens": 47,
+            "latencyMs": 469.8649579999983,
+            "costUsd": 2.0118000000000003e-05,
+            "costBasis": "estimated",
+            "isByok": null,
+            "upstreamInferenceCostUsd": null
+          }
+        ],
+        "modelCallAttempts": 2,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 4.8518e-05,
+        "knownCostUsd": 4.8518e-05,
+        "inputTokens": 627,
+        "outputTokens": 81,
+        "knownInputTokens": 627,
+        "knownOutputTokens": 81,
+        "modelMs": 1198.182541999995
+      },
+      "activations": {
+        "plannerCallAttempts": 1,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 17,
+      "suite": "semantic_guidance",
+      "caseId": "semantic-context",
+      "repeat": 1,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "none_fixed_task",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 532.3419580000045,
+      "navigationMs": 18.420500000000175,
+      "planningMs": 0.17420899999706307,
+      "contextSetupMs": 122.78041699999449,
+      "runtimeMs": 513.4357080000045,
+      "runtimeMetrics": {
+        "observationMs": 45.09049999999843,
+        "executionMs": 43.9418749999968,
+        "conditionWaitMs": 24.746541000000434,
+        "settlingMs": 0,
+        "chooserMs": 373.78441600000224,
+        "eventMs": 24.573042000003625,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "typesafe",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "jev-latest",
+            "actualModel": "jev-1.13.0",
+            "actualProvider": null,
+            "providerTag": null,
+            "usageComplete": true,
+            "inputTokens": 481,
+            "outputTokens": 47,
+            "latencyMs": 362.98016700000153,
+            "costUsd": 2.0202e-05,
+            "costBasis": "estimated",
+            "isByok": null,
+            "upstreamInferenceCostUsd": null
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 2.0202e-05,
+        "knownCostUsd": 2.0202e-05,
+        "inputTokens": 481,
+        "outputTokens": 47,
+        "knownInputTokens": 481,
+        "knownOutputTokens": 47,
+        "modelMs": 362.98016700000153
+      },
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 18,
+      "suite": "semantic_guidance",
+      "caseId": "semantic-context",
+      "repeat": 1,
+      "mode": "fast",
+      "guide": "openrouter-dom",
+      "planner": "none_fixed_task",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1285.3705000000045,
+      "navigationMs": 12.73308299999917,
+      "planningMs": 0.1788749999977881,
+      "contextSetupMs": 103.70258300000569,
+      "runtimeMs": 1272.0599589999983,
+      "runtimeMetrics": {
+        "observationMs": 41.42333299999882,
+        "executionMs": 40.2732909999977,
+        "conditionWaitMs": 22.160041999995883,
+        "settlingMs": 0,
+        "chooserMs": 1156.7374169999966,
+        "eventMs": 20.733206999990216,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 158,
+            "outputTokens": 9,
+            "latencyMs": 1146.6957919999986,
+            "costUsd": 1.94e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 1.94e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 1.94e-05,
+        "knownCostUsd": 1.94e-05,
+        "inputTokens": 158,
+        "outputTokens": 9,
+        "knownInputTokens": 158,
+        "knownOutputTokens": 9,
+        "modelMs": 1146.6957919999986
+      },
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 19,
+      "suite": "semantic_guidance",
+      "caseId": "semantic-context",
+      "repeat": 1,
+      "mode": "fast",
+      "guide": "openrouter-dom-image",
+      "planner": "none_fixed_task",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 3996.377625000001,
+      "navigationMs": 13.590499999998428,
+      "planningMs": 0.41358300000138115,
+      "contextSetupMs": 102.82491700000537,
+      "runtimeMs": 3981.6520419999943,
+      "runtimeMetrics": {
+        "observationMs": 40.31883400001243,
+        "executionMs": 51.468958999997994,
+        "conditionWaitMs": 22.49404200000572,
+        "settlingMs": 0,
+        "chooserMs": 3846.6698329999927,
+        "eventMs": 24.424959000003582,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": true,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 416,
+            "outputTokens": 15,
+            "latencyMs": 3577.2611249999973,
+            "costUsd": 4.76e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 4.76e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 4.76e-05,
+        "knownCostUsd": 4.76e-05,
+        "inputTokens": 416,
+        "outputTokens": 15,
+        "knownInputTokens": 416,
+        "knownOutputTokens": 15,
+        "modelMs": 3577.2611249999973
+      },
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 1,
+        "imageResponsesReceived": 1,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 20,
+      "suite": "semantic_guidance",
+      "caseId": "semantic-context",
+      "repeat": 2,
+      "mode": "fast",
+      "guide": "openrouter-dom",
+      "planner": "none_fixed_task",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 1845.0069999999978,
+      "navigationMs": 18.592957999993814,
+      "planningMs": 0.6711249999934807,
+      "contextSetupMs": 162.94066599999496,
+      "runtimeMs": 1825.7329580000078,
+      "runtimeMetrics": {
+        "observationMs": 49.82908400001179,
+        "executionMs": 46.058333999986644,
+        "conditionWaitMs": 23.721249999987776,
+        "settlingMs": 0,
+        "chooserMs": 1687.7059160000063,
+        "eventMs": 24.29574999999022,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": false,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 158,
+            "outputTokens": 9,
+            "latencyMs": 1676.0742080000055,
+            "costUsd": 1.94e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 1.94e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 1.94e-05,
+        "knownCostUsd": 1.94e-05,
+        "inputTokens": 158,
+        "outputTokens": 9,
+        "knownInputTokens": 158,
+        "knownOutputTokens": 9,
+        "modelMs": 1676.0742080000055
+      },
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 21,
+      "suite": "semantic_guidance",
+      "caseId": "semantic-context",
+      "repeat": 2,
+      "mode": "fast",
+      "guide": "openrouter-dom-image",
+      "planner": "none_fixed_task",
+      "status": "completed",
+      "reason": null,
+      "terminal": true,
+      "verifiedSuccess": true,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": true,
+        "visibleExactTitle": true,
+        "exactCollection": true
+      },
+      "totalMs": 3221.022791999989,
+      "navigationMs": 13.144541999994544,
+      "planningMs": 0.12220800000068266,
+      "contextSetupMs": 127.74933299999975,
+      "runtimeMs": 3207.3095829999947,
+      "runtimeMetrics": {
+        "observationMs": 46.85945799999172,
+        "executionMs": 45.053790999998455,
+        "conditionWaitMs": 23.274207999987993,
+        "settlingMs": 0,
+        "chooserMs": 3073.637791999994,
+        "eventMs": 26.818874999997206,
+        "explicitProtocolCalls": 25,
+        "observations": 3,
+        "revalidations": 2,
+        "browserScans": 5,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 2,
+        "nativeActionsCompleted": 2,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "openrouter",
+            "purpose": "choose",
+            "status": "response_received",
+            "image": true,
+            "requestedModel": "google/gemini-2.5-flash-lite",
+            "actualModel": "google/gemini-2.5-flash-lite",
+            "actualProvider": "Google AI Studio",
+            "providerTag": "google-ai-studio",
+            "usageComplete": true,
+            "inputTokens": 416,
+            "outputTokens": 15,
+            "latencyMs": 3018.2035000000033,
+            "costUsd": 1.187e-05,
+            "costBasis": "provider_reported",
+            "isByok": false,
+            "upstreamInferenceCostUsd": 1.187e-05
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 1.187e-05,
+        "knownCostUsd": 1.187e-05,
+        "inputTokens": 416,
+        "outputTokens": 15,
+        "knownInputTokens": 416,
+        "knownOutputTokens": 15,
+        "modelMs": 3018.2035000000033
+      },
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 1,
+        "imageCallAttempts": 1,
+        "imageResponsesReceived": 1,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    },
+    {
+      "attempt": 22,
+      "suite": "semantic_guidance",
+      "caseId": "semantic-context",
+      "repeat": 2,
+      "mode": "fast",
+      "guide": "jev",
+      "planner": "none_fixed_task",
+      "status": "incomplete",
+      "reason": "provider_network_error",
+      "terminal": true,
+      "verifiedSuccess": false,
+      "verificationChecks": {
+        "localOrigin": true,
+        "exactDetailRoute": false,
+        "visibleExactTitle": false,
+        "exactCollection": false
+      },
+      "totalMs": 15082.22649999999,
+      "navigationMs": 18.6100829999923,
+      "planningMs": 0.11920799998915754,
+      "contextSetupMs": 120.08570899999177,
+      "runtimeMs": 15062.340083999996,
+      "runtimeMetrics": {
+        "observationMs": 25.002791999999317,
+        "executionMs": 3.4914580000040587,
+        "conditionWaitMs": 7.268083000002662,
+        "settlingMs": 0,
+        "chooserMs": 15011.435165999996,
+        "eventMs": 10.55899900001532,
+        "explicitProtocolCalls": 15,
+        "observations": 2,
+        "revalidations": 1,
+        "browserScans": 3,
+        "observerWakeups": 0,
+        "nativeActionAttempts": 1,
+        "nativeActionsCompleted": 1,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "accounting": {
+        "present": true,
+        "calls": [
+          {
+            "number": 1,
+            "provider": "typesafe",
+            "purpose": "choose",
+            "status": "failed",
+            "image": false,
+            "requestedModel": "jev-latest",
+            "actualModel": null,
+            "actualProvider": null,
+            "providerTag": null,
+            "usageComplete": false,
+            "inputTokens": null,
+            "outputTokens": null,
+            "latencyMs": 15003.917207999999,
+            "costUsd": null,
+            "costBasis": null,
+            "isByok": null,
+            "upstreamInferenceCostUsd": null
+          }
+        ],
+        "modelCallAttempts": 1,
+        "usageComplete": false,
+        "costComplete": false,
+        "costUsd": null,
+        "knownCostUsd": 0.0,
+        "inputTokens": null,
+        "outputTokens": null,
+        "knownInputTokens": 0,
+        "knownOutputTokens": 0,
+        "modelMs": 15003.917207999999
+      },
+      "activations": {
+        "plannerCallAttempts": 0,
+        "guideCallAttempts": 1,
+        "guideResponsesReceived": 0,
+        "imageCallAttempts": 0,
+        "imageResponsesReceived": 0,
+        "runtimeChooserInvocations": 1
+      },
+      "guidanceComparisonActivated": true
+    }
+  ],
+  "batchArtifactSha256": "96e1fc5c957408979fc4668dce176378ee793f28b7b7eb3650a8a917d540c7c8"
+}

@@ -1,0 +1,277 @@
+{
+  "attempt": 9,
+  "caseId": "direct-link-delayed-heading",
+  "repeat": 1,
+  "inputMode": "prompt",
+  "status": "incomplete",
+  "events": [
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000717,
+        "latencyMs": 615.3502910000025,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000717,
+        "inputTokens": 281,
+        "outputTokens": 109,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    },
+    {
+      "plannedSteps": 2,
+      "type": "workflow_started",
+      "elapsedMs": 0.9371670000000449
+    },
+    {
+      "step": 1,
+      "operation": "search_and_open",
+      "targetText": "Cedar Workshop",
+      "type": "step_started",
+      "elapsedMs": 6.866249999999127
+    },
+    {
+      "type": "started",
+      "elapsedMs": 52.368124999997235,
+      "mode": "fast",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 0.19774999999935972
+    }
+  ],
+  "journalMs": 31.36079200000313,
+  "journalWrites": 7,
+  "blockedRequests": 0,
+  "contextSetupMs": 130.07208399999945,
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000717,
+        "latencyMs": 615.3502910000025,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000717,
+        "inputTokens": 281,
+        "outputTokens": 109,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 615.3502910000025,
+    "inputTokens": 281,
+    "outputTokens": 109,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0000717,
+    "knownCostUsd": 0.0000717,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "navigationMs": 20.076750000000175,
+  "planningMs": 624.8801249999997,
+  "publicGoal": "Open \"Cedar Workshop\" in the district for creative studio work, then search within that shop for \"Harbor Grid Planner\" and open its details.",
+  "plan": {
+    "steps": [
+      {
+        "operation": "search_and_open",
+        "query": "Cedar Workshop",
+        "targetText": "Cedar Workshop",
+        "context": "district for creative studio work"
+      },
+      {
+        "operation": "search_and_open",
+        "query": "Harbor Grid Planner",
+        "targetText": "Harbor Grid Planner",
+        "context": "Cedar Workshop"
+      }
+    ]
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "no_search_control",
+    "failedStep": 1,
+    "steps": [
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Cedar Workshop",
+        "status": "incomplete",
+        "reason": "no_search_control",
+        "evidence": null,
+        "metrics": {
+          "totalMs": 52.54441699999734,
+          "observationMs": 43.01420700000017,
+          "executionMs": 0,
+          "conditionWaitMs": 0,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0,
+          "explicitProtocolCalls": 8,
+          "observations": 2,
+          "revalidations": 0,
+          "browserScans": 2,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 0,
+          "nativeActionsCompleted": 0,
+          "fillAttempts": 0,
+          "pressAttempts": 0,
+          "clickAttempts": 0,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "runtimeStatus": "incomplete"
+      }
+    ],
+    "metrics": {
+      "totalMs": 59.461082999998325,
+      "observationMs": 43.01420700000017,
+      "executionMs": 0,
+      "conditionWaitMs": 0,
+      "settlingMs": 0,
+      "chooserMs": 0,
+      "eventMs": 13.92229199999565,
+      "explicitProtocolCalls": 10,
+      "observations": 2,
+      "revalidations": 0,
+      "browserScans": 2,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 0,
+      "nativeActionsCompleted": 0,
+      "fillAttempts": 0,
+      "pressAttempts": 0,
+      "clickAttempts": 0,
+      "chooserCalls": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:59725/cases/direct-link-delayed-heading",
+      "title": "Independent Paper Market"
+    },
+    "events": [
+      {
+        "plannedSteps": 2,
+        "type": "workflow_started",
+        "elapsedMs": 0.9371670000000449
+      },
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Cedar Workshop",
+        "type": "step_started",
+        "elapsedMs": 6.866249999999127
+      },
+      {
+        "type": "started",
+        "elapsedMs": 52.368124999997235,
+        "mode": "fast",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 0.19774999999935972
+      }
+    ],
+    "escalation": {
+      "reason": "no_search_control",
+      "failedStep": 1,
+      "permittedContext": {
+        "origin": "http://127.0.0.1:59725",
+        "title": "Independent Paper Market",
+        "requestedStep": {
+          "operation": "search_and_open",
+          "query": "Cedar Workshop",
+          "targetText": "Cedar Workshop",
+          "context": "district for creative studio work"
+        },
+        "permittedOperations": [
+          "search_and_open",
+          "open_link"
+        ],
+        "controls": [
+          {
+            "what": "Cedar Workshop",
+            "role": "link",
+            "where": [
+              "main",
+              "Travel district"
+            ],
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Cedar Workshop",
+            "role": "link",
+            "where": [
+              "main",
+              "Studio district"
+            ],
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "independentlyVerified": false
+      },
+      "completedSteps": [],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "scope": "At most four compiled native search/open or exact-link steps; each requires a changed URL and an observed exact target heading. Completion is not independent task verification.",
+    "metricScope": "Counters add explicit wrapper and v3 operations; internal Playwright traffic is excluded. Observation includes browser waits, and condition/event/request timing can overlap. Journal event time is recorded at workflow level, not added again to step eventMs. No fixed inter-step settling or model calls are added."
+  },
+  "reason": "no_search_control",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": false,
+      "visibleExactTitle": false,
+      "correctMerchant": false,
+      "correctDistrict": false
+    }
+  },
+  "verificationMs": 0.518499999998312,
+  "verifiedSuccess": false,
+  "taskMs": 684.9135829999977,
+  "providerSettlementMs": 0.0004169999992882367,
+  "finalizationMs": 4.299250000000029,
+  "totalMs": 689.2149169999975,
+  "cleanupMs": 4.490792000000511
+}

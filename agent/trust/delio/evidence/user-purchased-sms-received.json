@@ -1,0 +1,18 @@
+{
+  "observedAt": 1789825021092,
+  "operator": "virtual53",
+  "purchasedBy": "user",
+  "priceUsd": 0.1538,
+  "providerStatus": "RECEIVED",
+  "smsCount": 1,
+  "codeAvailable": true,
+  "codeExposed": false,
+  "accountVerified": false,
+  "authenticationHostResponses": {
+    "hostname": "identitytoolkit.googleapis.com",
+    "method": "POST",
+    "httpStatus": 200,
+    "count": 2
+  },
+  "caveat": "One delivered SMS after the worker authentication dependency was allowed; this does not validate a population success rate."
+}

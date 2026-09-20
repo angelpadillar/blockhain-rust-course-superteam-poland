@@ -1,0 +1,476 @@
+{
+  "observedAt": 1789826173038,
+  "scope": "One hackathon customer, one prepared mailbox, explicitly authorized activation attempts; no merchant purchase/payment",
+  "smsPurchases": 3,
+  "grossSmsCostUsd": 0.4345,
+  "netSmsCostUsd": null,
+  "refundEvidence": {
+    "userReportedFirstRefund": true,
+    "providerCreditIndependentlyVerified": false
+  },
+  "verifiedMerchantAccounts": 1,
+  "autonomousVerifiedMerchantAccounts": 0,
+  "mailboxAssociatedWithMerchant": true,
+  "emailDeliveryVerified": false,
+  "couponActivated": false,
+  "verifiedCheckoutQuotes": 0,
+  "merchantOrders": 0,
+  "attempts": [
+    {
+      "name": "initial",
+      "phase": "reconciliation_required",
+      "pendingOperation": "start_registration",
+      "mailboxPrepared": true,
+      "otpReady": false,
+      "merchantAccountVerified": false,
+      "purchases": [
+        {
+          "state": "owned",
+          "providerStatus": "TIMEOUT",
+          "operator": null,
+          "grossCostUsd": 0.1269,
+          "refundedUsd": null,
+          "refundVerified": false,
+          "costCapMechanism": "provider_maxPrice_any",
+          "approvalId": null
+        }
+      ],
+      "operatorAttempts": [
+        {
+          "at": 1789812492225,
+          "action": "preflight",
+          "stopAfter": null,
+          "durationMs": 231,
+          "ok": true
+        },
+        {
+          "at": 1789812755782,
+          "action": "advance",
+          "stopAfter": "phone_ready",
+          "durationMs": 6006,
+          "ok": false,
+          "code": "onboarding_reconciliation_required"
+        },
+        {
+          "at": 1789812903429,
+          "action": "reconcile-before-purchase",
+          "stopAfter": null,
+          "durationMs": 19,
+          "ok": true
+        },
+        {
+          "at": 1789812912487,
+          "action": "advance",
+          "stopAfter": "phone_ready",
+          "durationMs": 1029,
+          "ok": true
+        },
+        {
+          "at": 1789813023612,
+          "action": "advance",
+          "stopAfter": "awaiting_otp",
+          "durationMs": 9901,
+          "ok": false,
+          "code": "onboarding_reconciliation_required"
+        },
+        {
+          "at": 1789813376576,
+          "action": "refresh-sms",
+          "stopAfter": null,
+          "durationMs": 170,
+          "ok": true
+        }
+      ],
+      "merchantAttempts": [
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789812755797,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789812755797,
+          "event": "returned",
+          "durationMs": 5429,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789812761204,
+          "evidenceRefs": [
+            {
+              "id": "332e241f279561fe47b3f1d44b4f33911ae8628c07036bdbaaae6180803cb543",
+              "observedAt": 1789812761204
+            }
+          ],
+          "browserRuntimeMs": 5257,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": true,
+          "registered": false
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789812761285,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789812761285,
+          "event": "returned",
+          "durationMs": 287,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789812761551,
+          "evidenceRefs": [
+            {
+              "id": "8086fd3cb0fce8670fd123ecb71ba961a73202af6df9c5d1c8e93e2e06f79ddf",
+              "observedAt": 1789812761551
+            }
+          ],
+          "browserRuntimeMs": 125,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": true,
+          "registered": false
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789812912498,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789812912498,
+          "event": "returned",
+          "durationMs": 327,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789812912792,
+          "evidenceRefs": [
+            {
+              "id": "6045d498713b8ac924c822bd5122f1a6ba83f3b1fb73d1f71720a18af1ac2762",
+              "observedAt": 1789812912792
+            }
+          ],
+          "browserRuntimeMs": 151,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": true,
+          "registered": false
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789813023624,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789813023624,
+          "event": "returned",
+          "durationMs": 5299,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789813028898,
+          "evidenceRefs": [
+            {
+              "id": "cd1ab33fe35b9497992df1bf8e39436de81563ac171c0088fefe5ac988ee97f3",
+              "observedAt": 1789813028898
+            }
+          ],
+          "browserRuntimeMs": 5120,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": true,
+          "registered": false
+        },
+        {
+          "operation": "startRegistration",
+          "startedAt": 1789813028937,
+          "event": "start"
+        },
+        {
+          "operation": "startRegistration",
+          "startedAt": 1789813028937,
+          "event": "returned",
+          "durationMs": 4565,
+          "ok": false,
+          "code": "registration_reconciliation_required",
+          "status": "needs_reconciliation",
+          "observedAt": 1789813033470,
+          "evidenceRefs": [
+            {
+              "id": "d6fdc5e863c8ceecca26a714de5b37c7e68e6d0d3a2da68913bb50b86e799dad",
+              "observedAt": 1789813033470
+            }
+          ],
+          "browserRuntimeMs": 4399,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": false,
+          "registered": false
+        }
+      ],
+      "operatorRuntimeMs": 17356,
+      "nestedMerchantControllerMs": 15907,
+      "nestedBrowserRuntimeMs": 15052
+    },
+    {
+      "name": "virtual53",
+      "phase": "reconciliation_required",
+      "pendingOperation": "start_registration",
+      "mailboxPrepared": true,
+      "otpReady": false,
+      "merchantAccountVerified": false,
+      "purchases": [
+        {
+          "state": "owned",
+          "providerStatus": "TIMEOUT",
+          "operator": "virtual53",
+          "grossCostUsd": 0.1538,
+          "refundedUsd": null,
+          "refundVerified": false,
+          "costCapMechanism": "fresh_quote_only_not_provider_enforced",
+          "approvalId": "virtual53-test"
+        }
+      ],
+      "operatorAttempts": [
+        {
+          "at": 1789813808372,
+          "action": "advance",
+          "stopAfter": "mailbox_ready",
+          "durationMs": 6973,
+          "ok": false,
+          "code": "merchant_registration_page_unverified"
+        },
+        {
+          "at": 1789814111064,
+          "action": "advance",
+          "stopAfter": "phone_ready",
+          "durationMs": 1296,
+          "ok": true
+        },
+        {
+          "at": 1789814234897,
+          "action": "advance",
+          "stopAfter": "awaiting_otp",
+          "durationMs": 2620,
+          "ok": false,
+          "code": "onboarding_reconciliation_required"
+        },
+        {
+          "at": 1789814262095,
+          "action": "refresh-sms",
+          "stopAfter": null,
+          "durationMs": 237,
+          "ok": true
+        },
+        {
+          "at": 1789814356402,
+          "action": "refresh-sms",
+          "stopAfter": null,
+          "durationMs": 118,
+          "ok": true
+        },
+        {
+          "at": 1789814531818,
+          "action": "retry-phone-submit",
+          "stopAfter": null,
+          "durationMs": 169,
+          "ok": false,
+          "code": "registration_retry_sms_not_ready"
+        },
+        {
+          "at": 1789814540425,
+          "action": "refresh-sms",
+          "stopAfter": null,
+          "durationMs": 121,
+          "ok": true
+        }
+      ],
+      "merchantAttempts": [
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789813808395,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789813808395,
+          "event": "returned",
+          "durationMs": 6946,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789813815247,
+          "evidenceRefs": [
+            {
+              "id": "90f6b481d8b3c038c22e85cf3039163f81e4c062406bd4b4951cb23b5fa66f19",
+              "observedAt": 1789813815247
+            }
+          ],
+          "browserRuntimeMs": 6600,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": false,
+          "registered": false
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789814111078,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789814111078,
+          "event": "returned",
+          "durationMs": 315,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789814111361,
+          "evidenceRefs": [
+            {
+              "id": "dfea025dbecbbac3020e101019e7764a7d5d0ae25f1b1f3870930f0a0636c48e",
+              "observedAt": 1789814111361
+            }
+          ],
+          "browserRuntimeMs": 146,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": true,
+          "registered": false
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789814111419,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789814111419,
+          "event": "returned",
+          "durationMs": 310,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789814111704,
+          "evidenceRefs": [
+            {
+              "id": "65383f574634ea7289c5f01dd0e7c60c31c02b08b71920bce179eac07d475dc9",
+              "observedAt": 1789814111704
+            }
+          ],
+          "browserRuntimeMs": 151,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": true,
+          "registered": false
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789814234913,
+          "event": "start"
+        },
+        {
+          "operation": "inspectRegistration",
+          "startedAt": 1789814234913,
+          "event": "returned",
+          "durationMs": 361,
+          "ok": true,
+          "code": null,
+          "status": "registration_inspected",
+          "observedAt": 1789814235250,
+          "evidenceRefs": [
+            {
+              "id": "ca2029fe809c25a890ba24483d8148609a130282086864d734a389e2f7fadf97",
+              "observedAt": 1789814235250
+            }
+          ],
+          "browserRuntimeMs": 176,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": true,
+          "registered": false
+        },
+        {
+          "operation": "startFollowupRegistration",
+          "startedAt": 1789814235411,
+          "event": "start"
+        },
+        {
+          "operation": "startFollowupRegistration",
+          "startedAt": 1789814235411,
+          "event": "returned",
+          "durationMs": 2093,
+          "ok": true,
+          "code": null,
+          "status": "phone_submit_returned",
+          "observedAt": 1789814237471,
+          "evidenceRefs": [
+            {
+              "id": "bc2f951f42474c5baf6890d9478f71897907818f9f18e039e5774b2b8a1f9939",
+              "observedAt": 1789814237471
+            }
+          ],
+          "browserRuntimeMs": 1921,
+          "otpFieldObserved": false,
+          "phoneSubmissionReady": false,
+          "registered": false
+        }
+      ],
+      "operatorRuntimeMs": 11534,
+      "nestedMerchantControllerMs": 10025,
+      "nestedBrowserRuntimeMs": 8994
+    },
+    {
+      "name": "user_purchased_import",
+      "phase": "registered_observed",
+      "pendingOperation": null,
+      "mailboxPrepared": true,
+      "otpReady": true,
+      "merchantAccountVerified": true,
+      "autonomous": false,
+      "assistance": "Native worker plus Codex through the approved desktop and explicit user inputs/approvals",
+      "purchases": [
+        {
+          "state": "owned",
+          "providerStatus": "FINISHED",
+          "operator": "virtual53",
+          "purchasedBy": "user",
+          "grossCostUsd": 0.1538,
+          "refundedUsd": null,
+          "refundVerified": false,
+          "costCapMechanism": "already_purchased_by_user"
+        }
+      ],
+      "controllerAttempts": [
+        {
+          "observedAt": 1789824773957,
+          "durationMs": 7975,
+          "status": "phone_submit_returned",
+          "browserRuntimeMs": 6953
+        },
+        {
+          "observedAt": 1789824999143,
+          "durationMs": 7952,
+          "status": "phone_submit_returned",
+          "browserRuntimeMs": 7091
+        }
+      ],
+      "observedSignupIntervalMs": 1108472,
+      "intervalIncludes": [
+        "setup",
+        "dependency correction",
+        "permission waits",
+        "Codex desktop interaction",
+        "user profile instructions"
+      ],
+      "automatedCoordinatorReconciled": false,
+      "profileProof": "user-purchased-account-verification.json"
+    }
+  ],
+  "limitations": [
+    "Runtime totals include failed attempts; nested timings must not be added again.",
+    "The observed signup required Codex desktop actions and user input; it is not an autonomous Jev benchmark.",
+    "The older automated coordinator attempts remain pending and were not silently reconciled to another activation.",
+    "Provider TIMEOUT and a refund promise are not a reconciled credit.",
+    "Earlier attempts did not prove merchant SMS dispatch and cannot establish provider delivery failure rates.",
+    "Model, infrastructure and manual support costs are separate; these are SMS charges only."
+  ],
+  "grossSmsCostPerVerifiedAccountUsd": 0.4345,
+  "totalCostPerVerifiedAccountUsd": null
+}

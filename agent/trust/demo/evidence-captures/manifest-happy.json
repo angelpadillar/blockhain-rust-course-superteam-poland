@@ -1,0 +1,20 @@
+[
+  {
+    "stage": "quote",
+    "eventHash": "2c62271f979b57148ea56002c65e4e8a923ae01ab96cfd9db5678ca08a93491d",
+    "screenshotPath": "quote.jpg",
+    "observationPath": "quote.observation.json"
+  },
+  {
+    "stage": "approval",
+    "eventHash": "3f94a90011eb900b06f517e9f3c598005f1c8983b8be7e62a4e635e92d641d4e",
+    "screenshotPath": "approval.jpg",
+    "observationPath": "approval.observation.json"
+  },
+  {
+    "stage": "confirmation",
+    "eventHash": "7c79f6b7a0d9f0331bf3e3b50003cb89145d14ae559583769526de8ce266c322",
+    "screenshotPath": "confirmation.jpg",
+    "observationPath": "confirmation.observation.json"
+  }
+]

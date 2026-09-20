@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-09-19T10:24:27.324637+00:00",
+  "status": "local_recovery_tested_not_deployed",
+  "reason": "provider_terminal_timeout",
+  "resumeExecuted": false,
+  "browserActionsInThisFollowup": 0,
+  "smsRequestsInThisFollowup": 0,
+  "privateIntentModified": false,
+  "privateIntentSha256": "7445efed299f5e1047c437235f75204c5687eb24bc59d1e0d71242f92cb5c1e2",
+  "tests": {
+    "workerTestsPassed": 32,
+    "serverSyntaxPassed": true
+  },
+  "deployedSourceSha256": {
+    "server.mjs": "44003d18da110cac3a57124498230b03e852dd779f5d0e26638fffd001f8e997",
+    "policy.mjs": "233a65609f39152bc309318c575e88842093ed8303e9a1faeb6fed7cb7e14a9d",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352",
+    "registration.mjs": "945f643e486ff18f66c0083fc6a11c6458fdeea8ec982c1b806768c61e4c61ee",
+    "registration-actions.mjs": "73c32bce0dd40c71cbd2ea5c451f4de42caaf8ed2ddb31971d10784626bce3e6"
+  },
+  "localSourceSha256": {
+    "server.mjs": "e0dea4376a3bef7862deeb328cea3b0a4a43306b7d896fb74759c5358ff154fe",
+    "policy.mjs": "6de25116c3b1217e78e38d26ccfc1397c0d3a46fe708221324f82dd88466a796",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352",
+    "registration.mjs": "945f643e486ff18f66c0083fc6a11c6458fdeea8ec982c1b806768c61e4c61ee",
+    "registration-actions.mjs": "60464b59e8d3bd5ebd5d9e45f0e0be1d4ed7993fee25cba53531e1ddc26373f8"
+  },
+  "scope": "No OTP or new account verified. Original uncertain submit preserved. Provider terminal status makes the existing activation ineligible for recovery."
+}

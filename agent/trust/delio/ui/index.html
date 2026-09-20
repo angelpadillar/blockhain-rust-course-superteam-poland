@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>Buena · Your grocery quote</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="header"><a href="/" class="brand" aria-label="Buena home"><span aria-hidden="true">b.</span>buena</a><div class="header-context"><span class="status-dot" aria-hidden="true"></span> Groceries, with your permission</div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">YOUR CART. YOUR CALL.</p><h1>A clearer way<br>to do the grocery run.</h1></div><p>Browse public Delio products, then check them for your delivery address. Review a fresh quote, including every fee, before giving permission for the next step.</p></section>
+    <div class="scope-note"><span class="scope-pill">Delio quote workspace</span><p>Quote authorization uses local LiteSVM only. No real wallet, merchant order or payment.</p></div>
+    <div id="live-status" class="live-status" role="status" aria-live="polite" aria-atomic="true">Checking access and available products…</div>
+    <div id="errors" aria-live="polite"></div>
+    <section id="access-panel" class="access-panel" aria-labelledby="access-heading"><h2 id="access-heading">Checking account access</h2><p>Catalog and checkout access are reported by the local server.</p></section>
+    <section id="usage-panel" class="usage-panel" aria-label="Quote usage and allowance"></section>
+    <section id="promotion-panel" class="access-panel" aria-label="Receipt coupon" hidden></section>
+    <div class="workspace">
+      <section class="catalog-column" aria-labelledby="catalog-heading">
+        <div class="section-header"><div><p class="eyebrow">01 / YOUR GROCERIES</p><h2 id="catalog-heading">Build your basket</h2></div><span id="catalog-count" class="tag">No catalog yet</span></div>
+        <div id="catalog-context" class="catalog-context"></div>
+        <div class="catalog-filters"><label>Browsing area<select id="catalog-region"><option value="">Choose an area</option></select></label><label>Category<select id="catalog-category"><option value="">All categories</option></select></label></div>
+        <p id="catalog-region-note" class="region-note" role="status">Choose a browsing area. This does not set a delivery address or confirm availability.</p>
+        <label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Filter public catalogue items</span><input id="catalog-search" type="search" placeholder="Find a product in this catalog" autocomplete="off" disabled></label>
+        <div id="catalog" class="catalog"><div class="empty-state"><div class="empty-icon" aria-hidden="true">＋</div><h3>Waiting for the public catalogue</h3><p>Products appear when the server supplies its public cache. No sample groceries or prices are added here.</p></div></div>
+        <p class="catalog-footnote">Photos help identify products. Cached prices and this public selection are not verified for Kraków, Warsaw or your address. Stock, delivery, discounts and final charges need fresh owned checkout observations.</p>
+      </section>
+      <aside class="quote-column" aria-label="Your cart and quote">
+        <section class="card cart-card" aria-labelledby="cart-heading"><div class="section-header"><div><p class="eyebrow">02 / YOUR CART</p><h2 id="cart-heading">The short list</h2></div><span id="cart-count" class="tag">0 items</span></div><div id="cart"></div><div id="quote-action"></div></section>
+        <section class="card quote-card" aria-labelledby="quote-heading"><div class="section-header"><div><p class="eyebrow">03 / EXACT TERMS</p><h2 id="quote-heading">Review the quote</h2></div><span id="quote-status" class="tag">Not prepared</span></div><div id="quote"></div></section>
+      </aside>
+    </div>
+    <section class="record-section" aria-labelledby="record-heading"><div class="section-header"><div><p class="eyebrow">A CLEAR RECORD</p><h2 id="record-heading">What was observed and agreed</h2></div><a id="evidence-link" class="secondary-button" href="/api/evidence" download="buena-delio-evidence.json">Download evidence <span aria-hidden="true">↓</span></a></div><div id="records" class="records"></div><div id="preview"></div><p class="record-note">Evidence records observations and decisions. An estimated quote is not a verified checkout, and a local LiteSVM simulation is not a real payment or merchant order.</p></section>
+  </main>
+  <footer><a href="/" class="footer-brand">buena</a><p>Clear prices. Bounded permission. A record you can inspect.</p></footer>
+  <noscript>JavaScript is needed to read your local quote workspace. No action has been submitted.</noscript>
+</body>
+</html>

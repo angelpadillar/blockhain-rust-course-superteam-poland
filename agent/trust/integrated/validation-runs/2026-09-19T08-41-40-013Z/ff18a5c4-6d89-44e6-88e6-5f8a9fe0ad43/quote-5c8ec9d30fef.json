@@ -1,0 +1,14 @@
+{
+  "kind": "quote",
+  "observedAt": 1789807306712,
+  "origin": "http://127.0.0.1:52904",
+  "pathname": "/merchant/ff18a5c4-6d89-44e6-88e6-5f8a9fe0ad43/checkout",
+  "title": "Gift checkout · Buena sandbox",
+  "mandateId": "21xYoPN8WuY98wBmZg6iK754wEjR9Dzx4poisZ2Rd24y",
+  "quoteId": "ff18a5c4-6d89-44e6-88e6-5f8a9fe0ad43",
+  "eventHash": "3096367aa8b026ca6957cc16802a53ae78d4dd3eddde407898d4c2a32a85010b",
+  "quoteHash": "5110445657ee47b242a27a9e20aafe6f63f482fa580b6beea2f79897c1c83587",
+  "merchantId": "krakow-coffee-lab-demo",
+  "currency": "PLN",
+  "totalMinor": 12900
+}

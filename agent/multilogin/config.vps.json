@@ -1,0 +1,17 @@
+{
+  "folderId": "2b104092-39f8-459e-be4c-74e037507dd3",
+  "launcherUrl": "https://launcher.mlx.yt:45001",
+  "cdpHost": "127.0.0.1",
+  "osType": "linux",
+  "cloudStorage": true,
+  "headless": true,
+  "maxAccounts": 6,
+  "maxProxySwitches": 1,
+  "maxSteps": 20,
+  "maxSeconds": 180,
+  "verifyRestart": true,
+  "proxyMode": "multilogin",
+  "proxyCountry": "pl",
+  "seedSites": ["https://www.amazon.pl/", "https://www.ebay.com/"],
+  "proxyPool": []
+}

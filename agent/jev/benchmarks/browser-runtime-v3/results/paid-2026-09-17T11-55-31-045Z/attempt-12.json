@@ -1,0 +1,206 @@
+{
+  "attempt": 12,
+  "suite": "goal_pipeline",
+  "caseId": "delayed-title",
+  "repeat": 2,
+  "mode": "stepwise",
+  "guide": "jev",
+  "planner": "openrouter",
+  "status": "completed",
+  "events": [
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000257,
+        "latencyMs": 557.9741250000006,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000257,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    },
+    {
+      "type": "started",
+      "elapsedMs": 1.4798749999972642,
+      "mode": "stepwise"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 36.38037500000064,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 48.14566699999705,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 769.6966250000041,
+      "kind": "click",
+      "ref": "s3:e1"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 811.0454170000012,
+      "kind": "click",
+      "ref": "s3:e1"
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 1461.5111670000042,
+      "independentlyVerified": false
+    }
+  ],
+  "contextSetupMs": 116.10779199999524,
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "openrouter",
+        "requestedModel": "google/gemini-2.5-flash-lite",
+        "purpose": "plan",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.0000257,
+        "latencyMs": 557.9741250000006,
+        "actualModel": "google/gemini-2.5-flash-lite",
+        "actualProvider": "Google AI Studio",
+        "providerTag": "google-ai-studio",
+        "isByok": false,
+        "upstreamInferenceCostUsd": 0.0000257,
+        "inputTokens": 141,
+        "outputTokens": 29,
+        "costBasis": "provider_reported",
+        "costScope": "openrouter_account_charge"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 557.9741250000006,
+    "inputTokens": 141,
+    "outputTokens": 29,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.0000257,
+    "knownCostUsd": 0.0000257,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "navigationMs": 13.745333000006212,
+  "planningMs": 571.3068749999948,
+  "goal": "Find Cedar Arc Journal and open its details.",
+  "compiledTask": {
+    "query": "Cedar Arc Journal",
+    "targetText": "Cedar Arc Journal",
+    "context": "details"
+  },
+  "runtime": {
+    "status": "opened",
+    "reason": null,
+    "metrics": {
+      "totalMs": 1476.8288749999992,
+      "observationMs": 688.2111680000016,
+      "executionMs": 33.07070800000656,
+      "conditionWaitMs": 659.880084000004,
+      "settlingMs": 701.9172080000062,
+      "chooserMs": 0,
+      "eventMs": 39.094624999997905,
+      "explicitProtocolCalls": 31,
+      "observations": 5,
+      "revalidations": 2,
+      "browserScans": 10,
+      "observerWakeups": 1,
+      "nativeActionAttempts": 2,
+      "nativeActionsCompleted": 2,
+      "fillAttempts": 1,
+      "pressAttempts": 0,
+      "clickAttempts": 1,
+      "chooserCalls": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:52852/items/a319848e4850ad76b684",
+      "title": "Cedar Arc Journal"
+    },
+    "events": [
+      {
+        "type": "started",
+        "elapsedMs": 1.4798749999972642,
+        "mode": "stepwise"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 36.38037500000064,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 48.14566699999705,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 769.6966250000041,
+        "kind": "click",
+        "ref": "s3:e1"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 811.0454170000012,
+        "kind": "click",
+        "ref": "s3:e1"
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 1461.5111670000042,
+        "independentlyVerified": false
+      }
+    ],
+    "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+    "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+  },
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "exactCollection": true
+    }
+  },
+  "verifiedSuccess": true,
+  "reason": null,
+  "totalMs": 2049.2184160000033
+}

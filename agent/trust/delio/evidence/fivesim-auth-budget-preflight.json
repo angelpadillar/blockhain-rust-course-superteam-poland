@@ -1,0 +1,10 @@
+{
+  "observedAt": 1789812681068,
+  "operation": "read_profile_budget_preflight",
+  "origin": "https://5sim.net",
+  "purchaseMade": false,
+  "httpStatus": 200,
+  "balanceFieldPresent": true,
+  "balanceCoversAuthorizedUsdCap": true,
+  "durationMs": 387
+}

@@ -1,0 +1,16 @@
+{
+  "recordedAt": 1789813715882,
+  "source": "Explicit user reply authorizing the additional Virtual53 test",
+  "approvalId": "virtual53-test",
+  "operator": "virtual53",
+  "quotedPriceUsd": 0.1538,
+  "additionalAttemptLimit": 1,
+  "additionalBudgetUsd": 0.2,
+  "namedOperatorApiPriceCapEnforced": false,
+  "userAcknowledgedNamedOperatorPriceRisk": true,
+  "priorGrossChargeUsd": 0.1269,
+  "priorRefundVerified": false,
+  "expectedCombinedGrossUsd": 0.2807,
+  "sameTestCustomerAndMailbox": true,
+  "noMerchantPurchaseAuthorized": true
+}

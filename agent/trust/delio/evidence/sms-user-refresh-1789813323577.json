@@ -1,0 +1,11 @@
+{
+  "observedAt": 1789813323577,
+  "purpose": "User-requested refresh of the purchased SMS activation",
+  "httpStatus": 200,
+  "purchaseMade": false,
+  "status": "TIMEOUT",
+  "smsMessageCount": 0,
+  "validCodePresent": false,
+  "remainingSeconds": 489,
+  "durationMs": 156
+}

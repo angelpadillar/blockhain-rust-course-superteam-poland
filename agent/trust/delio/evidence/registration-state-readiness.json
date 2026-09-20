@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-09-19T10:15:59.518082+00:00",
+  "status": "current_view_inspection_deployed",
+  "operation": "inspectRegistrationState",
+  "navigationAllowed": false,
+  "fillsAllowed": false,
+  "sessionReopenAllowed": false,
+  "ordinaryReadFailurePreservesPage": true,
+  "privateScreenshotAndObservationHashes": true,
+  "offlineTests": {
+    "passed": 26,
+    "failed": 0
+  },
+  "livePhoneActionsByThisSubtask": 0,
+  "sourceHashes": {
+    "server.mjs": "44003d18da110cac3a57124498230b03e852dd779f5d0e26638fffd001f8e997",
+    "policy.mjs": "233a65609f39152bc309318c575e88842093ed8303e9a1faeb6fed7cb7e14a9d",
+    "registration.mjs": "945f643e486ff18f66c0083fc6a11c6458fdeea8ec982c1b806768c61e4c61ee",
+    "registration-actions.mjs": "73c32bce0dd40c71cbd2ea5c451f4de42caaf8ed2ddb31971d10784626bce3e6",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352"
+  }
+}

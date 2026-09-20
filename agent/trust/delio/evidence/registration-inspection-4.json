@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-09-19T10:07:26.304481+00:00",
+  "operation": "inspectRegistration",
+  "controllerRuntimeMs": 5244,
+  "clientExitCode": 0,
+  "response": {
+    "ok": true,
+    "result": {
+      "status": "registration_inspected",
+      "fields": [
+        {
+          "ordinal": 1,
+          "kind": "phone",
+          "inputType": "tel",
+          "required": false,
+          "source": "scoped_form_markup"
+        }
+      ],
+      "fieldsTruncated": false,
+      "observedFieldOrder": [
+        "phone"
+      ],
+      "emailFieldObserved": false,
+      "phoneFieldObserved": true,
+      "passwordFieldObserved": false,
+      "otpFieldObserved": false,
+      "termsMentionObserved": true,
+      "privacyMentionObserved": true,
+      "registrationEntryObserved": false,
+      "googleOptionObserved": true,
+      "appleOptionObserved": false,
+      "accountCreated": false,
+      "otpRequested": false,
+      "fieldsFilled": false,
+      "termsAccepted": false,
+      "laterFieldOrderVerified": false,
+      "navigationClicks": 1,
+      "artifacts": [
+        {
+          "id": "registration-1789812446267-a2c82a548dc4",
+          "observationSha256": "a2c82a548dc4d6840a95990aa9fc7b2defab2afc0ee3c24dc1c713dc5aca2afb",
+          "screenshotSha256": "1e0f624cf77dbee917acd7a0bb47d182e065d5b5cbb2e9fdc19f02fcc8f638dc",
+          "private": true
+        }
+      ],
+      "inspectionScope": "Current sign-in/registration entry only; later fields require a separate authorized flow.",
+      "noCartOperationDispatched": true,
+      "observedAt": 1789812446269,
+      "evidenceRefs": [
+        {
+          "id": "fb80b1718645c59bbba70fb48604a63d0429d8c291719314b8c9f3bef97ffb54",
+          "observedAt": 1789812446269
+        }
+      ],
+      "browserRuntimeMs": 4973,
+      "modelCalls": 0,
+      "usage": {
+        "modelCalls": 0,
+        "modelCostUsd": 0
+      }
+    }
+  },
+  "sourceHashes": {
+    "server.mjs": "33c6762bc1257fc815d5571654fba10e83f403d75c290cf032732aa8c874ff92",
+    "policy.mjs": "453964b1c1d833622200053c96d01fa6c0200aaca75a4bb9a425272bb9e2288c",
+    "registration.mjs": "466cf8acf9ba83f7c2f9e24608b6414c5a6de733feb0f4bf33ed2bcb00b02f70",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352"
+  }
+}

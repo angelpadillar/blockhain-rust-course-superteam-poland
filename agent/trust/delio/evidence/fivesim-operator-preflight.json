@@ -1,0 +1,54 @@
+{
+  "observedAt": 1789812492456,
+  "source": "local Node fetch, no auth",
+  "requests": [
+    {
+      "url": "https://5sim.net/v1/guest/products/poland/any",
+      "status": 200,
+      "durationMs": 198
+    },
+    {
+      "url": "https://5sim.net/v1/guest/prices?country=poland",
+      "status": 200,
+      "durationMs": 167
+    }
+  ],
+  "product": "zabkajush",
+  "stock": 28679,
+  "prices": [
+    {
+      "operator": "virtual51",
+      "count": 8989,
+      "price": "0.1269",
+      "rate": 0
+    },
+    {
+      "operator": "virtual53",
+      "count": 4,
+      "price": "0.1538",
+      "rate": 0
+    },
+    {
+      "operator": "virtual58",
+      "count": 1708,
+      "price": "0.1026",
+      "rate": 0
+    },
+    {
+      "operator": "virtual59",
+      "count": 8989,
+      "price": "0.1282",
+      "rate": null
+    },
+    {
+      "operator": "virtual60",
+      "count": 8989,
+      "price": "0.1282",
+      "rate": null
+    }
+  ],
+  "configuredCurrency": "USD",
+  "currencyEvidence": "https://t.me/news_en_5sim/1945",
+  "highRateOfferFound": false,
+  "purchaseMade": false
+}

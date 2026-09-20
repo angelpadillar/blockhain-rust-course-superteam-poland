@@ -1,0 +1,600 @@
+{
+  "attempt": 4,
+  "caseId": "contextual-merchant",
+  "repeat": 2,
+  "inputMode": "structured",
+  "status": "completed",
+  "events": [
+    {
+      "plannedSteps": 2,
+      "type": "workflow_started",
+      "elapsedMs": 0.5949580000001333
+    },
+    {
+      "step": 1,
+      "operation": "search_and_open",
+      "targetText": "Paper Harbor",
+      "type": "step_started",
+      "elapsedMs": 3.9238329999998314
+    },
+    {
+      "type": "started",
+      "elapsedMs": 25.243667000000187,
+      "mode": "fast",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 0.13879099999985556
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 31.580457999999908,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 6.4751249999999345
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 39.82012500000019,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 14.70641599999999
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 46.0525419999999,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 20.94900000000007
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 67.6284999999998,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 42.49966600000016
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 87.17391700000007,
+      "kind": "click",
+      "ref": "s5:e2",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 62.06633300000021
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 126.15341699999999,
+      "kind": "click",
+      "ref": "s5:e2",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 101.00862499999994
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 144.87412499999982,
+      "independentlyVerified": false,
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 119.7589579999999
+    },
+    {
+      "step": 1,
+      "operation": "search_and_open",
+      "evidence": {
+        "before": {
+          "url": "http://127.0.0.1:59616/cases/contextual-merchant",
+          "title": "Independent Paper Market"
+        },
+        "after": {
+          "url": "http://127.0.0.1:59616/shop/2287dee0ba3f8f23c220",
+          "title": "Paper Harbor"
+        },
+        "urlChanged": true,
+        "visibleExactHeading": true,
+        "originPreserved": true,
+        "independentlyVerified": false
+      },
+      "type": "step_completed",
+      "elapsedMs": 150.9259579999998
+    },
+    {
+      "step": 2,
+      "operation": "search_and_open",
+      "targetText": "Moss Trail Sketchbook",
+      "type": "step_started",
+      "elapsedMs": 154.72249999999985
+    },
+    {
+      "type": "started",
+      "elapsedMs": 160.2186670000001,
+      "mode": "fast",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 0.12433400000008987
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 165.17450000000008,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 5.079291999999896
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 171.96749999999975,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 11.868416999999681
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 177.24395800000002,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 17.15058399999998
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 199.54041700000016,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 39.42433399999982
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 218.84249999999975,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 58.733999999999924
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 255.6864169999999,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 95.55791700000009
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 273.50054199999977,
+      "independentlyVerified": false,
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 113.39233399999966
+    },
+    {
+      "step": 2,
+      "operation": "search_and_open",
+      "evidence": {
+        "before": {
+          "url": "http://127.0.0.1:59616/shop/2287dee0ba3f8f23c220",
+          "title": "Paper Harbor"
+        },
+        "after": {
+          "url": "http://127.0.0.1:59616/entry/1878099f1f1a2fffebbf",
+          "title": "Moss Trail Sketchbook"
+        },
+        "urlChanged": true,
+        "visibleExactHeading": true,
+        "originPreserved": true,
+        "independentlyVerified": false
+      },
+      "type": "step_completed",
+      "elapsedMs": 279.904125
+    },
+    {
+      "completedSteps": 2,
+      "independentlyVerified": false,
+      "type": "workflow_completed",
+      "elapsedMs": 283.81004200000007
+    }
+  ],
+  "journalMs": 90.13000099999863,
+  "journalWrites": 24,
+  "blockedRequests": 0,
+  "contextSetupMs": 88.97454200000038,
+  "planningMs": 0.181416999999783,
+  "navigationMs": 12.057792000000063,
+  "publicGoal": "Search for and open \"Paper Harbor\" in the district for creative studio work, then search within that shop for \"Moss Trail Sketchbook\" and open its details.",
+  "plan": {
+    "steps": [
+      {
+        "operation": "search_and_open",
+        "query": "Paper Harbor",
+        "targetText": "Paper Harbor",
+        "context": "the shop for creative studio work"
+      },
+      {
+        "operation": "search_and_open",
+        "query": "Moss Trail Sketchbook",
+        "targetText": "Moss Trail Sketchbook"
+      }
+    ]
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "failedStep": null,
+    "steps": [
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Paper Harbor",
+        "status": "completed",
+        "reason": null,
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59616/cases/contextual-merchant",
+            "title": "Independent Paper Market"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59616/shop/2287dee0ba3f8f23c220",
+            "title": "Paper Harbor"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "metrics": {
+          "totalMs": 150.82945800000016,
+          "observationMs": 51.648124999999254,
+          "executionMs": 49.75020799999993,
+          "conditionWaitMs": 30.96974999999975,
+          "settlingMs": 0,
+          "chooserMs": 0.036375000000134605,
+          "eventMs": 0,
+          "explicitProtocolCalls": 40,
+          "observations": 6,
+          "revalidations": 3,
+          "browserScans": 9,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 1,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "runtimeStatus": "opened"
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "targetText": "Moss Trail Sketchbook",
+        "status": "completed",
+        "reason": null,
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59616/shop/2287dee0ba3f8f23c220",
+            "title": "Paper Harbor"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59616/entry/1878099f1f1a2fffebbf",
+            "title": "Moss Trail Sketchbook"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "metrics": {
+          "totalMs": 129.09299999999985,
+          "observationMs": 36.344834000000446,
+          "executionMs": 50.366875000000164,
+          "conditionWaitMs": 32.15995800000019,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0,
+          "explicitProtocolCalls": 40,
+          "observations": 6,
+          "revalidations": 3,
+          "browserScans": 9,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "runtimeStatus": "opened"
+      }
+    ],
+    "metrics": {
+      "totalMs": 288.5978329999998,
+      "observationMs": 87.9929589999997,
+      "executionMs": 100.1170830000001,
+      "conditionWaitMs": 63.12970799999994,
+      "settlingMs": 0,
+      "chooserMs": 0.036375000000134605,
+      "eventMs": 83.72154599999976,
+      "explicitProtocolCalls": 86,
+      "observations": 12,
+      "revalidations": 6,
+      "browserScans": 18,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 6,
+      "nativeActionsCompleted": 6,
+      "fillAttempts": 2,
+      "pressAttempts": 2,
+      "clickAttempts": 2,
+      "chooserCalls": 1,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:59616/entry/1878099f1f1a2fffebbf",
+      "title": "Moss Trail Sketchbook"
+    },
+    "events": [
+      {
+        "plannedSteps": 2,
+        "type": "workflow_started",
+        "elapsedMs": 0.5949580000001333
+      },
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Paper Harbor",
+        "type": "step_started",
+        "elapsedMs": 3.9238329999998314
+      },
+      {
+        "type": "started",
+        "elapsedMs": 25.243667000000187,
+        "mode": "fast",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 0.13879099999985556
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 31.580457999999908,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 6.4751249999999345
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 39.82012500000019,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 14.70641599999999
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 46.0525419999999,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 20.94900000000007
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 67.6284999999998,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 42.49966600000016
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 87.17391700000007,
+        "kind": "click",
+        "ref": "s5:e2",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 62.06633300000021
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 126.15341699999999,
+        "kind": "click",
+        "ref": "s5:e2",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 101.00862499999994
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 144.87412499999982,
+        "independentlyVerified": false,
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 119.7589579999999
+      },
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59616/cases/contextual-merchant",
+            "title": "Independent Paper Market"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59616/shop/2287dee0ba3f8f23c220",
+            "title": "Paper Harbor"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "type": "step_completed",
+        "elapsedMs": 150.9259579999998
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "targetText": "Moss Trail Sketchbook",
+        "type": "step_started",
+        "elapsedMs": 154.72249999999985
+      },
+      {
+        "type": "started",
+        "elapsedMs": 160.2186670000001,
+        "mode": "fast",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 0.12433400000008987
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 165.17450000000008,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 5.079291999999896
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 171.96749999999975,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 11.868416999999681
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 177.24395800000002,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 17.15058399999998
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 199.54041700000016,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 39.42433399999982
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 218.84249999999975,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 58.733999999999924
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 255.6864169999999,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 95.55791700000009
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 273.50054199999977,
+        "independentlyVerified": false,
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 113.39233399999966
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59616/shop/2287dee0ba3f8f23c220",
+            "title": "Paper Harbor"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59616/entry/1878099f1f1a2fffebbf",
+            "title": "Moss Trail Sketchbook"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "type": "step_completed",
+        "elapsedMs": 279.904125
+      },
+      {
+        "completedSteps": 2,
+        "independentlyVerified": false,
+        "type": "workflow_completed",
+        "elapsedMs": 283.81004200000007
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": false,
+    "scope": "At most four compiled native search/open or exact-link steps; each requires a changed URL and an observed exact target heading. Completion is not independent task verification.",
+    "metricScope": "Counters add explicit wrapper and v3 operations; internal Playwright traffic is excluded. Observation includes browser waits, and condition/event/request timing can overlap. Journal event time is recorded at workflow level, not added again to step eventMs. No fixed inter-step settling or model calls are added."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "correctMerchant": true,
+      "correctDistrict": true
+    }
+  },
+  "verificationMs": 0.709208000000217,
+  "verifiedSuccess": true,
+  "taskMs": 301.72329200000013,
+  "providerSettlementMs": 0.00045899999986431794,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 3.11837499999956,
+  "totalMs": 304.8426669999999,
+  "cleanupMs": 5.216707999999926
+}

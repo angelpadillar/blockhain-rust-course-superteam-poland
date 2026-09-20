@@ -1,0 +1,46 @@
+{
+  "purpose": "One empty test mailbox, no Delio account or personal data",
+  "attempts": [
+    {
+      "code": "browser_choice_unverified_decision",
+      "browserActionExecuted": false,
+      "merchantAccountCreated": false,
+      "usageRetained": false,
+      "modelCalls": 1,
+      "modelCostUsd": null
+    },
+    {
+      "recordedAt": "2026-09-19T09:56:24.327Z",
+      "browserActionExecuted": false,
+      "modelCostUsd": null,
+      "answers": {
+        "target": {
+          "type": "choice",
+          "choice": "get_email",
+          "confidence": 0.48,
+          "probabilities": {
+            "none": 0.26,
+            "get_email": 0.74
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 515,
+        "output_tokens": 33
+      },
+      "model": "jev-1.13.0",
+      "latencyMs": 650,
+      "requestHash": "677beecbede38fc4178e77dca49f4d54402cdee2c98b1218c6333bd327d0bd98",
+      "modelCalls": 1,
+      "validationFailure": "browser_choice_unverified_decision"
+    }
+  ],
+  "modelCalls": 2,
+  "merchantAccountCreated": false,
+  "personalDataSentToMailbox": false,
+  "browserActionExecuted": true,
+  "executionMode": "reviewed_reasoning_fallback_after_Jev_confidence_gate",
+  "emptyInboxObserved": true,
+  "mailboxDeliverabilityVerified": false,
+  "publicInboxTestConsentReceived": true
+}

@@ -1,0 +1,1059 @@
+{
+  "schemaVersion": 1,
+  "methodology": {
+    "scope": "Offline analysis of saved v4 synthetic fixture batches. No model or browser calls.",
+    "grouping": "Source revision, benchmark mode and input mode remain separate. All attempts retained, including failures and missing measurements.",
+    "timing": "Use batch timing definitions. Planning may overlap initial navigation; runtime conditionWaitMs overlaps observationMs. These phases must not be added or subtracted as exclusive buckets.",
+    "cost": "Unknown cost/usage stays unknown; known spend is reported separately. Jev values remain estimates where labeled. No zero-cost inference from a missing ledger.",
+    "sources": "Internal consistency checks initial aggregate and initial/final per-file hashes; current checkout match is separate and may change after a valid historical run. This does not authenticate an external artifact."
+  },
+  "cohorts": [
+    {
+      "batchId": "executor-2026-09-17T12-39-17-777Z",
+      "mode": "offline_executor",
+      "status": "finished",
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "sourceVerification": {
+        "reportedUnchanged": true,
+        "initialAggregateValid": true,
+        "sourceListComplete": true,
+        "finalHashesMatchInitial": true,
+        "currentCheckoutMatches": true,
+        "missingOrDisallowedFiles": [],
+        "internallyConsistent": true
+      },
+      "plannedAttempts": 6,
+      "recordedAttempts": 6,
+      "browserLaunchMs": 640.780791
+    }
+  ],
+  "groups": [
+    {
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "mode": "offline_executor",
+      "inputMode": "structured",
+      "attempted": 6,
+      "verified": 6,
+      "failedOrUnverified": 0,
+      "allAttemptMs": {
+        "n": 6,
+        "mean": 512.009576,
+        "median": 357.211063,
+        "min": 299.0555410000002,
+        "max": 878.6333329999998
+      },
+      "verifiedAttemptMs": {
+        "n": 6,
+        "mean": 512.009576,
+        "median": 357.211063,
+        "min": 299.0555410000002,
+        "max": 878.6333329999998
+      },
+      "timings": {
+        "totalMs": {
+          "n": 6,
+          "mean": 512.009576,
+          "median": 357.211063,
+          "min": 299.0555410000002,
+          "max": 878.6333329999998
+        },
+        "taskMs": {
+          "n": 6,
+          "mean": 507.903431,
+          "median": 354.688501,
+          "min": 296.57000000000016,
+          "max": 870.297834
+        },
+        "planningMs": {
+          "n": 6,
+          "mean": 0.236139,
+          "median": 0.168479,
+          "min": 0.12495800000010604,
+          "max": 0.6239170000001195
+        },
+        "navigationMs": {
+          "n": 6,
+          "mean": 19.427736,
+          "median": 10.678562,
+          "min": 10.010083000000122,
+          "max": 62.71404200000006
+        },
+        "verificationMs": {
+          "n": 6,
+          "mean": 0.640368,
+          "median": 0.662687,
+          "min": 0.3662920000001577,
+          "max": 0.8761249999997744
+        },
+        "journalMs": {
+          "n": 6,
+          "mean": 88.50116,
+          "median": 90.808709,
+          "min": 73.58128999999826,
+          "max": 94.44441799999868
+        },
+        "providerSettlementMs": {
+          "n": 6,
+          "mean": 0.000549,
+          "median": 0.000501,
+          "min": 0.00041600000008656934,
+          "max": 0.0007919999998193816
+        },
+        "finalizationMs": {
+          "n": 6,
+          "mean": 4.10443,
+          "median": 2.85552,
+          "min": 2.4480829999997695,
+          "max": 9.178249999999935
+        },
+        "contextSetupMs": {
+          "n": 6,
+          "mean": 113.461521,
+          "median": 91.597209,
+          "min": 86.77516600000035,
+          "max": 206.67112500000007
+        },
+        "cleanupMs": {
+          "n": 6,
+          "mean": 7.031368,
+          "median": 6.968771,
+          "min": 3.5626659999998083,
+          "max": 11.088458000000173
+        }
+      },
+      "runtimeMetrics": {
+        "totalMs": {
+          "n": 6,
+          "mean": 487.649229,
+          "median": 317.576312,
+          "min": 285.6662920000001,
+          "max": 858.7378750000003
+        },
+        "observationMs": {
+          "n": 6,
+          "mean": 300.224201,
+          "median": 104.293769,
+          "min": 87.9929589999997,
+          "max": 707.3371259999999
+        },
+        "executionMs": {
+          "n": 6,
+          "mean": 93.662187,
+          "median": 100.106021,
+          "min": 65.24578999999994,
+          "max": 116.69520899999975
+        },
+        "conditionWaitMs": {
+          "n": 6,
+          "mean": 271.971805,
+          "median": 65.671083,
+          "min": 63.12970799999994,
+          "max": 686.4463749999995
+        },
+        "chooserMs": {
+          "n": 6,
+          "mean": 0.045125,
+          "median": 0.035708,
+          "min": 0,
+          "max": 0.14920900000015536
+        },
+        "eventMs": {
+          "n": 6,
+          "mean": 76.182723,
+          "median": 79.769856,
+          "min": 60.123040000001765,
+          "max": 83.72154599999976
+        },
+        "explicitProtocolCalls": {
+          "n": 6,
+          "mean": 78.333333,
+          "median": 86.0,
+          "min": 63,
+          "max": 86
+        },
+        "nativeActionAttempts": {
+          "n": 6,
+          "mean": 5.333333,
+          "median": 6.0,
+          "min": 4,
+          "max": 6
+        },
+        "chooserCalls": {
+          "n": 6,
+          "mean": 0.666667,
+          "median": 1.0,
+          "min": 0,
+          "max": 1
+        },
+        "staleRefreshes": {
+          "n": 6,
+          "mean": 0,
+          "median": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "blockedRequests": {
+          "n": 6,
+          "mean": 0,
+          "median": 0.0,
+          "min": 0,
+          "max": 0
+        }
+      },
+      "modelMs": {
+        "n": 6,
+        "mean": 0,
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "modelCalls": 0,
+      "knownModelCalls": 0,
+      "unknownCallCountAttempts": 0,
+      "knownCostUsd": 0,
+      "costUsd": 0,
+      "meanCostUsd": 0,
+      "unknownCostAttempts": 0,
+      "unknownUsageAttempts": 0,
+      "costBasis": [
+        "provider_reported"
+      ],
+      "sourceConsistentAttempts": 6,
+      "cases": {
+        "contextual-merchant": {
+          "attempted": 2,
+          "verified": 2,
+          "failedOrUnverified": 0,
+          "allAttemptMs": {
+            "n": 2,
+            "mean": 307.234833,
+            "median": 307.234833,
+            "min": 304.8426669999999,
+            "max": 309.62699999999995
+          },
+          "verifiedAttemptMs": {
+            "n": 2,
+            "mean": 307.234833,
+            "median": 307.234833,
+            "min": 304.8426669999999,
+            "max": 309.62699999999995
+          },
+          "timings": {
+            "totalMs": {
+              "n": 2,
+              "mean": 307.234833,
+              "median": 307.234833,
+              "min": 304.8426669999999,
+              "max": 309.62699999999995
+            },
+            "taskMs": {
+              "n": 2,
+              "mean": 304.45073,
+              "median": 304.45073,
+              "min": 301.72329200000013,
+              "max": 307.17816700000003
+            },
+            "planningMs": {
+              "n": 2,
+              "mean": 0.153187,
+              "median": 0.153187,
+              "min": 0.12495800000010604,
+              "max": 0.181416999999783
+            },
+            "navigationMs": {
+              "n": 2,
+              "mean": 11.033938,
+              "median": 11.033938,
+              "min": 10.010083000000122,
+              "max": 12.057792000000063
+            },
+            "verificationMs": {
+              "n": 2,
+              "mean": 0.53775,
+              "median": 0.53775,
+              "min": 0.3662920000001577,
+              "max": 0.709208000000217
+            },
+            "journalMs": {
+              "n": 2,
+              "mean": 92.779126,
+              "median": 92.779126,
+              "min": 91.11383500000102,
+              "max": 94.44441799999868
+            },
+            "providerSettlementMs": {
+              "n": 2,
+              "mean": 0.000542,
+              "median": 0.000542,
+              "min": 0.00045899999986431794,
+              "max": 0.0006250000001273293
+            },
+            "finalizationMs": {
+              "n": 2,
+              "mean": 2.783229,
+              "median": 2.783229,
+              "min": 2.4480829999997695,
+              "max": 3.11837499999956
+            },
+            "contextSetupMs": {
+              "n": 2,
+              "mean": 88.575501,
+              "median": 88.575501,
+              "min": 88.17645900000002,
+              "max": 88.97454200000038
+            },
+            "cleanupMs": {
+              "n": 2,
+              "mean": 4.47302,
+              "median": 4.47302,
+              "min": 3.7293329999997695,
+              "max": 5.216707999999926
+            }
+          },
+          "runtimeMetrics": {
+            "totalMs": {
+              "n": 2,
+              "mean": 292.674833,
+              "median": 292.674833,
+              "min": 288.5978329999998,
+              "max": 296.7518329999998
+            },
+            "observationMs": {
+              "n": 2,
+              "mean": 91.083124,
+              "median": 91.083124,
+              "min": 87.9929589999997,
+              "max": 94.17328999999881
+            },
+            "executionMs": {
+              "n": 2,
+              "mean": 101.81825,
+              "median": 101.81825,
+              "min": 100.1170830000001,
+              "max": 103.51941600000055
+            },
+            "conditionWaitMs": {
+              "n": 2,
+              "mean": 64.891333,
+              "median": 64.891333,
+              "min": 63.12970799999994,
+              "max": 66.65295800000013
+            },
+            "chooserMs": {
+              "n": 2,
+              "mean": 0.092792,
+              "median": 0.092792,
+              "min": 0.036375000000134605,
+              "max": 0.14920900000015536
+            },
+            "eventMs": {
+              "n": 2,
+              "mean": 82.688066,
+              "median": 82.688066,
+              "min": 81.65458599999829,
+              "max": 83.72154599999976
+            },
+            "explicitProtocolCalls": {
+              "n": 2,
+              "mean": 86,
+              "median": 86.0,
+              "min": 86,
+              "max": 86
+            },
+            "nativeActionAttempts": {
+              "n": 2,
+              "mean": 6,
+              "median": 6.0,
+              "min": 6,
+              "max": 6
+            },
+            "chooserCalls": {
+              "n": 2,
+              "mean": 1,
+              "median": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            "staleRefreshes": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            },
+            "blockedRequests": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            }
+          },
+          "modelMs": {
+            "n": 2,
+            "mean": 0,
+            "median": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "modelCalls": 0,
+          "knownModelCalls": 0,
+          "unknownCallCountAttempts": 0,
+          "knownCostUsd": 0,
+          "costUsd": 0,
+          "meanCostUsd": 0,
+          "unknownCostAttempts": 0,
+          "unknownUsageAttempts": 0,
+          "costBasis": [
+            "provider_reported"
+          ],
+          "sourceConsistentAttempts": 2
+        },
+        "direct-link-delayed-heading": {
+          "attempted": 2,
+          "verified": 2,
+          "failedOrUnverified": 0,
+          "allAttemptMs": {
+            "n": 2,
+            "mean": 876.868562,
+            "median": 876.868562,
+            "min": 875.1037919999999,
+            "max": 878.6333329999998
+          },
+          "verifiedAttemptMs": {
+            "n": 2,
+            "mean": 876.868562,
+            "median": 876.868562,
+            "min": 875.1037919999999,
+            "max": 878.6333329999998
+          },
+          "timings": {
+            "totalMs": {
+              "n": 2,
+              "mean": 876.868562,
+              "median": 876.868562,
+              "min": 875.1037919999999,
+              "max": 878.6333329999998
+            },
+            "taskMs": {
+              "n": 2,
+              "mean": 869.875146,
+              "median": 869.875146,
+              "min": 869.4524579999998,
+              "max": 870.297834
+            },
+            "planningMs": {
+              "n": 2,
+              "mean": 0.145479,
+              "median": 0.145479,
+              "min": 0.13541699999996126,
+              "max": 0.15554199999996854
+            },
+            "navigationMs": {
+              "n": 2,
+              "mean": 10.678562,
+              "median": 10.678562,
+              "min": 10.599917000000005,
+              "max": 10.757207999999991
+            },
+            "verificationMs": {
+              "n": 2,
+              "mean": 0.86125,
+              "median": 0.86125,
+              "min": 0.8463749999996253,
+              "max": 0.8761249999997744
+            },
+            "journalMs": {
+              "n": 2,
+              "mean": 82.042436,
+              "median": 82.042436,
+              "min": 73.58128999999826,
+              "max": 90.50358200000028
+            },
+            "providerSettlementMs": {
+              "n": 2,
+              "mean": 0.000667,
+              "median": 0.000667,
+              "min": 0.0005420000002231973,
+              "max": 0.0007919999998193816
+            },
+            "finalizationMs": {
+              "n": 2,
+              "mean": 6.991313,
+              "median": 6.991313,
+              "min": 4.804375000000164,
+              "max": 9.178249999999935
+            },
+            "contextSetupMs": {
+              "n": 2,
+              "mean": 101.363563,
+              "median": 101.363563,
+              "min": 86.77516600000035,
+              "max": 115.95195899999999
+            },
+            "cleanupMs": {
+              "n": 2,
+              "mean": 9.295521,
+              "median": 9.295521,
+              "min": 8.720834000000195,
+              "max": 9.870208000000275
+            }
+          },
+          "runtimeMetrics": {
+            "totalMs": {
+              "n": 2,
+              "mean": 858.239313,
+              "median": 858.239313,
+              "min": 857.7407500000004,
+              "max": 858.7378750000003
+            },
+            "observationMs": {
+              "n": 2,
+              "mean": 707.226917,
+              "median": 707.226917,
+              "min": 707.1167080000009,
+              "max": 707.3371259999999
+            },
+            "executionMs": {
+              "n": 2,
+              "mean": 70.773228,
+              "median": 70.773228,
+              "min": 65.24578999999994,
+              "max": 76.30066600000009
+            },
+            "conditionWaitMs": {
+              "n": 2,
+              "mean": 686.412104,
+              "median": 686.412104,
+              "min": 686.3778339999999,
+              "max": 686.4463749999995
+            },
+            "chooserMs": {
+              "n": 2,
+              "mean": 0.042583,
+              "median": 0.042583,
+              "min": 0.035041000000092026,
+              "max": 0.050125000000207365
+            },
+            "eventMs": {
+              "n": 2,
+              "mean": 65.378416,
+              "median": 65.378416,
+              "min": 60.123040000001765,
+              "max": 70.63379100000066
+            },
+            "explicitProtocolCalls": {
+              "n": 2,
+              "mean": 63,
+              "median": 63.0,
+              "min": 63,
+              "max": 63
+            },
+            "nativeActionAttempts": {
+              "n": 2,
+              "mean": 4,
+              "median": 4.0,
+              "min": 4,
+              "max": 4
+            },
+            "chooserCalls": {
+              "n": 2,
+              "mean": 1,
+              "median": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            "staleRefreshes": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            },
+            "blockedRequests": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            }
+          },
+          "modelMs": {
+            "n": 2,
+            "mean": 0,
+            "median": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "modelCalls": 0,
+          "knownModelCalls": 0,
+          "unknownCallCountAttempts": 0,
+          "knownCostUsd": 0,
+          "costUsd": 0,
+          "meanCostUsd": 0,
+          "unknownCostAttempts": 0,
+          "unknownUsageAttempts": 0,
+          "costBasis": [
+            "provider_reported"
+          ],
+          "sourceConsistentAttempts": 2
+        },
+        "merchant-then-item": {
+          "attempted": 2,
+          "verified": 2,
+          "failedOrUnverified": 0,
+          "allAttemptMs": {
+            "n": 2,
+            "mean": 351.925333,
+            "median": 351.925333,
+            "min": 299.0555410000002,
+            "max": 404.7951250000001
+          },
+          "verifiedAttemptMs": {
+            "n": 2,
+            "mean": 351.925333,
+            "median": 351.925333,
+            "min": 299.0555410000002,
+            "max": 404.7951250000001
+          },
+          "timings": {
+            "totalMs": {
+              "n": 2,
+              "mean": 351.925333,
+              "median": 351.925333,
+              "min": 299.0555410000002,
+              "max": 404.7951250000001
+            },
+            "taskMs": {
+              "n": 2,
+              "mean": 349.384417,
+              "median": 349.384417,
+              "min": 296.57000000000016,
+              "max": 402.19883400000003
+            },
+            "planningMs": {
+              "n": 2,
+              "mean": 0.40975,
+              "median": 0.40975,
+              "min": 0.1955830000001697,
+              "max": 0.6239170000001195
+            },
+            "navigationMs": {
+              "n": 2,
+              "mean": 36.570709,
+              "median": 36.570709,
+              "min": 10.427375000000211,
+              "max": 62.71404200000006
+            },
+            "verificationMs": {
+              "n": 2,
+              "mean": 0.522104,
+              "median": 0.522104,
+              "min": 0.4280420000000049,
+              "max": 0.6161660000000211
+            },
+            "journalMs": {
+              "n": 2,
+              "mean": 90.681917,
+              "median": 90.681917,
+              "min": 87.48329100000024,
+              "max": 93.88054200000045
+            },
+            "providerSettlementMs": {
+              "n": 2,
+              "mean": 0.000437,
+              "median": 0.000437,
+              "min": 0.00041600000008656934,
+              "max": 0.00045799999998052954
+            },
+            "finalizationMs": {
+              "n": 2,
+              "mean": 2.538749,
+              "median": 2.538749,
+              "min": 2.4848329999999805,
+              "max": 2.5926660000000084
+            },
+            "contextSetupMs": {
+              "n": 2,
+              "mean": 150.4455,
+              "median": 150.4455,
+              "min": 94.219875,
+              "max": 206.67112500000007
+            },
+            "cleanupMs": {
+              "n": 2,
+              "mean": 7.325562,
+              "median": 7.325562,
+              "min": 3.5626659999998083,
+              "max": 11.088458000000173
+            }
+          },
+          "runtimeMetrics": {
+            "totalMs": {
+              "n": 2,
+              "mean": 312.033542,
+              "median": 312.033542,
+              "min": 285.6662920000001,
+              "max": 338.400791
+            },
+            "observationMs": {
+              "n": 2,
+              "mean": 102.362562,
+              "median": 102.362562,
+              "min": 90.31087500000035,
+              "max": 114.41424899999993
+            },
+            "executionMs": {
+              "n": 2,
+              "mean": 108.395084,
+              "median": 108.395084,
+              "min": 100.09495900000002,
+              "max": 116.69520899999975
+            },
+            "conditionWaitMs": {
+              "n": 2,
+              "mean": 64.611978,
+              "median": 64.611978,
+              "min": 64.53474900000015,
+              "max": 64.68920799999978
+            },
+            "chooserMs": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            },
+            "eventMs": {
+              "n": 2,
+              "mean": 80.481687,
+              "median": 80.481687,
+              "min": 77.88512600000104,
+              "max": 83.07824699999946
+            },
+            "explicitProtocolCalls": {
+              "n": 2,
+              "mean": 86,
+              "median": 86.0,
+              "min": 86,
+              "max": 86
+            },
+            "nativeActionAttempts": {
+              "n": 2,
+              "mean": 6,
+              "median": 6.0,
+              "min": 6,
+              "max": 6
+            },
+            "chooserCalls": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            },
+            "staleRefreshes": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            },
+            "blockedRequests": {
+              "n": 2,
+              "mean": 0,
+              "median": 0.0,
+              "min": 0,
+              "max": 0
+            }
+          },
+          "modelMs": {
+            "n": 2,
+            "mean": 0,
+            "median": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "modelCalls": 0,
+          "knownModelCalls": 0,
+          "unknownCallCountAttempts": 0,
+          "knownCostUsd": 0,
+          "costUsd": 0,
+          "meanCostUsd": 0,
+          "unknownCostAttempts": 0,
+          "unknownUsageAttempts": 0,
+          "costBasis": [
+            "provider_reported"
+          ],
+          "sourceConsistentAttempts": 2
+        }
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "batchId": "executor-2026-09-17T12-39-17-777Z",
+      "mode": "offline_executor",
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "attempt": 1,
+      "caseId": "merchant-then-item",
+      "repeat": 1,
+      "inputMode": "structured",
+      "status": "completed",
+      "reason": null,
+      "verified": true,
+      "sourceConsistent": true,
+      "timings": {
+        "totalMs": 404.7951250000001,
+        "taskMs": 402.19883400000003,
+        "planningMs": 0.6239170000001195,
+        "navigationMs": 62.71404200000006,
+        "verificationMs": 0.6161660000000211,
+        "journalMs": 93.88054200000045,
+        "providerSettlementMs": 0.00045799999998052954,
+        "finalizationMs": 2.5926660000000084,
+        "contextSetupMs": 206.67112500000007,
+        "cleanupMs": 11.088458000000173
+      },
+      "runtimeMetrics": {
+        "totalMs": 338.400791,
+        "observationMs": 114.41424899999993,
+        "executionMs": 116.69520899999975,
+        "conditionWaitMs": 64.68920799999978,
+        "chooserMs": 0,
+        "eventMs": 83.07824699999946,
+        "explicitProtocolCalls": 86,
+        "nativeActionAttempts": 6,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "modelCalls": 0,
+      "modelMs": 0,
+      "costUsd": 0,
+      "knownCostUsd": 0,
+      "usageComplete": true,
+      "costBasis": "provider_reported"
+    },
+    {
+      "batchId": "executor-2026-09-17T12-39-17-777Z",
+      "mode": "offline_executor",
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "attempt": 2,
+      "caseId": "merchant-then-item",
+      "repeat": 2,
+      "inputMode": "structured",
+      "status": "completed",
+      "reason": null,
+      "verified": true,
+      "sourceConsistent": true,
+      "timings": {
+        "totalMs": 299.0555410000002,
+        "taskMs": 296.57000000000016,
+        "planningMs": 0.1955830000001697,
+        "navigationMs": 10.427375000000211,
+        "verificationMs": 0.4280420000000049,
+        "journalMs": 87.48329100000024,
+        "providerSettlementMs": 0.00041600000008656934,
+        "finalizationMs": 2.4848329999999805,
+        "contextSetupMs": 94.219875,
+        "cleanupMs": 3.5626659999998083
+      },
+      "runtimeMetrics": {
+        "totalMs": 285.6662920000001,
+        "observationMs": 90.31087500000035,
+        "executionMs": 100.09495900000002,
+        "conditionWaitMs": 64.53474900000015,
+        "chooserMs": 0,
+        "eventMs": 77.88512600000104,
+        "explicitProtocolCalls": 86,
+        "nativeActionAttempts": 6,
+        "chooserCalls": 0,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "modelCalls": 0,
+      "modelMs": 0,
+      "costUsd": 0,
+      "knownCostUsd": 0,
+      "usageComplete": true,
+      "costBasis": "provider_reported"
+    },
+    {
+      "batchId": "executor-2026-09-17T12-39-17-777Z",
+      "mode": "offline_executor",
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "attempt": 3,
+      "caseId": "contextual-merchant",
+      "repeat": 1,
+      "inputMode": "structured",
+      "status": "completed",
+      "reason": null,
+      "verified": true,
+      "sourceConsistent": true,
+      "timings": {
+        "totalMs": 309.62699999999995,
+        "taskMs": 307.17816700000003,
+        "planningMs": 0.12495800000010604,
+        "navigationMs": 10.010083000000122,
+        "verificationMs": 0.3662920000001577,
+        "journalMs": 91.11383500000102,
+        "providerSettlementMs": 0.0006250000001273293,
+        "finalizationMs": 2.4480829999997695,
+        "contextSetupMs": 88.17645900000002,
+        "cleanupMs": 3.7293329999997695
+      },
+      "runtimeMetrics": {
+        "totalMs": 296.7518329999998,
+        "observationMs": 94.17328999999881,
+        "executionMs": 103.51941600000055,
+        "conditionWaitMs": 66.65295800000013,
+        "chooserMs": 0.14920900000015536,
+        "eventMs": 81.65458599999829,
+        "explicitProtocolCalls": 86,
+        "nativeActionAttempts": 6,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "modelCalls": 0,
+      "modelMs": 0,
+      "costUsd": 0,
+      "knownCostUsd": 0,
+      "usageComplete": true,
+      "costBasis": "provider_reported"
+    },
+    {
+      "batchId": "executor-2026-09-17T12-39-17-777Z",
+      "mode": "offline_executor",
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "attempt": 4,
+      "caseId": "contextual-merchant",
+      "repeat": 2,
+      "inputMode": "structured",
+      "status": "completed",
+      "reason": null,
+      "verified": true,
+      "sourceConsistent": true,
+      "timings": {
+        "totalMs": 304.8426669999999,
+        "taskMs": 301.72329200000013,
+        "planningMs": 0.181416999999783,
+        "navigationMs": 12.057792000000063,
+        "verificationMs": 0.709208000000217,
+        "journalMs": 94.44441799999868,
+        "providerSettlementMs": 0.00045899999986431794,
+        "finalizationMs": 3.11837499999956,
+        "contextSetupMs": 88.97454200000038,
+        "cleanupMs": 5.216707999999926
+      },
+      "runtimeMetrics": {
+        "totalMs": 288.5978329999998,
+        "observationMs": 87.9929589999997,
+        "executionMs": 100.1170830000001,
+        "conditionWaitMs": 63.12970799999994,
+        "chooserMs": 0.036375000000134605,
+        "eventMs": 83.72154599999976,
+        "explicitProtocolCalls": 86,
+        "nativeActionAttempts": 6,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "modelCalls": 0,
+      "modelMs": 0,
+      "costUsd": 0,
+      "knownCostUsd": 0,
+      "usageComplete": true,
+      "costBasis": "provider_reported"
+    },
+    {
+      "batchId": "executor-2026-09-17T12-39-17-777Z",
+      "mode": "offline_executor",
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "attempt": 5,
+      "caseId": "direct-link-delayed-heading",
+      "repeat": 1,
+      "inputMode": "structured",
+      "status": "completed",
+      "reason": null,
+      "verified": true,
+      "sourceConsistent": true,
+      "timings": {
+        "totalMs": 875.1037919999999,
+        "taskMs": 870.297834,
+        "planningMs": 0.13541699999996126,
+        "navigationMs": 10.599917000000005,
+        "verificationMs": 0.8463749999996253,
+        "journalMs": 73.58128999999826,
+        "providerSettlementMs": 0.0005420000002231973,
+        "finalizationMs": 4.804375000000164,
+        "contextSetupMs": 86.77516600000035,
+        "cleanupMs": 8.720834000000195
+      },
+      "runtimeMetrics": {
+        "totalMs": 858.7378750000003,
+        "observationMs": 707.3371259999999,
+        "executionMs": 76.30066600000009,
+        "conditionWaitMs": 686.3778339999999,
+        "chooserMs": 0.050125000000207365,
+        "eventMs": 60.123040000001765,
+        "explicitProtocolCalls": 63,
+        "nativeActionAttempts": 4,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "modelCalls": 0,
+      "modelMs": 0,
+      "costUsd": 0,
+      "knownCostUsd": 0,
+      "usageComplete": true,
+      "costBasis": "provider_reported"
+    },
+    {
+      "batchId": "executor-2026-09-17T12-39-17-777Z",
+      "mode": "offline_executor",
+      "sourceSha256": "c2fdc675308c27883ab79aa6ce7faa02cec75a77db1264b01e444c00c69151cb",
+      "attempt": 6,
+      "caseId": "direct-link-delayed-heading",
+      "repeat": 2,
+      "inputMode": "structured",
+      "status": "completed",
+      "reason": null,
+      "verified": true,
+      "sourceConsistent": true,
+      "timings": {
+        "totalMs": 878.6333329999998,
+        "taskMs": 869.4524579999998,
+        "planningMs": 0.15554199999996854,
+        "navigationMs": 10.757207999999991,
+        "verificationMs": 0.8761249999997744,
+        "journalMs": 90.50358200000028,
+        "providerSettlementMs": 0.0007919999998193816,
+        "finalizationMs": 9.178249999999935,
+        "contextSetupMs": 115.95195899999999,
+        "cleanupMs": 9.870208000000275
+      },
+      "runtimeMetrics": {
+        "totalMs": 857.7407500000004,
+        "observationMs": 707.1167080000009,
+        "executionMs": 65.24578999999994,
+        "conditionWaitMs": 686.4463749999995,
+        "chooserMs": 0.035041000000092026,
+        "eventMs": 70.63379100000066,
+        "explicitProtocolCalls": 63,
+        "nativeActionAttempts": 4,
+        "chooserCalls": 1,
+        "staleRefreshes": 0,
+        "blockedRequests": 0
+      },
+      "modelCalls": 0,
+      "modelMs": 0,
+      "costUsd": 0,
+      "knownCostUsd": 0,
+      "usageComplete": true,
+      "costBasis": "provider_reported"
+    }
+  ]
+}

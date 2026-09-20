@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ef">
+    <title>A thoughtful gift, with proof</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Buena gifting home"><span class="brand-mark" aria-hidden="true">g<span>·</span></span> Buena<span class="brand-period">.</span></a>
+      <span class="prototype-label">A local trust demo</span>
+    </header>
+
+    <div class="environment-bar" aria-label="Demo environment">
+      <span><i class="dot purple" aria-hidden="true"></i> Solana · local LiteSVM</span>
+      <span><i class="dot amber" aria-hidden="true"></i> Simulated merchant</span>
+      <span><i class="dot gray" aria-hidden="true"></i> Ephemeral demo signer · no real wallet</span>
+    </div>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">Good intentions. Clear permission.</p><h1 id="page-title">A thoughtful gift.<br><span>Every step accounted for.</span></h1></div>
+        <p class="intro-description">Choose something for Marta, approve an exact amount, and follow the evidence. Transactions execute on a local Solana test environment. The merchant and purchase are simulated; no money is charged.</p>
+      </section>
+
+      <section class="scenario-panel" aria-labelledby="scenario-heading">
+        <div class="scenario-heading"><h2 id="scenario-heading">Try a story</h2><p>Each starts a fresh demo.</p></div>
+        <div class="scenario-options" role="group" aria-label="Demo scenarios">
+          <button class="scenario-button" data-command="prepare" data-scenario="happy" aria-pressed="false"><span class="scenario-number">01</span><span><strong>Everything matches</strong><small>Approve, execute, verify</small></span></button>
+          <button class="scenario-button" data-command="prepare" data-scenario="price_change" aria-pressed="false"><span class="scenario-number">02</span><span><strong>The price changes</strong><small>129 PLN becomes 149 PLN</small></span></button>
+          <button class="scenario-button" data-command="prepare" data-scenario="uncertain" aria-pressed="false"><span class="scenario-number">03</span><span><strong>The reply goes missing</strong><small>Find the order before retrying</small></span></button>
+        </div>
+      </section>
+
+      <div id="status" class="run-status" role="status" aria-live="polite" aria-atomic="true"><span class="status-dot"></span><span>Preparing your demo…</span></div>
+      <div id="errors" aria-live="polite"></div>
+
+      <div class="dashboard">
+        <div class="story-column">
+          <section class="card recipient-card" aria-labelledby="recipient-heading">
+            <div class="card-heading"><span class="section-number">01 / THE PERSON</span><span class="small-tag">Fictional recipient</span></div>
+            <div class="recipient-profile"><div class="avatar" aria-hidden="true">M</div><div><h2 id="recipient-heading">For Marta</h2><p>A little something for her weekend ritual.</p></div></div>
+            <div class="interests"><span>Coffee</span><span>Pour-over</span><span>Cycling</span></div>
+            <p id="recipient-brief" class="recipient-brief">Marta enjoys coffee, pour-over brewing and cycling.</p>
+            <p class="source-note"><span aria-hidden="true">↳</span> Source: supplied fictional recipient brief. This is demo context, not customer research.</p>
+          </section>
+
+          <section class="card gift-card" aria-labelledby="gift-heading">
+            <div class="card-heading"><span class="section-number">02 / THE GIFT</span><span class="small-tag green-tag">A considered match</span></div>
+            <div class="gift-visual" role="img" aria-label="Decorative illustration of three coffee bags, not a merchant product photo">
+              <div class="visual-caption">A WEEKEND WELL SPENT</div>
+              <div class="coffee-bags" aria-hidden="true"><div class="coffee-bag bag-one"><span>01</span><strong>BRIGHT<br>& CURIOUS</strong><i></i><small>COFFEE DISCOVERY</small></div><div class="coffee-bag bag-two"><span>02</span><strong>SLOW<br>MORNINGS</strong><i></i><small>COFFEE DISCOVERY</small></div><div class="coffee-bag bag-three"><span>03</span><strong>ONE<br>MORE CUP</strong><i></i><small>COFFEE DISCOVERY</small></div></div>
+              <span class="illustration-note">Demo gift illustration</span>
+            </div>
+            <div class="gift-details"><p id="gift-merchant" class="eyebrow">Kraków Coffee Lab — demo</p><div class="gift-title-row"><h2 id="gift-heading">Weekend Coffee Discovery Set</h2><span id="gift-price" class="gift-price">129 <small>PLN</small></span></div><p id="gift-reason" class="gift-reason">A coffee discovery set fits Marta’s interest in pour-over brewing and a slower weekend ritual.</p><div id="recommendation-evidence" class="recommendation-evidence"></div></div>
+          </section>
+        </div>
+
+        <aside class="decision-column" aria-label="Approval and execution">
+          <section id="approval" class="card approval-card" aria-labelledby="approval-heading"><div class="card-heading"><span class="section-number">03 / YOUR PERMISSION</span><span class="small-tag">Exact terms</span></div><h2 id="approval-heading">One gift. One approval.</h2><p class="muted">Loading the quote and local authorization state…</p></section>
+          <section class="card journey-card" aria-labelledby="journey-heading"><div class="card-heading"><h2 id="journey-heading">Follow the handoff</h2><span class="small-tag">Evidence, step by step</span></div><ol id="journey" class="journey"></ol></section>
+        </aside>
+      </div>
+
+      <section class="evidence-section" aria-labelledby="evidence-heading">
+        <div class="section-intro"><div><p class="eyebrow">Nothing hidden behind “done”</p><h2 id="evidence-heading">The evidence behind the outcome</h2></div><a class="secondary-button download-link" href="/api/evidence" download="gifting-evidence.json">Download evidence JSON <span aria-hidden="true">↓</span></a></div>
+        <div class="evidence-grid"><section class="card verification-card" aria-labelledby="verification-heading"><div class="card-heading"><h3 id="verification-heading">Independent checks</h3><span id="verification-badge" class="small-tag">Pending</span></div><div id="verification"></div></section><section class="card activity-card" aria-labelledby="activity-heading"><div class="card-heading"><h3 id="activity-heading">Run activity</h3><span id="run-id" class="small-tag">Starting</span></div><ol id="activity" class="activity-list"><li class="muted">Events will appear as the demo progresses.</li></ol></section></div>
+        <div id="technical-evidence" class="technical-evidence"></div>
+        <div id="artifacts" class="artifacts"></div>
+        <p class="evidence-limit">Hashes bind recorded artifacts to this run. They do not, by themselves, prove a merchant’s claims. The checks here concern a controlled, simulated merchant.</p>
+      </section>
+    </main>
+    <footer><span class="footer-brand">A thoughtful gift, with proof.</span><span>Local prototype · fictional recipient · simulated checkout</span></footer>
+    <noscript>This demo needs JavaScript to prepare a quote and display its evidence.</noscript>
+  </body>
+</html>

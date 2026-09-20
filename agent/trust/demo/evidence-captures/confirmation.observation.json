@@ -1,0 +1,16 @@
+{
+  "kind": "confirmation",
+  "observedAt": 1789653139053,
+  "origin": "http://127.0.0.1:4317",
+  "pathname": "/",
+  "title": "Buena · Gift approval",
+  "headings": [
+    "A thoughtful gift.A clear boundary.",
+    "One gift.One exact approval.",
+    "Copper FinchNotebook",
+    "You stay in control."
+  ],
+  "currency": "PLN",
+  "totalMinor": 2990,
+  "orderId": "SIM-6F847FB4"
+}

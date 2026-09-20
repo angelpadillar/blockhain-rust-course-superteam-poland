@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-09-19T10:29:56.151319+00:00",
+  "status": "followup_deployed_not_executed",
+  "worker": "running",
+  "sourceSha256": {
+    "server.mjs": "bcfc7248843ec0d1f84098751b063c0f4eea76fc71dfba586470fb6598efe531",
+    "policy.mjs": "16b87edbeb39d100676ca4662e7e11579b22be45d25fafbd4206031861bfce3e",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352",
+    "registration.mjs": "945f643e486ff18f66c0083fc6a11c6458fdeea8ec982c1b806768c61e4c61ee",
+    "registration-actions.mjs": "8b8db8aedaa3458890b8f5d7bacd28e6ab6922dc747d1d6635088bdc53794059"
+  },
+  "sourceMatchesDeployed": true,
+  "tests": {
+    "workerPassed": 38,
+    "localAndRemoteServerSyntaxPassed": true
+  },
+  "priorIntentSha256": "7445efed299f5e1047c437235f75204c5687eb24bc59d1e0d71242f92cb5c1e2",
+  "priorIntentUnchanged": true,
+  "operation": "startFollowupRegistration",
+  "approvalId": "virtual53-test",
+  "maximumFollowups": 1,
+  "maximumNewPhoneSubmits": 1,
+  "samePhoneResumeRpcEnabled": false,
+  "browserActionsDuringDeployment": 0,
+  "registrationExecutedByThisSubtask": false,
+  "modelCalls": 0,
+  "scope": "Same owned profile/account; controller independently checks owned prior activation TIMEOUT. No OTP or new account verified."
+}

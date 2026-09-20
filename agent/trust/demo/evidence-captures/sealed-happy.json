@@ -1,0 +1,350 @@
+{
+  "version": 1,
+  "sessionId": "6f847fb4-93e5-454d-a566-89c203b518ef",
+  "scenario": "happy",
+  "status": "rejected",
+  "mandate": {
+    "type": "mandate",
+    "at": 1789652996037,
+    "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "currency": "PLN",
+    "maxTotalMinor": 5000,
+    "expiresAt": 1789654196037,
+    "allowedMerchantIds": [
+      "paper-harbor"
+    ]
+  },
+  "quote": {
+    "type": "quote",
+    "at": 1789652996037,
+    "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "merchantId": "paper-harbor",
+    "currency": "PLN",
+    "totalMinor": 2990,
+    "items": [
+      {
+        "itemId": "copper-finch-notebook",
+        "title": "Copper Finch Notebook",
+        "quantity": 1,
+        "unitPriceMinor": 2490
+      }
+    ],
+    "feesMinor": 500,
+    "expiresAt": 1789653596037
+  },
+  "quoteHash": "83ade9a911f109f5d8f23a3ed65881745b31aef7fa564a17ecff6db2b0bfe28d",
+  "approval": {
+    "type": "approval",
+    "at": 1789653078077,
+    "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteHash": "83ade9a911f109f5d8f23a3ed65881745b31aef7fa564a17ecff6db2b0bfe28d",
+    "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "decision": "approved"
+  },
+  "execution": {
+    "type": "execution",
+    "at": 1789653112549,
+    "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteHash": "83ade9a911f109f5d8f23a3ed65881745b31aef7fa564a17ecff6db2b0bfe28d",
+    "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "executionId": "execution-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "mode": "simulated"
+  },
+  "confirmation": {
+    "type": "confirmation",
+    "at": 1789653112549,
+    "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteHash": "83ade9a911f109f5d8f23a3ed65881745b31aef7fa564a17ecff6db2b0bfe28d",
+    "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "executionId": "execution-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "confirmationId": "confirmation-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "merchantId": "paper-harbor",
+    "orderId": "SIM-6F847FB4",
+    "currency": "PLN",
+    "totalMinor": 2990,
+    "mode": "simulated"
+  },
+  "rejection": {
+    "type": "rejection",
+    "at": 1789653139099,
+    "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "rejectionId": "reject-6f847fb4-93e5-454d-a566-89c203b518ef-1",
+    "reason": "approval_already_consumed"
+  },
+  "observedQuote": {
+    "type": "quote",
+    "at": 1789652996037,
+    "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+    "merchantId": "paper-harbor",
+    "currency": "PLN",
+    "totalMinor": 2990,
+    "items": [
+      {
+        "itemId": "copper-finch-notebook",
+        "title": "Copper Finch Notebook",
+        "quantity": 1,
+        "unitPriceMinor": 2490
+      }
+    ],
+    "feesMinor": 500,
+    "expiresAt": 1789653596037
+  },
+  "chain": [
+    {
+      "hash": "7fde31ab6ca3708d2957e5fa0545b12d5de697284ac0743e1f67a333516eb3b0",
+      "index": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "record": {
+        "allowedMerchantIds": [
+          "paper-harbor"
+        ],
+        "at": 1789652996037,
+        "currency": "PLN",
+        "expiresAt": 1789654196037,
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "maxTotalMinor": 5000,
+        "type": "mandate"
+      },
+      "version": 1
+    },
+    {
+      "hash": "2c62271f979b57148ea56002c65e4e8a923ae01ab96cfd9db5678ca08a93491d",
+      "index": 1,
+      "prevHash": "7fde31ab6ca3708d2957e5fa0545b12d5de697284ac0743e1f67a333516eb3b0",
+      "record": {
+        "at": 1789652996037,
+        "currency": "PLN",
+        "expiresAt": 1789653596037,
+        "feesMinor": 500,
+        "items": [
+          {
+            "itemId": "copper-finch-notebook",
+            "quantity": 1,
+            "title": "Copper Finch Notebook",
+            "unitPriceMinor": 2490
+          }
+        ],
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "merchantId": "paper-harbor",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "totalMinor": 2990,
+        "type": "quote"
+      },
+      "version": 1
+    },
+    {
+      "hash": "3f94a90011eb900b06f517e9f3c598005f1c8983b8be7e62a4e635e92d641d4e",
+      "index": 2,
+      "prevHash": "2c62271f979b57148ea56002c65e4e8a923ae01ab96cfd9db5678ca08a93491d",
+      "record": {
+        "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "at": 1789653078077,
+        "decision": "approved",
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteHash": "83ade9a911f109f5d8f23a3ed65881745b31aef7fa564a17ecff6db2b0bfe28d",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "type": "approval"
+      },
+      "version": 1
+    },
+    {
+      "hash": "296d451f195bb96c41aac93acd4a62d9e80ce5be4638bc125f1d7257f010f5d1",
+      "index": 3,
+      "prevHash": "3f94a90011eb900b06f517e9f3c598005f1c8983b8be7e62a4e635e92d641d4e",
+      "record": {
+        "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "at": 1789653112549,
+        "executionId": "execution-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "mode": "simulated",
+        "quoteHash": "83ade9a911f109f5d8f23a3ed65881745b31aef7fa564a17ecff6db2b0bfe28d",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "type": "execution"
+      },
+      "version": 1
+    },
+    {
+      "hash": "7c79f6b7a0d9f0331bf3e3b50003cb89145d14ae559583769526de8ce266c322",
+      "index": 4,
+      "prevHash": "296d451f195bb96c41aac93acd4a62d9e80ce5be4638bc125f1d7257f010f5d1",
+      "record": {
+        "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "at": 1789653112549,
+        "confirmationId": "confirmation-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "currency": "PLN",
+        "executionId": "execution-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "merchantId": "paper-harbor",
+        "mode": "simulated",
+        "orderId": "SIM-6F847FB4",
+        "quoteHash": "83ade9a911f109f5d8f23a3ed65881745b31aef7fa564a17ecff6db2b0bfe28d",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "totalMinor": 2990,
+        "type": "confirmation"
+      },
+      "version": 1
+    },
+    {
+      "hash": "03e82ef591b43af80b4e4db631b28d33befccfa017d50367eb70a6288fe9133b",
+      "index": 5,
+      "prevHash": "7c79f6b7a0d9f0331bf3e3b50003cb89145d14ae559583769526de8ce266c322",
+      "record": {
+        "at": 1789653139099,
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "reason": "approval_already_consumed",
+        "rejectionId": "reject-6f847fb4-93e5-454d-a566-89c203b518ef-1",
+        "type": "rejection"
+      },
+      "version": 1
+    },
+    {
+      "hash": "5c1d13dfcbe3ebe61c1f2fde1016c063e4af6b45bd2216bfda0763f172e7f4ca",
+      "index": 6,
+      "prevHash": "03e82ef591b43af80b4e4db631b28d33befccfa017d50367eb70a6288fe9133b",
+      "record": {
+        "at": 1789653516849,
+        "eventHash": "2c62271f979b57148ea56002c65e4e8a923ae01ab96cfd9db5678ca08a93491d",
+        "evidence": {
+          "observationSha256": "2cd5fef01809c3237d430affad644aad6b5d458dedee878c9e00245f2db961bc",
+          "screenshotSha256": "df616a1d63256b8c7de6b633ee060d62f0d31c6646e748d7479046aad4efe147"
+        },
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "stage": "quote",
+        "type": "boundary_evidence"
+      },
+      "version": 1
+    },
+    {
+      "hash": "7cb6a8554e9229ef61a1981391c5f8b1fd6473635d180ce22a29840acbd3fa14",
+      "index": 7,
+      "prevHash": "5c1d13dfcbe3ebe61c1f2fde1016c063e4af6b45bd2216bfda0763f172e7f4ca",
+      "record": {
+        "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "at": 1789653516850,
+        "eventHash": "3f94a90011eb900b06f517e9f3c598005f1c8983b8be7e62a4e635e92d641d4e",
+        "evidence": {
+          "observationSha256": "658ea672e2a1cd7c2d8f3c11d2723610a7fd10b623e9190ee95cbb721529e232",
+          "screenshotSha256": "cac718541146aa369a116bbba40da3ec6ca5604fe5e85ddb3abcda6207033ace"
+        },
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "stage": "approval",
+        "type": "boundary_evidence"
+      },
+      "version": 1
+    },
+    {
+      "version": 1,
+      "index": 8,
+      "prevHash": "7cb6a8554e9229ef61a1981391c5f8b1fd6473635d180ce22a29840acbd3fa14",
+      "record": {
+        "approvalId": "approval-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "at": 1789653516851,
+        "confirmationId": "confirmation-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "eventHash": "7c79f6b7a0d9f0331bf3e3b50003cb89145d14ae559583769526de8ce266c322",
+        "evidence": {
+          "observationSha256": "e094eafa161e7eef7c52d770da285c5b7bb478d3c4fde80e64c91c0a28a2053c",
+          "screenshotSha256": "ba4ceeb34540e3e62f34b6471806810de5a44bf9aa37239275608da897c9d2be"
+        },
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "stage": "confirmation",
+        "type": "boundary_evidence"
+      },
+      "hash": "61c7cbb974332e6dbdfa31329d24b81c41ff20012de1ff0eb5da9733e35f5416"
+    }
+  ],
+  "createdAt": 1789652996037,
+  "clockOffsetMs": 0,
+  "sequence": 1,
+  "scope": "Local simulated trust demonstration. No payment, wallet signing, delivery, or on-chain deployment.",
+  "now": 1789653139100,
+  "merchantName": "Paper Harbor",
+  "recipient": "Alex · welcome gift",
+  "verification": {
+    "valid": true,
+    "integrityValid": true,
+    "artifactsValid": true,
+    "boundaryComplete": true,
+    "requireBoundaryEvidence": true,
+    "boundaries": [
+      {
+        "index": 1,
+        "stage": "quote",
+        "eventHash": "2c62271f979b57148ea56002c65e4e8a923ae01ab96cfd9db5678ca08a93491d",
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "hasScreenshot": true,
+        "hasObservation": true,
+        "observationMatchesRecord": true,
+        "complete": true
+      },
+      {
+        "index": 2,
+        "stage": "approval",
+        "eventHash": "3f94a90011eb900b06f517e9f3c598005f1c8983b8be7e62a4e635e92d641d4e",
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "hasScreenshot": true,
+        "hasObservation": true,
+        "observationMatchesRecord": true,
+        "complete": true
+      },
+      {
+        "index": 4,
+        "stage": "confirmation",
+        "eventHash": "7c79f6b7a0d9f0331bf3e3b50003cb89145d14ae559583769526de8ce266c322",
+        "mandateId": "demo-mandate-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "quoteId": "quote-6f847fb4-93e5-454d-a566-89c203b518ef",
+        "hasScreenshot": true,
+        "hasObservation": true,
+        "observationMatchesRecord": true,
+        "complete": true
+      }
+    ],
+    "issues": [],
+    "headHash": "61c7cbb974332e6dbdfa31329d24b81c41ff20012de1ff0eb5da9733e35f5416",
+    "anchored": false,
+    "recordCount": 9,
+    "confirmedOrders": 1,
+    "approvalAuthenticated": false,
+    "merchantFactsVerified": false,
+    "meaning": "Integrity and recorded mandate/quote/approval/execution correlations only. Hashes do not authenticate an approver or prove merchant facts. An external trusted head is required to detect rewritten history or a removed tail."
+  },
+  "boundaryArtifacts": [
+    {
+      "stage": "quote",
+      "eventHash": "2c62271f979b57148ea56002c65e4e8a923ae01ab96cfd9db5678ca08a93491d",
+      "screenshotSha256": "df616a1d63256b8c7de6b633ee060d62f0d31c6646e748d7479046aad4efe147",
+      "observationSha256": "2cd5fef01809c3237d430affad644aad6b5d458dedee878c9e00245f2db961bc",
+      "screenshotPath": "quote.jpg",
+      "observationPath": "quote.observation.json"
+    },
+    {
+      "stage": "approval",
+      "eventHash": "3f94a90011eb900b06f517e9f3c598005f1c8983b8be7e62a4e635e92d641d4e",
+      "screenshotSha256": "cac718541146aa369a116bbba40da3ec6ca5604fe5e85ddb3abcda6207033ace",
+      "observationSha256": "658ea672e2a1cd7c2d8f3c11d2723610a7fd10b623e9190ee95cbb721529e232",
+      "screenshotPath": "approval.jpg",
+      "observationPath": "approval.observation.json"
+    },
+    {
+      "stage": "confirmation",
+      "eventHash": "7c79f6b7a0d9f0331bf3e3b50003cb89145d14ae559583769526de8ce266c322",
+      "screenshotSha256": "ba4ceeb34540e3e62f34b6471806810de5a44bf9aa37239275608da897c9d2be",
+      "observationSha256": "e094eafa161e7eef7c52d770da285c5b7bb478d3c4fde80e64c91c0a28a2053c",
+      "screenshotPath": "confirmation.jpg",
+      "observationPath": "confirmation.observation.json"
+    }
+  ],
+  "boundaryScope": "Real local browser captures attached to simulated events. No wallet signature, real merchant fact attestation, or chain deployment.",
+  "headHashToAnchorSeparately": "61c7cbb974332e6dbdfa31329d24b81c41ff20012de1ff0eb5da9733e35f5416"
+}

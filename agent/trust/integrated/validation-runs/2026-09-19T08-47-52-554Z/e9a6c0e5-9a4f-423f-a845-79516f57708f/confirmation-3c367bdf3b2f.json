@@ -1,0 +1,17 @@
+{
+  "kind": "confirmation",
+  "observedAt": 1789807676493,
+  "origin": "http://127.0.0.1:53260",
+  "pathname": "/merchant/e9a6c0e5-9a4f-423f-a845-79516f57708f/orders/demo-33008ed1-ca66-4cb9-86ba-ec341dd5099a",
+  "title": "Simulated order confirmation · Buena sandbox",
+  "mandateId": "8s2e4niuMmw6xcNFfLN9hw2UHy8BksUJJss92JxZCk7W",
+  "quoteId": "e9a6c0e5-9a4f-423f-a845-79516f57708f",
+  "eventHash": "f781bb5548c47baf6d941733a7105615c44861af724f1a9cc8fda2702914cef3",
+  "quoteHash": "070dc8e7ae10fd4e13d9ebc7abdf5ee6be199302ba54b27cf1543cf345f7449e",
+  "merchantId": "krakow-coffee-lab-demo",
+  "currency": "PLN",
+  "totalMinor": 12900,
+  "approvalId": "e9a6c0e5-9a4f-423f-a845-79516f57708f",
+  "confirmationId": "demo-33008ed1-ca66-4cb9-86ba-ec341dd5099a",
+  "orderId": "demo-33008ed1-ca66-4cb9-86ba-ec341dd5099a"
+}

@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-09-19T10:42:48.671782+00:00",
+  "status": "frozen_provider_terminal_timeout",
+  "providerCheckObservedAt": 1789814540539,
+  "providerStatus": "TIMEOUT",
+  "smsCount": 0,
+  "source": "coordinating_controller_report",
+  "providerGuardStoppedBeforeMerchantRecoveryCall": true,
+  "resumeInvokedByAgent": false,
+  "resumeInvokedByController": false,
+  "furtherActivationAuthorized": false,
+  "newAccountVerified": false,
+  "otpCompletionImplemented": false,
+  "workerTestsPassed": 42,
+  "sourceSha256": {
+    "server.mjs": "74ee9f90b5061e871c12ef8294d7ad98dd73f36668686d9b1a32b47edb276472",
+    "policy.mjs": "28c3ea616dcad3bccb013c27fb294ece375c6e703c21dd8b96528b9d7976847d",
+    "registration.mjs": "f1b1c0c2946bcd7ef4c1f445d3b95bfbcfb603398525bbed35b848fc8141995c",
+    "registration-actions.mjs": "2850f7c8a93ce9ec8b2212eb7c6b1cccabc253bf0897a224691d6e65391233c2"
+  },
+  "readinessReceiptSha256": "acebaa6bb525ba2386a1ebdb608e4702007e5f4d2c39000d9c34e3df952cb561",
+  "scope": "No browser calls or registration actions during final freeze. Nominal future expiry does not override terminal provider status."
+}

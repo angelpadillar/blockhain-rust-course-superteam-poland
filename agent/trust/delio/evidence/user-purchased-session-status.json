@@ -1,0 +1,58 @@
+{
+  "ok": true,
+  "result": {
+    "status": "blocked",
+    "blockers": [
+      {
+        "code": "merchant_session_unverified",
+        "message": "The worker has not verified an authenticated owner session; absent login text alone is not proof."
+      },
+      {
+        "code": "delivery_confirmation_unverified",
+        "message": "The exact address candidate and postcode were observed, but native address confirmation did not complete. Manual confirmation is required; coverage and delivery slot remain unverified."
+      },
+      {
+        "code": "delivery_selection_unverified",
+        "message": "The exact delivery address and required slot have not both been verified."
+      },
+      {
+        "code": "cart_operations_not_calibrated",
+        "message": "Account cart reading, cart edits and checkout quotation are not yet calibrated against an authenticated merchant page."
+      }
+    ],
+    "capabilities": {
+      "observeCart": false,
+      "mutateCart": false,
+      "quote": false
+    },
+    "observations": {
+      "homepageReached": true,
+      "signInControlObserved": false,
+      "deliveryAddressRequested": false,
+      "anonymousCartCounterObserved": true
+    },
+    "observedAt": 1789826139157,
+    "evidenceRefs": [
+      {
+        "id": "44b5981687dd8f0bd4e457f0950ab4fd967bcf3eaf84014381da552dd90c9c37",
+        "observedAt": 1789826139157
+      }
+    ],
+    "browserRuntimeMs": 4450,
+    "modelCalls": 0,
+    "usage": {
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    },
+    "manualOnboarding": {
+      "available": true,
+      "private": true,
+      "idleCloseMs": 300000
+    },
+    "deliveryLookup": {
+      "status": "confirmation_unverified",
+      "observedAt": 1789810595780
+    },
+    "deliveryCommitment": null
+  }
+}

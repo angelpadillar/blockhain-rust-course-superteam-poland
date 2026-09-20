@@ -1,0 +1,156 @@
+{
+  "attempt": 22,
+  "suite": "semantic_guidance",
+  "caseId": "semantic-context",
+  "repeat": 2,
+  "mode": "fast",
+  "guide": "jev",
+  "planner": "none_fixed_task",
+  "status": "incomplete",
+  "events": [
+    {
+      "type": "started",
+      "elapsedMs": 5.624959000007948,
+      "mode": "fast"
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 27.16462500000489,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 36.91137499999604,
+      "kind": "fill",
+      "ref": "s1:e0"
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "failed",
+        "usageComplete": false,
+        "costUsd": null,
+        "latencyMs": 15003.917207999999,
+        "reason": "provider_network_error"
+      }
+    }
+  ],
+  "contextSetupMs": 120.08570899999177,
+  "planningMs": 0.11920799998915754,
+  "navigationMs": 18.6100829999923,
+  "goal": "Find Copper Finch Notebook from the shelf for creative studio work and open its details.",
+  "compiledTask": {
+    "query": "Copper Finch",
+    "targetText": "Copper Finch Notebook",
+    "context": "the shelf for creative studio work"
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "failed",
+        "usageComplete": false,
+        "costUsd": null,
+        "latencyMs": 15003.917207999999,
+        "reason": "provider_network_error"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 15003.917207999999,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": false,
+    "costComplete": false,
+    "costUsd": null,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "provider_network_error",
+    "metrics": {
+      "totalMs": 15062.340083999996,
+      "observationMs": 25.002791999999317,
+      "executionMs": 3.4914580000040587,
+      "conditionWaitMs": 7.268083000002662,
+      "settlingMs": 0,
+      "chooserMs": 15011.435165999996,
+      "eventMs": 10.55899900001532,
+      "explicitProtocolCalls": 15,
+      "observations": 2,
+      "revalidations": 1,
+      "browserScans": 3,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 1,
+      "nativeActionsCompleted": 1,
+      "fillAttempts": 1,
+      "pressAttempts": 0,
+      "clickAttempts": 0,
+      "chooserCalls": 1,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:52852/cases/semantic-context",
+      "title": "Paper and Pencil Library"
+    },
+    "events": [
+      {
+        "type": "started",
+        "elapsedMs": 5.624959000007948,
+        "mode": "fast"
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 27.16462500000489,
+        "kind": "fill",
+        "ref": "s1:e0"
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 36.91137499999604,
+        "kind": "fill",
+        "ref": "s1:e0"
+      }
+    ],
+    "scope": "General native/ARIA search and exact-link opening subset; independent task verification is external. Navigation and fetch/XHR stay within the start origin; HTTP(S) GET/HEAD static subresources may use other origins. All non-read methods and downloads are blocked.",
+    "metricScope": "explicitProtocolCalls counts only explicit runtime Playwright calls, including handle disposal and route setup; it excludes Playwright internal traffic and chooser screenshots/provider calls. Observation time includes browser-side waits; conditionWaitMs overlaps it. Total excludes initial page navigation."
+  },
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": false,
+      "visibleExactTitle": false,
+      "exactCollection": false
+    }
+  },
+  "verifiedSuccess": false,
+  "reason": "provider_network_error",
+  "totalMs": 15082.22649999999
+}

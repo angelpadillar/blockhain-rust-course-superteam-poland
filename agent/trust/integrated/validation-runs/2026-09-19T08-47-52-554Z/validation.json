@@ -1,0 +1,1058 @@
+{
+  "environment": "Actual Playwright browser and compiled Solana SBF in local LiteSVM; simulated merchant",
+  "reports": [
+    {
+      "name": "fresh_rehearsal_1",
+      "runId": "6a78b231-3235-43b9-bc23-acabce9baa25",
+      "phase": "completed",
+      "campaign": "Purchased",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval",
+        "confirmation"
+      ],
+      "verified": true,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "5QChrDhujiXTMJZBtPWQWiH8WCuuJ6fsTwJdDuWG3byaL9M9x9xZEcU6Hi1a2go1V7vmVL9RoJAbQWjhRmWhKJUR",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5EP3cHCeQpRb7eMkj4Ff7BQZDrma8CcsA7M3BUkMuw4Ya7ppQFjHK7x9bCMqW4syzXSZ4zHkS7cxm2XGErmZ24UR",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4JqtgEB2Nzv6UYpDM714AXfEHwvvWvUSQSTW1mYUo76ZafLNuAYNY1Fzv5XJoCxkD36ZYFYiukG9nkuEaL9ocGwH",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "41BKHzPNtkLkSwYn7oWa5W12XZHYjd3nQruLVrBCzNDF2Mgai3iiUKwLNUozacaEUQcEHWrmEfw3b4ZUSisatg7n",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5vKC6HmiXnfEPEoD32HifdUwzq5qMCGriY67pVGuHdN7SC1KT2ekopnxFZ6HWzV6eTsm6rFBAfoBahvwf6K48wtV",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "3Lzpr7HQ95wd6KbRxdVi6J2QKcTkBh7KKBEQiJZNPXFxi6Lfv4Uu9BcvU85BUExWoz4sjAZYeAAwLn4MACP2z2T9",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "5Dvo9RqAmtj4M9Zz7ReBqCUAnL39ggDpmj8gnBZcYxm4D2SDcz4AYsFLCd8hp9WJPDkycoGuJwLcbLLEbehHcqCH",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "4Q3ZvAKoE34aaVYDhcKxpNzXof9mDs4eA8HCtwGfDvgE7DqqRYvHPmRbhqronDgTaWndsoSCYJU66jumLumcvtVB",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "guEPHWUiPX3cDkmrvMcXCqqheTtmPrnqks95GhV9QpHXtPq85GP84L12VVtvuNQLtZPFspxESqhT6LgS3c8J9z7",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "2ocBqLCes5DZ25nr8RKQzZQqwsdDjr8xLMA16K1mvbZye26FYBo641fstbMR7Hcv8qpLn2RBtimCY6XgukAxp4o2",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "4PPfCXBnsiaa5ebAbmUQUbpmDWwwCZAwLstgn4K5XmeFzanFfguotZjnPbtTHyLSyNzhhai3o433hmJ8iNUbDYzb",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "5scbxcnw1JPe4TADMstGbu9GZRXAFNtVJ2nxh3bG1siWhrdZRqEfnj8sTy7XrtVtfiAexXQrtZhPTJH75mDXq1vZ",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "3KBgBzZ9thnJC8AV3yRAAhRCTr7A1Y56AbU6fTTVkecMYucpdLjCjPbi97w4MeacjLiiz4W7sxcY2iHhpeH3cEXH",
+          "accepted": true
+        },
+        {
+          "label": "fixture_oracle_authenticate_and_confirm",
+          "signature": "2Rt4ATx1Ve4W9Fc1tAqn9pCwN65xhoFhioXtggMa9Xfi1C78tBAo3rBnXGhZwEmW8Ba6oUQNPbDMZXeUvuEevrXW",
+          "accepted": true
+        }
+      ],
+      "metrics": {
+        "elapsedMs": 1757.107834,
+        "merchantDispatches": 1,
+        "modelCalls": 0,
+        "modelCostUsd": 0,
+        "infrastructureCostUsd": null,
+        "timingNote": "Full interactive run including human waiting; not a model benchmark"
+      }
+    },
+    {
+      "name": "fresh_rehearsal_2",
+      "runId": "f3e5c8bc-db4f-450c-83f2-583c456b77a5",
+      "phase": "completed",
+      "campaign": "Purchased",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval",
+        "confirmation"
+      ],
+      "verified": true,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "qRPypPUiyGyv5eyeropnM8XPL1NBN29bR9vHSU4B5fkEbPnsfJR3huZVNfF3b8TqSHP2GL9f19D1AfAU13mKmj2",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5BuGGc9Tzgk6HjQcsnG6evvt9M1axpnVuSfecqHkSfSobuC3CibYcBjx2VXFwg4fCQAq5yEmLaCfEAiDVS8Qr5HZ",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5myysid5wdadaaPRrZtnC5RD7p3VYFPS3cu8Rq4UnBFVc8F31py8KSTqxP9wgSNiBhv2hmHzJ2P2rjYUZpLuywu1",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "47LoTZhTytQPLYiaqs5RzjAqAXtivK9oQVesr3K6hMDCTeAy1HptnK5Td6tStmUMrMs5pJkT3tp4aoJCJbr2fUjN",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "EPaMgoC1UFP2fRdy2UgFLRo7VqvzyDeny4Ty5GKYyqcBQaKVcDf8wcfC91W5UKVUvpr94xSneH4qwBoQ7wyXszX",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "EPoZXdVyW89NYcqJzuTnLTAfms4gRf8aexWGWBFzRtWPsuJ7Hb8bMb1MiFUe3Lnm4Rz9bUN7tPuETYpZuch2yRi",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "5WMxn4JGJgz1gJrzSkdrXty6Zx7HgdgVYzim6WWjrSpUMng8PUL4q5Rcqdo8kCQU3ty8TVyyEEpUiGMEk7WBahx6",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "4UwyBph5uNhTCxjm96A8DWcYNJPaVCwk4CacWQJf3bdkuLoqQH4NwhiKUD1d1dXdf375ddXeDFEJSZBwfTX7XBnW",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "2EcFr1RVmVSsJRXgwuEqX9omM78DuB1k5XudrjJ8WDtDp6MQNmepj411nbj6M5pKq3t73VyScM9tfbfXGuXMngJn",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "c9eeojtLR5Pv1CMA4hDahdWYFtBsRkqXee573VnQ58spoJXL7rPFzjkVTvoWSTEViJBreUpo2ZSTaBoopVByssE",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "r26k3a2EVsTYjDf3B263vSoeZhxpQURDpTn3zsg2UdRdsb1YPtqnXAue8QgKwSssAt7m1fUaihe8MGDLZrToXg8",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "zsf7iFpmRGsNv5dbjszGrGTTZhJjwX9UBSVDMjgRaNnxCvHoA3VULbVptiqsrUbNu6cKgsq8HiPKwAsiqrtoK5R",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "4TDqmLZmVYdGBFWt7FGLBXQWxeWVaHnHYDA1iTPVZpwNqQzTzz6hFoAv9e2qtSWw92PMKPm1AKq4fQcXNmuSTjeS",
+          "accepted": true
+        },
+        {
+          "label": "fixture_oracle_authenticate_and_confirm",
+          "signature": "3CJ65VfenqPHTxPfxu54tQBpXtMRoqTxVCKNQXSJQhRsrtpLMvEzMqYZrVoNBjiqWBsDFaG1f21RLCcUj26ayKQM",
+          "accepted": true
+        }
+      ],
+      "metrics": {
+        "elapsedMs": 1010.481417,
+        "merchantDispatches": 1,
+        "modelCalls": 0,
+        "modelCostUsd": 0,
+        "infrastructureCostUsd": null,
+        "timingNote": "Full interactive run including human waiting; not a model benchmark"
+      }
+    },
+    {
+      "name": "fresh_rehearsal_3",
+      "runId": "e9a6c0e5-9a4f-423f-a845-79516f57708f",
+      "phase": "completed",
+      "campaign": "Purchased",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval",
+        "confirmation"
+      ],
+      "verified": true,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "NKX7FXxyNpVrHYHfjmM2HVkG6rV1ZrvekqMi1pCKZFKhKbYxmfRjcYGDLsSNsihcWwogzRk3eW76TYJJJWwDxKK",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4t8okVhipMQh1kDb4xcq1qrC3CZwt2HFGyYZ1N9ZdRYABarDjSkHg87yX2EWdBQZ9Shb9tUsCnxW8AV8S6mkBdb",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4TujkufG9eM5vDr1XQoJpjVdZxHG5AWEKNbmoZonygEHHgn7cfxQVP8DkFrcXQ5ajcnTRLx2njFHYqchtEc6Tbw5",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "43TPQW6V82q2QwMna2fQ1Zi7NQF1jmYzW5NJu2rskbCBWzWqFj4WwqEThZZMPpdGSeGjdq6Kh79c4FHz6HyAu6mn",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "WyThRDskBJnD7yQ4gtnpXNM6VDQPbdtsz7ETVpiLscMeDo4GyxB3EF36XBGFhcEkH2arccUG644ieAkPbG7QFvq",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "29ox15xFxqNnyQ1XPYYpmL7LD5wp9MEQVSXvrgfEzFkhVBadwvNJEcV4McsNJSumHZsSWQi3gcA63ptwYgrzcHuR",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "5mp8AWRsKqv38dCYEwnFRXQwj7hN9fSMmQmnEkSzimuJBNUALKmMHmuaSFVxd86CcQtYKcGBqwpA1f4scQxnfxku",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "s5uC3SzWjdTZPXQxi8zawDHH7au1YYBcgCkuSwzWhtSh5fzL6tgCrWQtFSWpLZfoBdNcymyfpa1fYw6hxnSBqL1",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "61ZbZ1PKBfMSZ1fM3GNF8TCVDtYD77DSAtdaRZCJm7bfn12RrN1652xtQKTFEEEiN8ZBBCE2WMU4TadoW4AdAS9e",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "4Ea6F4yhkcU1emzrFAKkaS7oGnDmkxR4PKNzDWBVyC9z9ecxo1zCxLHvYZ6GnqDNWvtKrusS3ob7sFd2YYuPVLDd",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "CjahfPB7U8B6fw9DbBKwxPuDTcDYnpbnqp1erEaRuyeLXQEESeSuYQKpveW1Ro2W2wYeEAkCm2VhTkqSPNhuz2A",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "4AjhWCLEKkdQWVgGqED3EpRgW5Nrafv76U37WQaT5fZ56gE7P8e6geRusZEescD8233cxG4SMhy26qE6iXMmS7EH",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "aEwGDqQi2pJi9NSib87ApFYYohSjPC7oj3xiXjJbvPSepuiRirSTynpdEMBuce8xuH74c7efaYzK69uukqogixF",
+          "accepted": true
+        },
+        {
+          "label": "fixture_oracle_authenticate_and_confirm",
+          "signature": "4DRxpUnDFcDkGGF2975E3HPsiLbeRMtwadH1QSX4Hhoi1SmqPgYpdY7V9FwqHPwjajFnEzXZLGjXxWP6Piy9dwK1",
+          "accepted": true
+        }
+      ],
+      "metrics": {
+        "elapsedMs": 987.5709580000002,
+        "merchantDispatches": 1,
+        "modelCalls": 0,
+        "modelCostUsd": 0,
+        "infrastructureCostUsd": null,
+        "timingNote": "Full interactive run including human waiting; not a model benchmark"
+      }
+    },
+    {
+      "name": "fresh_transaction_replay_rejected",
+      "runId": "e9a6c0e5-9a4f-423f-a845-79516f57708f",
+      "phase": "completed",
+      "campaign": "Purchased",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval",
+        "confirmation"
+      ],
+      "verified": true,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "NKX7FXxyNpVrHYHfjmM2HVkG6rV1ZrvekqMi1pCKZFKhKbYxmfRjcYGDLsSNsihcWwogzRk3eW76TYJJJWwDxKK",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4t8okVhipMQh1kDb4xcq1qrC3CZwt2HFGyYZ1N9ZdRYABarDjSkHg87yX2EWdBQZ9Shb9tUsCnxW8AV8S6mkBdb",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4TujkufG9eM5vDr1XQoJpjVdZxHG5AWEKNbmoZonygEHHgn7cfxQVP8DkFrcXQ5ajcnTRLx2njFHYqchtEc6Tbw5",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "43TPQW6V82q2QwMna2fQ1Zi7NQF1jmYzW5NJu2rskbCBWzWqFj4WwqEThZZMPpdGSeGjdq6Kh79c4FHz6HyAu6mn",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "WyThRDskBJnD7yQ4gtnpXNM6VDQPbdtsz7ETVpiLscMeDo4GyxB3EF36XBGFhcEkH2arccUG644ieAkPbG7QFvq",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "29ox15xFxqNnyQ1XPYYpmL7LD5wp9MEQVSXvrgfEzFkhVBadwvNJEcV4McsNJSumHZsSWQi3gcA63ptwYgrzcHuR",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "5mp8AWRsKqv38dCYEwnFRXQwj7hN9fSMmQmnEkSzimuJBNUALKmMHmuaSFVxd86CcQtYKcGBqwpA1f4scQxnfxku",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "s5uC3SzWjdTZPXQxi8zawDHH7au1YYBcgCkuSwzWhtSh5fzL6tgCrWQtFSWpLZfoBdNcymyfpa1fYw6hxnSBqL1",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "61ZbZ1PKBfMSZ1fM3GNF8TCVDtYD77DSAtdaRZCJm7bfn12RrN1652xtQKTFEEEiN8ZBBCE2WMU4TadoW4AdAS9e",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "4Ea6F4yhkcU1emzrFAKkaS7oGnDmkxR4PKNzDWBVyC9z9ecxo1zCxLHvYZ6GnqDNWvtKrusS3ob7sFd2YYuPVLDd",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "CjahfPB7U8B6fw9DbBKwxPuDTcDYnpbnqp1erEaRuyeLXQEESeSuYQKpveW1Ro2W2wYeEAkCm2VhTkqSPNhuz2A",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "4AjhWCLEKkdQWVgGqED3EpRgW5Nrafv76U37WQaT5fZ56gE7P8e6geRusZEescD8233cxG4SMhy26qE6iXMmS7EH",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "aEwGDqQi2pJi9NSib87ApFYYohSjPC7oj3xiXjJbvPSepuiRirSTynpdEMBuce8xuH74c7efaYzK69uukqogixF",
+          "accepted": true
+        },
+        {
+          "label": "fixture_oracle_authenticate_and_confirm",
+          "signature": "4DRxpUnDFcDkGGF2975E3HPsiLbeRMtwadH1QSX4Hhoi1SmqPgYpdY7V9FwqHPwjajFnEzXZLGjXxWP6Piy9dwK1",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "rfqrmBeD18aN97bWJL1jJHUcQvkLR6x2wpk91Gh2xfa1yfUogRJJQLyVRfyEAe6AJoppMxdo66uzJ13ENCn7WGq",
+          "accepted": false
+        }
+      ],
+      "metrics": {
+        "elapsedMs": 987.5709580000002,
+        "merchantDispatches": 1,
+        "modelCalls": 0,
+        "modelCostUsd": 0,
+        "infrastructureCostUsd": null,
+        "timingNote": "Full interactive run including human waiting; not a model benchmark"
+      }
+    },
+    {
+      "name": "changed_price_stopped_before_dispatch",
+      "runId": "0e656124-e6a9-40b2-8f99-740b97ab4914",
+      "phase": "blocked",
+      "campaign": "Approved",
+      "mandate": "Active",
+      "merchantDispatches": 0,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval"
+      ],
+      "verified": false,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "3pNZ6cdntrhcp3qAUbmbvw9SeoNi64JKcDoin9L24u3kiJk8q8PLQ6HQm2WS3BonNL1x5s9f39cLmYV4nqn3xj8p",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "563h6ZSV5KNjM3TpkVxiYpvH2HVUtca6bdMMVovYzEydpXhqnXWTNMeWJZRZADkADqTtbvxgUREAaaAtg3fEqkTE",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5wbuDAo9tzNhD5i7BudhJWxjZfSUW5zZsoJZw6CRtJNn1FfVjHNJiBfk67WqFHFUoHASSr7FDGzt98BucgwrPGR2",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2UHwvNQqdwWYPvbsPPVSysZGMAek2hfZeiXvpNAtRDcDgWDrdFcMwK1RYBF5DhgcjnRALcScsGHjhUALhrQShxg1",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5J22z85WApFyJJ96udHPRUwxxweZjVMKUqEtXL3YBJgFuP5eBSjoG5rffuaUmoFuB5pEQ4mqkrnHxCKAQ6SfVFue",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "38VSS1vNGTd5Jm2Yt3kyMDyBTnR5hqvSFw1huyA3HFcpid2V3qRFR3Uirn3tuHCKPkhHgkBTq6VJJNkDy29AXRvY",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "5Gyc7HDKdexQN3VYEmZeUUecnbriKBf574j9TTiuKbgbZsY8BwxiQGggcm1Sgjfq3weTfad5Ge1a7qaXRAcD7uq2",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "zes9AN8GoB9T95yjg7exYgBEM2oVfKDAYvdgAQFcWM49z8vx4ZQppF9day4rm8DbUCARYv2r8ZT5ExyE1fuedtW",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "59n5MLe4v8xD1eoJZSjSWPbiZzjdRPdQVfWNVVWqobAvyTPQxmBCuGvyancivvewxAsxrD2hx8eRTJtgtDNrBfLe",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "BswcBrGKoAK6g4XHGd3kfvweE2ZwU5FZRThbbiUMhnmz5kSiwZyB4Lznm6vrUktsa4dyx4gAvtcRoPZGpenRchV",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "2sf3B5mu4bKKWqb9wLNEmVbHW5ZXrQ5u1cDyUJoYXci3MQutahoRydTewusYGLrBCFWW7uApKNL5XN2kgXvU6uh9",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "3C9pTPKgEYMDMpqn8dQDGSjs15XpP95FWhQkAg2Kak22tq8dN42twBCNjj8WKCxVQEnwBDQ27dQ3X9gk2Foq4L67",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "name": "uncertain_response_stopped",
+      "runId": "51fa4ca0-751a-423e-a2bd-02aff3ea5892",
+      "phase": "needs_reconciliation",
+      "campaign": "PaymentAttempted",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval"
+      ],
+      "verified": false,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "2qqt2E4GxyWxm3fipY7Ud4mVsC8ZSAgsjWTmpPA4HppdvhKSqyRkHdkzktxVGzmLozFbfuqPZ3mjH5yam8PBUXeV",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "3K1Tkdd6RmAbxNCtUbKVQ6MpuoUGCR7utf6ChTPspQomwAv9fkFNnxhUxQw1LQVhdhiP6PsEp82fLXGymjwCrM84",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "39QnsV9i69aKiQ4j1m61t5jX2F8V2wogKt634b9kMh98EEufhT5wz9zEusopvKwT9WcGJHdZmimpjmGfL7EJwQ1n",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "Qqy498YS2CTk5epjLAzp2HBpb6mWYpStRY9MwUUwZygK2sknK2jBm7HY4YDfBEdVdWcxNjzujgvkqEeQSzCnAWZ",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4R7qPptH8RMiZYabqNNteuUqUaai7mqEvDT7vNgBAjDWnLChTBmDMogD5dZTrCDPFJBoDDteEZtknkMrsUkFanEM",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2B5LuRgga1jZWFbeL9FZfEQMCWA8xjpZDmKjfPL5oEYPTpKtqQwxP3NTjRupakHJ5NFzeyDuSpjzySvqsG5VsBNF",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "25yscJMVB717fSJSN6vz23RESLfAzkxmQgCEtDUhWYqGVJrEArY3EnQB2RRXUwSbAm7T9UVL6mgXjqWJ4REM91Dj",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "uGpnu3g2DjSHYwyHukDZQUX5PqHYaGrL3k1N9MV3DqksSusvAigVM7i3Sach1tUetzN3SmoqRUj5hnJWZRnER2G",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "5dHbF7f9mNWR7qYzZdyXSWxN4jYA4N27j4HbEuioYdj1uaEiYzdSFdTpWNt1TRpFx2g2QfkXKcdR19qRMd8MACVX",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "3oYwKYu5h5mkp6eirKPr7MizD1AWcKfQLrm4F2FtBAV4SVhEWN2NT16e21RNDBvY1gmWiW9wo3PLGLfaXJUjs59U",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "569VhvwdcQxbwyWsZsjDD69Y8iN1C2AsovbbbJJztVLRkXXR7z4n3Sw4MFCVd42gAbrg2fWRen2nZZtsyvkU7P67",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "4nriSPnhxS8NLn33gKKW6yJBVR1jHN1uB3c49ZjSxGC1uqkx7Egg4Wr9bShbt4ygwTbdBR7x4WaZQZKUSjnaDvxC",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "rJ8UcWmJgSaGzKAgZrrWXJVnsDcYTZANnFmDrkQmCTJWjCdcbxRGnBf8Z7o4B6g4pPng6EdDdbaD9BUY3bS7jFy",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "name": "existing_order_reconciled",
+      "runId": "51fa4ca0-751a-423e-a2bd-02aff3ea5892",
+      "phase": "completed",
+      "campaign": "Purchased",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval",
+        "confirmation"
+      ],
+      "verified": true,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "2qqt2E4GxyWxm3fipY7Ud4mVsC8ZSAgsjWTmpPA4HppdvhKSqyRkHdkzktxVGzmLozFbfuqPZ3mjH5yam8PBUXeV",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "3K1Tkdd6RmAbxNCtUbKVQ6MpuoUGCR7utf6ChTPspQomwAv9fkFNnxhUxQw1LQVhdhiP6PsEp82fLXGymjwCrM84",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "39QnsV9i69aKiQ4j1m61t5jX2F8V2wogKt634b9kMh98EEufhT5wz9zEusopvKwT9WcGJHdZmimpjmGfL7EJwQ1n",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "Qqy498YS2CTk5epjLAzp2HBpb6mWYpStRY9MwUUwZygK2sknK2jBm7HY4YDfBEdVdWcxNjzujgvkqEeQSzCnAWZ",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4R7qPptH8RMiZYabqNNteuUqUaai7mqEvDT7vNgBAjDWnLChTBmDMogD5dZTrCDPFJBoDDteEZtknkMrsUkFanEM",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2B5LuRgga1jZWFbeL9FZfEQMCWA8xjpZDmKjfPL5oEYPTpKtqQwxP3NTjRupakHJ5NFzeyDuSpjzySvqsG5VsBNF",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "25yscJMVB717fSJSN6vz23RESLfAzkxmQgCEtDUhWYqGVJrEArY3EnQB2RRXUwSbAm7T9UVL6mgXjqWJ4REM91Dj",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "uGpnu3g2DjSHYwyHukDZQUX5PqHYaGrL3k1N9MV3DqksSusvAigVM7i3Sach1tUetzN3SmoqRUj5hnJWZRnER2G",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "5dHbF7f9mNWR7qYzZdyXSWxN4jYA4N27j4HbEuioYdj1uaEiYzdSFdTpWNt1TRpFx2g2QfkXKcdR19qRMd8MACVX",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "3oYwKYu5h5mkp6eirKPr7MizD1AWcKfQLrm4F2FtBAV4SVhEWN2NT16e21RNDBvY1gmWiW9wo3PLGLfaXJUjs59U",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "569VhvwdcQxbwyWsZsjDD69Y8iN1C2AsovbbbJJztVLRkXXR7z4n3Sw4MFCVd42gAbrg2fWRen2nZZtsyvkU7P67",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "4nriSPnhxS8NLn33gKKW6yJBVR1jHN1uB3c49ZjSxGC1uqkx7Egg4Wr9bShbt4ygwTbdBR7x4WaZQZKUSjnaDvxC",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "rJ8UcWmJgSaGzKAgZrrWXJVnsDcYTZANnFmDrkQmCTJWjCdcbxRGnBf8Z7o4B6g4pPng6EdDdbaD9BUY3bS7jFy",
+          "accepted": true
+        },
+        {
+          "label": "fixture_oracle_authenticate_and_confirm",
+          "signature": "U7AJc91W4b53kvs4J54Gr9KQ5hBP7phvag3KHGHfqVP9jLoenCFXhW74dEJYoA3AuypFvMrpoqJQgGCCAiaBgxP",
+          "accepted": true
+        }
+      ],
+      "metrics": {
+        "elapsedMs": 1163.3582909999996,
+        "merchantDispatches": 1,
+        "modelCalls": 0,
+        "modelCostUsd": 0,
+        "infrastructureCostUsd": null,
+        "timingNote": "Full interactive run including human waiting; not a model benchmark"
+      }
+    },
+    {
+      "name": "ui_flag_without_chain_rejected",
+      "runId": "f2cbd13a-2676-48f9-b09b-17ac68fdea90",
+      "phase": "blocked",
+      "campaign": "Quoted",
+      "merchantDispatches": 0,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote"
+      ],
+      "verified": false,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "5tLhRi4e5o3kRYy8LUCBCqCJxsHWXScaT9BPJSm54JHDtXLxrBF6NJGaZv5xyFGZhGKuDzmnXJub7TxXu8dUkmf",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "3kvemMJMEHCEzJYHMnG33pnuJyEJ9yPS1Wto2Ne8gVMPWCMt1KGVnYuPBg7JbJF5z3f8QXncF94qkQ8VoRdUSJCM",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "Jcqi7ZYpbUR7hij3NxboPYWb8sxTEpxi4yUkHfCPWhEAxdn7qFqr9RC9u1pkfbzWEmxdquYBw2dagwhJxAv3eL5",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2jTt1Ztb9YTB3jgiDBZ4bSxnXcyi82fwDdTngmotegdR3nxyCPHAMWjDuGudy9ji6aDiYdFhnMP4u7XLRsMWC7xr",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2KC8rS3ycqac8yHHEGfNDT8NeP2uXGHCZuc8mBjnKyjeGxy5agrQNDM17z4wSB6VvebQb1oKbyNmAHpyxEnzh6tW",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "51ms255YaDrXrfbw5QMiSGAmWQqYmyvobrNVwnC3g2jRSrn7iSFFNud9Ug4gbBDCB5Z6EmZJtpAjYkD9yxruqmMs",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "THTW9MnRGqNqupbbqZvt71AXWCgx4VW4RbfQFit3pfHnHThPFLFvTQMUocc3u1YRacJ9WgegiTXEFQVzfUJFXfD",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "3cKVVy6pES9c7zyBGLrGABxVV7k8U1hk8AGK8YWv7GRHx4XoMFnFvSBPxCKXWFSmQQE1Fyj5RijbWPJMvgjy6RSq",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "5VNpkkDtTDjkynTStH3RgBCzVG2pQgkRViyu9UuDjjEbXCmYFcKdt3wMNztqwhWuDS4Htr74N2zVEWMTvoMtTDCT",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "61o1v8pRA5aJUvcF3b4UQLZQGeTHuLyEXnXT8agwhVY5NJysgfW5hKQiv6bVstuJZ9PVKTE2fe5QsHt3pMxVKAwK",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "4TMtrgjpEZUMVMVbMV6cALTWTD91bvwB1MRC4gNKcXPhM9M1Bz7YwZnTAz6WRMsPAztLMiZf2Rt9LCcoKvp4fyFw",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "name": "concurrent_execution_one_order",
+      "runId": "e3733b89-abc8-4b24-9a37-84519b48f124",
+      "phase": "completed",
+      "campaign": "Purchased",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval",
+        "confirmation"
+      ],
+      "verified": true,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "3iKa14zvRirKCNPf185ojcVPWkbaqtqwVVG9yfiZoi7fraMS2Cp9S6q3VDVsrm8dZGa85KSLJLUcmC6bPN9aL5KN",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "3F34bKRzjvZo5RYVzjkYEK1Jcfc8CdskMNy4a2ZqVusuRcK15FwPejC9NzBrx3iHot5jYpnDr8N6udLFhAPrsoje",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4pdwmZjz8ggWJkJNHoAPuWgvkPPv8VZpQtJGetc8mgVEihX1rNyTtZxTL93MaKKELpxh8Q6HyWUkA6HvhoZvxZ1X",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2UNR8Yc7dNLcxjrsrn9nypH4qTdnVeuDNJzb5rh2nVjHpFfw2vnuygzZ9mqdAvii3imyNzebUpFjE6NUXMAeV7bk",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5kevad6AYibvvBgFznHuVSQ27tBEaB24BMRYHGiKWXpGbnGosvjbgjjSScmphjmgbnq1FYWKA6J6cw6KeDPT5gEZ",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4ruhWYuv5bt2eCr8dDmLVrfYfauQ4c9jC1NYkEN1wGFFKdZRHHm4L5Eg7JyuQzyWJ9fCBcsvu8jqqP4j8ZUBzVrS",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "4RzCVZ6TjDvJHgFPzQhsQyuPmLTuQtpxsjQK49AZVBW7TuJhcNZ9jUzKN27bFMz9QMMJgJaGcDyUskVjiXLT2oJM",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "2URntTjLKr4QySQNQsCGWA9TxqxoSySE5WWNRh99pTrjSZWaZN9rRYK87qUf9KgtTXNiGcSJPncgxYip55FTzGxu",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "5qusqAfNGcSfhxFuihcJK8faPwF6XcGcfa1dqg1e4M6NXVznUMVPKLGBEgWAVPLukwPpsJEDPXDQovC1ZZ9s8jJG",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "4fFZ7ibDB8f5pg5CoUkyX5oFj1b7Dm1zftTzZQcMGitMyWEEUJXxUGC246mSB8bGWtRL4mgnbAfb7MyNJYhxiRj6",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "61TQZhNchZc4k9w6RYZnw4QrpLYeRbQR5m5HZbM7zANFjjJsjprkMdH4f9jG1gjB9R9HFcdJPgHrUYAnwVXnVsPF",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "58ajyr85Q86Tbs9DDvfrezANCNBHefnuggtpPNaBFLar5guPi6nXtuN1nu35SFfU2QQH8swMyAms9tUk2vKAxKs5",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "2VaBDLdwfN1UZu6CUncSoVc5JSF21E1xb3JPYiS7oMb5DoEFFgUkLwGqLm4jkmjds5qU9AUCcQzkQEE9PH1oQbDP",
+          "accepted": true
+        },
+        {
+          "label": "fixture_oracle_authenticate_and_confirm",
+          "signature": "4uGFct8eCgJLwzVABfJk4vfL1dWWGGjFvKGQEssZZmuaVrtXWhgAgrciw5n4sZJ5nGb566q6pbVYoCHjb3N5orA9",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "qKmt3PVhYcrUBHbSGauXErvsLdYM66AketW8ZHqbtrBsXZhCjxBzYRexgYnmxNzroPsceGJfuqi9Stj8AcuuTwV",
+          "accepted": false
+        }
+      ],
+      "metrics": {
+        "elapsedMs": 1094.625583,
+        "merchantDispatches": 1,
+        "modelCalls": 0,
+        "modelCostUsd": 0,
+        "infrastructureCostUsd": null,
+        "timingNote": "Full interactive run including human waiting; not a model benchmark"
+      }
+    },
+    {
+      "name": "missing_approval_evidence_blocks_execution",
+      "runId": "9a9ae403-1801-4e5e-a5bc-375db80a6ca7",
+      "phase": "blocked",
+      "campaign": "Approved",
+      "mandate": "Active",
+      "merchantDispatches": 0,
+      "evidenceValid": false,
+      "boundaries": [
+        "quote",
+        "approval"
+      ],
+      "verified": false,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "4cMXxpYZzqoqhdZqQJUDZEQPHX92qFaUHUhbroWsA5muzG5jJ3dWfUuAvu8QDgAMzRtXTXadQzTMNyk5XFjnAu4L",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4Gz6UPaEtKoiSPDd7krJPAKDkdGDF8XhwYWWXV1JMv3Wzhai6AhNCRGitNGBa2sVNsnuSxLS5v8md1Fj5u4KGHwz",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4tqFBcxYscaPSB2g6ZcTDJzMxQzVMgu8oqqS5KetvPbMmP33syGoKV8KnUvdz2MardbKPXn9mySyoFQXGYq35tDe",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "3JoVDmJFKuLiFMLrQ35YNUd97a5P9rHpFs23H3XgTzLL42VwSAp8DnC7Ve9GGq4MiNf5i7qAe7R4DezU1ynwS5gu",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "5GFrQrRvbbnmR4EMAj2AXeUNQBW3r6sdqxHbwpRgM7iamkXL9aaUd6AwGGEoqqh5g8FrN1t4fidrN92nhbyFF3Pz",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "4NaxeoxYxvxgr6svQJxh2HMvpfEq9g2NesdMsFJuNboxroJLYmCfGouSxNQi2FawgEhWC5bZJo1pV5b57MBvek3u",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "4eyX5q4A4CPRLUHjRxbiy9dspA5TFzmVR8i9V3fVBDoPJ8BKQr7xLJXnVqWeiPJkiGCYfiry8XMgXjpEiSuiuKxS",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "bGcezoTWzfsoidsErHqo3K92GYSLm5yw7tcswHrNVLhseB73aBeWz3uwHW615HmvAZNpjjYNyvNWRM53CANRVWU",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "4jfLCcRmaqUy8upegv9DquoQR7QfxXcxm8b2UKdUZjupdWoVjFtdC2sqh8u53bYqXnEWnVvLx1hBwpr7FEDnUhtF",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "rUuAfNhFMRc43o1kHzParchEAoLSyuTuRk5y3jGtpz3z1GbDQYCKUXeKBoxcSQK6vFZP2fsP6KJt89tvwBfraEf",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "36gsZJQ3Ae7t8sd66MWidyQC5KvhYTPCzXUNC6aKA4zrodBKThH2eQXL8JEKQWAM3QL9eA6xBD1R2sP2VHsqURhc",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "5EQNpnC9AgycuhFM2ntZysmgZekcugbUBv9vrPaj5VUV3oxmQNYhVQvm5iix9tRZoNopQ2LFaxEgNryyvoW6WYy9",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "name": "confirmation_evidence_recovered_without_reexecution",
+      "runId": "9a4250da-3818-4e60-b1e3-63cc65727c23",
+      "phase": "completed",
+      "campaign": "Purchased",
+      "mandate": "Consumed",
+      "merchantDispatches": 1,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval",
+        "confirmation"
+      ],
+      "verified": true,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "43ocuUUfYKCXAn538GG6BvbYTa3E6X7JoynKMuYyyTEqXmGNziga2mAUsA4NqJvb3D5xi1NmLggnMdaQW4sMGpi8",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "24fpHNrZGAZ8B8Bwq7QwdDBvHBeUhbHKs8sjPCvzcCinxd6ErZZYJyY3gntvnvsAGZgc54dkfHkzgzBwXFSvcjKZ",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2tMD5r15GtbbpFnCKWtD3DjGPRag3kFfnzGe89L7HDyQ9ctga6bsaV5YjK6AGTtgEjXcxbCh37c4VUmcrywDfFcw",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "oLe6bsyiHh41qPxshoJgvodHMdKFNwbpnFJtXyN28CfE9GKQCWAqTdJjUUH4Ak3CsSYb9BmbiZ71ZVe6AWwtUEF",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2CUeGi1CbjS5UKet7aAYbpHq5Jg2D7BUcvRYDQgWKyFtDEMCRYNzA6zjG13bjJxayMgBb1wo7Kzno637Snn4fdNv",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "CBJnXf3ggh6BMCTCwHQExfofv5bfDvzJVPMM9QvZ1rZdJAu7rxybJc7J5yzuhDhqKBMpPxnYcfEKDwkoDmeu81V",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "bDPCtSQeoV75X2t1ax1C2q6s2tSgpAxKeCoykpaiSDRhmWgUEKnEoHkrngi5Sby59DChuZzUp4ecF9fdoLwTqGR",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "9Eh2TFNuaUHYWLb2mCFdHpTxhLdRWKwM9Rrek6Vfi9wDgabkAcr4QTJ55zytaxjRvsPFrWNYfqFP1SXm1gy1EZT",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "2xEKRzzcg9NeeFF9qLsETwQH2r7rCHrRUBDqQDqGWay8yyD3Y4B5DRwNsanziRkW43mDBiEboV6DgLBeqy8DBgpv",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "64wGnZJwCTnHpp7kNmQyAhXvofZNdT1SRFmkK3RJqboun3DMoCYs2NLPLZ8H2cW8TUmZXhADVnKhN5ojeJb3Cz1j",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "2tH562bjmtrBM3qUiTM99YoADckQKtxgGSquSgQXa5zjGkEUKBDbDJk3gP2j2RpdVCG9aX5DvruAh63z2BjZwdnM",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "4zbHea6RDv4ajttiD6TW2TogAriSbvEA1gxkct1k3GbF7EpW1FDBCfNEG4aYwMQKmU7MGXw3KHgUzYZuEGsPASKo",
+          "accepted": true
+        },
+        {
+          "label": "consume_mandate_and_record_attempt",
+          "signature": "DEUs4gEB5mj2FWTjYNeVMSzac86dGN3AAXcXjL2LQceFjVJ8nQsg8dhfYepsmmHAGbyqDz9FMqw7215uJEChTTh",
+          "accepted": true
+        },
+        {
+          "label": "fixture_oracle_authenticate_and_confirm",
+          "signature": "4L67QVw7sEAPvzaGgzMicizZSTzkGV1q8LLz9i46UvDSYKkm4hS9n8tgvNARinK5HyF32pjzg8zomQuQxm25Mxfh",
+          "accepted": true
+        }
+      ],
+      "metrics": {
+        "elapsedMs": 1127.8469160000004,
+        "merchantDispatches": 1,
+        "modelCalls": 0,
+        "modelCostUsd": 0,
+        "infrastructureCostUsd": null,
+        "timingNote": "Full interactive run including human waiting; not a model benchmark"
+      }
+    },
+    {
+      "name": "chain_response_loss_stops_for_operator",
+      "runId": "5432e633-55d6-401e-a0a4-ecc887e501dc",
+      "phase": "needs_reconciliation",
+      "campaign": "PaymentAttempted",
+      "mandate": "Consumed",
+      "merchantDispatches": 0,
+      "evidenceValid": true,
+      "boundaries": [
+        "quote",
+        "approval"
+      ],
+      "verified": false,
+      "transactions": [
+        {
+          "label": "fixture_airdrop",
+          "signature": "5e4h7PyQoPhFTSFQqf1ECmLDApdHvoEHVRTxXxdmd3AiBWSGSf2SoSXxRQnUvSjNJumxvmi35MfCAZqb3qfS2SmH",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "3oqBdsucMTC3R7Gezrca9czDUR9PLvwJa6QYjMiVH2e9zeT9fHi1mLAWcqrK7ii7VgLQ2zwcBCn7apkqF3wvKEb",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "2Xy7nqLXi3j85BipkZarTDjjy4T9hRnTd9z9P5cyBwg81UFPG9CVbFWwybbpnRciFt86oX5nq3UxeBo5zUM5iMuF",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "whwk6CDvdP9CvWRmiHrJPn9QTMGcQKcqdnWcFGMaZWfwdnqBN25XTiLAaufciErFqGssoaZn3yfrbi5wK6G7nAn",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "65od1qCywEL72pCJRjzQRYaPbQSF5hDDt1eX5jNSkWBuyGwT7NKSznJw7u8ueZBXK66GjAHPtve16fPgdVL4wuAt",
+          "accepted": true
+        },
+        {
+          "label": "fixture_airdrop",
+          "signature": "cgxBUzCTe2apzBbfV7YFxk4jwyd3X95y9ngbBQaVMeFeNwa7LMVxaAEFQSuUY4fioF1NRtfMYZChqx4yEgGCgw1",
+          "accepted": true
+        },
+        {
+          "label": "create_demo_mint",
+          "signature": "nPf2QntREr956pEx37Pjxgot2J5p9DBpwvC2HcAWvoHa1Y16PkaxMiH7uTr9Y9ibPQQ3Dd5gQuaD6gQFYUDrzNs",
+          "accepted": true
+        },
+        {
+          "label": "fund_demo_tokens",
+          "signature": "2p7RmTQzbD8iLLprrMfh6wdGwYA5oFRkBKVtgapJvrvbQufhSx1yJi7edjZ2FGLWYTtm1iXioHAvAywQ5n567rhU",
+          "accepted": true
+        },
+        {
+          "label": "initialize_program_config",
+          "signature": "4uPva9QZ6sitgKbBqGqBUBYF7LhKifPhn7UZJvjiePm1V9RWJfv9mULUaPnUjHjrCDKg1XmX4GEni8phfENj5TbB",
+          "accepted": true
+        },
+        {
+          "label": "create_funded_campaign",
+          "signature": "2ohM9YHsFFNEFTcQViEBdVdnf13nnqu516HGXQ9vvSmWHj4M6QKkTSRRe8u49XmNRT7kRqtzRgvtwzJrM3oSKysw",
+          "accepted": true
+        },
+        {
+          "label": "submit_quote",
+          "signature": "4dpj5PJbsdnDHsaG6WtELPjd6D3zjRdAFz43DrR4Px5t66xc5n6Y4c3w9vpKHtqxT2NttqDEMFgkj11Vj191C9Af",
+          "accepted": true
+        },
+        {
+          "label": "authorize_and_approve_exact_quote",
+          "signature": "63YLiun3J6zT4MzYnMaLT6ZepsKGKqmMiXDDyqmkaMvyXMvmYNsA6dEdFXZNnDsrTq4AtKVunyfovCBgdb3sh3Gt",
+          "accepted": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-09-19T10:00:57.606841+00:00",
+  "operation": "inspectRegistration",
+  "clientExitCode": 0,
+  "response": {
+    "ok": false,
+    "code": "registration_entry_ambiguous",
+    "dispatched": false,
+    "blockers": [
+      {
+        "code": "registration_entry_ambiguous",
+        "message": "The worker could not verify merchant access. No cart operation was dispatched."
+      }
+    ]
+  },
+  "sourceHashes": {
+    "server.mjs": "c65f798446c33732ed373f31fd8a49f020a08cb8313dbcfe60d7c3426e17e095",
+    "policy.mjs": "453964b1c1d833622200053c96d01fa6c0200aaca75a4bb9a425272bb9e2288c",
+    "registration.mjs": "7a980e10b3d38448b0068553b961c6c7b25e22e8615eb8980cec9909a28ea348",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352"
+  }
+}

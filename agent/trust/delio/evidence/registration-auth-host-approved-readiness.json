@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-09-19T13:36:43.808214+00:00",
+  "status": "explicitly_approved_auth_host_deployed",
+  "approval": "Approve Google authentication host",
+  "reviewedAuthHosts": [
+    "identitytoolkit.googleapis.com"
+  ],
+  "otherConfigurationPreserved": true,
+  "workerReloaded": true,
+  "worker": "running",
+  "remoteSyntaxPassed": true,
+  "workerTestsPassed": 50,
+  "sourceSha256": {
+    "server.mjs": "0d94d585afc15e7d58678510e696397c6ea5ec78c7e20cebf8f4ec69a697ebc2",
+    "policy.mjs": "168b140dfb32421e345c1fa4a448b99d3cbcdbe7fbaaf34e85080e640b7863c6",
+    "registration-actions.mjs": "35bccc7a1c417424e4ec4672403a2c330b41adffb3936dca65358f9235a16b9c"
+  },
+  "correctiveSubmitByAgent": false,
+  "newAccountVerified": false,
+  "evidenceInterpretation": "Prior request_failed to the absent host is retained. Policy causation and signup success remain unverified until observed."
+}

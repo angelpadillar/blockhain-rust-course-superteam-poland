@@ -1,0 +1,599 @@
+{
+  "attempt": 2,
+  "caseId": "merchant-then-item",
+  "repeat": 1,
+  "inputMode": "structured",
+  "status": "completed",
+  "events": [
+    {
+      "plannedSteps": 2,
+      "type": "workflow_started",
+      "elapsedMs": 0.6836659999971744
+    },
+    {
+      "step": 1,
+      "operation": "search_and_open",
+      "targetText": "Paper Harbor",
+      "type": "step_started",
+      "elapsedMs": 6.216291000000638
+    },
+    {
+      "type": "started",
+      "elapsedMs": 33.679958000000624,
+      "mode": "fast",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 0.16208299999925657
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 44.76024999999936,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 11.249457999998413
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 54.35395799999969,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 20.800124999997934
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 61.05883299999914,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 27.546916999999667
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 94.56245800000033,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 61.01587499999732
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 115.88191599999845,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 82.34520799999882
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 152.18454099999872,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 118.63654200000019
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 172.7385409999988,
+      "independentlyVerified": false,
+      "step": 1,
+      "operation": "search_and_open",
+      "stepElapsedMs": 139.1949999999997
+    },
+    {
+      "step": 1,
+      "operation": "search_and_open",
+      "evidence": {
+        "before": {
+          "url": "http://127.0.0.1:59725/cases/merchant-then-item",
+          "title": "Independent Paper Market"
+        },
+        "after": {
+          "url": "http://127.0.0.1:59725/shop/3b887213bcc38d70f086",
+          "title": "Paper Harbor"
+        },
+        "urlChanged": true,
+        "visibleExactHeading": true,
+        "originPreserved": true,
+        "independentlyVerified": false
+      },
+      "type": "step_completed",
+      "elapsedMs": 179.92508299999827
+    },
+    {
+      "step": 2,
+      "operation": "search_and_open",
+      "targetText": "Copper Finch Notebook",
+      "type": "step_started",
+      "elapsedMs": 184.598915999999
+    },
+    {
+      "type": "started",
+      "elapsedMs": 190.3846659999981,
+      "mode": "fast",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 0.18137500000011642
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 196.37541599999895,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 6.187541999999667
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 204.0838330000006,
+      "kind": "fill",
+      "ref": "s1:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 13.875958999997238
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 210.62279099999796,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 20.43383399999948
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 225.2484579999982,
+      "kind": "press",
+      "ref": "s3:e0",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 34.9931669999969
+    },
+    {
+      "type": "action_planned",
+      "elapsedMs": 246.25233300000036,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 56.05362499999683
+    },
+    {
+      "type": "action_completed",
+      "elapsedMs": 285.0787500000006,
+      "kind": "click",
+      "ref": "s5:e1",
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 94.85429199999999
+    },
+    {
+      "type": "opened",
+      "elapsedMs": 302.7958749999998,
+      "independentlyVerified": false,
+      "step": 2,
+      "operation": "search_and_open",
+      "stepElapsedMs": 112.58974999999919
+    },
+    {
+      "step": 2,
+      "operation": "search_and_open",
+      "evidence": {
+        "before": {
+          "url": "http://127.0.0.1:59725/shop/3b887213bcc38d70f086",
+          "title": "Paper Harbor"
+        },
+        "after": {
+          "url": "http://127.0.0.1:59725/entry/f044c3800695201388d5",
+          "title": "Copper Finch Notebook"
+        },
+        "urlChanged": true,
+        "visibleExactHeading": true,
+        "originPreserved": true,
+        "independentlyVerified": false
+      },
+      "type": "step_completed",
+      "elapsedMs": 310.06329099999857
+    },
+    {
+      "completedSteps": 2,
+      "independentlyVerified": false,
+      "type": "workflow_completed",
+      "elapsedMs": 312.82737500000076
+    }
+  ],
+  "journalMs": 94.43699799999376,
+  "journalWrites": 24,
+  "blockedRequests": 0,
+  "contextSetupMs": 132.92370899999878,
+  "planningMs": 0.4937079999981506,
+  "navigationMs": 17.102332999998907,
+  "publicGoal": "Search for and open \"Paper Harbor\", then search within that shop for \"Copper Finch Notebook\" and open its details.",
+  "plan": {
+    "steps": [
+      {
+        "operation": "search_and_open",
+        "query": "Paper Harbor",
+        "targetText": "Paper Harbor"
+      },
+      {
+        "operation": "search_and_open",
+        "query": "Copper Finch Notebook",
+        "targetText": "Copper Finch Notebook"
+      }
+    ]
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "failedStep": null,
+    "steps": [
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Paper Harbor",
+        "status": "completed",
+        "reason": null,
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/cases/merchant-then-item",
+            "title": "Independent Paper Market"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/shop/3b887213bcc38d70f086",
+            "title": "Paper Harbor"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "metrics": {
+          "totalMs": 178.53229100000317,
+          "observationMs": 66.4528319999954,
+          "executionMs": 58.50391700000182,
+          "conditionWaitMs": 34.766083999998955,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0,
+          "explicitProtocolCalls": 40,
+          "observations": 6,
+          "revalidations": 3,
+          "browserScans": 9,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "runtimeStatus": "opened"
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "targetText": "Copper Finch Notebook",
+        "status": "completed",
+        "reason": null,
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/shop/3b887213bcc38d70f086",
+            "title": "Paper Harbor"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/entry/f044c3800695201388d5",
+            "title": "Copper Finch Notebook"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "metrics": {
+          "totalMs": 128.24245800000062,
+          "observationMs": 39.59358499999871,
+          "executionMs": 44.278832999996666,
+          "conditionWaitMs": 33.78945699999895,
+          "settlingMs": 0,
+          "chooserMs": 0,
+          "eventMs": 0,
+          "explicitProtocolCalls": 40,
+          "observations": 6,
+          "revalidations": 3,
+          "browserScans": 9,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 3,
+          "nativeActionsCompleted": 3,
+          "fillAttempts": 1,
+          "pressAttempts": 1,
+          "clickAttempts": 1,
+          "chooserCalls": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0
+        },
+        "runtimeStatus": "opened"
+      }
+    ],
+    "metrics": {
+      "totalMs": 317.1682499999988,
+      "observationMs": 106.04641699999411,
+      "executionMs": 102.78274999999849,
+      "conditionWaitMs": 68.5555409999979,
+      "settlingMs": 0,
+      "chooserMs": 0,
+      "eventMs": 86.85233300000255,
+      "explicitProtocolCalls": 86,
+      "observations": 12,
+      "revalidations": 6,
+      "browserScans": 18,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 6,
+      "nativeActionsCompleted": 6,
+      "fillAttempts": 2,
+      "pressAttempts": 2,
+      "clickAttempts": 2,
+      "chooserCalls": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:59725/entry/f044c3800695201388d5",
+      "title": "Copper Finch Notebook"
+    },
+    "events": [
+      {
+        "plannedSteps": 2,
+        "type": "workflow_started",
+        "elapsedMs": 0.6836659999971744
+      },
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "targetText": "Paper Harbor",
+        "type": "step_started",
+        "elapsedMs": 6.216291000000638
+      },
+      {
+        "type": "started",
+        "elapsedMs": 33.679958000000624,
+        "mode": "fast",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 0.16208299999925657
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 44.76024999999936,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 11.249457999998413
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 54.35395799999969,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 20.800124999997934
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 61.05883299999914,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 27.546916999999667
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 94.56245800000033,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 61.01587499999732
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 115.88191599999845,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 82.34520799999882
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 152.18454099999872,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 118.63654200000019
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 172.7385409999988,
+        "independentlyVerified": false,
+        "step": 1,
+        "operation": "search_and_open",
+        "stepElapsedMs": 139.1949999999997
+      },
+      {
+        "step": 1,
+        "operation": "search_and_open",
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/cases/merchant-then-item",
+            "title": "Independent Paper Market"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/shop/3b887213bcc38d70f086",
+            "title": "Paper Harbor"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "type": "step_completed",
+        "elapsedMs": 179.92508299999827
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "targetText": "Copper Finch Notebook",
+        "type": "step_started",
+        "elapsedMs": 184.598915999999
+      },
+      {
+        "type": "started",
+        "elapsedMs": 190.3846659999981,
+        "mode": "fast",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 0.18137500000011642
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 196.37541599999895,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 6.187541999999667
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 204.0838330000006,
+        "kind": "fill",
+        "ref": "s1:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 13.875958999997238
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 210.62279099999796,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 20.43383399999948
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 225.2484579999982,
+        "kind": "press",
+        "ref": "s3:e0",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 34.9931669999969
+      },
+      {
+        "type": "action_planned",
+        "elapsedMs": 246.25233300000036,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 56.05362499999683
+      },
+      {
+        "type": "action_completed",
+        "elapsedMs": 285.0787500000006,
+        "kind": "click",
+        "ref": "s5:e1",
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 94.85429199999999
+      },
+      {
+        "type": "opened",
+        "elapsedMs": 302.7958749999998,
+        "independentlyVerified": false,
+        "step": 2,
+        "operation": "search_and_open",
+        "stepElapsedMs": 112.58974999999919
+      },
+      {
+        "step": 2,
+        "operation": "search_and_open",
+        "evidence": {
+          "before": {
+            "url": "http://127.0.0.1:59725/shop/3b887213bcc38d70f086",
+            "title": "Paper Harbor"
+          },
+          "after": {
+            "url": "http://127.0.0.1:59725/entry/f044c3800695201388d5",
+            "title": "Copper Finch Notebook"
+          },
+          "urlChanged": true,
+          "visibleExactHeading": true,
+          "originPreserved": true,
+          "independentlyVerified": false
+        },
+        "type": "step_completed",
+        "elapsedMs": 310.06329099999857
+      },
+      {
+        "completedSteps": 2,
+        "independentlyVerified": false,
+        "type": "workflow_completed",
+        "elapsedMs": 312.82737500000076
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": false,
+    "scope": "At most four compiled native search/open or exact-link steps; each requires a changed URL and an observed exact target heading. Completion is not independent task verification.",
+    "metricScope": "Counters add explicit wrapper and v3 operations; internal Playwright traffic is excluded. Observation includes browser waits, and condition/event/request timing can overlap. Journal event time is recorded at workflow level, not added again to step eventMs. No fixed inter-step settling or model calls are added."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "checks": {
+      "localOrigin": true,
+      "exactDetailRoute": true,
+      "visibleExactTitle": true,
+      "correctMerchant": true,
+      "correctDistrict": true
+    }
+  },
+  "verificationMs": 0.4787499999983993,
+  "verifiedSuccess": true,
+  "taskMs": 334.8523749999986,
+  "providerSettlementMs": 0.0005000000019208528,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 3.386665999998513,
+  "totalMs": 338.24212500000067,
+  "cleanupMs": 5.068875000000844
+}

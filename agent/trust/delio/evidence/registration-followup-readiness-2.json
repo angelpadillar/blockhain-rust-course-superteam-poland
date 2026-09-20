@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-09-19T10:35:14.050276+00:00",
+  "status": "observed_followup_phone_ready",
+  "sourceSha256": {
+    "server.mjs": "8cff41c962003ee687139112859b7a434b187abc3a29ab8c5c459ff6206bffa7",
+    "policy.mjs": "16b87edbeb39d100676ca4662e7e11579b22be45d25fafbd4206031861bfce3e",
+    "client.mjs": "b544eecd083301aaf4a04819db652af8f76b5862ed0cf3f6ea30c58aef3a6352",
+    "registration.mjs": "503e3e688e0241ee786b80aca3a5e959679428aa7e77932e8d65be59c74502f1",
+    "registration-actions.mjs": "8afce6f9f7020b2d5691b0133eb7132b4a601fcf15544afabf12ff85cbe71740"
+  },
+  "workerTestsPassed": 39,
+  "inspection": {
+    "observedAt": 1789814072626,
+    "browserRuntimeMs": 5131,
+    "phoneSubmissionReady": true,
+    "followupSubmissionReady": true,
+    "registrationIntentAccountId": "delio-pilot-owner",
+    "phoneEntryEmpty": true,
+    "modelCalls": 0
+  },
+  "phoneInputActionsByThisSubtask": 0,
+  "smsSubmitActionsByThisSubtask": 0,
+  "nextOwner": "coordinating_controller",
+  "accountCreated": false,
+  "scope": "Readiness only, before any separately authorized new phone purchase or submission by the coordinating controller."
+}

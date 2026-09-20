@@ -1,0 +1,10 @@
+{
+  "observedAt": 1789813152189,
+  "purpose": "Read-only SMS status after uncertain merchant submit",
+  "httpStatus": 200,
+  "purchaseMade": false,
+  "status": "RECEIVED",
+  "smsMessageCount": 0,
+  "validCodePresent": false,
+  "durationMs": 650
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Buena · Gift approval</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+  <div class="demo-bar"><span class="demo-dot"></span> LOCAL TRUST DEMO <span class="demo-detail">Simulated approval and order · no payment · no wallet · not deployed on-chain</span></div>
+  <div class="shell">
+    <aside class="sidebar"><a class="brand" href="/">buena<span>✳</span></a><div class="workspace">YOUR WORKSPACE</div><div class="nav-item active"><span>◇</span> Gifts & approvals <b>1</b></div><div class="side-note"><span class="small-star">✳</span><h3>A thoughtful gift.<br>A clear boundary.</h3><p>The agent prepares.<br>You approve the exact quote.</p></div><div class="demo-person"><span>A</span><div>Alex's welcome gift<small>Fictional demo recipient</small></div></div></aside>
+    <main>
+      <header><div class="breadcrumb">Gifts <span>/</span> Welcome to the studio</div><a class="export" href="/api/evidence">Download evidence ↗</a></header>
+      <section class="heading"><div class="eyebrow">GIFT APPROVAL</div><h1>One gift.<br>One exact approval.</h1><p>Review the gift and full price. Your approval applies only<br class="desktop"> to this quote, for this merchant, before it expires.</p></section>
+      <section class="scenario-section" aria-label="Demonstration scenarios"><div class="section-label">TRY A TRUST CHECK <span>Each scenario starts a new demo.</span></div><div class="scenario-list"><button data-scenario="happy" class="selected">Happy path</button><button data-scenario="price_increase">Price increases</button><button data-scenario="merchant_mismatch">Merchant changes</button><button data-scenario="expired">Quote expires</button><button data-scenario="replay">Repeat attempt</button></div></section>
+      <div class="content-grid">
+        <section class="quote-card" aria-labelledby="quote-title"><div class="card-top"><span class="card-kicker">THE GIFT</span><span id="status-badge" class="badge">Awaiting review</span></div><div class="product"><div class="product-art" aria-hidden="true"><div class="sun"></div><div class="notebook"><span>COPPER<br>FINCH</span><i>notes & good ideas</i></div><div class="pencil"></div></div><div class="product-info"><div class="merchant" id="merchant">Paper Harbor</div><h2 id="quote-title">Copper Finch<br>Notebook</h2><p>1 notebook · a place for new ideas</p><div class="recipient-pill">♡ &nbsp; For Alex's first day</div></div></div>
+          <div class="price-lines"><div><span>Notebook × 1</span><span id="subtotal">24.90 PLN</span></div><div><span>Delivery & fees</span><span id="fees">5.00 PLN</span></div><div class="total-line"><strong>Total to approve</strong><strong id="total">29.90 PLN</strong></div></div>
+          <div class="quote-meta"><div><span class="clock-icon">◷</span><span id="expiry">Quote valid for 10 minutes</span></div><span>Budget: 50.00 PLN</span></div>
+          <div id="notice" class="notice" aria-live="polite">Loading your local quote…</div>
+          <button id="approve" class="primary" disabled>Approve exact quote · 29.90 PLN <span>→</span></button><button id="execute" class="primary execute" hidden>Check & simulate order <span>→</span></button>
+          <p class="button-note" id="button-note">Approval is recorded locally. It is not a payment or wallet signature.</p>
+          <details class="hash-details"><summary>What exactly am I approving?</summary><p>Merchant, product, quantity, currency, total, expiry and mandate ID are bound together by this quote hash.</p><p>Mandate: <span id="mandate-id"></span><br>Expires: <span id="exact-expiry"></span></p><code id="quote-hash"></code></details>
+        </section>
+        <aside class="trust-column"><section class="trust-card"><div class="card-kicker">THE APPROVAL BOUNDARY</div><h2>You stay in control.</h2><div id="timeline" class="timeline"></div><div class="boundary-note">A changed quote needs a new review. An approval can be used only once.</div></section><section class="evidence-card"><div class="evidence-title"><span>↗</span><strong>Evidence, not a promise</strong></div><p>Each local event links to the previous record. The independent checker verifies the chain and matching quote.</p><div class="integrity"><span id="integrity-dot"></span><span id="integrity-text">Checking local record…</span></div><div class="record-count" id="record-count"></div><details><summary>View event trail</summary><ol id="event-trail"></ol></details></section><p class="scope-note">A visible trust-layer demonstration. Simulated confirmations do not prove a real purchase, delivery or on-chain transaction.</p></aside>
+      </div><footer>Thoughtful by design. Accountable at every step.<span>BUENA / LOCAL DEMO</span></footer>
+    </main>
+  </div>
+</body></html>

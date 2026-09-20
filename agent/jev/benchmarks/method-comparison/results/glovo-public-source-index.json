@@ -1,0 +1,20 @@
+{
+  "scope": "Anonymous public frontend source; inspected without execution or authenticated API access.",
+  "files": [
+    {
+      "url": "https://glovoapp.com/_next/static/chunks/10544-68f20214f2870a70.js",
+      "sha256": "7b3d559ef4d111f7a6012ce6b44eb59818e69e59c8b1ac645ce2458ec128049d",
+      "bytes": 31026
+    },
+    {
+      "url": "https://glovoapp.com/_next/static/chunks/59259-24b0fae4a6c7e8aa.js",
+      "sha256": "da7d9b86be568d542a3f9f4a539a89390b7832e7da9d052c85935a0c4989f634",
+      "bytes": 64211
+    },
+    {
+      "url": "https://glovoapp.com/_next/static/chunks/app/%5Blanguage%5D/%5Bcountry%5D/%5Bcity%5D/stores/%5BstoreSlug%5D/page-15072e5a4b21b141.js",
+      "sha256": "88bf56c8d70b69780f4e53330e143d6927e8c173da5b988f2d4ba1429706e2c6",
+      "bytes": 135476
+    }
+  ]
+}
