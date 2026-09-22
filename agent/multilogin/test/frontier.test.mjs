@@ -75,7 +75,8 @@ test('the frontier returns a permitted action and the request carries only sanit
   { usage: { prompt_tokens: 1200, completion_tokens: 40, total_tokens: 1240,
     prompt_tokens_details: { cached_tokens: 200 } } }));
   const ledger = { recorded: [], async record(metric) { this.recorded.push(metric); } };
-  const vision = createFireworksVision({ secretPath: path, fetchImpl, ledger, capture: async () => screenshot });
+  const vision = createFireworksVision({ secretPath: path, fetchImpl, ledger, mode: 'tool',
+    capture: async () => screenshot });
 
   const decision = await vision.decide({ goal: 'verify identity', operation: 'dismiss_onboarding',
     observation: OBSERVATION, permittedActions: ACTIONS, trigger: 'visual_only_ui',
@@ -109,14 +110,53 @@ test('the frontier returns a permitted action and the request carries only sanit
   assert.equal(JSON.stringify(metric).includes('cG5n'), false, 'no image bytes in the ledger');
 });
 
+test('both structured-output modes are constrained to the same decision schema', async t => {
+  const path = await secretFile(t);
+  const content = JSON.stringify({ decision: 'action', actionId: 'a0', confidence: 0.9 });
+
+  // A: function calling with the permitted ids as an enum.
+  const tool = responder({ id: 'r-tool', usage: { prompt_tokens: 10, completion_tokens: 5 },
+    choices: [{ message: { tool_calls: [{ function: { name: 'report_decision', arguments: content } }] } }] });
+  const visionTool = createFireworksVision({ secretPath: path, fetchImpl: tool.fetchImpl, mode: 'tool',
+    capture: async () => screenshot });
+  assert.equal((await visionTool.decide({ observation: OBSERVATION, permittedActions: ACTIONS, screenshot }))
+    .actionId, 'a0');
+  assert.equal(Array.isArray(tool.calls[0].body.tools), true);
+  assert.equal(tool.calls[0].body.response_format, undefined);
+
+  // B: structured JSON with the same prompt and permitted set.
+  const json = responder({ id: 'r-json', usage: { prompt_tokens: 10, completion_tokens: 5 },
+    choices: [{ message: { content } }] });
+  const visionJson = createFireworksVision({ secretPath: path, fetchImpl: json.fetchImpl, mode: 'json',
+    capture: async () => screenshot });
+  assert.equal((await visionJson.decide({ observation: OBSERVATION, permittedActions: ACTIONS, screenshot }))
+    .actionId, 'a0');
+  assert.equal(json.calls[0].body.tools, undefined, 'no tool schema in JSON mode');
+  assert.deepEqual(json.calls[0].body.response_format, { type: 'json_object' });
+  assert.equal(json.calls[0].body.messages[0].content[0].text.includes('"decision"'), true,
+    'the schema is stated in the prompt');
+  // Both modes carry the same sanitized state and the same image.
+  assert.equal(json.calls[0].body.messages[0].content[0].text.includes('epoch-7'), true);
+  assert.equal(json.calls[0].body.messages[0].content[1].image_url.url.startsWith('data:image/png'), true);
+
+  // JSON mode is still restricted: an out-of-set or extra field is refused.
+  for (const bad of [{ decision: 'action', actionId: 'zz' },
+    { decision: 'action', actionId: 'a0', selector: '#x' }]) {
+    const rejected = createFireworksVision({ secretPath: path, mode: 'json', capture: async () => screenshot,
+      fetchImpl: responder({ choices: [{ message: { content: JSON.stringify(bad) } }] }).fetchImpl });
+    await assert.rejects(rejected.decide({ observation: OBSERVATION, permittedActions: ACTIONS, screenshot }),
+      /frontier_(action_not_permitted|invalid_decision)/);
+  }
+});
+
 test('the model may abstain or report that a person is required, and nothing else', async t => {
   const path = await secretFile(t);
-  const abstain = createFireworksVision({ secretPath: path, capture: async () => screenshot,
+  const abstain = createFireworksVision({ secretPath: path, capture: async () => screenshot, mode: 'tool',
     fetchImpl: responder(payload(JSON.stringify({ decision: 'abstain', reason: 'unclear' }))).fetchImpl });
   assert.deepEqual(await abstain.decide({ observation: OBSERVATION, permittedActions: ACTIONS, screenshot }),
     { abstain: true, reason: 'unclear' });
 
-  const human = createFireworksVision({ secretPath: path, capture: async () => screenshot,
+  const human = createFireworksVision({ secretPath: path, capture: async () => screenshot, mode: 'tool',
     fetchImpl: responder(payload(JSON.stringify({ decision: 'human_verification_required',
       reason: 'recaptcha visible' }))).fetchImpl });
   const decision = await human.decide({ observation: OBSERVATION, permittedActions: ACTIONS, screenshot });
@@ -154,7 +194,7 @@ test('the sanitized input excludes anything that is not reachable state', () => 
 
 test('L3 runs only for its triggers, and a frontier human signal becomes L4', async t => {
   const path = await secretFile(t);
-  const vision = createFireworksVision({ secretPath: path, capture: async () => screenshot,
+  const vision = createFireworksVision({ secretPath: path, capture: async () => screenshot, mode: 'tool',
     fetchImpl: responder(payload(JSON.stringify({ decision: 'action', actionId: 'a0',
       confidence: 0.9 }))).fetchImpl });
   const frontier = createFrontierVisionAdvisor({ vision });
@@ -180,7 +220,7 @@ test('L3 runs only for its triggers, and a frontier human signal becomes L4', as
 
   // A detected challenge is classified and handed to L4 - never solved.
   const humanFrontier = createFrontierVisionAdvisor({ vision: createFireworksVision({ secretPath: path,
-    capture: async () => screenshot, fetchImpl: responder(payload(JSON.stringify({
+    capture: async () => screenshot, mode: 'tool', fetchImpl: responder(payload(JSON.stringify({
       decision: 'human_verification_required', reason: 'recaptcha' }))).fetchImpl }) });
   const operator = await createAdvisorChain({ frontier: humanFrontier, l3Triggers })({ page: {},
     actions: ACTIONS, observation: OBSERVATION, trigger: 'visual_only_ui' })
