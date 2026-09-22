@@ -1,5 +1,14 @@
 import { createHash } from 'node:crypto';
-import { PilotError, requireThat, navigationError, totp, createRedactor } from './core.mjs';
+import { PilotError, requireThat, navigationError, accountId, createRedactor } from './core.mjs';
+import { maxRecoverySteps, recoveryObservation, recoveryCandidates, validateRecoveryDecision,
+  executeRecoveryAction } from './recovery.mjs';
+import { BrowserExecutionKernel, decisionSourceFor } from './execution.mjs';
+import { createValueResolver, valueRefForOperation } from './secrets.mjs';
+import { attachObservation } from './observation.mjs';
+
+export const defaultLoginGoal = 'Sign in to the supplied existing account and confirm the expected '
+  + 'identity. Do not create an account, change account settings, or post content. Human confirmation '
+  + 'is only for an external verification this system cannot legitimately supply.';
 
 export const sites = {
   instagram: {
@@ -10,7 +19,16 @@ export const sites = {
   youtube: {
     loginUrl: 'https://accounts.google.com/ServiceLogin?service=youtube&continue=https%3A%2F%2Fwww.youtube.com%2F',
     homeUrl: 'https://www.youtube.com/',
-    origins: ['https://accounts.google.com', 'https://www.youtube.com', 'https://youtube.com', 'https://myaccount.google.com'],
+    // Navigation permission only. Two post-auth origins were observed in the
+    // real Google/YouTube flow and had to be allowed or the adapter aborted on a
+    // legitimate redirect:
+    //   https://gds.google.com          - the landing page observe() rejected
+    //                                     (path /web/landing, then /web/recoveryoptions)
+    //   https://accounts.youtube.com    - YouTube's SetSID hop on the way to youtube.com
+    // credentialOrigins stays unchanged, so credentials can still only be typed
+    // on the Google sign-in origin.
+    origins: ['https://accounts.google.com', 'https://www.youtube.com', 'https://youtube.com', 'https://myaccount.google.com',
+      'https://gds.google.com', 'https://accounts.youtube.com'],
     credentialOrigins: ['https://accounts.google.com'],
   },
 };
@@ -42,6 +60,16 @@ export function classifyPage(snapshot) {
   return null;
 }
 
+// Classifications describing an unfamiliar or security-related page, where a
+// model may legitimately recognise a normal navigation or confirm that a person
+// is genuinely required. A definitive credential outcome is deliberately absent:
+// wrong password, unknown account or a rate limit stops deterministically.
+export const recoverableClassifications = ['human_verification_required', 'device_verification_required',
+  'email_or_sms_verification_required', 'account_setup_requires_attention'];
+function recoverableClassification(reason) {
+  return recoverableClassifications.includes(reason);
+}
+
 export function verifyIdentity(account, snapshot, site = sites[account.platform]) {
   if (new URL(snapshot.url).origin !== new URL(site.homeUrl).origin) return false;
   if (snapshot.controls.some(control => control.type === 'password')) return false;
@@ -71,12 +99,36 @@ export async function navigate(page, url) {
 }
 
 export class LoginBrowser {
-  constructor(page, account, { site = sites[account.platform] } = {}) {
+  constructor(page, account, { site = sites[account.platform], secrets = null,
+    ttlMs = 15000, now = Date.now } = {}) {
     this.page = page; this.account = account; this.site = site;
+    // How long an observation stays usable, and the clock it is measured with.
+    this.ttlMs = ttlMs; this.now = now;
+    // Trusted secret indirection: the flow names account_username,
+    // account_password, current_totp ... and only this object resolves them,
+    // only at fill time, and never towards a model, receipt or log.
+    this.secrets = secrets || createValueResolver({ account });
     this.filled = new Set(); this.clicked = new Set(); this.documentKey = null;
     this.submittedStages = new Set();
     this.redact = createRedactor([account.username, account.password, account.totp, account.recoveryEmail]);
     this.lastCode = null; this.ownedHandles = [];
+    // Menu toggles are bounded rather than permanently deduped: YouTube re-renders
+    // its masthead after the post-login load and discards an opened dropdown, and
+    // a permanent dedup left the flow with zero legal actions. Attempts are
+    // counted per control so a closed menu can be reopened a bounded number of
+    // times without allowing an open/close toggle loop.
+    this.menuClicks = new Map();
+    this.menuOpenedKeys = new Set();
+    this.recoverySteps = 0;
+    this.recovery = { steps: 0, actions: 0, calls: 0, reasons: [] };
+    this.recoveryFingerprint = null;
+    this.recoveryStalls = 0;
+  }
+  // Level 1 reopening: how many deterministic reopen attempts a menu control gets
+  // before recovery takes over.
+  static get maxMenuReopenAttempts() { return 2; }
+  get menuActionCount() {
+    return [...this.menuClicks.values()].reduce((total, count) => total + count, 0);
   }
   async observe() {
     const url = this.page.url();
@@ -92,6 +144,7 @@ export class LoginBrowser {
         label: element.getAttribute('aria-label') || [...(element.labels || [])].map(label => label.innerText).join(' ')
           || element.getAttribute('placeholder') || element.innerText?.slice(0, 180) || element.querySelector('img')?.alt || '',
         autocomplete: element.getAttribute('autocomplete') || '',
+        role: element.getAttribute('role') || '',
         href: element.tagName === 'A' ? element.href : '',
         formAction: element.form ? element.form.action : '',
         required: Boolean(element.required),
@@ -106,6 +159,10 @@ export class LoginBrowser {
     // Reset fill tracking only after navigation or a genuinely new set of fields.
     const documentKey = JSON.stringify([url, controls.filter(control => control.tag === 'input').map(control => control.key)]);
     if (this.documentKey !== documentKey) { this.filled.clear(); this.documentKey = documentKey; }
+    // The live path emits the shared observation contract: every control carries
+    // an id scoped to this observation's epoch, and the epoch is what execution
+    // must quote back.
+    attachObservation({ snapshot, ttlMs: this.ttlMs, now: this.now() });
     return snapshot;
   }
   candidates(snapshot, { verifyOnly = false } = {}) {
@@ -154,10 +211,15 @@ export class LoginBrowser {
       if (!verifyOnly && authOrigin && fieldActions.length === 0 && /^try another way$/.test(label)) kind = 'try_another_way';
       if (!verifyOnly && this.account.platform === 'youtube' && control.tag === 'a' && /^(sign in|zaloguj się)$/.test(label)) kind = 'open_login';
       if (!kind) continue;
-      // Menu toggles change the page fingerprint every time they open or close;
-      // deduplicate them by control so the same button cannot loop forever.
-      const clickKey = ['open_account_menu', 'open_switch_account'].includes(kind)
-        ? `menu:${control.key}` : `${snapshot.fingerprint}:${control.key}`;
+      // Menu toggles change the page fingerprint every time they open or close,
+      // so a fingerprint key would loop forever. They are instead bounded per
+      // control: a control may be used a small fixed number of times, which
+      // still allows recovering when a re-render discarded the opened menu.
+      const menuKind = ['open_account_menu', 'open_switch_account'].includes(kind);
+      const menuUsed = menuKind ? (this.menuClicks.get(control.key) || 0) : 0;
+      if (menuKind && menuUsed >= LoginBrowser.maxMenuReopenAttempts) continue;
+      const clickKey = menuKind
+        ? `menu:${control.key}:${menuUsed}` : `${snapshot.fingerprint}:${control.key}`;
       if (this.clicked.has(clickKey)) continue;
       if (control.href) {
         try { if (!this.site.origins.includes(new URL(control.href).origin)) continue; } catch { continue; }
@@ -189,8 +251,19 @@ export class LoginBrowser {
       : switchActions.length ? switchActions.slice(0, 1)
       : menuActions.length ? menuActions.slice(0, 1)
       : actions;
-    return permitted.slice(0, 80).map((action, index) => ({ ...action, id: `a${index}`,
-      description: `${action.kind}: observed ${action.control.tag} labelled "${this.redact(action.control.label || action.control.name)}"` }));
+    // The decision payload names the REFERENCE a value would come from; the
+    // value itself is never part of an observation, prompt or description.
+    return permitted.slice(0, 80).map((action, index) => {
+      const valueRef = valueRefForOperation[action.kind] || null;
+      // Every candidate is stamped with the epoch it came from, the id that epoch
+      // produced and the signature it was decided on; execution quotes all three.
+      const binding = snapshot.observation
+        ? { observationEpoch: snapshot.epoch, controlId: action.control.id,
+          expectedControlSignature: action.control.key } : {};
+      return { ...action, id: `a${index}`, valueRef, ...binding,
+        description: `${action.kind}: observed ${action.control.tag} labelled "${this.redact(action.control.label || action.control.name)}"`
+          + (valueRef ? ` (valueRef ${valueRef}; code supplies the value)` : '') };
+    });
   }
   publicPage(snapshot) {
     return { origin: new URL(snapshot.url).origin, path: this.redact(new URL(snapshot.url).pathname),
@@ -198,9 +271,25 @@ export class LoginBrowser {
       controls: snapshot.controls.slice(0, 80).map(control => ({ tag: control.tag, type: control.type,
         label: this.redact(control.label), enabled: control.enabled })) };
   }
-  async execute(action, snapshot) {
+  async execute(action, snapshot, { decisionObservation = null } = {}) {
     requireThat(this.page.url() === snapshot.url, 'stale_page');
     const { control, kind } = action;
+    // Epoch binding. A live observation may only be acted on by an action that
+    // quotes the epoch, the control id that epoch produced and the signature it
+    // was decided on. `decisionObservation` is the epoch the decision came from
+    // when execution is looking at a newer one; without it, the epoch must match.
+    if (snapshot.observation || action.observationEpoch !== undefined || action.controlId !== undefined) {
+      const live = snapshot.observation || null;
+      requireThat(live, 'observation_required');
+      requireThat(action.observationEpoch, 'observation_epoch_required');
+      requireThat(action.controlId, 'control_id_required');
+      requireThat(action.expectedControlSignature, 'expected_control_signature_required');
+      requireThat(control.id === action.controlId && control.epoch === live.epoch, 'stale_observation');
+      requireThat(this.now() < live.expiresAt, 'expired_observation');
+      const decided = decisionObservation || live;
+      requireThat(action.observationEpoch === decided.epoch, 'stale_observation');
+      requireThat(this.now() < decided.expiresAt, 'expired_observation');
+    }
     requireThat(await control.handle.isVisible() && await control.handle.isEnabled(), 'stale_control');
     const current = await control.handle.evaluate(element => ({
       tag: element.tagName.toLowerCase(), type: element.getAttribute('type') || '',
@@ -213,20 +302,34 @@ export class LoginBrowser {
     if (current.formAction) requireThat(this.site.credentialOrigins.includes(new URL(current.formAction).origin), 'unexpected_form_destination');
     if (kind.startsWith('fill_')) {
       requireThat(this.site.credentialOrigins.includes(new URL(this.page.url()).origin), 'credential_origin_mismatch');
-      let value;
-      if (kind === 'fill_username') value = this.account.username;
-      else if (kind === 'fill_password') value = this.account.password;
-      else if (kind === 'fill_recovery_email') value = this.account.recoveryEmail;
-      else if (kind === 'fill_totp') {
-        let otp = totp(this.account.totp);
-        if (otp.validForMs < 5000) { await new Promise(resolve => setTimeout(resolve, otp.validForMs + 100)); otp = totp(this.account.totp); }
-        value = otp.code; this.redact.add(value); this.lastCode = value;
-      } else throw new PilotError('unsupported_action');
+      // The action carries a REFERENCE. Trusted code resolves it here - after the
+      // page, origin and control checks above - and the value goes straight into
+      // the field. It is never returned, logged, journaled or receipted.
+      const ref = valueRefForOperation[kind];
+      requireThat(ref, 'unsupported_action');
+      if (action.valueRef) requireThat(action.valueRef === ref, 'value_ref_mismatch');
+      const value = await this.secrets.resolve(ref);
+      if (kind === 'fill_totp') { this.redact.add(value); this.lastCode = value; }
       await control.handle.fill(value, { timeout: 5000 }); this.filled.add(control.key); return;
     }
-    requireThat(['submit_login', 'open_login', 'choose_totp', 'try_another_way', 'dismiss_cookies', 'open_account_menu', 'open_switch_account'].includes(kind), 'unsupported_action');
+    if (kind === 'type_observed') {
+      // Operator-supplied text reaches the page only through a resolved reference,
+      // and only on an origin this site already allows.
+      requireThat(this.site.origins.includes(new URL(this.page.url()).origin), 'unexpected_login_destination');
+      requireThat(action.valueRef, 'value_ref_required');
+      const value = await this.secrets.resolve(action.valueRef);
+      await control.handle.fill(value, { timeout: 5000 }); return;
+    }
+    requireThat(['submit_login', 'open_login', 'choose_totp', 'try_another_way', 'dismiss_cookies', 'open_account_menu', 'open_switch_account', 'click_observed'].includes(kind), 'unsupported_action');
     this.clicked.add(action.clickKey || `${snapshot.fingerprint}:${control.key}`);
     if (kind === 'submit_login') this.submittedStages.add(fieldStage(snapshot));
+    if (['open_account_menu', 'open_switch_account'].includes(kind)) {
+      this.menuClicks.set(control.key, (this.menuClicks.get(control.key) || 0) + 1);
+      if (kind === 'open_account_menu') this.menuOpenedKeys.add(control.key);
+    }
+    // A deterministic step is real progress, so a recovery episode restarts its
+    // budget here.
+    this.recoverySteps = 0;
     // Our own transition check handles both navigation and asynchronous form submissions.
     await control.handle.click({ timeout: 5000, noWaitAfter: true });
   }
@@ -239,8 +342,8 @@ export class LoginBrowser {
         if (action.kind === 'submit_login') {
           if (classifyPage(next) || verifyIdentity(this.account, next, this.site)
             || (fieldStage(next) !== fieldStage(previous) && next.controls.some(control => control.tag === 'input' && control.enabled))
-            || (next.url !== previous.url && next.controls.length > 0 && !next.controls.some(control => control.tag === 'input'))) return;
-        } else if (next.fingerprint !== previous.fingerprint) return;
+            || (next.url !== previous.url && next.controls.length > 0 && !next.controls.some(control => control.tag === 'input'))) return next;
+        } else if (next.fingerprint !== previous.fingerprint) return next;
       }
       catch (error) { if (error instanceof PilotError) throw error; }
     }
@@ -249,9 +352,34 @@ export class LoginBrowser {
 }
 
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
-  verifyOnly = false, onStep = async () => {}, site = sites[account.platform] }) {
+  verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform],
+  goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000,
+  receipts = null, scope = null }) {
   const browser = new LoginBrowser(page, account, { site });
+  // The single execution path for this run. The deterministic flow and the Jev
+  // recovery episode both go through it; nothing else performs a browser
+  // operation. Roles come from this workflow, never from a model.
+  const kernel = new BrowserExecutionKernel({
+    browser, account, site, workflow: 'login', runId: `login-${accountId(account)}`,
+    observe: () => browser.observe(),
+    identityVerified: snapshot => verifyIdentity(account, snapshot, site),
+    journal: async entry => onStep({ step: entry.step ?? null, phase: 'receipt', ...entry }),
+    // A durable receipt is written before every dispatch when the caller supplies
+    // a store, so a crash leaves evidence a restart can reconcile read-only.
+    receipts, scope,
+  });
   let interstitialBypassed = false;
+  // Recent deterministic actions, so a recovery observation carries context
+  // without ever carrying page content that is not already redacted.
+  const recentActions = [];
+  // Page states that already consumed a full patience window with no usable
+  // controls, so they are not waited on again.
+  const emptyFingerprints = new Set();
+  // Visual escalations are capped for the whole run, so a vision advisor can never
+  // be asked to look more than a handful of times.
+  const visualEpisode = { escalations: 0 };
+  const finish = result => ({ ...result, visualEscalations: visualEpisode.escalations,
+    recovery: { ...browser.recovery, menuActions: browser.menuActionCount } });
   const network = [];
   const recordNetwork = (request, status, error) => {
     const url = new URL(request.url());
@@ -265,22 +393,90 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   const failureListener = request => recordNetwork(request, null, request.failure()?.errorText);
   page.on('response', responseListener); page.on('requestfailed', failureListener);
   try {
-  const started = performance.now(); const deadline = Date.now() + maxSeconds * 1000;
+  const started = performance.now(); let deadline = Date.now() + maxSeconds * 1000;
   await navigate(page, verifyOnly ? site.homeUrl : site.loginUrl);
   for (let step = 0; step < maxSteps; step++) {
     requireThat(Date.now() < deadline, 'login_time_budget_exceeded');
     // Client-rendered login pages can expose text before their controls exist.
     // Wait for actionable evidence without reloading or submitting anything.
-    let snapshot;
-    const readyDeadline = Math.min(deadline, Date.now() + 5000);
-    for (;;) {
-      snapshot = await browser.observe();
-      if (verifyIdentity(account, snapshot, site) || classifyPage(snapshot)
-        || browser.candidates(snapshot, { verifyOnly }).length || Date.now() >= readyDeadline) break;
-      await new Promise(resolve => setTimeout(resolve, 250));
+    let snapshot = await browser.observe();
+    const hasCandidates = () => browser.candidates(snapshot, { verifyOnly }).length > 0;
+    // The patience window exists for client-rendered controls. A page state that
+    // already had a full window and still offered nothing does not get a second
+    // one, so an unstructured page reaches recovery promptly instead of being
+    // re-waited on every single step.
+    if (!emptyFingerprints.has(snapshot.fingerprint)) {
+      const readyDeadline = Math.min(deadline, Date.now() + readyWindowMs);
+      for (;;) {
+        if (verifyIdentity(account, snapshot, site) || classifyPage(snapshot)
+          || hasCandidates() || Date.now() >= readyDeadline) break;
+        await new Promise(resolve => setTimeout(resolve, 250));
+        snapshot = await browser.observe();
+      }
     }
-    if (verifyIdentity(account, snapshot, site)) return { verified: true, steps: step, durationMs: Math.round(performance.now() - started) };
+    if (!hasCandidates()) emptyFingerprints.add(snapshot.fingerprint);
+    // The decision and its execution share ONE observation epoch: every control
+    // id below is only meaningful against this epoch.
+    const observation = kernel.observe(snapshot).observation;
+    if (verifyIdentity(account, snapshot, site)) {
+      return finish({ verified: true, steps: step, durationMs: Math.round(performance.now() - started) });
+    }
     const attention = async reason => onStep({ step, phase: 'attention', reason, page: browser.publicPage(snapshot) });
+    // Level 2 recovery episode. The model may only name a typed capability from
+    // recovery.mjs; the shared choice policy validates it and browser code
+    // executes it. A bounded budget stops a loop. Transport failures never
+    // reach here - runner.mjs handles those as infrastructure.
+    const requestRecovery = async classifiedReason => {
+      if (browser.recoverySteps >= recoveryBudget) {
+        await onStep({ step, phase: 'jev_recovery', state: 'budget_exhausted',
+          reason: classifiedReason || 'no_actions', recoveryStep: browser.recoverySteps, budget: recoveryBudget });
+        return { exhausted: true };
+      }
+      // A page state that is unchanged after two recovery attempts will not
+      // resolve by trying again, so the episode ends instead of spinning.
+      if (browser.recoveryFingerprint === snapshot.fingerprint) browser.recoveryStalls++;
+      else browser.recoveryStalls = 0;
+      browser.recoveryFingerprint = snapshot.fingerprint;
+      if (browser.recoveryStalls >= 2) {
+        await onStep({ step, phase: 'jev_recovery', state: 'stalled',
+          reason: classifiedReason || 'no_actions', recoveryStep: browser.recoverySteps, budget: recoveryBudget });
+        return { exhausted: true };
+      }
+      const candidates = recoveryCandidates({ snapshot, browser, site,
+        classifiedReason: classifiedReason || null });
+      if (!candidates.length) return { exhausted: false };
+      const modelView = recoveryObservation({ goal, snapshot, browser, recentActions,
+        deterministicState: { step, classifiedReason: classifiedReason || null, verifyOnly,
+          menuOpenedBefore: browser.menuOpenedKeys.size > 0 } });
+      let decision;
+      try {
+        decision = await choose({ page: modelView, observation, snapshot,
+          classifiedReason: classifiedReason || null, episode: visualEpisode,
+          actions: candidates.map(({ id, description }) => ({ id, description })) });
+      } catch (error) {
+        await onStep({ step, phase: 'jev_recovery', state: 'selection_failed',
+          reason: classifiedReason || 'no_actions',
+          detail: error instanceof PilotError ? error.code : 'selection_failed' });
+        return { failed: true };
+      }
+      browser.recovery.calls++;
+      let action;
+      try { action = validateRecoveryDecision({ decision, candidates }); }
+      catch { return { failed: true }; }
+      browser.recoverySteps++; browser.recovery.steps++;
+      browser.recovery.reasons.push(action.kind);
+      await onStep({ step, phase: 'jev_recovery', state: 'decision', reason: classifiedReason || 'no_actions',
+        action: action.kind, method: decision.method, confidence: decision.confidence,
+        probability: decision.probability, rationale: decision.reason || null,
+        recoveryStep: browser.recoverySteps, budget: recoveryBudget });
+      // Jev never touches the browser: its capability goes through the same
+      // kernel as a deterministic decision (authorize -> epoch -> receipt ->
+      // existing executor -> postcondition).
+      const outcome = await executeRecoveryAction({ action, snapshot, observation, browser, site, navigate,
+        kernel, source: decisionSourceFor(decision), justification: decision.reason || null });
+      if (outcome.performed) recentActions.push({ step, action: action.kind, via: 'jev_recovery' });
+      return outcome;
+    };
     const failure = classifyPage(snapshot);
     if (failure) {
       // An email/SMS or device challenge may still offer a path to the
@@ -288,7 +484,31 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       const escape = ['email_or_sms_verification_required', 'device_verification_required'].includes(failure)
         && account.totp && browser.candidates(snapshot, { verifyOnly })
           .some(action => action.kind === 'choose_totp' || action.kind === 'try_another_way');
-      if (!escape) { await attention(failure); throw new PilotError(failure); }
+      if (!escape) {
+        // An unfamiliar security-looking page is offered to recovery before a
+        // person is asked. Recovery can only resume normal navigation or escalate;
+        // no capability answers a challenge. A definitive credential outcome
+        // (wrong password, unknown account, rate limit) is not an unfamiliar
+        // state, so it stops as before instead of being handed to a model.
+        if (recoverableClassification(failure)) {
+          const recovered = await requestRecovery(failure);
+          if (recovered.performed) continue;
+        }
+        await attention(failure);
+        // A person may be able to complete a security checkpoint in this same live
+        // browser. The hook only observes and waits: it answers nothing, fills
+        // nothing, and never changes proxy or browser identity. When no hook is
+        // supplied the previous behaviour (stop this account) is unchanged.
+        const paused = requestHumanCheckpoint
+          ? await requestHumanCheckpoint({ reason: failure, page, browser, account, site, snapshot, step, onStep })
+          : null;
+        if (paused?.resumed) {
+          // Time spent waiting for a person must not consume the login budget.
+          deadline += Number(paused.waitedMs) || 0;
+          continue;
+        }
+        throw new PilotError(failure);
+      }
     }
     if (!account.totp && snapshot.controls.some(control => /one-time-code|totp|verificationcode|security.code/i.test(
       `${control.autocomplete} ${control.name}`))) throw new PilotError('totp_secret_missing');
@@ -304,22 +524,57 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       await navigate(page, site.homeUrl);
       continue;
     }
+    if (!actions.length) {
+      // Zero valid actions is the classic unexpected state: an unfamiliar page,
+      // a re-render mid-flight, or a control that disappeared. Recovery is tried
+      // before a person is asked.
+      const recovered = await requestRecovery(null);
+      if (recovered.performed) continue;
+    }
     if (!actions.length) await attention(verifyOnly ? 'session_or_identity_not_verified' : 'unsupported_login_screen');
     requireThat(actions.length > 0, verifyOnly ? 'session_or_identity_not_verified' : 'unsupported_login_screen');
     let decision;
-    try { decision = await choose({ page: browser.publicPage(snapshot), actions: actions.map(({ id, description }) => ({ id, description })) }); }
+    // The decision carries the observation it was taken against, so an advisor can
+    // bind a screenshot to this epoch and execution can refuse another one.
+    try { decision = await choose({ page: browser.publicPage(snapshot), observation, snapshot,
+      episode: visualEpisode, actions: actions.map(({ id, description }) => ({ id, description })) }); }
     catch (error) { await attention(error instanceof PilotError ? error.code : 'selection_failed'); throw error; }
+    if (decision?.episode) visualEpisode.escalations = decision.episode.escalations;
+    // An L3 decision taken on another epoch is never executed here.
+    if (decision?.decisionEpoch && decision.decisionEpoch !== observation.epoch) {
+      await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', state: 'stale_decision',
+        decisionEpoch: decision.decisionEpoch, epoch: observation.epoch });
+      continue;
+    }
     const action = actions.find(candidate => candidate.id === decision.action?.id);
     requireThat(action, 'unknown_selected_action');
     await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', action: action.kind,
       method: decision.method, confidence: decision.confidence, probability: decision.probability, state: 'before' });
     try {
-      await browser.execute(action, snapshot);
-      if (!action.kind.startsWith('fill_')) await browser.waitForChange(snapshot, action);
+      // The ONLY path to a browser operation: BrowserAction -> workflow
+      // authorization -> decision-epoch freshness -> receipt (created BEFORE
+      // dispatch) -> the existing executor -> postcondition. A fill carries a
+      // valueRef, never a value.
+      await kernel.execute({ candidate: action, snapshot, observation,
+        source: decisionSourceFor(decision), justification: decision.reason || null,
+        // The kernel re-observed and re-resolved the control immediately before
+        // this call, so the executor acts on the live handle and the live page.
+        dispatch: async ({ action: browserAction, control: resolved, snapshot: liveSnapshot }) => {
+          const target = liveSnapshot || snapshot;
+          await browser.execute({ ...action, control: resolved || action.control,
+            valueRef: browserAction.valueRef, observationEpoch: browserAction.observationEpoch,
+            controlId: browserAction.controlId,
+            expectedControlSignature: browserAction.expectedControlSignature }, target,
+          { decisionObservation: observation });
+          if (action.kind.startsWith('fill_')) return null;
+          return browser.waitForChange(target, action);
+        } });
     } catch (error) {
-      // Single-page apps replace controls mid-render; a stale target simply
-      // means the observation aged out, so re-observe rather than fail the run.
-      if (['stale_control', 'stale_page'].includes(error?.code)) {
+      // Single-page apps replace controls mid-render, and a live page can move on
+      // between the decision and the dispatch; both simply mean the observation
+      // aged out, so re-observe rather than fail the run.
+      if (['stale_control', 'stale_page', 'stale_observation', 'expired_observation',
+        'changed_page', 'changed_control', 'control_not_usable'].includes(error?.code)) {
         await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', action: action.kind, state: 'stale' });
         continue;
       }
@@ -328,8 +583,16 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       throw error;
     }
     await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', action: action.kind, state: 'after' });
+    recentActions.push({ step, action: action.kind, method: decision.method, via: 'deterministic' });
   }
   throw new PilotError('login_step_budget_exceeded');
+  } catch (error) {
+    // Counters travel with the failure so the job report can show how much
+    // recovery was attempted before the run stopped.
+    if (error && typeof error === 'object') {
+      error.recovery = { ...browser.recovery, menuActions: browser.menuActionCount };
+    }
+    throw error;
   } finally {
     page.off('response', responseListener); page.off('requestfailed', failureListener);
   }

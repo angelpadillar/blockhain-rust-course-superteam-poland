@@ -9,6 +9,7 @@
     "test:browser": "node --test test/*.e2e.mjs",
     "doctor": "node cli.mjs doctor",
     "plan": "node cli.mjs plan",
+    "batch": "node batch-runner.mjs",
     "run": "node cli.mjs run"
   },
   "dependencies": { "playwright-core": "1.62.1" }

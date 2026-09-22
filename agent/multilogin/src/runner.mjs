@@ -18,6 +18,7 @@ export const defaults = {
   launcherUrl: 'https://launcher.mlx.yt:45001', cdpHost: '127.0.0.1',
   osType: process.platform === 'darwin' ? 'macos' : 'linux', cloudStorage: true, headless: false,
   maxAccounts: 6, maxProxySwitches: 1, maxSteps: 20, maxSeconds: 180, verifyRestart: true,
+  humanCheckpointSeconds: 600,
   seedSites: ['https://www.amazon.pl/', 'https://www.ebay.com/'], proxyMode: 'multilogin', proxyCountry: null, proxyPool: [],
 };
 export function validateConfig(supplied) {
@@ -29,6 +30,8 @@ export function validateConfig(supplied) {
   requireThat(Number.isInteger(config.maxProxySwitches) && config.maxProxySwitches >= 0 && config.maxProxySwitches <= 2, 'invalid_proxy_retry_limit');
   requireThat(Number.isInteger(config.maxSteps) && config.maxSteps >= 1 && config.maxSteps <= 30, 'invalid_step_limit');
   requireThat(Number.isInteger(config.maxSeconds) && config.maxSeconds >= 10 && config.maxSeconds <= 300, 'invalid_time_limit');
+  requireThat(Number.isInteger(config.humanCheckpointSeconds) && config.humanCheckpointSeconds >= 1
+    && config.humanCheckpointSeconds <= 7200, 'invalid_human_checkpoint_limit');
   requireThat(['multilogin', 'pool', 'none'].includes(config.proxyMode), 'invalid_proxy_mode');
   requireThat(config.proxyCountry === null || /^[a-z]{2}$/.test(config.proxyCountry), 'invalid_proxy_country');
   requireThat(Array.isArray(config.proxyPool), 'invalid_proxy_pool');
@@ -51,7 +54,7 @@ export async function seedSites(context, urls) {
   }
   return results;
 }
-async function connect(port, config) {
+export async function connect(port, config) {
   const { chromium } = await loadPlaywright();
   let browser;
   try { browser = await chromium.connectOverCDP(`http://${config.cdpHost}:${port}`, { timeout: 15000 }); }
@@ -75,8 +78,12 @@ export async function stopBrowserProfile(api, profileId, browser) {
   await api.stop(profileId);
 }
 
+// `provider` (a MultiloginSessionProvider) is the production profile/session
+// lifecycle: ownership lock, launcher start, launcher-returned CDP endpoint, the
+// existing context and the graceful stop. When it is supplied this function does
+// not start, attach or stop a profile itself.
 export async function runBatch({ accounts, config: supplied, api, guideFactory, directory,
-  connectImpl = connect, loginImpl = runLogin, seedImpl = seedSites }) {
+  connectImpl = connect, loginImpl = runLogin, seedImpl = seedSites, provider = null }) {
   const config = validateConfig(supplied);
   requireThat(accounts.length <= config.maxAccounts, 'too_many_accounts');
   requireThat(/^[a-zA-Z0-9-]{8,80}$/.test(config.folderId || '') && !config.folderId.includes('REPLACE'), 'folder_id_required');
@@ -111,15 +118,26 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
       const stop = async () => {
         if (!started) return;
         record.pending = 'stop'; await save();
-        await stopBrowserProfile(api, record.profileId, session?.browser); started = false;
-        record.pending = null; await save();
-        await session?.browser?.close().catch(() => {}); session = null;
+        // One ownership abstraction: with a provider, the graceful stop (Chromium
+        // flushed, then Multilogin stop/sync) is its job; ownership stays held.
+        if (provider) await provider.suspend();
+        else await stopBrowserProfile(api, record.profileId, session?.browser);
+        started = false; record.pending = null; await save();
+        if (!provider) { await session?.browser?.close().catch(() => {}); session = null; }
       };
       const start = async () => {
         record.pending = 'start'; await save();
-        const port = await api.start(config.folderId, record.profileId, config.headless);
-        started = true; record.pending = null; await save();
-        session = await connectImpl(port, config);
+        // The pending marker is cleared before the attach can fail, exactly as in
+        // the direct path, so an interrupted attach is never left unreconciled.
+        if (provider) {
+          await provider.start();
+          started = true; record.pending = null; await save();
+          session = await provider.connect();
+        } else {
+          const port = await api.start(config.folderId, record.profileId, config.headless);
+          started = true; record.pending = null; await save();
+          session = await connectImpl(port, config);
+        }
       };
       const newProxy = async index => {
         if (config.proxyMode === 'multilogin') return api.premiumProxy(account.proxyCountry || config.proxyCountry);
@@ -152,6 +170,9 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
           record.pending = null; await save();
         }
         result.profileId = record.profileId;
+        // The provider wraps the SAME profile the record layer resolved (or just
+        // created): it is bound before it is started.
+        if (provider) provider.bindProfileId(record.profileId);
         const withRecovery = async task => { for (;;) {
           try {
             await start();

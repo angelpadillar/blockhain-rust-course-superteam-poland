@@ -63,6 +63,27 @@ Pipe the secret JSON into that command; do not paste it into an echo command or 
 
 The local CLI also accepts keys already present in `MULTILOGIN_TOKEN` (or `MULTILOGIN_AUTOMATION_TOKEN`) and `TYPESAFE_API_KEY`, for `node cli.mjs run --config ... --accounts ... --platform instagram`. No keys are included in this deployment. A short-lived sign-in token can perform initial API tests; unattended operation needs an operator-configured automation token. Creating or saving that persistent credential was not performed in this task.
 
+## Several accounts as independent jobs
+
+`batch-runner.mjs` runs a job file instead of one platform import. Each job names a platform and references an account and a profile (`accountRef`, `profileRef`); credentials stay in the existing private store and are never passed as arguments. Up to six jobs are accepted and `--concurrency` bounds the workers.
+
+```sh
+docker compose run --rm --no-deps -T worker node batch-runner.mjs /data/jobs.json --config config.vps.json \
+  --accounts /data/accounts.json --data /data/state --concurrency 2
+```
+
+```json
+{"jobs": [{"id": "youtube-01", "platform": "youtube", "accountRef": "yt-account-01", "profileRef": "yt-profile-01"}]}
+```
+
+Check the plan before touching a profile. A dry run reads the job file, the private accounts and the existing profile references, prints the resolved profiles and conflicts, and takes no lock, creates no directory and starts no browser. It exits 2 when the plan is blocked:
+
+```sh
+node batch-runner.mjs jobs.json --dry-run --accounts private/accounts.json --data private/state
+```
+
+Each job owns one profile, one browser, one profile lock and one log directory (`<data>/jobs/<job-id>/`), so two jobs cannot share a profile or mix their evidence. A job that reaches a security checkpoint is reported as `waiting_for_human`: the browser is held open for a person, the wait is logged as a transition, the time spent waiting does not consume the login budget, and other workers keep running. The automation only observes and waits; it never answers a challenge, fills a challenge field or changes proxy or browser identity. Without `--preserve-on-checkpoint` the profile is still stopped and reconciled when the wait times out, so the mapping can be rerun.
+
 ## Recovery and evidence
 
 Reports distinguish authentication failure, unsupported screens, transport failures, Jev uncertainty, account-identity mismatch and lifecycle reconciliation. A `pending` lifecycle marker or stale `run.lock` requires inspecting the actual profile/process state before clearing it. Never delete the mapping to retry a failed login. The dedicated smoke-profile reconciliation command is operator tooling and does not reset purchased-account state.
@@ -73,6 +94,8 @@ Step/time limits bound each login attempt, with separate finite network timeouts
 npm test
 npm run test:browser
 ```
+
+`test/human-checkpoint.e2e.mjs` drives the checkpoint hook and the job runner against a real headless browser and a local provider fixture: a person clears the challenge in the browser the job is holding, the run resumes, and a second job finishes while its sibling waits. Nothing in the suite reaches a live account.
 
 Browser tests use isolated local fixtures and a deterministic decision function, not live Jev or social accounts. The infrastructure smoke script uses the actual Multilogin browser and can call real Jev when its key is supplied. See `VALIDATION.md` for observed results and remaining gaps.
 
