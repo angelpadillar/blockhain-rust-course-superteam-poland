@@ -345,7 +345,8 @@ export class LoginBrowser {
 
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
   verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform],
-  goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000 }) {
+  goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000,
+  receipts = null, scope = null }) {
   const browser = new LoginBrowser(page, account, { site });
   // The single execution path for this run. The deterministic flow and the Jev
   // recovery episode both go through it; nothing else performs a browser
@@ -355,6 +356,9 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     observe: () => browser.observe(),
     identityVerified: snapshot => verifyIdentity(account, snapshot, site),
     journal: async entry => onStep({ step: entry.step ?? null, phase: 'receipt', ...entry }),
+    // A durable receipt is written before every dispatch when the caller supplies
+    // a store, so a crash leaves evidence a restart can reconcile read-only.
+    receipts, scope,
   });
   let interstitialBypassed = false;
   // Recent deterministic actions, so a recovery observation carries context

@@ -22,6 +22,8 @@ export async function evaluatePostcondition({ postcondition, probe, context = {}
   const timeoutMs = validated.timeoutMs ?? 5000;
   const started = now();
   const deadline = started + timeoutMs;
+  // A bounded attempt count means a frozen clock cannot spin the loop forever.
+  const maxAttempts = Math.max(2, Math.ceil(timeoutMs / Math.max(1, pollMs)) + 2);
   let attempts = 0; let detail = 'not_met';
   for (;;) {
     attempts++;
@@ -35,7 +37,7 @@ export async function evaluatePostcondition({ postcondition, probe, context = {}
       // An unavailable probe reading is a failure of the check, not of the run.
       detail = error instanceof PilotError ? error.code : 'postcondition_probe_failed';
     }
-    if (now() >= deadline) {
+    if (attempts >= maxAttempts || now() >= deadline) {
       return { met: false, type: validated.type, attempts, elapsedMs: now() - started, detail };
     }
     await sleep(Math.min(pollMs, Math.max(1, deadline - now())));

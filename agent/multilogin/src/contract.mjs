@@ -133,20 +133,26 @@ export function validatePostcondition(postcondition) {
 }
 
 // Receipt written BEFORE dispatch, carrying its decision source.
-export function createReceipt({ id, idempotencyKey, action, now = Date.now() } = {}) {
+export function createReceipt({ id, idempotencyKey, action, now = Date.now(),
+  observationFingerprint = null, observationUrl = null, scope = null } = {}) {
   requireThat(typeof id === 'string' && id.length > 0, 'invalid_receipt_id');
   requireThat(typeof idempotencyKey === 'string' && idempotencyKey.length >= 8, 'invalid_idempotency_key');
   requireThat(action?.decisionSource, 'unsupported_decision_source');
   validatePostcondition(action.expectedPostcondition);
   return { id, idempotencyKey, action, decisionSource: action.decisionSource, risk: action.risk,
-    observationEpoch: action.observationEpoch, state: 'created', createdAt: new Date(now).toISOString(),
+    observationEpoch: action.observationEpoch, observationFingerprint, observationUrl, scope,
+    state: 'created', createdAt: new Date(now).toISOString(),
     dispatchedAt: null, resolvedAt: null, postconditionMet: null, reconciliations: [] };
 }
 
 export function transitionReceipt(receipt, state, detail = {}) {
   requireThat(receipt && receiptStates.includes(receipt.state), 'invalid_receipt');
   requireThat(receiptStates.includes(state), 'unknown_receipt_state');
-  const allowed = { created: ['dispatched', 'failed'], dispatched: ['certain', 'uncertain'],
+  // A receipt that never reached dispatch can be reconciled as not-occurred: that
+  // is the only thing which authorizes a retry, and a later attempt still starts
+  // from dispatched.
+  const allowed = { created: ['dispatched', 'failed', 'reconciled_not_occurred'],
+    dispatched: ['certain', 'uncertain'],
     uncertain: ['reconciled_not_occurred', 'verified', 'failed'],
     reconciled_not_occurred: ['dispatched', 'failed'], certain: ['verified', 'failed'],
     verified: [], failed: [] };
@@ -156,8 +162,18 @@ export function transitionReceipt(receipt, state, detail = {}) {
   return next;
 }
 
+// A read-only reconciliation attempt is recorded without changing the state, so
+// an inconclusive pass leaves the effect exactly as uncertain as it was.
+export function recordReconciliation(receipt, entry) {
+  requireThat(receipt?.id, 'invalid_receipt');
+  requireThat(entry && typeof entry === 'object', 'invalid_reconciliation');
+  return { ...receipt, reconciliations: [...(receipt.reconciliations || []), entry] };
+}
+
 // Only a read-only reconciliation establishing that the effect did NOT occur
-// permits a retry. The historical bridge's stronger rule, kept deliberately.
+// permits a retry. An idempotency key is a dedupe mechanism inside this process;
+// it is never proof that an external website did not execute the action. The
+// historical bridge's stronger rule, kept deliberately.
 export function mayRetry(receipt) { return receipt?.state === 'reconciled_not_occurred'; }
 
 // The advisor seam: internal interface first, MCP is a later adapter. Every

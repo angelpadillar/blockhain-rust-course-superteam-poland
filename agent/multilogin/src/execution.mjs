@@ -83,7 +83,7 @@ export function riskForOperation(operation, claimed = null) {
 export class BrowserExecutionKernel {
   constructor({ browser = null, account, site = null, workflow = 'login', allowedRoles = null,
     receipts = null, journal = null, ttlMs = 15000, runId = 'session', now = Date.now,
-    observe = null, identityVerified = null, verifiers = {} } = {}) {
+    observe = null, identityVerified = null, verifiers = {}, scope = null } = {}) {
     requireThat(account && typeof account === 'object', 'account_required');
     requireThat(typeof runId === 'string' && runId.length >= 4, 'invalid_run_id');
     requireThat(workflowRoles[workflow] || Array.isArray(allowedRoles), 'unknown_workflow');
@@ -92,6 +92,9 @@ export class BrowserExecutionKernel {
     // Roles come from the workflow configuration and nowhere else.
     this.allowedRoles = allowedRoles ? [...allowedRoles] : [...workflowRoles[workflow]];
     this.store = receipts || null; this.journal = journal;
+    // Which profile/session this run belongs to, so a restart can attach the same
+    // one read-only when it reconciles an in-flight receipt.
+    this.scope = scope;
     this.ttlMs = ttlMs; this.runId = runId; this.now = now;
     this.observeImpl = observe || (browser ? () => browser.observe() : null);
     this.identityVerified = identityVerified; this.verifiers = verifiers;
@@ -214,7 +217,9 @@ export class BrowserExecutionKernel {
     const decided = decisionObservation || observation;
     // Persisted BEFORE dispatch: a crash mid-flight leaves evidence that the
     // action may already have been sent.
-    const receipt = createReceipt({ id: randomUUID(), idempotencyKey: action.idempotencyKey, action, now: this.now() });
+    const receipt = createReceipt({ id: randomUUID(), idempotencyKey: action.idempotencyKey, action,
+      now: this.now(), observationFingerprint: decided.fingerprint,
+      observationUrl: `${decided.url.origin}${decided.url.pathname}`, scope: this.scope });
     const created = await this.record(receipt);
     // Freshness immediately before dispatch: the page is re-read and the control
     // re-resolved, so execution never acts on a stale reference.

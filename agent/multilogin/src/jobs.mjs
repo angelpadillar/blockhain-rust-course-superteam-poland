@@ -7,6 +7,7 @@ import { runBatch, validateConfig, connect as defaultConnect, seedSites } from '
 import { runConcurrentBatch } from './batch.mjs';
 import { runLogin, sites, classifyPage } from './login.mjs';
 import { acquireNamedLock, acquireProfileLock } from './profile-lock.mjs';
+import { createReceiptStore } from './receipts.mjs';
 import { captureSafeScreenshot } from './screenshots.mjs';
 import { inspectStudio, observeStudio } from './youtube.mjs';
 import { selectJobAccounts, refPattern } from './accounts.mjs';
@@ -275,7 +276,12 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
       log, config, cancel, pollMs, onStep: emit });
   };
   await log.transition('running', { phase: verifyOnly ? 'session_reopen' : 'login' });
-  const result = await flowImpl({ ...args, onStep: emit, requestHumanCheckpoint });
+  // Durable receipts for this job: written before every dispatch, kept beside the
+  // job's own evidence, and reconcilable read-only by a later worker.
+  const result = await flowImpl({ ...args, onStep: emit, requestHumanCheckpoint,
+    receipts: createReceiptStore({ directory: log.directory }),
+    scope: { jobId: job.id, platform: job.platform, profileRef: job.profileRef,
+      accountId: account.id, profileId: log.profileId || null } });
   await log.screenshot(page, verifyOnly ? 'session_persisted' : 'login_verified', site.credentialOrigins);
   if (job.platform === 'youtube') {
     const studio = await studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs });

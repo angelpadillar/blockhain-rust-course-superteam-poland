@@ -1,5 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { createReceiptStore } from '../src/receipts.mjs';
 import { BrowserExecutionKernel, operationKinds, riskByOperation, loginWorkflowRoles,
   recoveryWorkflowRoles, decisionSourceFor, riskForOperation, receiptSummary } from '../src/execution.mjs';
 import { observationFromSnapshot, controlIdFor, attachObservation } from '../src/observation.mjs';
@@ -37,6 +41,26 @@ function harness({ snapshot = pageFixture(), live = null, pages = null, workflow
     journal: async entry => { calls.entries.push(entry); } });
   return { kernel, calls, snapshot, changed };
 }
+test('the durable trail is on disk before dispatch, and after every outcome', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'kernel-receipts-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const store = createReceiptStore({ directory });
+  const { kernel, snapshot } = harness({ store });
+  let onDiskAtDispatch = null;
+
+  const outcome = await kernel.execute({ candidate: { kind: 'submit_login', control: snapshot.controls[2] },
+    snapshot, observation: kernel.observe(snapshot).observation, source: 'jev',
+    dispatch: async () => { onDiskAtDispatch = (await store.entries()).map(entry => entry.state); return null; } });
+
+  assert.deepEqual(onDiskAtDispatch, ['created', 'dispatched'],
+    'created and dispatched are durable before the executor is called');
+  assert.equal(outcome.receipt.state, 'verified');
+  assert.deepEqual((await store.entries()).map(entry => entry.state),
+    ['created', 'dispatched', 'certain', 'verified'], 'and the outcome is durable too');
+  const restarted = createReceiptStore({ directory });
+  assert.equal((await restarted.find({ id: outcome.receipt.id })).state, 'verified');
+});
+
 test('one kernel carries both a deterministic and a Jev decision to the same executor', async () => {
   const snapshot = pageFixture();
   // Two actions, so the page is read twice before either dispatch.
