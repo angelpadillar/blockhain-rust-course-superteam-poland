@@ -6,8 +6,9 @@ import { readJson, writeJson } from './storage.mjs';
 import { runBatch, validateConfig, connect as defaultConnect, seedSites } from './runner.mjs';
 import { runConcurrentBatch } from './batch.mjs';
 import { runLogin, sites, classifyPage } from './login.mjs';
-import { acquireNamedLock, acquireProfileLock } from './profile-lock.mjs';
+import { acquireNamedLock } from './profile-lock.mjs';
 import { createReceiptStore } from './receipts.mjs';
+import { MultiloginSessionProvider } from './session-provider.mjs';
 import { captureSafeScreenshot } from './screenshots.mjs';
 import { inspectStudio, observeStudio } from './youtube.mjs';
 import { selectJobAccounts, refPattern } from './accounts.mjs';
@@ -333,10 +334,25 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
     const log = logs.get(job.id);
     const began = performance.now();
     const preserved = { active: false, port: null };
-    let release = null;
+    // The wrapped api keeps the existing state transitions and the
+    // preserve-on-checkpoint behaviour; the provider drives that same api.
+    const jobApi = wrapProfileApi({ api: batchApi, log, preserved, preserveOnCheckpoint });
+    const attach = async (port, connectionConfig) => {
+      const session = await connectImpl(port, connectionConfig);
+      await log.transition('browser_ready', { port });
+      await log.screenshot(session.page, 'browser_ready');
+      return session;
+    };
+    // ONE profile/session ownership abstraction: the provider owns the ownership
+    // lock, the launcher start, the launcher-returned CDP endpoint, the existing
+    // context and the graceful stop/sync for this job.
+    const provider = new MultiloginSessionProvider({
+      api: jobApi, config: childConfig, directory,
+      connectImpl: attach, lockDetails: { jobId: job.id, platform: job.platform },
+    });
+    if (log.profileId) provider.bindProfileId(log.profileId);
     try {
-      release = await acquireProfileLock(directory, job.profileRef,
-        { accountId: account.id, jobId: job.id, platform: job.platform });
+      await provider.claimOwnership({ profileRef: job.profileRef, accountId: account.id });
     } catch (error) {
       const reason = log.failure(errorCode(error));
       await log.finish({ state: 'failed', reason, durationMs: Math.round(performance.now() - began) });
@@ -346,14 +362,9 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
       await cancel.throwIfCancelled(log.directory);
       const result = await runBatch({
         accounts: [account], config: childConfig,
-        api: wrapProfileApi({ api: batchApi, log, preserved, preserveOnCheckpoint }),
+        api: jobApi, provider,
         guideFactory, directory: childDirectory, seedImpl,
-        connectImpl: async (port, connectionConfig) => {
-          const session = await connectImpl(port, connectionConfig);
-          await log.transition('browser_ready', { port });
-          await log.screenshot(session.page, 'browser_ready');
-          return session;
-        },
+        connectImpl: attach,
         loginImpl: args => runJobFlow({ job, account, log, args, config: childConfig, cancel, flowImpl, studioImpl,
           pollMs: humanCheckpointPollMs }),
       });
@@ -376,7 +387,9 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
         durationMs: Math.round(performance.now() - began) });
       return syntheticResult(account, reason);
     } finally {
-      await release().catch(() => {});
+      // Ownership is released through the same abstraction that took it, after the
+      // graceful stop/sync (a preserved browser is left running on purpose).
+      await provider.detach().catch(() => {});
       await updateProfileRef({ directory, job, accountId: account.id, profileId: log.profileId,
         state: log.state, preserved: preserved.active });
     }
