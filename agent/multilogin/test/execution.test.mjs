@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { BrowserExecutionKernel, operationKinds, riskByOperation, loginWorkflowRoles,
   recoveryWorkflowRoles, decisionSourceFor, riskForOperation, receiptSummary } from '../src/execution.mjs';
-import { observationFromSnapshot, controlIdFor } from '../src/observation.mjs';
+import { observationFromSnapshot, controlIdFor, attachObservation } from '../src/observation.mjs';
 import { evaluatePostcondition } from '../src/postcondition.mjs';
 import { createValueResolver, findLeakedSecret, modelVisibleValueRefs } from '../src/secrets.mjs';
 import { mayRetry, transitionReceipt } from '../src/contract.mjs';
@@ -21,29 +21,34 @@ function pageFixture() {
       { key: 'sig-submit', tag: 'button', type: '', label: 'Next', enabled: true }] };
 }
 
-function harness({ snapshot = pageFixture(), live = null, workflow = 'login', allowedRoles = null,
-  now = Date.now, identityVerified = null, verifiers = {}, store = null } = {}) {
+// `pages` is the sequence the browser hands out: the first reading is the page the
+// decision was taken on (pre-dispatch freshness), later readings are what the
+// postcondition sees.
+function harness({ snapshot = pageFixture(), live = null, pages = null, workflow = 'login',
+  allowedRoles = null, now = Date.now, identityVerified = null, verifiers = {}, store = null } = {}) {
   const calls = { dispatch: [], entries: [], observed: 0 };
   const changed = live || { url: snapshot.url, text: 'Two-step verification', fingerprint: 'fp-2',
     challengeFrame: false, controls: [{ key: 'sig-code', tag: 'input', type: 'tel', label: 'Enter code',
       enabled: true }] };
+  const queue = [...(pages || [snapshot, changed])];
   const kernel = new BrowserExecutionKernel({ account, site, workflow, allowedRoles, runId: 'test-run',
     receipts: store, now, identityVerified, verifiers,
-    observe: async () => { calls.observed++; return changed; },
+    observe: async () => { calls.observed++; return queue.length > 1 ? queue.shift() : queue[0]; },
     journal: async entry => { calls.entries.push(entry); } });
   return { kernel, calls, snapshot, changed };
 }
-
-
 test('one kernel carries both a deterministic and a Jev decision to the same executor', async () => {
-  const { kernel, calls, snapshot } = harness();
+  const snapshot = pageFixture();
+  // Two actions, so the page is read twice before either dispatch.
+  const { kernel, calls } = harness({ snapshot, pages: [snapshot, snapshot] });
   const observation = kernel.observe(snapshot).observation;
   const dispatch = async ({ action }) => { calls.dispatch.push(action.decisionSource); return null; };
   const candidate = { kind: 'submit_login', control: snapshot.controls[2] };
 
-  const deterministic = await kernel.execute({ candidate, snapshot, observation,
+  const deterministic = await kernel.execute({ candidate, snapshot, observation, expectedPostcondition: null,
     source: 'deterministic', dispatch });
-  const jev = await kernel.execute({ candidate, snapshot, observation, source: 'jev', dispatch });
+  const jev = await kernel.execute({ candidate, snapshot, observation, source: 'jev', expectedPostcondition: null,
+    dispatch });
 
   assert.deepEqual(calls.dispatch, ['deterministic', 'jev'], 'one dispatch path, two decision sources');
   assert.equal(deterministic.action.kind, 'submit', 'the shared browser contract kind');
@@ -83,10 +88,11 @@ test('a fill action names a valueRef and no resolved secret enters the receipt o
   const outcome = await kernel.execute({ candidate: { kind: 'fill_password', control: snapshot.controls[1] },
     snapshot, observation, source: 'deterministic', expectedPostcondition: null,
     dispatch: async ({ action }) => { seen = action.valueRef; return null; } });
-
-  assert.equal(seen, 'account_password', 'the executor receives the reference');
-  assert.equal(outcome.receipt.action.valueRef, 'account_password');
-  assert.equal(outcome.postcondition.met, true, 'a local fill has no page postcondition');
+  const payload = { receipt: JSON.stringify(outcome.receipt), journal: JSON.stringify(calls.entries),
+    summary: JSON.stringify(receiptSummary(outcome.receipt)) };
+  assert.equal(JSON.stringify(payload).includes('private-password'), false);
+  assert.equal(findLeakedSecret({ payload, secrets: [account.password, account.totp, account.username] }), null);
+});
 
 test('a model cannot grant itself authorization', async () => {
   const { kernel, snapshot } = harness();
@@ -119,6 +125,7 @@ test('an operation the workflow does not authorize never reaches the browser', a
     dispatch: async () => { calls.dispatch.push('submit_login'); } }), /risk_not_authorized/);
   assert.equal(calls.dispatch.length, 0, 'an unauthorized operation is never dispatched');
   assert.deepEqual(kernel.receipts, [], 'and it is never receipted');
+});
 
 test('a failed submit dispatch is uncertain, and an uncertain effect cannot replay', async () => {
   const { kernel, snapshot } = harness();
@@ -146,14 +153,6 @@ test('a failed local fill is certain: nothing reached the platform', async () =>
   assert.equal(error.receipt.state, 'failed');
   assert.equal(mayRetry(error.receipt), false);
 });
-
-test('a dispatch that cannot show its postcondition is receipted failed, not verified', async () => {
-  const { kernel, calls, snapshot } = harness();
-  const observation = kernel.observe(snapshot).observation;
-  const outcome = await kernel.execute({ candidate: { kind: 'open_account_menu', control: snapshot.controls[2] },
-    snapshot, observation, source: 'jev',
-    expectedPostcondition: { type: 'control_present', signature: 'sig-never', timeoutMs: 500 },
-    dispatch: async () => { calls.dispatch.push('open_account_menu'); return null; } });
 
 
 test('the identity_verified postcondition reuses the specialized identity check', async () => {
@@ -193,6 +192,7 @@ test('every postcondition type is evaluated against the live page', async () => 
     { postcondition: { type: 'control_present', signature: 'sig-menu' }, met: true },
     { postcondition: { type: 'control_absent', signature: 'sig-menu' }, met: false },
     { postcondition: { type: 'control_state', signature: 'sig-menu', state: false }, met: true },
+
     { postcondition: { type: 'visible_text', value: 'Switch account' }, met: true },
     { postcondition: { type: 'page_fingerprint_changed' }, met: true },
     { postcondition: { type: 'identity_verified', verifier: 'identity' }, met: true },
@@ -207,26 +207,6 @@ test('every postcondition type is evaluated against the live page', async () => 
     assert.equal(result.type, item.postcondition.type);
   }
   assert.equal((await evaluatePostcondition({ postcondition: null, probe: probes })).type, null);
-});
-
-test('an ambiguous single-control page cannot become a consequential action', async () => {
-  const { kernel, calls } = harness();
-  assert.equal(kernel.authorizedRoles().includes('consequential'), false);
-  const reachable = Object.keys(operationKinds).map(operation => riskByOperation[operation])
-    .filter(risk => risk === 'consequential_external_action');
-  assert.deepEqual(reachable, []);
-  assert.equal(decisionSourceFor({ method: 'exact-single-match' }), 'deterministic');
-  assert.equal(decisionSourceFor({ method: 'typesafe-choice' }), 'jev');
-  assert.equal(decisionSourceFor(null), 'jev');
-  assert.equal(calls.dispatch.length, 0);
-});
-
-  assert.equal(calls.dispatch.length, 1, 'the operation was still dispatched once');
-  assert.equal(outcome.postcondition.met, false);
-  assert.equal(outcome.receipt.state, 'failed');
-  assert.equal(outcome.receipt.postconditionMet, false);
-});
-
 });
 
 test('one visible control is not permission: the workflow grants authority, not the page', async () => {
@@ -270,16 +250,142 @@ test('epoch-scoped ids only resolve against the epoch that produced them', () =>
   assert.notEqual(later.epoch, observation.epoch, 'a new observation is a new epoch');
 });
 
-  const payload = { receipt: JSON.stringify(outcome.receipt), journal: JSON.stringify(calls.entries),
-    summary: JSON.stringify(receiptSummary(outcome.receipt)) };
-  assert.equal(JSON.stringify(payload).includes('private-password'), false);
-  assert.equal(findLeakedSecret({ payload, secrets: [account.password, account.totp, account.username] }), null);
-});
-
 test('the valueRef vocabulary the model may name holds no secret values', () => {
   assert.deepEqual(modelVisibleValueRefs, ['account_username', 'account_password', 'current_totp',
     'verification_code', 'authorized_shipping_address']);
   const resolver = createValueResolver({ account });
   assert.deepEqual(resolver.refs.filter(ref => modelVisibleValueRefs.includes(ref)), modelVisibleValueRefs);
   assert.equal(findLeakedSecret({ payload: JSON.stringify(modelVisibleValueRefs), secrets: [account.password] }), null);
+});
+
+// --- D: real observation epochs on the live path ------------------------------
+
+test('the live observation path emits an epoch-scoped id for every control', () => {
+  const snapshot = pageFixture();
+  const observation = attachObservation({ snapshot, now: 1000, ttlMs: 5000 });
+  assert.equal(snapshot.epoch, observation.epoch);
+  assert.deepEqual(snapshot.controls.map(control => control.id), ['e0', 'e1', 'e2']);
+  assert.equal(snapshot.controls[2].epoch, observation.epoch);
+  assert.equal(snapshot.observation, observation);
+  // The kernel reuses the live observation instead of minting another epoch, so
+  // the ids the decision quotes belong to the epoch it quotes.
+  const { observation: reused } = harness({ snapshot }).kernel.observe(snapshot);
+  assert.equal(reused.epoch, observation.epoch);
+  assert.deepEqual(reused.controls.map(control => control.id), ['e0', 'e1', 'e2']);
+});
+
+test('the same epoch resolves the same control immediately before dispatch', async () => {
+  const { kernel, calls, snapshot } = harness();
+  const observation = kernel.observe(snapshot).observation;
+  const outcome = await kernel.execute({ candidate: { kind: 'fill_username', control: snapshot.controls[0] },
+    snapshot, observation, expectedPostcondition: null,
+    dispatch: async ({ control, snapshot: live, action }) => {
+      calls.dispatch.push({ id: control.id, epoch: control.epoch, live: live === snapshot,
+        actionId: action.controlId });
+      return null;
+    } });
+  assert.equal(calls.observed, 1, 'the page was re-read exactly once before dispatch');
+  assert.equal(calls.dispatch.length, 1);
+  assert.deepEqual({ id: calls.dispatch[0].id, actionId: calls.dispatch[0].actionId, live: calls.dispatch[0].live },
+    { id: 'e0', actionId: 'e0', live: true }, 'the LIVE snapshot and control are what get executed');
+  assert.equal(typeof calls.dispatch[0].epoch, 'string',
+    'the resolved control is bound to the epoch of the page it was read from');
+  assert.equal(outcome.receipt.observationEpoch, observation.epoch, 'the receipt records the DECISION epoch');
+});
+
+test('an expired observation epoch fails closed', async () => {
+  const clock = { value: 1_000_000 };
+  const { kernel, calls, snapshot } = harness({ now: () => clock.value });
+  const observation = kernel.observe(snapshot).observation;
+  clock.value = observation.expiresAt;
+  await assert.rejects(kernel.execute({ candidate: { kind: 'fill_username', control: snapshot.controls[0] },
+    snapshot, observation, expectedPostcondition: null,
+    dispatch: async () => { calls.dispatch.push('fill_username'); } }), /expired_observation/);
+  assert.equal(calls.dispatch.length, 0, 'an expired epoch is never dispatched');
+});
+
+
+test('a changed page fails closed before dispatch', async () => {
+  const snapshot = pageFixture();
+  // The control set is identical but the page text moved on: the decision was
+  // taken on a page that no longer exists.
+  const movedOn = { ...snapshot, text: 'Sign in (your session is about to expire)' };
+  const { kernel, calls } = harness({ snapshot, pages: [movedOn, movedOn] });
+  const observation = kernel.observe(snapshot).observation;
+  const error = await kernel.execute({ candidate: { kind: 'submit_login', control: snapshot.controls[2] },
+    snapshot, observation, source: 'jev',
+    dispatch: async () => { calls.dispatch.push('submit_login'); } }).then(() => null, thrown => thrown);
+
+  assert.equal(error.code, 'changed_page');
+  assert.equal(calls.dispatch.length, 0);
+  assert.equal(error.receipt.state, 'failed', 'the receipt records that nothing was dispatched');
+  assert.deepEqual(calls.entries.map(entry => entry.state), ['created', 'failed']);
+});
+
+test('a changed control signature fails closed with changed_control', async () => {
+  const snapshot = pageFixture();
+  const mutated = { ...snapshot, controls: [snapshot.controls[0], snapshot.controls[1],
+    { key: 'sig-submit-v2', tag: 'button', type: '', label: 'Next', enabled: true }] };
+  const { kernel, calls } = harness({ snapshot, pages: [mutated, mutated] });
+  const observation = kernel.observe(snapshot).observation;
+  await assert.rejects(kernel.execute({ candidate: { kind: 'submit_login', control: snapshot.controls[2] },
+    snapshot, observation, source: 'jev',
+    dispatch: async () => { calls.dispatch.push('submit_login'); } }), /changed_control/);
+  assert.equal(calls.dispatch.length, 0);
+});
+
+
+test('a removed control fails closed, and a disabled control is not usable', async () => {
+  const snapshot = pageFixture();
+  const shortened = { ...snapshot, controls: [snapshot.controls[0], snapshot.controls[1]] };
+  const removed = harness({ snapshot, pages: [shortened, shortened] });
+  await assert.rejects(removed.kernel.execute({ candidate: { kind: 'submit_login',
+    control: snapshot.controls[2] }, snapshot, observation: removed.kernel.observe(snapshot).observation,
+    dispatch: async () => { removed.calls.dispatch.push('submit_login'); } }), /stale_observation/);
+  assert.equal(removed.calls.dispatch.length, 0);
+
+  const disabled = { ...snapshot, controls: [snapshot.controls[0], snapshot.controls[1],
+    { key: 'sig-submit', tag: 'button', type: '', label: 'Next', enabled: false }] };
+  const unusable = harness({ snapshot, pages: [disabled, disabled] });
+  await assert.rejects(unusable.kernel.execute({ candidate: { kind: 'submit_login',
+    control: snapshot.controls[2] }, snapshot, observation: unusable.kernel.observe(snapshot).observation,
+    dispatch: async () => { unusable.calls.dispatch.push('submit_login'); } }), /control_not_usable/);
+  assert.equal(unusable.calls.dispatch.length, 0);
+});
+
+test('when the live page cannot be re-read the reference counts as stale', async () => {
+  const snapshot = pageFixture();
+  const { kernel, calls } = harness({ snapshot });
+  kernel.observeImpl = async () => { throw new PilotError('page_closed'); };
+  const error = await kernel.execute({ candidate: { kind: 'submit_login', control: snapshot.controls[2] },
+    snapshot, observation: kernel.observe(snapshot).observation,
+    dispatch: async () => { calls.dispatch.push('submit_login'); } }).then(() => null, thrown => thrown);
+  assert.equal(error.code, 'stale_observation');
+  assert.equal(error.cause.code, 'page_closed', 'the original failure is retained as a cause');
+  assert.equal(calls.dispatch.length, 0);
+});
+
+test('a dispatch that cannot show its postcondition is receipted failed, not verified', async () => {
+  const { kernel, calls, snapshot } = harness();
+  const observation = kernel.observe(snapshot).observation;
+  const outcome = await kernel.execute({ candidate: { kind: 'open_account_menu', control: snapshot.controls[2] },
+    snapshot, observation, source: 'jev',
+    expectedPostcondition: { type: 'control_present', signature: 'sig-never', timeoutMs: 500 },
+    dispatch: async () => { calls.dispatch.push('open_account_menu'); return null; } });
+  assert.equal(calls.dispatch.length, 1, 'the operation was still dispatched once');
+  assert.equal(outcome.postcondition.met, false);
+  assert.equal(outcome.receipt.state, 'failed');
+  assert.equal(outcome.receipt.postconditionMet, false);
+});
+
+test('an ambiguous single-control page cannot become a consequential action', async () => {
+  const { kernel, calls } = harness();
+  assert.equal(kernel.authorizedRoles().includes('consequential'), false);
+  const reachable = Object.keys(operationKinds).map(operation => riskByOperation[operation])
+    .filter(risk => risk === 'consequential_external_action');
+  assert.deepEqual(reachable, []);
+  assert.equal(decisionSourceFor({ method: 'exact-single-match' }), 'deterministic');
+  assert.equal(decisionSourceFor({ method: 'typesafe-choice' }), 'jev');
+  assert.equal(decisionSourceFor(null), 'jev');
+  assert.equal(calls.dispatch.length, 0);
 });

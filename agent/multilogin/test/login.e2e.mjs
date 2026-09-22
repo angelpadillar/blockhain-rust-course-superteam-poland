@@ -228,6 +228,59 @@ test('the account menu is reopened a bounded number of times and cannot toggle f
   // control cannot drive an open/close loop.
   assert.deepEqual(adapter.candidates(await adapter.observe()), []);
 });
+test('the executor refuses an action that is not bound to the observation it came from', async t => {
+  const input = await fixture(t); await input.page.goto(input.site.loginUrl);
+  const clock = { value: Date.now() };
+  const adapter = new LoginBrowser(input.page, input.account, { site: input.site, now: () => clock.value });
+  const snapshot = await adapter.observe();
+  const action = adapter.candidates(snapshot)[0];
+
+  assert.equal(snapshot.epoch, snapshot.observation.epoch);
+  assert.equal(action.observationEpoch, snapshot.epoch, 'a candidate quotes the epoch it came from');
+  assert.equal(action.controlId, 'e0', 'and the id that epoch produced');
+  assert.equal(action.expectedControlSignature, action.control.key);
+  const binding = { decisionObservation: snapshot.observation };
+
+  await adapter.execute(action, snapshot, binding);
+  assert.equal(await input.page.locator('input[name=username]').inputValue(), 'fixture_user');
+  await assert.rejects(adapter.execute({ ...action, controlId: 'e9' }, snapshot, binding), /stale_observation/);
+  await assert.rejects(adapter.execute({ ...action, observationEpoch: 'not-this-epoch' }, snapshot, binding),
+    /stale_observation/);
+  await assert.rejects(adapter.execute({ ...action, expectedControlSignature: null }, snapshot, binding),
+    /expected_control_signature_required/);
+  clock.value += 60000;
+  await assert.rejects(adapter.execute({ ...action }, snapshot, binding), /expired_observation/);
+});
+
+test('a decision taken on epoch N is not executed against epoch N+1', async t => {
+  const input = await fixture(t); await input.page.goto(input.site.loginUrl);
+  const adapter = new LoginBrowser(input.page, input.account, { site: input.site });
+  const decidedOn = await adapter.observe();
+  const decidedAction = adapter.candidates(decidedOn)[0];
+
+  // The page moves on: an unrelated control appears, so it is a new epoch. It is
+  // not a login candidate, so the flow would otherwise continue unchanged.
+  await input.page.locator('form').evaluate(form => {
+    form.insertAdjacentHTML('afterend', '<button type="button">Show more</button>');
+  });
+  const later = await adapter.observe();
+  assert.notEqual(later.epoch, decidedOn.epoch);
+  assert.notEqual(later.observation.fingerprint, decidedOn.observation.fingerprint);
+
+  // The earlier decision is bound to the control of the earlier epoch, so it
+  // cannot be executed against the page now in front of us.
+  await assert.rejects(adapter.execute(decidedAction, later, { decisionObservation: decidedOn.observation }),
+    /stale_observation/, 'the earlier decision is not replayed against the newer page');
+  assert.equal(await input.page.locator('input[name=username]').inputValue(), '');
+
+  // Re-observing is what execution requires: the fresh decision carries the
+  // fresh epoch and succeeds.
+  const laterAction = adapter.candidates(later)[0];
+  assert.equal(laterAction.observationEpoch, later.epoch);
+  await adapter.execute(laterAction, later, { decisionObservation: later.observation });
+  assert.equal(await input.page.locator('input[name=username]').inputValue(), 'fixture_user');
+});
+
 test('a generic Code field is TOTP only when the page identifies an authenticator app', async t => {
   const input = await fixture(t); await input.page.goto(input.site.loginUrl);
   await input.page.locator('body').evaluate(body => {

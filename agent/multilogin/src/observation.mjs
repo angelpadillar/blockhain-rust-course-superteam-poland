@@ -20,6 +20,23 @@ export function observationFromSnapshot({ snapshot, platform = 'youtube', ttlMs 
   return createObservation({ url: snapshot.url, text: snapshot.text, controls, ttlMs, now });
 }
 
+// The LIVE browser observation path emits the shared contract itself: each
+// observed control receives an id scoped to this observation's epoch, so "e3" is
+// only meaningful together with snapshot.epoch. The control keeps its handle, so
+// execution resolves the same control rather than a selector.
+export function attachObservation({ snapshot, ttlMs = 15000, now = Date.now() }) {
+  const observation = observationFromSnapshot({ snapshot, ttlMs, now });
+  observation.controls.forEach((observed, index) => {
+    const source = snapshot.controls[index];
+    if (!source) return;
+    source.id = observed.id;
+    source.epoch = observation.epoch;
+  });
+  snapshot.observation = observation;
+  snapshot.epoch = observation.epoch;
+  return observation;
+}
+
 // The observation id of a control that a decision was taken on. The snapshot and
 // the observation are positionally aligned by observationFromSnapshot above, so
 // the mapping is exact rather than key-based (duplicate signatures are legal).

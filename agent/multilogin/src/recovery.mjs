@@ -151,11 +151,15 @@ export async function executeRecoveryAction({ action, snapshot, observation = nu
     case 'dismiss_onboarding':
       requireThat(action.control?.handle, 'stale_control');
       return viaKernel({ expectedPostcondition: recoveryClickPostcondition,
-        dispatch: async () => {
-          await action.control.handle.click({ timeout: 5000, noWaitAfter: true }).catch(() => {});
+        // The kernel re-observed and re-resolved the control, so this clicks the
+        // live handle rather than the one the decision was taken on.
+        dispatch: async ({ control: resolved }) => {
+          const target = resolved || action.control;
+          requireThat(target?.handle, 'stale_control');
+          await target.handle.click({ timeout: 5000, noWaitAfter: true }).catch(() => {});
           if (['reopen_account_menu', 'open_switch_account'].includes(action.kind)) {
-            browser.menuClicks.set(action.control.key, (browser.menuClicks.get(action.control.key) || 0) + 1);
-            if (action.kind === 'reopen_account_menu') browser.menuOpenedKeys.add(action.control.key);
+            browser.menuClicks.set(target.key, (browser.menuClicks.get(target.key) || 0) + 1);
+            if (action.kind === 'reopen_account_menu') browser.menuOpenedKeys.add(target.key);
           }
           browser.recovery.actions++;
           return null;

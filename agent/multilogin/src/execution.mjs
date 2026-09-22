@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
-import { requireThat } from './core.mjs';
-import { buildAction, authorizeAction, resolveAction, createReceipt, transitionReceipt,
-  roleForRisk, riskClasses } from './contract.mjs';
+import { PilotError, requireThat } from './core.mjs';
+import { buildAction, authorizeAction, resolveAction, validateObservation, createReceipt,
+  transitionReceipt, roleForRisk, riskClasses } from './contract.mjs';
 import { observationFromSnapshot, controlIdFor } from './observation.mjs';
 import { evaluatePostcondition } from './postcondition.mjs';
 import { valueRefForOperation } from './secrets.mjs';
@@ -108,9 +108,39 @@ export class BrowserExecutionKernel {
 
   nextKey(operation) { this.sequence++; return `${this.runId}-s${this.sequence}-${operation}`; }
 
+  // The live browser path already emitted the contract (attachObservation), so
+  // its epoch-scoped ids are reused verbatim: the decision epoch and the ids the
+  // decision quotes are the same observation.
   observe(snapshot) {
     requireThat(snapshot, 'observation_required');
+    const own = snapshot.observation;
+    if (own?.epoch && own.epoch === snapshot.epoch) return { snapshot, observation: own };
     return { snapshot, observation: observationFromSnapshot({ snapshot, ttlMs: this.ttlMs, now: this.now() }) };
+  }
+
+  // Immediately before dispatch: the decision's own epoch is still valid and
+  // unexpired, and the page is re-read so the control is re-resolved instead of
+  // acting on a stale reference. Anything materially changed fails closed with
+  // stale_observation / expired_observation / changed_control / changed_page /
+  // control_not_usable, and the caller re-observes.
+  async refresh({ action, decided, control }) {
+    validateObservation({ observation: decided, epoch: action.observationEpoch, now: this.now() });
+    if (!action.controlId) return { snapshot: null, observation: null, control: null };
+    requireThat(this.observeImpl, 'observation_source_required');
+    let liveSnapshot;
+    try { liveSnapshot = await this.observeImpl(); }
+    catch (cause) {
+      // Without a fresh reading we cannot confirm the reference, so it counts as
+      // stale rather than being acted on.
+      const stale = new PilotError('stale_observation');
+      stale.cause = cause;
+      throw stale;
+    }
+    const live = this.observe(liveSnapshot).observation;
+    const resolved = resolveLiveControl({ action, live, liveSnapshot });
+    // The page moved on since the decision, so the decision is not acted on.
+    requireThat(live.fingerprint === decided.fingerprint, 'changed_page');
+    return { snapshot: liveSnapshot, observation: live, control: resolved };
   }
 
   // Build, authorize and resolve a candidate. Separate from execute() so an
@@ -186,10 +216,21 @@ export class BrowserExecutionKernel {
     // action may already have been sent.
     const receipt = createReceipt({ id: randomUUID(), idempotencyKey: action.idempotencyKey, action, now: this.now() });
     const created = await this.record(receipt);
+    // Freshness immediately before dispatch: the page is re-read and the control
+    // re-resolved, so execution never acts on a stale reference.
+    let fresh;
+    try { fresh = await this.refresh({ action, decided, control }); }
+    catch (error) {
+      const failed = await this.transition(created, 'failed',
+        { reason: error?.code || 'stale_reference', postconditionMet: false });
+      error.receipt = failed;
+      throw error;
+    }
     const dispatched = await this.transition(created, 'dispatched');
     let effect = null;
     try {
-      effect = dispatch ? await dispatch({ action, candidate, observation, control }) : null;
+      effect = dispatch ? await dispatch({ action, candidate, observation: fresh.observation || observation,
+        control: fresh.control || control, snapshot: fresh.snapshot || snapshot }) : null;
     } catch (error) {
       // A dispatch that may have reached the platform is uncertain, and an
       // uncertain action is never replayed on the strength of its key.
@@ -233,6 +274,18 @@ export class BrowserExecutionKernel {
     try { await this.journal({ event: 'receipt', ...receiptSummary(receipt) }); }
     catch { this.journalFailures.push('receipt_journal_unavailable'); }
   }
+}
+
+// Re-resolve the control against the freshly observed page. The contract's own
+// resolver is reused, retargeted at the live epoch: the control must still be
+// present at the same id, still carry the retained signature, and still be
+// visible and enabled. The LIVE handle is what gets executed.
+function resolveLiveControl({ action, live, liveSnapshot }) {
+  const check = { ...action, observationEpoch: live.epoch };
+  resolveAction({ action: check, observation: live });
+  const index = live.controls.findIndex(control => control.id === check.controlId);
+  requireThat(index >= 0 && liveSnapshot.controls[index], 'stale_observation');
+  return { ...liveSnapshot.controls[index], id: check.controlId, epoch: live.epoch };
 }
 
 // A dispatch may hand back the snapshot it already observed (waitForChange does),

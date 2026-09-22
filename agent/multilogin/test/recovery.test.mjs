@@ -297,9 +297,13 @@ test('a safe onboarding dismissal clicks the observed candidate through the shar
   const snapshot = { url: 'https://gds.google.com/web/pgc', text: 'Add a profile picture', fingerprint: 'f1',
     controls: [control] };
   const changed = { ...snapshot, text: 'Home', fingerprint: 'f2' };
-  // A decision may only reach the browser through the kernel.
+  // A decision may only reach the browser through the kernel. The first reading
+  // is the page the decision was taken on (pre-dispatch freshness); the later one
+  // is what the postcondition observes.
+  const reads = [snapshot, changed];
+  let served = 0;
   const kernel = new BrowserExecutionKernel({ account, site: sites.youtube, workflow: 'recovery',
-    observe: async () => changed });
+    observe: async () => reads[Math.min(served++, reads.length - 1)] });
   const outcome = await executeRecoveryAction({ action: { kind: 'dismiss_onboarding', control },
     snapshot, observation: kernel.observe(snapshot).observation, browser, site: sites.youtube,
     navigate: async () => {}, kernel, source: 'jev' });

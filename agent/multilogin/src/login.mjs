@@ -4,6 +4,7 @@ import { maxRecoverySteps, recoveryObservation, recoveryCandidates, validateReco
   executeRecoveryAction } from './recovery.mjs';
 import { BrowserExecutionKernel, decisionSourceFor } from './execution.mjs';
 import { createValueResolver, valueRefForOperation } from './secrets.mjs';
+import { attachObservation } from './observation.mjs';
 
 export const defaultLoginGoal = 'Sign in to the supplied existing account and confirm the expected '
   + 'identity. Do not create an account, change account settings, or post content. Human confirmation '
@@ -98,8 +99,11 @@ export async function navigate(page, url) {
 }
 
 export class LoginBrowser {
-  constructor(page, account, { site = sites[account.platform], secrets = null } = {}) {
+  constructor(page, account, { site = sites[account.platform], secrets = null,
+    ttlMs = 15000, now = Date.now } = {}) {
     this.page = page; this.account = account; this.site = site;
+    // How long an observation stays usable, and the clock it is measured with.
+    this.ttlMs = ttlMs; this.now = now;
     // Trusted secret indirection: the flow names account_username,
     // account_password, current_totp ... and only this object resolves them,
     // only at fill time, and never towards a model, receipt or log.
@@ -155,6 +159,10 @@ export class LoginBrowser {
     // Reset fill tracking only after navigation or a genuinely new set of fields.
     const documentKey = JSON.stringify([url, controls.filter(control => control.tag === 'input').map(control => control.key)]);
     if (this.documentKey !== documentKey) { this.filled.clear(); this.documentKey = documentKey; }
+    // The live path emits the shared observation contract: every control carries
+    // an id scoped to this observation's epoch, and the epoch is what execution
+    // must quote back.
+    attachObservation({ snapshot, ttlMs: this.ttlMs, now: this.now() });
     return snapshot;
   }
   candidates(snapshot, { verifyOnly = false } = {}) {
@@ -247,7 +255,12 @@ export class LoginBrowser {
     // value itself is never part of an observation, prompt or description.
     return permitted.slice(0, 80).map((action, index) => {
       const valueRef = valueRefForOperation[action.kind] || null;
-      return { ...action, id: `a${index}`, valueRef,
+      // Every candidate is stamped with the epoch it came from, the id that epoch
+      // produced and the signature it was decided on; execution quotes all three.
+      const binding = snapshot.observation
+        ? { observationEpoch: snapshot.epoch, controlId: action.control.id,
+          expectedControlSignature: action.control.key } : {};
+      return { ...action, id: `a${index}`, valueRef, ...binding,
         description: `${action.kind}: observed ${action.control.tag} labelled "${this.redact(action.control.label || action.control.name)}"`
           + (valueRef ? ` (valueRef ${valueRef}; code supplies the value)` : '') };
     });
@@ -258,9 +271,25 @@ export class LoginBrowser {
       controls: snapshot.controls.slice(0, 80).map(control => ({ tag: control.tag, type: control.type,
         label: this.redact(control.label), enabled: control.enabled })) };
   }
-  async execute(action, snapshot) {
+  async execute(action, snapshot, { decisionObservation = null } = {}) {
     requireThat(this.page.url() === snapshot.url, 'stale_page');
     const { control, kind } = action;
+    // Epoch binding. A live observation may only be acted on by an action that
+    // quotes the epoch, the control id that epoch produced and the signature it
+    // was decided on. `decisionObservation` is the epoch the decision came from
+    // when execution is looking at a newer one; without it, the epoch must match.
+    if (snapshot.observation || action.observationEpoch !== undefined || action.controlId !== undefined) {
+      const live = snapshot.observation || null;
+      requireThat(live, 'observation_required');
+      requireThat(action.observationEpoch, 'observation_epoch_required');
+      requireThat(action.controlId, 'control_id_required');
+      requireThat(action.expectedControlSignature, 'expected_control_signature_required');
+      requireThat(control.id === action.controlId && control.epoch === live.epoch, 'stale_observation');
+      requireThat(this.now() < live.expiresAt, 'expired_observation');
+      const decided = decisionObservation || live;
+      requireThat(action.observationEpoch === decided.epoch, 'stale_observation');
+      requireThat(this.now() < decided.expiresAt, 'expired_observation');
+    }
     requireThat(await control.handle.isVisible() && await control.handle.isEnabled(), 'stale_control');
     const current = await control.handle.evaluate(element => ({
       tag: element.tagName.toLowerCase(), type: element.getAttribute('type') || '',
@@ -502,10 +531,17 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       // valueRef, never a value.
       await kernel.execute({ candidate: action, snapshot, observation,
         source: decisionSourceFor(decision), justification: decision.reason || null,
-        dispatch: async ({ action: browserAction }) => {
-          await browser.execute({ ...action, valueRef: browserAction.valueRef }, snapshot);
+        // The kernel re-observed and re-resolved the control immediately before
+        // this call, so the executor acts on the live handle and the live page.
+        dispatch: async ({ action: browserAction, control: resolved, snapshot: liveSnapshot }) => {
+          const target = liveSnapshot || snapshot;
+          await browser.execute({ ...action, control: resolved || action.control,
+            valueRef: browserAction.valueRef, observationEpoch: browserAction.observationEpoch,
+            controlId: browserAction.controlId,
+            expectedControlSignature: browserAction.expectedControlSignature }, target,
+          { decisionObservation: observation });
           if (action.kind.startsWith('fill_')) return null;
-          return browser.waitForChange(snapshot, action);
+          return browser.waitForChange(target, action);
         } });
     } catch (error) {
       // Single-page apps replace controls mid-render; a stale target simply
