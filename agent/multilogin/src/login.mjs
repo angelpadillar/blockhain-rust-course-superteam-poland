@@ -249,7 +249,7 @@ export class LoginBrowser {
 }
 
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
-  verifyOnly = false, onStep = async () => {}, site = sites[account.platform] }) {
+  verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform] }) {
   const browser = new LoginBrowser(page, account, { site });
   let interstitialBypassed = false;
   const network = [];
@@ -265,7 +265,7 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   const failureListener = request => recordNetwork(request, null, request.failure()?.errorText);
   page.on('response', responseListener); page.on('requestfailed', failureListener);
   try {
-  const started = performance.now(); const deadline = Date.now() + maxSeconds * 1000;
+  const started = performance.now(); let deadline = Date.now() + maxSeconds * 1000;
   await navigate(page, verifyOnly ? site.homeUrl : site.loginUrl);
   for (let step = 0; step < maxSteps; step++) {
     requireThat(Date.now() < deadline, 'login_time_budget_exceeded');
@@ -288,7 +288,22 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       const escape = ['email_or_sms_verification_required', 'device_verification_required'].includes(failure)
         && account.totp && browser.candidates(snapshot, { verifyOnly })
           .some(action => action.kind === 'choose_totp' || action.kind === 'try_another_way');
-      if (!escape) { await attention(failure); throw new PilotError(failure); }
+      if (!escape) {
+        await attention(failure);
+        // A person may be able to complete a security checkpoint in this same live
+        // browser. The hook only observes and waits: it answers nothing, fills
+        // nothing, and never changes proxy or browser identity. When no hook is
+        // supplied the previous behaviour (stop this account) is unchanged.
+        const paused = requestHumanCheckpoint
+          ? await requestHumanCheckpoint({ reason: failure, page, browser, account, site, snapshot, step, onStep })
+          : null;
+        if (paused?.resumed) {
+          // Time spent waiting for a person must not consume the login budget.
+          deadline += Number(paused.waitedMs) || 0;
+          continue;
+        }
+        throw new PilotError(failure);
+      }
     }
     if (!account.totp && snapshot.controls.some(control => /one-time-code|totp|verificationcode|security.code/i.test(
       `${control.autocomplete} ${control.name}`))) throw new PilotError('totp_secret_missing');

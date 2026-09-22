@@ -29,35 +29,43 @@ export function createJev({ apiKey, fetchImpl = fetch, model = 'jev-latest',
     if (!response.ok) { metrics.usageComplete = false; throw new PilotError(`jev_http_${response.status}`); }
     let data;
     try { data = await response.json(); } catch { metrics.usageComplete = false; throw new PilotError('jev_invalid_response'); }
-    metrics.model = data.model || null;
-    if (Number.isSafeInteger(data.usage?.input_tokens) && data.usage.input_tokens >= 0
-      && Number.isSafeInteger(data.usage?.output_tokens) && data.usage.output_tokens >= 0) {
-      metrics.inputTokens += data.usage.input_tokens; metrics.outputTokens += data.usage.output_tokens;
-    } else metrics.usageComplete = false;
-    const answer = data.answers?.action;
-    requireThat(answer?.type === 'choice' && Object.hasOwn(criteria, answer.choice), 'jev_unknown_action');
-    requireThat(Number.isFinite(answer.confidence) && answer.confidence >= 0 && answer.confidence <= 1, 'jev_invalid_confidence');
-    const probabilities = answer.probabilities;
-    requireThat(probabilities && Object.keys(probabilities).sort().join() === Object.keys(criteria).sort().join()
-      && Object.values(probabilities).every(value => Number.isFinite(value) && value >= 0 && value <= 1)
-      && Math.abs(Object.values(probabilities).reduce((sum, value) => sum + value, 0) - 1) <= 0.001
-      && probabilities[answer.choice] + 0.001 >= Math.max(...Object.values(probabilities)), 'jev_invalid_probabilities');
-    requireThat(metrics.usageComplete, 'jev_usage_unknown');
-    if (answer.confidence < 0.8) {
-      const error = new PilotError('jev_uncertain_or_invalid');
-      error.confidence = answer.confidence; error.probability = probabilities[answer.choice]; throw error;
-    }
-    if (answer.choice === 'stop') throw new PilotError('jev_requested_attention');
-    const action = actions.find(item => item.id === answer.choice);
-    requireThat(action, 'jev_unknown_action');
-    return { action, method: 'typesafe-choice', confidence: answer.confidence, probability: answer.probabilities[answer.choice] };
+    return { ...validateChoice({ data, metrics, criteria, actions }), method: 'typesafe-choice' };
   };
   choose.metrics = metrics;
   return choose;
 }
 
-export function createGuide(options) {
-  const model = createJev(options); model.metrics.exactActions = 0;
+// The finite-choice contract is shared with alternative model providers so that
+// a different backend cannot weaken the validation the editor depends on.
+export function validateChoice({ data, metrics, criteria, actions }) {
+  metrics.model = data?.model || null;
+  if (Number.isSafeInteger(data?.usage?.input_tokens) && data.usage.input_tokens >= 0
+    && Number.isSafeInteger(data?.usage?.output_tokens) && data.usage.output_tokens >= 0) {
+    metrics.inputTokens += data.usage.input_tokens; metrics.outputTokens += data.usage.output_tokens;
+  } else metrics.usageComplete = false;
+  const answer = data?.answers?.action;
+  requireThat(answer?.type === 'choice' && Object.hasOwn(criteria, answer.choice), 'jev_unknown_action');
+  requireThat(Number.isFinite(answer.confidence) && answer.confidence >= 0 && answer.confidence <= 1, 'jev_invalid_confidence');
+  const probabilities = answer.probabilities;
+  requireThat(probabilities && Object.keys(probabilities).sort().join() === Object.keys(criteria).sort().join()
+    && Object.values(probabilities).every(value => Number.isFinite(value) && value >= 0 && value <= 1)
+    && Math.abs(Object.values(probabilities).reduce((sum, value) => sum + value, 0) - 1) <= 0.001
+    && probabilities[answer.choice] + 0.001 >= Math.max(...Object.values(probabilities)), 'jev_invalid_probabilities');
+  requireThat(metrics.usageComplete, 'jev_usage_unknown');
+  if (answer.confidence < 0.8) {
+    const error = new PilotError('jev_uncertain_or_invalid');
+    error.confidence = answer.confidence; error.probability = probabilities[answer.choice]; throw error;
+  }
+  if (answer.choice === 'stop') throw new PilotError('jev_requested_attention');
+  const action = actions.find(item => item.id === answer.choice);
+  requireThat(action, 'jev_unknown_action');
+  return { action, confidence: answer.confidence, probability: probabilities[answer.choice] };
+}
+
+// `createImpl` lets the same finite-choice contract and the same
+// single-candidate shortcut be reused by another provider.
+export function createGuide(options, createImpl = createJev) {
+  const model = createImpl(options); model.metrics.exactActions = 0;
   const guide = async request => {
     if (request.actions.length === 1) {
       model.metrics.exactActions++;
