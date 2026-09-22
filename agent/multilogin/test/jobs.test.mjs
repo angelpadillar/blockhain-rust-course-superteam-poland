@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm, readFile, readdir, writeFile, chmod } from 'node:fs/promises';
+import { mkdtemp, rm, readFile, readdir, writeFile, chmod, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { execFile } from 'node:child_process';
@@ -73,6 +74,39 @@ async function fixture(t, { count = 3 } = {}) {
       return { verified: true, steps: 1, durationMs: 5 };
     } };
 }
+
+test('a profile lock is atomic: one owner, and no second owner while a job holds it', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'jev-lock-race-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  // mkdir is atomic, so concurrent workers can never both win the same profile.
+  const attempts = await Promise.allSettled(Array.from({ length: 5 },
+    () => acquireProfileLock(directory, 'yt-profile-01')));
+  const winners = attempts.filter(attempt => attempt.status === 'fulfilled');
+  assert.equal(winners.length, 1, 'exactly one worker may own a profile');
+  assert.equal(attempts.filter(attempt => attempt.status === 'rejected')
+    .every(attempt => /profile_locked_or_stale_lock/.test(attempt.reason)), true);
+  // A held profile does not block a different one.
+  const other = await acquireProfileLock(directory, 'yt-profile-02');
+  const owner = await readJson(join(directory, 'locks', 'profile-yt-profile-01.lock', 'owner.json'));
+  assert.equal(owner.name, 'profile-yt-profile-01');
+  await winners[0].value(); await other();
+  // While a job is running, its profile is locked against any other owner.
+  const input = await fixture(t, { count: 1 });
+  const job = input.jobs[0];
+  const connect = input.connectImpl;
+  input.connectImpl = async (...args) => {
+    const lockOwner = await readJson(join(input.directory, 'locks', `profile-${job.profileRef}.lock`, 'owner.json'));
+    assert.equal(lockOwner.jobId, job.id);
+    assert.equal(lockOwner.pid, process.pid);
+    await assert.rejects(acquireProfileLock(input.directory, job.profileRef), /profile_locked_or_stale_lock/);
+    const free = await acquireProfileLock(input.directory, 'yt-profile-99');
+    await free();
+    return connect(...args);
+  };
+  const result = await runJobBatch({ ...input, concurrency: 1 });
+  assert.equal(result.summary.jobs[0].state, 'success');
+  assert.deepEqual(await readdir(join(input.directory, 'locks')), []);
+});
 
 test('job definitions reject duplicate ids, repeated references and unknown platforms', () => {
   const base = { id: 'youtube-01', platform: 'youtube', accountRef: 'yt-account-01', profileRef: 'yt-profile-01' };
@@ -334,4 +368,36 @@ test('batch-runner validates a job file and prints a plan without touching a pro
   assert.deepEqual(plan.config.seedSites, [], 'merchant visits stay off for the login workflow');
   assert.equal(stdout.includes(password), false);
   assert.equal(stdout.includes(seed), false);
+  assert.equal(existsSync(join(directory, 'state')), false, 'a dry run is read-only');
+});
+
+test('a dry run reports a conflicting plan with exit code 2 and takes no lock', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'jev-dry-run-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const records = [1, 2].map(index => ({ ref: `yt-account-0${index}`, platform: 'youtube',
+    username: `fixture0${index}@example.com`, password, totp: seed }));
+  const index = accountsFromRecords(records);
+  const accountsPath = join(directory, 'accounts.json');
+  await writeFile(accountsPath, JSON.stringify(records), { mode: 0o600 });
+  const jobsPath = join(directory, 'jobs.json');
+  await writeFile(jobsPath, JSON.stringify({ jobs: [1, 2].map(number => ({ id: `youtube-0${number}`,
+    platform: 'youtube', accountRef: `yt-account-0${number}`, profileRef: `yt-profile-0${number}` })) }));
+  const configPath = join(directory, 'config.json');
+  await writeFile(configPath, JSON.stringify({ folderId: 'folder-0001', proxyMode: 'multilogin', proxyCountry: 'pl' }));
+  // Two references already pointing at one profile is exactly what a rerun must refuse.
+  const state = join(directory, 'state');
+  await mkdir(state, { recursive: true });
+  await writeJson(join(state, 'profile-refs.json'), { version: 1, refs: {
+    'yt-profile-01': { accountId: index.get('yt-account-01').id, platform: 'youtube', profileId: 'profile-shared-01' },
+    'yt-profile-02': { accountId: index.get('yt-account-02').id, platform: 'youtube', profileId: 'profile-shared-01' } } });
+  const failure = await execFileAsync(process.execPath, ['batch-runner.mjs', jobsPath, '--dry-run', '--accounts',
+    accountsPath, '--data', state, '--config', configPath], { cwd: fileURLToPath(new URL('..', import.meta.url)) })
+    .then(() => null, error => error);
+  assert.equal(failure?.code, 2, 'a blocked plan is not a successful run');
+  const plan = JSON.parse(failure.stdout);
+  assert.equal(plan.status, 'blocked');
+  assert.deepEqual(plan.problems, [{ jobId: 'youtube-02', problem: 'duplicate_profile_ownership' }]);
+  assert.equal(plan.planned[0].profileLock, 'free');
+  assert.equal(existsSync(join(state, 'locks')), false, 'a dry run never takes a profile lock');
+  assert.equal(failure.stdout.includes(password), false);
 });
