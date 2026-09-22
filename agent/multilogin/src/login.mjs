@@ -367,7 +367,10 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   // Page states that already consumed a full patience window with no usable
   // controls, so they are not waited on again.
   const emptyFingerprints = new Set();
-  const finish = result => ({ ...result,
+  // Visual escalations are capped for the whole run, so a vision advisor can never
+  // be asked to look more than a handful of times.
+  const visualEpisode = { escalations: 0 };
+  const finish = result => ({ ...result, visualEscalations: visualEpisode.escalations,
     recovery: { ...browser.recovery, menuActions: browser.menuActionCount } });
   const network = [];
   const recordNetwork = (request, status, error) => {
@@ -439,7 +442,8 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
           menuOpenedBefore: browser.menuOpenedKeys.size > 0 } });
       let decision;
       try {
-        decision = await choose({ page: modelView,
+        decision = await choose({ page: modelView, observation, snapshot,
+          classifiedReason: classifiedReason || null, episode: visualEpisode,
           actions: candidates.map(({ id, description }) => ({ id, description })) });
       } catch (error) {
         await onStep({ step, phase: 'jev_recovery', state: 'selection_failed',
@@ -522,8 +526,18 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     if (!actions.length) await attention(verifyOnly ? 'session_or_identity_not_verified' : 'unsupported_login_screen');
     requireThat(actions.length > 0, verifyOnly ? 'session_or_identity_not_verified' : 'unsupported_login_screen');
     let decision;
-    try { decision = await choose({ page: browser.publicPage(snapshot), actions: actions.map(({ id, description }) => ({ id, description })) }); }
+    // The decision carries the observation it was taken against, so an advisor can
+    // bind a screenshot to this epoch and execution can refuse another one.
+    try { decision = await choose({ page: browser.publicPage(snapshot), observation, snapshot,
+      episode: visualEpisode, actions: actions.map(({ id, description }) => ({ id, description })) }); }
     catch (error) { await attention(error instanceof PilotError ? error.code : 'selection_failed'); throw error; }
+    if (decision?.episode) visualEpisode.escalations = decision.episode.escalations;
+    // An L3 decision taken on another epoch is never executed here.
+    if (decision?.decisionEpoch && decision.decisionEpoch !== observation.epoch) {
+      await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', state: 'stale_decision',
+        decisionEpoch: decision.decisionEpoch, epoch: observation.epoch });
+      continue;
+    }
     const action = actions.find(candidate => candidate.id === decision.action?.id);
     requireThat(action, 'unknown_selected_action');
     await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', action: action.kind,
