@@ -53,10 +53,93 @@ export function createCheckpointStore({ directory }) {
 }
 
 export function parseCommand({ text = '', chatId = null, userId = null } = {}) {
-  const match = String(text).trim().match(/^\/(status|done|cancel)(?:\s+(\S+))?$/i);
+  const match = String(text).trim().match(/^\/(start|status|done|cancel)(?:\s+(\S+))?$/i);
   if (!match) return { recognized: false };
   return { recognized: true, command: `/${match[1].toLowerCase()}`, checkpointId: match[2] || null,
     chatId, userId };
+}
+
+export const checkpointUsage = 'Commands: /status [checkpoint] | /done <checkpoint> | /cancel <checkpoint>';
+
+// How many job checkpoints are still waiting for a person.
+export async function countActiveCheckpoints({ directory, fs = null } = {}) {
+  const io = fs || { readdir: (await import('node:fs/promises')).readdir,
+    readFile: (await import('node:fs/promises')).readFile };
+  let jobIds = [];
+  try { jobIds = await io.readdir(resolve(directory, 'jobs')); } catch { return { active: 0, checkpointIds: [] }; }
+  const checkpointIds = [];
+  for (const jobId of jobIds.sort()) {
+    let checkpoint = null;
+    try { checkpoint = JSON.parse(await io.readFile(resolve(directory, 'jobs', jobId, 'human-checkpoint.json'), 'utf8')); }
+    catch { continue; }
+    if (checkpoint?.state === 'waiting' && checkpoint.id) checkpointIds.push(checkpoint.id);
+  }
+  return { active: checkpointIds.length, checkpointIds };
+}
+
+// The health reply: what the runtime is, and whether anything is waiting.
+export function healthReply({ notifier = null, active = 0, note = null } = {}) {
+  const lines = ['browser runtime online'];
+  if (notifier) lines.push(`notifier: ${notifier.name || 'unknown'}`);
+  lines.push(`waiting checkpoints: ${active}`);
+  if (note) lines.push(note);
+  lines.push(checkpointUsage);
+  lines.push('Human verification is never solved automatically: a person resolves it in the preserved browser.');
+  return lines.join('\n');
+}
+
+// Command handling. `/done` is a request, not a proof: the injected `verify`
+// re-observes the SAME browser and the checkpoint only resumes when the challenge
+// is genuinely gone.
+export async function handleCommand({ parsed, notifier = null, store = null,
+  loadCheckpoint = async () => null, loadActive = async () => 0, verify = null, now = Date.now } = {}) {
+  requireThat(parsed?.recognized, 'unrecognized_command');
+  const command = parsed.command;
+  const checkpointId = parsed.checkpointId;
+
+  if (command === '/start' || (command === '/status' && !checkpointId)) {
+    const { active } = await loadActive().then(result => (typeof result === 'number' ? { active: result } : result));
+    const reply = healthReply({ notifier, active });
+    if (notifier) await notifier.send({ text: reply });
+    return { action: 'replied', reply };
+  }
+
+  const checkpoint = checkpointId ? await loadCheckpoint(checkpointId) : null;
+  if (!checkpoint) {
+    const reply = `unknown checkpoint: ${checkpointId || '(none)'}\n${checkpointUsage}`;
+    if (notifier) await notifier.send({ text: reply });
+    return { action: 'replied', reply };
+  }
+  const expired = Date.parse(checkpoint.expiresAt) <= now();
+  const summary = [`checkpoint: ${checkpoint.id}`, `job: ${checkpoint.jobId}`,
+    `reason: ${checkpoint.reason}`, `state: ${checkpoint.state}`,
+    `expires: ${checkpoint.expiresAt}`, `same profile preserved: yes`].join('\n');
+
+  if (command === '/status') {
+    if (notifier) await notifier.send({ text: `${summary}${expired ? '\nexpired' : ''}` });
+    return { action: 'replied', reply: summary };
+  }
+  if (command === '/cancel') {
+    const cancelled = store ? await store.transition(checkpoint, 'cancelled', { by: 'operator' }) : checkpoint;
+    const reply = `checkpoint cancelled. The browser session is left as it is.\n${summary}`;
+    if (notifier) await notifier.send({ text: reply });
+    return { action: 'cancelled', reply, checkpoint: cancelled };
+  }
+  if (command === '/done') {
+    // Re-observe before believing it: /done alone never resumes the flow.
+    const outcome = verify ? await verify({ checkpoint }) : { cleared: false, reason: 'verification_unavailable' };
+    if (!outcome.cleared) {
+      const reply = `challenge still present (${outcome.reason}); staying in waiting.\n${summary}`;
+      if (notifier) await notifier.send({ text: reply });
+      return { action: 'waiting', reply, reason: outcome.reason };
+    }
+    const resumed = store ? await store.transition(checkpoint, 'resumed', { by: 'operator', reason: outcome.reason })
+      : checkpoint;
+    const reply = `challenge cleared (${outcome.reason}); resuming the same profile.\n${summary}`;
+    if (notifier) await notifier.send({ text: reply });
+    return { action: 'resumed', reply, checkpoint: resumed };
+  }
+  return { action: 'ignored', reply: checkpointUsage };
 }
 
 // `/done` must not blindly resume: the SAME browser is re-observed and the
@@ -153,6 +236,15 @@ export function createTelegramNotifier({ tokenPath = defaultTelegramTokenPath,
       const result = await call('sendMessage', { chat_id: resolved.chatId, text: caption });
       diagnostics.notified++;
       return { ok: true, messageId: result?.message_id ?? null, delivered: 'text' };
+    },
+    // A reply always goes to the configured chat, never to whoever asked.
+    async send({ text: message } = {}) {
+      requireThat(typeof message === 'string' && message.length > 0, 'telegram_message_required');
+      const resolved = await resolveConfig();
+      requireThat(resolved.ok, `telegram_unavailable:${resolved.code}`);
+      const result = await call('sendMessage', { chat_id: resolved.chatId,
+        text: message.slice(0, 2000), disable_web_page_preview: true });
+      return { ok: true, messageId: result?.message_id ?? null };
     },
     // Long polling: no public webhook is required. Only the configured chat AND
     // user are accepted; anything else is counted and ignored.

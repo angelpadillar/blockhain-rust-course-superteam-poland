@@ -4,7 +4,8 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createCheckpoint, createCheckpointStore, createTelegramNotifier, parseCommand,
-  verifyChallengeCleared, defaultTelegramTokenPath } from '../src/human-checkpoint.mjs';
+  verifyChallengeCleared, handleCommand, countActiveCheckpoints, healthReply,
+  defaultTelegramTokenPath } from '../src/human-checkpoint.mjs';
 import { classifyPage } from '../src/login.mjs';
 
 // A synthetic challenge page: the fixture "person" clears it by flipping a flag,
@@ -185,6 +186,84 @@ test('the synthetic checkpoint fixture: notify, wait, /done, re-observe, resume'
   const cancelled = await store.transition(createCheckpoint({ jobId: 'j2',
     reason: 'human_verification_required' }), 'cancelled', { by: 'operator' });
   assert.equal(cancelled.state, 'cancelled');
+});
+
+test('/start and a bare /status answer with health and the waiting checkpoint count', async t => {
+  const paths = await secretFiles(t);
+  const directory = await mkdtemp(join(tmpdir(), 'checkpoint-health-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  // Two waiting checkpoints and one already resumed: only the waiting ones count.
+  for (const [jobId, state] of [['j1', 'waiting'], ['j2', 'waiting'], ['j3', 'resumed']]) {
+    const store = createCheckpointStore({ directory: join(directory, 'jobs', jobId) });
+    await store.save({ ...createCheckpoint({ jobId, reason: 'human_verification_required' }), state });
+  }
+  const active = await countActiveCheckpoints({ directory });
+  assert.equal(active.active, 2);
+  assert.equal(active.checkpointIds.length, 2);
+
+  const session = telegram();
+  const notifier = createTelegramNotifier({ ...paths, fetchImpl: session.fetchImpl });
+  const store = createCheckpointStore({ directory });
+  const send = async args => {
+    const parsed = parseCommand({ text: args, chatId: '4242', userId: '77' });
+    return handleCommand({ parsed, notifier, store,
+      loadCheckpoint: async () => null, loadActive: async () => active });
+  };
+
+  const started = await send('/start');
+  assert.equal(started.action, 'replied');
+  assert.equal(started.reply.includes('browser runtime online'), true);
+  assert.equal(started.reply.includes('waiting checkpoints: 2'), true);
+  assert.equal(started.reply.includes('/done'), true);
+
+  const status = await send('/status');
+  assert.equal(status.action, 'replied');
+  assert.equal(status.reply.includes('waiting checkpoints: 2'), true);
+
+  // Both replies went out to the configured chat as real Telegram messages.
+  const sends = session.calls.filter(call => call.method === 'sendMessage');
+  assert.equal(sends.length, 2);
+  assert.equal(sends.every(call => JSON.parse(call.options.body).chat_id === '4242'), true);
+  assert.deepEqual(parseCommand({ text: '/start' }).command, '/start');
+});
+
+test('/status, /done and /cancel with a checkpoint act on the checkpoint only', async () => {
+  const sent = [];
+  const notifier = { name: 'telegram', send: async ({ text }) => { sent.push(text); return { ok: true }; } };
+  const directory = await mkdtemp(join(tmpdir(), 'checkpoint-commands-'));
+  const store = createCheckpointStore({ directory });
+  const checkpoint = createCheckpoint({ jobId: 'j1', reason: 'human_verification_required' });
+  await store.save(checkpoint);
+  const load = async id => (id === checkpoint.id ? await store.load() : null);
+
+  const status = await handleCommand({ parsed: { recognized: true, command: '/status',
+    checkpointId: checkpoint.id }, notifier, store, loadCheckpoint: load });
+  assert.equal(status.action, 'replied');
+  assert.equal(status.reply.includes(`checkpoint: ${checkpoint.id}`), true);
+
+  // /done while the challenge is still there: no resume, explicit reason.
+  const stillThere = await handleCommand({ parsed: { recognized: true, command: '/done',
+    checkpointId: checkpoint.id }, notifier, store, loadCheckpoint: load,
+  verify: async () => ({ cleared: false, reason: 'challenge_frame_present' }) });
+  assert.equal(stillThere.action, 'waiting');
+  assert.equal((await store.load()).state, 'waiting');
+  assert.equal(sent.at(-1).includes('challenge still present'), true);
+
+  // /done after the person cleared it: resume is allowed.
+  const cleared = await handleCommand({ parsed: { recognized: true, command: '/done',
+    checkpointId: checkpoint.id }, notifier, store, loadCheckpoint: load,
+  verify: async () => ({ cleared: true, reason: 'challenge_absent' }) });
+  assert.equal(cleared.action, 'resumed');
+  assert.equal((await store.load()).state, 'resumed');
+
+  const unknown = await handleCommand({ parsed: { recognized: true, command: '/status',
+    checkpointId: 'nope' }, notifier, store, loadCheckpoint: load });
+  assert.equal(unknown.reply.includes('unknown checkpoint'), true);
+
+  const cancelled = await handleCommand({ parsed: { recognized: true, command: '/cancel',
+    checkpointId: checkpoint.id }, notifier, store,
+  loadCheckpoint: async () => ({ ...checkpoint, state: 'waiting' }) });
+  assert.equal(cancelled.action, 'cancelled');
 });
 
 test('a challenge that is still present after /done never resumes', async () => {
