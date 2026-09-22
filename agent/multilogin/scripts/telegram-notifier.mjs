@@ -10,7 +10,8 @@ import { chmod, chown, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { errorCode, requireThat } from '../src/core.mjs';
 import { createTelegramNotifier, createCheckpointStore, handleCommand, countActiveCheckpoints,
-  defaultTelegramTokenPath, defaultTelegramChatIdPath, defaultTelegramUserIdPath } from '../src/human-checkpoint.mjs';
+  defaultTelegramTokenPath, defaultTelegramChatIdPath, defaultTelegramUserIdPath,
+  defaultTelegramOffsetPath } from '../src/human-checkpoint.mjs';
 
 const mask = value => (typeof value === 'string' && value.length > 3 ? `…${value.slice(-3)}` : 'none');
 const flag = (argv, name, fallback = null) => {
@@ -56,14 +57,20 @@ async function bootstrap({ argv }) {
 async function poll({ argv }) {
   const seconds = Number(flag(argv, 'seconds', '60'));
   const directory = flag(argv, 'directory');
-  const notifier = createTelegramNotifier();
+  const statePath = flag(argv, 'state', defaultTelegramOffsetPath);
+  const notifier = createTelegramNotifier({ offsetPath: statePath });
   const store = directory ? createCheckpointStore({ directory }) : null;
   const deadline = Date.now() + seconds * 1000;
   const handled = [];
   while (Date.now() < deadline) {
     let commands = [];
     try { commands = await notifier.poll(); }
-    catch (error) { console.log(JSON.stringify({ step: 'poll', error: errorCode(error) })); await sleep(2000); continue; }
+    catch (error) {
+      // Back off instead of hammering an unreachable API.
+      const waitMs = notifier.backoffMs();
+      console.log(JSON.stringify({ step: 'poll', error: errorCode(error), backoffMs: waitMs }));
+      await sleep(waitMs); continue;
+    }
     for (const parsed of commands) {
       const checkpoint = store ? await store.load() : null;
       const outcome = await handleCommand({ parsed, notifier, store,
@@ -75,7 +82,8 @@ async function poll({ argv }) {
     await sleep(2000);
   }
   console.log(JSON.stringify({ step: 'poll', seconds, handled,
-    unauthorizedSender: notifier.diagnostics.unauthorizedSender }));
+    unauthorizedSender: notifier.diagnostics.unauthorizedSender,
+    duplicates: notifier.diagnostics.duplicates, backoffSkips: notifier.diagnostics.backoffSkips }));
   return 0;
 }
 
