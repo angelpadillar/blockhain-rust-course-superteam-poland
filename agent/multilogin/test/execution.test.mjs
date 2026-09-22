@@ -329,11 +329,29 @@ test('an expired observation epoch fails closed', async () => {
 });
 
 
-test('a changed page fails closed before dispatch', async () => {
+test('a live page whose volatile text moves on does not invalidate the decision', async () => {
+  // Exactly what a real YouTube/Google page does between two reads: the visible
+  // text changes (recommendations, timestamps, banners) while the document and the
+  // control the decision named are unchanged.
   const snapshot = pageFixture();
-  // The control set is identical but the page text moved on: the decision was
-  // taken on a page that no longer exists.
-  const movedOn = { ...snapshot, text: 'Sign in (your session is about to expire)' };
+  const volatile = { ...snapshot, text: 'Sign in (your session is about to expire) 2:14 PM' };
+  const { kernel, calls } = harness({ snapshot, pages: [volatile, volatile] });
+  const observation = kernel.observe(snapshot).observation;
+  const outcome = await kernel.execute({ candidate: { kind: 'submit_login', control: snapshot.controls[2] },
+    snapshot, observation, source: 'jev',
+    dispatch: async () => { calls.dispatch.push('submit_login'); return null; } });
+
+  assert.equal(calls.dispatch.length, 1, 'the action is still dispatched against the live page');
+  assert.equal(outcome.receipt.state, 'verified');
+  assert.equal(outcome.receipt.observationEpoch, observation.epoch, 'the decision epoch is unchanged');
+});
+
+test('a materially changed page fails closed before dispatch', async () => {
+  const snapshot = pageFixture();
+  // The document itself moved on: an extra control appears, so it is a different
+  // page identity and the decision is not acted on.
+  const movedOn = { ...snapshot, text: 'Sign in',
+    controls: [...snapshot.controls, { key: 'sig-extra', tag: 'button', type: '', label: 'Extra', enabled: true }] };
   const { kernel, calls } = harness({ snapshot, pages: [movedOn, movedOn] });
   const observation = kernel.observe(snapshot).observation;
   const error = await kernel.execute({ candidate: { kind: 'submit_login', control: snapshot.controls[2] },

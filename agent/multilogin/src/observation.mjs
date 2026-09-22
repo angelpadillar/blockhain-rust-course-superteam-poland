@@ -1,4 +1,18 @@
+import { createHash } from 'node:crypto';
 import { createObservation } from './contract.mjs';
+
+// The PAGE IDENTITY a decision depends on: the document (origin + pathname) and
+// the set and order of the controls on it. Deliberately excludes the visible
+// text, which keeps changing on a live dynamic page (recommendations, timestamps,
+// animations) without the page actually being a different page. A decision is
+// acted on only while this identity is unchanged; the control itself is still
+// re-resolved by id and signature.
+export function pageSignature(observation) {
+  const origin = observation?.url?.origin ?? null;
+  const pathname = observation?.url?.pathname ?? null;
+  const signatures = (observation?.controls ?? []).map(control => control.signature);
+  return createHash('sha256').update(JSON.stringify([origin, pathname, signatures])).digest('hex');
+}
 
 // The live browser's snapshot becomes the shared observation contract here.
 // Control ids are epoch-scoped: "e3" only means anything against the epoch that

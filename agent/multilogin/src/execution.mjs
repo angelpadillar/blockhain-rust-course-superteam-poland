@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { PilotError, requireThat } from './core.mjs';
 import { buildAction, authorizeAction, resolveAction, validateObservation, createReceipt,
   transitionReceipt, roleForRisk, riskClasses } from './contract.mjs';
-import { observationFromSnapshot, controlIdFor } from './observation.mjs';
+import { observationFromSnapshot, controlIdFor, pageSignature } from './observation.mjs';
 import { evaluatePostcondition } from './postcondition.mjs';
 import { valueRefForOperation } from './secrets.mjs';
 
@@ -126,6 +126,11 @@ export class BrowserExecutionKernel {
   // acting on a stale reference. Anything materially changed fails closed with
   // stale_observation / expired_observation / changed_control / changed_page /
   // control_not_usable, and the caller re-observes.
+  //
+  // "Materially changed" is the page IDENTITY (document + control set/order), not
+  // the visible text: on a live dynamic page the text keeps moving (recommendations,
+  // timestamps, animations) while the control the decision named is still the same
+  // control, in the same enabled state, on the same page.
   async refresh({ action, decided, control }) {
     validateObservation({ observation: decided, epoch: action.observationEpoch, now: this.now() });
     if (!action.controlId) return { snapshot: null, observation: null, control: null };
@@ -141,8 +146,9 @@ export class BrowserExecutionKernel {
     }
     const live = this.observe(liveSnapshot).observation;
     const resolved = resolveLiveControl({ action, live, liveSnapshot });
-    // The page moved on since the decision, so the decision is not acted on.
-    requireThat(live.fingerprint === decided.fingerprint, 'changed_page');
+    // The document or the control set moved on since the decision, so the
+    // decision is not acted on.
+    requireThat(pageSignature(live) === pageSignature(decided), 'changed_page');
     return { snapshot: liveSnapshot, observation: live, control: resolved };
   }
 

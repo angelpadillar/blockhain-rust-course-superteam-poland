@@ -562,9 +562,11 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
           return browser.waitForChange(target, action);
         } });
     } catch (error) {
-      // Single-page apps replace controls mid-render; a stale target simply
-      // means the observation aged out, so re-observe rather than fail the run.
-      if (['stale_control', 'stale_page', 'stale_observation', 'expired_observation'].includes(error?.code)) {
+      // Single-page apps replace controls mid-render, and a live page can move on
+      // between the decision and the dispatch; both simply mean the observation
+      // aged out, so re-observe rather than fail the run.
+      if (['stale_control', 'stale_page', 'stale_observation', 'expired_observation',
+        'changed_page', 'changed_control', 'control_not_usable'].includes(error?.code)) {
         await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', action: action.kind, state: 'stale' });
         continue;
       }
