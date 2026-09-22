@@ -39,7 +39,7 @@ export async function loadPricing({ path = null, model = null, fallback = defaul
 // null: it is never estimated from image size or text length.
 export function mapUsage(usage = null) {
   if (!usage || typeof usage !== 'object') return { available: false, uncachedInputTokens: null,
-    cachedInputTokens: null, outputTokens: null, totalTokens: null };
+    cachedInputTokens: null, outputTokens: null, totalTokens: null, reasoningTokens: null };
   const details = usage.prompt_tokens_details || usage.prompt_tokens_detail || usage.input_tokens_details || {};
   const input = Number.isSafeInteger(usage.prompt_tokens) ? usage.prompt_tokens
     : Number.isSafeInteger(usage.input_tokens) ? usage.input_tokens : null;
@@ -48,12 +48,21 @@ export function mapUsage(usage = null) {
   const cached = Number.isSafeInteger(details.cached_tokens) ? details.cached_tokens
     : Number.isSafeInteger(usage.cached_tokens) ? usage.cached_tokens : null;
   if (input === null && output === null) return { available: false, uncachedInputTokens: null,
-    cachedInputTokens: null, outputTokens: null, totalTokens: null };
+    cachedInputTokens: null, outputTokens: null, totalTokens: null, reasoningTokens: null };
   const cachedTokens = cached === null ? 0 : Math.min(cached, input ?? cached);
+  // Reasoning tokens are reported by the provider as a DETAIL of the completion
+  // tokens, so they are recorded for model-efficiency diagnostics only: they are
+  // never added to outputTokens and never priced separately, or the same tokens
+  // would be billed twice.
+  const reasoningDetail = (usage.completion_tokens_details || usage.output_tokens_details
+    || usage.completion_tokens_detail || {});
+  const reasoningTokens = Number.isSafeInteger(reasoningDetail.reasoning_tokens)
+    ? reasoningDetail.reasoning_tokens : null;
   return { available: true, uncachedInputTokens: Math.max(0, (input ?? 0) - cachedTokens),
     cachedInputTokens: cachedTokens, outputTokens: output ?? 0,
     totalTokens: Number.isSafeInteger(usage.total_tokens) ? usage.total_tokens
-      : (input ?? 0) + (output ?? 0) };
+      : (input ?? 0) + (output ?? 0),
+    reasoningTokens };
 }
 
 export function estimatedUsd({ uncachedInputTokens = 0, cachedInputTokens = 0, outputTokens = 0 } = {},
