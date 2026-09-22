@@ -375,7 +375,8 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
           reason: classifiedReason || 'no_actions', recoveryStep: browser.recoverySteps, budget: recoveryBudget });
         return { exhausted: true };
       }
-      const candidates = recoveryCandidates({ snapshot, browser, site });
+      const candidates = recoveryCandidates({ snapshot, browser, site,
+        classifiedReason: classifiedReason || null });
       if (!candidates.length) return { exhausted: false };
       const observation = recoveryObservation({ goal, snapshot, browser, recentActions,
         deterministicState: { step, classifiedReason: classifiedReason || null, verifyOnly,

@@ -11,6 +11,7 @@ export const recoveryCapabilities = {
   wait: 'Wait briefly for a pending redirect or client render, then re-observe.',
   reopen_account_menu: 'Reopen the account menu. It was opened earlier but is closed now, so the identity rows are not visible.',
   open_switch_account: 'Open "Switch account", which lists the signed-in identity that verification needs.',
+  dismiss_onboarding: 'Dismiss a harmless onboarding or interstitial screen by clicking its own safe skip/continue control. Never used on a security page.',
   navigate_home: 'Navigate to the platform home page (an allowed origin) and re-observe.',
   complete: 'The expected identity is already verified, so the flow is complete.',
   escalate_security_checkpoint: 'Only a person can proceed: the platform is asking for an external code, confirmation or challenge this system must not attempt to bypass.',
@@ -28,6 +29,35 @@ export function safeHref(href, site) {
     const url = new URL(href);
     return site.origins.includes(url.origin) ? `${url.origin}${url.pathname}` : null;
   } catch { return null; }
+}
+
+// --- Safe onboarding dismissal -------------------------------------------------
+// Non-security interstitials (for example Google's "Add a profile picture ...
+// Skip") block progress but must never be dismissed on a security page. The
+// capability is generated from an OBSERVED, VISIBLE control whose accessible
+// name is on a strict allow-list, and is refused outright when the control's own
+// meaning could touch account or security settings. It is not text clicking:
+// the executor clicks the same candidate handle that was observed.
+export const safeOnboardingLabels = /^(skip|not now|later|maybe later|continue|done|pomiń|nie teraz|później|gotowe|kontynuuj)$/;
+const refusedOnboardingTerms = /(password|hasło|security|bezpiecze|verification|weryfikac|two.?step|recovery|odzyskiw|phone|telefon|card|payment|purchase|delete|remove|unlink|sign out|log out|wyloguj|privacy|permission|subscribe|enable|turn on)/;
+// Pages that require a real person. Onboarding dismissal is never offered here.
+const securityPageText = /captcha|verify you are human|confirm you.re human|unusual traffic|automated queries|check your phone|tap yes on|approve.{0,25}(phone|device)|security key|passkey|suspicious|recovery (email|phone|options)|confirm.{0,20}recovery|verify.{0,20}recovery|password reset|reset your password|change your password|account.{0,15}(disabled|suspended|locked|restricted)|konto.{0,15}zawieszon|two-step verification|2-step verification|\bcode\b.{0,60}\b(sent|email|sms)\b|\bsent\b.{0,60}\b(code|email)\b|text message/i;
+
+export function looksLikeSecurityPage(snapshot) {
+  if (snapshot.challengeFrame) return true;
+  return securityPageText.test(normalize(snapshot.text));
+}
+
+export function onboardingControl(snapshot) {
+  if (looksLikeSecurityPage(snapshot)) return null;
+  for (const control of snapshot.controls) {
+    if (!control.enabled) continue;
+    const label = normalize(control.label);
+    if (!safeOnboardingLabels.test(label)) continue;
+    if (refusedOnboardingTerms.test(`${label} ${control.href}`)) continue;
+    return control;
+  }
+  return null;
 }
 
 // Sanitized observation for the model. Credentials, cookies, headers, proxy
@@ -57,7 +87,7 @@ export function recoveryObservation({ goal, snapshot, browser, recentActions = [
 
 // Only capabilities that are genuinely available on the observed page are
 // offered, so the model cannot pick an action the executor would refuse.
-export function recoveryCandidates({ snapshot, browser, site }) {
+export function recoveryCandidates({ snapshot, browser, site, classifiedReason = null }) {
   const origin = new URL(snapshot.url).origin;
   const homeOrigin = new URL(site.homeUrl).origin;
   const usable = snapshot.controls.filter(control => control.enabled);
@@ -65,6 +95,13 @@ export function recoveryCandidates({ snapshot, browser, site }) {
   const switchRow = usable.find(control => switchAccountLabel.test(normalize(control.label)));
 
   const shortlist = [];
+  // A harmless onboarding interstitial gets its safe dismissal first. It is not
+  // offered when the runtime already classified a checkpoint, and onboardingControl
+  // independently refuses any page that looks security-related.
+  if (!classifiedReason) {
+    const onboarding = onboardingControl(snapshot);
+    if (onboarding) shortlist.push({ kind: 'dismiss_onboarding', control: onboarding });
+  }
   if (switchRow) shortlist.push({ kind: 'open_switch_account', control: switchRow });
   else if (menuButton && origin === homeOrigin) shortlist.push({ kind: 'reopen_account_menu', control: menuButton });
   if (origin !== homeOrigin) shortlist.push({ kind: 'navigate_home' });
@@ -101,6 +138,12 @@ export async function executeRecoveryAction({ action, browser, site, navigate,
       if (action.kind === 'reopen_account_menu') browser.menuOpenedKeys.add(action.control.key);
       browser.recovery.actions++;
       return { performed: true, detail: action.kind };
+    }
+    case 'dismiss_onboarding': {
+      requireThat(action.control?.handle, 'stale_control');
+      await action.control.handle.click({ timeout: 5000, noWaitAfter: true }).catch(() => {});
+      browser.recovery.actions++;
+      return { performed: true, detail: 'dismiss_onboarding' };
     }
     case 'navigate_home':
       await navigate(browser.page, site.homeUrl);

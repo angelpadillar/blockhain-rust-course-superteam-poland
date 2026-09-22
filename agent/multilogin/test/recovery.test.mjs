@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sites, LoginBrowser, runLogin, verifyIdentity, classifyPage } from '../src/login.mjs';
 import { recoveryCandidates, recoveryObservation, validateRecoveryDecision, executeRecoveryAction,
-  isInfrastructureFailure, maxRecoverySteps, recoveryCapabilities } from '../src/recovery.mjs';
+  isInfrastructureFailure, maxRecoverySteps, recoveryCapabilities, onboardingControl } from '../src/recovery.mjs';
+import { validateChoice } from '../src/jev.mjs';
 import { failurePolicy } from '../src/core.mjs';
 
 // The exact origins observed in the profile's own Chromium history after a real
@@ -110,7 +111,7 @@ test('a closed account menu is reopened deterministically a bounded number of ti
 test('the recovery capability list is exactly the typed, non-bypassing set', () => {
   assert.equal(maxRecoverySteps, 8);
   assert.deepEqual(Object.keys(recoveryCapabilities), ['retry_observation', 'wait', 'reopen_account_menu',
-    'open_switch_account', 'navigate_home', 'complete', 'escalate_security_checkpoint']);
+    'open_switch_account', 'dismiss_onboarding', 'navigate_home', 'complete', 'escalate_security_checkpoint']);
 });
 
 test('identity verification needs Switch account evidence, not just a channel handle', () => {
@@ -269,5 +270,128 @@ test('the recovery observation carries no credentials, codes or query strings', 
     ['https://www.youtube.com/redirect']);
   assert.equal(observation.url.origin, 'https://www.youtube.com');
   assert.equal(observation.goal.includes('Human confirmation'), true);
+});
+
+
+// --- dismiss_onboarding: safe, non-security interstitials only ----------------
+
+// Exactly the page yt-live-02 reached: Google's profile-picture onboarding.
+const onboardingPage = { url: 'https://gds.google.com/web/pgc', challengeFrame: false,
+  text: 'Add a profile picture\nHelp people recognize you and know when you are signed in to your account\n[secret]\nSkip',
+  controls: [{ tag: 'button', label: 'Skip', enabled: true }] };
+const shallow = { site: sites.youtube, redact: value => value };
+
+test('Skip is offered on the observed profile-picture onboarding page', () => {
+  const candidates = recoveryCandidates({ snapshot: onboardingPage, browser: shallow, site: sites.youtube });
+  assert.equal(candidates[0].kind, 'dismiss_onboarding');
+  assert.equal(candidates[0].control.label, 'Skip');
+  assert.equal(candidates[0].id, 'r0');
+});
+
+test('a safe onboarding dismissal clicks the observed candidate, not a selector', async () => {
+  let clicks = 0;
+  const browser = { page: {}, recovery: { actions: 0 }, site: sites.youtube };
+  const action = { kind: 'dismiss_onboarding',
+    control: { handle: { click: async () => { clicks++; }, isVisible: async () => true, isEnabled: async () => true } } };
+  const outcome = await executeRecoveryAction({ action, browser, site: sites.youtube, navigate: async () => {} });
+  assert.deepEqual(outcome, { performed: true, detail: 'dismiss_onboarding' });
+  assert.equal(clicks, 1, 'the observed candidate handle was clicked once');
+  assert.equal(browser.recovery.actions, 1);
+});
+
+test('onboarding dismissal is never offered on a security page', () => {
+  const pages = [
+    { text: 'Verify you are human', challengeFrame: true, label: 'Skip' },
+    { text: 'Enter the code sent to your phone', challengeFrame: false, label: 'Continue' },
+    { text: 'Confirm your recovery email', challengeFrame: false, label: 'Continue' },
+    { text: 'We detected suspicious activity on your account', challengeFrame: false, label: 'Continue' },
+    { text: 'Reset your password', challengeFrame: false, label: 'Continue' },
+    { text: 'Your account has been suspended', challengeFrame: false, label: 'Done' },
+  ];
+  for (const page of pages) {
+    const snapshot = { url: 'https://accounts.google.com/signin/v2/challenge', challengeFrame: page.challengeFrame,
+      text: page.text, controls: [{ tag: 'button', label: page.label, enabled: true }] };
+    assert.equal(onboardingControl(snapshot), null, page.text);
+    const kinds = recoveryCandidates({ snapshot, browser: shallow, site: sites.youtube }).map(item => item.kind);
+    assert.equal(kinds.includes('dismiss_onboarding'), false, page.text);
+  }
+  // A checkpoint the runtime already classified suppresses it as well.
+  const classified = recoveryCandidates({ snapshot: onboardingPage, browser: shallow, site: sites.youtube,
+    classifiedReason: 'human_verification_required' }).map(item => item.kind);
+  assert.equal(classified.includes('dismiss_onboarding'), false);
+});
+
+
+test('only allow-listed names pass, and settings-changing labels are refused', () => {
+  const page = label => ({ url: 'https://gds.google.com/web/pgc', challengeFrame: false,
+    text: 'Onboarding', controls: [{ tag: 'button', label, enabled: true }] });
+  for (const label of ['Skip', 'Not now', 'Later', 'Maybe later', 'Continue', 'Done']) {
+    assert.equal(onboardingControl(page(label))?.label, label, label);
+  }
+  for (const label of ['Add a profile picture', 'Accept', 'Agree', 'Delete account',
+    'Turn on 2-step verification', 'Sign out', 'Change password', 'Remove recovery email',
+    'Subscribe', 'Manage permissions']) {
+    assert.equal(onboardingControl(page(label)), null, label);
+  }
+  // A visible control is required; a hidden one is not eligible.
+  assert.equal(onboardingControl({ url: 'https://gds.google.com/web/pgc', challengeFrame: false,
+    text: 'Onboarding', controls: [{ tag: 'button', label: 'Skip', enabled: false }] }), null);
+});
+
+test('recovery cannot become arbitrary selector or script execution', async () => {
+  const browser = { page: {}, recovery: { actions: 0 }, site: sites.youtube };
+  for (const kind of ['click_selector', 'evaluate', 'javascript', 'type_text', 'navigate_url', 'click']) {
+    await assert.rejects(
+      executeRecoveryAction({ action: { kind, selector: '#x' }, browser, site: sites.youtube, navigate: async () => {} }),
+      /unsupported_recovery_action/, kind);
+  }
+  // A decision must map back to an offered candidate; a selector is not an id.
+  const offered = recoveryCandidates({ snapshot: onboardingPage, browser: shallow, site: sites.youtube });
+  assert.throws(() => validateRecoveryDecision({ decision: { action: { id: '#skip' } }, candidates: offered }),
+    /unknown_recovery_action/);
+  assert.equal(browser.recovery.actions, 0);
+});
+
+test('the shared confidence and policy validation still applies to recovery decisions', () => {
+  const candidates = recoveryCandidates({ snapshot: onboardingPage, browser: shallow, site: sites.youtube });
+  const actions = candidates.map(({ id, description }) => ({ id, description }));
+  const keys = [...actions.map(action => action.id), 'stop'];
+  const criteria = { ...Object.fromEntries(actions.map(action => [action.id, action.description])),
+    stop: 'Stop and request attention.' };
+  const answer = (choice, confidence) => ({ model: 'fixture',
+    answers: { action: { type: 'choice', choice, confidence,
+      probabilities: Object.fromEntries(keys.map(key =>
+        [key, key === choice ? confidence : (1 - confidence) / (keys.length - 1)])) } },
+    usage: { input_tokens: 5, output_tokens: 5 } });
+  const metrics = () => ({ calls: 1, latencyMs: 1, inputTokens: 0, outputTokens: 0, usageComplete: true, model: null });
+
+  const accepted = validateChoice({ data: answer('r0', 0.95), metrics: metrics(), criteria, actions });
+  assert.equal(accepted.action.id, 'r0');
+  assert.equal(accepted.action.description.startsWith('dismiss_onboarding:'), true);
+  assert.throws(() => validateChoice({ data: answer('r0', 0.5), metrics: metrics(), criteria, actions }),
+    /jev_uncertain_or_invalid/);
+  assert.throws(() => validateChoice({ data: answer('stop', 0.95), metrics: metrics(), criteria, actions }),
+    /jev_requested_attention/);
+  assert.throws(() => validateChoice({ data: answer('r99', 0.95), metrics: metrics(), criteria, actions }),
+    /jev_unknown_action/);
+});
+
+
+test('an onboarding interstitial is dismissed by recovery and the flow continues', async () => {
+  const choose = picker(['dismiss_onboarding']);
+  let humans = 0;
+  // The yt-live-02 shape: the deterministic flow ends with no known action on a
+  // harmless Google onboarding page, and recovery dismisses it safely.
+  const onboardingFrame = { url: 'https://gds.google.com/web/pgc',
+    controls: [{ id: 'skip', label: 'Skip' }], text: 'Add a profile picture Skip' };
+  const page = fakePage([onboardingFrame, identityFrame]);
+  const result = await runLogin({ page, account, choose, site: sites.youtube, readyWindowMs: 200,
+    onStep: async () => {}, requestHumanCheckpoint: async () => { humans++; return null; } });
+
+  assert.equal(result.verified, true, 'the expected identity was verified after the dismissal');
+  assert.equal(humans, 0, 'no person was needed for a harmless interstitial');
+  assert.deepEqual(result.recovery.reasons, ['dismiss_onboarding']);
+  assert.equal(result.recovery.actions, 1);
+  assert.equal(result.recovery.calls, 1);
 });
 
