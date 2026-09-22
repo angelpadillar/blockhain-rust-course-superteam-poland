@@ -23,6 +23,9 @@ export const operationKinds = {
   retry_observation: 'wait', wait: 'wait', navigate_home: 'navigate',
   reopen_account_menu: 'click', dismiss_onboarding: 'dismiss', escalate_security_checkpoint: 'wait',
   complete: 'wait',
+  // The external surface (MCP) uses the same kernel with generic, OBSERVED
+  // operations: they carry no selector, the control still comes from an epoch.
+  click_observed: 'click', type_observed: 'fill', navigate_observed: 'navigate',
 };
 
 // Risk belongs to the OPERATION, never to a model's confidence and never to how
@@ -37,6 +40,8 @@ export const riskByOperation = {
   retry_observation: 'read_only', wait: 'read_only', navigate_home: 'reversible_navigation',
   reopen_account_menu: 'read_only', dismiss_onboarding: 'reversible_navigation',
   escalate_security_checkpoint: 'read_only', complete: 'read_only',
+  click_observed: 'reversible_navigation', type_observed: 'form_preparation',
+  navigate_observed: 'reversible_navigation',
 };
 
 // Authorization is granted by the WORKFLOW, not by Jev, not by a frontier model
@@ -64,6 +69,7 @@ export const defaultPostconditions = {
   open_switch_account: { type: 'page_fingerprint_changed', timeoutMs: 10000 },
   reopen_account_menu: { type: 'page_fingerprint_changed', timeoutMs: 2000 },
   dismiss_onboarding: { type: 'page_fingerprint_changed', timeoutMs: 2000 },
+  click_observed: { type: 'page_fingerprint_changed', timeoutMs: 2000 },
 };
 
 // A decision taken by the exact single-permitted-action shortcut never called a
@@ -83,7 +89,7 @@ export function riskForOperation(operation, claimed = null) {
 export class BrowserExecutionKernel {
   constructor({ browser = null, account, site = null, workflow = 'login', allowedRoles = null,
     receipts = null, journal = null, ttlMs = 15000, runId = 'session', now = Date.now,
-    observe = null, identityVerified = null, verifiers = {}, scope = null } = {}) {
+    observe = null, identityVerified = null, verifiers = {}, scope = null, screenshot = null } = {}) {
     requireThat(account && typeof account === 'object', 'account_required');
     requireThat(typeof runId === 'string' && runId.length >= 4, 'invalid_run_id');
     requireThat(workflowRoles[workflow] || Array.isArray(allowedRoles), 'unknown_workflow');
@@ -98,6 +104,7 @@ export class BrowserExecutionKernel {
     this.ttlMs = ttlMs; this.runId = runId; this.now = now;
     this.observeImpl = observe || (browser ? () => browser.observe() : null);
     this.identityVerified = identityVerified; this.verifiers = verifiers;
+    this.screenshot = screenshot;
     this.sequence = 0; this.receipts = []; this.storeFailures = []; this.journalFailures = [];
   }
 
@@ -110,6 +117,15 @@ export class BrowserExecutionKernel {
   authorizedRoles() { return [...this.allowedRoles]; }
 
   nextKey(operation) { this.sequence++; return `${this.runId}-s${this.sequence}-${operation}`; }
+
+  // One screenshot for an external caller, taken against this epoch only. The
+  // injected source owns the credential-entry rule.
+  async screenshotFor({ observation = null } = {}) {
+    requireThat(observation?.epoch, 'observation_required');
+    requireThat(this.screenshot, 'screenshot_source_required');
+    const shot = await this.screenshot({ observation });
+    return { ...shot, epoch: observation.epoch };
+  }
 
   // The live browser path already emitted the contract (attachObservation), so
   // its epoch-scoped ids are reused verbatim: the decision epoch and the ids the
@@ -166,6 +182,13 @@ export class BrowserExecutionKernel {
     const operation = candidate.kind;
     const kind = operationKinds[operation];
     requireThat(kind, 'unsupported_action');
+    // Navigation is only ever to an origin this site already allows. An operation
+    // without a destination (navigate_home) uses the site's own home url, which is
+    // already an allowed origin.
+    if (kind === 'navigate' && candidate.destination) {
+      const origin = new URL(candidate.destination).origin;
+      requireThat(this.site?.origins?.includes(origin), 'unexpected_navigation_destination');
+    }
     const control = candidate.control || null;
     const controlId = control ? controlIdFor({ snapshot, observation, control }) : null;
     requireThat(!control || controlId, 'control_not_observed');
@@ -173,6 +196,7 @@ export class BrowserExecutionKernel {
       kind, operation, controlId,
       valueRef: candidate.valueRef ?? valueRefForOperation[operation] ?? null,
       observationEpoch: decided.epoch,
+      destination: candidate.destination ?? null,
       idempotencyKey: this.nextKey(operation),
       expectedPostcondition: expectedPostcondition === undefined
         ? (defaultPostconditions[operation] ?? null) : expectedPostcondition,

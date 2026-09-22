@@ -56,6 +56,30 @@ export function createValueResolver({ account, shippingAddress = null,
   return resolver;
 }
 
+// A short-lived vault for text supplied by an external surface (MCP): the action
+// carries the reference, only trusted executor code resolves it, and the value is
+// never recorded in a receipt, journal or observation.
+export function createEphemeralVault({ prefix = 'operator_value' } = {}) {
+  let counter = 0;
+  const values = new Map();
+  return {
+    register(value) {
+      requireThat(typeof value === 'string' && value.length > 0, 'invalid_value');
+      counter++;
+      const ref = `${prefix}_${counter}`;
+      values.set(ref, value);
+      return ref;
+    },
+    resolve(ref) {
+      const value = values.get(ref);
+      requireThat(typeof value === 'string', 'unknown_value_ref');
+      return value;
+    },
+    has: ref => values.has(ref),
+    refs: () => [...values.keys()],
+  };
+}
+
 // Test/assertion helper: returns the leaked secret when a payload contains one.
 // Used to prove that resolved values stay out of prompts and journals.
 export function findLeakedSecret({ payload, secrets = [] } = {}) {

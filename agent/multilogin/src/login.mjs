@@ -312,7 +312,15 @@ export class LoginBrowser {
       if (kind === 'fill_totp') { this.redact.add(value); this.lastCode = value; }
       await control.handle.fill(value, { timeout: 5000 }); this.filled.add(control.key); return;
     }
-    requireThat(['submit_login', 'open_login', 'choose_totp', 'try_another_way', 'dismiss_cookies', 'open_account_menu', 'open_switch_account'].includes(kind), 'unsupported_action');
+    if (kind === 'type_observed') {
+      // Operator-supplied text reaches the page only through a resolved reference,
+      // and only on an origin this site already allows.
+      requireThat(this.site.origins.includes(new URL(this.page.url()).origin), 'unexpected_login_destination');
+      requireThat(action.valueRef, 'value_ref_required');
+      const value = await this.secrets.resolve(action.valueRef);
+      await control.handle.fill(value, { timeout: 5000 }); return;
+    }
+    requireThat(['submit_login', 'open_login', 'choose_totp', 'try_another_way', 'dismiss_cookies', 'open_account_menu', 'open_switch_account', 'click_observed'].includes(kind), 'unsupported_action');
     this.clicked.add(action.clickKey || `${snapshot.fingerprint}:${control.key}`);
     if (kind === 'submit_login') this.submittedStages.add(fieldStage(snapshot));
     if (['open_account_menu', 'open_switch_account'].includes(kind)) {
