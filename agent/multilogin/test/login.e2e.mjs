@@ -202,29 +202,30 @@ test('youtube identity fails without the signed-in email or for another account'
   const wrong = { ...closed, text: 'Accounts\nOther Person\nsomeone.else@gmail.com\nAdd account\nSign out' };
   assert.equal(verifyIdentity(account, wrong, sites.youtube), false);
 });
-test('the account menu cannot toggle forever when identity evidence never appears', async t => {
+test('the account menu is reopened a bounded number of times and cannot toggle forever', async t => {
   const input = await fixture(t); await input.page.goto(input.site.loginUrl);
+  // The click never leaves the menu open, standing in for a re-render that
+  // discards the opened dropdown, and identity evidence never appears.
   await input.page.locator('body').evaluate(body => {
-    body.innerHTML = '<button id="m">Account menu</button>';
-    document.getElementById('m').onclick = () => {
-      if (document.getElementById('menu')) document.getElementById('menu').remove();
-      else { const menu = document.createElement('div'); menu.id = 'menu';
-        menu.innerHTML = '<tp-yt-paper-item>Switch account</tp-yt-paper-item>'; body.append(menu); }
-    };
+    body.innerHTML = '<button id="m">Account menu</button>'
+      + '<div>Accounts<br>fixture@example.com<br>Add account<br>Sign out</div>';
+    document.getElementById('m').onclick = () => {};
   });
   const account = { ...input.account, platform: 'youtube' };
   const adapter = new LoginBrowser(input.page, account, { site: input.site });
+
   const first = await adapter.observe();
-  const openMenu = adapter.candidates(first);
-  assert.deepEqual(openMenu.map(action => action.kind), ['open_account_menu']);
-  await adapter.execute(openMenu[0], first);
+  assert.deepEqual(adapter.candidates(first).map(action => action.kind), ['open_account_menu']);
+  await adapter.execute(adapter.candidates(first)[0], first);
+
+  // The first reopen did not stick, so one more bounded attempt is allowed.
   const second = await adapter.observe();
-  const openSwitcher = adapter.candidates(second);
-  assert.deepEqual(openSwitcher.map(action => action.kind), ['open_switch_account']);
-  await adapter.execute(openSwitcher[0], second);
-  await input.page.locator('body').evaluate(body => {
-    body.innerHTML = '<div>Accounts<br>fixture@example.com<br>Add account<br>Sign out</div><button id="m">Account menu</button>';
-  });
+  assert.deepEqual(adapter.candidates(second).map(action => action.kind), ['open_account_menu']);
+  await adapter.execute(adapter.candidates(second)[0], second);
+  assert.equal(adapter.menuActionCount, 2);
+
+  // With the bounded attempts used up the menu is no longer offered, so the
+  // control cannot drive an open/close loop.
   assert.deepEqual(adapter.candidates(await adapter.observe()), []);
 });
 test('a generic Code field is TOTP only when the page identifies an authenticator app', async t => {

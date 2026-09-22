@@ -1,5 +1,11 @@
 import { createHash } from 'node:crypto';
 import { PilotError, requireThat, navigationError, totp, createRedactor } from './core.mjs';
+import { maxRecoverySteps, recoveryObservation, recoveryCandidates, validateRecoveryDecision,
+  executeRecoveryAction } from './recovery.mjs';
+
+export const defaultLoginGoal = 'Sign in to the supplied existing account and confirm the expected '
+  + 'identity. Do not create an account, change account settings, or post content. Human confirmation '
+  + 'is only for an external verification this system cannot legitimately supply.';
 
 export const sites = {
   instagram: {
@@ -10,7 +16,16 @@ export const sites = {
   youtube: {
     loginUrl: 'https://accounts.google.com/ServiceLogin?service=youtube&continue=https%3A%2F%2Fwww.youtube.com%2F',
     homeUrl: 'https://www.youtube.com/',
-    origins: ['https://accounts.google.com', 'https://www.youtube.com', 'https://youtube.com', 'https://myaccount.google.com'],
+    // Navigation permission only. Two post-auth origins were observed in the
+    // real Google/YouTube flow and had to be allowed or the adapter aborted on a
+    // legitimate redirect:
+    //   https://gds.google.com          - the landing page observe() rejected
+    //                                     (path /web/landing, then /web/recoveryoptions)
+    //   https://accounts.youtube.com    - YouTube's SetSID hop on the way to youtube.com
+    // credentialOrigins stays unchanged, so credentials can still only be typed
+    // on the Google sign-in origin.
+    origins: ['https://accounts.google.com', 'https://www.youtube.com', 'https://youtube.com', 'https://myaccount.google.com',
+      'https://gds.google.com', 'https://accounts.youtube.com'],
     credentialOrigins: ['https://accounts.google.com'],
   },
 };
@@ -40,6 +55,16 @@ export function classifyPage(snapshot) {
   if (/code.{0,60}(sent|email|sms)|sent.{0,60}(code|email)|text message/.test(text)
     && !/authenticator|authentication app/.test(text)) return 'email_or_sms_verification_required';
   return null;
+}
+
+// Classifications describing an unfamiliar or security-related page, where a
+// model may legitimately recognise a normal navigation or confirm that a person
+// is genuinely required. A definitive credential outcome is deliberately absent:
+// wrong password, unknown account or a rate limit stops deterministically.
+export const recoverableClassifications = ['human_verification_required', 'device_verification_required',
+  'email_or_sms_verification_required', 'account_setup_requires_attention'];
+function recoverableClassification(reason) {
+  return recoverableClassifications.includes(reason);
 }
 
 export function verifyIdentity(account, snapshot, site = sites[account.platform]) {
@@ -77,6 +102,23 @@ export class LoginBrowser {
     this.submittedStages = new Set();
     this.redact = createRedactor([account.username, account.password, account.totp, account.recoveryEmail]);
     this.lastCode = null; this.ownedHandles = [];
+    // Menu toggles are bounded rather than permanently deduped: YouTube re-renders
+    // its masthead after the post-login load and discards an opened dropdown, and
+    // a permanent dedup left the flow with zero legal actions. Attempts are
+    // counted per control so a closed menu can be reopened a bounded number of
+    // times without allowing an open/close toggle loop.
+    this.menuClicks = new Map();
+    this.menuOpenedKeys = new Set();
+    this.recoverySteps = 0;
+    this.recovery = { steps: 0, actions: 0, calls: 0, reasons: [] };
+    this.recoveryFingerprint = null;
+    this.recoveryStalls = 0;
+  }
+  // Level 1 reopening: how many deterministic reopen attempts a menu control gets
+  // before recovery takes over.
+  static get maxMenuReopenAttempts() { return 2; }
+  get menuActionCount() {
+    return [...this.menuClicks.values()].reduce((total, count) => total + count, 0);
   }
   async observe() {
     const url = this.page.url();
@@ -92,6 +134,7 @@ export class LoginBrowser {
         label: element.getAttribute('aria-label') || [...(element.labels || [])].map(label => label.innerText).join(' ')
           || element.getAttribute('placeholder') || element.innerText?.slice(0, 180) || element.querySelector('img')?.alt || '',
         autocomplete: element.getAttribute('autocomplete') || '',
+        role: element.getAttribute('role') || '',
         href: element.tagName === 'A' ? element.href : '',
         formAction: element.form ? element.form.action : '',
         required: Boolean(element.required),
@@ -154,10 +197,15 @@ export class LoginBrowser {
       if (!verifyOnly && authOrigin && fieldActions.length === 0 && /^try another way$/.test(label)) kind = 'try_another_way';
       if (!verifyOnly && this.account.platform === 'youtube' && control.tag === 'a' && /^(sign in|zaloguj się)$/.test(label)) kind = 'open_login';
       if (!kind) continue;
-      // Menu toggles change the page fingerprint every time they open or close;
-      // deduplicate them by control so the same button cannot loop forever.
-      const clickKey = ['open_account_menu', 'open_switch_account'].includes(kind)
-        ? `menu:${control.key}` : `${snapshot.fingerprint}:${control.key}`;
+      // Menu toggles change the page fingerprint every time they open or close,
+      // so a fingerprint key would loop forever. They are instead bounded per
+      // control: a control may be used a small fixed number of times, which
+      // still allows recovering when a re-render discarded the opened menu.
+      const menuKind = ['open_account_menu', 'open_switch_account'].includes(kind);
+      const menuUsed = menuKind ? (this.menuClicks.get(control.key) || 0) : 0;
+      if (menuKind && menuUsed >= LoginBrowser.maxMenuReopenAttempts) continue;
+      const clickKey = menuKind
+        ? `menu:${control.key}:${menuUsed}` : `${snapshot.fingerprint}:${control.key}`;
       if (this.clicked.has(clickKey)) continue;
       if (control.href) {
         try { if (!this.site.origins.includes(new URL(control.href).origin)) continue; } catch { continue; }
@@ -227,6 +275,13 @@ export class LoginBrowser {
     requireThat(['submit_login', 'open_login', 'choose_totp', 'try_another_way', 'dismiss_cookies', 'open_account_menu', 'open_switch_account'].includes(kind), 'unsupported_action');
     this.clicked.add(action.clickKey || `${snapshot.fingerprint}:${control.key}`);
     if (kind === 'submit_login') this.submittedStages.add(fieldStage(snapshot));
+    if (['open_account_menu', 'open_switch_account'].includes(kind)) {
+      this.menuClicks.set(control.key, (this.menuClicks.get(control.key) || 0) + 1);
+      if (kind === 'open_account_menu') this.menuOpenedKeys.add(control.key);
+    }
+    // A deterministic step is real progress, so a recovery episode restarts its
+    // budget here.
+    this.recoverySteps = 0;
     // Our own transition check handles both navigation and asynchronous form submissions.
     await control.handle.click({ timeout: 5000, noWaitAfter: true });
   }
@@ -249,9 +304,18 @@ export class LoginBrowser {
 }
 
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
-  verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform] }) {
+  verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform],
+  goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000 }) {
   const browser = new LoginBrowser(page, account, { site });
   let interstitialBypassed = false;
+  // Recent deterministic actions, so a recovery observation carries context
+  // without ever carrying page content that is not already redacted.
+  const recentActions = [];
+  // Page states that already consumed a full patience window with no usable
+  // controls, so they are not waited on again.
+  const emptyFingerprints = new Set();
+  const finish = result => ({ ...result,
+    recovery: { ...browser.recovery, menuActions: browser.menuActionCount } });
   const network = [];
   const recordNetwork = (request, status, error) => {
     const url = new URL(request.url());
@@ -271,16 +335,75 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     requireThat(Date.now() < deadline, 'login_time_budget_exceeded');
     // Client-rendered login pages can expose text before their controls exist.
     // Wait for actionable evidence without reloading or submitting anything.
-    let snapshot;
-    const readyDeadline = Math.min(deadline, Date.now() + 5000);
-    for (;;) {
-      snapshot = await browser.observe();
-      if (verifyIdentity(account, snapshot, site) || classifyPage(snapshot)
-        || browser.candidates(snapshot, { verifyOnly }).length || Date.now() >= readyDeadline) break;
-      await new Promise(resolve => setTimeout(resolve, 250));
+    let snapshot = await browser.observe();
+    const hasCandidates = () => browser.candidates(snapshot, { verifyOnly }).length > 0;
+    // The patience window exists for client-rendered controls. A page state that
+    // already had a full window and still offered nothing does not get a second
+    // one, so an unstructured page reaches recovery promptly instead of being
+    // re-waited on every single step.
+    if (!emptyFingerprints.has(snapshot.fingerprint)) {
+      const readyDeadline = Math.min(deadline, Date.now() + readyWindowMs);
+      for (;;) {
+        if (verifyIdentity(account, snapshot, site) || classifyPage(snapshot)
+          || hasCandidates() || Date.now() >= readyDeadline) break;
+        await new Promise(resolve => setTimeout(resolve, 250));
+        snapshot = await browser.observe();
+      }
     }
-    if (verifyIdentity(account, snapshot, site)) return { verified: true, steps: step, durationMs: Math.round(performance.now() - started) };
+    if (!hasCandidates()) emptyFingerprints.add(snapshot.fingerprint);
+    if (verifyIdentity(account, snapshot, site)) {
+      return finish({ verified: true, steps: step, durationMs: Math.round(performance.now() - started) });
+    }
     const attention = async reason => onStep({ step, phase: 'attention', reason, page: browser.publicPage(snapshot) });
+    // Level 2 recovery episode. The model may only name a typed capability from
+    // recovery.mjs; the shared choice policy validates it and browser code
+    // executes it. A bounded budget stops a loop. Transport failures never
+    // reach here - runner.mjs handles those as infrastructure.
+    const requestRecovery = async classifiedReason => {
+      if (browser.recoverySteps >= recoveryBudget) {
+        await onStep({ step, phase: 'jev_recovery', state: 'budget_exhausted',
+          reason: classifiedReason || 'no_actions', recoveryStep: browser.recoverySteps, budget: recoveryBudget });
+        return { exhausted: true };
+      }
+      // A page state that is unchanged after two recovery attempts will not
+      // resolve by trying again, so the episode ends instead of spinning.
+      if (browser.recoveryFingerprint === snapshot.fingerprint) browser.recoveryStalls++;
+      else browser.recoveryStalls = 0;
+      browser.recoveryFingerprint = snapshot.fingerprint;
+      if (browser.recoveryStalls >= 2) {
+        await onStep({ step, phase: 'jev_recovery', state: 'stalled',
+          reason: classifiedReason || 'no_actions', recoveryStep: browser.recoverySteps, budget: recoveryBudget });
+        return { exhausted: true };
+      }
+      const candidates = recoveryCandidates({ snapshot, browser, site });
+      if (!candidates.length) return { exhausted: false };
+      const observation = recoveryObservation({ goal, snapshot, browser, recentActions,
+        deterministicState: { step, classifiedReason: classifiedReason || null, verifyOnly,
+          menuOpenedBefore: browser.menuOpenedKeys.size > 0 } });
+      let decision;
+      try {
+        decision = await choose({ page: observation,
+          actions: candidates.map(({ id, description }) => ({ id, description })) });
+      } catch (error) {
+        await onStep({ step, phase: 'jev_recovery', state: 'selection_failed',
+          reason: classifiedReason || 'no_actions',
+          detail: error instanceof PilotError ? error.code : 'selection_failed' });
+        return { failed: true };
+      }
+      browser.recovery.calls++;
+      let action;
+      try { action = validateRecoveryDecision({ decision, candidates }); }
+      catch { return { failed: true }; }
+      browser.recoverySteps++; browser.recovery.steps++;
+      browser.recovery.reasons.push(action.kind);
+      await onStep({ step, phase: 'jev_recovery', state: 'decision', reason: classifiedReason || 'no_actions',
+        action: action.kind, method: decision.method, confidence: decision.confidence,
+        probability: decision.probability, rationale: decision.reason || null,
+        recoveryStep: browser.recoverySteps, budget: recoveryBudget });
+      const outcome = await executeRecoveryAction({ action, snapshot, browser, site, navigate });
+      if (outcome.performed) recentActions.push({ step, action: action.kind, via: 'jev_recovery' });
+      return outcome;
+    };
     const failure = classifyPage(snapshot);
     if (failure) {
       // An email/SMS or device challenge may still offer a path to the
@@ -289,6 +412,15 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
         && account.totp && browser.candidates(snapshot, { verifyOnly })
           .some(action => action.kind === 'choose_totp' || action.kind === 'try_another_way');
       if (!escape) {
+        // An unfamiliar security-looking page is offered to recovery before a
+        // person is asked. Recovery can only resume normal navigation or escalate;
+        // no capability answers a challenge. A definitive credential outcome
+        // (wrong password, unknown account, rate limit) is not an unfamiliar
+        // state, so it stops as before instead of being handed to a model.
+        if (recoverableClassification(failure)) {
+          const recovered = await requestRecovery(failure);
+          if (recovered.performed) continue;
+        }
         await attention(failure);
         // A person may be able to complete a security checkpoint in this same live
         // browser. The hook only observes and waits: it answers nothing, fills
@@ -319,6 +451,13 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       await navigate(page, site.homeUrl);
       continue;
     }
+    if (!actions.length) {
+      // Zero valid actions is the classic unexpected state: an unfamiliar page,
+      // a re-render mid-flight, or a control that disappeared. Recovery is tried
+      // before a person is asked.
+      const recovered = await requestRecovery(null);
+      if (recovered.performed) continue;
+    }
     if (!actions.length) await attention(verifyOnly ? 'session_or_identity_not_verified' : 'unsupported_login_screen');
     requireThat(actions.length > 0, verifyOnly ? 'session_or_identity_not_verified' : 'unsupported_login_screen');
     let decision;
@@ -343,8 +482,16 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       throw error;
     }
     await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', action: action.kind, state: 'after' });
+    recentActions.push({ step, action: action.kind, method: decision.method, via: 'deterministic' });
   }
   throw new PilotError('login_step_budget_exceeded');
+  } catch (error) {
+    // Counters travel with the failure so the job report can show how much
+    // recovery was attempted before the run stopped.
+    if (error && typeof error === 'object') {
+      error.recovery = { ...browser.recovery, menuActions: browser.menuActionCount };
+    }
+    throw error;
   } finally {
     page.off('response', responseListener); page.off('requestfailed', failureListener);
   }
