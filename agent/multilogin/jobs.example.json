@@ -1,0 +1,22 @@
+{
+  "jobs": [
+    {
+      "id": "youtube-01",
+      "platform": "youtube",
+      "accountRef": "yt-account-01",
+      "profileRef": "yt-profile-01"
+    },
+    {
+      "id": "youtube-02",
+      "platform": "youtube",
+      "accountRef": "yt-account-02",
+      "profileRef": "yt-profile-02"
+    },
+    {
+      "id": "youtube-03",
+      "platform": "youtube",
+      "accountRef": "yt-account-03",
+      "profileRef": "yt-profile-03"
+    }
+  ]
+}

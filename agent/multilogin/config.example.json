@@ -9,6 +9,7 @@
   "maxProxySwitches": 1,
   "maxSteps": 20,
   "maxSeconds": 180,
+  "humanCheckpointSeconds": 600,
   "verifyRestart": true,
   "proxyMode": "multilogin",
   "proxyCountry": null,

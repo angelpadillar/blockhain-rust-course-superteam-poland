@@ -1,5 +1,6 @@
 [
   {
+    "ref": "ig-account-01",
     "platform": "instagram",
     "characterId": "character-001",
     "username": "REPLACE_WITH_USERNAME",
@@ -7,10 +8,12 @@
     "totp": "REPLACE_WITH_BASE32_SECRET_OR_OTPAUTH_URI"
   },
   {
+    "ref": "yt-account-01",
     "platform": "youtube",
     "characterId": "character-001",
     "username": "REPLACE_WITH_GOOGLE_EMAIL",
     "password": "REPLACE_WITH_PASSWORD",
+    "totp": "REPLACE_WITH_BASE32_SECRET_OR_OTPAUTH_URI",
     "recoveryEmail": "OPTIONAL_RECOVERY_EMAIL"
   }
 ]

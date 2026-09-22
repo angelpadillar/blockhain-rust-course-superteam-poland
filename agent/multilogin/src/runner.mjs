@@ -18,6 +18,7 @@ export const defaults = {
   launcherUrl: 'https://launcher.mlx.yt:45001', cdpHost: '127.0.0.1',
   osType: process.platform === 'darwin' ? 'macos' : 'linux', cloudStorage: true, headless: false,
   maxAccounts: 6, maxProxySwitches: 1, maxSteps: 20, maxSeconds: 180, verifyRestart: true,
+  humanCheckpointSeconds: 600,
   seedSites: ['https://www.amazon.pl/', 'https://www.ebay.com/'], proxyMode: 'multilogin', proxyCountry: null, proxyPool: [],
 };
 export function validateConfig(supplied) {
@@ -29,6 +30,8 @@ export function validateConfig(supplied) {
   requireThat(Number.isInteger(config.maxProxySwitches) && config.maxProxySwitches >= 0 && config.maxProxySwitches <= 2, 'invalid_proxy_retry_limit');
   requireThat(Number.isInteger(config.maxSteps) && config.maxSteps >= 1 && config.maxSteps <= 30, 'invalid_step_limit');
   requireThat(Number.isInteger(config.maxSeconds) && config.maxSeconds >= 10 && config.maxSeconds <= 300, 'invalid_time_limit');
+  requireThat(Number.isInteger(config.humanCheckpointSeconds) && config.humanCheckpointSeconds >= 1
+    && config.humanCheckpointSeconds <= 7200, 'invalid_human_checkpoint_limit');
   requireThat(['multilogin', 'pool', 'none'].includes(config.proxyMode), 'invalid_proxy_mode');
   requireThat(config.proxyCountry === null || /^[a-z]{2}$/.test(config.proxyCountry), 'invalid_proxy_country');
   requireThat(Array.isArray(config.proxyPool), 'invalid_proxy_pool');
@@ -51,7 +54,7 @@ export async function seedSites(context, urls) {
   }
   return results;
 }
-async function connect(port, config) {
+export async function connect(port, config) {
   const { chromium } = await loadPlaywright();
   let browser;
   try { browser = await chromium.connectOverCDP(`http://${config.cdpHost}:${port}`, { timeout: 15000 }); }
