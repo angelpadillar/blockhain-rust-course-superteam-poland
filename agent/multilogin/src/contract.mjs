@@ -59,15 +59,23 @@ export function controlById(observation, controlId) {
   return observation.controls.find(control => control.id === controlId) || null;
 }
 
-export function buildAction({ kind, controlId = null, valueRef = null, destination = null,
+// `operation` is the workflow vocabulary the executor understands (for example
+// "fill_password"); `kind` stays the small shared browser contract. Keeping both
+// lets every decision source describe the same action without the kernel
+// reverse-engineering a workflow from a click.
+export function buildAction({ kind, operation = null, controlId = null, valueRef = null, destination = null,
   observationEpoch, idempotencyKey, expectedPostcondition = null, expectedControlSignature = null,
   risk = 'read_only', decisionSource, justification = null } = {}) {
   requireThat(actionKinds.includes(kind), 'unsupported_action_kind');
+  requireThat(operation === null || (typeof operation === 'string' && /^[a-z][a-z0-9_]{1,47}$/.test(operation)),
+    'invalid_operation');
   requireThat(decisionSources.includes(decisionSource), 'unsupported_decision_source');
   requireThat(riskClasses.includes(risk), 'unsupported_risk_class');
   requireThat(typeof observationEpoch === 'string' && observationEpoch.length > 0, 'observation_epoch_required');
   requireThat(typeof idempotencyKey === 'string' && idempotencyKey.length >= 8, 'invalid_idempotency_key');
-  return { kind, controlId, valueRef, destination, observationEpoch, idempotencyKey,
+  requireThat(valueRef === null || (typeof valueRef === 'string' && /^[a-z][a-z0-9_]{1,47}$/.test(valueRef)),
+    'invalid_value_ref');
+  return { kind, operation, controlId, valueRef, destination, observationEpoch, idempotencyKey,
     expectedPostcondition, expectedControlSignature, risk, decisionSource, justification };
 }
 

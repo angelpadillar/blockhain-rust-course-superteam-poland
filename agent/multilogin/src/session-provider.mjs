@@ -1,7 +1,12 @@
 import { requireThat } from './core.mjs';
 import { acquireProfileLock } from './profile-lock.mjs';
 import { connect as defaultConnect, stopBrowserProfile } from './runner.mjs';
-import { createObservation } from './contract.mjs';
+import { observationFromSnapshot } from './observation.mjs';
+
+// The snapshot adapter lives in observation.mjs so the login executor can reach
+// it without importing this provider (which reaches the runner). It stays
+// exported here: this is the provider's public surface.
+export { observationFromSnapshot };
 
 // Provider seam: an ALREADY-RUNNING browser session, independent of where the
 // browser came from. This wraps the existing profile lifecycle and the existing
@@ -61,22 +66,6 @@ export class MultiloginSessionProvider {
 }
 
 export const defaultSiteFor = platform => platform;
-
-// Maps an existing login-pilot snapshot into the shared observation contract.
-// Control ids are epoch-scoped: they are only valid with the epoch returned here.
-export function observationFromSnapshot({ snapshot, platform = 'youtube', ttlMs = 15000, now = Date.now() }) {
-  const controls = snapshot.controls.map((control, index) => ({
-    id: `e${index}`,
-    signature: control.key,
-    role: control.role || control.tag,
-    name: control.label || control.name || '',
-    enabled: control.enabled === true,
-    visible: true,
-    inputType: control.type || null,
-    autocomplete: control.autocomplete || null,
-  }));
-  return createObservation({ url: snapshot.url, text: snapshot.text, controls, ttlMs, now });
-}
 
 // Facade implementing the shared session surface over the existing LoginBrowser.
 export function sessionTools({ session, platform = 'youtube', LoginBrowserImpl, siteFor = defaultSiteFor }) {

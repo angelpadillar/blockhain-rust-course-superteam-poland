@@ -120,35 +120,49 @@ export function validateRecoveryDecision({ decision, candidates }) {
   return action;
 }
 
-// Deterministic executor for the chosen capability.
-export async function executeRecoveryAction({ action, browser, site, navigate,
+// A recovery click must show a new page state. Bounded well below the
+// deterministic wait so an unchanged page cannot stall the episode: the loop
+// re-observes on the next step anyway.
+export const recoveryClickPostcondition = { type: 'page_fingerprint_changed', timeoutMs: 2000 };
+
+// Deterministic executor for the chosen capability. A capability that touches the
+// page performs NO browser operation itself: it goes through the shared kernel
+// (workflow authorization -> decision-epoch freshness -> receipt -> dispatch ->
+// postcondition), exactly like a deterministic decision. Jev has no second path.
+export async function executeRecoveryAction({ action, snapshot, observation = null, browser, site,
+  navigate, kernel = null, source = 'jev', justification = null,
   sleep = ms => new Promise(resolve => setTimeout(resolve, ms)) }) {
   requireThat(recoveryCapabilities[action.kind], 'unsupported_recovery_action');
+  const viaKernel = async ({ dispatch, expectedPostcondition }) => {
+    requireThat(kernel, 'execution_kernel_required');
+    requireThat(snapshot && observation?.epoch, 'observation_required');
+    const outcome = await kernel.execute({ candidate: action, snapshot, observation, source, justification,
+      dispatch, expectedPostcondition });
+    return { performed: true, detail: action.kind, receipt: outcome.receipt,
+      postconditionMet: outcome.postcondition.met };
+  };
   switch (action.kind) {
     case 'retry_observation':
-      return { performed: true, detail: 'retry_observation' };
     case 'wait':
-      await sleep(1000);
-      return { performed: true, detail: 'wait' };
+      return viaKernel({ dispatch: async () => { if (action.kind === 'wait') await sleep(1000); return null; },
+        expectedPostcondition: null });
     case 'reopen_account_menu':
-    case 'open_switch_account': {
+    case 'open_switch_account':
+    case 'dismiss_onboarding':
       requireThat(action.control?.handle, 'stale_control');
-      await action.control.handle.click({ timeout: 5000, noWaitAfter: true }).catch(() => {});
-      browser.menuClicks.set(action.control.key, (browser.menuClicks.get(action.control.key) || 0) + 1);
-      if (action.kind === 'reopen_account_menu') browser.menuOpenedKeys.add(action.control.key);
-      browser.recovery.actions++;
-      return { performed: true, detail: action.kind };
-    }
-    case 'dismiss_onboarding': {
-      requireThat(action.control?.handle, 'stale_control');
-      await action.control.handle.click({ timeout: 5000, noWaitAfter: true }).catch(() => {});
-      browser.recovery.actions++;
-      return { performed: true, detail: 'dismiss_onboarding' };
-    }
+      return viaKernel({ expectedPostcondition: recoveryClickPostcondition,
+        dispatch: async () => {
+          await action.control.handle.click({ timeout: 5000, noWaitAfter: true }).catch(() => {});
+          if (['reopen_account_menu', 'open_switch_account'].includes(action.kind)) {
+            browser.menuClicks.set(action.control.key, (browser.menuClicks.get(action.control.key) || 0) + 1);
+            if (action.kind === 'reopen_account_menu') browser.menuOpenedKeys.add(action.control.key);
+          }
+          browser.recovery.actions++;
+          return null;
+        } });
     case 'navigate_home':
-      await navigate(browser.page, site.homeUrl);
-      browser.recovery.actions++;
-      return { performed: true, detail: 'navigate_home' };
+      return viaKernel({ expectedPostcondition: null,
+        dispatch: async () => { await navigate(browser.page, site.homeUrl); browser.recovery.actions++; return null; } });
     case 'complete':
       return { performed: false, complete: true };
     case 'escalate_security_checkpoint':

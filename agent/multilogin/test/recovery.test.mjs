@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { sites, LoginBrowser, runLogin, verifyIdentity, classifyPage } from '../src/login.mjs';
 import { recoveryCandidates, recoveryObservation, validateRecoveryDecision, executeRecoveryAction,
   isInfrastructureFailure, maxRecoverySteps, recoveryCapabilities, onboardingControl } from '../src/recovery.mjs';
+import { BrowserExecutionKernel } from '../src/execution.mjs';
 import { validateChoice } from '../src/jev.mjs';
 import { failurePolicy } from '../src/core.mjs';
 
@@ -288,15 +289,42 @@ test('Skip is offered on the observed profile-picture onboarding page', () => {
   assert.equal(candidates[0].id, 'r0');
 });
 
-test('a safe onboarding dismissal clicks the observed candidate, not a selector', async () => {
+test('a safe onboarding dismissal clicks the observed candidate through the shared kernel', async () => {
   let clicks = 0;
   const browser = { page: {}, recovery: { actions: 0 }, site: sites.youtube };
-  const action = { kind: 'dismiss_onboarding',
-    control: { handle: { click: async () => { clicks++; }, isVisible: async () => true, isEnabled: async () => true } } };
-  const outcome = await executeRecoveryAction({ action, browser, site: sites.youtube, navigate: async () => {} });
-  assert.deepEqual(outcome, { performed: true, detail: 'dismiss_onboarding' });
+  const control = { key: 'sig-skip', tag: 'button', type: '', label: 'Skip', enabled: true,
+    handle: { click: async () => { clicks++; }, isVisible: async () => true, isEnabled: async () => true } };
+  const snapshot = { url: 'https://gds.google.com/web/pgc', text: 'Add a profile picture', fingerprint: 'f1',
+    controls: [control] };
+  const changed = { ...snapshot, text: 'Home', fingerprint: 'f2' };
+  // A decision may only reach the browser through the kernel.
+  const kernel = new BrowserExecutionKernel({ account, site: sites.youtube, workflow: 'recovery',
+    observe: async () => changed });
+  const outcome = await executeRecoveryAction({ action: { kind: 'dismiss_onboarding', control },
+    snapshot, observation: kernel.observe(snapshot).observation, browser, site: sites.youtube,
+    navigate: async () => {}, kernel, source: 'jev' });
+
+  assert.equal(outcome.performed, true);
+  assert.equal(outcome.detail, 'dismiss_onboarding');
+  assert.equal(outcome.postconditionMet, true, 'the page state was observed to change');
+  assert.equal(outcome.receipt.state, 'verified');
+  assert.equal(outcome.receipt.action.operation, 'dismiss_onboarding');
+  assert.equal(outcome.receipt.action.controlId, 'e0', 'the epoch-scoped control id, not a selector');
+  assert.equal(outcome.receipt.action.risk, 'reversible_navigation');
+  assert.equal(outcome.receipt.decisionSource, 'jev');
   assert.equal(clicks, 1, 'the observed candidate handle was clicked once');
   assert.equal(browser.recovery.actions, 1);
+});
+
+test('a recovery capability without the shared kernel fails closed instead of clicking', async () => {
+  let clicks = 0;
+  const browser = { page: {}, recovery: { actions: 0 }, site: sites.youtube };
+  const control = { key: 'sig-skip', tag: 'button', label: 'Skip', enabled: true,
+    handle: { click: async () => { clicks++; }, isVisible: async () => true, isEnabled: async () => true } };
+  await assert.rejects(executeRecoveryAction({ action: { kind: 'dismiss_onboarding', control },
+    snapshot: { url: 'https://gds.google.com/web/pgc', text: 'Skip', controls: [control] },
+    browser, site: sites.youtube, navigate: async () => {} }), /execution_kernel_required/);
+  assert.equal(clicks, 0, 'no browser operation happened outside the kernel');
 });
 
 test('onboarding dismissal is never offered on a security page', () => {
