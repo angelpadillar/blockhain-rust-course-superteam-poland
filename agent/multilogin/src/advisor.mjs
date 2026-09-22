@@ -74,6 +74,10 @@ export function createFrontierVisionAdvisor({ vision = null, maxEscalations = ma
       // A screenshot decision is bound to the epoch it was taken on.
       if (!observation?.epoch) return asAbstain('observation_required');
       if (!vision) return asAbstain('frontier_not_configured');
+      // An unconfigured provider is reported as such and never even screenshots.
+      if (typeof vision.available === 'function' && (await vision.available()) === false) {
+        return asAbstain('frontier_unavailable');
+      }
       if (!permittedActions.length) return asAbstain('no_permitted_actions');
       const used = episode?.escalations ?? metrics.escalations;
       if (used >= maxEscalations) return asAbstain('visual_escalation_budget_exhausted');
@@ -90,6 +94,12 @@ export function createFrontierVisionAdvisor({ vision = null, maxEscalations = ma
         metrics.abstained++; return asAbstain(errorCode(error));
       }
       if (decision?.abstain === true || !decision) { metrics.abstained++; return asAbstain('frontier_abstained'); }
+      if (decision?.humanVerificationRequired === true) {
+        // A person is required: the frontier may say so, but it never solves it.
+        return { humanVerificationRequired: true, reason: decision.reason ?? null,
+          decisionEpoch: observation.epoch,
+          screenshot: { id: screenshot?.name ?? screenshot?.id ?? null, epoch: observation.epoch } };
+      }
       const candidate = permittedActions.find(item => item.id === decision.actionId);
       if (!candidate) { metrics.abstained++; return asAbstain('frontier_action_not_permitted'); }
       return { candidate, method: 'frontier-vision', confidence: decision.confidence ?? null,
@@ -102,11 +112,12 @@ export function createFrontierVisionAdvisor({ vision = null, maxEscalations = ma
 // flow already consumes, so it can be handed in as `choose`, and it adds the
 // epoch and screenshot evidence an L3 decision must carry.
 export function createAdvisorChain({ jev = null, frontier = null, maxEscalations = maxVisualEscalations,
-  classifySecurityCheckpoint = null, onStep = async () => {} } = {}) {
+  classifySecurityCheckpoint = null, onStep = async () => {}, l3Triggers = null } = {}) {
   const metrics = { deterministic: 0, jev: 0, frontier: 0, operator: 0, abstained: 0, escalations: 0 };
   const guide = async request => {
     const { goal = null, page = null, actions = [], observation = null, snapshot = null,
-      classifiedReason = null, visualEvidenceRequired = false, episode = null } = request || {};
+      classifiedReason = null, visualEvidenceRequired = false, episode = null,
+      trigger = null } = request || {};
     requireThat(Array.isArray(actions) && actions.length > 0, 'invalid_action_candidates');
 
     // L1: one permitted action needs no model at all.
@@ -141,9 +152,28 @@ export function createAdvisorChain({ jev = null, frontier = null, maxEscalations
     }
 
     if (frontier) {
+      // L3 runs only for a reason that may escalate. Jev abstaining is itself the
+      // default reason; an explicit trigger must be one of the allowed ones.
+      const escalationTrigger = trigger || (jev ? 'jev_abstained' : null);
+      if (l3Triggers && !l3Triggers.includes(escalationTrigger)) {
+        await onStep({ phase: 'advisor', level: frontier.level, state: 'abstained',
+          reason: 'l3_trigger_not_allowed', trigger: escalationTrigger });
+        metrics.abstained++;
+        throw new PilotError('no_advisor_decision');
+      }
       const used = { escalations: episode?.escalations ?? metrics.escalations };
       const advised = await frontier.advise({ goal, page, observation, permittedActions: actions,
-        episode: used, visualEvidenceRequired });
+        episode: used, visualEvidenceRequired, trigger: escalationTrigger });
+      if (advised?.humanVerificationRequired === true) {
+        // The frontier detected a challenge. It is classified, not solved: the flow
+        // preserves the session and enters L4 with the operator.
+        metrics.operator++;
+        await onStep({ phase: 'advisor', level: frontier.level, state: 'human_verification_required',
+          reason: advised.reason ?? null, screenshotEpoch: advised.screenshot?.epoch ?? null });
+        const error = new PilotError('advisor_requested_operator');
+        error.reason = 'human_verification_required';
+        throw error;
+      }
       if (!isAbstain(advised)) {
         metrics.frontier++; metrics.escalations = used.escalations + 1;
         await onStep({ phase: 'advisor', level: frontier.level, action: advised.candidate.id,
