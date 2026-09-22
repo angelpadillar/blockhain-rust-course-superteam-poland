@@ -7,6 +7,7 @@
 // The caller supplies a toolset via createServer({ toolset }); the CLI entry below
 // builds one only when a browser session is already attached by the runtime.
 import { createInterface } from 'node:readline';
+import { pathToFileURL } from 'node:url';
 import { mcpToolNames, mcpTools } from '../src/mcp.mjs';
 
 export const protocolVersion = '2024-11-05';
@@ -62,10 +63,26 @@ export function createServer({ toolset, write = line => process.stdout.write(`${
   };
 }
 
+// A browser session is attached from outside: either in-process via
+// globalThis.__browserToolset, or by naming a module that exports createToolset()
+// (MCP_TOOLSET_MODULE). The server itself contains no browser logic and no fixture
+// wiring, so the production loop never goes through MCP.
+async function attachedToolset() {
+  if (globalThis.__browserToolset) return globalThis.__browserToolset;
+  const modulePath = process.env.MCP_TOOLSET_MODULE;
+  if (!modulePath) return null;
+  const module = await import(pathToFileURL(modulePath).href);
+  if (typeof module.createToolset !== 'function') {
+    throw new Error('MCP_TOOLSET_MODULE must export createToolset()');
+  }
+  return module.createToolset();
+}
+
 // Only run as a server when executed directly; importing it stays side-effect free.
 if (process.argv[1]?.endsWith('mcp/server.mjs')) {
-  const { createMcpToolset } = await import('../src/mcp.mjs');
-  const toolset = globalThis.__browserToolset || null;
+  let toolset = null;
+  try { toolset = await attachedToolset(); }
+  catch (error) { process.stderr.write(`mcp: toolset module failed: ${error.message}\n`); }
   if (!toolset) process.stderr.write('mcp: no browser toolset attached; tools return browser_not_attached\n');
   await createServer({ toolset }).serve();
 }
