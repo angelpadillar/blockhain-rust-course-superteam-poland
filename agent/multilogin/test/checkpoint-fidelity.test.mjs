@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { captureSafeScreenshot } from '../src/screenshots.mjs';
-import { createTelegramNotifier } from '../src/human-checkpoint.mjs';
+import { announceCheckpoint, createTelegramNotifier } from '../src/human-checkpoint.mjs';
 import { loadPlaywright } from '../src/runner.mjs';
 import { BLANK_HTML, FIXTURE_HTML, PNG_SIGNATURE, VIEWPORT, pngInfo, sha256 }
   from './fixtures/checkpoint-page.mjs';
@@ -206,5 +206,64 @@ test('a document failure still delivers the preview, and it is reported', async 
   const textOnly = await textNotifier.notify({ checkpoint: checkpointFor(join(directory, 'absent.png')) });
   assert.deepEqual(noShot.calls.map(call => call.method), ['sendMessage']);
   assert.equal(textOnly.delivered, 'text');
+});
+
+
+test('announcing a checkpoint binds the job frame and identity, and is idempotent', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'checkpoint-announce-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  await mkdir(join(directory, 'screenshots'), { recursive: true });
+  const shotName = '02-checkpoint_human_verification_required.png';
+  const source = Buffer.concat([PNG_SIGNATURE, Buffer.alloc(2048, 5)]);
+  await writeFile(join(directory, 'screenshots', shotName), source);
+  await writeFile(join(directory, 'job.json'), JSON.stringify({ jobId: 'youtube-live-04',
+    accountRef: 'yt-live-04', profileRef: 'yt-live-profile-04',
+    profileId: '9888f708-e12a-4af4-a6fc-9bda24aaa4c9', state: 'waiting_for_human',
+    stateTransitions: [{ state: 'running' },
+      { state: 'waiting_for_human', reason: 'human_verification_required' }] }));
+
+  const notifier = { sent: [], async notify(args) { this.sent.push(args);
+    return { delivered: 'photo+document', previewMessageId: 21, documentMessageId: 22,
+      documentName: shotName }; } };
+  const first = await announceCheckpoint({ directory, notifier, seconds: 1800, now: () => 1_000_000 });
+  assert.equal(first.repeated, false);
+  assert.equal(first.checkpoint.jobId, 'youtube-live-04');
+  assert.equal(first.checkpoint.accountRef, 'yt-live-04');
+  assert.equal(first.checkpoint.profileRef, 'yt-live-profile-04');
+  assert.equal(first.checkpoint.reason, 'human_verification_required');
+  assert.equal(first.checkpoint.screenshot, join(directory, 'screenshots', shotName),
+    'the job frame is used as-is, never re-captured');
+  assert.equal(first.checkpoint.expiresAt, new Date(1_000_000 + 1_800_000).toISOString());
+  assert.equal(notifier.sent.length, 1);
+  assert.equal(notifier.sent[0].checkpoint.id, first.checkpoint.id);
+
+  // Durable record, and a repeated announce reuses it instead of double-sending.
+  const stored = JSON.parse(await readFile(join(directory, 'human-checkpoint.json'), 'utf8'));
+  assert.equal(stored.id, first.checkpoint.id);
+  assert.equal(stored.messageId, 21);
+  assert.equal(stored.documentMessageId, 22);
+  const second = await announceCheckpoint({ directory, notifier, seconds: 1800, now: () => 1_000_000 });
+  assert.equal(second.repeated, true);
+  assert.equal(second.checkpoint.id, first.checkpoint.id);
+  assert.equal(notifier.sent.length, 2, 'only the same checkpoint is re-announced');
+
+  // A checkpoint that already ended is never reopened or re-announced.
+  await writeFile(join(directory, 'human-checkpoint.json'), JSON.stringify({ ...stored, state: 'resumed' }));
+  const terminal = await announceCheckpoint({ directory, notifier, seconds: 1800, now: () => 1_000_000 });
+  assert.equal(terminal.repeated, true);
+  assert.equal(terminal.delivery, null);
+  assert.equal(terminal.checkpoint.state, 'resumed');
+  assert.equal(notifier.sent.length, 2);
+
+  // A dry run neither persists nor sends.
+  const dryDir = await mkdtemp(join(tmpdir(), 'checkpoint-announce-dry-'));
+  t.after(() => rm(dryDir, { recursive: true, force: true }));
+  await mkdir(join(dryDir, 'screenshots'), { recursive: true });
+  await writeFile(join(dryDir, 'screenshots', shotName), source);
+  await writeFile(join(dryDir, 'job.json'), JSON.stringify({ jobId: 'j',
+    stateTransitions: [{ state: 'waiting_for_human', reason: 'human_verification_required' }] }));
+  const dry = await announceCheckpoint({ directory: dryDir, notifier: null, persist: false, now: () => 1_000_000 });
+  assert.equal(dry.delivery, null);
+  await assert.rejects(readFile(join(dryDir, 'human-checkpoint.json'), 'utf8'), /ENOENT/);
 });
 

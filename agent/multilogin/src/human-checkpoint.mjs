@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import { basename, resolve } from 'node:path';
 import { PilotError, requireThat } from './core.mjs';
 import { readJson, writeJson } from './storage.mjs';
@@ -178,6 +178,53 @@ export async function verifyChallengeCleared({ checkpoint, observe, classify } =
   const classification = classify(snapshot);
   if (classification === checkpoint.reason) return { cleared: false, reason: 'challenge_still_present' };
   return { cleared: true, reason: classification ? `page_now_classified:${classification}` : 'challenge_absent' };
+}
+
+// Bind the frame the job ALREADY captured to a durable checkpoint record and
+// announce it. The image is never re-captured, resized or re-encoded here: the
+// job wrote it through captureSafeScreenshot at native resolution and this only
+// reads the same bytes. The record carries job/profile/checkpoint identity and
+// the expiry, and is reused when one is already waiting, so a repeated announce
+// is idempotent instead of sending the operator a second alert.
+export async function announceCheckpoint({ directory, notifier = null, seconds = 1800,
+  reason = null, screenshotPath = null, now = Date.now, persist = true,
+  fs = { readdir, readFile } } = {}) {
+  requireThat(typeof directory === 'string' && directory.length > 0, 'checkpoint_directory_required');
+  const jobDirectory = resolve(directory);
+  const job = await readJson(resolve(jobDirectory, 'job.json'), null).catch(() => null);
+  const store = createCheckpointStore({ directory: jobDirectory });
+  const existing = await store.load();
+  // A checkpoint that already ended is never reopened or re-announced.
+  if (existing && existing.state !== 'waiting') return { checkpoint: existing, delivery: null, repeated: true };
+  if (existing && Date.parse(existing.expiresAt) > now()) {
+    const delivery = notifier ? await notifier.notify({ checkpoint: existing, screenshotPath }) : null;
+    return { checkpoint: existing, delivery, repeated: true };
+  }
+  const shot = screenshotPath || await newestCheckpointScreenshot({ directory: jobDirectory, fs });
+  const waiting = (job?.stateTransitions || []).filter(item => item.state === 'waiting_for_human');
+  const derived = reason || waiting.at(-1)?.reason
+    || /^checkpoint_(.+)\.png$/.exec(shot ? basename(shot) : '')?.[1] || 'human_verification_required';
+  const checkpoint = createCheckpoint({ jobId: job?.jobId || basename(jobDirectory),
+    accountRef: job?.accountRef || null, profileRef: job?.profileRef || null,
+    origin: job?.origin || 'https://accounts.google.com', reason: derived, seconds,
+    screenshotPath: shot, now });
+  if (persist) await store.save(checkpoint);
+  const delivery = notifier ? await notifier.notify({ checkpoint }) : null;
+  if (delivery && persist) {
+    await store.save({ ...checkpoint, notifiedAt: new Date(now()).toISOString(),
+      messageId: delivery.previewMessageId ?? delivery.messageId ?? null,
+      documentMessageId: delivery.documentMessageId ?? null });
+  }
+  return { checkpoint, delivery, repeated: false };
+}
+
+// The newest checkpoint frame the job's captureSafeScreenshot wrote. The file is
+// chosen by name, never re-rendered.
+async function newestCheckpointScreenshot({ directory, fs }) {
+  let names = [];
+  try { names = await fs.readdir(resolve(directory, 'screenshots')); } catch { return null; }
+  const candidates = names.filter(name => /^.*checkpoint_.*\.png$/.test(name)).sort();
+  return candidates.length ? resolve(directory, 'screenshots', candidates.at(-1)) : null;
 }
 
 export function createTelegramNotifier({ tokenPath = defaultTelegramTokenPath,
