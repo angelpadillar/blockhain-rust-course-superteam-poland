@@ -135,20 +135,22 @@ test('the synthetic checkpoint fixture: notify, wait, /done, re-observe, resume'
   assert.equal(classifyPage(challenge.snapshot()), 'human_verification_required');
 
   // A synthetic PNG stands in for the safe capture the runtime takes.
-  const screenshotPath = join(directory, 'checkpoint.png');
-  await writeFile(screenshotPath, Buffer.from('89504e470d0a1a0a', 'hex'), { mode: 0o600 });
+  const screenshotPath = join(directory, '02-checkpoint_human_verification_required.png');
+  const sourceBytes = Buffer.from('89504e470d0a1a0a0302', 'hex');
+  await writeFile(screenshotPath, sourceBytes, { mode: 0o600 });
 
   const checkpoint = createCheckpoint({ jobId: 'youtube-live-fixture', accountRef: 'yt-live-01',
     origin: 'https://accounts.google.com', reason: 'human_verification_required', seconds: 600,
     screenshotPath });
   await store.save(checkpoint);
 
-  // 1. One photo plus safe metadata is delivered.
+  // 1. A photo preview AND the original PNG document are delivered, both from the
+  //    same source bytes, with safe metadata.
   const send = telegram();
   const notifier = createTelegramNotifier({ ...paths, fetchImpl: send.fetchImpl });
   const delivery = await notifier.notify({ checkpoint });
-  assert.equal(delivery.delivered, 'photo');
-  assert.equal(send.calls[0].method, 'sendPhoto');
+  assert.equal(delivery.delivered, 'photo+document');
+  assert.deepEqual(send.calls.map(call => call.method), ['sendPhoto', 'sendDocument']);
   const form = send.calls[0].options.body;
   assert.equal(form.get('chat_id'), '4242');
   const caption = form.get('caption');
@@ -156,6 +158,17 @@ test('the synthetic checkpoint fixture: notify, wait, /done, re-observe, resume'
   assert.equal(caption.includes('same profile preserved: yes'), true);
   assert.equal(caption.includes('youtube-live-fixture'), true);
   assert.equal(caption.includes('bot-fixture-token'), false, 'never the token');
+
+  // The document is the ORIGINAL screenshot: same bytes, same source filename, so
+  // the operator is never handed a Telegram-recompressed copy.
+  const documentForm = send.calls[1].options.body;
+  assert.equal(documentForm.get('chat_id'), '4242');
+  assert.equal(documentForm.get('document').name, '02-checkpoint_human_verification_required.png');
+  assert.equal(delivery.documentName, '02-checkpoint_human_verification_required.png');
+  assert.deepEqual(Buffer.from(await form.get('photo').arrayBuffer()), sourceBytes);
+  assert.deepEqual(Buffer.from(await documentForm.get('document').arrayBuffer()), sourceBytes,
+    'the document carries the source bytes, not a resized copy');
+  assert.match(documentForm.get('caption'), new RegExp(checkpoint.id));
 
   // 2. The job waits; /status from the allowlisted account reports the checkpoint.
   assert.equal((await store.load()).state, 'waiting');

@@ -19,6 +19,10 @@ export const jobStates = ['queued', 'starting_profile', 'browser_ready', 'runnin
   'success', 'failed', 'cancelled'];
 export const humanCheckpointReasons = ['human_verification_required', 'email_or_sms_verification_required',
   'device_verification_required', 'account_setup_requires_attention'];
+// A checkpoint screenshot is read by a person, so it is captured at the native
+// viewport with a small bounded settle and at most three attempts: a frame under
+// minBytes is treated as blank/half-rendered and retried. Never network-idle.
+export const checkpointCapture = { settleMs: 300, minBytes: 8000, attempts: 3 };
 const jobIdPattern = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}$/;
 
 export function validateJobs(input) {
@@ -130,10 +134,10 @@ export class JobLog {
     }
     return record;
   }
-  async screenshot(page, label, credentialOrigins = []) {
+  async screenshot(page, label, credentialOrigins = [], options = {}) {
     this.screenIndex++;
     const result = await captureSafeScreenshot({ page, directory: resolve(this.directory, 'screenshots'), label,
-      index: this.screenIndex, credentialOrigins });
+      index: this.screenIndex, credentialOrigins, ...options });
     this.screenshots.push({ label, ...result });
     await this.record({ event: 'screenshot', label, ...result });
     return result;
@@ -252,7 +256,7 @@ function wrapProfileApi({ api, log, preserved, preserveOnCheckpoint }) {
 async function studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt = 0 }) {
   const studio = await studioImpl({ page, account, onStep: emit });
   if (studio.state === 'checkpoint' && attempt < 2) {
-    await log.screenshot(page, `studio_checkpoint_${attempt + 1}`, []);
+    await log.screenshot(page, `studio_checkpoint_${attempt + 1}`, [], checkpointCapture);
     const reason = humanCheckpointReasons.includes(studio.reason) ? studio.reason : 'human_verification_required';
     const paused = await waitForHuman({ reason, observe: () => observeStudio(page), log, config, cancel,
       pollMs, onStep: emit });
@@ -272,7 +276,11 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
     await onStep(detail);
   };
   const requestHumanCheckpoint = async context => {
-    await log.screenshot(context.page, `checkpoint_${context.reason}`, site.credentialOrigins);
+    // A person has to read this frame: capture the native viewport, let a
+    // half-painted first frame settle, and retry a bounded number of times when
+    // the PNG is suspiciously small (a near-blank page).
+    await log.screenshot(context.page, `checkpoint_${context.reason}`, site.credentialOrigins,
+      checkpointCapture);
     return waitForHuman({ reason: context.reason, observe: () => context.browser.observe(),
       log, config, cancel, pollMs, onStep: emit });
   };

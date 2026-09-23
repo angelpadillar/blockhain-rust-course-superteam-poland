@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { basename, resolve } from 'node:path';
 import { PilotError, requireThat } from './core.mjs';
 import { readJson, writeJson } from './storage.mjs';
 import { loadSecret } from './frontier.mjs';
@@ -192,7 +192,7 @@ export function createTelegramNotifier({ tokenPath = defaultTelegramTokenPath,
   let failures = 0;
   let backoffUntil = 0;
   const diagnostics = { unauthorizedSender: 0, notified: 0, commands: 0, pollFailures: 0,
-    duplicates: 0, backoffSkips: 0, lastError: null };
+    duplicates: 0, backoffSkips: 0, documentFailures: 0, lastError: null };
 
   // The offset and the recent update ids live in a private file, so a restart
   // neither re-reads old commands nor loses its place in the queue.
@@ -256,8 +256,15 @@ export function createTelegramNotifier({ tokenPath = defaultTelegramTokenPath,
         ? { notifier: 'telegram', state: 'available', chat: resolved.chatId, user: resolved.userId }
         : { notifier: 'telegram', state: 'unavailable', code: resolved.code };
     },
-    // One photo plus safe metadata. Never credentials, never page text.
-    async notify({ checkpoint, screenshotPath = null } = {}) {
+    // A checkpoint screenshot plus safe metadata. Never credentials, never page text.
+    //
+    // Telegram re-encodes anything sent as a photo (sendPhoto), which softens fine
+    // text and detail. The operator therefore gets BOTH: a photo preview for the
+    // immediate alert, and the ORIGINAL PNG as a document, sent with the same
+    // bytes and the same source filename so nothing is resized or recompressed.
+    // The preview is sent first so the alert is visible even if the document
+    // upload is slow.
+    async notify({ checkpoint, screenshotPath = null, sendOriginal = true } = {}) {
       requireThat(checkpoint?.id, 'checkpoint_required');
       const resolved = await resolveConfig();
       requireThat(resolved.ok, `telegram_unavailable:${resolved.code}`);
@@ -269,17 +276,40 @@ export function createTelegramNotifier({ tokenPath = defaultTelegramTokenPath,
         `reply: /done ${checkpoint.id}  |  /status ${checkpoint.id}  |  /cancel ${checkpoint.id}`,
       ].filter(Boolean).join('\n');
       const path = screenshotPath || checkpoint.screenshot;
-      if (path) {
-        const bytes = await readFile(path).catch(() => null);
-        if (bytes) {
-          const form = new FormData();
-          form.set('chat_id', resolved.chatId);
-          form.set('caption', caption);
-          form.set('photo', new Blob([bytes], { type: 'image/png' }), 'checkpoint.png');
-          const result = await call('sendPhoto', null, { form });
-          diagnostics.notified++;
-          return { ok: true, messageId: result?.message_id ?? null, delivered: 'photo' };
+      const bytes = path ? await readFile(path).catch(() => null) : null;
+      if (bytes) {
+        // 1. Photo preview: the alert itself, already captioned with the checkpoint.
+        const preview = new FormData();
+        preview.set('chat_id', resolved.chatId);
+        preview.set('caption', caption);
+        preview.set('photo', new Blob([bytes], { type: 'image/png' }), 'checkpoint.png');
+        const photo = await call('sendPhoto', null, { form: preview });
+        diagnostics.notified++;
+        // 2. The original PNG verbatim, so the operator can read the fine detail.
+        const name = basename(String(path));
+        let document = null;
+        let documentError = null;
+        if (sendOriginal) {
+          const original = new FormData();
+          original.set('chat_id', resolved.chatId);
+          original.set('caption', `Original screenshot, no Telegram recompression: ${checkpoint.id}`);
+          original.set('document', new Blob([bytes], { type: 'image/png' }), name);
+          try { document = await call('sendDocument', null, { form: original }); diagnostics.notified++; }
+          catch (error) { documentError = error?.code || 'document_failed'; diagnostics.documentFailures++; }
         }
+        return { ok: true,
+          messageId: photo?.message_id ?? null,
+          previewMessageId: photo?.message_id ?? null,
+          photoFileId: photo?.photo?.at?.(-1)?.file_id ?? null,
+          // Telegram's own view of the photo it decided to store, for the
+          // fidelity diagnostic: it may be recompressed and/or resized.
+          photoSizes: (photo?.photo ?? []).map(size => ({ width: size.width ?? null,
+            height: size.height ?? null, bytes: size.file_size ?? null })),
+          documentMessageId: document?.message_id ?? null,
+          documentFileId: document?.document?.file_id ?? null,
+          documentName: sendOriginal ? name : null,
+          documentError,
+          delivered: document ? 'photo+document' : 'photo' };
       }
       const result = await call('sendMessage', { chat_id: resolved.chatId, text: caption });
       diagnostics.notified++;
