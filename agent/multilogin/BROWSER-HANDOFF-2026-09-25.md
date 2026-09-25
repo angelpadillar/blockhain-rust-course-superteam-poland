@@ -1,5 +1,50 @@
 # Browser runtime handoff — 2026-09-25
 
+## Priority update (later on 2026-09-25)
+
+TikTok warmup is complete and out of scope. The live browser objective is now
+**YouTube session triage + recovery**: keep 01/02/03 intact, recover 04 (human
+checkpoint) and decide 05.
+
+- **Discord replaces Telegram.** `src/discord-notifier.mjs` (webhook, no bot)
+  sends job, profile label, state, reason, origin+path, timestamp, recovery
+  steps, redacted visible-text summary, resume command, the canonical PNG and the
+  focused region PNG. Retry policy: 429 honours `retry_after`, 5xx backs off, 4xx
+  is final. Live channel status: **not provisioned yet** (`webhook_secret_missing`)
+  — place the webhook at `private/discord-webhook-url` (mode 600) or set
+  `DISCORD_WEBHOOK_URL`. The orchestrator's inbound command loop no longer starts
+  (webhooks have no poll), so nothing depends on Telegram.
+- **Multilogin labeling.** The metadata response has no note/tag field; the only
+  label-like field is the profile name. `src/profile-labels.mjs` renames with the
+  profile's own `parameters` sent back byte-identically and re-reads the profile;
+  a moved fingerprint/proxy aborts. Applied live:
+  `YT-01..03 | GOOD | Studio verified`, `YT-04 | HUMAN | security verification`,
+  `YT-05 | BAD | cancelled / login incomplete`. All five proxies remain
+  socks5/custom and no profile is in use.
+- **Canonical health store** (`<data>/health.json`, `npm run browser:profiles`):
+  GOOD 3 | HUMAN 1 | BAD 1. A proxy outage never downgrades a proven session; the
+  note column carries the failure. Registry/evidence replay is authoritative when
+  the store has no record.
+- **Human checkpoint flow**: detect → `challengeSettleMs` (1500 ms) → re-observe
+  once → only a still-present security surface is captured, announced and
+  WAITING_FOR_HUMAN; the operator clears it in the preserved browser and the same
+  process resumes. A self-clearing surface never alerts (e2e-tested).
+- **Bandwidth**: per-job CDP accounting plus video-endpoint blocking, and YouTube
+  runs start at the home/auth surface. Live measurement for the YT-01 reopen:
+  **6.597 MB**, 56 media requests blocked, media bytes 26.8 KB of the total;
+  scripts/TLS dominate. No Google auth requests were touched.
+- **Live YT-01 reopen (guarded, reuse mode)**: same profile `ab6f81fa…`,
+  `BROWSER_ATTACHED` → `AUTH_CHECK` → **AUTHENTICATED** (signed-in identity
+  verified, 3 deterministic actions, zero model calls, no credential submitted)
+  → **STUDIO_VERIFIED** → restart start failed the launcher's proxy IP check
+  (`proxy_connection_failed`, `rotations: 0`). A second attempt failed at start.
+  The intermittent pass/fail is the same `PROXY_TRAFFIC_EXHAUSTED` condition: the
+  check service occasionally validates, then refuses again. 01/02/03 were not
+  reset; the profile is stopped.
+- **Still external**: provision the Discord webhook and restore the Multilogin
+  proxy traffic balance. Until then `--reuse-existing-proxy` keeps every run
+  fail-closed with zero rotation.
+
 ## CURRENT_BRANCH
 `browser/single-command-job` in the worktree
 `/Users/buena/Code/blockchain-rust-superteam-poland-browser` (the original

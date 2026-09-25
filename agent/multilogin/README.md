@@ -19,7 +19,7 @@ The current implementation was reviewed against the supplied `JEV-BROWSER-MULTIL
 - Up to five account workers run concurrently. A registry lock prevents competing batches, each account owns separate lifecycle records, and duplicate browser-control endpoints are rejected before credentials can cross profiles.
 - Known username/password forms follow a fixed field order; Jev is a fallback for ambiguous permitted choices. A blocked account is recorded independently while other workers continue.
 
-This is a bounded CLI/library pilot, not a universal browser agent or a public job API. Account-page variants need live validation. TikTok, Hotmail and fviainboxes.com mailbox-code retrieval are not yet implemented. Email/SMS, passkeys, CAPTCHA, account restrictions, registration and consent/setup screens request attention. The account record can retain a recovery-email address, but that alone does not grant mailbox access.
+This is a bounded CLI/library pilot, not a universal browser agent or a public job API. Account-page variants need live validation. TikTok warmup is complete and out of scope; Hotmail and fviainboxes.com mailbox-code retrieval are not yet implemented. Email/SMS, passkeys, CAPTCHA, account restrictions, registration and consent/setup screens request attention. The account record can retain a recovery-email address, but that alone does not grant mailbox access.
 
 ## VPS installation
 
@@ -91,7 +91,7 @@ profile, verifies its proxy, starts the profile, takes the launcher-returned CDP
 endpoint, attaches Playwright, inspects the authenticated state, resumes instead
 of re-logging-in when the session persisted, runs the deterministic flow with
 bounded JEV recovery for ambiguous states, detects a verification checkpoint,
-announces it on Telegram, waits for the person, resumes after the challenge is
+announces it on Discord, waits for the person, resumes after the challenge is
 genuinely gone, verifies YouTube Studio, restarts the profile, proves restart
 persistence and writes a structured `result.json`. From the repository root:
 
@@ -122,7 +122,7 @@ The run is governed by the formal lifecycle (`PENDING`, `PROFILE_READY`,
 `<data>/jobs/<job-id>/lifecycle.json` + `lifecycle.ndjson` with the observation,
 selected action, action source (`deterministic`, `jev`, `frontier`, `operator`,
 `human`), result, verification, elapsed time and recovery counters. On a
-security checkpoint the same process announces the job's own frame on Telegram,
+security checkpoint the same process announces the job's own frame on Discord,
 accepts `/status`, `/done` and `/cancel` while it waits, and resumes the live
 flow only after its own re-observation shows the challenge is gone; `/done` alone
 never resumes anything. A timed-out checkpoint ends in `WAITING_FOR_HUMAN` with
@@ -133,9 +133,9 @@ At a checkpoint the capture is a bundle, not one frame: the canonical native
 viewport PNG (unchanged bytes), a full-page PNG, a focused challenge-region PNG
 when one is detectable, and a `-context.json` sidecar with URL (origin+path),
 title, visible-text summary (through the account redactor), viewport, device
-pixel ratio, timestamp and job/profile identity. Telegram receives the canonical
+pixel ratio, timestamp and job/profile identity. Discord receives the canonical
 PNG as a photo preview plus the byte-identical PNG as a document, so the fine
-detail survives Telegram's own recompression. The focused crop is gated by the
+detail survives chat-platform recompression. The focused crop is gated by the
 visibility and stability rules ported from the VPS canary checkpoint work: a
 challenge frame parked off-screen (reCAPTCHA bframes sit at y=-9999) or smaller
 than a real panel is never cropped, and a frame that moves between two bounded
@@ -179,6 +179,49 @@ budget. Recovery episodes can be remembered in a compact causal store under
 most a couple of relevant episodes recalled into a model request; page text,
 credentials and query strings never are.
 
+## Profile health, labels and Discord
+
+The live browser objective is YouTube session triage. `npm run browser:profiles`
+prints the canonical health table from the job evidence and the registry:
+
+```sh
+npm run browser:profiles -- --youtube
+npm run browser:profiles -- --remote            # read the live VPS store
+npm run browser:profiles -- --remote --apply-labels
+```
+
+Statuses: `GOOD_AUTHENTICATED`, `GOOD_PERSISTED`, `WAITING_FOR_HUMAN`,
+`BAD_LOGIN`, `BAD_PROXY`, `CANCELLED`, `UNKNOWN`. Each run merge-writes
+`<data>/health.json` (profileId, accountRef, platform, status, lastVerifiedAt,
+studioVerified, restartPersistenceVerified, proxyStatus, humanCheckpoint,
+lastFailureReason, lastJobId). `--apply-labels` renames the Multilogin profile to
+the same state (`YT-04 | HUMAN | security verification`, for example). The only
+label-like field the API exposes is the profile name, so the rename carries the
+profile's own `parameters` back byte-identically and re-reads the profile
+afterwards: a changed fingerprint, proxy or storage aborts the label and leaves
+the profile alone. `--dry-run-labels` is implicit without `--apply-labels`.
+
+Telegram is no longer the alert channel. A human checkpoint is announced through
+a Discord webhook (`DISCORD_WEBHOOK_URL` or the mode-600 private file
+`private/discord-webhook-url`): job, profile label, state, reason, origin+path,
+timestamp, recovery steps used, the redacted visible-text summary, the exact
+resume command, the canonical viewport PNG and the focused challenge-region PNG
+as files. Delivery is bounded-retry (429 uses Discord's `retry_after`, 5xx backs
+off, 4xx is not retried); a notification failure is recorded and never touches
+the profile, the browser or the durable checkpoint record.
+
+A challenge gets a bounded settle first: detect → wait `challengeSettleMs`
+(default 1500 ms) → re-observe once. Only a still-present security surface
+becomes a human checkpoint; a surface that finishes loading on its own continues
+the flow with no alert.
+
+Bandwidth is accounted per job through CDP (`totalBytes`, per-type bytes,
+`blockedMedia`) and reported in MB in `result.json`. Video/audio endpoints
+(`*videoplayback*`, `.mp4`, `.webm`, `.m3u8`, `googlevideo.com`) are refused;
+auth, document, script and XHR traffic is never touched. A YouTube run starts at
+the home/auth surface so an existing session is verified without a Google
+redirect, and `verifyOnly` reopens still cheaper.
+
 ## Recovery and evidence
 
 Reports distinguish authentication failure, unsupported screens, transport failures, Jev uncertainty, account-identity mismatch and lifecycle reconciliation. A `pending` lifecycle marker or stale `run.lock` requires inspecting the actual profile/process state before clearing it. Never delete the mapping to retry a failed login. The dedicated smoke-profile reconciliation command is operator tooling and does not reset purchased-account state.
@@ -190,7 +233,7 @@ npm test
 npm run test:browser
 ```
 
-`test/human-checkpoint.e2e.mjs` drives the checkpoint hook and the job runner against a real headless browser and a local provider fixture: a person clears the challenge in the browser the job is holding, the run resumes, and a second job finishes while its sibling waits. `test/orchestrator.e2e.mjs` runs the whole `browser:job` lifecycle in fake mode: checkpoint and Telegram announce, human clearance, Studio verification, restart persistence, a timed-out checkpoint that resumes on the same profile, and an authenticated session that resumes without resubmitting credentials. `test/lifecycle.test.mjs`, `test/orchestrator.test.mjs`, `test/screenshot-bundle.test.mjs`, `test/recovery-memory.test.mjs` and `test/action-router.test.mjs` cover the state machine, the restart/resume inspection, the Telegram command loop, screenshot dimensions/integrity and the tool-routing boundary. Nothing in the suite reaches a live account.
+`test/human-checkpoint.e2e.mjs` drives the checkpoint hook and the job runner against a real headless browser and a local provider fixture: a person clears the challenge in the browser the job is holding, the run resumes, and a second job finishes while its sibling waits. `test/orchestrator.e2e.mjs` runs the whole `browser:job` lifecycle in fake mode: checkpoint and Discord announce, human clearance, Studio verification, restart persistence, a timed-out checkpoint that resumes on the same profile, and an authenticated session that resumes without resubmitting credentials. `test/lifecycle.test.mjs`, `test/orchestrator.test.mjs`, `test/screenshot-bundle.test.mjs`, `test/recovery-memory.test.mjs` and `test/action-router.test.mjs` cover the state machine, the restart/resume inspection, the Discord webhook shape, screenshot dimensions/integrity and the tool-routing boundary. Nothing in the suite reaches a live account.
 
 Browser tests use isolated local fixtures and a deterministic decision function, not live Jev or social accounts. The infrastructure smoke script uses the actual Multilogin browser and can call real Jev when its key is supplied. See `VALIDATION.md` for observed results and remaining gaps.
 

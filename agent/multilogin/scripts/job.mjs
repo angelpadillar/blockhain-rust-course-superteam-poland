@@ -22,7 +22,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const packageDirectory = resolve(here, '..');
 const passthrough = new Set(['--data', '--config', '--accounts', '--accounts-dir', '--provider', '--model',
   '--human-checkpoint-seconds', '--token-file', '--key-file', '--checkpoint-poll-ms', '--telegram-poll-ms',
-  '--no-notify', '--no-telegram', '--no-memory', '--preserve-on-checkpoint', '--stdin-secrets', '--json']);
+  '--no-notify', '--no-telegram', '--no-memory', '--preserve-on-checkpoint', '--stdin-secrets', '--json',
+  '--reuse-existing-proxy', '--load-media', '--discord-webhook-file', '--challenge-settle-ms', '--resume-command']);
 
 export function parseArguments(argv) {
   const options = { positional: [], passthrough: [] };
@@ -44,15 +45,19 @@ export function parseArguments(argv) {
   return options;
 }
 
-export function remoteCommands({ host, directory, jobFile, jobId, extra = [] } = {}) {
+export function remoteCommands({ host, directory, jobFile, jobId, extra = [], dataDirectory = null } = {}) {
   const name = basename(jobFile);
   const remoteJob = `${directory}/private/jobs/${name}`;
-  const flags = ['--data', '/data/state', '--config', 'config.vps.json', '--accounts', '/data/accounts.json'];
+  const data = dataDirectory || '/data/account-pilot';
+  const flags = ['--data', data, '--config', 'config.vps.json', '--accounts', '/data/accounts.json',
+    '--token-file', '/data/automation-token', '--provider', 'fireworks', '--key-file', '/data/fireworks-api-key'];
+  const mounts = `-v ${directory}-orchestrator/src:/app/src:ro`
+    + ` -v ${directory}-orchestrator/job-runner.mjs:/app/job-runner.mjs:ro`;
   return [
-    `ssh ${host} "mkdir -p ${directory}/private/jobs ${directory}/private/state && chmod 700 ${directory}/private/jobs"`,
-    `cat ${jobFile} | ssh ${host} "cat > ${remoteJob} && chmod 600 ${remoteJob}"`,
-    `ssh ${host} "cd ${directory} && docker compose run --rm --no-deps -T --entrypoint node worker job-runner.mjs /data/jobs/${name} ${flags.join(' ')} ${extra.join(' ')}"`,
-    `ssh ${host} "cd ${directory} && tar -C private/state/jobs/${jobId} -czf - ." | tar -xzf - -C .browser-jobs/${jobId}`,
+    `ssh ${host} "mkdir -p ${directory}/private/jobs ${directory}/private/state && chmod 700 ${directory}/private/jobs && chown 1000:1000 ${directory}/private/jobs"`,
+    `cat ${jobFile} | ssh ${host} "cat > ${remoteJob} && chmod 600 ${remoteJob} && chown 1000:1000 ${remoteJob}"`,
+    `ssh ${host} "cd ${directory} && docker compose run --rm --no-deps -T ${mounts} --entrypoint node worker job-runner.mjs /data/jobs/${name} ${flags.join(' ')} ${extra.join(' ')}"`,
+    `ssh ${host} "cd ${directory} && tar -C ${data}/jobs/${jobId} -czf - ." | tar -xzf - -C .browser-jobs/${jobId}`,
   ];
 }
 
@@ -99,20 +104,26 @@ export async function main(argv = process.argv.slice(2)) {
   const name = basename(jobFile);
   const remoteJob = `${directory}/private/jobs/${name}`;
   // 1. Ensure the remote job directory exists.
-  const prepare = spawnSync('ssh', [host, `mkdir -p ${directory}/private/jobs ${directory}/private/state && chmod 700 ${directory}/private/jobs`],
+  const prepare = spawnSync('ssh', [host, `mkdir -p ${directory}/private/jobs ${directory}/private/state && chmod 700 ${directory}/private/jobs && chown 1000:1000 ${directory}/private/jobs`],
     { stdio: ['ignore', 'inherit', 'inherit'] });
   if (prepare.status !== 0) { console.error(JSON.stringify({ status: 'stopped', reason: 'remote_prepare_failed' })); process.exitCode = 1; return 1; }
-  // 2. Copy the job file (mode 600 at the destination).
-  const copy = spawnSync('ssh', [host, `cat > ${remoteJob} && chmod 600 ${remoteJob}`],
+  // 2. Copy the job file (mode 600 at the destination) and hand it to the
+  //    container's uid so the worker can read it.
+  const copy = spawnSync('ssh', [host, `cat > ${remoteJob} && chmod 600 ${remoteJob} && chown 1000:1000 ${remoteJob}`],
     { input: await readFile(jobFile), stdio: ['pipe', 'inherit', 'inherit'] });
   if (copy.status !== 0) { console.error(JSON.stringify({ status: 'stopped', reason: 'remote_job_copy_failed' })); process.exitCode = 1; return 1; }
   if (options.build) {
     const build = spawnSync('ssh', [host, `cd ${directory} && docker compose build worker`], { stdio: 'inherit' });
     if (build.status !== 0) { console.error(JSON.stringify({ status: 'stopped', reason: 'remote_build_failed' })); process.exitCode = 1; return 1; }
   }
-  // 3. Run the job; stream stdout and capture the final result line.
-  const flags = ['--data', '/data/state', '--config', 'config.vps.json', '--accounts', '/data/accounts.json'];
-  const command = `cd ${directory} && docker compose run --rm --no-deps -T --entrypoint node worker `
+  const dataDirectory = process.env.BROWSER_JOB_DATA || '/data/account-pilot';
+  const mounts = `-v ${directory}-orchestrator/src:/app/src:ro`
+    + ` -v ${directory}-orchestrator/job-runner.mjs:/app/job-runner.mjs:ro`;
+  const flags = ['--data', dataDirectory, '--config', 'config.vps.json', '--accounts', '/data/accounts.json',
+    '--token-file', process.env.BROWSER_TOKEN_FILE || '/data/automation-token',
+    '--provider', process.env.BROWSER_MODEL_PROVIDER || 'fireworks',
+    '--key-file', process.env.BROWSER_KEY_FILE || '/data/fireworks-api-key'];
+  const command = `cd ${directory} && docker compose run --rm --no-deps -T ${mounts} --entrypoint node worker `
     + `job-runner.mjs /data/jobs/${name} ${flags.join(' ')} ${extra.join(' ')}`;
   const run = spawn('ssh', [host, command], { stdio: ['inherit', 'pipe', 'inherit'] });
   let captured = '';
@@ -132,14 +143,15 @@ export async function main(argv = process.argv.slice(2)) {
   if (mirrorId) {
     const destination = resolve(process.cwd(), '.browser-jobs', mirrorId);
     await mkdir(destination, { recursive: true });
-    const tar = spawn('ssh', [host, `cd ${directory} && tar -C private/state/jobs/${mirrorId} -czf - .`], { stdio: ['ignore', 'pipe', 'inherit'] });
+    const tar = spawn('ssh', [host, `cd ${directory} && tar -C ${dataDirectory}/jobs/${mirrorId} -czf - .`], { stdio: ['ignore', 'pipe', 'inherit'] });
     const extract = spawn('tar', ['-xzf', '-', '-C', destination], { stdio: ['pipe', 'inherit', 'inherit'] });
     tar.stdout.pipe(extract.stdin);
-    await Promise.all([
+    const [tarCode, extractCode] = await Promise.all([
       new Promise(resolvePromise => tar.once('exit', resolvePromise)),
       new Promise(resolvePromise => extract.once('exit', resolvePromise)),
     ]);
-    console.log(JSON.stringify({ event: 'artifacts_mirrored', jobId: mirrorId, path: destination }));
+    if (tarCode === 0 && extractCode === 0) console.log(JSON.stringify({ event: 'artifacts_mirrored', jobId: mirrorId, path: destination }));
+    else console.error(JSON.stringify({ event: 'artifacts_mirror_failed', jobId: mirrorId, tarCode, extractCode }));
   }
   process.exitCode = code;
   return code;

@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
-import { basename, resolve } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 import { PilotError, requireThat } from './core.mjs';
 import { readJson, writeJson } from './storage.mjs';
 import { loadSecret } from './frontier.mjs';
@@ -187,7 +187,8 @@ export async function verifyChallengeCleared({ checkpoint, observe, classify } =
 // the expiry, and is reused when one is already waiting, so a repeated announce
 // is idempotent instead of sending the operator a second alert.
 export async function announceCheckpoint({ directory, notifier = null, seconds = 1800,
-  reason = null, screenshotPath = null, now = Date.now, persist = true,
+  reason = null, screenshotPath = null, now = Date.now, persist = true, label = null,
+  recovery = null, resumeCommand = null,
   fs = { readdir, readFile } } = {}) {
   requireThat(typeof directory === 'string' && directory.length > 0, 'checkpoint_directory_required');
   const jobDirectory = resolve(directory);
@@ -197,10 +198,19 @@ export async function announceCheckpoint({ directory, notifier = null, seconds =
   // A checkpoint that already ended is never reopened or re-announced.
   if (existing && existing.state !== 'waiting') return { checkpoint: existing, delivery: null, repeated: true };
   if (existing && Date.parse(existing.expiresAt) > now()) {
-    const delivery = notifier ? await notifier.notify({ checkpoint: existing, screenshotPath }) : null;
+    const existingShot = screenshotPath || existing.screenshot || null;
+    const existingSidecar = existingShot ? await checkpointSidecar(existingShot) : null;
+    const delivery = notifier ? await notifier.notify({ checkpoint: existing, screenshotPath: existingShot,
+      regionPath: existingSidecar?.files?.region && existingShot
+        ? resolve(dirname(existingShot), existingSidecar.files.region) : null,
+      label, url: existingSidecar?.url ?? null, visibleText: existingSidecar?.visibleText ?? null,
+      recovery, resumeCommand }) : null;
     return { checkpoint: existing, delivery, repeated: true };
   }
   const shot = screenshotPath || await newestCheckpointScreenshot({ directory: jobDirectory, fs });
+  // The bundle sidecar carries the already-redacted visible text and the
+  // origin+path page identity; it is read, never regenerated.
+  const sidecar = shot ? await checkpointSidecar(shot) : null;
   const waiting = (job?.stateTransitions || []).filter(item => item.state === 'waiting_for_human');
   const derived = reason || waiting.at(-1)?.reason
     || /^checkpoint_(.+)\.png$/.exec(shot ? basename(shot) : '')?.[1] || 'human_verification_required';
@@ -209,7 +219,10 @@ export async function announceCheckpoint({ directory, notifier = null, seconds =
     origin: job?.origin || 'https://accounts.google.com', reason: derived, seconds,
     screenshotPath: shot, now });
   if (persist) await store.save(checkpoint);
-  const delivery = notifier ? await notifier.notify({ checkpoint }) : null;
+  const regionPath = sidecar?.files?.region && shot ? resolve(dirname(shot), sidecar.files.region) : null;
+  const delivery = notifier ? await notifier.notify({ checkpoint, screenshotPath: shot, regionPath,
+    label, url: sidecar?.url ?? null, visibleText: sidecar?.visibleText ?? null,
+    recovery, resumeCommand }) : null;
   if (delivery && persist) {
     await store.save({ ...checkpoint, notifiedAt: new Date(now()).toISOString(),
       messageId: delivery.previewMessageId ?? delivery.messageId ?? null,
@@ -227,6 +240,14 @@ async function newestCheckpointScreenshot({ directory, fs }) {
   const candidates = names.filter(name => /^.*checkpoint_.*\.png$/.test(name)
     && !/-(full|region|context)\.(png|json)$/.test(name)).sort();
   return candidates.length ? resolve(directory, 'screenshots', candidates.at(-1)) : null;
+}
+
+// The canonical capture's own context sidecar (written by captureSafeScreenshot).
+async function checkpointSidecar(screenshotPath) {
+  try {
+    const sidecarPath = screenshotPath.replace(/\.png$/, '-context.json');
+    return await readJson(sidecarPath, null);
+  } catch { return null; }
 }
 
 export function createTelegramNotifier({ tokenPath = defaultTelegramTokenPath,

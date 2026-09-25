@@ -11,7 +11,8 @@
 // job, account, profile and expiry. A repeated announce for a checkpoint that is
 // already waiting reuses that record instead of sending a second alert.
 import { errorCode } from '../src/core.mjs';
-import { announceCheckpoint, createTelegramNotifier } from '../src/human-checkpoint.mjs';
+import { announceCheckpoint } from '../src/human-checkpoint.mjs';
+import { createDiscordNotifier } from '../src/discord-notifier.mjs';
 
 const flag = (argv, name, fallback = null) => {
   const index = argv.indexOf(`--${name}`);
@@ -24,8 +25,11 @@ try {
   if (!directory) throw new Error('job_required');
   const dryRun = argv.includes('--dry-run');
   const { checkpoint, delivery, repeated } = await announceCheckpoint({ directory,
-    notifier: dryRun ? null : createTelegramNotifier(), persist: !dryRun,
-    seconds: Number(flag(argv, 'seconds', '1800')), reason: flag(argv, 'reason', null) });
+    notifier: dryRun ? null : createDiscordNotifier(flag(argv, 'webhook-file')
+      ? { webhookPath: flag(argv, 'webhook-file') } : {}),
+    persist: !dryRun,
+    seconds: Number(flag(argv, 'seconds', '1800')), reason: flag(argv, 'reason', null),
+    label: flag(argv, 'label', null), resumeCommand: flag(argv, 'resume-command', null) });
   console.log(JSON.stringify({ step: 'announce', dryRun, repeated,
     checkpoint: { id: checkpoint.id, jobId: checkpoint.jobId, accountRef: checkpoint.accountRef,
       profileRef: checkpoint.profileRef, reason: checkpoint.reason, state: checkpoint.state,

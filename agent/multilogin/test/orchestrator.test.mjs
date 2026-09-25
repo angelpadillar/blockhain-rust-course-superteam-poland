@@ -142,9 +142,15 @@ test('the remote wrapper builds the exact one-command pipeline and never prints 
   assert.equal(commands.length, 4);
   assert.match(commands[0], /mkdir -p \/opt\/buena-multilogin\/private\/jobs/);
   assert.match(commands[1], /cat jobs\/yt-live-05\.json \| ssh root@example\.test/);
-  assert.match(commands[2], /docker compose run --rm --no-deps -T --entrypoint node worker job-runner\.mjs/);
-  assert.match(commands[2], /--data \/data\/state/);
+  assert.match(commands[2], /docker compose run --rm --no-deps -T .*--entrypoint node worker job-runner\.mjs/);
+  assert.match(commands[2], /-v \/opt\/buena-multilogin-orchestrator\/src:\/app\/src:ro/);
+  assert.match(commands[2], /--data \/data\/account-pilot/);
   assert.match(commands[2], /--human-checkpoint-seconds 1800 --json/);
-  assert.match(commands[3], /tar -C private\/state\/jobs\/yt-live-05 -czf - \./);
-  for (const command of commands) assert.equal(/token|password|api[_-]?key/i.test(command), false);
+  assert.match(commands[3], /tar -C \/data\/account-pilot\/jobs\/yt-live-05 -czf - \./);
+  // File-path flags are fine; a secret VALUE never is.
+  for (const command of commands) {
+    assert.equal(/Bearer\s|sk-[a-zA-Z0-9]|xoxb-|https:\/\/discord\.com\/api\/webhooks/.test(command), false,
+      'the wrapper never embeds a secret value');
+    assert.equal(/(MULTILOGIN|TYPESAFE|FIREWORKS)_[A-Z_]*(TOKEN|KEY)=/.test(command), false);
+  }
 });

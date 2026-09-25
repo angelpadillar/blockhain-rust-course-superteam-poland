@@ -23,6 +23,12 @@ export const defaults = {
   // Degraded mode: the profile's ALREADY-ATTACHED proxy is the only one allowed.
   // Provisioning and rotation are refused; a failing proxy fails closed.
   reuseExistingProxy: false,
+  // Bandwidth discipline: a genuine security surface gets a bounded settle and
+  // one re-observe before a person is asked, media is not fetched during a job,
+  // and a YouTube run checks the home/auth surface before any Google redirect.
+  challengeSettleMs: 1500,
+  blockMedia: true,
+  youtubeStartAtHome: true,
 };
 export function validateConfig(supplied) {
   const config = { ...defaults, ...supplied };
@@ -37,6 +43,10 @@ export function validateConfig(supplied) {
     && config.humanCheckpointSeconds <= 7200, 'invalid_human_checkpoint_limit');
   requireThat(['multilogin', 'pool', 'none'].includes(config.proxyMode), 'invalid_proxy_mode');
   requireThat(typeof config.reuseExistingProxy === 'boolean', 'invalid_proxy_reuse_flag');
+  requireThat(Number.isInteger(config.challengeSettleMs) && config.challengeSettleMs >= 0
+    && config.challengeSettleMs <= 10000, 'invalid_challenge_settle');
+  requireThat(typeof config.blockMedia === 'boolean' && typeof config.youtubeStartAtHome === 'boolean',
+    'invalid_bandwidth_flags');
   requireThat(config.proxyCountry === null || /^[a-z]{2}$/.test(config.proxyCountry), 'invalid_proxy_country');
   requireThat(Array.isArray(config.proxyPool), 'invalid_proxy_pool');
   requireThat(typeof config.cdpHost === 'string' && /^[a-zA-Z0-9.-]+$/.test(config.cdpHost), 'invalid_cdp_host');

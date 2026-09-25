@@ -4,9 +4,13 @@ import { readJson, writeJson } from './storage.mjs';
 import { validateJobs, runJobBatch, inspectJobPlan, CancelToken, jobStateForResult } from './jobs.mjs';
 import { runLogin } from './login.mjs';
 import { inspectStudio } from './youtube.mjs';
+import { connect as defaultConnect } from './runner.mjs';
+import { createBandwidthMeter } from './bandwidth.mjs';
 import { createLifecycle, loadLifecycle, isResumableLifecycle, isTerminalLifecycleState,
   actionSourceForMethod } from './lifecycle.mjs';
 import { createRouterObserver, wrapGuideForObservation } from './action-router.mjs';
+import { loadHealthStore, recordFromResult, writeHealthRecord, labelForHealth,
+  buildHealthReport } from './profile-health.mjs';
 import { announceCheckpoint, createCheckpointStore, handleCommand, countActiveCheckpoints } from './human-checkpoint.mjs';
 
 // ONE job, ONE process, ONE lifecycle. The orchestrator wraps the tested job
@@ -74,7 +78,9 @@ export function createTelegramCommandLoop({ notifier, directory, cancel, pollMs 
     handled,
     get active() { return active; },
     async start({ jobId }) {
-      if (!notifier || active) return;
+      // Webhook notifiers (Discord) have no inbound channel, so there is no poll
+      // loop to start; the live re-observation remains the only resume gate.
+      if (!notifier || typeof notifier.poll !== 'function' || active) return;
       active = true;
       const store = createCheckpointStore({ directory: resolve(directory, 'jobs', jobId) });
       const tick = async () => {
@@ -124,7 +130,8 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
   connectImpl = undefined, seedImpl = undefined, flowImpl = runLogin, studioImpl = inspectStudio,
   notifier = null, notify = true, cancel = new CancelToken(), humanCheckpointPollMs = 2000,
   telegramPollMs = 2000, telegram = true, memory = null, resume = null, preserveOnCheckpoint = false,
-  routerObservation = true, onEvent = null, now = Date.now, elapsed = () => performance.now() } = {}) {
+  routerObservation = true, resumeCommand = null, onEvent = null, now = Date.now,
+  elapsed = () => performance.now() } = {}) {
   requireThat(directory, 'orchestrator_directory_required');
   requireThat(accountIndex instanceof Map, 'account_source_required');
   const [validated] = validateJobs({ jobs: [job] });
@@ -312,8 +319,17 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
       // so a later run can detect the waiting state and resume the same profile.
       if (notify && (announcedFor !== reason || !announced)) {
         try {
+          const healthStore = await loadHealthStore({ directory }).catch(() => null);
+          const known = healthStore?.profiles?.[resumeInfo.profileId]
+            || Object.values(healthStore?.profiles || {}).find(item => item.profileRef === job.profileRef)
+            || null;
+          const alertLabel = labelForHealth({ record: { ...(known || {}), accountRef: job.accountRef,
+            profileRef: job.profileRef, status: 'WAITING_FOR_HUMAN' } });
+          const recovery = { steps: lifecycle.counters.recoverySteps,
+            budget: lifecycle.counters.recoveryBudget || 8 };
           announced = await announceCheckpoint({ directory: jobDirectory, notifier: notifier || null,
-            seconds: config.humanCheckpointSeconds ?? 1800, reason });
+            seconds: config.humanCheckpointSeconds ?? 1800, reason, label: alertLabel, recovery,
+            resumeCommand: resumeCommand || notifier?.resumeCommandFor?.(job.id) || null });
           announcedFor = reason;
           await lifecycle.recordAction({ action: 'announce_checkpoint', actionSource: 'operator',
             result: announced.delivery?.delivered || (announced.repeated ? 'reused' : 'recorded'),
@@ -335,13 +351,25 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
 
   // --- The kernel run ---------------------------------------------------------
   let batch = null; let failure = null;
+  // Bandwidth: measure every session and refuse known video endpoints. A meter
+  // attach failure never fails the job; it is reported as unavailable.
+  const bandwidth = createBandwidthMeter({ blockMedia: config.blockMedia !== false });
+  const baseConnect = connectImpl || defaultConnect;
+  const meteredConnect = async (port, connectionConfig) => {
+    const session = await baseConnect(port, connectionConfig);
+    try {
+      await bandwidth.blockMediaRoutes({ context: session.context });
+      await bandwidth.attach({ page: session.page, context: session.context });
+    } catch { /* accounting is best-effort */ }
+    return session;
+  };
   try {
     const observedGuideFactory = routerObserver
       ? () => wrapGuideForObservation(guideFactory(), routerObserver)
       : guideFactory;
     batch = await runJobBatch({ jobs: [job], accountIndex, config, directory, concurrency: 1, api,
-      guideFactory: observedGuideFactory,
-      ...(connectImpl ? { connectImpl } : {}), ...(seedImpl ? { seedImpl } : {}),
+      guideFactory: observedGuideFactory, connectImpl: meteredConnect,
+      ...(seedImpl ? { seedImpl } : {}),
       ...(preserveOnCheckpoint ? { preserveOnCheckpoint } : {}),
       onJobState, humanCheckpointPollMs, cancel,
       flowImpl: wrappedFlow, studioImpl: wrappedStudio });
@@ -420,7 +448,22 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
       rotations: lifecycle.counters.proxySwitches },
     routerObservation: routerObserver ? { path: routerObserver.path, ...routerObserver.summary } : null,
     memory: memory ? { path: memory.path, ...memory.diagnostics } : null,
+    bandwidth: bandwidth.summary(),
   };
+  // Canonical profile health, merge-written under a lock; the same record feeds
+  // the CLI, the Multilogin label and this result. The replay of the job
+  // evidence is the prior context for the first store write, so an
+  // infrastructure failure cannot erase a previously proven session.
+  const priorReport = await buildHealthReport({ directory }).catch(() => null);
+  const prior = priorReport?.profiles?.find(item =>
+    (item.profileId && item.profileId === (result.profileId ?? jobDocument?.profileId))
+    || item.profileRef === job.profileRef) || null;
+  const healthRecord = await writeHealthRecord({ directory, previous: prior,
+    record: recordFromResult({ result, job, jobDocument, checkpoint }) }).catch(() => null);
+  if (healthRecord) {
+    result.health = healthRecord;
+    result.profileLabel = labelForHealth({ record: healthRecord });
+  }
   await writeJson(result.resultPath, result).catch(() => {});
   await emit({ event: 'result', ...result });
   return { result, lifecycle, batch, resume: resumeInfo };

@@ -112,6 +112,14 @@ test('one command runs the whole lifecycle, announces the checkpoint and keeps t
   assert.equal(observationRaw.includes('observed input'), false, 'candidate descriptions are never stored');
   assert.equal(result.proxy.reuseExistingProxy, false);
   assert.equal(result.proxy.rotations, 0);
+  // Bandwidth discipline: media is blocked, bytes are measured, and a YouTube
+  // run starts at the home/auth surface rather than through the login redirect.
+  assert.equal(fixtureRecording.loginPageLoads, 0, 'the run starts at the home/auth surface');
+  assert.ok(result.bandwidth.totalBytes > 0, 'received bytes are measured');
+  assert.ok(result.bandwidth.blockedMedia >= 1, 'the fixture video request was blocked');
+  assert.ok(result.bandwidth.mb < 5, `unexpected traffic: ${result.bandwidth.mb} MB`);
+  assert.equal(result.profileLabel.startsWith('YT-'), true);
+  assert.equal(result.health.status, 'GOOD_PERSISTED');
   // The structured result is durable, and no secret is present in the evidence.
   const stored = await readJson(result.resultPath, null);
   assert.equal(stored.status, 'completed');
@@ -121,6 +129,24 @@ test('one command runs the whole lifecycle, announces the checkpoint and keeps t
     assert.equal(raw.includes('private-password'), false, `${file} must not contain the password`);
     assert.equal(raw.includes('GEZDGNBVGY3TQOJQ'), false, `${file} must not contain the TOTP seed`);
   }
+});
+
+test('a challenge that finishes loading on its own never becomes a human checkpoint', async t => {
+  const directory = await scratch(t);
+  const backend = await createFakeBackend({ challenged: true, lateClearMs: 2500,
+    humanCheckpointSeconds: 30, challengeSettleMs: 3000 });
+  t.after(() => backend.close());
+  const notifier = recordingNotifier();
+  const { result } = await runSingleJob(options({ backend, directory, notifier, notify: true }));
+  assert.equal(result.status, 'completed', JSON.stringify(result.transitions));
+  assert.equal(result.transitions.some(entry => entry.state === 'WAITING_FOR_HUMAN'), false);
+  assert.equal(notifier.sent.length, 0, 'no alert for a self-clearing surface');
+  assert.equal(fixtureRecording.challengeAnswers, 0, 'the automation never answered the challenge');
+  assert.equal(fixtureRecording.challengeRenders, 1);
+  const events = await readFile(join(result.jobDirectory, 'events.ndjson'), 'utf8');
+  assert.equal(events.includes('cleared_during_settle'), true,
+    'the bounded settle re-observe is the recorded reason no person was asked');
+  assert.equal(result.health.status, 'GOOD_PERSISTED');
 });
 
 test('a timed-out checkpoint ends in WAITING_FOR_HUMAN, and the same command resumes the same profile', async t => {
@@ -173,4 +199,5 @@ test('an authenticated profile resumes without resubmitting credentials', async 
   assert.deepEqual(fixtureRecording.posts, postsAfterFirst,
     'no credential was submitted again for an already authenticated profile');
   assert.equal(fixtureRecording.challengeRenders, 0);
+  assert.equal(fixtureRecording.loginPageLoads, 0, 'the authenticated resume never loaded the login page');
 });

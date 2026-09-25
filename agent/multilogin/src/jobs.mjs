@@ -282,6 +282,20 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
     await onStep(detail);
   };
   const requestHumanCheckpoint = async context => {
+    // A client-rendered challenge can classify before it finishes loading: wait a
+    // bounded moment, re-observe ONCE, and continue the normal flow when the
+    // surface has cleared on its own. Only a genuine, still-present security
+    // surface becomes a human checkpoint.
+    const settleMs = Number(config.challengeSettleMs) || 0;
+    if (settleMs > 0) {
+      await new Promise(resolve => setTimeout(resolve, settleMs));
+      const settled = await context.browser.observe().catch(() => null);
+      if (settled && settled.challengeFrame !== true && classifyPage(settled) !== context.reason) {
+        await emit({ phase: 'human_checkpoint', reason: context.reason, state: 'cleared_during_settle',
+          waitedMs: settleMs });
+        return { resumed: true, waitedMs: settleMs };
+      }
+    }
     // A person has to read this frame: capture the native viewport, let a
     // half-painted first frame settle, and retry a bounded number of times when
     // the PNG is suspiciously small (a near-blank page).
@@ -294,6 +308,7 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
   // Durable receipts for this job: written before every dispatch, kept beside the
   // job's own evidence, and reconcilable read-only by a later worker.
   const result = await flowImpl({ ...args, onStep: emit, requestHumanCheckpoint,
+    startUrl: job.platform === 'youtube' && config.youtubeStartAtHome === true ? site.homeUrl : null,
     receipts: createReceiptStore({ directory: log.directory }),
     scope: { jobId: job.id, platform: job.platform, profileRef: job.profileRef,
       accountId: account.id, profileId: log.profileId || null } });

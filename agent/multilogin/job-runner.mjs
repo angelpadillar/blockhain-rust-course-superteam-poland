@@ -1,16 +1,16 @@
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createInterface } from 'node:readline';
-import { dirname, resolve } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { PilotError, errorCode, requireThat } from './src/core.mjs';
 import { readPrivate } from './src/storage.mjs';
 import { Multilogin } from './src/multilogin.mjs';
 import { createChooser } from './src/model.mjs';
+import { createDiscordNotifier } from './src/discord-notifier.mjs';
 import { loadAccountIndex } from './src/accounts.mjs';
 import { validateConfig } from './src/runner.mjs';
 import { validateJobs, CancelToken, inspectJobPlan } from './src/jobs.mjs';
-import { createTelegramNotifier } from './src/human-checkpoint.mjs';
 import { createRecoveryMemory } from './src/recovery-memory.mjs';
 import { runSingleJob, inspectOrchestratorResume, orchestrationExitCode } from './src/orchestrator.mjs';
 
@@ -22,15 +22,16 @@ import { runSingleJob, inspectOrchestratorResume, orchestrationExitCode } from '
 // The whole lifecycle belongs to this process: profile resolution/creation,
 // proxy check, launcher start, CDP attachment, authenticated-state inspection,
 // deterministic login or resume, bounded JEV recovery, human-checkpoint
-// detection + Telegram announcement, Studio verification, restart persistence
+// detection + Discord announcement, Studio verification, restart persistence
 // and a structured result.json. A genuine security checkpoint ends the run in
 // WAITING_FOR_HUMAN and the same command resumes the same profile later.
 const here = dirname(fileURLToPath(import.meta.url));
 const valueFlags = ['--config', '--data', '--accounts', '--accounts-dir', '--concurrency',
   '--human-checkpoint-seconds', '--seed-sites', '--provider', '--model', '--token-file', '--key-file',
-  '--mode', '--telegram-poll-ms', '--checkpoint-poll-ms'];
+  '--mode', '--telegram-poll-ms', '--checkpoint-poll-ms', '--resume-command', '--discord-webhook-file',
+  '--challenge-settle-ms'];
 const switchFlags = ['--dry-run', '--stdin-secrets', '--no-notify', '--no-telegram', '--no-memory',
-  '--preserve-on-checkpoint', '--reuse-existing-proxy', '--json', '--help'];
+  '--preserve-on-checkpoint', '--reuse-existing-proxy', '--load-media', '--json', '--help'];
 
 export function parseArguments(argv) {
   const options = { positional: [] };
@@ -51,7 +52,8 @@ const usage = 'Usage: node job-runner.mjs <job.json> [--mode live|fake] [--data 
   + '[--config config.vps.json] [--accounts private/accounts.json | --accounts-dir private/accounts] '
   + '[--token-file private/multilogin-token] [--key-file private/typesafe-key] [--provider typesafe|fireworks] '
   + '[--model ID] [--human-checkpoint-seconds 600] [--stdin-secrets] [--no-notify] [--no-telegram] '
-  + '[--no-memory] [--reuse-existing-proxy] [--preserve-on-checkpoint] [--dry-run] [--json]';
+  + '[--no-memory] [--reuse-existing-proxy] [--load-media] [--discord-webhook-file PATH] '
+  + '[--challenge-settle-ms 1500] [--resume-command CMD] [--preserve-on-checkpoint] [--dry-run] [--json]';
 
 // Defaults resolve beside this package so `npm run browser:job` works from the
 // repository root as well as from the worker image.
@@ -105,6 +107,9 @@ export async function main(argv = process.argv.slice(2)) {
   const config = validateConfig({ ...supplied,
     ...(keepSeedSites ? {} : { seedSites: [] }),
     ...(options['reuse-existing-proxy'] ? { reuseExistingProxy: true } : {}),
+    ...(options['load-media'] ? { blockMedia: false } : {}),
+    ...(options['challenge-settle-ms']
+      ? { challengeSettleMs: Number(options['challenge-settle-ms']) } : {}),
     ...(options['human-checkpoint-seconds']
       ? { humanCheckpointSeconds: Number(options['human-checkpoint-seconds']) } : {}) });
 
@@ -199,15 +204,20 @@ export async function main(argv = process.argv.slice(2)) {
   const requestCancel = () => { cancel.abort('cancelled_by_signal');
     console.error(JSON.stringify({ event: 'cancel_requested', detail: 'finishing the current browser step first' })); };
   process.once('SIGINT', requestCancel); process.once('SIGTERM', requestCancel);
-  const notifier = options['no-notify'] ? null : createTelegramNotifier();
+  const notifier = options['no-notify'] ? null : createDiscordNotifier(options['discord-webhook-file']
+    ? { webhookPath: options['discord-webhook-file'] } : {});
   const memory = options['no-memory'] ? null : createRecoveryMemory({ directory: resolve(directory, 'memory') });
   const resume = await inspectOrchestratorResume({ directory, job, accountIndex, jobs: [job] });
+  const resumeCommand = options['resume-command']
+    || (jobPath.includes('/jobs/') ? `npm run browser:job -- jobs/${basename(jobPath)}`
+      : `npm run browser:job -- ${jobPath}`);
   const { result } = await runSingleJob({ job, accountIndex, config, directory, api,
     guideFactory: () => createChooser({ provider, apiKey, model: options.model }),
     notifier, notify: !options['no-notify'], telegram: !options['no-telegram'],
     humanCheckpointPollMs: Number(options['checkpoint-poll-ms'] || 2000),
     telegramPollMs: Number(options['telegram-poll-ms'] || 2000),
-    cancel, memory, resume, preserveOnCheckpoint: options['preserve-on-checkpoint'] === true, onEvent });
+    cancel, memory, resume, resumeCommand,
+    preserveOnCheckpoint: options['preserve-on-checkpoint'] === true, onEvent });
   console.log(JSON.stringify({ step: 'result', mode: 'live', ...result }, null, 2));
   process.exitCode = orchestrationExitCode(result);
   return process.exitCode;

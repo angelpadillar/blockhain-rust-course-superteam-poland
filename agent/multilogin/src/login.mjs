@@ -372,7 +372,7 @@ async function rememberCorrection({ memory, browser, account, snapshot, classifi
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
   verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform],
   goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000,
-  receipts = null, scope = null, recoveryMemory = null }) {
+  receipts = null, scope = null, recoveryMemory = null, startUrl = null }) {
   const browser = new LoginBrowser(page, account, { site });
   // A stale dialog race must never kill the process (ported canary guard): the
   // dismissal happens inside the guard and is journalled as a diagnostic.
@@ -420,7 +420,10 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   page.on('response', responseListener); page.on('requestfailed', failureListener);
   try {
   const started = performance.now(); let deadline = Date.now() + maxSeconds * 1000;
-  await navigate(page, verifyOnly ? site.homeUrl : site.loginUrl);
+  // The start surface is the cheapest authenticated-state check: for a YouTube
+  // job the home page verifies an existing session directly and offers the
+  // observed sign-in control when there is none. `verifyOnly` has always used it.
+  await navigate(page, startUrl || (verifyOnly ? site.homeUrl : site.loginUrl));
   for (let step = 0; step < maxSteps; step++) {
     requireThat(Date.now() < deadline, 'login_time_budget_exceeded');
     // Client-rendered login pages can expose text before their controls exist.

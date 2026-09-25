@@ -87,6 +87,15 @@ export class Multilogin {
     const data = await this.cloud('/profile/metas', { ids: [id(profileId)] });
     return data?.profiles?.find(profile => profile.id === profileId) || null;
   }
+  // Rename/metadata update that must carry the profile's own parameters back
+  // unchanged. The caller (profile-labels.mjs) re-reads and verifies that the
+  // fingerprint/proxy/session configuration did not move.
+  updateProfile({ profileId, name, autoUpdateCore, parameters }) {
+    requireThat(typeof name === 'string' && name.length > 0 && name.length <= 120, 'invalid_profile_name');
+    requireThat(parameters && typeof parameters === 'object', 'profile_parameters_required');
+    return this.cloud('/profile/update', { profile_id: id(profileId), name,
+      auto_update_core: autoUpdateCore === true, parameters });
+  }
   async changeProxy(profileId, proxy) {
     const data = await this.cloud('/profile/metas', { ids: [id(profileId)] });
     const meta = data?.profiles?.find(profile => profile.id === profileId);
