@@ -22,7 +22,10 @@ export const humanCheckpointReasons = ['human_verification_required', 'email_or_
 // A checkpoint screenshot is read by a person, so it is captured at the native
 // viewport with a small bounded settle and at most three attempts: a frame under
 // minBytes is treated as blank/half-rendered and retried. Never network-idle.
-export const checkpointCapture = { settleMs: 300, minBytes: 8000, attempts: 3 };
+// `bundle: true` adds the full-page frame, a focused challenge region when one is
+// detectable, and a JSON context sidecar (url, title, visible-text summary,
+// viewport, timestamp, job/profile identity) next to the canonical PNG.
+export const checkpointCapture = { settleMs: 300, minBytes: 8000, attempts: 3, bundle: true };
 const jobIdPattern = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}$/;
 
 export function validateJobs(input) {
@@ -137,7 +140,10 @@ export class JobLog {
   async screenshot(page, label, credentialOrigins = [], options = {}) {
     this.screenIndex++;
     const result = await captureSafeScreenshot({ page, directory: resolve(this.directory, 'screenshots'), label,
-      index: this.screenIndex, credentialOrigins, ...options });
+      index: this.screenIndex, credentialOrigins, redact: this.redact,
+      context: { jobId: this.job.id, platform: this.job.platform, accountRef: this.job.accountRef,
+        profileRef: this.job.profileRef, profileId: this.profileId ?? null },
+      ...options });
     this.screenshots.push({ label, ...result });
     await this.record({ event: 'screenshot', label, ...result });
     return result;

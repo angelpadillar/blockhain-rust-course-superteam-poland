@@ -17,3 +17,7 @@ agent/altitude-profile/
 agent/node_modules/
 agent/dist/
 agent/playwright-report/
+# Live operator job files and mirrored remote evidence.
+jobs/*.json
+!jobs/*.example.json
+.browser-jobs/

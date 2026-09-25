@@ -63,7 +63,9 @@ export function onboardingControl(snapshot) {
 // Sanitized observation for the model. Credentials, cookies, headers, proxy
 // credentials, API keys and query strings never enter this payload; text and
 // labels pass through the account redactor, which masks codes and addresses.
-export function recoveryObservation({ goal, snapshot, browser, recentActions = [], deterministicState = {} }) {
+// `memory` carries at most a few compact causal-recovery hints, never a dump.
+export function recoveryObservation({ goal, snapshot, browser, recentActions = [], deterministicState = {},
+  memory = [] }) {
   const url = new URL(snapshot.url);
   const page = browser.publicPage(snapshot);
   return {
@@ -71,6 +73,7 @@ export function recoveryObservation({ goal, snapshot, browser, recentActions = [
     url: { origin: url.origin, pathname: url.pathname },
     title: typeof snapshot.title === 'string' ? snapshot.title.slice(0, 200) : null,
     deterministicState,
+    ...(memory.length ? { memory: memory.map(hint => browser.redact(String(hint))).slice(0, 3) } : {}),
     recentActions: recentActions.slice(-8),
     text: page.text,
     controls: snapshot.controls.slice(0, 120).map(control => ({

@@ -1,0 +1,9 @@
+{
+  "jobs": [
+    { "id": "yt-live-01", "platform": "youtube", "accountRef": "yt-live-01", "profileRef": "yt-live-01" },
+    { "id": "yt-live-02", "platform": "youtube", "accountRef": "yt-live-02", "profileRef": "yt-live-02" },
+    { "id": "yt-live-03", "platform": "youtube", "accountRef": "yt-live-03", "profileRef": "yt-live-03" },
+    { "id": "yt-live-04", "platform": "youtube", "accountRef": "yt-live-04", "profileRef": "yt-live-04" },
+    { "id": "yt-live-05", "platform": "youtube", "accountRef": "yt-live-05", "profileRef": "yt-live-05" }
+  ]
+}

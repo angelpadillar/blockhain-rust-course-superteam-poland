@@ -219,11 +219,13 @@ export async function announceCheckpoint({ directory, notifier = null, seconds =
 }
 
 // The newest checkpoint frame the job's captureSafeScreenshot wrote. The file is
-// chosen by name, never re-rendered.
+// chosen by name, never re-rendered. Bundle sidecars (-full/-region/-context) are
+// excluded so the canonical viewport PNG is the one announced.
 async function newestCheckpointScreenshot({ directory, fs }) {
   let names = [];
   try { names = await fs.readdir(resolve(directory, 'screenshots')); } catch { return null; }
-  const candidates = names.filter(name => /^.*checkpoint_.*\.png$/.test(name)).sort();
+  const candidates = names.filter(name => /^.*checkpoint_.*\.png$/.test(name)
+    && !/-(full|region|context)\.(png|json)$/.test(name)).sort();
   return candidates.length ? resolve(directory, 'screenshots', candidates.at(-1)) : null;
 }
 

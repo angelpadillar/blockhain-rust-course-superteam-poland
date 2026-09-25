@@ -351,10 +351,26 @@ export class LoginBrowser {
   }
 }
 
+// One compact causal episode per correction: the action that did not move the
+// page, and the action that did. Only a fingerprint change is recorded; page
+// text, credentials and query strings never are.
+async function rememberCorrection({ memory, browser, account, snapshot, classifiedReason, action, scope }) {
+  const after = await browser.observe().catch(() => null);
+  const changed = Boolean(after && after.fingerprint !== snapshot.fingerprint);
+  if (!changed) { browser.recovery.lastFailedAction = action.kind; return null; }
+  const failedAction = browser.recovery.lastFailedAction || null;
+  browser.recovery.lastFailedAction = null;
+  let statePath = null;
+  try { const url = new URL(snapshot.url); statePath = `${url.origin}${url.pathname}`; } catch {}
+  return memory.record({ reason: classifiedReason || 'unexpected_state', statePath, failedAction,
+    correction: action.kind, verification: 'page_changed', platform: account.platform,
+    jobId: scope?.jobId || null });
+}
+
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
   verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform],
   goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000,
-  receipts = null, scope = null }) {
+  receipts = null, scope = null, recoveryMemory = null }) {
   const browser = new LoginBrowser(page, account, { site });
   // The single execution path for this run. The deterministic flow and the Jev
   // recovery episode both go through it; nothing else performs a browser
@@ -378,8 +394,11 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   // Visual escalations are capped for the whole run, so a vision advisor can never
   // be asked to look more than a handful of times.
   const visualEpisode = { escalations: 0 };
-  const finish = result => ({ ...result, visualEscalations: visualEpisode.escalations,
-    recovery: { ...browser.recovery, menuActions: browser.menuActionCount } });
+  const finish = result => {
+    if (result.verified && recoveryMemory) recoveryMemory.markVerified().catch(() => {});
+    return { ...result, visualEscalations: visualEpisode.escalations,
+      recovery: { ...browser.recovery, menuActions: browser.menuActionCount } };
+  };
   const network = [];
   const recordNetwork = (request, status, error) => {
     const url = new URL(request.url());
@@ -445,9 +464,16 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       const candidates = recoveryCandidates({ snapshot, browser, site,
         classifiedReason: classifiedReason || null });
       if (!candidates.length) return { exhausted: false };
+      // Compact causal hints: at most a couple of past corrections relevant to
+      // this state. No transcripts, no page content, no credentials.
+      const memoryHints = recoveryMemory
+        ? await recoveryMemory.hints({ reason: classifiedReason || 'unexpected_state', url: snapshot.url,
+          failedAction: browser.recovery.lastFailedAction || null, limit: 2 }).catch(() => [])
+        : [];
       const modelView = recoveryObservation({ goal, snapshot, browser, recentActions,
         deterministicState: { step, classifiedReason: classifiedReason || null, verifyOnly,
-          menuOpenedBefore: browser.menuOpenedKeys.size > 0 } });
+          menuOpenedBefore: browser.menuOpenedKeys.size > 0 },
+        memory: memoryHints });
       let decision;
       try {
         decision = await choose({ page: modelView, observation, snapshot,
@@ -474,7 +500,11 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       // existing executor -> postcondition).
       const outcome = await executeRecoveryAction({ action, snapshot, observation, browser, site, navigate,
         kernel, source: decisionSourceFor(decision), justification: decision.reason || null });
-      if (outcome.performed) recentActions.push({ step, action: action.kind, via: 'jev_recovery' });
+      if (outcome.performed) {
+        recentActions.push({ step, action: action.kind, via: 'jev_recovery' });
+        if (recoveryMemory) await rememberCorrection({ memory: recoveryMemory, browser, account, snapshot,
+          classifiedReason, action, scope }).catch(() => {});
+      }
       return outcome;
     };
     const failure = classifyPage(snapshot);

@@ -15,7 +15,13 @@
     "test:gifting": "node --test agent/trust/integrated/encoding.test.mjs agent/trust/integrated/integration.test.mjs",
     "build:gifting:bridge": "cargo build --locked --example gifting_bridge",
     "demo:delio": "node agent/trust/delio/server.mjs",
-    "test:delio": "node --test agent/trust/delio/*.test.mjs agent/trust/delio/sms/*.test.mjs agent/trust/delio/worker/*.test.mjs"
+    "test:delio": "node --test agent/trust/delio/*.test.mjs agent/trust/delio/sms/*.test.mjs agent/trust/delio/worker/*.test.mjs",
+    "browser:job": "node agent/multilogin/scripts/job.mjs",
+    "browser:batch": "node agent/multilogin/batch-runner.mjs",
+    "browser:job:fake": "node agent/multilogin/job-runner.mjs --mode fake",
+    "test:browser:job": "node --test agent/multilogin/test/lifecycle.test.mjs agent/multilogin/test/orchestrator.test.mjs agent/multilogin/test/screenshot-bundle.test.mjs agent/multilogin/test/recovery-memory.test.mjs agent/multilogin/test/action-router.test.mjs",
+    "test:browser:multilogin": "npm --prefix agent/multilogin test",
+    "test:browser:multilogin:live": "npm --prefix agent/multilogin run test:browser"
   },
   "dependencies": {
     "@anchor-lang/core": "^1.1.2"
