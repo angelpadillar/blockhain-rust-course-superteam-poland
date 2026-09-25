@@ -358,8 +358,10 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
   const meteredConnect = async (port, connectionConfig) => {
     const session = await baseConnect(port, connectionConfig);
     try {
-      await bandwidth.blockMediaRoutes({ context: session.context });
-      await bandwidth.attach({ page: session.page, context: session.context });
+      // CDP-native blocking when possible; route interception is only the
+      // fallback for contexts without a CDP session.
+      const attached = await bandwidth.attach({ page: session.page, context: session.context });
+      if (!attached) await bandwidth.blockMediaRoutes({ context: session.context });
     } catch { /* accounting is best-effort */ }
     return session;
   };

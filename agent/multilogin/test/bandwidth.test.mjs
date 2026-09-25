@@ -31,12 +31,14 @@ test('the meter sums encoded bytes per resource type', async () => {
   const page = { context: () => ({ newCDPSession: async () => client }) };
   const meter = createBandwidthMeter({ blockMedia: true });
   assert.equal(await meter.attach({ page }), true);
-  assert.deepEqual(client.sent, ['Network.enable']);
+  assert.deepEqual(client.sent, ['Network.enable', 'Network.setBlockedURLs'],
+    'media is blocked natively, not by intercepting every request');
   client.emit('Network.requestWillBeSent', { requestId: '1', type: 'Document' });
   client.emit('Network.requestWillBeSent', { requestId: '2', type: 'Script' });
   client.emit('Network.loadingFinished', { requestId: '1', encodedDataLength: 1024 });
   client.emit('Network.loadingFinished', { requestId: '2', encodedDataLength: 2048 });
   client.emit('Network.loadingFinished', { requestId: '3', encodedDataLength: 512 });
+  client.emit('Network.loadingFailed', { requestId: '4', blockedReason: 'inspector' });
   const summary = meter.summary();
   assert.equal(summary.totalBytes, 3584);
   assert.equal(summary.byType.Document, 1024);
@@ -44,6 +46,8 @@ test('the meter sums encoded bytes per resource type', async () => {
   assert.equal(summary.byType.Other, 512);
   assert.equal(summary.mb, 0.003);
   assert.equal(summary.available, true);
+  assert.equal(summary.nativeBlocking, true);
+  assert.equal(summary.blockedMedia, 1, 'a blocked media request is counted without bytes');
 });
 
 test('media routes abort video and continue everything else', async () => {

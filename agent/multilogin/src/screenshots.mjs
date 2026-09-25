@@ -48,7 +48,10 @@ export async function captureSafeScreenshot({ page, directory, label, index = 0,
     const result = { path, name, bytes, attempts: usedAttempt };
     if (bundle) Object.assign(result, await captureBundle({ page, directory, name, context, redact, origin }));
     return result;
-  } catch { return { skipped: 'screenshot_failed' }; }
+  } catch (error) {
+    return { skipped: 'screenshot_failed',
+      detail: String(error?.message || error?.name || 'capture_failed').slice(0, 160) };
+  }
 }
 
 // The extra frames and the sidecar are best-effort: a page double or a browser

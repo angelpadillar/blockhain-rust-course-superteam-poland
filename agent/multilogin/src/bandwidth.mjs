@@ -4,6 +4,9 @@
 // security/auth requests are never touched.
 export const mediaUrlPatterns = ['**/*videoplayback*', '**/*.mp4', '**/*.webm', '**/*.m3u8',
   '**/googlevideo.com/**'];
+// The same selection expressed for CDP `Network.setBlockedURLs`, which blocks at
+// the network layer on a connected browser without intercepting every request.
+export const mediaCdpPatterns = ['*videoplayback*', '*.mp4', '*.webm', '*.m3u8', '*googlevideo.com*'];
 
 export function shouldBlockMedia({ url = '', resourceType = '' } = {}) {
   if (resourceType === 'media') return true;
@@ -25,6 +28,12 @@ export function createBandwidthMeter({ blockMedia = false, now = Date.now } = {}
     try {
       const session = await cdpContext.newCDPSession(page);
       await session.send('Network.enable');
+      if (blockMedia) {
+        // Native network-layer blocking: no route interception, so page
+        // screenshots and navigation are untouched on a CDP-connected browser.
+        await session.send('Network.setBlockedURLs', { urls: mediaCdpPatterns }).catch(() => {});
+        diagnostics.nativeBlocking = true;
+      }
       const pendingTypes = new Map();
       session.on('Network.requestWillBeSent', event => pendingTypes.set(event.requestId, event.type || 'Other'));
       session.on('Network.loadingFinished', event => {
@@ -33,6 +42,12 @@ export function createBandwidthMeter({ blockMedia = false, now = Date.now } = {}
         const bytes = Number(event.encodedDataLength) || 0;
         diagnostics.totalBytes += bytes;
         diagnostics.byType[type] = (diagnostics.byType[type] || 0) + bytes;
+      });
+      session.on('Network.loadingFailed', event => {
+        pendingTypes.delete(event.requestId);
+        if (/inspector|blocked/i.test(String(event.blockedReason || event.errorText || ''))) {
+          diagnostics.blockedMedia++;
+        }
       });
       diagnostics.available = true;
       diagnostics.sessions++;
@@ -63,7 +78,8 @@ export function createBandwidthMeter({ blockMedia = false, now = Date.now } = {}
     summary() {
       return { totalBytes: diagnostics.totalBytes, mb: Number((diagnostics.totalBytes / 1048576).toFixed(3)),
         byType: { ...diagnostics.byType }, blockedMedia: diagnostics.blockedMedia,
-        available: diagnostics.available, sessions: diagnostics.sessions };
+        available: diagnostics.available, sessions: diagnostics.sessions,
+        nativeBlocking: diagnostics.nativeBlocking === true };
     },
   };
 }
