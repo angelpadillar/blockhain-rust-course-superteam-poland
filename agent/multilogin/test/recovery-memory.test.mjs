@@ -74,3 +74,34 @@ test('a recall without a matching state returns nothing (no memory dump)', async
   assert.deepEqual(await memory.recall({ reason: 'totally_unknown_reason', url: 'https://example.invalid/' }), []);
   assert.deepEqual(await memory.hints({ reason: 'totally_unknown_reason' }), []);
 });
+
+test('memory telemetry counts recalls, bytes, latency and matches without injecting more', async t => {
+  const directory = await scratch(t);
+  const memory = createRecoveryMemory({ directory });
+  await memory.record({ reason: 'unexpected_state', statePath: 'https://www.youtube.com/',
+    failedAction: 'reopen_account_menu', correction: 'navigate_home', verification: 'page_changed' });
+  await memory.record({ reason: 'unexpected_state', statePath: 'https://gds.google.com/web/landing',
+    correction: 'navigate_home', verification: 'page_changed' });
+  const before = { ...memory.diagnostics };
+  const recalled = await memory.recall({ reason: 'unexpected_state', url: 'https://www.youtube.com/feed',
+    failedAction: 'reopen_account_menu' });
+  assert.ok(recalled.length >= 1 && recalled.length <= 2, 'at most two memories are ever recalled');
+  assert.equal(memory.diagnostics.calls, before.calls + 1);
+  assert.ok(memory.diagnostics.considered >= 1);
+  assert.equal(memory.diagnostics.recalled, recalled.length);
+  assert.ok(memory.diagnostics.bytes > 0);
+  assert.ok(Number.isInteger(memory.diagnostics.retrievalMs) && memory.diagnostics.retrievalMs >= 0);
+  assert.equal(typeof memory.diagnostics.lastRecallAt, 'string');
+  // The eventual successful correction matched the recalled memory.
+  const match = memory.observeCorrection({ correction: 'navigate_home' });
+  assert.equal(match.matchedRecall, true);
+  assert.equal(memory.diagnostics.corrections, 1);
+  assert.equal(memory.diagnostics.matched, 1);
+  const miss = memory.observeCorrection({ correction: 'open_switch_account' });
+  assert.equal(miss.matchedRecall, false);
+  assert.equal(memory.diagnostics.matched, 1, 'a non-matching correction is not counted as a match');
+  // An episode written after a matching recall carries the telemetry flag.
+  const episode = await memory.record({ reason: 'unexpected_state', statePath: 'https://www.youtube.com/',
+    correction: 'navigate_home', verification: 'page_changed', memoryMatched: true });
+  assert.equal(episode.memoryMatched, true);
+});

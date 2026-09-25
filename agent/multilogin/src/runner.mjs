@@ -20,6 +20,9 @@ export const defaults = {
   maxAccounts: 6, maxProxySwitches: 1, maxSteps: 20, maxSeconds: 180, verifyRestart: true,
   humanCheckpointSeconds: 600,
   seedSites: ['https://www.amazon.pl/', 'https://www.ebay.com/'], proxyMode: 'multilogin', proxyCountry: null, proxyPool: [],
+  // Degraded mode: the profile's ALREADY-ATTACHED proxy is the only one allowed.
+  // Provisioning and rotation are refused; a failing proxy fails closed.
+  reuseExistingProxy: false,
 };
 export function validateConfig(supplied) {
   const config = { ...defaults, ...supplied };
@@ -33,6 +36,7 @@ export function validateConfig(supplied) {
   requireThat(Number.isInteger(config.humanCheckpointSeconds) && config.humanCheckpointSeconds >= 1
     && config.humanCheckpointSeconds <= 7200, 'invalid_human_checkpoint_limit');
   requireThat(['multilogin', 'pool', 'none'].includes(config.proxyMode), 'invalid_proxy_mode');
+  requireThat(typeof config.reuseExistingProxy === 'boolean', 'invalid_proxy_reuse_flag');
   requireThat(config.proxyCountry === null || /^[a-z]{2}$/.test(config.proxyCountry), 'invalid_proxy_country');
   requireThat(Array.isArray(config.proxyPool), 'invalid_proxy_pool');
   requireThat(typeof config.cdpHost === 'string' && /^[a-zA-Z0-9.-]+$/.test(config.cdpHost), 'invalid_cdp_host');
@@ -92,7 +96,8 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
   }
   const release = await lock(directory);
   const statePath = resolve(directory, 'profiles.json');
-  const report = { id: randomUUID(), startedAt: new Date().toISOString(), mode: 'live-jev', accounts: [] };
+  const report = { id: randomUUID(), startedAt: new Date().toISOString(), mode: 'live-jev',
+    reuseExistingProxy: config.reuseExistingProxy === true, accounts: [] };
   const reportPath = resolve(directory, 'reports', `${report.id}.json`);
   try {
     const state = await readJson(statePath, { version: 1, folderId: config.folderId, profiles: {} });
@@ -140,6 +145,12 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
         }
       };
       const newProxy = async index => {
+        // Degraded mode never provisions or rotates: the profile's own attached
+        // proxy is the only one allowed, and a missing profile is refused.
+        if (config.reuseExistingProxy) {
+          const error = new PilotError('reuse_existing_proxy_requires_profile');
+          error.proxyReuseBlocked = true; throw error;
+        }
         if (config.proxyMode === 'multilogin') return api.premiumProxy(account.proxyCountry || config.proxyCountry);
         if (config.proxyMode === 'pool') {
           requireThat(config.proxyPool[index], 'proxy_pool_exhausted'); return resolveProxy(config.proxyPool[index]);
@@ -184,6 +195,9 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
               record.pending = null; await save();
             }
             if (!failurePolicy(code).rotateProxy || config.proxyMode === 'none' || result.proxySwitches >= config.maxProxySwitches) throw error;
+            // The rotation the policy would allow is disabled in degraded mode:
+            // the original failure is re-thrown, marked, and nothing is provisioned.
+            if (config.reuseExistingProxy) { error.proxyRotationDisabled = true; throw error; }
             const proxy = await newProxy(record.proxyIndex + 1);
             record.pending = 'proxy_change'; await save();
             await api.changeProxy(record.profileId, proxy);

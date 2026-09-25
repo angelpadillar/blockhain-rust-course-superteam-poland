@@ -129,8 +129,40 @@ test('the announce path still selects the canonical frame when a bundle is prese
   assert.deepEqual(sentBytes, source, 'the announced bytes are the canonical capture');
 });
 
-test('a page double without bundle APIs still records the canonical screenshot', async t => {
-  const directory = await mkdtemp(join(tmpdir(), 'checkpoint-bundle-double-'));
+test('an off-screen or unstable challenge panel never produces a crop', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'checkpoint-bundle-gates-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const makePage = boxes => {
+    let call = 0;
+    return {
+      url: () => 'https://accounts.google.com/signin/v2/challenge',
+      viewportSize: () => ({ width: 1280, height: 720 }),
+      waitForTimeout: async () => {},
+      locator: () => ({ first() { return this; }, count: async () => 1, isVisible: async () => true,
+        boundingBox: async () => boxes[Math.min(call++, boxes.length - 1)] }),
+      screenshot: async ({ path }) => { await writeFile(path, Buffer.concat([PNG_SIGNATURE, Buffer.alloc(3072, 4)])); },
+    };
+  };
+  // Ported canary gate: a bframe parked at y=-9999 is not a panel.
+  const offscreen = await captureSafeScreenshot({ page: makePage([{ x: 10, y: -9999, width: 400, height: 300 }]),
+    directory, label: 'checkpoint_offscreen', index: 9, minBytes: 1, attempts: 1, bundle: true });
+  assert.ok(offscreen.path, 'the canonical frame is still captured');
+  assert.equal(offscreen.regionPath, undefined);
+  assert.equal(offscreen.diagnostics.includes('challenge_region_not_detected'), true);
+  // A moving/replacing frame must not produce a crop.
+  const moving = await captureSafeScreenshot({ page: makePage([{ x: 10, y: 20, width: 400, height: 300 },
+    { x: 80, y: 120, width: 400, height: 300 }]), directory, label: 'checkpoint_moving', index: 10,
+    minBytes: 1, attempts: 1, bundle: true });
+  assert.ok(moving.path);
+  assert.equal(moving.regionPath, undefined);
+  assert.equal(moving.diagnostics.includes('challenge_region_unstable'), true);
+  // A tiny panel is not a panel either.
+  const tiny = await captureSafeScreenshot({ page: makePage([{ x: 10, y: 20, width: 40, height: 30 }]),
+    directory, label: 'checkpoint_tiny', index: 11, minBytes: 1, attempts: 1, bundle: true });
+  assert.equal(tiny.regionPath, undefined);
+});
+
+test('a page double without bundle APIs still records the canonical screenshot', async t => {  const directory = await mkdtemp(join(tmpdir(), 'checkpoint-bundle-double-'));
   t.after(() => rm(directory, { recursive: true, force: true }));
   const page = {
     url: () => 'https://accounts.google.com/signin/v2/challenge',

@@ -5,6 +5,7 @@ import { maxRecoverySteps, recoveryObservation, recoveryCandidates, validateReco
 import { BrowserExecutionKernel, decisionSourceFor } from './execution.mjs';
 import { createValueResolver, valueRefForOperation } from './secrets.mjs';
 import { attachObservation } from './observation.mjs';
+import { installDialogGuard } from './dialog-containment.mjs';
 
 export const defaultLoginGoal = 'Sign in to the supplied existing account and confirm the expected '
   + 'identity. Do not create an account, change account settings, or post content. Human confirmation '
@@ -360,11 +361,12 @@ async function rememberCorrection({ memory, browser, account, snapshot, classifi
   if (!changed) { browser.recovery.lastFailedAction = action.kind; return null; }
   const failedAction = browser.recovery.lastFailedAction || null;
   browser.recovery.lastFailedAction = null;
+  const match = memory.observeCorrection?.({ correction: action.kind }) || { matchedRecall: false };
   let statePath = null;
   try { const url = new URL(snapshot.url); statePath = `${url.origin}${url.pathname}`; } catch {}
   return memory.record({ reason: classifiedReason || 'unexpected_state', statePath, failedAction,
     correction: action.kind, verification: 'page_changed', platform: account.platform,
-    jobId: scope?.jobId || null });
+    jobId: scope?.jobId || null, memoryMatched: match.matchedRecall === true });
 }
 
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
@@ -372,6 +374,11 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000,
   receipts = null, scope = null, recoveryMemory = null }) {
   const browser = new LoginBrowser(page, account, { site });
+  // A stale dialog race must never kill the process (ported canary guard): the
+  // dismissal happens inside the guard and is journalled as a diagnostic.
+  const dialogGuard = typeof page.on === 'function'
+    ? installDialogGuard(page, { onDiagnostic: async detail => { try { await onStep({ phase: 'dialog', ...detail }); } catch {} } })
+    : null;
   // The single execution path for this run. The deterministic flow and the Jev
   // recovery episode both go through it; nothing else performs a browser
   // operation. Roles come from this workflow, never from a model.
@@ -477,7 +484,7 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       let decision;
       try {
         decision = await choose({ page: modelView, observation, snapshot,
-          classifiedReason: classifiedReason || null, episode: visualEpisode,
+          classifiedReason: classifiedReason || null, episode: visualEpisode, phase: 'jev_recovery', step,
           actions: candidates.map(({ id, description }) => ({ id, description })) });
       } catch (error) {
         await onStep({ step, phase: 'jev_recovery', state: 'selection_failed',
@@ -567,7 +574,8 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     // The decision carries the observation it was taken against, so an advisor can
     // bind a screenshot to this epoch and execution can refuse another one.
     try { decision = await choose({ page: browser.publicPage(snapshot), observation, snapshot,
-      episode: visualEpisode, actions: actions.map(({ id, description }) => ({ id, description })) }); }
+      episode: visualEpisode, phase: verifyOnly ? 'verify_reopen' : 'login', step,
+      actions: actions.map(({ id, description }) => ({ id, description })) }); }
     catch (error) { await attention(error instanceof PilotError ? error.code : 'selection_failed'); throw error; }
     if (decision?.episode) visualEpisode.escalations = decision.episode.escalations;
     // An L3 decision taken on another epoch is never executed here.
@@ -625,5 +633,6 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     throw error;
   } finally {
     page.off('response', responseListener); page.off('requestfailed', failureListener);
+    dialogGuard?.dispose();
   }
 }

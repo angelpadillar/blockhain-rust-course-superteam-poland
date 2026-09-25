@@ -98,6 +98,20 @@ test('one command runs the whole lifecycle, announces the checkpoint and keeps t
   // The profile was stopped and the ownership lock released.
   assert.equal(backend.apiState.started.size, 0);
   assert.deepEqual(await readdir(join(directory, 'locks')).catch(() => []), []);
+  // Observation mode: every decision and outcome is recorded, and the router
+  // never changed execution (the same COMPLETE lifecycle above proves that).
+  assert.ok(result.routerObservation, 'router observation is enabled');
+  assert.equal(result.routerObservation.executionChanged, false);
+  assert.ok(result.routerObservation.decisions >= 1);
+  assert.ok(result.routerObservation.agreements >= 1);
+  const observationRaw = await readFile(result.routerObservation.path, 'utf8');
+  const observations = observationRaw.trim().split('\n').map(line => JSON.parse(line));
+  assert.ok(observations.some(record => record.kind === 'decision' && record.executionChanged === false));
+  assert.ok(observations.some(record => record.kind === 'outcome' && record.succeeded === true));
+  assert.ok(observations.some(record => record.candidates.some(candidate => candidate.tool === 'fill_username')));
+  assert.equal(observationRaw.includes('observed input'), false, 'candidate descriptions are never stored');
+  assert.equal(result.proxy.reuseExistingProxy, false);
+  assert.equal(result.proxy.rotations, 0);
   // The structured result is durable, and no secret is present in the evidence.
   const stored = await readJson(result.resultPath, null);
   assert.equal(stored.status, 'completed');

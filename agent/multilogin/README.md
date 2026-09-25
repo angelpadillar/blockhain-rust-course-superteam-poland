@@ -135,7 +135,40 @@ when one is detectable, and a `-context.json` sidecar with URL (origin+path),
 title, visible-text summary (through the account redactor), viewport, device
 pixel ratio, timestamp and job/profile identity. Telegram receives the canonical
 PNG as a photo preview plus the byte-identical PNG as a document, so the fine
-detail survives Telegram's own recompression.
+detail survives Telegram's own recompression. The focused crop is gated by the
+visibility and stability rules ported from the VPS canary checkpoint work: a
+challenge frame parked off-screen (reCAPTCHA bframes sit at y=-9999) or smaller
+than a real panel is never cropped, and a frame that moves between two bounded
+measurements is skipped rather than captured half-painted. The dialog guard from
+the same work contains Playwright's stale-dialog race so it cannot kill a job.
+
+## Existing-proxy (degraded) mode
+
+When Multilogin's premium-proxy provisioning is unavailable but a profile already
+carries its assigned proxy, the safe path is:
+
+```sh
+npm run browser:job -- jobs/youtube-live-01.json --reuse-existing-proxy
+```
+
+In this mode the orchestrator proves from read-only profile metadata that a proxy
+is attached (`proxy_masking: custom`), and then refuses every provisioning and
+rotation path: no `premiumProxy`, no `changeProxy`, no profile modification, and
+no silent fallback to a proxy-less browser. If the launcher refuses to start
+because it cannot validate the assigned proxy, the run fails closed with the
+launcher's own reason and stops; the profile mapping and session are preserved.
+The result records `proxy.reuseExistingProxy`, `proxy.verifiedAttached` and
+`proxy.rotations: 0`. See `PROXY-403-DIAGNOSIS.md` for the live diagnosis this
+mode was built from.
+
+Decision evidence is recorded in **observation mode**: every live decision writes
+a `router-observations.ndjson` line with the state class, candidate capabilities,
+the deterministic-first choice, the executed decision, the source
+(`deterministic` / `jev`) and the outcome, while the router never alters
+execution (`executionChanged: false`). Recovery memory adds telemetry only
+(recalls, considered episodes, bytes, retrieval latency, and whether the recalled
+correction matched the one that eventually worked); the injected count stays at
+most two compact episodes and no transcripts or page text are ever stored.
 
 `--fake` runs the real orchestrator, login adapter, recovery layer, checkpoint
 hook, Studio verification and restart persistence against an offline provider

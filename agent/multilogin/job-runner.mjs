@@ -30,7 +30,7 @@ const valueFlags = ['--config', '--data', '--accounts', '--accounts-dir', '--con
   '--human-checkpoint-seconds', '--seed-sites', '--provider', '--model', '--token-file', '--key-file',
   '--mode', '--telegram-poll-ms', '--checkpoint-poll-ms'];
 const switchFlags = ['--dry-run', '--stdin-secrets', '--no-notify', '--no-telegram', '--no-memory',
-  '--preserve-on-checkpoint', '--json', '--help'];
+  '--preserve-on-checkpoint', '--reuse-existing-proxy', '--json', '--help'];
 
 export function parseArguments(argv) {
   const options = { positional: [] };
@@ -51,7 +51,7 @@ const usage = 'Usage: node job-runner.mjs <job.json> [--mode live|fake] [--data 
   + '[--config config.vps.json] [--accounts private/accounts.json | --accounts-dir private/accounts] '
   + '[--token-file private/multilogin-token] [--key-file private/typesafe-key] [--provider typesafe|fireworks] '
   + '[--model ID] [--human-checkpoint-seconds 600] [--stdin-secrets] [--no-notify] [--no-telegram] '
-  + '[--no-memory] [--preserve-on-checkpoint] [--dry-run] [--json]';
+  + '[--no-memory] [--reuse-existing-proxy] [--preserve-on-checkpoint] [--dry-run] [--json]';
 
 // Defaults resolve beside this package so `npm run browser:job` works from the
 // repository root as well as from the worker image.
@@ -104,6 +104,7 @@ export async function main(argv = process.argv.slice(2)) {
   const keepSeedSites = options['seed-sites'] === 'config';
   const config = validateConfig({ ...supplied,
     ...(keepSeedSites ? {} : { seedSites: [] }),
+    ...(options['reuse-existing-proxy'] ? { reuseExistingProxy: true } : {}),
     ...(options['human-checkpoint-seconds']
       ? { humanCheckpointSeconds: Number(options['human-checkpoint-seconds']) } : {}) });
 
@@ -122,7 +123,8 @@ export async function main(argv = process.argv.slice(2)) {
     console.log(JSON.stringify({ mode: 'dry_run', runner: 'live', data: directory, job,
       config: { folderId: config.folderId, launcherUrl: config.launcherUrl, proxyMode: config.proxyMode,
         proxyCountry: config.proxyCountry, verifyRestart: config.verifyRestart,
-        humanCheckpointSeconds: config.humanCheckpointSeconds, seedSites: config.seedSites },
+        humanCheckpointSeconds: config.humanCheckpointSeconds, seedSites: config.seedSites,
+        reuseExistingProxy: config.reuseExistingProxy === true },
       resume: { resumable: resume.resumable, from: resume.from, checkpoint: resume.checkpoint,
         profileId: resume.profileId },
       plan }, null, 2));

@@ -141,3 +141,73 @@ test('the router counts redundant and failed choices for later comparison', asyn
   assert.equal(router.counters.redundant, 2);
   assert.equal(router.counters.failed, 1);
 });
+
+test('observation mode records decisions and outcomes without changing them', async t => {
+  const { createRouterObserver, wrapGuideForObservation } = await import('../src/action-router.mjs');
+  const { mkdtemp, readFile, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const directory = await mkdtemp(join(tmpdir(), 'router-observer-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const observer = createRouterObserver({ directory, now: () => 1_000_000 });
+  const decision = { action: { id: 'a0' }, method: 'exact-single-match', confidence: null, probability: null };
+  const guide = async () => decision;
+  guide.metrics = { calls: 0 };
+  const wrapped = wrapGuideForObservation(guide, observer);
+  const returned = await wrapped({ phase: 'login', step: 3, actions: [
+    { id: 'a0', description: 'fill_username: observed input labelled "Email"' },
+    { id: 'a1', description: 'fill_password: observed input labelled "Password"' }] });
+  assert.equal(returned, decision, 'the decision is returned untouched');
+  assert.equal(wrapped.metrics, guide.metrics, 'the metrics object is preserved');
+  await observer.observeStep({ phase: 'login', state: 'before', action: 'fill_username' });
+  await observer.observeStep({ phase: 'login', state: 'after', action: 'fill_username' });
+  const lines = (await readFile(observer.path, 'utf8')).trim().split('\n').map(line => JSON.parse(line));
+  assert.equal(lines.length, 3);
+  assert.equal(lines[0].kind, 'decision');
+  assert.equal(lines[0].step, 3);
+  assert.equal(lines[0].stateClass, 'login_form');
+  assert.deepEqual(lines[0].candidates, [{ id: 'a0', tool: 'fill_username' }, { id: 'a1', tool: 'fill_password' }]);
+  assert.equal(lines[0].router.topCandidate, 'a0');
+  assert.equal(lines[0].router.agreed, true);
+  assert.equal(lines[0].chosen.method, 'exact-single-match');
+  assert.equal(lines[0].scorerSource, 'deterministic');
+  assert.equal(lines[0].executionChanged, false);
+  assert.equal(lines[1].kind, 'execution');
+  assert.equal(lines[1].succeeded, null);
+  assert.equal(lines[2].kind, 'outcome');
+  assert.equal(lines[2].succeeded, true);
+  assert.equal(observer.summary.decisions, 1);
+  assert.equal(observer.summary.agreements, 1);
+  assert.equal(observer.summary.succeeded, 1);
+  assert.equal(observer.summary.executionChanged, false);
+  assert.equal(JSON.stringify(lines).includes('Email'), false, 'descriptions are never stored');
+});
+
+test('observation mode records a disagreement and a failed execution', async t => {
+  const { createRouterObserver, wrapGuideForObservation } = await import('../src/action-router.mjs');
+  const { mkdtemp, readFile, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const directory = await mkdtemp(join(tmpdir(), 'router-observer-fail-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const observer = createRouterObserver({ directory });
+  const guide = async request => ({ action: request.actions[1], method: 'typesafe-choice',
+    confidence: 0.9, probability: 0.8 });
+  const wrapped = wrapGuideForObservation(guide, observer);
+  await wrapped({ phase: 'jev_recovery', step: 7, classifiedReason: 'human_verification_required',
+    actions: [{ id: 'r0', description: 'retry_observation: Re-read the page' },
+      { id: 'r1', description: 'escalate_security_checkpoint: Only a person can proceed' }] });
+  await observer.observeStep({ phase: 'jev_recovery', state: 'before', action: 'escalate_security_checkpoint' });
+  await observer.observeStep({ phase: 'attention', reason: 'human_verification_required' });
+  const lines = (await readFile(observer.path, 'utf8')).trim().split('\n').map(line => JSON.parse(line));
+  assert.equal(lines[0].stateClass, 'checkpoint:human_verification_required');
+  assert.equal(lines[0].router.agreed, false);
+  assert.equal(lines[0].scorerSource, 'jev');
+  assert.equal(lines[0].chosen.confidence, 0.9);
+  assert.equal(lines[2].kind, 'outcome');
+  assert.equal(lines[2].succeeded, false);
+  assert.equal(lines[2].reason, 'human_verification_required');
+  assert.equal(observer.summary.disagreements, 1);
+  assert.equal(observer.summary.modelDecisions, 1);
+  assert.equal(observer.summary.failed, 1);
+});

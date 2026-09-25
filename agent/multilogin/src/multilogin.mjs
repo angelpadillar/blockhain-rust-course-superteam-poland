@@ -80,6 +80,13 @@ export class Multilogin {
     catch (error) { if (error.code === 'profile_already_stopped') return { alreadyStopped: true }; throw error; }
   }
   status(profileId) { return this.request(this.launcher, `/api/v1/profile/status/p/${id(profileId)}`); }
+  // Read-only profile metadata. Used by reuse-existing-proxy mode to prove a
+  // proxy is already attached before anything is started; it never prints or
+  // returns proxy credentials.
+  async profileMeta(profileId) {
+    const data = await this.cloud('/profile/metas', { ids: [id(profileId)] });
+    return data?.profiles?.find(profile => profile.id === profileId) || null;
+  }
   async changeProxy(profileId, proxy) {
     const data = await this.cloud('/profile/metas', { ids: [id(profileId)] });
     const meta = data?.profiles?.find(profile => profile.id === profileId);

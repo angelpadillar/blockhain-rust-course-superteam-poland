@@ -68,8 +68,9 @@ async function captureBundle({ page, directory, name, context, redact, origin })
       await page.screenshot({ path: regionPath, clip: region.clip });
       bundle.regionPath = regionPath; bundle.regionName = `${base}-region.png`;
       bundle.regionSelector = region.selector;
+      bundle.regionStable = true;
     } catch { bundle.diagnostics.push('region_capture_failed'); }
-  } else bundle.diagnostics.push('challenge_region_not_detected');
+  } else bundle.diagnostics.push(region?.unstable ? 'challenge_region_unstable' : 'challenge_region_not_detected');
   const safe = value => (redact ? redact(String(value ?? '')) : String(value ?? ''));
   const pageContext = {};
   try {
@@ -109,35 +110,105 @@ export function summarizeVisibleText(text, safe = value => String(value ?? '')) 
 // challenge iframe first, then a dialog, then the visible form that contains the
 // challenge input. The clip is clamped to the viewport and must be large enough
 // to be readable; otherwise no region is produced.
+//
+// Two gates are ported from the VPS canary checkpoint work (2026-09-25) so the
+// unified pipeline inherits its hard-won capture discipline:
+//   1. visibility: a rect parked off-screen (reCAPTCHA bframes sit at y=-9999)
+//      or smaller than minPanelSide is NOT a challenge panel;
+//   2. stability: an animating/replacing frame must not produce a crop, so the
+//      box is measured twice with a bounded delay and must match.
 export const challengeRegionSelectors = [
   'iframe[src*="recaptcha"], iframe[src*="hcaptcha"], iframe[src*="challenges.cloudflare.com"]',
   '[role="dialog"]',
   'form:has(input[name*="challenge" i]), form:has(input[autocomplete="one-time-code"])',
 ];
+// Ported constants: an off-screen panel is y <= -1000; a real panel is at least
+// 100x100. The previous local minimum (160x80) is superseded by this gate.
+export const offscreenThreshold = -1000;
+export const minPanelSide = 100;
+export const regionStabilityMs = 120;
+export const regionTolerancePx = 2;
 
-export async function detectChallengeRegion(page, { minWidth = 160, minHeight = 80 } = {}) {
+// Ported verbatim in behaviour from the canary's checkpoint-visibility.mjs
+// (geometry normalisation covers DOMRect/boundingBox {width,height} and cell
+// boxes {w,h}).
+export function isRectVisibleInViewport(rect, viewport) {
+  if (!rect || !viewport) return false;
+  const x = rect.x;
+  const y = rect.y;
+  const width = Number.isFinite(rect.width) ? rect.width : rect.w;
+  const height = Number.isFinite(rect.height) ? rect.height : rect.h;
+  if (![x, y, width, height].every(value => Number.isFinite(value))) return false;
+  if (width < minPanelSide || height < minPanelSide) return false;
+  if (y <= offscreenThreshold) return false;
+  const vw = Number(viewport.width) || 0;
+  const vh = Number(viewport.height) || 0;
+  if (vw <= 0 || vh <= 0) return false;
+  if (x + width <= 0 || y + height <= 0) return false;
+  if (x >= vw || y >= vh) return false;
+  return true;
+}
+
+export function normalizeRect(box) {
+  if (!box) return null;
+  const x = Number(box.x); const y = Number(box.y);
+  const width = Number.isFinite(box.width) ? Number(box.width) : Number(box.w);
+  const height = Number.isFinite(box.height) ? Number(box.height) : Number(box.h);
+  if (![x, y, width, height].every(Number.isFinite)) return null;
+  return { x, y, width, height };
+}
+
+export function rectsMatch(a, b, tolerance = regionTolerancePx) {
+  if (!a || !b) return false;
+  return ['x', 'y', 'width', 'height'].every(key => Math.abs(a[key] - b[key]) <= tolerance);
+}
+
+export async function detectChallengeRegion(page, { minWidth = minPanelSide, minHeight = minPanelSide } = {}) {
   if (typeof page.locator !== 'function') return null;
+  const viewport = typeof page.viewportSize === 'function' ? page.viewportSize() : null;
   for (const selector of challengeRegionSelectors) {
     let box = null;
     try {
       const locator = page.locator(selector).first();
       if (!await locator.count().catch(() => 0)) continue;
       if (!await locator.isVisible().catch(() => false)) continue;
-      box = await withTimeout(locator.boundingBox(), 2000);
+      box = normalizeRect(await withTimeout(locator.boundingBox(), 2000));
     } catch { continue; }
-    if (!box || box.width < minWidth || box.height < minHeight) continue;
-    let clip = { x: Math.max(0, Math.round(box.x)), y: Math.max(0, Math.round(box.y)),
-      width: Math.round(box.width), height: Math.round(box.height) };
-    const viewport = typeof page.viewportSize === 'function' ? page.viewportSize() : null;
-    if (viewport) {
-      clip = { x: Math.min(clip.x, viewport.width - 1), y: Math.min(clip.y, viewport.height - 1),
-        width: Math.min(clip.width, viewport.width - Math.min(clip.x, viewport.width - 1)),
-        height: Math.min(clip.height, viewport.height - Math.min(clip.y, viewport.height - 1)) };
+    if (!box || !isRectVisibleInViewport(box, viewport)) continue;
+    if (box.width < minWidth || box.height < minHeight) continue;
+    // Stability gate: one bounded re-measure; a moving/replacing frame yields no
+    // crop (the canonical frame and the context sidecar are still captured).
+    await sleepFor(page, regionStabilityMs);
+    let second = null;
+    try {
+      const locator = page.locator(selector).first();
+      second = normalizeRect(await withTimeout(locator.boundingBox(), 2000));
+    } catch { /* treated as unstable below */ }
+    if (!second || !isRectVisibleInViewport(second, viewport) || !rectsMatch(box, second)) {
+      return { selector, unstable: true, box };
     }
-    if (clip.width < minWidth || clip.height < minHeight) continue;
-    return { selector, clip, box };
+    const clip = clampClip(second, viewport, minWidth, minHeight);
+    if (!clip) continue;
+    return { selector, clip, box: second, stable: true };
   }
   return null;
+}
+
+function clampClip(box, viewport, minWidth, minHeight) {
+  let clip = { x: Math.max(0, Math.round(box.x)), y: Math.max(0, Math.round(box.y)),
+    width: Math.round(box.width), height: Math.round(box.height) };
+  if (viewport) {
+    clip = { x: Math.min(clip.x, viewport.width - 1), y: Math.min(clip.y, viewport.height - 1),
+      width: Math.min(clip.width, viewport.width - Math.min(clip.x, viewport.width - 1)),
+      height: Math.min(clip.height, viewport.height - Math.min(clip.y, viewport.height - 1)) };
+  }
+  if (clip.width < minWidth || clip.height < minHeight) return null;
+  return clip;
+}
+
+async function sleepFor(page, ms) {
+  if (typeof page.waitForTimeout === 'function') { await page.waitForTimeout(ms).catch(() => {}); return; }
+  await new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // Bounded render settle: wait for one painted frame (two animation frames) and

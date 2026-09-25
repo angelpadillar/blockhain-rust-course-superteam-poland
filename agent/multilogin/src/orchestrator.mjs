@@ -6,6 +6,7 @@ import { runLogin } from './login.mjs';
 import { inspectStudio } from './youtube.mjs';
 import { createLifecycle, loadLifecycle, isResumableLifecycle, isTerminalLifecycleState,
   actionSourceForMethod } from './lifecycle.mjs';
+import { createRouterObserver, wrapGuideForObservation } from './action-router.mjs';
 import { announceCheckpoint, createCheckpointStore, handleCommand, countActiveCheckpoints } from './human-checkpoint.mjs';
 
 // ONE job, ONE process, ONE lifecycle. The orchestrator wraps the tested job
@@ -101,13 +102,29 @@ export function createTelegramCommandLoop({ notifier, directory, cancel, pollMs 
   };
 }
 
+// Degraded mode pre-flight: prove the EXISTING profile already carries a proxy.
+// It never provisions, rotates or modifies anything; a missing attachment fails
+// closed, so the mode can never silently fall back to no proxy.
+export async function verifyExistingProxyAttachment({ api, profileId, config = {} } = {}) {
+  requireThat(config.reuseExistingProxy === true, 'proxy_reuse_not_enabled');
+  requireThat(typeof profileId === 'string' && profileId.length >= 8, 'reuse_existing_proxy_requires_profile');
+  requireThat(typeof api?.profileMeta === 'function', 'profile_metadata_unavailable');
+  const meta = await api.profileMeta(profileId).catch(() => null);
+  requireThat(meta, 'existing_profile_metadata_unavailable');
+  const proxy = meta.parameters?.proxy || null;
+  requireThat(proxy && (proxy.host || proxy.type), 'existing_proxy_missing');
+  requireThat(meta.parameters?.flags?.proxy_masking !== 'disabled', 'existing_proxy_masking_disabled');
+  return { profileId, attached: true, proxyType: proxy.type ?? null, proxyPort: proxy.port ?? null,
+    proxyMasking: meta.parameters?.flags?.proxy_masking ?? null };
+}
+
 // Run exactly one job end to end. All heavy primitives are injected so the fake
 // backend and the live deployment share this exact path.
 export async function runSingleJob({ job, accountIndex, config, directory, api, guideFactory,
   connectImpl = undefined, seedImpl = undefined, flowImpl = runLogin, studioImpl = inspectStudio,
   notifier = null, notify = true, cancel = new CancelToken(), humanCheckpointPollMs = 2000,
   telegramPollMs = 2000, telegram = true, memory = null, resume = null, preserveOnCheckpoint = false,
-  onEvent = null, now = Date.now, elapsed = () => performance.now() } = {}) {
+  routerObservation = true, onEvent = null, now = Date.now, elapsed = () => performance.now() } = {}) {
   requireThat(directory, 'orchestrator_directory_required');
   requireThat(accountIndex instanceof Map, 'account_source_required');
   const [validated] = validateJobs({ jobs: [job] });
@@ -129,10 +146,35 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
   await emit({ event: 'lifecycle', state: lifecycle.state, jobId: job.id, resume: resumeInfo.resumable,
     from: resumeInfo.from, profileId: resumeInfo.profileId });
 
+  // Degraded proxy mode: verify the attached proxy before anything starts. No
+  // provisioning endpoint is ever called in this mode.
+  let existingProxy = null;
+  if (config.reuseExistingProxy === true) {
+    try {
+      const plan = await inspectJobPlan({ jobs: [job], accountIndex, directory });
+      existingProxy = await verifyExistingProxyAttachment({ api, profileId: plan.planned?.[0]?.profileId ?? null,
+        config });
+      await lifecycle.transition('PENDING', { action: 'verify_existing_proxy', actionSource: 'deterministic',
+        result: 'proxy_attached', verification: 'existing_proxy_attached',
+        detail: { profileId: existingProxy.profileId, proxyType: existingProxy.proxyType,
+          proxyPort: existingProxy.proxyPort, proxyMasking: existingProxy.proxyMasking } });
+      await emit({ event: 'proxy_reuse', jobId: job.id, profileId: existingProxy.profileId,
+        attached: true, rotationsAllowed: false });
+    } catch (error) {
+      await lifecycle.finish('FAILED', { reason: errorCode(error), action: 'verify_existing_proxy',
+        actionSource: 'deterministic', verification: 'existing_proxy_not_proven' });
+      throw error;
+    }
+  }
+
+  // Observation mode: every live decision is recorded next to its outcome. The
+  // router NEVER changes a decision in this phase.
+  const routerObserver = routerObservation === false ? null : createRouterObserver({ directory: jobDirectory });
   // --- Action evidence -------------------------------------------------------
   let lastRecoveryStep = 0;
   const recordStep = async detail => {
     if (!detail || typeof detail !== 'object') return;
+    await routerObserver?.observeStep(detail).catch(() => {});
     if (detail.phase === 'receipt') {
       await lifecycle.recordAction({ action: detail.operation, actionSource: detail.decisionSource || 'none',
         phase: 'receipt', result: detail.state, verification: detail.postconditionMet === true ? 'postcondition_met' : null });
@@ -294,7 +336,11 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
   // --- The kernel run ---------------------------------------------------------
   let batch = null; let failure = null;
   try {
-    batch = await runJobBatch({ jobs: [job], accountIndex, config, directory, concurrency: 1, api, guideFactory,
+    const observedGuideFactory = routerObserver
+      ? () => wrapGuideForObservation(guideFactory(), routerObserver)
+      : guideFactory;
+    batch = await runJobBatch({ jobs: [job], accountIndex, config, directory, concurrency: 1, api,
+      guideFactory: observedGuideFactory,
       ...(connectImpl ? { connectImpl } : {}), ...(seedImpl ? { seedImpl } : {}),
       ...(preserveOnCheckpoint ? { preserveOnCheckpoint } : {}),
       onJobState, humanCheckpointPollMs, cancel,
@@ -368,6 +414,12 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
     jev: jobDocument?.jev ?? null,
     recovery: accountResult.login?.recovery ?? null,
     visualEscalations: accountResult.login?.visualEscalations ?? null,
+    proxy: { reuseExistingProxy: config.reuseExistingProxy === true,
+      verifiedAttached: existingProxy ? true : null,
+      attachedProfileId: existingProxy?.profileId ?? null,
+      rotations: lifecycle.counters.proxySwitches },
+    routerObservation: routerObserver ? { path: routerObserver.path, ...routerObserver.summary } : null,
+    memory: memory ? { path: memory.path, ...memory.diagnostics } : null,
   };
   await writeJson(result.resultPath, result).catch(() => {});
   await emit({ event: 'result', ...result });

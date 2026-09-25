@@ -1,3 +1,5 @@
+import { mkdir, appendFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import { requireThat } from './core.mjs';
 import { operationKinds, riskByOperation, workflowRoles, decisionSourceFor } from './execution.mjs';
 import { recoveryCapabilities } from './recovery.mjs';
@@ -234,3 +236,135 @@ export function createToolRouter({ registry, shortlister, scorer = null, economi
 }
 
 export { decisionSourceFor };
+
+// ---------------------------------------------------------------------------
+// Observation mode. The router never controls a live action in this phase: it
+// records what the deterministic executor already did and what the router's
+// policy would have preferred, so real state → candidate → outcome data can be
+// compared later across deterministic / JEV / CLM / DeepSeek Flash.
+//
+// One append-only NDJSON line per decision and per execution/outcome. Nothing
+// here mutates a decision, calls a model, or records page text: candidates are
+// reduced to their tool name, and descriptions are never stored.
+export function createRouterObserver({ directory, now = Date.now } = {}) {
+  requireThat(typeof directory === 'string' && directory.length > 0, 'router_observer_directory_required');
+  const path = resolve(directory, 'router-observations.ndjson');
+  const summary = { decisions: 0, deterministicShortcuts: 0, modelDecisions: 0, agreements: 0,
+    disagreements: 0, executions: 0, succeeded: 0, failed: 0, stale: 0, lastStateClass: null,
+    executionChanged: false };
+  let sequence = 0;
+  let open = null;
+  let lastExecution = null;
+  const closed = new Set();
+  const append = async record => {
+    await mkdir(directory, { recursive: true, mode: 0o700 });
+    await appendFile(path, `${JSON.stringify(record)}\n`, { mode: 0o600 });
+  };
+  const toolOf = description => /^([a-z][a-z0-9_]{1,47}):/.exec(String(description || ''))?.[1] || null;
+  const stateClassFor = ({ phase, classifiedReason, tools }) => {
+    if (classifiedReason) return `checkpoint:${classifiedReason}`;
+    const names = new Set(tools.map(entry => entry.tool).filter(Boolean));
+    if (names.has('fill_totp') || names.has('choose_totp') || names.has('try_another_way')) return 'authenticator_challenge';
+    if (names.has('fill_username') || names.has('fill_password') || names.has('submit_login')) return 'login_form';
+    if (names.has('open_account_menu') || names.has('open_switch_account')) return 'account_menu';
+    if (names.has('retry_observation') || names.has('wait')) return 'unexpected_state';
+    if (names.has('navigate_home')) return 'off_home';
+    if (phase === 'jev_recovery') return 'recovery';
+    if (phase === 'verify_reopen') return 'session_reopen';
+    return 'other';
+  };
+  return {
+    path,
+    summary,
+    // Called with exactly the request/decision pair the live chooser used. The
+    // returned record is evidence; the caller's decision is untouched.
+    async observeDecision({ phase = 'login', request = null, decision = null, step = null, jobId = null } = {}) {
+      const actions = Array.isArray(request?.actions) ? request.actions : [];
+      const tools = actions.map(action => ({ id: action.id, tool: toolOf(action.description) }));
+      const chosenId = decision?.action?.id ?? null;
+      const chosenIndex = tools.findIndex(entry => entry.id === chosenId);
+      const topCandidate = tools[0]?.id ?? null;
+      const agreed = topCandidate !== null && chosenId === topCandidate;
+      const source = decision?.method === 'exact-single-match' ? 'deterministic'
+        : phase === 'jev_recovery' ? 'jev' : 'none';
+      sequence++;
+      const record = { kind: 'decision', id: `d${sequence}`, at: new Date(now()).toISOString(),
+        jobId, step: step ?? request?.step ?? null, phase,
+        stateClass: stateClassFor({ phase, classifiedReason: request?.classifiedReason ?? null, tools }),
+        candidateCount: tools.length, candidates: tools,
+        // The deterministic-first policy the router would apply on its own; no
+        // model call is made in observation mode, so confidence stays null.
+        router: { policy: 'deterministic-first', topCandidate, agreed, confidence: null },
+        chosen: { id: chosenId, tool: chosenIndex >= 0 ? tools[chosenIndex].tool : null,
+          method: decision?.method ?? null, confidence: decision?.confidence ?? null,
+          probability: decision?.probability ?? null },
+        scorerSource: source, executionChanged: false };
+      open = record;
+      await append(record);
+      summary.decisions++;
+      if (agreed) summary.agreements++; else summary.disagreements++;
+      if (source === 'deterministic') summary.deterministicShortcuts++; else if (source === 'jev') summary.modelDecisions++;
+      summary.lastStateClass = record.stateClass;
+      return record;
+    },
+    // Correlates the executor's own step events with the decision that preceded
+    // them. Never alters them.
+    async observeStep(detail = {}) {
+      if (!detail || typeof detail !== 'object') return null;
+      if (['login', 'verify_reopen', 'jev_recovery'].includes(detail.phase)) {
+        if (!open) return null;
+        if (detail.state === 'before') {
+          const record = { kind: 'execution', decisionId: open.id, at: new Date(now()).toISOString(),
+            phase: detail.phase, executed: { action: detail.action ?? null }, result: 'selected', succeeded: null };
+          lastExecution = record;
+          summary.executions++;
+          await append(record);
+          return record;
+        }
+        if (detail.state === 'after') {
+          const record = { kind: 'outcome', decisionId: open.id, at: new Date(now()).toISOString(),
+            phase: detail.phase, executed: { action: detail.action ?? null }, result: 'dispatched', succeeded: true };
+          closed.add(open.id); open = null; lastExecution = null;
+          summary.succeeded++;
+          await append(record);
+          return record;
+        }
+        if (detail.state === 'stale' || detail.state === 'stale_decision') {
+          const record = { kind: 'outcome', decisionId: open.id, at: new Date(now()).toISOString(),
+            phase: detail.phase, executed: { action: detail.action ?? null }, result: detail.state,
+            succeeded: false, reason: 'reobserve' };
+          closed.add(open.id); open = null; lastExecution = null;
+          summary.stale++;
+          await append(record);
+          return record;
+        }
+      }
+      if (detail.phase === 'attention' && lastExecution && !closed.has(lastExecution.decisionId)) {
+        const record = { kind: 'outcome', decisionId: lastExecution.decisionId, at: new Date(now()).toISOString(),
+          phase: 'attention', executed: lastExecution.executed, result: 'failed',
+          succeeded: false, reason: detail.reason || 'attention' };
+        closed.add(lastExecution.decisionId); open = null; lastExecution = null;
+        summary.failed++;
+        await append(record);
+        return record;
+      }
+      return null;
+    },
+  };
+}
+
+// Wrap a live guide so every decision is observed without changing it. The
+// wrapped function returns exactly the inner decision, including the
+// exact-single-match shortcut, and preserves the metrics object.
+export function wrapGuideForObservation(guide, observer) {
+  requireThat(typeof guide === 'function', 'guide_required');
+  if (!observer) return guide;
+  const wrapped = async request => {
+    const decision = await guide(request);
+    await observer.observeDecision({ phase: request?.phase ?? 'login', request, decision,
+      step: request?.step ?? null }).catch(() => {});
+    return decision;
+  };
+  if (guide.metrics) wrapped.metrics = guide.metrics;
+  return wrapped;
+}

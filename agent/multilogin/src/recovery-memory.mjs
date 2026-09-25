@@ -33,6 +33,10 @@ export function createRecoveryMemory({ directory, maxEpisodes = 200, now = Date.
   const path = resolve(directory, 'recovery-memory.ndjson');
   const inMemory = [];
   const sessionEpisodeIds = [];
+  // Telemetry only: these counters never change how many memories are recalled.
+  const diagnostics = { calls: 0, considered: 0, recalled: 0, bytes: 0, retrievalMs: 0,
+    corrections: 0, matched: 0, lastRecallAt: null };
+  let lastRecallCorrections = [];
 
   const score = (episode, query) => {
     let value = 0;
@@ -51,6 +55,15 @@ export function createRecoveryMemory({ directory, maxEpisodes = 200, now = Date.
   return {
     version: recoveryMemoryVersion,
     path,
+    diagnostics,
+    // Telemetry only: did the correction that eventually worked match a memory
+    // that was recalled just before it? It never changes what gets injected.
+    observeCorrection({ correction = null } = {}) {
+      diagnostics.corrections++;
+      const matchedRecall = Boolean(correction && lastRecallCorrections.includes(correction));
+      if (matchedRecall) diagnostics.matched++;
+      return { matchedRecall };
+    },
     // Only whitelisted fields are ever written. An unknown field is dropped, not
     // redacted, so a future caller cannot accidentally persist page content.
     async record(episode = {}) {
@@ -61,6 +74,7 @@ export function createRecoveryMemory({ directory, maxEpisodes = 200, now = Date.
         correction: episode.correction ? String(episode.correction).slice(0, 60) : null,
         verification: ['page_changed', 'flow_advanced', 'login_verified', 'unverified'].includes(episode.verification)
           ? episode.verification : 'unverified',
+        memoryMatched: episode.memoryMatched === true,
         platform: episode.platform ? String(episode.platform).slice(0, 32) : null,
         jobId: episode.jobId ? String(episode.jobId).slice(0, 64) : null };
       requireThat(entry.correction || entry.failedAction, 'memory_episode_requires_action');
@@ -74,10 +88,11 @@ export function createRecoveryMemory({ directory, maxEpisodes = 200, now = Date.
     // A few relevant episodes, most relevant first. `limit` is bounded so a
     // caller can never ask for a full dump.
     async recall({ reason = null, url = null, failedAction = null, limit = 2 } = {}) {
+      const started = performance.now();
       const state = memoryStateFor({ url, classifiedReason: reason });
       const query = { reason: state.reason, path: state.path, failedAction };
       const recent = await this.all();
-      return recent
+      const recalled = recent
         .map(episode => ({ episode, value: score(episode, query) }))
         .filter(entry => entry.value > 0)
         .sort((left, right) => right.value - left.value || String(right.episode.at).localeCompare(String(left.episode.at)))
@@ -85,6 +100,14 @@ export function createRecoveryMemory({ directory, maxEpisodes = 200, now = Date.
         .map(entry => ({ reason: entry.episode.reason, statePath: entry.episode.statePath,
           failedAction: entry.episode.failedAction, correction: entry.episode.correction,
           verification: entry.episode.verification }));
+      diagnostics.calls++;
+      diagnostics.considered += recent.length;
+      diagnostics.recalled += recalled.length;
+      diagnostics.bytes += Buffer.byteLength(JSON.stringify(recalled));
+      diagnostics.retrievalMs += Math.round(performance.now() - started);
+      diagnostics.lastRecallAt = new Date(now()).toISOString();
+      lastRecallCorrections = recalled.map(episode => episode.correction).filter(Boolean);
+      return recalled;
     },
     // The compact model-facing shape: a short hint list, never episode ids.
     async hints(options = {}) {

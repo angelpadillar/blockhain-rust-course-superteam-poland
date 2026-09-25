@@ -4,7 +4,8 @@ import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createLifecycle } from '../src/lifecycle.mjs';
-import { inspectOrchestratorResume, createTelegramCommandLoop, orchestrationExitCode } from '../src/orchestrator.mjs';
+import { inspectOrchestratorResume, createTelegramCommandLoop, orchestrationExitCode,
+  verifyExistingProxyAttachment } from '../src/orchestrator.mjs';
 import { createCheckpointStore, createCheckpoint } from '../src/human-checkpoint.mjs';
 import { CancelToken } from '../src/jobs.mjs';
 import { defaultPaths } from '../job-runner.mjs';
@@ -43,6 +44,35 @@ test('restart inspection is read-only and reports the interrupted state and chec
   assert.equal(resume.checkpoint.id, checkpoint.id);
   assert.equal(resume.checkpoint.expired, false);
   assert.equal(resume.jobState, 'waiting_for_human');
+});
+
+test('degraded proxy mode proves the attached proxy and refuses anything weaker', async () => {
+  const config = { reuseExistingProxy: true };
+  const profileId = 'profile-12345678';
+  const good = await verifyExistingProxyAttachment({ config, profileId,
+    api: { profileMeta: async () => ({ parameters: { proxy: { type: 'socks5', host: 'proxy.invalid', port: 1080 },
+      flags: { proxy_masking: 'custom' } } }) } });
+  assert.equal(good.attached, true);
+  assert.equal(good.proxyPort, 1080);
+  assert.equal(good.proxyType, 'socks5');
+  // No attached proxy: fail closed; never silently go proxy-less.
+  await assert.rejects(verifyExistingProxyAttachment({ config, profileId,
+    api: { profileMeta: async () => ({ parameters: { flags: { proxy_masking: 'disabled' } } }) } }),
+  /existing_proxy_missing/);
+  await assert.rejects(verifyExistingProxyAttachment({ config, profileId,
+    api: { profileMeta: async () => null } }), /existing_profile_metadata_unavailable/);
+  // No existing profile, or the mode not enabled: refuse before anything starts.
+  await assert.rejects(verifyExistingProxyAttachment({ config, profileId: null, api: {} }),
+    /reuse_existing_proxy_requires_profile/);
+  await assert.rejects(verifyExistingProxyAttachment({ config: {}, profileId, api: {} }),
+    /proxy_reuse_not_enabled/);
+});
+
+test('job-runner accepts the degraded-proxy switch and forwards it into the config', async () => {
+  const { parseArguments: parseJobArguments } = await import('../job-runner.mjs');
+  const options = parseJobArguments(['jobs/yt-live-01.example.json', '--reuse-existing-proxy', '--json']);
+  assert.equal(options['reuse-existing-proxy'], true);
+  assert.deepEqual(options.positional, ['jobs/yt-live-01.example.json']);
 });
 
 test('the Telegram loop cancels the job on /cancel and answers /status, never /done as proof', async t => {
