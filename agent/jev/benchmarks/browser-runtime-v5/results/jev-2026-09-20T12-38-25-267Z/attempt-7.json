@@ -1,0 +1,653 @@
+{
+  "attempt": 7,
+  "caseId": "delivery-form",
+  "runId": "run-60b15447d6",
+  "repeat": 1,
+  "picker": "jev",
+  "status": "completed",
+  "events": [
+    {
+      "goal": "Fill the delivery form with your details (full name \"Ada Byron\", street address \"12 Analytical Lane\", city \"Warsaw\"), choose standard shipping, and continue to the review.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.2165000000004511
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000043848000000000004,
+        "latencyMs": 229.39316700000018,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1044,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "ref": "s1:e0",
+      "type": "action_planned",
+      "elapsedMs": 263.0574590000015
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 276.84141700000146
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00004758600000000001,
+        "latencyMs": 238.33166699999856,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1133,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 2,
+      "operation": "fill",
+      "ref": "s4:e1",
+      "type": "action_planned",
+      "elapsedMs": 530.6191250000011
+    },
+    {
+      "step": 2,
+      "operation": "fill",
+      "target": "Street address",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 551.8205420000013
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000051744,
+        "latencyMs": 247.8392500000009,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1232,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 3,
+      "operation": "fill",
+      "ref": "s7:e2",
+      "type": "action_planned",
+      "elapsedMs": 822.3361670000013
+    },
+    {
+      "step": 3,
+      "operation": "fill",
+      "target": "City",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 835.046875
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 4,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 4,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000055860000000000004,
+        "latencyMs": 261.252708,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1330,
+        "outputTokens": 258,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 4,
+      "operation": "select",
+      "ref": "s10:e3:o1",
+      "type": "action_planned",
+      "elapsedMs": 1111.277250000001
+    },
+    {
+      "step": 4,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+      "outcome": "selected",
+      "type": "step_completed",
+      "elapsedMs": 1125.8615840000002
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 5,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 5,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000060270000000000004,
+        "latencyMs": 289.1029580000013,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1435,
+        "outputTokens": 256,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 5,
+      "operation": "click",
+      "ref": "s13:e4",
+      "type": "action_planned",
+      "elapsedMs": 1432.7200000000012
+    },
+    {
+      "step": 5,
+      "operation": "click",
+      "target": "Save and review",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 1510.3746250000004
+    }
+  ],
+  "journalMs": 104.01208199999928,
+  "journalWrites": 23,
+  "blockedRequests": 0,
+  "contextSetupMs": 195.27091699999983,
+  "navigationMs": 17.294167000000016,
+  "spec": {
+    "goal": "Fill the delivery form with your details (full name \"Ada Byron\", street address \"12 Analytical Lane\", city \"Warsaw\"), choose standard shipping, and continue to the review.",
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "values": {
+      "fullname": {
+        "text": "Ada Byron",
+        "reveal": true
+      },
+      "street": {
+        "text": "12 Analytical Lane",
+        "reveal": true
+      },
+      "town": {
+        "text": "Warsaw",
+        "reveal": true
+      }
+    }
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000043848000000000004,
+        "latencyMs": 229.39316700000018,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1044,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.00004758600000000001,
+        "latencyMs": 238.33166699999856,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1133,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000051744,
+        "latencyMs": 247.8392500000009,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1232,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 4,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000055860000000000004,
+        "latencyMs": 261.252708,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1330,
+        "outputTokens": 258,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 5,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000060270000000000004,
+        "latencyMs": 289.1029580000013,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1435,
+        "outputTokens": 256,
+        "costBasis": "estimated"
+      }
+    ],
+    "modelCalls": 5,
+    "modelMs": 1265.919750000001,
+    "inputTokens": 6174,
+    "outputTokens": 1249,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.00025930800000000003,
+    "knownCostUsd": 0.00025930800000000003,
+    "costBasis": "includes_estimates",
+    "screenshotCalls": 0
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s1:e0",
+        "what": "Full name",
+        "snapMs": 19.42241699999977,
+        "pickMs": 237.78962499999943,
+        "actMs": 13.789958999999726,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s1:e0",
+          "valueKey": "fullname",
+          "operationProbability": 0.98,
+          "targetProbability": 0.98
+        }
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s4:e1",
+        "what": "Street address",
+        "snapMs": 2.7226670000000013,
+        "pickMs": 246.59979100000055,
+        "actMs": 21.209917000000132,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s4:e1",
+          "valueKey": "street",
+          "operationProbability": 0.98,
+          "targetProbability": 0.98
+        }
+      },
+      {
+        "step": 3,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s7:e2",
+        "what": "City",
+        "snapMs": 7.257374999999229,
+        "pickMs": 258.61054200000035,
+        "actMs": 12.707625000000917,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s7:e2",
+          "valueKey": "town",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99
+        }
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s10:e3:o1",
+        "what": "ShippingChoose…Standard courierExpress courier → Standard courier",
+        "snapMs": 2.496291999999812,
+        "pickMs": 270.273416,
+        "actMs": 14.580500000000029,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "selected",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s10:e3:o1",
+          "valueKey": null,
+          "operationProbability": 0.95,
+          "targetProbability": 0.95
+        }
+      },
+      {
+        "step": 5,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s13:e4",
+        "what": "Save and review",
+        "snapMs": 2.424250000000029,
+        "pickMs": 300.01300000000083,
+        "actMs": 77.68004199999996,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s13:e4",
+          "valueKey": null,
+          "operationProbability": 0.9,
+          "targetProbability": 0.9
+        }
+      },
+      {
+        "step": 6,
+        "picker": "jev",
+        "operation": "done",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.9016670000000886,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "done_when_satisfied",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalMs": 1518.5586670000012,
+      "snapMs": 73.45158500000252,
+      "pickMs": 0,
+      "actMs": 53.78958199999761,
+      "settleMs": 39.86187499999869,
+      "eventMs": 46.55433200000152,
+      "protocolCalls": 66,
+      "observations": 11,
+      "revalidations": 5,
+      "browserScans": 16,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 5,
+      "nativeActionsCompleted": 5,
+      "jevCalls": 5,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "fillAttempts": 3,
+      "selectAttempts": 1,
+      "clickAttempts": 1
+    },
+    "final": {
+      "url": "http://127.0.0.1:58161/s/run-60b15447d6/confirm?fullname=Ada+Byron&street=12+Analytical+Lane&town=Warsaw&shipping=standard",
+      "title": "Review order"
+    },
+    "events": [
+      {
+        "goal": "Fill the delivery form with your details (full name \"Ada Byron\", street address \"12 Analytical Lane\", city \"Warsaw\"), choose standard shipping, and continue to the review.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.2165000000004511
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "ref": "s1:e0",
+        "type": "action_planned",
+        "elapsedMs": 263.0574590000015
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 276.84141700000146
+      },
+      {
+        "step": 2,
+        "operation": "fill",
+        "ref": "s4:e1",
+        "type": "action_planned",
+        "elapsedMs": 530.6191250000011
+      },
+      {
+        "step": 2,
+        "operation": "fill",
+        "target": "Street address",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 551.8205420000013
+      },
+      {
+        "step": 3,
+        "operation": "fill",
+        "ref": "s7:e2",
+        "type": "action_planned",
+        "elapsedMs": 822.3361670000013
+      },
+      {
+        "step": 3,
+        "operation": "fill",
+        "target": "City",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 835.046875
+      },
+      {
+        "step": 4,
+        "operation": "select",
+        "ref": "s10:e3:o1",
+        "type": "action_planned",
+        "elapsedMs": 1111.277250000001
+      },
+      {
+        "step": 4,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+        "outcome": "selected",
+        "type": "step_completed",
+        "elapsedMs": 1125.8615840000002
+      },
+      {
+        "step": 5,
+        "operation": "click",
+        "ref": "s13:e4",
+        "type": "action_planned",
+        "elapsedMs": 1432.7200000000012
+      },
+      {
+        "step": 5,
+        "operation": "click",
+        "target": "Save and review",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 1510.3746250000004
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": true,
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "detail": {
+      "submission": {
+        "fullname": "Ada Byron",
+        "street": "12 Analytical Lane",
+        "town": "Warsaw",
+        "shipping": "standard"
+      }
+    }
+  },
+  "verificationMs": 0.09083400000054098,
+  "verifiedSuccess": true,
+  "taskMs": 1536.0387090000004,
+  "finalizationMs": 4.852082999999766,
+  "totalMs": 1540.8928750000014,
+  "cleanupMs": 8.682875000000422
+}

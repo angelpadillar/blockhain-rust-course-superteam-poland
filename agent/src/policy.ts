@@ -11,6 +11,7 @@ const REQUIRED_IGNORES = [
   "agent/glovo-profile/",
   "agent/pyszne-profile/",
   "agent/altitude-profile/",
+  "agent/secrets/",
 ];
 
 export function assertAmountWithinCap(amountPln: number, maxPln: number): void {

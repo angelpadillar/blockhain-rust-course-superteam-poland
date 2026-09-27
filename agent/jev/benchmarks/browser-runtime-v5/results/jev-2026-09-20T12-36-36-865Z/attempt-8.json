@@ -1,0 +1,452 @@
+{
+  "attempt": 8,
+  "caseId": "delivery-form",
+  "runId": "run-470a4cd582",
+  "repeat": 2,
+  "picker": "jev",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.41016599999966274
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000042126,
+        "latencyMs": 247.35470800000076,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1003,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "abstained_no_value",
+      "type": "step_completed",
+      "elapsedMs": 291.7400409999991
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000047208000000000006,
+        "latencyMs": 252.03529100000014,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1124,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      }
+    },
+    {
+      "step": 2,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "abstained_no_value",
+      "type": "step_completed",
+      "elapsedMs": 564.7496250000004
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000052332,
+        "latencyMs": 268.95916600000055,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1246,
+        "outputTokens": 241,
+        "costBasis": "estimated"
+      }
+    }
+  ],
+  "journalMs": 51.42241400000057,
+  "journalWrites": 11,
+  "blockedRequests": 0,
+  "contextSetupMs": 110.94824999999946,
+  "navigationMs": 13.927999999999884,
+  "spec": {
+    "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "values": {
+      "fullname": "Ada Byron",
+      "street": "12 Analytical Lane",
+      "town": "Warsaw"
+    }
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000042126,
+        "latencyMs": 247.35470800000076,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1003,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 2,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000047208000000000006,
+        "latencyMs": 252.03529100000014,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1124,
+        "outputTokens": 245,
+        "costBasis": "estimated"
+      },
+      {
+        "number": 3,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000052332,
+        "latencyMs": 268.95916600000055,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1246,
+        "outputTokens": 241,
+        "costBasis": "estimated"
+      }
+    ],
+    "modelCalls": 3,
+    "modelMs": 768.3491650000014,
+    "inputTokens": 3373,
+    "outputTokens": 731,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.000141666,
+    "knownCostUsd": 0.000141666,
+    "costBasis": "includes_estimates",
+    "screenshotCalls": 0
+  },
+  "runtime": {
+    "status": "blocked",
+    "reason": "model_blocked",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s1:e0",
+        "what": "Full name",
+        "snapMs": 29.93000000000029,
+        "pickMs": 257.81583300000057,
+        "actMs": 0.003291999999419204,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "abstained_no_value",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s1:e0",
+          "valueKey": null,
+          "operationProbability": 0.77,
+          "targetProbability": 0.77
+        }
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s2:e0",
+        "what": "Full name",
+        "snapMs": 6.611624999999549,
+        "pickMs": 263.298166999999,
+        "actMs": 0.002332999998543528,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "abstained_no_value",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s2:e0",
+          "valueKey": null,
+          "operationProbability": 0.38,
+          "targetProbability": 0.38
+        }
+      },
+      {
+        "step": 3,
+        "picker": "jev",
+        "operation": "blocked",
+        "ref": null,
+        "what": null,
+        "snapMs": 8.305207999999766,
+        "pickMs": 280.725124999999,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "model_blocked",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "blocked",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.33,
+          "targetProbability": null
+        }
+      }
+    ],
+    "metrics": {
+      "totalMs": 858.856749999999,
+      "snapMs": 44.18866700000035,
+      "pickMs": 0,
+      "actMs": 0,
+      "settleMs": 0,
+      "eventMs": 10.63420799999949,
+      "protocolCalls": 11,
+      "observations": 3,
+      "revalidations": 0,
+      "browserScans": 3,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 0,
+      "nativeActionsCompleted": 0,
+      "jevCalls": 3,
+      "unsurePicks": 0,
+      "abstains": 2,
+      "wastedSteps": 1,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:58023/s/run-470a4cd582/review",
+      "title": "Delivery details"
+    },
+    "events": [
+      {
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.41016599999966274
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "abstained_no_value",
+        "type": "step_completed",
+        "elapsedMs": 291.7400409999991
+      },
+      {
+        "step": 2,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "abstained_no_value",
+        "type": "step_completed",
+        "elapsedMs": 564.7496250000004
+      }
+    ],
+    "escalation": {
+      "reason": "model_blocked",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:58023",
+        "title": "Delivery details",
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "controls": [
+          {
+            "what": "Full name",
+            "role": "input",
+            "kind": "field",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "fill",
+              "press"
+            ]
+          },
+          {
+            "what": "Street address",
+            "role": "input",
+            "kind": "field",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "fill",
+              "press"
+            ]
+          },
+          {
+            "what": "City",
+            "role": "input",
+            "kind": "field",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "fill",
+              "press"
+            ]
+          },
+          {
+            "what": "ShippingChoose…Standard courierExpress courier",
+            "role": "select",
+            "kind": "select",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "select"
+            ]
+          },
+          {
+            "what": "Save and review",
+            "role": "button",
+            "kind": "button",
+            "where": [
+              "main"
+            ],
+            "component": null,
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": "blocked",
+          "target": null
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [
+        {
+          "step": 1,
+          "operation": "fill",
+          "target": "Full name"
+        },
+        {
+          "step": 2,
+          "operation": "fill",
+          "target": "Full name"
+        },
+        {
+          "step": 3,
+          "operation": "blocked",
+          "target": null
+        }
+      ],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "model_blocked",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "submission": {}
+    }
+  },
+  "verificationMs": 0.032332999999198364,
+  "verifiedSuccess": false,
+  "taskMs": 873.1789170000011,
+  "finalizationMs": 4.080833999998504,
+  "totalMs": 877.262084,
+  "cleanupMs": 7.4724999999998545
+}

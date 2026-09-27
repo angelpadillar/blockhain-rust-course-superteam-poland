@@ -1,0 +1,766 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0021910",
+        "title": "Sok z wyciskanych pomarańczy 100% Andros",
+        "packSize": "1.5 l",
+        "unitPriceMinor": 2499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0021910-sok-z-wyciskanych-pomaranczy-100-andros",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_1_7_d_c17dda18c823b3b52e815a42cb0276f02b5d6e07_3608580178538-small.png&w=1920&q=80",
+        "cardSha256": "ac421e63a938e4e042d4d3f354976f43c6bd26623e033a93451a5759fceca42e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0021909",
+        "title": "Sok z wyciskanych klementynek 100% Andros",
+        "packSize": "1.5 l",
+        "unitPriceMinor": 2499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0021909-sok-z-wyciskanych-klementynek-100-andros",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_b_d_4_3bd465a77870a86721d5f4f11c672d6f5e5704eb_3608580178569-small.png&w=1920&q=80",
+        "cardSha256": "05f5f7ecc8fe5ee30dea1ab3017e6f267546ffea2b2e3d701ae7490bfc196767",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015526",
+        "title": "Sok tłoczony z jabłek z mango Bracia Sadownicy",
+        "packSize": "750 ml",
+        "unitPriceMinor": 639,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015526-sok-tloczony-z-jablek-z-mango-bracia-sadownicy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_6_4_6_8646443e2f82dc6621ebf1d3258bf2c5aec0b480_bb_679d080903ea8468a1ef95b6b7430a43-small.png&w=1920&q=80",
+        "cardSha256": "b3a2f78c725363e8113418af6be4606eec3ad99f8006770b65268fe36af07643",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022536",
+        "title": "Sok Pomarańczowy 100% Słońce",
+        "packSize": "330 ml",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022536-sok-pomaranczowy-100-slonce",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_7_f_c_a7fc3b3049160caee7565e6b7be0fe1c74b1db94_4_0_e_c_40ec82407a954ca4f561824792296224b5366582_5903317641759-small.png&w=1920&q=80",
+        "cardSha256": "f1e990de03370b9f585bb14f1433e8f913406b7dc1d7571a4b79deb81db5af21",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022625",
+        "title": "Shot Hot Imbir",
+        "packSize": "110 ml",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022625-shot-hot-imbir",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_d_0_a_fd0ae9320d30957a7420861214a2e919a51a899b_SHOT_HOT_imbir_front_remo-small.png&w=1920&q=80",
+        "cardSha256": "86616256e107df17d593884aaf05eacc6f212333f726bd9f1dd1971db1419f4a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022537",
+        "title": "Sok Słońce Detox",
+        "packSize": "330 ml",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022537-sok-slonce-detox",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_a_2_3_3a23261086e49048de67feebb33ad74aa6813efe_8_8_8_8_88887324d7269a0ee29294ee11ede3b0f5a24791_bb_16WYD45N1CC_wWlPZxTsFQ__-small.png&w=1920&q=80",
+        "cardSha256": "c2f9ca395cbadc1ea91144597670572035103c84f0936198815f19ff3adac082",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020068",
+        "title": "Dobra Kaloria Kombucha Mango Marakuja Bio",
+        "packSize": "330 ml",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020068-dobra-kaloria-kombucha-mango-marakuja-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_6_c_c_e6cc45a2765e9d4ec01b5e3def83eb0b243ab0ac_0acbf6f4f2542fdd081bbedc262c66d838122d0c-small.png&w=1920&q=80",
+        "cardSha256": "17225ead10fd0efa8bbdfed04cbc0fd0f1726f7271223687a2d9032665ad3c98",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022627",
+        "title": "Wycisk Lemoniada cytrynowa",
+        "packSize": "400 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022627-wycisk-lemoniada-cytrynowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_9_d_4_29d45bc066d1ba593964704fbac19d565f922c7d_12007525_LEMONIADA_WYCISK_CYTRYNO_NEW_400ML_MW_FRONT_v2-small.png&w=1920&q=80",
+        "cardSha256": "f4148abcbc5c38072ce843705575cff616d112c31af002f4ee87895ffb6ca0d4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022538",
+        "title": "Sok Słońce Orzeźwienie",
+        "packSize": "330 ml",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022538-sok-slonce-orzezwienie",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_8_9_b_989b8ef187a88c3da5d3b55b687a675ba6d71294_c_a_2_6_ca267042396e223b811d79506bcfafa072f1f072_bb_uAdlPpp1_uTyseTahOkEsw__-small.png&w=1920&q=80",
+        "cardSha256": "fe7be4197aa098e98c37e4c0b13e36e8a03937ef6890cd3f6be6b89283b3062f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022766",
+        "title": "Shot Hot Imbir - Kurkuma",
+        "packSize": "110 ml",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022766-shot-hot-imbir-kurkuma",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_6_a_6_c6a654a140daecf2fb8f8ba0c951e34f9ccea2a5_12017539_SHOT_IMBIR_KURKUMA_110ML_S__MW_FRONT-small.png&w=1920&q=80",
+        "cardSha256": "d48d045b877e78430482276faa8d2c429de2bf046c5ae69a48fd8604de7ddd32",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022693",
+        "title": "Foodini Smoothie Szczęście",
+        "packSize": "250 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022693-foodini-smoothie-szczescie",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_a_b_f_1abf770cfab17cf62033dcd86654e2e3cb562c4b_Zabka_Foodini_Szczescie_DobreGO_NS_250ml-small.png&w=1920&q=80",
+        "cardSha256": "8596bda0c7eb29a022ce0c8b3fb5bbfcb64203bbc83dc4c3f5a482bdc59c27ff",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018120",
+        "title": "Dobra Karma Lemoniada z Kiszonej Cytryny i Malin",
+        "packSize": "330 ml",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018120-dobra-karma-lemoniada-z-kiszonej-cytryny-i-malin",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_b_c_7_9bc7f963e62e0ed7114bc1606985567b29cc7826_6f50ec8b5cfd34a92a6620062e17e0a5e307f9b7-small.png&w=1920&q=80",
+        "cardSha256": "b532b277b8efae46584da5a6f567f88ccb78c1f5353eb177afc0ee544ddb23d4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015534",
+        "title": "Sok z pomarańczy Smaki Victorii",
+        "packSize": "250 ml",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015534-sok-z-pomaranczy-smaki-victorii",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_6_7_5_16750b4e3362070301d5852675e7d877e0adc744_bb_988e611f1ec8056a710186b2d446e0a3-small.png&w=1920&q=80",
+        "cardSha256": "fc40a78d566ee897c78133c07a991554a7a9351fdb35331a75227c96c1ae9b5d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022623",
+        "title": "Shot Moc imbiru",
+        "packSize": "110 ml",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022623-shot-moc-imbiru",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_c_5_0_dc50b1bfc2efa256150e66fa2a7de5353d13950a_12008320_SHOT_MOC_IMBIRU_110ML_S__FRONT_rem-small.png&w=1920&q=80",
+        "cardSha256": "034be87bf6a4fcff8e5be7f7a225fba18a5c422c5af2dd96d58a2627eb55ec90",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022626",
+        "title": "Wycisk Sok mango - marakuja",
+        "packSize": "250 ml",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022626-wycisk-sok-mango-marakuja",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_9_d_2_f9d2bf0a0ce4851922f1a49409351213f1fcef24_12022693_SOK_WYCISK_MANGO_MARAK_NEW_250ML_MW_re-small.png&w=1920&q=80",
+        "cardSha256": "b6ed9aaa8b838e3f7f8c7020d79cb733ca658eacb31fa4d3c14243f25650fe53",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015532",
+        "title": "Sok z grejpfrutów Smaki Victorii",
+        "packSize": "250 ml",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015532-sok-z-grejpfrutow-smaki-victorii",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_b_b_a_dbbacb8d1f6135fd3b2f19ac17bfdda0b7edc602_bb_fc008da4c26b48e247590d6b79b9af5b-small.png&w=1920&q=80",
+        "cardSha256": "66cd9872bb3eec02f77fc9a3dacc926f7c2241f9fab53271525f6a176f98d896",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022629",
+        "title": "Wycisk Lemoniada mango - marakuja",
+        "packSize": "400 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022629-wycisk-lemoniada-mango-marakuja",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_5_8_1_f5812e195212953924d6a9edd8aaa817e56d443f_12019415_LEMONIADA_WYCISK-small.png&w=1920&q=80",
+        "cardSha256": "75dd9c622fac73dcf413e2acdabb3559dba1a30bba3df30006a88b7fd82b78c3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015533",
+        "title": "Sok z mandarynek Smaki Victorii",
+        "packSize": "250 ml",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015533-sok-z-mandarynek-smaki-victorii",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_7_8_8_1788033567e4a4bff2fe24dc443472cbf1ec2d04_bb_0c1f11abdcd985575c13be3d5f5a79f3-small.png&w=1920&q=80",
+        "cardSha256": "0dff72d2783a89376d0e6721ffda84fbc6053ee8aee9fff28868ceb5fcaa5db9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022528",
+        "title": "Foodini Smoothie Piękno",
+        "packSize": "250 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022528-foodini-smoothie-piekno",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_4_4_f_c44fc54094dfbbe648ed9fb199886e4efc43e2e7_12016459_SMOOTHIE_FOODINI_R_____PI__KNO_NEW_250ML_MW_FRONT-small.png&w=1920&q=80",
+        "cardSha256": "08a19ebd72c34dfc5673ab6cfdef56bd0bbfc48b2b19019bf152ccbc4ac5f0c5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022628",
+        "title": "Foodini Smoothie Antyoksydacja",
+        "packSize": "250 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022628-foodini-smoothie-antyoksydacja",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_9_e_8_f9e8772c4347be455dcd5312d246f7ac86c829e1_8_8_1_d_881d15ff1c89a7637a85996e75a95ee35f355e9c_cdbea4e53c18261fb0fb3e8a0465c85ba2880688-small.png&w=1920&q=80",
+        "cardSha256": "462e005c0fb8bc3e443235e21885c11f083a24c758b61e45ce1a4854f528c7e8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022372",
+        "title": "Shot na odporność Polska Róża",
+        "packSize": "250 ml",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022372-shot-na-odpornosc-polska-roza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_e_e_c_3eec08be4bcb3612de60027fee89f4011fcbce6d_5902768174540-small.png&w=1920&q=80",
+        "cardSha256": "aed5b91a1311e6398a49d85f1be2614e77fa55c9fa34d89330996ae4e9183000",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022534",
+        "title": "Smoothie WOW Słońce Scary Raspberry",
+        "packSize": "330 ml",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022534-smoothie-wow-slonce-scary-raspberry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_a_0_6_fa064505ebb9dea0a978b841d882867e35377892_a_d_3_0_ad301ad5c1bd0c93ea2955883da8d6bafce804fd_4ce3cb54b66696521b31b4ad2fadf65f3dedcc33-small.png&w=1920&q=80",
+        "cardSha256": "8b13b54d1ebed34272c032a10de74659dbd31481ea535a883b358336d27e35cb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022694",
+        "title": "Wycisk Lemoniada Pink flamingo",
+        "packSize": "400 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022694-wycisk-lemoniada-pink-flamingo",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_3_1_f_331f54819f6a22164f17d816b3a3f0aabd3984c2_KP_12020298_PINK_FLAMINGO_400ml-small.png&w=1920&q=80",
+        "cardSha256": "1900fcd8bd411234128424e18ddd122e89e8ca1aba1875ec9b56c97892ebab38",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024761",
+        "title": "Wycisk Sok grejpfrut + witamina",
+        "packSize": "250 ml",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024761-wycisk-sok-grejpfrut-witamina",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_4_9_f_049fc29918d6c329f285589417bddf268020511f_wycisk-small.png&w=1920&q=80",
+        "cardSha256": "61323ede116635566a903b77ad21929fe0e70fca13f8c11c6bb7d71aaa0ba7f5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025287",
+        "title": "Wycisk Lemonoada cosmopolitan",
+        "packSize": "400 ml",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025287-wycisk-lemonoada-cosmopolitan",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_e_c_c_eecc5d95a1943c5f20a39acdf88e0b22d4a9e07b_12028223_LEMONIADA_WYCISK_COSMOPOLIT_400ML_MW_SK_-small.png&w=1920&q=80",
+        "cardSha256": "16e1ec1f3501882caebc768424cbc1ad8b1b27c27e5eb4d8b4bfda321cb0217c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022541",
+        "title": "Shot GINGER KICK",
+        "packSize": "80 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022541-shot-ginger-kick",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_8_f_8_28f8bbfbc95107f26465eb4b7844ea4c395252a0_4_1_2_3_41234ab9a183486d08dd5217ee71efe2cac2b3ab_bb_POrje_hmYhcjXxgCvKuFTw__-small.png&w=1920&q=80",
+        "cardSha256": "c83e5d1d383f95753f760409c9567999e1796cdb0390c61f29bfb88a03552e01",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022539",
+        "title": "Sok Słońce Odporność",
+        "packSize": "330 ml",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022539-sok-slonce-odpornosc",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_e_0_7_ce0761ec7cda075e1ec02c232360356bbf9131ab_a_7_e_d_a7ed2c7953b3d97112324b7246d08a9c183b9695_bb_KXgdkuS9xRYkxmJ7YdPmyw__-small.png&w=1920&q=80",
+        "cardSha256": "332e7e0877215674f1016e7540320be4183d65cb81f4057fcb6c71eaabbc6d67",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022535",
+        "title": "Shot Słońce Zdrowie",
+        "packSize": "60 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022535-shot-slonce-zdrowie",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_1_3_4413f5e25ebaae42c958840f1c36b6acf5b15d3d_d_6_3_0_d630b99862b863115e3491d2e863f59372094219_b64363a68aeea17959099df60098721d3970f586-small.png&w=1920&q=80",
+        "cardSha256": "64cc04e718fdce127b06633ae9169efc0b0c95392a9e7f81e99e07cb06105dce",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/chlodzone-napoje-owocowe",
+        "label": "Chłodzone napoje owocowe"
+      },
+      {
+        "path": "/categories/nabial/chlodzone-napoje-owocowe/soki",
+        "label": "Soki"
+      },
+      {
+        "path": "/categories/nabial/chlodzone-napoje-owocowe/smoothie",
+        "label": "Smoothies"
+      },
+      {
+        "path": "/categories/nabial/chlodzone-napoje-owocowe/shoty",
+        "label": "Shoty"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/nabial/chlodzone-napoje-owocowe",
+    "observedAt": 1789906544690,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906544690-2985a63f1e93",
+        "observationSha256": "2985a63f1e93a4ab39a3eb8880184545de233242cb7e91dda48c4c749c4e7236",
+        "screenshotSha256": "96db6025746fe8ef1627bb5f351ad987803d8b8187e3ff795284cf9a9e74a382",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2332,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

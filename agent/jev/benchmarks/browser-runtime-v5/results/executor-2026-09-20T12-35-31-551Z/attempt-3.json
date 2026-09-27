@@ -1,0 +1,305 @@
+{
+  "attempt": 3,
+  "caseId": "variant-bag",
+  "runId": "run-33f9365180",
+  "repeat": 1,
+  "picker": "oracle",
+  "status": "completed",
+  "events": [
+    {
+      "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.3569169999998394
+    },
+    {
+      "step": 1,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 31.28520800000001
+    },
+    {
+      "step": 2,
+      "operation": "click",
+      "ref": "s3:e2",
+      "type": "action_planned",
+      "elapsedMs": 60.66783299999997
+    },
+    {
+      "step": 2,
+      "operation": "click",
+      "target": "Add to bag",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 141.13024999999993
+    },
+    {
+      "step": 3,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 148.08337499999993
+    },
+    {
+      "step": 4,
+      "operation": "click",
+      "ref": "s8:e1",
+      "type": "action_planned",
+      "elapsedMs": 176.2813329999999
+    },
+    {
+      "step": 4,
+      "operation": "click",
+      "target": "View bag (1)",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 232.878833
+    }
+  ],
+  "journalMs": 38.260625999999775,
+  "journalWrites": 9,
+  "blockedRequests": 0,
+  "contextSetupMs": 105.98737499999993,
+  "navigationMs": 15.640874999999824,
+  "spec": {
+    "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag",
+      "text_count=1:KALLAX white 2x2"
+    ],
+    "values": {}
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "steps": [
+      {
+        "step": 1,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 25.791917000000012,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s3:e2",
+        "what": "Add to bag",
+        "snapMs": 4.916042000000061,
+        "pickMs": 0.09349999999994907,
+        "actMs": 80.44450000000006,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          },
+          {
+            "clause": "text_count=1:KALLAX white 2x2",
+            "passed": true
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s3:e2",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 3,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.923291000000063,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s8:e1",
+        "what": "View bag (1)",
+        "snapMs": 4.329375000000027,
+        "pickMs": 0.06645900000012261,
+        "actMs": 56.583624999999984,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          },
+          {
+            "clause": "text_count=1:KALLAX white 2x2",
+            "passed": true
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s8:e1",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 5,
+        "picker": "jev",
+        "operation": "done",
+        "ref": null,
+        "what": null,
+        "snapMs": 2.6962499999999636,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "done_when_satisfied",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": true
+          },
+          {
+            "clause": "text_count=1:KALLAX white 2x2",
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalMs": 241.62087499999984,
+      "snapMs": 72.41512399999988,
+      "pickMs": 0,
+      "actMs": 116.66404200000011,
+      "settleMs": 33.09649999999988,
+      "eventMs": 31.93670800000018,
+      "protocolCalls": 49,
+      "observations": 7,
+      "revalidations": 4,
+      "browserScans": 11,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 4,
+      "nativeActionsCompleted": 4,
+      "jevCalls": 2,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 2,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "clickAttempts": 4
+    },
+    "final": {
+      "url": "http://127.0.0.1:57964/s/run-33f9365180/bag",
+      "title": "Your bag"
+    },
+    "events": [
+      {
+        "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.3569169999998394
+      },
+      {
+        "step": 1,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 31.28520800000001
+      },
+      {
+        "step": 2,
+        "operation": "click",
+        "ref": "s3:e2",
+        "type": "action_planned",
+        "elapsedMs": 60.66783299999997
+      },
+      {
+        "step": 2,
+        "operation": "click",
+        "target": "Add to bag",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 141.13024999999993
+      },
+      {
+        "step": 3,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 148.08337499999993
+      },
+      {
+        "step": 4,
+        "operation": "click",
+        "ref": "s8:e1",
+        "type": "action_planned",
+        "elapsedMs": 176.2813329999999
+      },
+      {
+        "step": 4,
+        "operation": "click",
+        "target": "View bag (1)",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 232.878833
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": true,
+    "doneWhen": [
+      "url=/bag",
+      "text_count=1:KALLAX white 2x2"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "detail": {
+      "bag": [
+        "ddbfb2bf46fa0652"
+      ],
+      "wanted": "ddbfb2bf46fa0652"
+    }
+  },
+  "verificationMs": 0.08341600000017024,
+  "verifiedSuccess": true,
+  "taskMs": 257.42333299999996,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 4.376374999999825,
+  "totalMs": 261.80054099999984,
+  "cleanupMs": 3.825749999999971
+}

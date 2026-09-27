@@ -1,0 +1,766 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0007761",
+        "title": "Dan Cake Mleczne bułeczki",
+        "packSize": "400 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007761-dan-cake-mleczne-buleczki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_6_0_4_0604fcd44f56317f47fa7448352e7c73a9524cbb_melcz-small.png&w=1920&q=80",
+        "cardSha256": "2172a33cf9f9902d22b9d8ce7d3c3b241919389ba9889838175c2bb5e97a12d0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025081",
+        "title": "Kazana Szarlotka Tradycyjna",
+        "packSize": "450 g",
+        "unitPriceMinor": 1899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025081-kazana-szarlotka-tradycyjna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_7_5_6_c756a01bf66091fc2697754aecc8e527803cbe68_SZARLOTKA_TRADYCYJNA_re-small.png&w=1920&q=80",
+        "cardSha256": "70cb3272102a5dd58cd9b8fadb99d3662cdf972d376b845c5d6da0e36cd2e46d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009241",
+        "title": "Tiramisu Dolce Mamma",
+        "packSize": "500 g",
+        "unitPriceMinor": 1949,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009241-tiramisu-dolce-mamma",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_2_0_e_c20ea081433daaece3a92f62dc028e4bf99d573b_TIRAMISUDM-small.png&w=1920&q=80",
+        "cardSha256": "d11e5e48e30de592c15db2abe9411acc25707ff37d9505998d5dc40c21abe1a8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003339",
+        "title": "Muffin E.Wedel",
+        "packSize": "115 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003339-muffin-e-wedel",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_7_e_2_77e29c86c8027a7dbafca24ca4ae211ebb5e919d_b4ccc9b0f2f69cd4b94c385a976c09f5753a023e-small.png&w=1920&q=80",
+        "cardSha256": "f691682b9a62947357bba67d256ed6da23e4618f195525c8b2c385d7b996cd04",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024244",
+        "title": "Gifflar Mini bułeczki cynamonowe",
+        "packSize": "260 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024244-gifflar-mini-buleczki-cynamonowe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_c_0_3_5c0327edc629ecf26ecc5055c1fb979a03f4a1dd_PAGEN_Gifflar_Cinnamon_260g-small.png&w=1920&q=80",
+        "cardSha256": "d89fa598bdb833c426a3fa850d3acba6b24e90ec1354920bc05b7791ba46f38e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023978",
+        "title": "Ciasto Sernik baskijski korzenny",
+        "packSize": "170 g",
+        "unitPriceMinor": 1499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023978-ciasto-sernik-baskijski-korzenny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_9_3_e_c93ec2bdd021dc1467a2a2d03be1b93bfb6f9553_5455555555555555-small.png&w=1920&q=80",
+        "cardSha256": "632fd7b297dd95d195ddbac0db61228e7c217cfaec7cc39b6c3708da67285c6b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014137",
+        "title": "Dan Cake Bułeczki mleczne z czekoladą mleczną",
+        "packSize": "400 g",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014137-buleczki-mleczne-z-czekolada-mleczna-10-x-dan-cake",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_6_d_3_36d30c435b21ed446c412f07e006ac3ffe1ac965_czeko-small.png&w=1920&q=80",
+        "cardSha256": "8a9c6981f2f30d1bc71b561ed09536829990f29e221258576466462cf113c6cb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025090",
+        "title": "Kazana Sernik Baskijski",
+        "packSize": "500 g",
+        "unitPriceMinor": 2599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025090-kazana-sernik-baskijski",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_e_e_7_3ee7c755646474f76ad4e3acce9b9f19328a299b_BASKIJSKI_re-small.png&w=1920&q=80",
+        "cardSha256": "d01c9735779d8ada23c33fe557460d7301c116d94748871eed9d0662b3fbc5d3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025271",
+        "title": "Gorąco polecam Chrupnij z owocami, kruche ciasteczka z marmoladą owocową",
+        "packSize": "200 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025271-goraco-polecam-chrupnij-z-owocami-kruche-ciasteczka-z-marmolada-owocowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_9_9_8_6998695b11cb8c14b88cefe2e12a24d52a5aa979_Chrupnij_z_owocami_2__1_-small.png&w=1920&q=80",
+        "cardSha256": "eebc937b12352d9926029038f78d529cc9bd0db37c1043399aa13e446fda85ff",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0017119",
+        "title": "Croissant z nadzieniem czekoladowym",
+        "packSize": "90 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0017119-croissant-z-nadzieniem-czekoladowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_9_7_0_49704e81be70273fd5f8308e04ccb4c9c3d11ab3_5c1dcd0550590204646c2656c38f283002343467-small.png&w=1920&q=80",
+        "cardSha256": "adf6654d369747fe500b040ac741990317a0cfea02d9696a2570d32e8e41bad3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020421",
+        "title": "Niskowęglowodanowy Croissant z Nadzieniem Czekoladowym",
+        "packSize": "50 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020421-niskoweglowodanowy-croissant-z-nadzieniem-czekoladowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_5_5_e_355e54cfb1cdc1d73b451d60cdbac0f47d87d649_666262-small.png&w=1920&q=80",
+        "cardSha256": "cfa4a08f8e473220af99d1791064fc1ed35d1f22d9f70960bb6bfb629160d532",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025089",
+        "title": "Kazana Ciasto Czekoladowo-Bananowe",
+        "packSize": "400 g",
+        "unitPriceMinor": 1899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025089-kazana-ciasto-czekoladowo-bananowe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_5_9_8_5598f08d90007433c7f84f3fd09422c728febc2c_CIASTO_CZEKOLADOWO_BANANOWE_rem-small.png&w=1920&q=80",
+        "cardSha256": "50727cee71ff27578d35011c9a99afd279c5641bad0fbc035ccb12a1ff5c7c14",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023977",
+        "title": "Ciasto Szarlotka z kruszonką",
+        "packSize": "160 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023977-ciasto-szarlotka-z-kruszonka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_0_8_7_808708eafaabf08bcab85a665b01ec61c8ab5955_szarlotka_1-small.png&w=1920&q=80",
+        "cardSha256": "d7abdcf68521bdb5dfd71d42869d5f1f9cb7a8adf18791acb612817f8dbc8a99",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003342",
+        "title": "Pączek long z nadzieniem waniliowym",
+        "packSize": "95 g",
+        "unitPriceMinor": 199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003342-paczek-long-z-nadzieniem-waniliowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_3_c_8_b3c8c7326e2f3c301d5c9fd1cd6425c7273d6612_0225f7a8f1ccf1a68f0247211b789958e749a125-small.png&w=1920&q=80",
+        "cardSha256": "8676a7beb464d5ecfb99618dc52c22343f7f617729867fe98a8164ed3d6ebb5b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025272",
+        "title": "Gorąco polecam Chrupnij z pomarańczą, kruche ciasteczka przełożone nadzieniem pomarańczowym",
+        "packSize": "200 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025272-goraco-polecam-chrupnij-z-pomarancza-kruche-ciasteczka-przelozone-nadzieniem-pomaranczowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_4_2_6_542648ca94221539258221975c6b50c039aa0c91_Chrupnij_z_pomara__cz___2-small.png&w=1920&q=80",
+        "cardSha256": "c1349a8634e4138f8cc2864b962b10b78f266db864067c532483fe1e37cc7f71",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025080",
+        "title": "Kazana Sernik Tradycyjny",
+        "packSize": "400 g",
+        "unitPriceMinor": 1899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025080-kazana-sernik-tradycyjny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_5_c_3_35c3ecf9ac702848a998014fb19fee8bfa40886e_SERNIK_TRADYCYJNY_re-small.png&w=1920&q=80",
+        "cardSha256": "9886ce666c841227df40e78884f81677600d0aafebe46cb87d7d56fa78112b2f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0017077",
+        "title": "Donut Raspberry Queen",
+        "packSize": "75 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0017077-donut-raspberry-queen",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_2_e_9_22e9cc0fc89a57addce5bc6acb93823c45d8a4ed_24a0a77c6a2a0062eb88661c1f0971b5253f6f8d-small.png&w=1920&q=80",
+        "cardSha256": "427c4c6b9e7a368c88a75b726393c4c041b9c41b794be9f49fdf079cbe8892b4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025273",
+        "title": "Gorąco polecam Chrupnij ze śliwką, kruche ciasteczka przełożone marmoladą o smaku śliwkowym",
+        "packSize": "200 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025273-goraco-polecam-chrupnij-ze-sliwka-kruche-ciasteczka-przelozone-marmolada-o-smaku-sliwkowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_9_9_6_a996d2e2550b619b4c3f745ed931ec8af87e8224_Chrupnij_ze___liwk___1__1_-small.png&w=1920&q=80",
+        "cardSha256": "677d16312ef12851454c0ce7507e246554f85daa07b941757b2ecb5f617d6a85",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025084",
+        "title": "Kazana Red Velvet",
+        "packSize": "500 g",
+        "unitPriceMinor": 1259,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025084-kazana-sernik-porzeczkowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_e_6_1_3e61386e67e513e12da555af33e9a35ec25b2bb0_SERNIK_PORZECZKOWY_rem-small.png&w=1920&q=80",
+        "cardSha256": "264538d46912124387b354beb8266ec78c7d9e355fed82abaf74a5d1966f5a12",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011049",
+        "title": "Sękacz Królewski",
+        "packSize": "70 g",
+        "unitPriceMinor": 439,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011049-sekacz-krolewski",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_1_e_b_f1eb6018b177930e2e179bf69c4188f8cbff9851_bb_e323a288ff1d7a2fcc2e3c5d51b34068-small.png&w=1920&q=80",
+        "cardSha256": "1f71f52647eefd5861c94dbcb73345d14a686670f62899d6fa392f3af998fd95",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003340",
+        "title": "Donut E.Wedel",
+        "packSize": "68 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003340-donut-e-wedel",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_f_c_e_6fce0cd4032d54727665c265ab030c5bb40e9d62_cab205fae9f535660eaf33d2ed23df2163c0e115-small.png&w=1920&q=80",
+        "cardSha256": "1226b5a7428e3ee2ccf3297e8c83922bea04d351ff3b522c7b577625aaebfac9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025085",
+        "title": "Kazana Tartaletki Ciasteczkowe",
+        "packSize": "160 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025085-kazana-tartaletki-ciasteczkowe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_d_9_1_bd9111c4ee9fb00a44535849939c346237fd9476_TARTALETKI_CIASTECZKOWE_re-small.png&w=1920&q=80",
+        "cardSha256": "41adf704405333072ee3f0c9219f258341391cce274863b1afcbd64f098a7262",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025270",
+        "title": "Gorąco polecam Chrupnij z dynią, kruche ciasteczka z pestkami dyni",
+        "packSize": "180 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025270-goraco-polecam-chrupnij-z-dynia-kruche-ciasteczka-z-pestkami-dyni",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_c_b_f_4cbfbc835f8a803f1ff97ccb557191602e3b0ed8_Chrupnij_z_dyni___2-small.png&w=1920&q=80",
+        "cardSha256": "03cab3d946b73d50adef96ae69652ce2a4562502d420f7450065a94b37d70a4d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025086",
+        "title": "Kazana Tartaletki Czekoladowe",
+        "packSize": "160 g",
+        "unitPriceMinor": 1189,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025086-kazana-tartaletki-czekoladowe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_b_a_6_cba6a8ed0d4abf77bef359760f0d6d0159a83174_TARTALETKI_CZEKOLADOWE_rem-small.png&w=1920&q=80",
+        "cardSha256": "8bfc0ec02e6dbafe6471d9c022b30bc41b65da305d1a0096675ec7957f672c06",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025088",
+        "title": "Kazana Ciastko WZ",
+        "packSize": "150 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025088-kazana-ciastko-wz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_1_0_b_e10b0b7176d66c627cec689362dc16442a3cbf14_CIASTKO_WZ_rem-small.png&w=1920&q=80",
+        "cardSha256": "30c0e1b0b19c02989df99fb8a75c7424f931ebf3f4b38bd34c9847a259df3ec6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020420",
+        "title": "Niskowęglowodanowy Croissant",
+        "packSize": "50 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020420-niskoweglowodanowy-croissant",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_e_b_c_cebce68eca74c043a152ae53866d7f67909d385a_46626-small.png&w=1920&q=80",
+        "cardSha256": "5b10bd6bbb6c6fb806a8401453252bf0e1268fd68021209bec097cbbf1623007",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025938",
+        "title": "Donut WAKSY z nadzieniem jagodowym",
+        "packSize": "70 g",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025938-donut-waksy-z-nadzieniem-jagodowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_1_7_6_e176561b979893e54231e18221894049d780bbf8_KP_12029591_004_re-small.png&w=1920&q=80",
+        "cardSha256": "e63be2d90fb1e50ed8f0be069e867140f5cf6ef3f38a5ae9f22188294112ab6d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025172",
+        "title": "Jagodzianka",
+        "packSize": "110 g",
+        "unitPriceMinor": 258,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025172-jagodzianka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_c_2_e_9c2e926a52055418d052be68881c51e9924eb69c_8N3A5141_rem-small.png&w=1920&q=80",
+        "cardSha256": "d013e37a051c2d6623fcde1d126f257b3e6446608242f3c7ee6bac66fc6a3f51",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/piekarnia/przekaski-ciasta",
+    "observedAt": 1789906510795,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906510795-bf3c52b343f5",
+        "observationSha256": "bf3c52b343f5e5123faa4c35aaf2c3dfc5564b78d3bd65aae0e2a4bc9e5c437d",
+        "screenshotSha256": "12159d16453a15127b675d8402c2fe3d6af8d7d510464409ae204e5ad1e8c1b2",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1910,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

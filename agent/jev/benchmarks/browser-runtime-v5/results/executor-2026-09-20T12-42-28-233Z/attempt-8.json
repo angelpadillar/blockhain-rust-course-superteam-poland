@@ -1,0 +1,432 @@
+{
+  "attempt": 8,
+  "caseId": "delivery-form",
+  "runId": "run-7c3dba9366",
+  "repeat": 2,
+  "picker": "oracle",
+  "status": "completed",
+  "events": [
+    {
+      "goal": "Fill the delivery form with your details (full name \"Ada Byron\", street address \"12 Analytical Lane\", city \"Warsaw\"), choose standard shipping, and continue to the review.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.4845829999999296
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "ref": "s1:e0",
+      "type": "action_planned",
+      "elapsedMs": 27.136332999999922
+    },
+    {
+      "step": 1,
+      "operation": "fill",
+      "target": "Full name",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 41.25624999999991
+    },
+    {
+      "step": 2,
+      "operation": "fill",
+      "ref": "s4:e1",
+      "type": "action_planned",
+      "elapsedMs": 48.87220799999977
+    },
+    {
+      "step": 2,
+      "operation": "fill",
+      "target": "Street address",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 60.466457999999875
+    },
+    {
+      "step": 3,
+      "operation": "fill",
+      "ref": "s7:e2",
+      "type": "action_planned",
+      "elapsedMs": 66.6128749999998
+    },
+    {
+      "step": 3,
+      "operation": "fill",
+      "target": "City",
+      "outcome": "filled",
+      "type": "step_completed",
+      "elapsedMs": 76.8064159999999
+    },
+    {
+      "step": 4,
+      "operation": "select",
+      "ref": "s10:e3:o1",
+      "type": "action_planned",
+      "elapsedMs": 83.75237500000003
+    },
+    {
+      "step": 4,
+      "operation": "select",
+      "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+      "outcome": "selected",
+      "type": "step_completed",
+      "elapsedMs": 92.46183299999984
+    },
+    {
+      "step": 5,
+      "operation": "click",
+      "ref": "s13:e4",
+      "type": "action_planned",
+      "elapsedMs": 99.96995799999968
+    },
+    {
+      "step": 5,
+      "operation": "click",
+      "target": "Save and review",
+      "outcome": "clicked",
+      "type": "step_completed",
+      "elapsedMs": 182.52533300000005
+    }
+  ],
+  "journalMs": 55.86508300000014,
+  "journalWrites": 13,
+  "blockedRequests": 0,
+  "contextSetupMs": 104.76945800000021,
+  "navigationMs": 21.986917000000176,
+  "spec": {
+    "goal": "Fill the delivery form with your details (full name \"Ada Byron\", street address \"12 Analytical Lane\", city \"Warsaw\"), choose standard shipping, and continue to the review.",
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "values": {
+      "fullname": {
+        "text": "Ada Byron",
+        "reveal": true
+      },
+      "street": {
+        "text": "12 Analytical Lane",
+        "reveal": true
+      },
+      "town": {
+        "text": "Warsaw",
+        "reveal": true
+      }
+    }
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s1:e0",
+        "what": "Full name",
+        "snapMs": 21.35070799999994,
+        "pickMs": 0.043875000000298314,
+        "actMs": 14.109458000000359,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s1:e0",
+          "valueKey": "fullname",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s4:e1",
+        "what": "Street address",
+        "snapMs": 2.6607500000000073,
+        "pickMs": 0.03845899999987523,
+        "actMs": 11.600374999999985,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s4:e1",
+          "valueKey": "street",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 3,
+        "picker": "jev",
+        "operation": "fill",
+        "ref": "s7:e2",
+        "what": "City",
+        "snapMs": 2.331666999999925,
+        "pickMs": 0.03508300000021336,
+        "actMs": 10.18487499999992,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "filled",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "fill",
+          "ref": "s7:e2",
+          "valueKey": "town",
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "select",
+        "ref": "s10:e3:o1",
+        "what": "ShippingChoose…Standard courierExpress courier → Standard courier",
+        "snapMs": 2.4205839999999625,
+        "pickMs": 0.04795899999999165,
+        "actMs": 8.741749999999683,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "selected",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "select",
+          "ref": "s10:e3:o1",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 5,
+        "picker": "jev",
+        "operation": "click",
+        "ref": "s13:e4",
+        "what": "Save and review",
+        "snapMs": 2.0467499999999745,
+        "pickMs": 0.03408300000000963,
+        "actMs": 82.54187499999989,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "clicked",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "click",
+          "ref": "s13:e4",
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": 0.99,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 6,
+        "picker": "jev",
+        "operation": "done",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.1366250000000946,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "done_when_satisfied",
+        "doneWhen": [
+          {
+            "clause": "heading=Review order",
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalMs": 191.09083299999975,
+      "snapMs": 65.82929300000023,
+      "pickMs": 0,
+      "actMs": 58.916543000000274,
+      "settleMs": 33.07620900000029,
+      "eventMs": 47.137955999999576,
+      "protocolCalls": 66,
+      "observations": 11,
+      "revalidations": 5,
+      "browserScans": 16,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 5,
+      "nativeActionsCompleted": 5,
+      "jevCalls": 5,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "fillAttempts": 3,
+      "selectAttempts": 1,
+      "clickAttempts": 1
+    },
+    "final": {
+      "url": "http://127.0.0.1:58364/s/run-7c3dba9366/confirm?fullname=Ada+Byron&street=12+Analytical+Lane&town=Warsaw&shipping=standard",
+      "title": "Review order"
+    },
+    "events": [
+      {
+        "goal": "Fill the delivery form with your details (full name \"Ada Byron\", street address \"12 Analytical Lane\", city \"Warsaw\"), choose standard shipping, and continue to the review.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.4845829999999296
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "ref": "s1:e0",
+        "type": "action_planned",
+        "elapsedMs": 27.136332999999922
+      },
+      {
+        "step": 1,
+        "operation": "fill",
+        "target": "Full name",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 41.25624999999991
+      },
+      {
+        "step": 2,
+        "operation": "fill",
+        "ref": "s4:e1",
+        "type": "action_planned",
+        "elapsedMs": 48.87220799999977
+      },
+      {
+        "step": 2,
+        "operation": "fill",
+        "target": "Street address",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 60.466457999999875
+      },
+      {
+        "step": 3,
+        "operation": "fill",
+        "ref": "s7:e2",
+        "type": "action_planned",
+        "elapsedMs": 66.6128749999998
+      },
+      {
+        "step": 3,
+        "operation": "fill",
+        "target": "City",
+        "outcome": "filled",
+        "type": "step_completed",
+        "elapsedMs": 76.8064159999999
+      },
+      {
+        "step": 4,
+        "operation": "select",
+        "ref": "s10:e3:o1",
+        "type": "action_planned",
+        "elapsedMs": 83.75237500000003
+      },
+      {
+        "step": 4,
+        "operation": "select",
+        "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+        "outcome": "selected",
+        "type": "step_completed",
+        "elapsedMs": 92.46183299999984
+      },
+      {
+        "step": 5,
+        "operation": "click",
+        "ref": "s13:e4",
+        "type": "action_planned",
+        "elapsedMs": 99.96995799999968
+      },
+      {
+        "step": 5,
+        "operation": "click",
+        "target": "Save and review",
+        "outcome": "clicked",
+        "type": "step_completed",
+        "elapsedMs": 182.52533300000005
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": true,
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "detail": {
+      "submission": {
+        "fullname": "Ada Byron",
+        "street": "12 Analytical Lane",
+        "town": "Warsaw",
+        "shipping": "standard"
+      }
+    }
+  },
+  "verificationMs": 0.01375000000007276,
+  "verifiedSuccess": true,
+  "taskMs": 213.295208,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 4.908750000000055,
+  "totalMs": 218.2045420000004,
+  "cleanupMs": 2.7864999999997053
+}

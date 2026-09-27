@@ -1,0 +1,136 @@
+{
+  "attempt": 8,
+  "caseId": "delivery-form",
+  "runId": "run-caa7110562",
+  "repeat": 2,
+  "picker": "oracle",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.5358329999999114
+    }
+  ],
+  "journalMs": 11.132959000000028,
+  "journalWrites": 3,
+  "blockedRequests": 0,
+  "contextSetupMs": 108.57170800000017,
+  "navigationMs": 16.503834000000097,
+  "spec": {
+    "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "values": {
+      "fullname": "Ada Byron",
+      "street": "12 Analytical Lane",
+      "town": "Warsaw"
+    }
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "browser_error",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": null,
+        "ref": null,
+        "what": null,
+        "snapMs": 0,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": null
+      }
+    ],
+    "metrics": {
+      "totalMs": 25.57945799999993,
+      "snapMs": 0,
+      "pickMs": 0,
+      "actMs": 0,
+      "settleMs": 0,
+      "eventMs": 5.3830840000000535,
+      "protocolCalls": 3,
+      "observations": 0,
+      "revalidations": 0,
+      "browserScans": 0,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 0,
+      "nativeActionsCompleted": 0,
+      "jevCalls": 0,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:57556/s/run-caa7110562/review",
+      "title": ""
+    },
+    "events": [
+      {
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.5358329999999114
+      }
+    ],
+    "escalation": {
+      "reason": "browser_error",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:57556",
+        "title": "",
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "controls": [],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": null,
+          "target": null
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "heading=Review order"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "browser_error",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "submission": {}
+    }
+  },
+  "verificationMs": 0.014374999999972715,
+  "verifiedSuccess": false,
+  "taskMs": 42.233375000000024,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 3.6169170000000577,
+  "totalMs": 45.85091699999998,
+  "cleanupMs": 3.136916999999812
+}

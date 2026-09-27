@@ -1,4 +1,4 @@
-export const OPERATIONS = new Set(['status','observeCart','mutateCart','quote','inspectRegistration','inspectRegistrationState','startRegistration','startFollowupRegistration','resumeRegistration','startImportedRegistration']);
+export const OPERATIONS = new Set(['readCatalogue','status','observeCart','mutateCart','quote','applyCoupon','inspectRegistration','inspectRegistrationState','startRegistration','startFollowupRegistration','resumeRegistration','startImportedRegistration']);
 export const SESSION_ID='delio-owner';
 export const INITIAL_URL='https://delio.com.pl/';
 export class WorkerError extends Error {constructor(code){super(code);this.code=code;}}
@@ -11,11 +11,13 @@ export function reviewedBrowserHosts(config){
 }
 export function validateRequest(input) {
   if(!input || typeof input!=='object' || Array.isArray(input) || !OPERATIONS.has(input.operation))throw new WorkerError('invalid_request');
+  if(input.operation==='readCatalogue'){if(Object.keys(input).some(k=>!['operation','path'].includes(k))||input.path!==undefined&&(typeof input.path!=='string'||!/^\/(?:$|(?:categories|collections)\/[A-Za-z0-9_/-]+$)/.test(input.path)))throw new WorkerError('invalid_request');return input;}
   const followup=input.operation==='startFollowupRegistration';
   const imported=input.operation==='startImportedRegistration';
   const registrationAction=['startRegistration','startFollowupRegistration','resumeRegistration','startImportedRegistration'].includes(input.operation);
-  const allowed=imported?['operation','accountId','phone','activationOrderId','approvalId']:followup?['operation','accountId','phone','previousPhone','previousActivationStatus','approvalId']:registrationAction?['operation','accountId','phone']:['operation','lines'];
+  const allowed=imported?['operation','accountId','phone','activationOrderId','approvalId']:followup?['operation','accountId','phone','previousPhone','previousActivationStatus','approvalId']:registrationAction?['operation','accountId','phone']:['operation','lines','selection'];
   if(Object.keys(input).some(key=>!allowed.includes(key)))throw new WorkerError('invalid_request');
+  if(input.selection!==undefined&&input.selection!=='jev'&&input.selection!=='deterministic')throw new WorkerError('invalid_request');
   if(registrationAction&&(!/^[a-z][a-z0-9_-]{1,63}$/.test(input.accountId||'')||!/^\+48\d{9}$/.test(input.phone||'')))throw new WorkerError('invalid_request');
   if(followup&&(!/^\+48\d{9}$/.test(input.previousPhone||'')||input.phone===input.previousPhone||input.previousActivationStatus!=='TIMEOUT'||input.approvalId!=='virtual53-test'))throw new WorkerError('invalid_request');
   if(imported&&(input.activationOrderId!=='1094850855'||input.approvalId!=='user-order-1094850855'))throw new WorkerError('invalid_request');

@@ -14,6 +14,7 @@ agent/chrome-profile/
 agent/glovo-profile/
 agent/pyszne-profile/
 agent/altitude-profile/
+agent/secrets/
 agent/node_modules/
 agent/dist/
 agent/playwright-report/
@@ -26,3 +27,4 @@ jobs/*.json
 .jev-efficiency/
 # The installed observer plugin ships only its built runtime; keep it tracked.
 !.opencode/plugins/jev-efficiency-observer/runtime/dist/
+agent/jev/bench/results/

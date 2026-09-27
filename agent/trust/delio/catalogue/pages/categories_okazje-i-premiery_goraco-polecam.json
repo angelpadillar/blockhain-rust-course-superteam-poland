@@ -1,0 +1,114 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0025273",
+        "title": "Gorąco polecam Chrupnij ze śliwką, kruche ciasteczka przełożone marmoladą o smaku śliwkowym",
+        "packSize": "200 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025273-goraco-polecam-chrupnij-ze-sliwka-kruche-ciasteczka-przelozone-marmolada-o-smaku-sliwkowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_9_9_6_a996d2e2550b619b4c3f745ed931ec8af87e8224_Chrupnij_ze___liwk___1__1_-small.png&w=1920&q=80",
+        "cardSha256": "cc03ce5c0740373cda89f708728e990c4de1ade4208b41fffc5dfe75300053b4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025272",
+        "title": "Gorąco polecam Chrupnij z pomarańczą, kruche ciasteczka przełożone nadzieniem pomarańczowym",
+        "packSize": "200 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025272-goraco-polecam-chrupnij-z-pomarancza-kruche-ciasteczka-przelozone-nadzieniem-pomaranczowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_4_2_6_542648ca94221539258221975c6b50c039aa0c91_Chrupnij_z_pomara__cz___2-small.png&w=1920&q=80",
+        "cardSha256": "19003fc2b045dc5e10a55db4a447bc967548c89498b9d8b76dd4a60e29ed501f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025271",
+        "title": "Gorąco polecam Chrupnij z owocami, kruche ciasteczka z marmoladą owocową",
+        "packSize": "200 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025271-goraco-polecam-chrupnij-z-owocami-kruche-ciasteczka-z-marmolada-owocowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_9_9_8_6998695b11cb8c14b88cefe2e12a24d52a5aa979_Chrupnij_z_owocami_2__1_-small.png&w=1920&q=80",
+        "cardSha256": "d47646e8e90103a33142da4abd9fda71df24afd5b630e7cb7a0296df73495bd9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025270",
+        "title": "Gorąco polecam Chrupnij z dynią, kruche ciasteczka z pestkami dyni",
+        "packSize": "180 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025270-goraco-polecam-chrupnij-z-dynia-kruche-ciasteczka-z-pestkami-dyni",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_c_b_f_4cbfbc835f8a803f1ff97ccb557191602e3b0ed8_Chrupnij_z_dyni___2-small.png&w=1920&q=80",
+        "cardSha256": "f4cd8fb0ce02590e9f2998dad9d7973977086c93fdd8cfdabb6381340b9b8d29",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Wszystkie"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/nowosci",
+        "label": "Nowości"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/zestawy-okazje",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/goraco-polecam",
+        "label": "Gorąco Polecam"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/chemia-i-kosmetyki",
+        "label": "Chemia i kosmetyki"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/spizarnia",
+        "label": "Spiżarnia"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/okazje-i-premiery/goraco-polecam",
+    "observedAt": 1789906443058,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906443058-44e3ee3b4f75",
+        "observationSha256": "44e3ee3b4f7572601eaefda4659c67eb248f02cf924f90cab8b209ff12d733a6",
+        "screenshotSha256": "c1b8a15197722ee042540797e28a05f9b6dae5a3b22a144ca2287704e14009cf",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2187,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

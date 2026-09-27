@@ -1,0 +1,3247 @@
+{
+  "batchId": "executor-2026-09-20T12-36-26-226Z",
+  "status": "finished",
+  "mode": "offline_executor",
+  "seed": 20260920,
+  "sourceSha256": "cc0914e39953b56dfb43479f056199edd59db1ee187d4a0397beae5c2a21a66c",
+  "sourceHashes": {
+    "benchmark.mjs": "7c59b70d62899f65c295fbf8f470f2ad8bfc2c222eeb8684532c48094ddb4470",
+    "fixture.mjs": "2d6288e7cb0a53ffdde94806af4f9eb68ff7525fd520679ef1abee4d96754f1a",
+    "runtime.mjs": "51cdc91d14b699de5436173779e7b3d6012787b07caa4ecddeaf53fe67c262c9",
+    "session.mjs": "acfca20379750e58b9754074c63111102228ac08c199dcaf9977649e215defa0",
+    "snapshot.mjs": "6332220fa1e8a32f9b32b68a50b048c2aaebbf13eddfb6e385c6dd4da5c4bf03",
+    "questions.mjs": "7a14d35ed376c16f578bc64712478b9dc67375efd68cb04f5278f61a4a502d77",
+    "policy.mjs": "9b69b5e9bd2a4d402493dd68e8029769f8eae96a8378af1e60604f650584968a",
+    "donewhen.mjs": "692b6de6aec74acd6c04d4014d523fe63565d535f204625aa259e442ad082732",
+    "oracle.mjs": "107979453cc1b51b92b62d8789430fcec35fb24bcff1714c1cbb99e86cc867cd",
+    "jev.mjs": "9ff341f4772228573fbb34a5390286d0e8d1c27e61a301da5464d53c6c8855b9",
+    "../browser-runtime-v3/providers.mjs": "569c48c956aefa0b31759cbbcc623220a1084fd898cebead0357c49cb4bed28a",
+    "../browser-runtime-v4/session.mjs": "2663d61e41ee545ea0b2fd5b147a03942b45ef954f0958819147016e663309ec",
+    "../../src/jev.mjs": "52c3b304815f7904cca3a94b919bec91d370b00d18eae8bb1d754e9b586e6464",
+    "../../src/storage.mjs": "e76e9846be42791ed8234ec73cefb287cfde6b7e9b7276a66a38492239d1efa5",
+    "../../src/glovo.mjs": "4d355e733321a5bc9c9a3a7d846ebd42e98935d2603aade1a486376418016694",
+    "../../src/config.mjs": "6b705e52b539f8c6a2030c87da7210cabb133b53135ea79b896ee598e96c448c",
+    "../../package.json": "8cf56dc14f7d70026c9965a56733c17decbab8dc752ae8f3a125470849febaf3",
+    "../../package-lock.json": "ec03a03d6048231f94368147f057f24c3ee045d0787c1ba603758ad9f3204ba7"
+  },
+  "sourceFiles": [
+    "benchmark.mjs",
+    "fixture.mjs",
+    "runtime.mjs",
+    "session.mjs",
+    "snapshot.mjs",
+    "questions.mjs",
+    "policy.mjs",
+    "donewhen.mjs",
+    "oracle.mjs",
+    "jev.mjs",
+    "../browser-runtime-v3/providers.mjs",
+    "../browser-runtime-v4/session.mjs",
+    "../../src/jev.mjs",
+    "../../src/storage.mjs",
+    "../../src/glovo.mjs",
+    "../../src/config.mjs",
+    "../../package.json",
+    "../../package-lock.json"
+  ],
+  "nodeVersion": "v24.14.0",
+  "methodology": {
+    "workload": "Four synthetic stepwise goals on a stateful local fixture: search-and-open, exact-variant add-to-bag, two-cheapest, and a three-field delivery form.",
+    "policy": "One batched typed decision per step: operation plus speculative per-operation targets, supplied-value and done/destructive Nouls in a single request. Done requires deterministic done-when checks evaluated in code.",
+    "comparison": "Executor-only: declared deterministic oracle decider, zero model calls; measures runtime overhead and correctness of the loop, not model accuracy.",
+    "timing": "taskMs covers navigation start through the last durable completion write inside the attempt; context setup, provider settlement and cleanup are reported separately. Per-step snapMs/pickMs/actMs/settleMs are independent component medians.",
+    "cost": "Jev estimated at $0.042 per million input tokens, zero output charge; all attempted calls retained, unknown usage never zero.",
+    "limits": "Max 30 steps, 40 actions, 40 model calls, $0.05 known-spend per attempt; stop cohort on accounting failure."
+  },
+  "results": [
+    {
+      "attempt": 1,
+      "caseId": "merchant-item",
+      "runId": "run-26132e6c66",
+      "repeat": 1,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 0.9873339999999189
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "ref": "s1:e0",
+          "type": "action_planned",
+          "elapsedMs": 49.56141699999989
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "target": "Search shops",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 65.80408399999988
+        },
+        {
+          "step": 2,
+          "operation": "press",
+          "ref": "s4:e0",
+          "type": "action_planned",
+          "elapsedMs": 76.24925000000007
+        },
+        {
+          "step": 2,
+          "operation": "press",
+          "target": "Search shops",
+          "outcome": "submitted",
+          "type": "step_completed",
+          "elapsedMs": 163.02845899999988
+        },
+        {
+          "step": 3,
+          "operation": "click",
+          "ref": "s7:e2",
+          "type": "action_planned",
+          "elapsedMs": 169.38791700000002
+        },
+        {
+          "step": 3,
+          "operation": "click",
+          "target": "Paper Harbor",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 228.25724999999989
+        },
+        {
+          "step": 4,
+          "operation": "fill",
+          "ref": "s10:e0",
+          "type": "action_planned",
+          "elapsedMs": 235.68629199999987
+        },
+        {
+          "step": 4,
+          "operation": "fill",
+          "target": "Search this shop",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 249.75891699999988
+        },
+        {
+          "step": 5,
+          "operation": "press",
+          "ref": "s13:e0",
+          "type": "action_planned",
+          "elapsedMs": 256.01704199999995
+        },
+        {
+          "step": 5,
+          "operation": "press",
+          "target": "Search this shop",
+          "outcome": "submitted",
+          "type": "step_completed",
+          "elapsedMs": 305.37308400000006
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "ref": "s16:e2",
+          "type": "action_planned",
+          "elapsedMs": 313.433542
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "target": "Copper Finch Notebook",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 357.1095419999999
+        }
+      ],
+      "journalMs": 71.97671099999968,
+      "journalWrites": 16,
+      "blockedRequests": 0,
+      "contextSetupMs": 308.02725,
+      "navigationMs": 37.52791699999989,
+      "spec": {
+        "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+        "doneWhen": [
+          "heading=Copper Finch Notebook"
+        ],
+        "values": {
+          "shop_query": "Paper Harbor",
+          "item_query": "Copper Finch Notebook"
+        }
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s1:e0",
+            "what": "Search shops",
+            "snapMs": 40.86691599999995,
+            "pickMs": 0.19308399999999892,
+            "actMs": 16.17366600000014,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s1:e0",
+              "valueKey": "shop_query",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "press",
+            "ref": "s4:e0",
+            "what": "Search shops",
+            "snapMs": 4.878666000000067,
+            "pickMs": 0.1344169999999849,
+            "actMs": 86.7275830000001,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "submitted",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "press",
+              "ref": "s4:e0",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s7:e2",
+            "what": "Paper Harbor",
+            "snapMs": 3.431833000000097,
+            "pickMs": 0.1461659999999938,
+            "actMs": 58.84016699999984,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s7:e2",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s10:e0",
+            "what": "Search this shop",
+            "snapMs": 2.8259160000000065,
+            "pickMs": 0.07295899999985522,
+            "actMs": 14.052000000000135,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s10:e0",
+              "valueKey": "item_query",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "jev",
+            "operation": "press",
+            "ref": "s13:e0",
+            "what": "Search this shop",
+            "snapMs": 2.3799999999998818,
+            "pickMs": 0.05383299999994051,
+            "actMs": 49.32808299999988,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "submitted",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "press",
+              "ref": "s13:e0",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 6,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s16:e2",
+            "what": "Copper Finch Notebook",
+            "snapMs": 3.603208999999879,
+            "pickMs": 0.05208300000003874,
+            "actMs": 43.649625000000015,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s16:e2",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 7,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.7552499999999327,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 364.478875,
+          "snapMs": 139.80075100000067,
+          "pickMs": 0,
+          "actMs": 138.2394589999999,
+          "settleMs": 81.79325099999983,
+          "eventMs": 54.01529200000027,
+          "protocolCalls": 81,
+          "observations": 13,
+          "revalidations": 6,
+          "browserScans": 19,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 6,
+          "nativeActionsCompleted": 6,
+          "jevCalls": 6,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "fillAttempts": 2,
+          "pressAttempts": 2,
+          "clickAttempts": 2
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-26132e6c66/entry/c905699bf85e2910",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 0.9873339999999189
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "ref": "s1:e0",
+            "type": "action_planned",
+            "elapsedMs": 49.56141699999989
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "target": "Search shops",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 65.80408399999988
+          },
+          {
+            "step": 2,
+            "operation": "press",
+            "ref": "s4:e0",
+            "type": "action_planned",
+            "elapsedMs": 76.24925000000007
+          },
+          {
+            "step": 2,
+            "operation": "press",
+            "target": "Search shops",
+            "outcome": "submitted",
+            "type": "step_completed",
+            "elapsedMs": 163.02845899999988
+          },
+          {
+            "step": 3,
+            "operation": "click",
+            "ref": "s7:e2",
+            "type": "action_planned",
+            "elapsedMs": 169.38791700000002
+          },
+          {
+            "step": 3,
+            "operation": "click",
+            "target": "Paper Harbor",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 228.25724999999989
+          },
+          {
+            "step": 4,
+            "operation": "fill",
+            "ref": "s10:e0",
+            "type": "action_planned",
+            "elapsedMs": 235.68629199999987
+          },
+          {
+            "step": 4,
+            "operation": "fill",
+            "target": "Search this shop",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 249.75891699999988
+          },
+          {
+            "step": 5,
+            "operation": "press",
+            "ref": "s13:e0",
+            "type": "action_planned",
+            "elapsedMs": 256.01704199999995
+          },
+          {
+            "step": 5,
+            "operation": "press",
+            "target": "Search this shop",
+            "outcome": "submitted",
+            "type": "step_completed",
+            "elapsedMs": 305.37308400000006
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "ref": "s16:e2",
+            "type": "action_planned",
+            "elapsedMs": 313.433542
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "target": "Copper Finch Notebook",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 357.1095419999999
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "heading=Copper Finch Notebook"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "lastEntry": "c905699bf85e2910",
+          "lastEntryShop": "b57d06218d0fee9d"
+        }
+      },
+      "verificationMs": 0.06608400000004622,
+      "verifiedSuccess": true,
+      "taskMs": 402.897375,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 4.123249999999871,
+      "totalMs": 407.02641700000004,
+      "cleanupMs": 5.010582999999997
+    },
+    {
+      "attempt": 2,
+      "caseId": "merchant-item",
+      "runId": "run-e966f24aaf",
+      "repeat": 2,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 0.2859170000001541
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "ref": "s1:e0",
+          "type": "action_planned",
+          "elapsedMs": 27.599083000000064
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "target": "Search shops",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 41.90775000000008
+        },
+        {
+          "step": 2,
+          "operation": "press",
+          "ref": "s4:e0",
+          "type": "action_planned",
+          "elapsedMs": 48.923750000000155
+        },
+        {
+          "step": 2,
+          "operation": "press",
+          "target": "Search shops",
+          "outcome": "submitted",
+          "type": "step_completed",
+          "elapsedMs": 93.60425000000009
+        },
+        {
+          "step": 3,
+          "operation": "click",
+          "ref": "s7:e2",
+          "type": "action_planned",
+          "elapsedMs": 100.36279200000013
+        },
+        {
+          "step": 3,
+          "operation": "click",
+          "target": "Paper Harbor",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 147.39208300000018
+        },
+        {
+          "step": 4,
+          "operation": "fill",
+          "ref": "s10:e0",
+          "type": "action_planned",
+          "elapsedMs": 154.65766700000017
+        },
+        {
+          "step": 4,
+          "operation": "fill",
+          "target": "Search this shop",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 165.44666700000016
+        },
+        {
+          "step": 5,
+          "operation": "press",
+          "ref": "s13:e0",
+          "type": "action_planned",
+          "elapsedMs": 172.394
+        },
+        {
+          "step": 5,
+          "operation": "press",
+          "target": "Search this shop",
+          "outcome": "submitted",
+          "type": "step_completed",
+          "elapsedMs": 212.075333
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "ref": "s16:e2",
+          "type": "action_planned",
+          "elapsedMs": 219.71716700000002
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "target": "Copper Finch Notebook",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 267.5332920000001
+        }
+      ],
+      "journalMs": 64.09629200000018,
+      "journalWrites": 16,
+      "blockedRequests": 0,
+      "contextSetupMs": 98.43645900000001,
+      "navigationMs": 12.072583000000122,
+      "spec": {
+        "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+        "doneWhen": [
+          "heading=Copper Finch Notebook"
+        ],
+        "values": {
+          "shop_query": "Paper Harbor",
+          "item_query": "Copper Finch Notebook"
+        }
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s1:e0",
+            "what": "Search shops",
+            "snapMs": 21.87520900000004,
+            "pickMs": 0.041917000000012195,
+            "actMs": 14.288999999999987,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s1:e0",
+              "valueKey": "shop_query",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "press",
+            "ref": "s4:e0",
+            "what": "Search shops",
+            "snapMs": 3.071083000000044,
+            "pickMs": 0.03850000000011278,
+            "actMs": 44.66041700000005,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "submitted",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "press",
+              "ref": "s4:e0",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s7:e2",
+            "what": "Paper Harbor",
+            "snapMs": 2.540708999999879,
+            "pickMs": 0.04916700000012497,
+            "actMs": 47.01537499999995,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s7:e2",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s10:e0",
+            "what": "Search this shop",
+            "snapMs": 2.872916999999916,
+            "pickMs": 0.03741700000000492,
+            "actMs": 10.780791999999792,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s10:e0",
+              "valueKey": "item_query",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "jev",
+            "operation": "press",
+            "ref": "s13:e0",
+            "what": "Search this shop",
+            "snapMs": 2.804458000000068,
+            "pickMs": 0.03720800000019153,
+            "actMs": 39.669167000000016,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "submitted",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "press",
+              "ref": "s13:e0",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 6,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s16:e2",
+            "what": "Copper Finch Notebook",
+            "snapMs": 2.8975000000000364,
+            "pickMs": 0.04270799999994779,
+            "actMs": 47.805417000000034,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s16:e2",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 7,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 3.4969590000000608,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "heading=Copper Finch Notebook",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 275.8838330000001,
+          "snapMs": 117.65966900000035,
+          "pickMs": 0,
+          "actMs": 79.80245699999978,
+          "settleMs": 80.61979300000007,
+          "eventMs": 50.86578999999983,
+          "protocolCalls": 81,
+          "observations": 13,
+          "revalidations": 6,
+          "browserScans": 19,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 6,
+          "nativeActionsCompleted": 6,
+          "jevCalls": 6,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "fillAttempts": 2,
+          "pressAttempts": 2,
+          "clickAttempts": 2
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-e966f24aaf/entry/c905699bf85e2910",
+          "title": "Copper Finch Notebook"
+        },
+        "events": [
+          {
+            "goal": "Search for and open the shop \"Paper Harbor\" listed in the Reference district, then search within that shop for \"Copper Finch Notebook\" and open its details.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 0.2859170000001541
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "ref": "s1:e0",
+            "type": "action_planned",
+            "elapsedMs": 27.599083000000064
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "target": "Search shops",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 41.90775000000008
+          },
+          {
+            "step": 2,
+            "operation": "press",
+            "ref": "s4:e0",
+            "type": "action_planned",
+            "elapsedMs": 48.923750000000155
+          },
+          {
+            "step": 2,
+            "operation": "press",
+            "target": "Search shops",
+            "outcome": "submitted",
+            "type": "step_completed",
+            "elapsedMs": 93.60425000000009
+          },
+          {
+            "step": 3,
+            "operation": "click",
+            "ref": "s7:e2",
+            "type": "action_planned",
+            "elapsedMs": 100.36279200000013
+          },
+          {
+            "step": 3,
+            "operation": "click",
+            "target": "Paper Harbor",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 147.39208300000018
+          },
+          {
+            "step": 4,
+            "operation": "fill",
+            "ref": "s10:e0",
+            "type": "action_planned",
+            "elapsedMs": 154.65766700000017
+          },
+          {
+            "step": 4,
+            "operation": "fill",
+            "target": "Search this shop",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 165.44666700000016
+          },
+          {
+            "step": 5,
+            "operation": "press",
+            "ref": "s13:e0",
+            "type": "action_planned",
+            "elapsedMs": 172.394
+          },
+          {
+            "step": 5,
+            "operation": "press",
+            "target": "Search this shop",
+            "outcome": "submitted",
+            "type": "step_completed",
+            "elapsedMs": 212.075333
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "ref": "s16:e2",
+            "type": "action_planned",
+            "elapsedMs": 219.71716700000002
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "target": "Copper Finch Notebook",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 267.5332920000001
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "heading=Copper Finch Notebook"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "lastEntry": "c905699bf85e2910",
+          "lastEntryShop": "b57d06218d0fee9d"
+        }
+      },
+      "verificationMs": 0.007917000000134067,
+      "verifiedSuccess": true,
+      "taskMs": 288.10525000000007,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 2.7819999999999254,
+      "totalMs": 290.888291,
+      "cleanupMs": 8.695500000000038
+    },
+    {
+      "attempt": 3,
+      "caseId": "variant-bag",
+      "runId": "run-a7f63dc79d",
+      "repeat": 1,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 0.6527499999999691
+        },
+        {
+          "step": 1,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 26.86237499999993
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "ref": "s3:e2",
+          "type": "action_planned",
+          "elapsedMs": 63.34649999999988
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "target": "Add to bag",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 134.34675000000016
+        },
+        {
+          "step": 3,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 140.66758299999992
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "ref": "s8:e1",
+          "type": "action_planned",
+          "elapsedMs": 191.99800000000005
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "target": "View bag (1)",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 263.39933299999984
+        }
+      ],
+      "journalMs": 39.403957999998966,
+      "journalWrites": 10,
+      "blockedRequests": 0,
+      "contextSetupMs": 118.36633300000017,
+      "navigationMs": 16.916791999999987,
+      "spec": {
+        "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+        "doneWhen": [
+          "url=/bag",
+          "text_count=1:KALLAX white 2x2"
+        ],
+        "values": {}
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 21.25679100000002,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s3:e2",
+            "what": "Add to bag",
+            "snapMs": 10.239415999999892,
+            "pickMs": 0.0887920000000122,
+            "actMs": 70.98366600000008,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              },
+              {
+                "clause": "text_count=1:KALLAX white 2x2",
+                "passed": true
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s3:e2",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 3.2187919999996666,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s8:e1",
+            "what": "View bag (1)",
+            "snapMs": 4.4063750000000255,
+            "pickMs": 0.06479199999967022,
+            "actMs": 71.3888750000001,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              },
+              {
+                "clause": "text_count=1:KALLAX white 2x2",
+                "passed": true
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s8:e1",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 3.329250000000229,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": true
+              },
+              {
+                "clause": "text_count=1:KALLAX white 2x2",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 271.6227079999999,
+          "snapMs": 77.00187399999982,
+          "pickMs": 0,
+          "actMs": 144.30458299999964,
+          "settleMs": 35.91420900000003,
+          "eventMs": 27.5590430000002,
+          "protocolCalls": 49,
+          "observations": 7,
+          "revalidations": 4,
+          "browserScans": 11,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 4,
+          "nativeActionsCompleted": 4,
+          "jevCalls": 2,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 2,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "clickAttempts": 4
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-a7f63dc79d/bag",
+          "title": "Your bag"
+        },
+        "events": [
+          {
+            "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 0.6527499999999691
+          },
+          {
+            "step": 1,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 26.86237499999993
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "ref": "s3:e2",
+            "type": "action_planned",
+            "elapsedMs": 63.34649999999988
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "target": "Add to bag",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 134.34675000000016
+          },
+          {
+            "step": 3,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 140.66758299999992
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "ref": "s8:e1",
+            "type": "action_planned",
+            "elapsedMs": 191.99800000000005
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "target": "View bag (1)",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 263.39933299999984
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "url=/bag",
+          "text_count=1:KALLAX white 2x2"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "bag": [
+            "ddbfb2bf46fa0652"
+          ],
+          "wanted": "ddbfb2bf46fa0652"
+        }
+      },
+      "verificationMs": 0.07604200000014316,
+      "verifiedSuccess": true,
+      "taskMs": 288.76475000000005,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 3.940375000000131,
+      "totalMs": 292.70616700000005,
+      "cleanupMs": 5.7474160000001575
+    },
+    {
+      "attempt": 4,
+      "caseId": "variant-bag",
+      "runId": "run-169fc35546",
+      "repeat": 2,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 0.24483299999974406
+        },
+        {
+          "step": 1,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 26.421790999999757
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "ref": "s3:e2",
+          "type": "action_planned",
+          "elapsedMs": 60.77987499999972
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "target": "Add to bag",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 135.3857079999998
+        },
+        {
+          "step": 3,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 142.052416
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "ref": "s8:e1",
+          "type": "action_planned",
+          "elapsedMs": 175.81762499999968
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "target": "View bag (1)",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 252.33950000000004
+        }
+      ],
+      "journalMs": 35.48412500000086,
+      "journalWrites": 10,
+      "blockedRequests": 0,
+      "contextSetupMs": 112.03945900000008,
+      "navigationMs": 10.194666999999754,
+      "spec": {
+        "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+        "doneWhen": [
+          "url=/bag",
+          "text_count=1:KALLAX white 2x2"
+        ],
+        "values": {}
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 21.752124999999978,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s3:e2",
+            "what": "Add to bag",
+            "snapMs": 4.940500000000156,
+            "pickMs": 0.036582999999609456,
+            "actMs": 74.59429099999988,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              },
+              {
+                "clause": "text_count=1:KALLAX white 2x2",
+                "passed": true
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s3:e2",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.6160409999997682,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s8:e1",
+            "what": "View bag (1)",
+            "snapMs": 3.815874999999778,
+            "pickMs": 0.029750000000149157,
+            "actMs": 76.50487500000008,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              },
+              {
+                "clause": "text_count=1:KALLAX white 2x2",
+                "passed": true
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s8:e1",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.535208000000239,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": true
+              },
+              {
+                "clause": "text_count=1:KALLAX white 2x2",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 259.69720800000005,
+          "snapMs": 66.61679200000026,
+          "pickMs": 0,
+          "actMs": 148.3714570000002,
+          "settleMs": 32.207792000000154,
+          "eventMs": 26.09099900000092,
+          "protocolCalls": 49,
+          "observations": 7,
+          "revalidations": 4,
+          "browserScans": 11,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 4,
+          "nativeActionsCompleted": 4,
+          "jevCalls": 2,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 2,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "clickAttempts": 4
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-169fc35546/bag",
+          "title": "Your bag"
+        },
+        "events": [
+          {
+            "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 0.24483299999974406
+          },
+          {
+            "step": 1,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 26.421790999999757
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "ref": "s3:e2",
+            "type": "action_planned",
+            "elapsedMs": 60.77987499999972
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "target": "Add to bag",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 135.3857079999998
+          },
+          {
+            "step": 3,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 142.052416
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "ref": "s8:e1",
+            "type": "action_planned",
+            "elapsedMs": 175.81762499999968
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "target": "View bag (1)",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 252.33950000000004
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "url=/bag",
+          "text_count=1:KALLAX white 2x2"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "bag": [
+            "ddbfb2bf46fa0652"
+          ],
+          "wanted": "ddbfb2bf46fa0652"
+        }
+      },
+      "verificationMs": 0.04233300000032614,
+      "verifiedSuccess": true,
+      "taskMs": 270.0089589999998,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 3.7267910000000484,
+      "totalMs": 273.7366670000001,
+      "cleanupMs": 4.659250000000156
+    },
+    {
+      "attempt": 5,
+      "caseId": "two-cheapest",
+      "runId": "run-75648d369f",
+      "repeat": 1,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 1.315541999999823
+        },
+        {
+          "step": 1,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 32.155959000000166
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "ref": "s3:e9",
+          "type": "action_planned",
+          "elapsedMs": 64.9079999999999
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "target": "Add to bag",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 136.7461669999998
+        },
+        {
+          "step": 3,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 143.2679589999998
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "ref": "s8:e8",
+          "type": "action_planned",
+          "elapsedMs": 194.87158399999998
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "target": "Add to bag",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 273.543459
+        },
+        {
+          "step": 5,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 280.473125
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "ref": "s13:e1",
+          "type": "action_planned",
+          "elapsedMs": 310.6435419999998
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "target": "View bag (2)",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 388.7687500000002
+        }
+      ],
+      "journalMs": 52.04808399999956,
+      "journalWrites": 13,
+      "blockedRequests": 0,
+      "contextSetupMs": 121.91741700000011,
+      "navigationMs": 16.086291000000074,
+      "spec": {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "doneWhen": [
+          "url=/bag"
+        ],
+        "values": {}
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 25.12883299999976,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s3:e9",
+            "what": "Add to bag",
+            "snapMs": 5.935375000000022,
+            "pickMs": 0.33195800000021336,
+            "actMs": 71.81445900000017,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s3:e9",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.826332999999977,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s8:e8",
+            "what": "Add to bag",
+            "snapMs": 4.270292000000154,
+            "pickMs": 0.06487499999957436,
+            "actMs": 78.65562499999987,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s8:e8",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.618832999999995,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 6,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s13:e1",
+            "what": "View bag (2)",
+            "snapMs": 4.199082999999973,
+            "pickMs": 0.043791000000055647,
+            "actMs": 78.10666600000013,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s13:e1",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 7,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.9072500000002037,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 396.62741700000015,
+          "snapMs": 106.46933400000034,
+          "pickMs": 0,
+          "actMs": 208.74466600000005,
+          "settleMs": 60.5424579999999,
+          "eventMs": 42.152082000000064,
+          "protocolCalls": 71,
+          "observations": 10,
+          "revalidations": 6,
+          "browserScans": 16,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 6,
+          "nativeActionsCompleted": 6,
+          "jevCalls": 3,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 3,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "clickAttempts": 6
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-75648d369f/bag",
+          "title": "Your bag"
+        },
+        "events": [
+          {
+            "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 1.315541999999823
+          },
+          {
+            "step": 1,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 32.155959000000166
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "ref": "s3:e9",
+            "type": "action_planned",
+            "elapsedMs": 64.9079999999999
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "target": "Add to bag",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 136.7461669999998
+          },
+          {
+            "step": 3,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 143.2679589999998
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "ref": "s8:e8",
+            "type": "action_planned",
+            "elapsedMs": 194.87158399999998
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "target": "Add to bag",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 273.543459
+          },
+          {
+            "step": 5,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 280.473125
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "ref": "s13:e1",
+            "type": "action_planned",
+            "elapsedMs": 310.6435419999998
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "target": "View bag (2)",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 388.7687500000002
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "url=/bag"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "bag": [
+            "429f741bbab487f5",
+            "d0012786d26a1878"
+          ],
+          "wanted": [
+            "429f741bbab487f5",
+            "d0012786d26a1878"
+          ]
+        }
+      },
+      "verificationMs": 0.0722499999997126,
+      "verifiedSuccess": true,
+      "taskMs": 413.546875,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 3.989332999999988,
+      "totalMs": 417.5373330000002,
+      "cleanupMs": 8.870499999999993
+    },
+    {
+      "attempt": 6,
+      "caseId": "two-cheapest",
+      "runId": "run-7721a4e73f",
+      "repeat": 2,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 0.6568750000001273
+        },
+        {
+          "step": 1,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 29.026957999999922
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "ref": "s3:e9",
+          "type": "action_planned",
+          "elapsedMs": 54.60633300000018
+        },
+        {
+          "step": 2,
+          "operation": "click",
+          "target": "Add to bag",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 135.91150000000016
+        },
+        {
+          "step": 3,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 143.12562500000013
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "ref": "s8:e8",
+          "type": "action_planned",
+          "elapsedMs": 170.78150000000005
+        },
+        {
+          "step": 4,
+          "operation": "click",
+          "target": "Add to bag",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 265.55570799999987
+        },
+        {
+          "step": 5,
+          "name": "consent_dismiss",
+          "type": "handler_fired",
+          "elapsedMs": 274.0851670000002
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "ref": "s13:e1",
+          "type": "action_planned",
+          "elapsedMs": 321.20525
+        },
+        {
+          "step": 6,
+          "operation": "click",
+          "target": "View bag (2)",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 397.77874999999995
+        }
+      ],
+      "journalMs": 53.064788999999564,
+      "journalWrites": 13,
+      "blockedRequests": 0,
+      "contextSetupMs": 114.53850000000011,
+      "navigationMs": 20.15820900000017,
+      "spec": {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "doneWhen": [
+          "url=/bag"
+        ],
+        "values": {}
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 23.673416999999972,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s3:e9",
+            "what": "Add to bag",
+            "snapMs": 4.916208999999981,
+            "pickMs": 0.0749999999998181,
+            "actMs": 81.28937499999984,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s3:e9",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 3.984542000000147,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s8:e8",
+            "what": "Add to bag",
+            "snapMs": 4.304334000000381,
+            "pickMs": 0.11133399999971516,
+            "actMs": 94.746083,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s8:e8",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "deterministic",
+            "operation": "consent_dismiss",
+            "ref": null,
+            "what": null,
+            "snapMs": 3.117207999999664,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "handled"
+          },
+          {
+            "step": 6,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s13:e1",
+            "what": "View bag (2)",
+            "snapMs": 4.250041999999667,
+            "pickMs": 0.04087500000014188,
+            "actMs": 76.55637500000012,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s13:e1",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 7,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.913583000000017,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "url=/bag",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 405.861167,
+          "snapMs": 105.90691599999991,
+          "pickMs": 0,
+          "actMs": 228.9450840000004,
+          "settleMs": 60.44437400000015,
+          "eventMs": 39.55908199999885,
+          "protocolCalls": 71,
+          "observations": 10,
+          "revalidations": 6,
+          "browserScans": 16,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 6,
+          "nativeActionsCompleted": 6,
+          "jevCalls": 3,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 3,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "clickAttempts": 6
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-7721a4e73f/bag",
+          "title": "Your bag"
+        },
+        "events": [
+          {
+            "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 0.6568750000001273
+          },
+          {
+            "step": 1,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 29.026957999999922
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "ref": "s3:e9",
+            "type": "action_planned",
+            "elapsedMs": 54.60633300000018
+          },
+          {
+            "step": 2,
+            "operation": "click",
+            "target": "Add to bag",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 135.91150000000016
+          },
+          {
+            "step": 3,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 143.12562500000013
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "ref": "s8:e8",
+            "type": "action_planned",
+            "elapsedMs": 170.78150000000005
+          },
+          {
+            "step": 4,
+            "operation": "click",
+            "target": "Add to bag",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 265.55570799999987
+          },
+          {
+            "step": 5,
+            "name": "consent_dismiss",
+            "type": "handler_fired",
+            "elapsedMs": 274.0851670000002
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "ref": "s13:e1",
+            "type": "action_planned",
+            "elapsedMs": 321.20525
+          },
+          {
+            "step": 6,
+            "operation": "click",
+            "target": "View bag (2)",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 397.77874999999995
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "url=/bag"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "bag": [
+            "429f741bbab487f5",
+            "d0012786d26a1878"
+          ],
+          "wanted": [
+            "429f741bbab487f5",
+            "d0012786d26a1878"
+          ]
+        }
+      },
+      "verificationMs": 0.012708000000202446,
+      "verifiedSuccess": true,
+      "taskMs": 426.1241249999998,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 4.0610420000002705,
+      "totalMs": 430.18608399999994,
+      "cleanupMs": 3.7886250000001382
+    },
+    {
+      "attempt": 7,
+      "caseId": "delivery-form",
+      "runId": "run-28fd5b5784",
+      "repeat": 1,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 0.5304579999997259
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "ref": "s1:e0",
+          "type": "action_planned",
+          "elapsedMs": 38.363916999999674
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "target": "Full name",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 75.24204199999986
+        },
+        {
+          "step": 2,
+          "operation": "fill",
+          "ref": "s4:e1",
+          "type": "action_planned",
+          "elapsedMs": 84.07208300000002
+        },
+        {
+          "step": 2,
+          "operation": "fill",
+          "target": "Street address",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 96.27404200000001
+        },
+        {
+          "step": 3,
+          "operation": "fill",
+          "ref": "s7:e2",
+          "type": "action_planned",
+          "elapsedMs": 103.97954200000004
+        },
+        {
+          "step": 3,
+          "operation": "fill",
+          "target": "City",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 115.79758300000003
+        },
+        {
+          "step": 4,
+          "operation": "select",
+          "ref": "s10:e3:o1",
+          "type": "action_planned",
+          "elapsedMs": 123.33874999999989
+        },
+        {
+          "step": 4,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+          "outcome": "selected",
+          "type": "step_completed",
+          "elapsedMs": 137.73129199999994
+        },
+        {
+          "step": 5,
+          "operation": "click",
+          "ref": "s13:e4",
+          "type": "action_planned",
+          "elapsedMs": 150.48608299999978
+        },
+        {
+          "step": 5,
+          "operation": "click",
+          "target": "Save and review",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 220.94374999999945
+        }
+      ],
+      "journalMs": 61.29683299999988,
+      "journalWrites": 14,
+      "blockedRequests": 0,
+      "contextSetupMs": 114.57170799999994,
+      "navigationMs": 13.435500000000047,
+      "spec": {
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "doneWhen": [
+          "heading=Review order"
+        ],
+        "values": {
+          "fullname": "Ada Byron",
+          "street": "12 Analytical Lane",
+          "town": "Warsaw"
+        }
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s1:e0",
+            "what": "Full name",
+            "snapMs": 32.63650000000007,
+            "pickMs": 0.19895900000028632,
+            "actMs": 36.857542000000194,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s1:e0",
+              "valueKey": "fullname",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s4:e1",
+            "what": "Street address",
+            "snapMs": 3.741084000000228,
+            "pickMs": 0.11208299999998417,
+            "actMs": 12.182124999999814,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s4:e1",
+              "valueKey": "street",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s7:e2",
+            "what": "City",
+            "snapMs": 2.7796250000001237,
+            "pickMs": 0.07891700000027413,
+            "actMs": 11.810292000000118,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s7:e2",
+              "valueKey": "town",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "select",
+            "ref": "s10:e3:o1",
+            "what": "ShippingChoose…Standard courierExpress courier → Standard courier",
+            "snapMs": 2.9115420000002814,
+            "pickMs": 0.20649999999977808,
+            "actMs": 14.327999999999975,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "selected",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "select",
+              "ref": "s10:e3:o1",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s13:e4",
+            "what": "Save and review",
+            "snapMs": 7.4353329999999005,
+            "pickMs": 0.14841700000033597,
+            "actMs": 70.44408299999986,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s13:e4",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 6,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.4597499999999854,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 228.07245799999964,
+          "snapMs": 91.82121200000074,
+          "pickMs": 0,
+          "actMs": 57.94078999999965,
+          "settleMs": 42.302458999999544,
+          "eventMs": 47.116330999998354,
+          "protocolCalls": 66,
+          "observations": 11,
+          "revalidations": 5,
+          "browserScans": 16,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 5,
+          "nativeActionsCompleted": 5,
+          "jevCalls": 5,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "fillAttempts": 3,
+          "selectAttempts": 1,
+          "clickAttempts": 1
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-28fd5b5784/confirm?fullname=Ada+Byron&street=12+Analytical+Lane&town=Warsaw&shipping=standard",
+          "title": "Review order"
+        },
+        "events": [
+          {
+            "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 0.5304579999997259
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "ref": "s1:e0",
+            "type": "action_planned",
+            "elapsedMs": 38.363916999999674
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "target": "Full name",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 75.24204199999986
+          },
+          {
+            "step": 2,
+            "operation": "fill",
+            "ref": "s4:e1",
+            "type": "action_planned",
+            "elapsedMs": 84.07208300000002
+          },
+          {
+            "step": 2,
+            "operation": "fill",
+            "target": "Street address",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 96.27404200000001
+          },
+          {
+            "step": 3,
+            "operation": "fill",
+            "ref": "s7:e2",
+            "type": "action_planned",
+            "elapsedMs": 103.97954200000004
+          },
+          {
+            "step": 3,
+            "operation": "fill",
+            "target": "City",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 115.79758300000003
+          },
+          {
+            "step": 4,
+            "operation": "select",
+            "ref": "s10:e3:o1",
+            "type": "action_planned",
+            "elapsedMs": 123.33874999999989
+          },
+          {
+            "step": 4,
+            "operation": "select",
+            "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+            "outcome": "selected",
+            "type": "step_completed",
+            "elapsedMs": 137.73129199999994
+          },
+          {
+            "step": 5,
+            "operation": "click",
+            "ref": "s13:e4",
+            "type": "action_planned",
+            "elapsedMs": 150.48608299999978
+          },
+          {
+            "step": 5,
+            "operation": "click",
+            "target": "Save and review",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 220.94374999999945
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "heading=Review order"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "submission": {
+            "fullname": "Ada Byron",
+            "street": "12 Analytical Lane",
+            "town": "Warsaw",
+            "shipping": "standard"
+          }
+        }
+      },
+      "verificationMs": 0.0742499999996653,
+      "verifiedSuccess": true,
+      "taskMs": 241.7241670000003,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 5.036917000000358,
+      "totalMs": 246.762334,
+      "cleanupMs": 3.0567919999994047
+    },
+    {
+      "attempt": 8,
+      "caseId": "delivery-form",
+      "runId": "run-8d73acaf20",
+      "repeat": 2,
+      "picker": "oracle",
+      "status": "completed",
+      "events": [
+        {
+          "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+          "maxSteps": 30,
+          "type": "loop_started",
+          "elapsedMs": 0.3208749999994325
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "ref": "s1:e0",
+          "type": "action_planned",
+          "elapsedMs": 27.842375000000175
+        },
+        {
+          "step": 1,
+          "operation": "fill",
+          "target": "Full name",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 41.3340419999995
+        },
+        {
+          "step": 2,
+          "operation": "fill",
+          "ref": "s4:e1",
+          "type": "action_planned",
+          "elapsedMs": 47.68379199999981
+        },
+        {
+          "step": 2,
+          "operation": "fill",
+          "target": "Street address",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 61.42925000000014
+        },
+        {
+          "step": 3,
+          "operation": "fill",
+          "ref": "s7:e2",
+          "type": "action_planned",
+          "elapsedMs": 68.92895899999985
+        },
+        {
+          "step": 3,
+          "operation": "fill",
+          "target": "City",
+          "outcome": "filled",
+          "type": "step_completed",
+          "elapsedMs": 81.83141699999942
+        },
+        {
+          "step": 4,
+          "operation": "select",
+          "ref": "s10:e3:o1",
+          "type": "action_planned",
+          "elapsedMs": 87.31141699999989
+        },
+        {
+          "step": 4,
+          "operation": "select",
+          "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+          "outcome": "selected",
+          "type": "step_completed",
+          "elapsedMs": 98.43870900000002
+        },
+        {
+          "step": 5,
+          "operation": "click",
+          "ref": "s13:e4",
+          "type": "action_planned",
+          "elapsedMs": 105.07799999999952
+        },
+        {
+          "step": 5,
+          "operation": "click",
+          "target": "Save and review",
+          "outcome": "clicked",
+          "type": "step_completed",
+          "elapsedMs": 185.50495899999987
+        }
+      ],
+      "journalMs": 52.82012599999962,
+      "journalWrites": 14,
+      "blockedRequests": 0,
+      "contextSetupMs": 146.36354200000005,
+      "navigationMs": 30.143458999999893,
+      "spec": {
+        "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+        "doneWhen": [
+          "heading=Review order"
+        ],
+        "values": {
+          "fullname": "Ada Byron",
+          "street": "12 Analytical Lane",
+          "town": "Warsaw"
+        }
+      },
+      "runtime": {
+        "status": "completed",
+        "reason": null,
+        "steps": [
+          {
+            "step": 1,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s1:e0",
+            "what": "Full name",
+            "snapMs": 22.471207999999933,
+            "pickMs": 0.03941599999961909,
+            "actMs": 13.478040999999394,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s1:e0",
+              "valueKey": "fullname",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 2,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s4:e1",
+            "what": "Street address",
+            "snapMs": 2.9382079999995767,
+            "pickMs": 0.0398750000003929,
+            "actMs": 13.724083999999493,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s4:e1",
+              "valueKey": "street",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 3,
+            "picker": "jev",
+            "operation": "fill",
+            "ref": "s7:e2",
+            "what": "City",
+            "snapMs": 3.267124999999396,
+            "pickMs": 0.041833000000224274,
+            "actMs": 12.893583000000035,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "filled",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "fill",
+              "ref": "s7:e2",
+              "valueKey": "town",
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 4,
+            "picker": "jev",
+            "operation": "select",
+            "ref": "s10:e3:o1",
+            "what": "ShippingChoose…Standard courierExpress courier → Standard courier",
+            "snapMs": 2.751209000000017,
+            "pickMs": 0.04383400000006077,
+            "actMs": 11.161291000000347,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "selected",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "select",
+              "ref": "s10:e3:o1",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 5,
+            "picker": "jev",
+            "operation": "click",
+            "ref": "s13:e4",
+            "what": "Save and review",
+            "snapMs": 2.698124999999891,
+            "pickMs": 0.043458999999529624,
+            "actMs": 80.41383299999961,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "clicked",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": false
+              }
+            ],
+            "decision": {
+              "operation": "click",
+              "ref": "s13:e4",
+              "valueKey": null,
+              "operationProbability": 0.99,
+              "targetProbability": 0.99,
+              "goalMet": 0.02,
+              "destructive": 0.01
+            }
+          },
+          {
+            "step": 6,
+            "picker": "jev",
+            "operation": "done",
+            "ref": null,
+            "what": null,
+            "snapMs": 2.532791000000543,
+            "pickMs": 0,
+            "actMs": 0,
+            "settleMs": 0,
+            "unsure": false,
+            "outcome": "done_when_satisfied",
+            "doneWhen": [
+              {
+                "clause": "heading=Review order",
+                "passed": true
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "totalMs": 192.3183339999996,
+          "snapMs": 70.73116700000082,
+          "pickMs": 0,
+          "actMs": 56.58024800000021,
+          "settleMs": 35.46266600000126,
+          "eventMs": 42.78137599999809,
+          "protocolCalls": 66,
+          "observations": 11,
+          "revalidations": 5,
+          "browserScans": 16,
+          "observerWakeups": 0,
+          "nativeActionAttempts": 5,
+          "nativeActionsCompleted": 5,
+          "jevCalls": 5,
+          "unsurePicks": 0,
+          "abstains": 0,
+          "wastedSteps": 0,
+          "deterministicSteps": 0,
+          "staleRefreshes": 0,
+          "blockedRequests": 0,
+          "prematureDone": 0,
+          "fillAttempts": 3,
+          "selectAttempts": 1,
+          "clickAttempts": 1
+        },
+        "final": {
+          "url": "http://127.0.0.1:58010/s/run-8d73acaf20/confirm?fullname=Ada+Byron&street=12+Analytical+Lane&town=Warsaw&shipping=standard",
+          "title": "Review order"
+        },
+        "events": [
+          {
+            "goal": "Fill the delivery form with your details, choose standard shipping, and continue to the review.",
+            "maxSteps": 30,
+            "type": "loop_started",
+            "elapsedMs": 0.3208749999994325
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "ref": "s1:e0",
+            "type": "action_planned",
+            "elapsedMs": 27.842375000000175
+          },
+          {
+            "step": 1,
+            "operation": "fill",
+            "target": "Full name",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 41.3340419999995
+          },
+          {
+            "step": 2,
+            "operation": "fill",
+            "ref": "s4:e1",
+            "type": "action_planned",
+            "elapsedMs": 47.68379199999981
+          },
+          {
+            "step": 2,
+            "operation": "fill",
+            "target": "Street address",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 61.42925000000014
+          },
+          {
+            "step": 3,
+            "operation": "fill",
+            "ref": "s7:e2",
+            "type": "action_planned",
+            "elapsedMs": 68.92895899999985
+          },
+          {
+            "step": 3,
+            "operation": "fill",
+            "target": "City",
+            "outcome": "filled",
+            "type": "step_completed",
+            "elapsedMs": 81.83141699999942
+          },
+          {
+            "step": 4,
+            "operation": "select",
+            "ref": "s10:e3:o1",
+            "type": "action_planned",
+            "elapsedMs": 87.31141699999989
+          },
+          {
+            "step": 4,
+            "operation": "select",
+            "target": "ShippingChoose…Standard courierExpress courier → Standard courier",
+            "outcome": "selected",
+            "type": "step_completed",
+            "elapsedMs": 98.43870900000002
+          },
+          {
+            "step": 5,
+            "operation": "click",
+            "ref": "s13:e4",
+            "type": "action_planned",
+            "elapsedMs": 105.07799999999952
+          },
+          {
+            "step": 5,
+            "operation": "click",
+            "target": "Save and review",
+            "outcome": "clicked",
+            "type": "step_completed",
+            "elapsedMs": 185.50495899999987
+          }
+        ],
+        "escalation": null,
+        "independentlyVerified": true,
+        "doneWhen": [
+          "heading=Review order"
+        ],
+        "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+      },
+      "reason": null,
+      "verification": {
+        "expectation": "complete",
+        "passed": true,
+        "detail": {
+          "submission": {
+            "fullname": "Ada Byron",
+            "street": "12 Analytical Lane",
+            "town": "Warsaw",
+            "shipping": "standard"
+          }
+        }
+      },
+      "verificationMs": 0.012958000000253378,
+      "verifiedSuccess": true,
+      "taskMs": 222.7207499999995,
+      "accounting": {
+        "calls": [],
+        "modelCalls": 0,
+        "modelMs": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "usageComplete": true,
+        "costComplete": true,
+        "costUsd": 0,
+        "knownCostUsd": 0,
+        "costBasis": "provider_reported",
+        "screenshotCalls": 0
+      },
+      "finalizationMs": 3.798999999999978,
+      "totalMs": 226.52066699999978,
+      "cleanupMs": 4.139250000000175
+    }
+  ],
+  "browserLaunchMs": 424.968792,
+  "browserVersion": "153.0.8010.48",
+  "plannedAttempts": 8,
+  "cleanupMs": 236.34249999999975,
+  "finalSourceHashes": {
+    "benchmark.mjs": "7c59b70d62899f65c295fbf8f470f2ad8bfc2c222eeb8684532c48094ddb4470",
+    "fixture.mjs": "2d6288e7cb0a53ffdde94806af4f9eb68ff7525fd520679ef1abee4d96754f1a",
+    "runtime.mjs": "51cdc91d14b699de5436173779e7b3d6012787b07caa4ecddeaf53fe67c262c9",
+    "session.mjs": "acfca20379750e58b9754074c63111102228ac08c199dcaf9977649e215defa0",
+    "snapshot.mjs": "6332220fa1e8a32f9b32b68a50b048c2aaebbf13eddfb6e385c6dd4da5c4bf03",
+    "questions.mjs": "7a14d35ed376c16f578bc64712478b9dc67375efd68cb04f5278f61a4a502d77",
+    "policy.mjs": "9b69b5e9bd2a4d402493dd68e8029769f8eae96a8378af1e60604f650584968a",
+    "donewhen.mjs": "692b6de6aec74acd6c04d4014d523fe63565d535f204625aa259e442ad082732",
+    "oracle.mjs": "107979453cc1b51b92b62d8789430fcec35fb24bcff1714c1cbb99e86cc867cd",
+    "jev.mjs": "9ff341f4772228573fbb34a5390286d0e8d1c27e61a301da5464d53c6c8855b9",
+    "../browser-runtime-v3/providers.mjs": "569c48c956aefa0b31759cbbcc623220a1084fd898cebead0357c49cb4bed28a",
+    "../browser-runtime-v4/session.mjs": "2663d61e41ee545ea0b2fd5b147a03942b45ef954f0958819147016e663309ec",
+    "../../src/jev.mjs": "52c3b304815f7904cca3a94b919bec91d370b00d18eae8bb1d754e9b586e6464",
+    "../../src/storage.mjs": "e76e9846be42791ed8234ec73cefb287cfde6b7e9b7276a66a38492239d1efa5",
+    "../../src/glovo.mjs": "4d355e733321a5bc9c9a3a7d846ebd42e98935d2603aade1a486376418016694",
+    "../../src/config.mjs": "6b705e52b539f8c6a2030c87da7210cabb133b53135ea79b896ee598e96c448c",
+    "../../package.json": "8cf56dc14f7d70026c9965a56733c17decbab8dc752ae8f3a125470849febaf3",
+    "../../package-lock.json": "ec03a03d6048231f94368147f057f24c3ee045d0787c1ba603758ad9f3204ba7"
+  },
+  "sourceUnchanged": true
+}

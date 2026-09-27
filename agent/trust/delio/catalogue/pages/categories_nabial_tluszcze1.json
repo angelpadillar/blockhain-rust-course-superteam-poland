@@ -1,0 +1,634 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0000953",
+        "title": "Masło Polskie extra",
+        "packSize": "200 g",
+        "unitPriceMinor": 429,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000953-maslo-polskie-extra",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_7_1_0_5710087cd71cf0ea13796143a35f0365db2c6804_e546d8ad135eb733ecc952f64c25ee41cdb68b29-small.png&w=1920&q=80",
+        "cardSha256": "2952ff362dc85d2c44cc5df391495bfca650659d4d3a51301a36115ff75dd872",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000741",
+        "title": "Masło Extra 82%",
+        "packSize": "200 g",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000741-maslo-extra-82",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_2_6_5_0265c96d25447663f612806d385603dbb0d01e8a_bb_TMRbCbt0H2uxWBKFfxUdQw__-small.png&w=1920&q=80",
+        "cardSha256": "c7efdcb24836758686a016703ad606ced552df179f8be3686a10036600f883fb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000948",
+        "title": "Finuu klasyczne",
+        "packSize": "200 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000948-finuu-klasyczne",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_6_e_9_76e9273585b0dcf2ac6e4b983dad645fa6789801_bb_581a07aa029c7c5a38daff688cbdf5e8-small.png&w=1920&q=80",
+        "cardSha256": "3b710c99ef7349903264b4a93d74a603925fe5d50a757473f77177711d1a2cc1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001346",
+        "title": "Lurpak masło klasyczne",
+        "packSize": "200 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001346-lurpak-maslo-klasyczne",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_e_8_1_9e813ca1d05846228eea82c56e93894820a32b6c_bb_53e4f68266bdf9d8549af0a1991296a6-small.png&w=1920&q=80",
+        "cardSha256": "2cf5f1407666cee8e0aef984e3f262a854daee629ee4dd102d9390d1bb44ab14",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002982",
+        "title": "Masło polskie extra bez laktozy",
+        "packSize": "200 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002982-maslo-polskie-extra-bez-laktozy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_5_d_4_55d4361f0f438c35c88d517d95ed794816f6e3ab_e796fa3b90c486f25a8b90e5fc8d3a2fbee9edb3-small.png&w=1920&q=80",
+        "cardSha256": "22c6aa7dda0c5d5b92fa4b9c3fd9bccc2692e8dae7bf5c26f40479b5fba6abfd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000950",
+        "title": "Lurpak Premium miks tłuszczowy",
+        "packSize": "200 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000950-lurpak-premium-miks-tluszczowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_6_7_e_d67e9adecd76e3fcb7dc53278b1cbed99ed8d782_bb_jYdV3L9AIsIY8lR_JLgfiw__-small.png&w=1920&q=80",
+        "cardSha256": "e2299ad12332c4a451296e71acabeb8b7b41c69f2231d4e1bd1ed7dcb9395b24",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006792",
+        "title": "Łaciate masło extra",
+        "packSize": "200 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006792-laciate-maslo-extra",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_0_b_3_e0b34d5e369e51e248276ce394859537c52a86cd_bb_96adb0134e01f3e2885c8cbbfdfe9c35-small.png&w=1920&q=80",
+        "cardSha256": "4e24979f240a088e97918979dd328fd37866ec59e93a9afb47b2c6ff79fc05fa",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0019593",
+        "title": "Eleplant Easy Smarable tłuszcz roślinny 75%",
+        "packSize": "200 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0019593-eleplant-easy-smarable-tluszcz-roslinny-75",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_c_9_4_5c946e9c2f027937033d382cb842c732b596eb6c_bb_e4d27808070e5db7c26f4b0901c8ef93-small.png&w=1920&q=80",
+        "cardSha256": "884959d58b02f5ce470735ca9d96076d8438571eb7390b98510f26be8a65dfdd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016838",
+        "title": "Finuu Bez laktozy",
+        "packSize": "200 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016838-finuu-bez-laktozy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_2_d_3_62d37c4811395c4500621eb8f16b091525881be1_bb_115007a70c409ef1416a0c9c83e56361-small.png&w=1920&q=80",
+        "cardSha256": "5a026b20b3f0206d9360098bb3434ea9c5dde0fd81d4aadd6f9f49636da6741b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025014",
+        "title": "Finuu solone Miks tłuszczowy do smarowania 75%",
+        "packSize": "200 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025014-finuu-solone-miks-tluszczowy-do-smarowania-75",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_d_d_f_0ddf1b2a8a3e03baf218315c6ce7e1dad4fc7ffc_bb_2336cdf6a8410bb00ba2b3b4e92a10b4-small.png&w=1920&q=80",
+        "cardSha256": "87e04c5ea1a906457ecc5ebc208ad0c3281c2a4626f52203f9fb681cb2fd890b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009620",
+        "title": "Rama Classic Tłuszcz do smarowania",
+        "packSize": "400 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009620-rama-classic-tluszcz-do-smarowania",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_e_3_c_fe3c5581bd2e4d401c3a58d71f4baef3b8188c86_bb_a2543844e0eeac3c88a966d9b7c43e65-small.png&w=1920&q=80",
+        "cardSha256": "807376bae31459fe7fdc71c466e0b6073943ffee81c9ca6cf9a2a84ac0beab9c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015628",
+        "title": "Słynne masło MR roślinne margaryna",
+        "packSize": "500 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015628-slynne-maslo-mr-roslinne-margaryna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_7_7_f_577f6bbf84fe85ffdb95b44d66533235b41789b8_bb_0b69954fd7021de809325fa72fa8c477-small.png&w=1920&q=80",
+        "cardSha256": "47b05e24b6c7a174a65d7fa366582e04b0c15fa2d97f2ea82d31ff90727662e5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000956",
+        "title": "Kasia margaryna",
+        "packSize": "250 g",
+        "unitPriceMinor": 379,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000956-kasia-margaryna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_3_1_1_e311f76d9b6dab55b9c580963fa116ab34bcad3d_e0873f8988b8ad1d8d446c5da8fc2ff7d174d61c-small.png&w=1920&q=80",
+        "cardSha256": "8f22dea5bb9d4a74f0197b3baec76dd2b5b70a8da7fb75db6c2b90582dd8c9ca",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011945",
+        "title": "Flora Original Tłuszcz do smarowania",
+        "packSize": "225 g",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011945-flora-original-tluszcz-do-smarowania",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_9_1_b_891bcdcf71a0719a03ef329bbbe2990516828f3f_bb_SI1deASDDDcH0EQ2pMW1vQ__-small.png&w=1920&q=80",
+        "cardSha256": "7968b37191c4b8907d0d80e1f71464522e889807d94db6f0add5da1b43c7ee83",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007731",
+        "title": "Margaryna Delma 39%",
+        "packSize": "450 g",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007731-margaryna-delma-39",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_b_5_b_0b5bc9c8c9458820589f15740664945ab0a5c2a6_bb_XVVqx5MzA_QDDMn1KRXzjw__-small.png&w=1920&q=80",
+        "cardSha256": "e2c142e13406b24e79ac4a27d3fe73cdfe6bf4760914380154434dee4021d133",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002988",
+        "title": "Lurpak masło klasyczne",
+        "packSize": "50 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002988-lurpak-maslo-klasyczne",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_8_6_0_3860acb6f690bffa5384c98abd56a5bd0fc77685_uIS_2COWA__-small.png&w=1920&q=80",
+        "cardSha256": "f4c0ed5577fc29ad388f73faba0e12e9fb02c3c9152d03ea571c651e36237325",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001884",
+        "title": "Smalec z mięsem Agrico",
+        "packSize": "144 g",
+        "unitPriceMinor": 419,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001884-smalec-z-miesem-agrico",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_c_e_7_dce7eea2999dca63731ff90c2b23392b405c6a47_1d6d0fda91023e77290682be0db57acb2356a752-small.png&w=1920&q=80",
+        "cardSha256": "829eeb47249850426912253f6f87d7118b1c71b37999896b4a05061cccf9891f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/tluszcze1",
+        "label": "Tłuszcze"
+      },
+      {
+        "path": "/categories/nabial/tluszcze1/masla",
+        "label": "Masło"
+      },
+      {
+        "path": "/categories/nabial/tluszcze1/margaryny-i-mixy",
+        "label": "Margaryny, tłuszcze roślinne"
+      },
+      {
+        "path": "/categories/nabial/tluszcze1/smalec",
+        "label": "Smalec"
+      },
+      {
+        "path": "/categories/nabial/tluszcze1/inne-tluszcze",
+        "label": "Inne tłuszcze"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/nabial/tluszcze1",
+    "observedAt": 1789906549986,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906549986-151f60654075",
+        "observationSha256": "151f606540752d6e763209042511f0c08acd208969f614390a94afe3974e9bac",
+        "screenshotSha256": "773b91238d1181eba45cd3029deb3b1fd045a835cbd9cdbe470444cb70272c68",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1727,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

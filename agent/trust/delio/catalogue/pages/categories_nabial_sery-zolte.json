@@ -1,0 +1,982 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0000926",
+        "title": "Ser gouda w plastrach",
+        "packSize": "150 g",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000926-ser-gouda-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_a_2_2_fa22c0139135966ec1f029c707716dc22169efa6_bb__5CRfUnpIApUSujT4aEqUw__-small.png&w=1920&q=80",
+        "cardSha256": "0885c66971aa5f9d3b1bd9fc2e76f11e7366dbc5f41923ed1d6150daa3acf970",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002948",
+        "title": "Sierpc ser Królewski - plastry",
+        "packSize": "135 g",
+        "unitPriceMinor": 639,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002948-sierpc-ser-krolewski-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_4_f_3_14f367f98b9c0fc7808957c2e831dc336fea2bf4_a547c8049ebef8e5f38dada91880d6b6ef84d2be-small.png&w=1920&q=80",
+        "cardSha256": "d8a4fbbacfe83b4fb9b808c1386d464ec8a716fa1f97e790b7b6d86a1741c8e5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011637",
+        "title": "Ser Mozzarella & Cheddar wiórki",
+        "packSize": "200 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011637-ser-mozzarella-cheddar-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_a_a_e_6aaeb6cd1a0b0c431a5af88b6ccfff7c2cf4f94b_280d5780d00dfa5975e7bf007da443088ade5c88-small.png&w=1920&q=80",
+        "cardSha256": "b5ad8edc46a386c7d6c01443dd1d281adc6d82dbaf483712a2a612cdac232073",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002876",
+        "title": "Galbani ser włoski mozzarella wiórki",
+        "packSize": "150 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002876-galbani-ser-wloski-mozzarella-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_1_f_e_71fefacf76a87fd8fd3448d92af52f9761508d7c_bb_aWHIy7F89cw9kdQ1xV6pyg__-small.png&w=1920&q=80",
+        "cardSha256": "a3296f30f64e86b75aeef725c52225c95adbe3fff899f97bcf945c61efc365ac",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011982",
+        "title": "Ser wiórki Cheddar",
+        "packSize": "300 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011982-ser-wiorki-cheddar",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_b_d_c_7bdc1feb9bfbc8ad5f05a8c2ec7ce2aa1885ed54_62e35f657589782f459bc153c979f212bb80f62e-small.png&w=1920&q=80",
+        "cardSha256": "f5a9af22e92a20797bbba688372b6ebca627b7ab8520978d7c527378b6d84788",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012300",
+        "title": "Ser Gouda plastry",
+        "packSize": "500 g",
+        "unitPriceMinor": 1999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012300-ser-gouda-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_c_9_e_dc9e8ec112057f4a8e75408238615f4f6f545a84_e3beb02533cde4baf939fc25575806088767851e-small.png&w=1920&q=80",
+        "cardSha256": "31a1221583dd3f019d0254d7e67843d35f10e43d1ab9986747d97c59b71aec8a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011767",
+        "title": "Parmezan Parmigiano Reggiano wiórki",
+        "packSize": "85 g",
+        "unitPriceMinor": 1249,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011767-parmezan-parmigiano-reggiano-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_c_f_8_9cf8598f2753366b6aa0b463beb8fa3a8a3e4cc7_e_7_6_7_e767ea14398188390f3d-small.png&w=1920&q=80",
+        "cardSha256": "45e6b5ca419faeb20d1b9b4b2be3387d98249eb0769b63f1b14fa561b4497208",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002929",
+        "title": "Dziugas Mild twardy ser dojrzewający 12 miesięcy",
+        "packSize": "160 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002929-dziugas-mild-twardy-ser-dojrzewajacy-12-miesiecy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_b_e_6_5be6c64e0d5d82ffd81b7e924bde72cafbe04a14_bb_3896ee8140739cbf0bca322891f11344-small.png&w=1920&q=80",
+        "cardSha256": "69c91f1aca30ee4cc878089aea5cfb028fd6eb2c0154e43993f0791aab7d1075",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018071",
+        "title": "SBA ser wysokobiałkowy niskotłuszczowy wiórki",
+        "packSize": "300 g",
+        "unitPriceMinor": 1349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018071-sba-ser-wysokobialkowy-niskotluszczowy-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_9_5_3_a95388b7b201e2949e2d563da5c1714131823ccf_7ae9cd9227c80454b45aad6fbdbb6f5c9136400f-small.png&w=1920&q=80",
+        "cardSha256": "93417eb910ced4a82699c682756593bc7b79319ec365a12be360c7ff4f3ff089",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007756",
+        "title": "Parmezan Parmigiano reggiano D.O.P. wiórki",
+        "packSize": "40 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007756-parmezan-parmigiano-reggiano-d-o-p-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_0_b_f_40bf583d4267030d4e016154034748a2676d71cf_ed60e9e5749399c9ca2ecb153099076b6cbaa1a7-small.png&w=1920&q=80",
+        "cardSha256": "3aba0636744293def8d5ac857ec726bf4443b6b45e992a9ab2b68eaa0d2b2922",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011646",
+        "title": "Paluszki serowe Mia Mu",
+        "packSize": "84 g",
+        "unitPriceMinor": 559,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011646-paluszki-serowe-mia-mu",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_d_0_f_ed0f272a1c79a58c2c84c89cceef2d0e27a43397_512af1251d2d8332f6f8690bad2c78d43cef7d75-small.png&w=1920&q=80",
+        "cardSha256": "2a231cf302b0f06e9d40c561ba702ce44fc39ce3c4c2ec608bab35d80f89cbbf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013291",
+        "title": "BEL Minibaby",
+        "packSize": "60 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013291-bel-minibaby",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_f_2_a_ef2a97cfcc5703ae12319680ba10d8c87cfeb33a_MBY_3pack_60g_PL_HR_LT_Disney-small.png&w=1920&q=80",
+        "cardSha256": "478c9b6ab372d9c3a7688814eed1063d5c866d2bd3b32c464da244987c05c92e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011766",
+        "title": "Gran Primo ser wiórki",
+        "packSize": "100 g",
+        "unitPriceMinor": 969,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011766-gran-primo-ser-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_2_6_3_e2636d4a1650035cb0f2744bf8502fd964db4e34_594f453a488bd981c686ba9e7a8c2e8bf845a2f6-small.png&w=1920&q=80",
+        "cardSha256": "931e0c94c534dec4f4d9a448c35d84774b08955a5d4c891843d105a545af41ff",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010575",
+        "title": "Ser królewski z Kolna w plastrach",
+        "packSize": "400 g",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010575-ser-krolewski-z-kolna-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_6_7_6_b676573620e95db3dd8e1967c11f8ac4c0b26659_bb_decbd2a767c60ccc6fd2ebdbdfbeb506-small.png&w=1920&q=80",
+        "cardSha256": "e5d345037a8583d606c0a4f5ed45a540fe01b9bb71cf51ed04df1f144479c55a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022911",
+        "title": "Serenada Ser Gouda",
+        "packSize": "135 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022911-serenada-ser-gouda",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_9_c_9_d9c960aff9943cd65974bfcf39157a68c212a190_Gouda_135g_koperta_packshot-small.png&w=1920&q=80",
+        "cardSha256": "2aabace5d6ca5285dfa85d8b8d624461da767330ccdd2b2f303ba62171fa09dc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006545",
+        "title": "Ser Cheddar plastry",
+        "packSize": "150 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006545-ser-cheddar-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_2_d_d_92ddda85694e6d128581fab2cd6273497253b7ff_f3c602d015f6055bbd837a47fb1bd293966ef2d0-small.jpg&w=1920&q=80",
+        "cardSha256": "d11354bb50d5e7d11f2948faba7a48f724d100c013b6729751fa97f81cefdead",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007754",
+        "title": "Castelli Parmigiano Reggiano D.O.P.",
+        "packSize": "125 g",
+        "unitPriceMinor": 3099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007754-castelli-parmigiano-reggiano-d-o-p",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_a_0_2_6a0280b2e8a17b6adfb57bdc5e9b6e1e574f66bb_3fef53ddfe3ed452eb6239b1685568d5d8a61f0b-small.png&w=1920&q=80",
+        "cardSha256": "446f39dec2df3d6bc226f0ca24cac187a6a57ea72ae6aff9d888dcdfbbb435f7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007757",
+        "title": "Grana padano D.O.P.",
+        "packSize": "125 g",
+        "unitPriceMinor": 2159,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007757-grana-padano-d-o-p",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_0_6_4_80644f0d9487941546aba6e540cba5f52cde7035_9cc32be61998fe300af0f72f6b849ad23edea9ad-small.png&w=1920&q=80",
+        "cardSha256": "740db325f75dc05e52014eb33f79fabdef002cda6577c57f7ad5cb3972e6ace2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005340",
+        "title": "Hochland ser żółty Gouda plastry",
+        "packSize": "135 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005340-hochland-ser-zolty-gouda-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_4_3_5_f43560812d8d4d37f075427359ca76f13cfcf8f1_bb_bc8ab5ef2cab95c3eb10f21430ccb89a-small.png&w=1920&q=80",
+        "cardSha256": "910241532fe58de00bfd3b9cf134652d2dd3b0876a686eb4f239088fd4f06499",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010567",
+        "title": "Serenada Ser Radamer",
+        "packSize": "135 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010567-serenada-ser-radamer",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_3_8_4_23841c03fc87c92d03bed66b1841461a1f39f7d8_bb_58b8c77e7bc9020bc5e2df1625267731-small.png&w=1920&q=80",
+        "cardSha256": "21f5fbb5e9de6e6a68ce0af6c3728b4d8b7d2bea5bc5db99f5d22ee7f4e64309",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011997",
+        "title": "Ser Cheddar plastry",
+        "packSize": "300 g",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011997-ser-cheddar-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_9_1_0_2910f560aef7f901da8b65ca890549fb0ad54dd7_a92a6feb69d0e95732996708ae428a00b081bca5-small.png&w=1920&q=80",
+        "cardSha256": "40331607d57392d33d0bffc9290386a770da309ff8b170d2753eb71e7611df1a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002951",
+        "title": "Ser Edam Rycki w plastrach",
+        "packSize": "135 g",
+        "unitPriceMinor": 659,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002951-ser-edam-rycki-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_7_e_1_17e1521dd08366623427af52faa201dff346623c_Ryki_Edam_FP_2-small.png&w=1920&q=80",
+        "cardSha256": "68986f3967b6f79ded99b350d2c301b0ee94d146eff93e5c3b780feed555d85c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000733",
+        "title": "Ser salami plastry",
+        "packSize": "150 g",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000733-ser-salami-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_4_1_6_e416cb4b2cb6948b0344b585330196df168cdb91_TNrtc4DiSkr2Q__-small.png&w=1920&q=80",
+        "cardSha256": "b4a17f6e31d6d49a62f3f6aff1859dff2c18c909f173a33a8617aec8e7b365c3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010576",
+        "title": "Ser złoty mazur w plastrach",
+        "packSize": "400 g",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010576-ser-zloty-mazur-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_d_c_c_edcc8c763e4a52a29afa2b9472004227663944f9_bb_d91043ef9ecfd7300f7fd7634c59e49c-small.png&w=1920&q=80",
+        "cardSha256": "7286de8c4f9e54366bba894c074721f9e38f4f250f80a545a2082d2ea4c058fa",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008317",
+        "title": "Ser Gołka Zakopiańska mini",
+        "packSize": "160 g",
+        "unitPriceMinor": 1049,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008317-ser-golka-zakopianska-mini",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_b_c_8_8bc865793a287d40fc6b43ba8302801a669e6aaa_5962zakopianskie_golka_mini_png-small.png&w=1920&q=80",
+        "cardSha256": "0782000b11c547d9ed82427ac5bcdb8465f4f15550a24f5f622fffc6733ad8df",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011974",
+        "title": "SBA Ser wiórki wysokobiałkowy",
+        "packSize": "250 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011974-sba-ser-wiorki-wysokobialkowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_a_5_a_0a5af99240123e40d57d0592e5183dbca8f51a39_7c6b24df1c05459cf2eae890233fe5031098fb16-small.png&w=1920&q=80",
+        "cardSha256": "425efcd854f73873de56402e2ced01a0c87e25d054f02009eeb15cd4b4720e3b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000928",
+        "title": "Hochland ser Maasdamer bez laktozy w plastrach",
+        "packSize": "135 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000928-hochland-ser-maasdamer-bez-laktozy-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_0_4_c_904c95cfbc25595c0cb9a8de0071a1889a66886e_bb_226ca067963f8332b72017e83abeb695-small.png&w=1920&q=80",
+        "cardSha256": "265db5e7ba47d14c0bf34d7a02d05fb1eb86673b1c1326c91f954ae4ebee95df",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014631",
+        "title": "Apetina Mozzarella wiórki",
+        "packSize": "200 g",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014631-apetina-mozzarella-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_d_7_c_5d7c6bd67f01bf8ab720f6479401e82d126ef697_KuJ30dAEJhtF7cbpg__-small.png&w=1920&q=80",
+        "cardSha256": "6e4f88f59f8804176d89deeae03208da1f51bea86a248b7a4648b3ad6160ff4a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010577",
+        "title": "Ser gouda wędzona w plastrach",
+        "packSize": "150 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010577-ser-gouda-wedzona-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_0_a_5_b0a57bc3919174dd60162675486a2953f3c98102_bb_d185c248ee7440c25dd7a8b80655adce-small.png&w=1920&q=80",
+        "cardSha256": "fc29faa7f1d33f697593656cf9794c4f3dce378e55e7f37f5e488d173e82479c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018220",
+        "title": "Serenada Ser żółty Królewiecki Szwajcar",
+        "packSize": "135 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018220-serenada-ser-zolty-krolewiecki-szwajcar",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_7_d_4_b7d4e5c877c5de54c7ef21f7e9ec0e949ff53189_bb_115b7041e80be7343626f2d52a6258c0-small.png&w=1920&q=80",
+        "cardSha256": "56bb12e2722a4d7e4779b10edbe399ff0006988b4df87beaaa38b32198f918cf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022917",
+        "title": "Skarby Serowara Ser Bursztyn plastry (12 m-cy)",
+        "packSize": "135 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022917-skarby-serowara-ser-bursztyn-plastry-12-m-cy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_b_4_7_eb47266c4f087ef94e3d037b73a2ab831ac729d4_AKTUALNY___Bursztyn_12_plastry_-small.png&w=1920&q=80",
+        "cardSha256": "bc71c070485a86d861bf24dc46ffee06d34de776fbbeb7cde4561452d8e5bc56",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013295",
+        "title": "Ryki Ser gouda",
+        "packSize": "400 g",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013295-ryki-ser-gouda",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_0_c_9_40c953b34ff5107335572b92314f2a2be4822b69_rycki_gouda_linia_deskowa_new-small.png&w=1920&q=80",
+        "cardSha256": "31a6e39cd8d55e045ccf238bf6928d22ff8e58faba8ce440110df1c6cda440d0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002947",
+        "title": "Ser wiórki Gouda",
+        "packSize": "150 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002947-ser-wiorki-gouda",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_8_2_8_9828c4154e728471f9e120a75d1ff3ee5049c753_a63952988324843d65b707d3c48dd891e740aa30-small.jpg&w=1920&q=80",
+        "cardSha256": "99b75b0b3fabf8219a357c0e7565973a3597df826dda076f3005cefb90420c1b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018219",
+        "title": "Serenada Ser żółty Salami",
+        "packSize": "135 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018219-serenada-ser-zolty-salami",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_d_7_e_cd7ed9cc38c81fd3e4bf357d4aa1aae471a7415b_bb_a67fa0956a444e2fffa0c917358e71c7-small.png&w=1920&q=80",
+        "cardSha256": "30c11df782d5f04a25cd4add2dd7f9a148ba2e1c397c526e872870c2ebf2e7b6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022918",
+        "title": "Skarby Serowara Ser Bursztyn tarty",
+        "packSize": "100 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022918-skarby-serowara-ser-bursztyn-tarty",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_c_3_9_3c39c7f82063a22b9f5b753c2608855cad20f0db_bursztyn_tarty_packshot_-small.png&w=1920&q=80",
+        "cardSha256": "df2f016f46c8c3b3f785aaccad85b593df2cf4ebd94ea3e32fa767a47b877e2f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005923",
+        "title": "Ser warkoczyk wędzony",
+        "packSize": "50 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005923-ser-warkoczyk-wedzony",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_e_b_d_9ebdbcc540f7050a1f5eef76dbba362addf75c4e_bb_bZkmY94vQNwZzIegfPskCg__-small.png&w=1920&q=80",
+        "cardSha256": "dc3e0d184cb80fc26fda9ed3cad4dc4e9283684ac71d45576ca0f679d618d697",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010884",
+        "title": "Dziugas Ser twardy dojrzewający płatki",
+        "packSize": "100 g",
+        "unitPriceMinor": 859,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010884-dziugas-ser-twardy-dojrzewajacy-platki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_6_c_2_06c278d805d43bc41afc7272db33f1d328e6b41e_bb_3917b91e6cb86158d2fe08912862e666-small.png&w=1920&q=80",
+        "cardSha256": "91e74966a9616ba0d436cf2920d7323c1f3cfcd8af21c67516410ae1f939b93f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000927",
+        "title": "Ser królewski z Kolna w plastrach",
+        "packSize": "150 g",
+        "unitPriceMinor": 729,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000927-ser-krolewski-z-kolna-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_4_b_c_d4bc073b13c4b3e77b5cf704b06709475a17118b_bb_7_LQFN1cDchuRWhWzpvTCQ__-small.png&w=1920&q=80",
+        "cardSha256": "d480a027230dc3a0462deb9d694809a16d29ea146c068a849f08c3c956c93f29",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025370",
+        "title": "Ryki Ser żółty Koneser lekki",
+        "packSize": "135 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025370-ryki-ser-zolty-koneser-lekki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_0_0_b_e00b8f6ad1496aa872d90974a20270a033bc9d5c_b46dd50a_2baa_4b1f_a9d4_0bd7393-small.png&w=1920&q=80",
+        "cardSha256": "7d94a1f6743707bf38e770ac2fc1e5ece6e88a882160d7f8a511961097c3db86",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002946",
+        "title": "Ser Gouda mierzwiony",
+        "packSize": "150 g",
+        "unitPriceMinor": 879,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002946-ser-gouda-mierzwiony",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_9_5_5_e955ac71c44c061bd5dbf2e5fe29d5c6dfa0c06c_2290ser_gouda_plastry_mierzwione_m2016_w01_0000_kopia_jpg-small.jpg&w=1920&q=80",
+        "cardSha256": "23c076a6c9ac639784e15a46806a3a9d1ce90242fad1ba8977a7cd5a16e56aa8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022497",
+        "title": "BEL Kiri przekąska paluszki o smaku pizzy",
+        "packSize": "35 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022497-bel-kiri-przekaska-paluszki-o-smaku-pizzy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_6_0_f_160ffa3b0db98950343ae6e2b5f37e8f10d38036_Kiri_Przekaska_Pizza_35g_PL_Dis-small.png&w=1920&q=80",
+        "cardSha256": "18721383b00e90577e1ac4d024356c09228e3210e63fdb3391838e13beea44e3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014869",
+        "title": "Ser Gouda Plastry",
+        "packSize": "150 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014869-ser-gouda-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_c_1_5_3c15f0e5eb4c5809120f812eda0c70d9cfa0e4ed_57927283ser_gouda_plastry_150g_blister_2021_11_30_w04_0000_copy_jpg_jpg-small.jpg&w=1920&q=80",
+        "cardSha256": "f6097f763c242468d5888df12fde09f81ac9ed973d026e9a5c4b8477558be0c9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011950",
+        "title": "Ser wiórki Ementaler i Gouda",
+        "packSize": "100 g",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011950-ser-wiorki-ementaler-i-gouda",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_3_8_a_638a284c1949a5b328813e77171b927d6d7da322_09139a3a_59f5_434a_aae8_de433f372132-small.png&w=1920&q=80",
+        "cardSha256": "0776c08284bdf779c2adff7f9d0f5a059d0fbee499f157076cbb66bd4b07a08b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010883",
+        "title": "Hochland ser Edamski plastry",
+        "packSize": "135 g",
+        "unitPriceMinor": 739,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010883-hochland-ser-edamski-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_5_1_c_a51c7c04031e473d18c90a3e0e261e792dda7e93_bb_43c5575a1a540dffb099dcecd9bc7d1c-small.png&w=1920&q=80",
+        "cardSha256": "8a6e208ea3d1e50ece1c4b22d3412b1f26362d5d24384f1a075b8a3aef62dbed",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0021902",
+        "title": "Warkocz Serowy naturalny + wędzony",
+        "packSize": "160 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0021902-warkocz-serowy-naturalny-wedzony",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_a_2_8_fa2826dc1f6099e7e22cc7510870326c926d0d6a_5749gorskie_przysmaki_warkocze-small.png&w=1920&q=80",
+        "cardSha256": "0500e301063881dcfc7b4a6d49a5f7589d3447692d825f94e17d7554f84ade46",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022919",
+        "title": "Serenada Ser tarty",
+        "packSize": "40 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022919-serenada-ser-tarty",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_1_2_6_51267c74bc90c5aaeade00b40eb060b094fc1a96_Ser_Tarty_Serenada_200g_prz__d-small.png&w=1920&q=80",
+        "cardSha256": "c6061b6f8697268c6e42ac7631f95d808e268e3b471c408cbf82e54b5d463ef5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/nabial/sery-zolte",
+    "observedAt": 1789906527941,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906527941-4b7d7749f78a",
+        "observationSha256": "4b7d7749f78ae2e45bc547f7f90f1db9573e2191171cba65425e3d204974b81b",
+        "screenshotSha256": "fd4539656de42cf6ff9c26bf142d1e574493b97271c95888eb437cfe36abb9a8",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2030,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

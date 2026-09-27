@@ -1,0 +1,136 @@
+{
+  "attempt": 5,
+  "caseId": "two-cheapest",
+  "runId": "run-0dceda60ff",
+  "repeat": 1,
+  "picker": "oracle",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.41862500000002
+    }
+  ],
+  "journalMs": 11.34666699999957,
+  "journalWrites": 3,
+  "blockedRequests": 0,
+  "contextSetupMs": 96.53475000000003,
+  "navigationMs": 13.10225000000014,
+  "spec": {
+    "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "values": {}
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "browser_error",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": null,
+        "ref": null,
+        "what": null,
+        "snapMs": 0,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": null
+      }
+    ],
+    "metrics": {
+      "totalMs": 29.575250000000096,
+      "snapMs": 0,
+      "pickMs": 0,
+      "actMs": 0,
+      "settleMs": 0,
+      "eventMs": 2.764917000000196,
+      "protocolCalls": 3,
+      "observations": 0,
+      "revalidations": 0,
+      "browserScans": 0,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 0,
+      "nativeActionsCompleted": 0,
+      "jevCalls": 0,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:57556/s/run-0dceda60ff/listing",
+      "title": ""
+    },
+    "events": [
+      {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.41862500000002
+      }
+    ],
+    "escalation": {
+      "reason": "browser_error",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:57556",
+        "title": "",
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "controls": [],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": null,
+          "target": null
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "browser_error",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "bag": [],
+      "wanted": [
+        "429f741bbab487f5",
+        "d0012786d26a1878"
+      ]
+    }
+  },
+  "verificationMs": 0.06145800000012969,
+  "verifiedSuccess": false,
+  "taskMs": 42.787458000000015,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 5.00808300000017,
+  "totalMs": 47.796790999999985,
+  "cleanupMs": 5.235124999999925
+}

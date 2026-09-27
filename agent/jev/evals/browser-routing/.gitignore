@@ -1,0 +1,5 @@
+# Live logs and raw screenshots stay local; snapshot metadata is commit-ready.
+decisions/
+registry/shadow/
+registry/snapshots/*/images/
+node_modules/

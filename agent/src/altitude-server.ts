@@ -188,6 +188,14 @@ async function route(
     return;
   }
   if (request.method === "POST" && path.startsWith("/card/")) {
+    if (process.env.ALTITUDE_ADMIN_CARD_OPS?.trim() !== "1") {
+      send(response, 403, {
+        ok: false,
+        error:
+          "card mutations are an admin/dev-only path and are not part of purchase execution; set ALTITUDE_ADMIN_CARD_OPS=1 on the daemon to enable",
+      });
+      return;
+    }
     const command = path.slice("/card/".length);
     if (!CARD_COMMANDS.includes(command as CardCommand)) {
       send(response, 404, {

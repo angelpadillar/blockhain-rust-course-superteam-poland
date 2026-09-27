@@ -1,0 +1,1609 @@
+{
+  "attempt": 6,
+  "caseId": "two-cheapest",
+  "runId": "run-53c446059f",
+  "repeat": 2,
+  "picker": "oracle",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.4454999999998108
+    },
+    {
+      "step": 1,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 436.4869579999995
+    },
+    {
+      "step": 2,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 848.2534169999999
+    },
+    {
+      "step": 3,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 1269.9001669999998
+    },
+    {
+      "step": 4,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 1683.5673750000005
+    },
+    {
+      "step": 5,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 2100.240749999999
+    },
+    {
+      "step": 6,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 2512.962207999999
+    },
+    {
+      "step": 7,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 2921.7892919999995
+    },
+    {
+      "step": 8,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 3341.129417000002
+    },
+    {
+      "step": 9,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 3755.869166999999
+    },
+    {
+      "step": 10,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 4171.294958
+    },
+    {
+      "step": 11,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 4597.525875000001
+    },
+    {
+      "step": 12,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 5008.673000000001
+    },
+    {
+      "step": 13,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 5420.7784999999985
+    },
+    {
+      "step": 14,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 5839.610125000001
+    },
+    {
+      "step": 15,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 6255.986083000002
+    },
+    {
+      "step": 16,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 6671.2551250000015
+    },
+    {
+      "step": 17,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 7089.545583000001
+    },
+    {
+      "step": 18,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 7508.418917000001
+    },
+    {
+      "step": 19,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 7920.634708
+    },
+    {
+      "step": 20,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 8345.700583
+    },
+    {
+      "step": 21,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 8763.059500000001
+    },
+    {
+      "step": 22,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 9190.640125
+    },
+    {
+      "step": 23,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 9608.549792
+    },
+    {
+      "step": 24,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 10030.962000000001
+    },
+    {
+      "step": 25,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 10445.283582999999
+    },
+    {
+      "step": 26,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 10860.349417
+    },
+    {
+      "step": 27,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 11282.414292
+    },
+    {
+      "step": 28,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 11695.195542
+    },
+    {
+      "step": 29,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 12110.841666999999
+    },
+    {
+      "step": 30,
+      "operation": "wait",
+      "target": null,
+      "outcome": "waited",
+      "type": "step_completed",
+      "elapsedMs": 12533.046457999999
+    }
+  ],
+  "journalMs": 203.6098689999908,
+  "journalWrites": 33,
+  "blockedRequests": 0,
+  "contextSetupMs": 130.62587499999972,
+  "navigationMs": 16.331249999999272,
+  "spec": {
+    "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "values": {}
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "step_limit",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 24.92412499999955,
+        "pickMs": 0.03370899999936228,
+        "actMs": 401.26324999999997,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.33324999999968,
+        "pickMs": 0.046334000000570086,
+        "actMs": 401.453125,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 3,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 12.103250000000116,
+        "pickMs": 0.0742499999996653,
+        "actMs": 400.3492499999993,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 4,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 6.651667000000089,
+        "pickMs": 0.06350000000020373,
+        "actMs": 401.1358749999981,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 5,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 8.059125000003405,
+        "pickMs": 0.04929199999969569,
+        "actMs": 401.1969160000008,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 6,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.829290999998193,
+        "pickMs": 0.06795899999997346,
+        "actMs": 401.14229200000045,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 7,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.812375000001339,
+        "pickMs": 0.05258300000059535,
+        "actMs": 400.3289999999979,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 8,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 10.66345899999942,
+        "pickMs": 0.09433399999761605,
+        "actMs": 401.1944590000021,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 9,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 7.622332999999344,
+        "pickMs": 0.058958999998139916,
+        "actMs": 401.2096249999995,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 10,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.294208000002982,
+        "pickMs": 0.08495899999979883,
+        "actMs": 401.1949999999997,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 11,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.936208000002807,
+        "pickMs": 0.10933300000033341,
+        "actMs": 401.27124999999796,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 12,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.64641599999959,
+        "pickMs": 0.05929200000173296,
+        "actMs": 401.29475000000093,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 13,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 6.686750000000757,
+        "pickMs": 0.0657500000015716,
+        "actMs": 401.31454099999974,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 14,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.39445799999885,
+        "pickMs": 0.06766699999934644,
+        "actMs": 401.7453749999986,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 15,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 8.403167000000394,
+        "pickMs": 0.06708399999843095,
+        "actMs": 400.5426660000012,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 16,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 8.094166999999288,
+        "pickMs": 0.07862500000192085,
+        "actMs": 401.059792,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 17,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.524916999998823,
+        "pickMs": 0.14479099999880418,
+        "actMs": 401.393082999999,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 18,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.860375000000204,
+        "pickMs": 0.07875000000058208,
+        "actMs": 401.17404199999874,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 19,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.292625000001863,
+        "pickMs": 0.0462500000030559,
+        "actMs": 401.2590409999975,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 20,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.61920900000041,
+        "pickMs": 0.0652090000003227,
+        "actMs": 400.59295900000143,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 21,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 9.195415999998659,
+        "pickMs": 0.07262500000069849,
+        "actMs": 401.2567909999998,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 22,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 19.809958000001643,
+        "pickMs": 0.041459000000031665,
+        "actMs": 401.28687499999796,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 23,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 7.857332999999926,
+        "pickMs": 0.05762499999764259,
+        "actMs": 401.41145900000265,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 24,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 13.70245900000009,
+        "pickMs": 0.07983299999978044,
+        "actMs": 401.2300000000032,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 25,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 7.63470800000141,
+        "pickMs": 0.08437499999854481,
+        "actMs": 401.25174999999945,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 26,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 6.943374999998923,
+        "pickMs": 0.07383300000219606,
+        "actMs": 401.3166249999995,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 27,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 15.246208000000479,
+        "pickMs": 0.0663749999985157,
+        "actMs": 400.0218750000022,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 28,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 6.080541999999696,
+        "pickMs": 0.06091699999888078,
+        "actMs": 401.2940830000007,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 29,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 6.844082999999955,
+        "pickMs": 0.05991599999833852,
+        "actMs": 401.2298750000009,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      },
+      {
+        "step": 30,
+        "picker": "jev",
+        "operation": "wait",
+        "ref": null,
+        "what": null,
+        "snapMs": 13.296042000001762,
+        "pickMs": 0.10349999999743886,
+        "actMs": 401.2400000000016,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "waited",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          }
+        ],
+        "decision": {
+          "operation": "wait",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.99,
+          "targetProbability": null,
+          "goalMet": 0.02,
+          "destructive": 0.01
+        }
+      }
+    ],
+    "metrics": {
+      "totalMs": 12539.31275,
+      "snapMs": 289.9720399999951,
+      "pickMs": 0,
+      "actMs": 0,
+      "settleMs": 0,
+      "eventMs": 196.5309169999964,
+      "protocolCalls": 92,
+      "observations": 30,
+      "revalidations": 0,
+      "browserScans": 30,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 0,
+      "nativeActionsCompleted": 0,
+      "jevCalls": 30,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 0,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0
+    },
+    "final": {
+      "url": "http://127.0.0.1:57611/s/run-53c446059f/listing",
+      "title": "Stationery listing"
+    },
+    "events": [
+      {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.4454999999998108
+      },
+      {
+        "step": 1,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 436.4869579999995
+      },
+      {
+        "step": 2,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 848.2534169999999
+      },
+      {
+        "step": 3,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 1269.9001669999998
+      },
+      {
+        "step": 4,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 1683.5673750000005
+      },
+      {
+        "step": 5,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 2100.240749999999
+      },
+      {
+        "step": 6,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 2512.962207999999
+      },
+      {
+        "step": 7,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 2921.7892919999995
+      },
+      {
+        "step": 8,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 3341.129417000002
+      },
+      {
+        "step": 9,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 3755.869166999999
+      },
+      {
+        "step": 10,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 4171.294958
+      },
+      {
+        "step": 11,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 4597.525875000001
+      },
+      {
+        "step": 12,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 5008.673000000001
+      },
+      {
+        "step": 13,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 5420.7784999999985
+      },
+      {
+        "step": 14,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 5839.610125000001
+      },
+      {
+        "step": 15,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 6255.986083000002
+      },
+      {
+        "step": 16,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 6671.2551250000015
+      },
+      {
+        "step": 17,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 7089.545583000001
+      },
+      {
+        "step": 18,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 7508.418917000001
+      },
+      {
+        "step": 19,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 7920.634708
+      },
+      {
+        "step": 20,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 8345.700583
+      },
+      {
+        "step": 21,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 8763.059500000001
+      },
+      {
+        "step": 22,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 9190.640125
+      },
+      {
+        "step": 23,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 9608.549792
+      },
+      {
+        "step": 24,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 10030.962000000001
+      },
+      {
+        "step": 25,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 10445.283582999999
+      },
+      {
+        "step": 26,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 10860.349417
+      },
+      {
+        "step": 27,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 11282.414292
+      },
+      {
+        "step": 28,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 11695.195542
+      },
+      {
+        "step": 29,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 12110.841666999999
+      },
+      {
+        "step": 30,
+        "operation": "wait",
+        "target": null,
+        "outcome": "waited",
+        "type": "step_completed",
+        "elapsedMs": 12533.046457999999
+      }
+    ],
+    "escalation": {
+      "reason": "step_limit",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:57611",
+        "title": "Stationery listing",
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "controls": [
+          {
+            "what": "Accept cookies",
+            "role": "button",
+            "kind": "button",
+            "where": [],
+            "component": {
+              "kind": "dialog",
+              "label": "Cookie consent",
+              "text": ""
+            },
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": "wait",
+          "target": null
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [
+        {
+          "step": 1,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 2,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 3,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 4,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 5,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 6,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 7,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 8,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 9,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 10,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 11,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 12,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 13,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 14,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 15,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 16,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 17,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 18,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 19,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 20,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 21,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 22,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 23,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 24,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 25,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 26,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 27,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 28,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 29,
+          "operation": "wait",
+          "target": null
+        },
+        {
+          "step": 30,
+          "operation": "wait",
+          "target": null
+        }
+      ],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "step_limit",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "bag": [],
+      "wanted": [
+        "429f741bbab487f5",
+        "d0012786d26a1878"
+      ]
+    }
+  },
+  "verificationMs": 0.0218330000025162,
+  "verifiedSuccess": false,
+  "taskMs": 12555.833125000001,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 5.920374999997875,
+  "totalMs": 12561.756083,
+  "cleanupMs": 10.746624999999767
+}

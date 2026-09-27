@@ -1,0 +1,161 @@
+{
+  "ok": true,
+  "result": {
+    "status": "registration_state_observed",
+    "fields": [
+      {
+        "ordinal": 1,
+        "kind": "unclassified",
+        "inputType": "text",
+        "required": false,
+        "source": "scoped_form_markup"
+      },
+      {
+        "ordinal": 2,
+        "kind": "unclassified",
+        "inputType": "text",
+        "required": false,
+        "source": "scoped_form_markup"
+      }
+    ],
+    "fieldsTruncated": false,
+    "observedFieldOrder": [],
+    "emailFieldObserved": false,
+    "phoneFieldObserved": false,
+    "passwordFieldObserved": false,
+    "otpFieldObserved": false,
+    "termsMentionObserved": false,
+    "privacyMentionObserved": false,
+    "registrationEntryObserved": false,
+    "googleOptionObserved": true,
+    "appleOptionObserved": false,
+    "laterFieldOrderVerified": false,
+    "artifacts": [
+      {
+        "id": "registration-1789826935179-2523c31fcb3c",
+        "observationSha256": "2523c31fcb3c8b2b6c79fcf9bbcdb148bd874a8511df61f811964fdb30e15605",
+        "screenshotSha256": "f896e2961415ce0043ae2899020d23c48b0e2f8f37efa3526c6686204601ba6e",
+        "private": true
+      }
+    ],
+    "noActionsDispatched": true,
+    "navigationClicks": 0,
+    "newAccountVerified": false,
+    "inspectionScope": "Current registration view only; this observation does not prove account creation or prior actions.",
+    "networkDiagnostics": {
+      "available": true,
+      "hosts": [
+        {
+          "hostname": "maps.googleapis.com",
+          "event": "request",
+          "method": "GET",
+          "status": null,
+          "policyBlocked": false,
+          "count": 51
+        },
+        {
+          "hostname": "maps.googleapis.com",
+          "event": "response",
+          "method": "GET",
+          "status": 200,
+          "policyBlocked": false,
+          "count": 52
+        },
+        {
+          "hostname": "delio.com.pl",
+          "event": "request",
+          "method": "GET",
+          "status": null,
+          "policyBlocked": false,
+          "count": 25
+        },
+        {
+          "hostname": "delio.com.pl",
+          "event": "response",
+          "method": "GET",
+          "status": 200,
+          "policyBlocked": false,
+          "count": 25
+        },
+        {
+          "hostname": "delio.com.pl",
+          "event": "response",
+          "method": "POST",
+          "status": 200,
+          "policyBlocked": false,
+          "count": 14
+        },
+        {
+          "hostname": "maps.gstatic.com",
+          "event": "request",
+          "method": "GET",
+          "status": null,
+          "policyBlocked": false,
+          "count": 5
+        },
+        {
+          "hostname": "maps.gstatic.com",
+          "event": "response",
+          "method": "GET",
+          "status": 200,
+          "policyBlocked": false,
+          "count": 5
+        },
+        {
+          "hostname": "maps.googleapis.com",
+          "event": "request",
+          "method": "POST",
+          "status": null,
+          "policyBlocked": false,
+          "count": 3
+        },
+        {
+          "hostname": "maps.googleapis.com",
+          "event": "response",
+          "method": "POST",
+          "status": 200,
+          "policyBlocked": false,
+          "count": 3
+        },
+        {
+          "hostname": "fonts.googleapis.com",
+          "event": "request",
+          "method": "GET",
+          "status": null,
+          "policyBlocked": false,
+          "count": 2
+        },
+        {
+          "hostname": "fonts.googleapis.com",
+          "event": "request_failed",
+          "method": "GET",
+          "status": null,
+          "policyBlocked": false,
+          "count": 2
+        },
+        {
+          "hostname": "delio.com.pl",
+          "event": "request",
+          "method": "POST",
+          "status": null,
+          "policyBlocked": false,
+          "count": 13
+        }
+      ],
+      "scope": "Hostname aggregates only; a failed request alone does not establish a policy block."
+    },
+    "observedAt": 1789826935221,
+    "evidenceRefs": [
+      {
+        "id": "41136649cf2a67198e4f62aa1100aa56342939d301164b961c89768a242a6117",
+        "observedAt": 1789826935221
+      }
+    ],
+    "browserRuntimeMs": 435,
+    "modelCalls": 0,
+    "usage": {
+      "modelCalls": 0,
+      "modelCostUsd": 0
+    }
+  }
+}

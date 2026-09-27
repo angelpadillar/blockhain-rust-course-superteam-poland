@@ -1,0 +1,694 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0016567",
+        "title": "Wysokobiałkowy pasztet z fasoli z cebulą, pieprzem i czarnuszką High Protein Wawrzyniec",
+        "packSize": "180 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016567-wysokobialkowy-pasztet-z-fasoli-z-cebula-pieprzem-i-czarnuszka-high-protein-wawrzyniec",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_f_2_1_1f215ab4fcf95ba6cc0133745395bd32b0e0fed7_5900012015328-small.png&w=1920&q=80",
+        "cardSha256": "001ba93afa2b3e944218a5f11a1a6b632bbbdddc7db4d6c8a706f3cd5ae51955",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005634",
+        "title": "Dżem 100% truskawka Łowicz",
+        "packSize": "210 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005634-dzem-100-truskawka-lowicz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_5_b_1_15b1dec696aca0b132ea169916faa9494ca61b14_36573d68db5fba830f4772f65f53f4093052b977-small.png&w=1920&q=80",
+        "cardSha256": "4bb1d599dac9a570a35f85a6700342aba67e5c97c13c93644ee22bede52740c8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004451",
+        "title": "Płatki owsiane górskie bio Bio Planet",
+        "packSize": "300 g",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004451-platki-owsiane-gorskie-bio-bio-planet",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_e_a_8_7ea8bdb43f5851d5a469241bd94b9e7efd57ce12_beeb450416624020db1f018e017cee84d768bd79-small.png&w=1920&q=80",
+        "cardSha256": "9202f0be9219550a47ef8e0a0aac06c047ba41303c871b85538d9b3860adb68d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023398",
+        "title": "Mleczko kokosowe 12-14% House of Asia",
+        "packSize": "400 ml",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023398-mleczko-kokosowe-12-14-house-of-asia",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_f_5_9_5f59dcd8b334c1ce2a053a9e60ba45f65c61a87c_5904358554978-small.png&w=1920&q=80",
+        "cardSha256": "bb94826a93efdddb365081c47055ccd1fc61a886b8dd44769275ea22381f43f1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022059",
+        "title": "Krem Crunchy Biscoff",
+        "packSize": "380 g",
+        "unitPriceMinor": 1999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022059-krem-crunchy-biscoff",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_0_2_6_70266271bcff785bfba840af06269ccd4920c0d2_Biscoff_Pack_Shot_2D_Spread_Crunchy_380g_Glass-small.png&w=1920&q=80",
+        "cardSha256": "cdb58b54f73e997da2ba3f2b93699998f5e68808906c692823d431bd48a46ffb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015734",
+        "title": "Kawa mielona Classico Illy",
+        "packSize": "250 g",
+        "unitPriceMinor": 3749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015734-kawa-mielona-classico-illy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_f_a_a_7faa634dcfaa2340de71d16888a72db0481df616_8003753900438__3_-small.png&w=1920&q=80",
+        "cardSha256": "50128ad4ce3f1cf2506728096018cf95cedf66f22176cbc9c3ccc1df4fbf3503",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015122",
+        "title": "Miód Lipowy Huzar",
+        "packSize": "250 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015122-miod-lipowy-huzar",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_2_0_2_d20273148337f214b5c9038020ab9b42a805e44f_bb_LVjTKRmI1GlMcWBbBeB66g__-small.png&w=1920&q=80",
+        "cardSha256": "d062db423d41bd32d334f4f2241d12370edf1306e60d7095c4301e568f46b2db",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011887",
+        "title": "Cukier trzcinowy Sante",
+        "packSize": "500 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011887-cukier-trzcinowy-sante",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_b_f_9_ebf9b9a7c9c88ddfcb0915c2b221222b0232a8a2_cukier_normalny_demerara_500g_maj2015-small.png&w=1920&q=80",
+        "cardSha256": "344cde3d3e260f654e847ca8a1fb4c88e17609fea027dee0be214557bad0c841",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011794",
+        "title": "Przecier passata rustica Dawtona",
+        "packSize": "690 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011794-przecier-passata-rustica-dawtona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_5_3_7_f537957a761e7987508265b72e2800606ae4501e_309b2ae0dd40fddb730970a10e6c9acfb033b4cc-small.png&w=1920&q=80",
+        "cardSha256": "b213ef45f2b1f2b74d0d7828e31ab37dc856492ce025633fe4aee828ada5561d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007447",
+        "title": "Mąka pszenna tortowa typ 450 Młyn Dalachów",
+        "packSize": "1 kg",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007447-maka-pszenna-tortowa-typ-450-mlyn-dalachow",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_b_6_c_6b6cf9daee0242b47d10ed4d0602ebff7a2f97ce_ec35564ca63669490d3c1d4a629ce5cd256a89a2-small.png&w=1920&q=80",
+        "cardSha256": "489093e4a215393b3c2a69a6731e2c3d6247d027a10a48fd5cbc937f2df94ddd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006770",
+        "title": "Makaron świderki Lubella",
+        "packSize": "400 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006770-makaron-swiderki-lubella",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_7_d_4_67d467a2d87c6e78b22278ba3bb63264c83a79c5_83946aaa83d8643b85a76585bcd06f41215e0e61-small.png&w=1920&q=80",
+        "cardSha256": "aadf2295d86829a6b546df13e441e50fad20ed0ce3d452c575375487edf9faac",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006741",
+        "title": "Gochujang pasta na bazie ryżu i ostrej papryki",
+        "packSize": "170 g",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006741-gochujang-pasta-na-bazie-ryzu-i-ostrej-papryki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_2_1_b_421b3873ffc70c1fb2697904d188fe30add8d3da_6927e69a407327d6e297e441c6926255d30a1c4c-small.png&w=1920&q=80",
+        "cardSha256": "b0776df3abfd98573ead6c3f6f26ea8be8cea202d6e03e8f62f6a6a486f36fac",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005237",
+        "title": "Herbata Earl Grey Dilmah",
+        "packSize": "100 szt.",
+        "unitPriceMinor": 2599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005237-herbata-earl-grey-dilmah",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_7_c_c_67cc687031beeb04d45ebef3308463efea9a5646_bb_skKkMwOl9OpADReJvIviig__-small.png&w=1920&q=80",
+        "cardSha256": "05b0dc55fd7086e5bfa7b58579fb3fcba7dd7a677d8c51ccbfd935bd15017b00",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002602",
+        "title": "Nestle Cheerios",
+        "packSize": "250 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002602-nestle-cheerios",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_0_e_0_80e058aa276be47b187c980ec1246584fa2d7f9c_nestle_cheerios_zbozowe_koleczka_z_miodem_250_g_-small.png&w=1920&q=80",
+        "cardSha256": "313f61a1d49f7312256df7dcbf8fcaf0cb289aa4a3131c9e780bd972a3707b2f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001865",
+        "title": "Sos boloński Łowicz",
+        "packSize": "0.5 kg",
+        "unitPriceMinor": 779,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001865-sos-bolonski-lowicz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_e_c_f_9ecfe24cc6dd29fddc6d1e50bc79e16fc7fd31eb_7b15410920ce9d572e93d99bf00299ca73060d40-small.png&w=1920&q=80",
+        "cardSha256": "60247e380a2429dc11c21c54d7a598726ec2e5d016c593c8144707388764aff0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000840",
+        "title": "Chleb tostowy pszenny",
+        "packSize": "500 g",
+        "unitPriceMinor": 249,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000840-chleb-tostowy-pszenny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_a_e_5_aae5f77dbb954d862bb33d4178d6fbb3b3e5eb30_d6640ed52f6529119ff6150d9cf6f85c1068122a-small.png&w=1920&q=80",
+        "cardSha256": "d95a65b0cc018b33fabc9546d9cb130ad302bdc7668a3d103375a165a272f3e4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000709",
+        "title": "Łaciate mleko UHT 2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000709-laciate-mleko-uht-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_9_c_5_b9c5f90e9155f565f2aee910a3a6bc7191beaaaf_7d912427231393d0e17d2a4eb59f316d5ace162d-small.png&w=1920&q=80",
+        "cardSha256": "2439d8e42053b032730dfcf4ce507e31c30738748066c031231e2039120d75b3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000657",
+        "title": "Ocet jabłkowy Develey",
+        "packSize": "0.5 l",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000657-ocet-jablkowy-develey",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_f_e_3_1fe367ba1c28b82d7332e2fb836eece1ce9bbfcc_5906425160105-small.png&w=1920&q=80",
+        "cardSha256": "ed63c75f170947a3dc06f871c70582b7ce6a42186c4de081d403b8899ff9c7cc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000567",
+        "title": "Krem orzechowy Go On!",
+        "packSize": "180 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000567-krem-orzechowy-go-on",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_5_6_2_35623c73dd819f18b78084d4bfe45a200fe6ead9_533afca03e127991a02c7f2c732abef2f42393d5-small.png&w=1920&q=80",
+        "cardSha256": "60c50e37a5fce2834a7243d7e53b6e1d7fd0c895e10600d5a4ee2db0963fab30",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000531",
+        "title": "Fasolka w sosie pomidorowym Beanz Heinz",
+        "packSize": "415 g",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000531-fasolka-w-sosie-pomidorowym-beanz-heinz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_e_4_3_0e436d55c0c36948b5054c730604407ad801a2e2_a663dff7ffc4284fabdd4c5946db0d03c957eed1-small.png&w=1920&q=80",
+        "cardSha256": "40b47db5f8a95d46730d59cf9feb9e024385a49ce76dd32657105b8fee83adb1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000507",
+        "title": "Papryka słodka mielona Prymat",
+        "packSize": "20 g",
+        "unitPriceMinor": 179,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000507-papryka-slodka-mielona-prymat",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_6_0_5_d6050531c02149db09654de6d2d9ff440411e6fa_2adf0e702e3b8f5049f225750fb0852238579a6c-small.png&w=1920&q=80",
+        "cardSha256": "aa3b7a3f30a1574c1fd3a4e04e1516d9fc157264ec23b64f5bd96dd4be0e55d9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000480",
+        "title": "Kujawski olej rzepakowy",
+        "packSize": "1 l",
+        "unitPriceMinor": 769,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000480-kujawski-olej-rzepakowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_8_7_0_48707915c348e47f71f3a9183d9be16c24b214e8_b56874d419fae0833396bdc43f26330e2f486a55-small.png&w=1920&q=80",
+        "cardSha256": "4e385fc65ee1dc744889baf16d4c0da4d06125e48bf3410c24d519dfc5b1b42b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/nowosci",
+        "label": "Nowości"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/zestawy-okazje",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/goraco-polecam",
+        "label": "Gorąco Polecam"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/chemia-i-kosmetyki",
+        "label": "Chemia i kosmetyki"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/spizarnia",
+        "label": "Spiżarnia"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/okazje-i-premiery/spizarnia",
+    "observedAt": 1789906448798,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906448798-f077de1a781a",
+        "observationSha256": "f077de1a781a61d7db08c39158bf5a0b16d4b76621d6e135d1f7c535d72250e7",
+        "screenshotSha256": "f64160d3a2f937fa0176428f257cc3ba724e7bf64cadab0e14ac92e4a52ee088",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1859,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

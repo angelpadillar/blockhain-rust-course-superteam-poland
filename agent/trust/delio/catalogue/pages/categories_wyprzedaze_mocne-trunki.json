@@ -1,0 +1,610 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0025281",
+        "title": "Piwo 0% Tyskie 0,33L",
+        "packSize": "330 ml",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025281-piwo-0-tyskie-0-33l",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_6_5_0_4650333da0c6eb4f8497fbb193750e38fa7bbb62_5901359224756-small.png&w=1920&q=80",
+        "cardSha256": "f314e8116060019032cbaea77add37003721168781594d1c376ac1514a62bbd4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025171",
+        "title": "Piwo 0% Słodka Gruszka Łomża",
+        "packSize": "330 ml",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025171-piwo-0-slodka-gruszka-lomza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_2_0_6_22062c3ec6ed7d23e9cd4f9cc9d6c8066d324f90_5900535029901-small.png&w=1920&q=80",
+        "cardSha256": "de30e863bfd9b3cd94b2a60e5ac262b8300abf4f56e459b968dea63fa1979f82",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025170",
+        "title": "Piwo 0% Kwaśne Jabłko Łomża",
+        "packSize": "330 ml",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025170-piwo-0-kwasne-jablko-lomza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_e_c_3_0ec323049eaed8507d85709cb5394af7d94148b3_5900535029895-small.png&w=1920&q=80",
+        "cardSha256": "36f9d5f74bc32948a819064d2bf1895a1d7b370284830c6e99337c798cbddc1c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024128",
+        "title": "Piwo Premium Lager Książęce",
+        "packSize": "500 ml",
+        "unitPriceMinor": 419,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024128-piwo-premium-lager-ksiazece",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_2_1_a_b21a94520caa0a90b9e43d1fbb41fbc6d6c0f075_PACKSHOTY_JUSH_DELIO_KSI_PREMIUM_kopia-small.png&w=1920&q=80",
+        "cardSha256": "e991854581b2802f8f8a7a8cc022e945228af011f8e03a93a5c28c0c10740ede",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024112",
+        "title": "Piwo Salty Żywiec",
+        "packSize": "330 ml",
+        "unitPriceMinor": 300,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024112-piwo-salty-zywiec",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_b_7_0_cb70f8806064c3e1eab5da82d34cd2dab233996d_Salty_nowos__c__-small.png&w=1920&q=80",
+        "cardSha256": "d924c8b6f2b4dae80654c4b94758d5c79dc67c83294e05074c23503760ec2356",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022255",
+        "title": "Piwo passion fruit Desperados",
+        "packSize": "400 ml",
+        "unitPriceMinor": 433,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022255-piwo-passion-fruit-desperados",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_8_e_c_68ec78c65b6b613ae5c331d3f4aad16d10d7a10b_5900699113454-small.png&w=1920&q=80",
+        "cardSha256": "24b0032f773d26fae7348c5c5066f1103fd465177ecae48ec1c0b74f2d9f6246",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022254",
+        "title": "Piwo mango Desperados",
+        "packSize": "400 ml",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022254-piwo-mango-desperados",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_4_c_b_54cb599eee0e5ee376dd84328656d52e6e590f37_5900699113430-small.png&w=1920&q=80",
+        "cardSha256": "9b7f01d6f827a2d3312c1b4e9d64b18f37641312ef04aec0f0ab918ba5d95713",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022239",
+        "title": "Wino musujące Martini Mimosa",
+        "packSize": "750 ml",
+        "unitPriceMinor": 3079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022239-vermouth-mimosa-martini",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_e_1_f_fe1f74f053da7a9c2c7003f6b79ff84156dc33f4_2c5e04b0e9ebedbbe3cfd701d83439891e2d0539-small.png&w=1920&q=80",
+        "cardSha256": "015347aabc739dc10d4d252dbecc8a48fd5f151d273dc06a959a3c0aef432dd6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016902",
+        "title": "Piwo 0% jabłko trawa cytrynowa Free Lech",
+        "packSize": "500 ml",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016902-piwo-jablko-cytryna-0-free-lech",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_f_8_6_2f86fe278ab59ba614417d48c6b7be7bfd76e08e_aa6a5c7b_e299_4a5e_949e_67d5e52c94df-small.png&w=1920&q=80",
+        "cardSha256": "b2872e1550094e6e0d00cf91e3d804da2682ff6aa601aad5a55b89ac3d105c90",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011568",
+        "title": "Gin Bombay Sapphire Premier Cru",
+        "packSize": "700 ml",
+        "unitPriceMinor": 11899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011568-gin-bombay-sapphire-premier-cru",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_7_d_bf7d66a81b9b814b7eabf5b7c83c7366d7fef091_ba1367e1590f600bf2005cefa8bdbc232a9a607c-small.png&w=1920&q=80",
+        "cardSha256": "7bffd6c09f5c59351f5e1239c2f76296e9359eb435953aa21998f9a6e6a81800",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010696",
+        "title": "Piwo bily lehky Kozel",
+        "packSize": "500 ml",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010696-piwo-bily-lehky-kozel",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_c_7_8_5c78da39138d5c4c7fe278a292e2f9638edceaab_0da3d216_dc43_4aac_b40d_6b898a8f7993-small.png&w=1920&q=80",
+        "cardSha256": "e7aeb0d478fb75b29ac9d744db1f7408247f948e3bd554300d015b36b93b5543",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010654",
+        "title": "Piwo nocturno Desperados",
+        "packSize": "400 ml",
+        "unitPriceMinor": 433,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010654-piwo-nocturno-desperados",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_9_c_c_59cc7f247773a01490a880aa6242ac5f601bc58a_5900699109211-small.png&w=1920&q=80",
+        "cardSha256": "6ef367b629eb12576408150eb4b93b0c1a12b9ad1148d22d0d66a4e5d69f5827",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010187",
+        "title": "Wódka konopia siewna Lubelska",
+        "packSize": "500 ml",
+        "unitPriceMinor": 2099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010187-wodka-konopia-siewna-lubelska",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_7_1_1_47119973fa8a62453b015bd6e7f9734c000a371e_217d91fb7f48f8dc2e2c9f9e31bc3306eab1556e-small.png&w=1920&q=80",
+        "cardSha256": "c53a326e3e7e78486b5b5f83ead2f43f399f85f3de97f290ffa8ae0141cfc548",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008620",
+        "title": "Gin Bombay Sapphire Sunset",
+        "packSize": "700 ml",
+        "unitPriceMinor": 8049,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008620-gin-bombay-sapphire-sunset",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_b_4_a_9b4aa2ab7ec416a3fd201bca587f5b5ef5b56dc5_f5c451249914bacebf3259728f40bd47f8238885-small.png&w=1920&q=80",
+        "cardSha256": "18dbc8965b351558fccebaacad6591c48b3b5ca2643b37e7907bc9cb9710957c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002172",
+        "title": "Piwo bezalkoholowe Zero to Hero Inne Beczki",
+        "packSize": "500 ml",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002172-piwo-bezalkoholowe-zero-to-hero-inne-beczki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_4_7_c_647c237eb7cad8bfae3d9316726f6d10ea0ab587_972f0a1d5677df25cdff2b8bb5ee49ba56584211-small.png&w=1920&q=80",
+        "cardSha256": "25978087eab4bbaf1f9921b5fca4e00cd59e78fce7da54a405811937ec7ddb75",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/wyprzedaze/krotkie-terminy",
+        "label": "Krótkie terminy"
+      },
+      {
+        "path": "/categories/wyprzedaze/uroda-i-higiena",
+        "label": "Uroda i higiena"
+      },
+      {
+        "path": "/categories/wyprzedaze/domowe-zapasy",
+        "label": "Domowe zapasy"
+      },
+      {
+        "path": "/categories/wyprzedaze/pozostale",
+        "label": "Pozostałe"
+      },
+      {
+        "path": "/categories/wyprzedaze/mocne-trunki",
+        "label": "Mocne trunki"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/wyprzedaze/mocne-trunki",
+    "observedAt": 1789906463057,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906463057-342be2860201",
+        "observationSha256": "342be2860201ba43b35c48392660857ffadb7b7073657e2a9bb2842c8b0d901e",
+        "screenshotSha256": "04180fb0b3aadbe5386b23a5282c4caefbbd5cdcd36ce352a264fefdf2f0e5dc",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1649,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "code": "catalogue_observation_failed",
+  "dispatched": false,
+  "blockers": [
+    {
+      "code": "catalogue_observation_failed",
+      "message": "Product reading stopped without a basket action."
+    }
+  ],
+  "nativeFailure": {
+    "tool": "browser_snapshot",
+    "code": "browser_error",
+    "reason": "closed"
+  }
+}

@@ -1,3 +1,4 @@
+import { pathToFileURL } from "node:url";
 import {
   chromium,
   type BrowserContext,
@@ -41,7 +42,12 @@ import {
   PYSZNE_HOST,
 } from "./pyszne-payment-policy.js";
 import { parseCheckoutTotal } from "./quote.js";
-import type { CardSecrets, QuoteOutput } from "./types.js";
+import type {
+  CardSecrets,
+  PaidOutput,
+  QuoteOutput,
+  ThreeDsAudit,
+} from "./types.js";
 
 const CARD_FIELD_TIMEOUT_MS = 30_000;
 
@@ -262,43 +268,36 @@ async function findPayButton(page: Page): Promise<LocatedField> {
   throw new Error("could not safely locate the PayU Pay button");
 }
 
-async function main(): Promise<void> {
-  ensureOutputDirectories();
-  assertSecretPathsIgnored();
-  const config = loadConfig();
-  const options = loadRuntimeOptions();
-  const note = renderNote(config.note, options.nonce);
-  if (config.adapter !== "pyszne" || config.job_kind !== "food") {
-    throw new Error("payment:pyszne requires the Pyszne food adapter");
+export interface CheckoutFlowHooks {
+  /** After the card details are filled and confirmed — before Pay is clicked. */
+  onAttemptStarted?: () => void;
+  /** Right after the Pay button click. */
+  onPaymentSubmitted?: () => void;
+  /** When a 3DS OTP challenge surface is detected. */
+  onWaitingFor3ds?: () => void;
+}
+
+export interface CheckoutFlowResult {
+  paid: PaidOutput;
+  threeDs: ThreeDsAudit;
+}
+
+/**
+ * Run the supervised Pyszne checkout for an already-gated quote and card.
+ * Reused by the order executor; hooks let the caller mirror milestones into
+ * the order state machine. Card secrets never leave this process.
+ */
+export async function runPyszneCheckoutFlow(deps: {
+  config: Awaited<ReturnType<typeof loadConfig>>;
+  options: Awaited<ReturnType<typeof loadRuntimeOptions>>;
+  quote: QuoteOutput;
+  card: CardSecrets;
+  hooks?: CheckoutFlowHooks;
+}): Promise<CheckoutFlowResult> {
+  const { config, options, quote, card, hooks } = deps;
+  if (quote.source_url === null || quote.landed_pln === null) {
+    throw new Error("quote is not a payable checkout quote");
   }
-  if (!options.allowPay || !options.allowThreeDsSubmit) {
-    throw new Error(
-      "payment:pyszne requires ALLOW_PAY=true and ALLOW_3DS_SUBMIT=true for this one run",
-    );
-  }
-  verifyConfirmation(config, options, note);
-  const quote = readJson<QuoteOutput>("quote.json");
-  if (
-    quote.adapter !== "pyszne" ||
-    quote.landed_pln === null ||
-    quote.source_url === null
-  ) {
-    throw new Error("quote.json is not a payable Pyszne checkout quote");
-  }
-  assertAmountWithinCap(quote.landed_pln, config.max_pln);
-  const quoteAge = Date.now() - new Date(quote.captured_at).valueOf();
-  if (!Number.isFinite(quoteAge) || quoteAge < 0 || quoteAge > 10 * 60_000) {
-    throw new Error("Pyszne payment quote is older than 10 minutes");
-  }
-  const source = new URL(quote.source_url);
-  if (
-    source.protocol !== "https:" ||
-    !hostMatches(source.hostname.toLocaleLowerCase(), PYSZNE_HOST) ||
-    !/checkout/i.test(source.pathname)
-  ) {
-    throw new Error("quote source is not an HTTPS Pyszne checkout URL");
-  }
-  const card = loadCardSecrets(options);
   const context = await chromium.launchPersistentContext(
     options.pyszneProfileDir,
     {
@@ -350,6 +349,7 @@ async function main(): Promise<void> {
     console.log(
       `Payment attempt committed on-chain: ${String(attemptResult.signature)}.`,
     );
+    hooks?.onAttemptStarted?.();
     const orderAndPay = await visibleFirst([
       page.getByRole("button", { name: /order.*pay|zamów.*zapłać/i }),
       page.getByText(/order.*pay|zamów.*zapłać/i),
@@ -378,6 +378,7 @@ async function main(): Promise<void> {
     const pay = await findPayButton(page);
     await pay.locator.click();
     await pay.page.waitForTimeout(1_500);
+    hooks?.onPaymentSubmitted?.();
     const authenticationPage =
       context
         .pages()
@@ -388,6 +389,7 @@ async function main(): Promise<void> {
       config,
       options,
       config.merchant_descriptor ?? "PYSZNEPL",
+      hooks?.onWaitingFor3ds,
     );
     const confirmationPage =
       context
@@ -413,6 +415,7 @@ async function main(): Promise<void> {
     finishSingleCardAttempt("success", `order ${paid.order_id}`);
     attemptStarted = false;
     console.log(`Pyszne order ${paid.order_id} confirmed.`);
+    return { paid, threeDs };
   } catch (error) {
     if (attemptStarted) {
       finishSingleCardAttempt("hard_fail", (error as Error).message);
@@ -423,11 +426,56 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((error: unknown) => {
-  const safe = redactSensitive(String((error as Error).message), [
-    process.env.CARD_PAN ?? "",
-    process.env.CARD_CVC ?? "",
-  ]);
-  console.error(`PYSZNE PAYMENT HARD FAIL: ${safe}`);
-  process.exitCode = 1;
-});
+async function main(): Promise<void> {
+  ensureOutputDirectories();
+  assertSecretPathsIgnored();
+  const config = loadConfig();
+  const options = loadRuntimeOptions();
+  const note = renderNote(config.note, options.nonce);
+  if (config.adapter !== "pyszne" || config.job_kind !== "food") {
+    throw new Error("payment:pyszne requires the Pyszne food adapter");
+  }
+  if (!options.allowPay || !options.allowThreeDsSubmit) {
+    throw new Error(
+      "payment:pyszne requires ALLOW_PAY=true and ALLOW_3DS_SUBMIT=true for this one run",
+    );
+  }
+  verifyConfirmation(config, options, note);
+  const quote = readJson<QuoteOutput>("quote.json");
+  if (
+    quote.adapter !== "pyszne" ||
+    quote.landed_pln === null ||
+    quote.source_url === null
+  ) {
+    throw new Error("quote.json is not a payable Pyszne checkout quote");
+  }
+  assertAmountWithinCap(quote.landed_pln, config.max_pln);
+  const quoteAge = Date.now() - new Date(quote.captured_at).valueOf();
+  if (!Number.isFinite(quoteAge) || quoteAge < 0 || quoteAge > 10 * 60_000) {
+    throw new Error("Pyszne payment quote is older than 10 minutes");
+  }
+  const source = new URL(quote.source_url);
+  if (
+    source.protocol !== "https:" ||
+    !hostMatches(source.hostname.toLocaleLowerCase(), PYSZNE_HOST) ||
+    !/checkout/i.test(source.pathname)
+  ) {
+    throw new Error("quote source is not an HTTPS Pyszne checkout URL");
+  }
+  const card = loadCardSecrets(options);
+  await runPyszneCheckoutFlow({ config, options, quote, card });
+}
+
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href
+) {
+  main().catch((error: unknown) => {
+    const safe = redactSensitive(String((error as Error).message), [
+      process.env.CARD_PAN ?? "",
+      process.env.CARD_CVC ?? "",
+    ]);
+    console.error(`PYSZNE PAYMENT HARD FAIL: ${safe}`);
+    process.exitCode = 1;
+  });
+}
