@@ -1,0 +1,79 @@
+{
+  "schema": "buena.tiktok-uploadpost-map/1",
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25",
+  "source": "Multilogin /profile/search (workspace 2b104092-39f8-459e-be4c-74e037507dd3) + accounts-and-voices.json",
+  "uploadPost": {
+    "apiBase": "https://api.upload-post.com",
+    "account": "angel@buena.ai",
+    "plan": "professional",
+    "keyStorage": "/opt/buena-multilogin/private/upload-post-api-key (worker: /data/upload-post-api-key)",
+    "profileConvention": "one Upload-Post profile per character; profile username matches the TikTok handle",
+    "verification": "/opt/buena-multilogin/private/uploadpost-evidence/tiktok-verification-2026-09-25T19-38-40Z.summary.json (GET /api/uploadposts/users, 2026-09-25)",
+    "lastVerifiedAt": "2026-09-25T19-38-40Z",
+    "lastVerifiedResult": "6/6 connected, reauth_required=false, 10 capabilities each (GET /api/uploadposts/users)",
+    "k01Note": "saleswithsophia is linked to the legacy `default` profile. Upload-Post refuses a second link of the same TikTok account (ACCOUNT_ALREADY_LINKED), so K01 posts through `default`. The empty `saleswithsophia` profile is reserved should support move the link."
+  },
+  "accounts": [
+    {
+      "code": "K01",
+      "name": "Sophia Reed",
+      "handle": "saleswithsophia",
+      "profileId": "15c27f72-d960-4b85-9ba7-82eba64fda93",
+      "characterId": "95965a88-c796-5067-80fe-090e1cf45aaa",
+      "uploadPostProfile": "default",
+      "tiktokConnected": true,
+      "reauthRequired": false
+    },
+    {
+      "code": "K02",
+      "name": "Ruby Hayes",
+      "handle": "rubyfindsai",
+      "profileId": "17992f6e-b7d1-42a2-9705-cd8428188fd0",
+      "characterId": "88190b09-2e16-5864-9d6c-e2b1f7afb212",
+      "uploadPostProfile": "rubyfindsai",
+      "tiktokConnected": true,
+      "reauthRequired": false
+    },
+    {
+      "code": "K03",
+      "name": "Lena Cole",
+      "handle": "lenatalkssales",
+      "profileId": "e0f39d31-68d2-4cd5-99fc-af5b2adad41b",
+      "characterId": "55a7a098-6700-5577-8786-6186e580640a",
+      "uploadPostProfile": "lenatalkssales",
+      "tiktokConnected": true,
+      "reauthRequired": false
+    },
+    {
+      "code": "K04",
+      "name": "Maya Bell",
+      "handle": "mayagrowthtips",
+      "profileId": "0b5f3345-20b5-4a24-a38b-cd50e072b46e",
+      "characterId": "60315474-a65f-5a6a-a401-0599c9297262",
+      "uploadPostProfile": "mayagrowthtips",
+      "tiktokConnected": true,
+      "reauthRequired": false
+    },
+    {
+      "code": "K05",
+      "name": "Nina Brooks",
+      "handle": "b2bwithnina",
+      "profileId": "e15007ff-8efa-4553-8298-ce920d0ee190",
+      "characterId": "9d8f3e9d-475a-5a39-a550-cccbbeaf6b30",
+      "uploadPostProfile": "b2bwithnina",
+      "tiktokConnected": true,
+      "reauthRequired": false
+    },
+    {
+      "code": "K06",
+      "name": "Chloe Quinn",
+      "handle": "chloesalestips",
+      "profileId": "da08e9b4-b34b-467b-bed6-64da618bb46c",
+      "characterId": "c7782e3d-b6fc-54dd-b516-f2f2214e2bc7",
+      "uploadPostProfile": "chloesalestips",
+      "tiktokConnected": true,
+      "reauthRequired": false
+    }
+  ]
+}

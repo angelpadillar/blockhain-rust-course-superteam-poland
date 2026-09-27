@@ -1,0 +1,10 @@
+{
+  "jobs": [
+    {
+      "id": "youtube-live-04",
+      "platform": "youtube",
+      "accountRef": "yt-live-04",
+      "profileRef": "yt-live-profile-04"
+    }
+  ]
+}
