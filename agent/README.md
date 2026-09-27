@@ -371,3 +371,13 @@ and optionally set `ALTITUDE_CARD_LIMIT_FREQUENCY` to `All time`, `7 day`,
 (`CARD_PAN`, `CARD_EXP`, `CARD_CVC`, and `CARD_NAME`). `fund` and `close` remain
 stubs. Set `ALTITUDE_BROWSER_EXECUTABLE` when Chrome is not at the channel's
 default path, as on a VPS.
+
+## Typesafe Jev browser service
+
+The additive [Jev adapter](jev/README.md) runs a dedicated Playwright browser, searches exact Glovo products, prepares a basket and verifies the final summary. It records timing and estimated model cost, then returns a payment intent for review. Purchases and Solana transactions are disabled in this service.
+
+Run `npm ci` in `agent/jev`, configure and onboard its account, then use `npm run jev:start` from `agent/`. With the service running, `npm run order:prepare:jev` submits the exact products from the existing Glovo config and writes separate results under `agent/out/jev/`. See the adapter README for Coolify deployment and [validation results](jev/VALIDATION.md).
+
+## Delio quote pilot
+
+The separate [Delio workspace](trust/delio/README.md) adds an authenticated, bounded cart/quote coordinator and local Solana authorization. Run `npm run demo:delio` from the repository root. Live merchant access and checkout remain subject to the recorded blockers; no merchant-order or paid-SMS endpoint exists. The existing gifting demo and frozen v4 adapter remain unchanged.
