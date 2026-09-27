@@ -1,4 +1,6 @@
 import http from 'node:http';
+import {productCards,catalogueLinks} from './catalogue-reader.mjs';
+import {runCartOperation,persistProductPaths} from './cart.mjs';
 import {readFile,writeFile,rename,open} from 'node:fs/promises';
 import {createHash,timingSafeEqual} from 'node:crypto';
 import {McpClient,structured,pngBytes} from './vendor/mcp.mjs';
@@ -17,6 +19,7 @@ const config=JSON.parse(await readFile('/app/config/worker.json','utf8'));
 const browserHosts=reviewedBrowserHosts(config);
 const release=await acquireOwner(ROOT);
 let client,stopDisplay,busy=false,closing=false,idleTimer;
+const seenCataloguePaths=new Set(['/']);
 const capability={observeCart:false,mutateCart:false,quote:false};
 
 async function closeBrowser(){
@@ -45,7 +48,7 @@ async function observe(check,remaining){
   return classifySnapshot(snapshot);
 }
 async function operation(request){
-  const started=performance.now(),deadline=started+27000;
+  const started=performance.now(),opLimit=['mutateCart','applyCoupon'].includes(request.operation)?280000:60000,deadline=started+opLimit;
   const check=()=>{if(closing||performance.now()>=deadline)throw new WorkerError('worker_deadline');};
   let deadlineTimer;
   const task=(async()=>{
@@ -56,6 +59,72 @@ async function operation(request){
       if(!client||client.closed)throw new WorkerError('registration_current_view_unavailable');
     }else observed=await observe(check,()=>Math.floor(deadline-performance.now()));
     check();
+    if(request.operation==='readCatalogue'){
+      const target=request.path||'/';
+      if(!seenCataloguePaths.has(target))throw new WorkerError('catalogue_path_not_observed');
+      await client.call('browser_navigate',{session_id:SESSION_ID,require_existing:true,url:'https://delio.com.pl'+target,wait_until:'load',timeout_ms:10000});check();
+      const snapshot=structured(await client.call('browser_snapshot',{session_id:SESSION_ID,max_elements:1000,interactive_only:true}));
+      if(new URL(snapshot.url).origin!=='https://delio.com.pl')throw new WorkerError('merchant_origin_mismatch');
+      await client.call('browser_wait_for',{session_id:SESSION_ID,selector:'[data-testid^="product-tile-"]',timeout_ms:6000});check();
+      const navigation=structured(await client.call('browser_get_content',{session_id:SESSION_ID,format:'html',max_bytes:524288}));
+      const content=structured(await client.call('browser_get_content',{session_id:SESSION_ID,selector:'div.relative.z-0.grow',format:'html',max_bytes:524288}));check();
+      const html=content.content||content.html||content.text||'';
+      const parsed=productCards(html),links=catalogueLinks(navigation.content||navigation.html||navigation.text||'');
+      for(const link of links)seenCataloguePaths.add(link.path);
+      await persistProductPaths(ROOT,parsed.items);
+      const names=(snapshot.elements||[]).map(e=>String(e.name||''));
+      const addressHeaderMatched=names.slice(0,40).some(s=>s.includes(config.expectedStreet)&&s.includes(config.expectedBuilding));
+      const observedAt=Date.now(),observation=JSON.stringify({snapshot,html});
+      const observationSha256=createHash('sha256').update(observation).digest('hex');
+      const screenshot=pngBytes(await client.call('browser_screenshot',{session_id:SESSION_ID,full_page:false,max_bytes:2097152}));check();
+      const screenshotSha256=createHash('sha256').update(screenshot).digest('hex');
+      const artifactId=`catalogue-${observedAt}-${observationSha256.slice(0,12)}`;
+      await writeFile(`${ROOT}/${artifactId}.json`,observation,{mode:0o600,flag:'wx'});
+      await writeFile(`${ROOT}/${artifactId}.png`,screenshot,{mode:0o600,flag:'wx'});
+      return {ok:true,result:{...parsed,links,sourceUrl:'https://delio.com.pl'+target,observedAt,
+        regionId:addressHeaderMatched&&config.expectedCity==='Kraków'?'krakow':null,addressHeaderMatched,
+        deliverySlotSelected:false,stockVerified:false,checkoutVerified:false,
+        artifacts:[{id:artifactId,observationSha256,screenshotSha256,private:true}],
+        browserRuntimeMs:Math.round(performance.now()-started),modelCalls:0,readOnly:true}};
+    }
+    if(['observeCart','mutateCart','quote','applyCoupon'].includes(request.operation)){
+      const capture=async(prefix,view)=>{
+        check();
+        const observation=JSON.stringify(view);
+        const screenshot=pngBytes(await client.call('browser_screenshot',{session_id:SESSION_ID,full_page:false,max_bytes:2097152},{timeoutMs:Math.max(1,Math.min(5000,deadline-performance.now()))}));
+        check();
+        const observationSha256=createHash('sha256').update(observation).digest('hex'),screenshotSha256=createHash('sha256').update(screenshot).digest('hex');
+        const artifactId=`${prefix}-${Date.now()}-${observationSha256.slice(0,12)}`;
+        await writeFile(`${ROOT}/${artifactId}.json`,observation,{mode:0o600,flag:'wx'});
+        await writeFile(`${ROOT}/${artifactId}.png`,screenshot,{mode:0o600,flag:'wx'});
+        return [{id:artifactId,observationSha256,screenshotSha256,private:true}];
+      };
+      // Jev control selection is opt-in per operation; the API key is mounted
+      // config, read lazily so non-Jev operations never touch it.
+      let jev=null;
+      // applyCoupon always selects semantically: the coupon dialog layout is
+      // observed fresh and Jev picks among bounded candidates.
+      if(request.selection==='jev'||request.operation==='applyCoupon'){
+        let key='';try{key=(await readFile('/app/config/typesafe-key.txt','utf8')).trim();}catch{}
+        if(key.length<10){const runtime={observedAt:Date.now(),browserRuntimeMs:Math.round(performance.now()-started),modelCalls:0,usage:{modelCalls:0,modelCostUsd:0}};
+          return {...blocked('jev_unavailable','Model-assisted control selection is not configured on this worker.'),result:{status:'cart_stopped',...runtime}};}
+        const {createJevChooser}=await import('./jev.mjs');
+        jev=createJevChooser({apiKey:key,storeDir:`${ROOT}/jev`,maxCalls:30});
+      }
+      try{
+        const result=await runCartOperation(request,{client,check,remaining:()=>Math.floor(deadline-performance.now()),config,root:ROOT,capture,jev});
+        const usage=result.usage||{modelCalls:0,modelCostUsd:0};
+        return {ok:true,result:{...result,browserRuntimeMs:Math.round(performance.now()-started),modelCalls:usage.modelCalls,usage}};
+      }catch(error){
+        const usage=error.usage||{modelCalls:0,modelCostUsd:0};
+        const runtime={observedAt:Date.now(),browserRuntimeMs:Math.round(performance.now()-started),modelCalls:usage.modelCalls,usage,nativeFailure:error.browserFailure||null,...(error.blocked?{blocked:error.blocked}:{}),...(error.jevChoices?{jevChoices:error.jevChoices}:{}),...(error.partial||{})};
+        // A dispatched cart change with an unverified result is uncertain and
+        // must not be described as not-dispatched or retried automatically.
+        if(error.cartDispatched)return {ok:false,code:'cart_outcome_uncertain',result:{status:'needs_reconciliation',...runtime}};
+        const code=error instanceof WorkerError?error.code:'cart_observation_failed';
+        return {...blocked(code,'Cart work stopped before any cart change.'),result:{status:'cart_stopped',...runtime}};
+      }
+    }
     if(['inspectRegistration','inspectRegistrationState','startRegistration','startFollowupRegistration','resumeRegistration','startImportedRegistration'].includes(request.operation)){
       let phoneControls=null,followupReadiness={followupSubmissionReady:false,registrationIntentAccountId:null};
       const capturePrivate=async view=>{
@@ -108,12 +177,16 @@ async function operation(request){
     return {ok:false,code:observed.blockers[0].code,dispatched:false,blockers:observed.blockers,result};
   })();
   try {
-    return await Promise.race([task,new Promise((_,reject)=>{deadlineTimer=setTimeout(()=>reject(new WorkerError('worker_deadline')),27000);})]);
+    return await Promise.race([task,new Promise((_,reject)=>{deadlineTimer=setTimeout(()=>reject(new WorkerError('worker_deadline')),opLimit);})]);
   }catch(error){
-    // An ordinary read failure must not discard the OTP page. A hard deadline
-    // still closes the runtime to terminate potentially outstanding work.
-    if(request.operation!=='inspectRegistrationState'||error?.code==='worker_deadline')await closeBrowser();
+    // Known-state failures (blocked controls, validation stops, ordinary read
+    // errors) leave a healthy warm browser — restarting it makes the next op
+    // cold-start and can push a read past its deadline. Close only when the
+    // browser's state is genuinely suspect: a hard deadline, a dispatched but
+    // unverified cart change, or a browser-level failure.
+    if(error?.code==='worker_deadline'||error?.cartDispatched||error?.browserFailure)await closeBrowser();
     await task.catch(()=>{});
+    if(request.operation==='readCatalogue')return {...blocked('catalogue_observation_failed','Product reading stopped without a basket action.'),nativeFailure:error.browserFailure||null};
     if(['inspectRegistration','inspectRegistrationState'].includes(request.operation)){
       const code=error instanceof WorkerError?error.code:'registration_inspection_failed';
       return {...blocked(code,'Registration inspection stopped. No customer details were entered and no SMS or cart operation was requested.'),

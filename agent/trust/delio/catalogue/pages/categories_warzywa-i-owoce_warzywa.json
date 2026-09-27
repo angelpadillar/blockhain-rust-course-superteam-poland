@@ -1,0 +1,750 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0008152",
+        "title": "Papryka czerwona luz",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008152-papryka-czerwona-luz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_7_e_0_57e06122b62631d8fb2e7f019f70705dcc7d834d_a3441ae976ca3855c7db339d4d7680dc26bd786d-small.png&w=1920&q=80",
+        "cardSha256": "23ffea224fc30c249b261ffc4f483fd601577455bd9a73ca1f5f3cfd8e7d753c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008801",
+        "title": "Pomidory malinowe krajowe prosto od rolnika",
+        "packSize": "3 szt.",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008801-pomidory-malinowe-krajowe-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_2_b_6_e2b632203180118432dcc7fb717ec6c0393d9684_pomidory_malinowe_polskie_1-small.png&w=1920&q=80",
+        "cardSha256": "9768c3016e236c0d8531494f661d48e14ba66d70c0b2f7f8ddb3485ac73f4352",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008794",
+        "title": "Pomidorki daktylowe \"shake\"",
+        "packSize": "250 g",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008794-pomidorki-daktylowe-shake",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_4_8_3_24832669b7d26d0e55334c897ec1d57f467ac7b9_ChatGPT_Image_5_sie_2025__08_39_40-small.png&w=1920&q=80",
+        "cardSha256": "ff0c7f8c563695245201b50d241321d391455dd7dfc5ad2ddac95a6e27edbd19",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025305",
+        "title": "Brokuł prosto od rolnika",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025305-brokul-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_9_f_9_09f9a542128259b22a6f6ccd331388242b22a2da_Broku___prosto_od_rolnika-small.png&w=1920&q=80",
+        "cardSha256": "16c72759538cc34be28f7bd1dd79b0658b98d377c75ff0cc8e48ba21eb27461c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025303",
+        "title": "Ziemniaki prosto od rolnika",
+        "packSize": "2.5 kg",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025303-ziemniaki-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_2_f_f_f2ff1ecc2ebbe6a4ae7d057d6bb632e27bbdfd97_ziemniaki_od_rolnika__1_-small.png&w=1920&q=80",
+        "cardSha256": "7fa345bab7bac36532d677e1c713df7551b3aac9291966c8b2ccf0b3a4c5e975",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001114",
+        "title": "Marchew",
+        "packSize": "500 g",
+        "unitPriceMinor": 249,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001114-marchew",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_1_6_8_71688946ceb31277ebc6f95ac2b3fca055a9f15f_4eccd63f04c71bce7dc2167a82997588ab60a1b7-small.png&w=1920&q=80",
+        "cardSha256": "004636b5da06939e3d0f6e4bf9622d4179ee2c353b4f38ebc06e741f7f4f8821",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000750",
+        "title": "Ziemniaki siatka",
+        "packSize": "1.5 kg",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000750-ziemniaki-siatka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_7_3_2_3732a20414b75958f3410b67c0da908fc34e7130_A0000750-small.png&w=1920&q=80",
+        "cardSha256": "5bd5dc79bc9bb80a437ee6273c1096a780bf7b18709732a2e7d8e30fa30f52a3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023949",
+        "title": "Ogórek krótki polski",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023949-ogorek-krotki-polski",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_7_6_b_f76b89ef69394838e54e6e34d9dfc2ebcb452f15_og__rek_kr__tki_polski-small.png&w=1920&q=80",
+        "cardSha256": "b5310fdc7a39b16dd73238c2d8d29873ff5f20cd57e510eb6c2fa663b12fd76a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001136",
+        "title": "Ziemniaki bataty słodkie",
+        "packSize": "1 kg",
+        "unitPriceMinor": 1049,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001136-ziemniaki-bataty-slodkie",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_0_4_3_8043f06c23cf60b9a25a7e2902dccc306d2374b1_3a244a7acdd7dbef5e86f3196388432afb992627-small.png&w=1920&q=80",
+        "cardSha256": "9c6ef166ed38da1aa984b60a50efa8c6dafc9c56d06cbc8b01c35ab387e07b5a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012876",
+        "title": "Włoszczyzna pęczek",
+        "packSize": "700 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012876-wloszczyzna-peczek",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_d_6_9_1d697228aa1dd63993ab0665155fc69c03837d22_3b7741885f69f7a4bf0631a1c67a898570afc799-small.png&w=1920&q=80",
+        "cardSha256": "fdbc83c44f382e6a2d488aefedc0b6723e3054a31f46a4409f245836896d9d1d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001098",
+        "title": "Cukinia",
+        "packSize": "600 g",
+        "unitPriceMinor": 389,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001098-cukinia",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_f_0_5_6f0521eddfe4513481503eb54b1012d937f5b5b4_d13c6f340d6d3257f023ea2e73056f4e63a4e820-small.png&w=1920&q=80",
+        "cardSha256": "b6a39b55aa7f8bb8ad5957b1d5179c6cd0f1048013ae68b3fca2eb213a761917",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008139",
+        "title": "Pomidory malinowe na gałązce",
+        "packSize": "500 g",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008139-pomidory-malinowe-na-galazce",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_e_8_3_0e832376a08ba61dec444e5a3f60d04b4cb8248d_994c49505eaebdb2a126b211bc86745928b01119-small.png&w=1920&q=80",
+        "cardSha256": "6e6fc58b8a06eff2ec27aed5c6419dd8a5e6c1017067cbb228734b264049070b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005470",
+        "title": "Szpinak baby",
+        "packSize": "125 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005470-szpinak-baby",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_a_3_b_ea3b4da9682415c70a0189f33d4c0a2a4e7cf910_bf42defd818729cb93a7d1f78179646070a0ca93-small.png&w=1920&q=80",
+        "cardSha256": "ff484dfe72d5097b360b3f91e4e5a899d0c7fb12fec7d3af002719772527c1b4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025268",
+        "title": "Cebula żółta prosto od rolnika",
+        "packSize": "700 g",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025268-cebula-zolta-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_9_e_e_99ee13f12854d1eab2af5079f5523d74ee92acaf_Cebula_______ta_prosto_od_rolnika-small.png&w=1920&q=80",
+        "cardSha256": "2c0a82977924e331b1a9990b3557d5c0eedd71c5e267cf1c22397675feb6cd4a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016915",
+        "title": "Czosnek",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016915-czosnek",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_b_8_a_2b8a0a1ac1b8087dd0355fa4fd8297c54f2bb903_czosnek-small.png&w=1920&q=80",
+        "cardSha256": "28b9229559f3e4f2c6d3958026c2c32d8796c4fed90d642a80dae4350f30ee93",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000720",
+        "title": "Cebula dymka prosto od rolnika",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 319,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000720-cebula-dymka-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_7_2_4_e724e3cd55af9c624bbcf76e024d105ceb7bb6a6_cebula_dymka_1-small.png&w=1920&q=80",
+        "cardSha256": "69342cc900e7ed15004d83d62083e61deed5d479080702b9ad7f8488ab6eca9a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000748",
+        "title": "Rukola myta",
+        "packSize": "100 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000748-rukola-myta",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_0_7_1_107100ec56def6a2893be83715d66c81535f3461_f1edb9a679e35c84dc496f1fe78eac281780d094-small.png&w=1920&q=80",
+        "cardSha256": "a18747526f6c383e1a1e8ed68ccc9c81a466aa13d7e6a0af39ff6ee7790fa890",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008148",
+        "title": "Papryka słodka Ramiro",
+        "packSize": "500 g",
+        "unitPriceMinor": 989,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008148-papryka-slodka-ramiro",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_8_1_0_6810bce839837ae17d67a6c027f35cd968cad8d3_A0003079-small.jpg&w=1920&q=80",
+        "cardSha256": "395d802cc006619182d8f8b4689ba5b45296d33691d73dd2651a6b2ab22a6c3b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009626",
+        "title": "Pomidor Kumato (czekoladowy)",
+        "packSize": "500 g",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009626-pomidor-kumato-czekoladowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_6_3_8_b63807b1563235adc120b4a75a6f9405b2adec3e_45ce44e58e844982fe98ae77c28ce3a15889e04a-small.png&w=1920&q=80",
+        "cardSha256": "bf5c58dba6e18c9958c7547d7c7bdbb7b3fd8f8c8fa7e45229e74e204b4d74e6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008787",
+        "title": "Kukurydza świeża kolba",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008787-kukurydza-swieza-kolba",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_f_e_2_dfe233e8ff6b17fd674d0cba4692b1b8e07fb11d_12d17d72565abf2413a3bfc81d7c04a635f36492-small.png&w=1920&q=80",
+        "cardSha256": "641718018492399b1dc17f43043b9423d431047c4402f18c69bde98994ab76e3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009609",
+        "title": "Pomidor cherry gałązka",
+        "packSize": "500 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009609-pomidor-cherry-galazka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_4_f_f_24ffc870417d0ad0e0cbaff1270e0806369478ec_7d102f069804671c0b6e823438a7253749d8f5dc-small.png&w=1920&q=80",
+        "cardSha256": "2cb5ad7faf2d514ed3ecd50179251fc92945cf790bb6d0f789fd0b15411a2113",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003067",
+        "title": "Cebula czerwona",
+        "packSize": "500 g",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003067-cebula-czerwona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_4_1_c_141cba30bae0815eac706b5d758afea414e66fd8_36700_0w470h470_Organic_Red_Onion_From_Italy_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "507f170a00ada0a18c84d1ad35eb5f571253a91cb4fc0de26e7fa2a9851f20f8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009607",
+        "title": "Mix sałat z rukolą Sole Gusto",
+        "packSize": "160 g",
+        "unitPriceMinor": 569,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009607-mix-salat-z-rukola-sole-gusto",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_1_2_a_f12ad8a56672fb40a5edb6e1ef7ad509a2dd60fa_58857b4efe2b5e303ba9989a6bbfbc1e1446562b-small.png&w=1920&q=80",
+        "cardSha256": "1051f1dad6fdb6b2f74dba386c4a0309cf5fc7cf51a1d67a497db74b3edc05fb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010659",
+        "title": "Sałata masłowa prosto od rolnika",
+        "packSize": "200 g",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010659-salata-maslowa-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_9_c_5_f9c513f74ff414688abf756d2f862ae8f16612b8_sa_____ata_mas_____owa_1-small.png&w=1920&q=80",
+        "cardSha256": "6d1a4a6b221c69193bde599f8250bf2724f2cca4e51029c93cccb7bd06296c6e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015239",
+        "title": "Cebula obrana",
+        "packSize": "4 szt.",
+        "unitPriceMinor": 529,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015239-cebula-obrana",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_1_7_7_31775bfd11302055cf2d05de0a10a28aa49f3abe_81fb252de10ad9eb117cb8009b730461f6d820e2-small.png&w=1920&q=80",
+        "cardSha256": "1d2e462922bc57e68787a03758dd676de7a536b31783db820611b847809ba417",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003081",
+        "title": "Pomidory truskawkowe gałązka",
+        "packSize": "300 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003081-pomidory-truskawkowe-galazka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_5_2_b_152b8bd53ea369c2ede458d72d53fed84734aa1d_6bca1c2f8b3110bc9d1159ba82efb9878a46b500-small.png&w=1920&q=80",
+        "cardSha256": "4005ce0c7c2f7aa4e664479fb31f6b213faccc11ec02ba76327fe43f9e40a542",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000749",
+        "title": "Sałata lodowa",
+        "packSize": "300 g",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000749-salata-lodowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_5_8_e_f58e5c956156441710b5dda5671066fc211eece7_e641475a04afaba66390672819e7c0f3741748ad-small.png&w=1920&q=80",
+        "cardSha256": "8a39bba82d393b163678e284509792dedb2ebaf6d0baccb594becf75d105b1bf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007285",
+        "title": "Dynia Hokkaido",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007285-dynia-hokkaido",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_2_d_e_92dea388022d1dea71ab62fb03e67c1553dc677b_A0007285-small.png&w=1920&q=80",
+        "cardSha256": "9c393661996c0ed712414dbf495d96c2dbd9cccb9570a7aac683838f89ee27e7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023674",
+        "title": "Czosnek młody",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023674-czosnek-mlody",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_1_8_2_f182b4a441542f567bb1de658c57f1bc5288fd0b_czosnek_m__ody-small.png&w=1920&q=80",
+        "cardSha256": "cec1328f094016741c5b5b06534098e1e11e0052b5ee871a9dad93bcc1087e60",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0026048",
+        "title": "Dynia Muskat prosto od rolnika",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026048-dynia-muskat-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_d_1_4_2d140d0913911c57c43ce349598b1f1e7ec63944_dynia_muskat-small.png&w=1920&q=80",
+        "cardSha256": "95727f4895a8b4554eb52f5cc31a2037b064d705528695ee1c6ce38fa176eea5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001093",
+        "title": "Bakłażan",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001093-baklazan",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_9_a_2_39a2a2f1ecee4799136dc2b8af26ce0e454d6be6_0e5617598cf2a477acf89a198abfd591259045f0-small.png&w=1920&q=80",
+        "cardSha256": "b888bdff25760b018f19f706e20dcc571ec6eb8e432f561a323ae2876a478bdf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009606",
+        "title": "Mix sałat z roszponką Sole Gusto",
+        "packSize": "160 g",
+        "unitPriceMinor": 569,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009606-mix-salat-z-roszponka-sole-gusto",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_0_7_2_10721f923974ee0ccb55511175b85f690ed32022_550eded0eb56d4605176351733e7437a883b1183-small.png&w=1920&q=80",
+        "cardSha256": "d5e90ae83aab92b16e94a142d77b36f5406d6663e73965282354e57f8f3e2403",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0026056",
+        "title": "Dynia Gomez prosto od rolnika",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026056-dynia-gomez-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_e_b_f_bebf82b28b4a985ac3594cc7e0999f1925ea0fce_gomez-small.png&w=1920&q=80",
+        "cardSha256": "54eabf75ae87c32d182f178b7e1395b6434959b35cca9ce33d1cb92c821b130b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001129",
+        "title": "Seler naciowy",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001129-seler-naciowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_5_6_9_7569f279be14d641d74fad78d66fcd9b96fe9bb6_eae4f187f4989d61f26250c7501457e729c28404-small.png&w=1920&q=80",
+        "cardSha256": "9ca490db5bb9c3fb27882973e3646f20edfbe793dc323f8c0ef775fd5d876343",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001125",
+        "title": "Por",
+        "packSize": "250 g",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001125-por",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_4_2_c_842c23a11a9863f54a914f488874f4f3185d0c75_b9246e91b24f0173c3017548b31ed2e069274d47-small.png&w=1920&q=80",
+        "cardSha256": "431cd556f0e84e0a42c5fc0fded705ab4293078af1b74a7582842449744767d2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001121",
+        "title": "Pietruszka",
+        "packSize": "300 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001121-pietruszka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_f_b_c_8fbcd654a1796c0f89b45f78d40af346cbeb0765_c2f72c7ede8b8683857fd4faa2948a97aec74b84-small.png&w=1920&q=80",
+        "cardSha256": "75a9e811358d5e7c582121ec7a7123050860bdd26445ab2eea5d6af6028aa84f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007497",
+        "title": "Buraki gotowane Kraszkiewicz",
+        "packSize": "500 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007497-buraki-gotowane-kraszkiewicz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_2_4_44248f89509aea598a4a3ff22437f2628646d1c1_4f687360274a6ecded52beae2de8a9dbbf284f08-small.png&w=1920&q=80",
+        "cardSha256": "7692490be7a0acbbd6a092e56b79aca1af33d4611175c1767ed3dcdd2e34f695",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025140",
+        "title": "Pomidory żółte",
+        "packSize": "500 g",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025140-pomidory-zolte",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_a_0_4_ea0412f35df33c69bbe06051eb5b7078e95ebdbc_pomiodry_______te-small.png&w=1920&q=80",
+        "cardSha256": "1eaf902ac9afa83385d9cb5b525df3910d9143d4e363ba3561d4da7011d90250",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003076",
+        "title": "Marchew BIO",
+        "packSize": "1 kg",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003076-marchew-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_3_c_1_33c1c89f1c8ab5f2c1c9d2d67055f0e211a0167b_5902650272828-small.png&w=1920&q=80",
+        "cardSha256": "66244f57d2dec328798804082d2ba69d024c18b8e6e0650a9f1b817fce1be142",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003078",
+        "title": "Papryka czerwona BIO",
+        "packSize": "450 g",
+        "unitPriceMinor": 1749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003078-papryka-czerwona-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_f_d_c_ffdc6eec5d04a971d4639934b44ffc985bc79839_big_PAPRYKA_CZERWONA_SWIEZA_BIO_okolo_0_60_kg_10290462_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "5609b2bd15319afc18d39c8fe12dbd2b0ccb4b9380da26c5e3143dea7449f7b2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009142",
+        "title": "Dynia piżmowa",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009142-dynia-pizmowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_8_0_0_2800e87ee9df749c98b6eea7cbe1d17bd782cdc7_37be6753f0777208bda4d7997bc3e5380fd95ae7-small.png&w=1920&q=80",
+        "cardSha256": "4fd1761655da12d0415ae21d847767da8dbb296306d974843a04ceaf5e9933f0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003100",
+        "title": "Papryka pepperoni czerwona",
+        "packSize": "150 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003100-papryka-pepperoni-czerwona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_3_4_8_b348f337e9ac7f8384f7b936f8b4b54c9fac0d63_8816ef8028873e5bc541c3854aa0848634c5db4e-small.png&w=1920&q=80",
+        "cardSha256": "8b395629d2d2d861174f955b23a57251bc96e9a081f5a27b8de303bbacb3ee15",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005488",
+        "title": "Kalarepa",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 319,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005488-kalarepa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_1_5_e_b15ed81df691d50bd7917b7293b3c2536137e1f4_kalarepa_291087_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "cd88ac066e20134c7e6eb88331e54a4430231b8a25fea6170ae404a9fc50556b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003073",
+        "title": "Kapusta pekińska krajowa",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 489,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003073-kapusta-pekinska-krajowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_0_b_2_40b2dae0ec25e88c0ed9c9631ff6eccac0e45516_f3688e74710a86123d0d71987c0524390a46c7b8-small.png&w=1920&q=80",
+        "cardSha256": "bc271356f8f70b68a3a2da766a11d8a7ac213d902c53ce1e0bebe5bd366eedb3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0019826",
+        "title": "Roszponka myta",
+        "packSize": "100 g",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0019826-roszponka-myta",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_2_9_6_d296bd0a39d56884857faaba343bdc16473a97c6_e251aeae064cbef1a7b9ca0408aecabe4d319266-small.png&w=1920&q=80",
+        "cardSha256": "1d0e2eeb518b64202f8d241d811edc2acdfd87f58d186991818c6906334e6390",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015959",
+        "title": "Buraki gotowane Bio",
+        "packSize": "500 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015959-buraki-gotowane-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_f_5_9_5f59cc4cecb60324ef05cee49dd9fc1fb03896fb_90935994e0fef59b138931ab1e6c9ebb85427330-small.png&w=1920&q=80",
+        "cardSha256": "0ae207e8a0c00ae654c665c8bfede22b4a593354dba5368e7a15b03d2f9cdc28",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006390",
+        "title": "Kapusta biała",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006390-kapusta-biala",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_a_7_d_4a7df87101f3a13fbd1ecdb07f291f5dac12f076_AdobeStock_437834420_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "b622c428912daf328b4e0787b71307cc4b79bf68d95a74c16d99fcdfab6caf2b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009605",
+        "title": "Jarmuż Sole Gusto",
+        "packSize": "200 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009605-jarmuz-sole-gusto",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_0_a_0_a0a092a081aada5b126d90bd4cbc5a08eabf5de8_bc75bb1c3a6de83c9f3cfa2fad0baee510ec8ae6-small.png&w=1920&q=80",
+        "cardSha256": "eed7e92dcdd1394b7079906d6d8d33569ca7c608c821aeb21fcbf026ff6cd176",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001128",
+        "title": "Seler",
+        "packSize": "350 g",
+        "unitPriceMinor": 319,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001128-seler",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_3_2_e_132e1dab7c32e31540cf6673c92ce996e1d80314_b6070a0d259139bfc1a5079a95d85de350812eb1-small.png&w=1920&q=80",
+        "cardSha256": "1b661df720e1448c2c41b499e75ae783f16b8c1dfaf190a11bf9da30dfb8ef28",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001374",
+        "title": "Kukurydza gotowana kolba Kraszkiewicz",
+        "packSize": "350 g",
+        "unitPriceMinor": 769,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001374-kukurydza-gotowana-kolba-kraszkiewicz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_7_b_9_47b97375ea26bc7baa4c084a9584807ac76ccce9_8d676fdabcab43643e3a9048a292e5ef0dd75345-small.png&w=1920&q=80",
+        "cardSha256": "3029cdf950f93a38f5a570e69336e153efa8d212c516fb6885220c610c8cfc25",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009312",
+        "title": "Kapusta włoska",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009312-kapusta-wloska",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_0_a_d_50ad50066c7c7af069bc1161bb0dcf2f4e408888_AdobeStock_616441733_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "4381bd5947935b816634710923b8c79c01ec0492ab39403dadea8a0ecac43680",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025267",
+        "title": "Buraki czerwone prosto od rolnika",
+        "packSize": "500 g",
+        "unitPriceMinor": 199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025267-buraki-czerwone-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_9_2_c_192c8b3c95ec7333688f0d962d51ae0a9ef694a3_Buraki_czerwone_prosto_od_rolnika-small.png&w=1920&q=80",
+        "cardSha256": "acd207342005a414ee2ee04dc3720aaeef0ff5b17971046df722fb7e4c7ff83c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015961",
+        "title": "Kukurydza Bio",
+        "packSize": "400 g",
+        "unitPriceMinor": 1449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015961-kukurydza-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_b_4_0_fb4035288244cdbcfeb080f0004135d75c818e55_bddbe37087c6b5763d2499e40206d959da5e8da3-small.png&w=1920&q=80",
+        "cardSha256": "f12b055c6c99f6190d1e4a4a489dec5e25954b624dfa00dd70300cad893223a3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006785",
+        "title": "Kapusta czerwona",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 589,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006785-kapusta-czerwona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_a_c_6_cac6d3e7dfb7608f43a287dc81f65d13dac4c0be_1d989d795f2bf8058da7435880155a8ec89e6459-small.png&w=1920&q=80",
+        "cardSha256": "687564e871763143b24999f4f3988b4e80f9f9f009b6eebc83e40abf73d361c2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020893",
+        "title": "Dynia ozdobna niespodzianka mix",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020893-dynia-ozdobna-niespodzianka-mix",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_9_1_b_391bd4048812f011f9a76a801a52a61af780aca5_0600e32b9f551e9c56396469a12bb6c2dd0d939c-small.png&w=1920&q=80",
+        "cardSha256": "86b5d85c8a9db5bf9a1166d7afba617de18b01176eeccbd6f7cdedcecdff5c87",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Cofnij do Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Wszystkie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/warzywa-i-owoce/warzywa",
+    "observedAt": 1789906473728,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906473728-5cfafd885cc0",
+        "observationSha256": "5cfafd885cc01fca743ad1cc5784b7799dc80c096b430b89d537e5827b8949ca",
+        "screenshotSha256": "4c8789b619b85cabacbeed7012775654da8fc415ba8133f5faad4147e0cb3c6b",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2632,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

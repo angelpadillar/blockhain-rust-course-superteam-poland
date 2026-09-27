@@ -1,0 +1,1078 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0011929",
+        "title": "Lovege Napój owsiany Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 544,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011929-lovege-napoj-owsiany-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_9_8_3_39830c6c8d4ac26bef365a2f144338a098138ee4_A0011929-small.png&w=1920&q=80",
+        "cardSha256": "8c0208b1fe19e3ffe2cfe183db8ffff0274215d9ead424075c7ceeef9b3328ce",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010729",
+        "title": "Alpro Napój owsiany Barista",
+        "packSize": "750 ml",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010729-alpro-napoj-owsiany-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_d_7_5_0d75db5a5692f8ec395075b1a957e1ed02dda3ee_bb_5043c44444b4b3ba725341c9f0da291b-small.png&w=1920&q=80",
+        "cardSha256": "523e410be25c768337bf2d3b6c074eb04b520b27665121e527d239aae2e9422c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015737",
+        "title": "Oatly Napój owsiany Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015737-oatly-napoj-owsiany-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_6_7_8_16789a8c414179e895c096f69c95ec178d72e764_bb_bee05924b1d9c7792cf28395cb5637aa-small.png&w=1920&q=80",
+        "cardSha256": "5c8ad15dd4fc59eb87aea90c28155605ce199a40604b0f1bb7ca7db3c9a62fec",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011928",
+        "title": "Lovege Napój owsiany",
+        "packSize": "1 l",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011928-lovege-napoj-owsiany",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_c_2_9_0c29a4a7a2613c6d024ba82f63080ac7bad99929_v55_wiz_Lovege_OWSIANE_APR2026-small.png&w=1920&q=80",
+        "cardSha256": "340729c89ef20a11c8677b8be4917157d4e01a1d5e8683788b86c0c096a70344",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011926",
+        "title": "Lovege Napój migdałowy",
+        "packSize": "1 l",
+        "unitPriceMinor": 569,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011926-lovege-napoj-migdalowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_6_3_bf637d619067e7f10ed4f681def61eccefe4f623_v55_wiz_Lovege_MIGDALOWE_APR2026-small.png&w=1920&q=80",
+        "cardSha256": "51cd087c28a5defef87bacb3281d5f35cae20a9eb760156092ef7f1f4bd921d7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013043",
+        "title": "Alpro Napój kokosowo - sojowy Barista",
+        "packSize": "750 ml",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013043-alpro-napoj-kokosowo-sojowy-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_e_4_1_8e410144ac7873d23f712220cefc139cc1f9f5cb_bb_a1d91b30dd8f15c87717dfcd8a76b58b-small.png&w=1920&q=80",
+        "cardSha256": "fb6bcae6604d4a0e6a01275c7f417f93ead14b52df0067df2362d4306466b2b2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004535",
+        "title": "Alpro Napój migdałowy bez cukru",
+        "packSize": "1 l",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004535-alpro-napoj-migdalowy-bez-cukru",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_b_d_5_5bd5a002ee025fd6cb39a084fae31f33fda1f890_bb_1fceb10d1a8b6378525cc74faf3b431d-small.png&w=1920&q=80",
+        "cardSha256": "bf7a73a35d3f4fe76e2af6e9a12f6febce74f44ac04066aa7adafe7c176988e8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016462",
+        "title": "Lunter Tofu naturalne",
+        "packSize": "180 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016462-lunter-tofu-naturalne",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_2_c_b_e2cbdc19f2b8ff9ebd0458087b032a6533c08afe_bb_BibHsyofsxxdf0YCgwW6DA__-small.png&w=1920&q=80",
+        "cardSha256": "68e19e610a1ea02eee8687eb095f427fef46053639a72bbd48940aeff12a26c8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004538",
+        "title": "Alpro Napój sojowy o smaku waniliowym",
+        "packSize": "1 l",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004538-alpro-napoj-sojowy-o-smaku-waniliowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_3_d_3_c3d3c091520eab203e2e086c517ee962bb8039a5_bb_3be05107f0c5bf9fc55d85f30d1e4530-small.png&w=1920&q=80",
+        "cardSha256": "9ea8c58d0f69fecfd5e644ac5dc0f7178fba4fe9af2b14e82806e0eb9cb42060",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016463",
+        "title": "Lunter Tofu wędzone",
+        "packSize": "180 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016463-lunter-tofu-wedzone",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_6_d_4_36d46adc6106be5c29a314e91dd1d72f81be40c5_bb_cxlz0zB91h7mchbVUvW_Fg__-small.png&w=1920&q=80",
+        "cardSha256": "3493dcf4198bf501d08917fdc4d6ced922060920ad519cc2e28cbc9c016d06e4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001347",
+        "title": "Well Well Tofu naturalne",
+        "packSize": "200 g",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001347-well-well-tofu-naturalne",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_a_c_e_aace8b16bd237dd09ad6d748d14193aefc51f79d_bb_PDQ3YDx4nVshomP84bImPQ__-small.png&w=1920&q=80",
+        "cardSha256": "253ce265c1a8be434eec853f5f8ad36cd27fa59ea657628d15f3b1cafe8a13b8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011924",
+        "title": "Lovege Napój owsiany o smaku słony karmel Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 569,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011924-lovege-napoj-owsiany-o-smaku-slony-karmel-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_1_f_8_11f8b88d64980bbf441b8e8935f19fd983633c05_v55_wiz_Lovege_BARISTA_SLONY_KARMEL_APR2026-small.png&w=1920&q=80",
+        "cardSha256": "98d2fbaf9276f3639e867ff75246ae3ef05a4c149957ae47233797a66cd49c86",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011930",
+        "title": "Lovege Napój sojowy z wapniem",
+        "packSize": "1 l",
+        "unitPriceMinor": 519,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011930-lovege-napoj-sojowy-z-wapniem",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_a_b_9_fab94ecc543b6be4c79197aecfc01d71d41d653c_1l_en_soya_lovege_may2026__3_-small.png&w=1920&q=80",
+        "cardSha256": "e39a928cdb4594118af23868ebb21603694b651c872df4b5c92047c49b4435f0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012319",
+        "title": "Oddly Napój owsiany Barista o smaku karmelowym",
+        "packSize": "1 l",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012319-oddly-napoj-owsiany-barista-o-smaku-karmelowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_b_8_5_ab85028ef8e90159e99db4e6138f993cff4ccf48_VAL_OG_karmel_barista_1l-small.png&w=1920&q=80",
+        "cardSha256": "60768c85b2ded5bc8063a3c598a72fe8c7dada2dc8a50c20c9980d049583489c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011523",
+        "title": "Alpro Roślinny produkt sojowy typu Skyr Style o smaku waniliowym",
+        "packSize": "150 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011523-alpro-deser-sojowy-skyr-style-o-smaku-waniliowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_0_1_e_101e33397aa36da5b667d554bb71ba0818f6de55_bb_912dfce0a1f553dedc8e4cd5915c7346-small.png&w=1920&q=80",
+        "cardSha256": "1fa133f6f4d62b9b8c038a1bcd215147ed55115a8ae25b6e944d8dbd578f2eb9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015739",
+        "title": "Oatly Napój owsiany No Sugars",
+        "packSize": "1 l",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015739-oatly-napoj-owsiany-no-sugars",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_8_9_4_98940459ead9fbbbc5d04efaac35708689e20881_e_8_3_2_e83248ca6506fc71b7cfcf2a7b8c5cda95cd65f9_bb_97f16b61e39c9755bd01e22d45f7f130-small.png&w=1920&q=80",
+        "cardSha256": "6515d74ac5a8403881d3cfd6c7dd674715a75b20d84d0912bf326b5d79fbfd27",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011005",
+        "title": "Alpro Napój migdałowy Barista",
+        "packSize": "750 ml",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011005-alpro-napoj-migdalowy-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_a_9_2_ba9209bd5c97a3aa5bdca8a803f3a3dcb0a81532_bb_4d9deed14faa6af637d8dfcc212db85c-small.png&w=1920&q=80",
+        "cardSha256": "66b9dda449b445d90ea616b213e3eb95667c579783d40f364fd366dce962e9af",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023850",
+        "title": "Alpro Napój kokosowo sojowy o smaku matchy",
+        "packSize": "1 l",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023850-alpro-napoj-kokosowo-sojowy-o-smaku-matchy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_8_6_a_886a196147910ca9f78e7ca8e56623a9bb2dc3d8_bb_913765ef028d10ce61214109c69dbe6d-small.png&w=1920&q=80",
+        "cardSha256": "98dc94574a09984a5b3aaf6241ac5da9aded3fd2e5fdba3588fd12c0c21dad01",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009171",
+        "title": "Alpro Roślinny produkt sojowy typu Skyr Style o smaku waniliowym",
+        "packSize": "400 g",
+        "unitPriceMinor": 1089,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009171-alpro-deser-sojowy-skyr-style-o-smaku-waniliowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_e_7_b_8e7ba9c9b3699bf0eec5308a73ec342532eb0e91_bb_7adeaca0730baab740b88a6a720a96ef-small.png&w=1920&q=80",
+        "cardSha256": "e893e19772f8a39791d023600334fef13b7c9ed1bd426dd61898a7854c0bf066",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006753",
+        "title": "Mleczko roślinne kokosowe 11% Kara",
+        "packSize": "200 ml",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006753-mleczko-roslinne-kokosowe-11-kara",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_3_7_0_b3700791347bdb1293d8e7e7a87992b1d22fa11c_3078e222714532aeac2ba8b97122bec8bd2965df-small.png&w=1920&q=80",
+        "cardSha256": "dd86a4ed88a9030c301f0a61f917bdf33f5b196acb08a0be7cc0b15d98b61568",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000711",
+        "title": "Alpro Napój owsiany",
+        "packSize": "1 l",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000711-alpro-napoj-owsiany",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_c_0_3_ac0305abff894b799a7f8ef60b2a2b8cdff11777_bb_ac869c6a5af7f763732e786607051487-small.png&w=1920&q=80",
+        "cardSha256": "94e96c987fd9d3272f48335e7c747e244c2a5a8be75f6a1616315e8a610003bd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011927",
+        "title": "Lovege Napój roślinny o smaku orzecha laskowego",
+        "packSize": "1 l",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011927-lovege-napoj-roslinny-o-smaku-orzecha-laskowego",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_2_9_d_c29d580f3116916b46504efc2a91551dcda485d7_v55_wiz_Lovege_ORZECHOWE_APR2026-small.png&w=1920&q=80",
+        "cardSha256": "0dc14dbe9b03a80dc269d9a9765a21183d7db7eb5f167c3a1bb8c351086beee3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006418",
+        "title": "Inka Napój migdałowy",
+        "packSize": "1 l",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006418-inka-napoj-migdalowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_2_f_8_a2f89e779447b1f34af966985a3095ad59ed433c_bb_1e95ea9f6b37c77bc8754e703d49dab4-small.png&w=1920&q=80",
+        "cardSha256": "31fd93851d14e93d762b1efca112ce50f84a1c2dfb39c4992a038526f33f3b42",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009170",
+        "title": "Alpro Roślinny produkt sojowy typu Skyr Style o smaku mango",
+        "packSize": "400 g",
+        "unitPriceMinor": 1089,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009170-alpro-deser-sojowy-skyr-style-o-smaku-mango",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_d_f_2_2df277cebaff101a2ce85ab4596f738670484a9a_bb_31f01b5325248a206a87bc7263749c9a-small.png&w=1920&q=80",
+        "cardSha256": "10e14768f9ff1c202802c3b8864259c10a8d9d0ce0a23403792b0ed527707464",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011524",
+        "title": "Alpro Deser sojowy o smaku wiśniowym",
+        "packSize": "400 g",
+        "unitPriceMinor": 1089,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011524-alpro-deser-sojowy-o-smaku-wisniowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_9_b_4_39b4966021f2793c3db4d562eac41bea6c838d5c_bb_b10aac02b319a01af979406f3c919a2e-small.png&w=1920&q=80",
+        "cardSha256": "b9ba2ffd3f28caf4eaf224570451cdfb110ead8054a745e6be7fac91a1daa4dc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010316",
+        "title": "Inka Napój owsiany Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 1149,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010316-inka-napoj-owsiany-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_9_f_2_e9f2133a815021dbc9807d36b26f528e269a8e3f_bb_e1325fa0f8d2e2f16eead0fbcf0546d1-small.png&w=1920&q=80",
+        "cardSha256": "6e0e2ac54b98e114af6cda4ae6f5f3c4d77d4ef5766065b35857dbbad819956e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0021739",
+        "title": "Alpro Napój owsiano - sojowy o smaku waniliowym Barista",
+        "packSize": "750 ml",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0021739-alpro-napoj-owsiano-sojowy-o-smaku-waniliowym-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_7_2_c_572c918de7a74e6f339b12b06a4886a324565198_bb_95b5eefefc19084528e935297b39794c-small.png&w=1920&q=80",
+        "cardSha256": "e02d748959ee8d01e0ab82b387563be892bb8dceedd3a3ab70552bd1a7b98704",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015740",
+        "title": "Oatly Napój owsiany Vanilla",
+        "packSize": "1 l",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015740-oatly-napoj-owsiany-vanilla",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_2_4_5_e245ff1aed8bba5234ec0521eef68cfa0b61103e_bb_655e8cbfd144805136f9f073ca870203-small.png&w=1920&q=80",
+        "cardSha256": "23d3670da298c9bce3103440fe927f6e4a6a4e9f44224ab20ad3058e43b85ff7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010317",
+        "title": "Inka Napój migdałowy Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 1149,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010317-inka-napoj-migdalowy-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_e_3_d_9e3d56c9fbb5dabc8ca0ede6268bd7a9af286e60_bb_c41eb985a3f4aea609123ffef6b43819-small.png&w=1920&q=80",
+        "cardSha256": "f1be7d97ed3285931caa78b4351873d25e23b8172c3014067031c09e73e18410",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018270",
+        "title": "Lovege Napój migdałowy Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018270-lovege-napoj-migdalowy-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_2_0_6_c2062facfa91293b3f2d4a1b89fbea5a60136823_v55_wiz_Lovege_BARISTA_MIGDAL_APR2026-small.png&w=1920&q=80",
+        "cardSha256": "f9ab3870496d85d884fa81eda9481040846be2e01b4ba7f78e6405afb19eeba7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011522",
+        "title": "Alpro Roślinny produkt sojowy typu Skyr Style o smaku mango",
+        "packSize": "150 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011522-alpro-deser-sojowy-skyr-style-o-smaku-mango",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_6_c_8_c6c84ced0da1e85e8d255176a75c3898b75121fb_bb_a898e747642dbdeba490898af9e9dd13-small.png&w=1920&q=80",
+        "cardSha256": "6f2a5fd58e266705fd9ce186d1519d917a880f0bfae04d17416d3bcf4c12fa63",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008636",
+        "title": "Alpro Pudding sojowy wysokobiałkowy o smaku czekoladowym",
+        "packSize": "200 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008636-alpro-pudding-sojowy-wysokobialkowy-o-smaku-czekoladowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_7_7_0_e770b25801fcd7d010cefa8927b5e58b40e130ab_bb_7d82a26cd38be136c6b355480cee5bb0-small.png&w=1920&q=80",
+        "cardSha256": "0b19a8315b69f241b75368969457d217a6c89cf62e192ad544a436b6c1ecaa52",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006419",
+        "title": "Inka Napoj kokosowy",
+        "packSize": "1 l",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006419-inka-napoj-kokosowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_5_f_f_b5ffc3b0378439677da288cd98ca7e644a19bc65_bb_06a50db44210bce0b5f1ccb5edb37fe1-small.png&w=1920&q=80",
+        "cardSha256": "2707ce535973d8485baaaafc894c84d704362ea1156242601b87be914374d5fe",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005918",
+        "title": "Alpro Napój owsiany Psst!..To Nie Mlek*",
+        "packSize": "1 l",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005918-alpro-napoj-owsiany-psst-to-nie-mlek",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_b_1_2_cb125a1ce31f3703ec600b564e0959ea97a00d3b_bb_7eba6f4fafe3d01b0a525678333568a5-small.png&w=1920&q=80",
+        "cardSha256": "bcdd5034bc4ecd8126163c3de7803ae40dd8baca8f9176ba24dc674815fbba4c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009623",
+        "title": "Oddly Dreamy deser roślinny o smaku cytrynowym",
+        "packSize": "130 g",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009623-oddly-dreamy-deser-roslinny-o-smaku-cytrynowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_5_f_4_25f413a660d49784fa2760fcb5083d61acdd006b_VAL_OG_drea_dese_cytry_130g-small.png&w=1920&q=80",
+        "cardSha256": "ea983df11b02ea2451256a61576b65c14937edb40227ec338b89da980a37cc22",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011525",
+        "title": "Alpro Roślinny produkt sojowy o smaku jagodowym",
+        "packSize": "400 g",
+        "unitPriceMinor": 1089,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011525-alpro-deser-sojowy-o-smaku-jagodowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_9_d_e_19de7449e1858200895d692e04d922670bace1ae_bb_736eef1241ef2e8d15e3a24229e15823-small.png&w=1920&q=80",
+        "cardSha256": "8f27441ddf5aecac472f97a91a2960c1b03d4d4ab29215d8269aca594c6555e4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010318",
+        "title": "Inka Napój kokosowy Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 1149,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010318-inka-napoj-kokosowy-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_0_9_4_50941f9123a5a0ba3a4257e22804ceef2614ca20_bb_bb75fb0acda88c8f21554d49a8b25e8a-small.png&w=1920&q=80",
+        "cardSha256": "9c65b44fa9c1629a8f31545debffb23d3cf4671e3a600444dd611af3bcb69eba",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023655",
+        "title": "Oatly Napój Owsiany Barista Edition o Smaku Karmelowym",
+        "packSize": "1 l",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023655-oatly-napoj-owsiany-barista-edition-o-smaku-karmelowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_2_e_9_d2e95d733413beaa0fc958fccac8eae1c54c0c33_7394376623714_Oatly_Barista_Edition_Caramel_Flavour_Edge_1L_Front_Climate_Footprint_SKU_1800x18-small.png&w=1920&q=80",
+        "cardSha256": "d0603ba8703dbdcae52670b8dba868af3f7c72d5c200d5427f425a928a0681ea",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022501",
+        "title": "Oddly Napój owsiany Barista o smaku orzecha laskowego",
+        "packSize": "1 l",
+        "unitPriceMinor": 1169,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022501-oddly-napoj-owsiany-barista-o-smaku-orzecha-laskowego",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_d_3_3_5d331d3e033822f206c4b7c9981dc86673ad5080_VAL_OG_orzech_barista_1l-small.png&w=1920&q=80",
+        "cardSha256": "26d6e36b7265920ff1b87a74395141df68fed10d3d08ece0772a5f64cb59caae",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007752",
+        "title": "Alpro Napój roślinny High Protein o smaku czekoladowym",
+        "packSize": "250 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007752-alpro-napoj-roslinny-high-protein-o-smaku-czekoladowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_9_6_9_19690c4c6317bd87317c538bc26d7393b5c4f36b_1uXq3JyO7slQHaZ0CEhg__-small.png&w=1920&q=80",
+        "cardSha256": "b81f11f33aa4e4187155c58764456a8421eb77ab084ff69f5f517df1dc2c53ed",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023656",
+        "title": "Oatly Napój Owsiany Barista Edition o Smaku Kokosa",
+        "packSize": "1 l",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023656-oatly-napoj-owsiany-barista-edition-o-smaku-kokosa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_9_d_9_29d97f4c9ab88f1700e524eccbc1c6483b7330d4_a_f_1_4_af14213faae6b8a2cee18b3a077a400e530c0cda_7394376624032_Oatly_Barista_Edition_Coconut_Fl-small.png&w=1920&q=80",
+        "cardSha256": "37de24814a1d8178348d96894238ad7afbc1bd57140bf4502a7eea1ad1026da2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0021893",
+        "title": "Mleczko kokosowe tł. 5-7% House of Asia",
+        "packSize": "400 ml",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0021893-mleczko-kokosowe-tl-5-7-house-of-asia",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_6_4_0_9640ac6bfeaa00e1f2314f6a8e1e98d2079ece23_5904358554961-small.png&w=1920&q=80",
+        "cardSha256": "313a1b3a53c3fd146cd4b8430c6aed6f79bf6e6ef6a7e0b40dbd02e80b866bc0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012320",
+        "title": "Oddly Napój owsiany Barista o smaku waniliowym",
+        "packSize": "1 l",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012320-oddly-napoj-owsiany-barista-o-smaku-waniliowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_8_c_c_28cc684ea141bf3cd7fcbceec3de8bea65be7c8b_VAL_OG_wanil_barista_1l-small.png&w=1920&q=80",
+        "cardSha256": "d510d5f003bcc2f3404de3e11560ac48247a8d37df95b47fd5d8cb3bdad7e659",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004536",
+        "title": "Alpro Napój owsiany bez cukru",
+        "packSize": "1 l",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004536-alpro-napoj-owsiany-bez-cukru",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_b_5_2_6b52b3c3b8d43f80ba9ebfb0365d00659f0c316f_bb_055206abaabce754e652cbdeb99479a1-small.png&w=1920&q=80",
+        "cardSha256": "ab10ff469e9fd6d6187be7acd7b7c79d2b1171506a170708cdc7671583103a5c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001540",
+        "title": "Kara Krem kokosowy 24-26% uht",
+        "packSize": "65 ml",
+        "unitPriceMinor": 419,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001540-kara-krem-kokosowy-24-26-uht",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_b_8_8_8b883a19e92ce8b71f345535ce514a0385c3ffa3_5a48efd0bf03b5ada6e673423ee8d73fccd70892-small.png&w=1920&q=80",
+        "cardSha256": "93baa2c38376d03b1fb87b8080ec110214c3d5fa406f8292fc20a0907f8eaf15",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012317",
+        "title": "Oddly Napój owsiany Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 989,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012317-oddly-napoj-owsiany-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_b_7_0_fb700d5d0222e9f0897fb8ba123ed400a18a4c3e_VAL_OG_barista_1l-small.png&w=1920&q=80",
+        "cardSha256": "e4e31481c541177ded834eaabf0320255b16df13e6030dd56e0b6fc887abe80c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004541",
+        "title": "Alpro Roślinny produkt sojowy o smaku brzoskwiniowym",
+        "packSize": "150 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004541-alpro-deser-sojowy-o-smaku-brzoskwiniowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_f_d_bffda70fb8ce6c590fab3ce295628b6285960ff4_bb_f32a9eb0023c4d7ccfe3ed743fe30705-small.png&w=1920&q=80",
+        "cardSha256": "1a42aaf4bcea1076057afa796e86cfed756b6de204b22b0d301dd47a4f5260c5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000807",
+        "title": "Alpro Deser sojowy waniliowy",
+        "packSize": "125 g",
+        "unitPriceMinor": 459,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000807-alpro-deser-sojowy-waniliowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_d_1_8_6d1820b104decc60111e583132c0ee8b18d54ab7_bb_d779a44b771b6173f52e83d914fba43a-small.png&w=1920&q=80",
+        "cardSha256": "1b94d761447d6d38a8536f35a0f5eecca3bbab0fd381c1e3e97b9d1c133e7ace",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025022",
+        "title": "Oatly Napój Owsiany Matcha - Truskawka",
+        "packSize": "1 l",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025022-oatly-napoj-owsiany-matcha-truskawka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_6_c_3_a6c3fc553ab579eddab616c59a8f5fb71a127ab9_bb_418b4f4a8a09b8ec18b7b15abd15da05-small.png&w=1920&q=80",
+        "cardSha256": "b0c7f588439b5bab53926750f2ddf561b972a8b2b58705e2e9c486029efcccf3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000869",
+        "title": "Alpro Napój migdałowy z witaminami",
+        "packSize": "1 l",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000869-alpro-napoj-migdalowy-z-witaminami",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_8_1_7_7817b57c17e690c0825c1861d4fc76c021d3ba70_bb_65c5337d3ae9cbccb57e695e5bccafaf-small.png&w=1920&q=80",
+        "cardSha256": "cbe4a4a63b554d77d8ef173fc84729f50d11c90ff08f84a50e2e7b609519767c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0017126",
+        "title": "Alpro Roślinny produkt sojowy wysokobiałkowy o smaku truskawka–czerwona porzeczka–malina",
+        "packSize": "200 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0017126-alpro-deser-sojowy-wysokobialkowy-o-smaku-truskawka-czerwona-porzeczka-malina",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_f_a_4_0fa4c81b6663c53196bc2d3feef6c8fb6c7fda9c_bb_0f65a542b81570e6c90fc18e8f440067-small.png&w=1920&q=80",
+        "cardSha256": "62f6f444d70ce499bbdd613323bd18a3eafb9430fdfb7126535dc86058518fc1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009622",
+        "title": "Oddly Dreamy deser roślinny o smaku owoców leśnych",
+        "packSize": "130 g",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009622-oddly-dreamy-deser-roslinny-o-smaku-owocow-lesnych",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_4_2_1_a4212bdf643c2056068eece359e0c8d346626f28_VAL_OG_drea_dese_lesne_130g-small.png&w=1920&q=80",
+        "cardSha256": "ccef375da37df53ae4e35dea213716b0b904d678eee5ba22012fd50d0b6fa234",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007753",
+        "title": "Alpro Napój roślinny High Protein o smaku karmel - kawa",
+        "packSize": "250 ml",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007753-alpro-napoj-roslinny-high-protein-o-smaku-karmel-kawa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_a_d_d_8add4d33936df272754cdf25a5c364909371a355_l4ZdU4K2KoVAPi0A__-small.png&w=1920&q=80",
+        "cardSha256": "04c391583b7f95fca4593fc8413b973a3925b286ee8cf50e472b6c9253c74bc3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023657",
+        "title": "Oatly Napój Owsiany Matcha",
+        "packSize": "1 l",
+        "unitPriceMinor": 839,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023657-oatly-napoj-owsiany-matcha",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_3_9_d_e39de19b15bb94f79f3030229d4bda71b90f4e10_7394376623769_Oatly_Oat_Drink_Matcha_Edge_1L_Front_SKU_1800x1800_transparent-small.png&w=1920&q=80",
+        "cardSha256": "91331705d26536588ca9af7e1aa8dd379a653bf440c36e5c64db0d6d573e0847",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka",
+        "label": "Zamienniki nabiału"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/napoje-migdalowe",
+        "label": "Napoje migdałowe"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/napoje-kokosowe",
+        "label": "Napoje kokosowe"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/napoje-sojowe",
+        "label": "Napoje sojowe"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/napoje-owsiane",
+        "label": "Napoje owsiane"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/zamienniki-smietany",
+        "label": "Zamienniki śmietany"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/zamienniki-jogurtow",
+        "label": "Zamienniki jogurtów"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/weganskie-desery",
+        "label": "Wegańskie desery"
+      },
+      {
+        "path": "/categories/nabial/zamienniki-mleka/zamienniki-serow",
+        "label": "Zamienniki serów"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/nabial/zamienniki-mleka",
+    "observedAt": 1789906552817,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906552817-9d297fc343b4",
+        "observationSha256": "9d297fc343b453e41f57dc6120229c9d94305167ac5e2d2d63152348eb00e28a",
+        "screenshotSha256": "7d776803b82488d8afba71f6a9286da605f32bd512393621ff2a4fbd2a7f27fc",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2106,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

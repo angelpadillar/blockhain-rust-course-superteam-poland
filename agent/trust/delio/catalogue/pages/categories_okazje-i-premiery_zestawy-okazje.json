@@ -1,0 +1,65 @@
+{
+  "ok": true,
+  "result": {
+    "items": [],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Wszystkie"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/nowosci",
+        "label": "Nowości"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/zestawy-okazje",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/goraco-polecam",
+        "label": "Gorąco Polecam"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/chemia-i-kosmetyki",
+        "label": "Chemia i kosmetyki"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/spizarnia",
+        "label": "Spiżarnia"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/okazje-i-premiery/zestawy-okazje",
+    "observedAt": 1789906439936,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906439936-88f15933059b",
+        "observationSha256": "88f15933059b110df0fdf9414b69154b68965f88a7bf4bc7f9bea847707f6c9e",
+        "screenshotSha256": "90bd14130ce642a693b601b39d937a71c43cd00afd9b8f80fe4d0052ac15793b",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2226,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

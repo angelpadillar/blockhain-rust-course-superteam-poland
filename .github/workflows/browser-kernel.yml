@@ -1,0 +1,35 @@
+name: Browser Kernel Regression
+
+on:
+  pull_request:
+    paths:
+      - 'agent/jev/**'
+      - 'package.json'
+      - '.github/workflows/browser-kernel.yml'
+  push:
+    paths:
+      - 'agent/jev/**'
+      - 'package.json'
+      - '.github/workflows/browser-kernel.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-kernel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      BROWSER_STRESS_ROOT: /tmp/browser-stress-tests
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - run: npm ci --prefix agent/jev
+      - run: gh repo clone browser-use/stress-tests "$BROWSER_STRESS_ROOT" -- --quiet
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: git -C "$BROWSER_STRESS_ROOT" checkout b3600b683ec97236866d77e31200fa24ec8c8f3f
+      - run: npm run test:browser:bench
+      - run: node --test agent/jev/tests/kernel-v6.test.mjs

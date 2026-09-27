@@ -1,0 +1,20 @@
+{
+  "schema": "buena.browser-decision.snapshot-index/1",
+  "snapshots": [
+    {
+      "version": "browser-decision-v001",
+      "created_at": "2026-09-25T12:26:31.815Z",
+      "manifest": "browser-decision-v001/manifest.json"
+    },
+    {
+      "version": "browser-decision-v002",
+      "created_at": "2026-09-25T15:30:02.533Z",
+      "manifest": "browser-decision-v002/manifest.json"
+    },
+    {
+      "version": "browser-decision-v003",
+      "created_at": "2026-09-25T15:39:05.051Z",
+      "manifest": "browser-decision-v003/manifest.json"
+    }
+  ]
+}

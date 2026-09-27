@@ -1,0 +1,506 @@
+{
+  "attempt": 4,
+  "caseId": "variant-bag",
+  "runId": "run-fd605b58f7",
+  "repeat": 2,
+  "picker": "jev",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.296291999999994
+    },
+    {
+      "step": 1,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 33.52766700000029
+    },
+    {
+      "type": "model_planned",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "pending",
+        "usageComplete": false,
+        "costUsd": null
+      }
+    },
+    {
+      "type": "model_recorded",
+      "call": {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000064428,
+        "latencyMs": 271.97416599999997,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1534,
+        "outputTokens": 308,
+        "costBasis": "estimated"
+      }
+    }
+  ],
+  "journalMs": 26.129705999998805,
+  "journalWrites": 6,
+  "blockedRequests": 0,
+  "contextSetupMs": 133.5914589999993,
+  "navigationMs": 12.027791999999863,
+  "spec": {
+    "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag",
+      "text_count=1:KALLAX white 2x2"
+    ],
+    "values": {}
+  },
+  "accounting": {
+    "calls": [
+      {
+        "number": 1,
+        "provider": "typesafe",
+        "requestedModel": "jev-latest",
+        "purpose": "choose",
+        "image": false,
+        "status": "response_received",
+        "usageComplete": true,
+        "costUsd": 0.000064428,
+        "latencyMs": 271.97416599999997,
+        "actualModel": "jev-1.13.0",
+        "inputTokens": 1534,
+        "outputTokens": 308,
+        "costBasis": "estimated"
+      }
+    ],
+    "modelCalls": 1,
+    "modelMs": 271.97416599999997,
+    "inputTokens": 1534,
+    "outputTokens": 308,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0.000064428,
+    "knownCostUsd": 0.000064428,
+    "costBasis": "includes_estimates",
+    "screenshotCalls": 0
+  },
+  "runtime": {
+    "status": "blocked",
+    "reason": "model_blocked",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 29.029333000000406,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 2,
+        "picker": "jev",
+        "operation": "blocked",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.434250000000247,
+        "pickMs": 281.32233300000007,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "model_blocked",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": false
+          },
+          {
+            "clause": "text_count=1:KALLAX white 2x2",
+            "passed": true
+          }
+        ],
+        "decision": {
+          "operation": "blocked",
+          "ref": null,
+          "valueKey": null,
+          "operationProbability": 0.47,
+          "targetProbability": null
+        }
+      }
+    ],
+    "metrics": {
+      "totalMs": 336.98995900000045,
+      "snapMs": 33.25641700000051,
+      "pickMs": 0,
+      "actMs": 9.231958000000304,
+      "settleMs": 0,
+      "eventMs": 8.281876000000011,
+      "protocolCalls": 14,
+      "observations": 2,
+      "revalidations": 1,
+      "browserScans": 3,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 1,
+      "nativeActionsCompleted": 1,
+      "jevCalls": 1,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 1,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "clickAttempts": 1
+    },
+    "final": {
+      "url": "http://127.0.0.1:57782/s/run-fd605b58f7/listing",
+      "title": "Stationery listing"
+    },
+    "events": [
+      {
+        "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.296291999999994
+      },
+      {
+        "step": 1,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 33.52766700000029
+      }
+    ],
+    "escalation": {
+      "reason": "model_blocked",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:57782",
+        "title": "Stationery listing",
+        "goal": "Put the \"KALLAX white 2x2\" in the shopping bag, then open the bag.",
+        "controls": [
+          {
+            "what": "View bag (0)",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main",
+              "navigation"
+            ],
+            "component": null,
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX white 2x2",
+              "text": "KALLAX white 2x2 29 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX black-brown 2x2",
+              "text": "KALLAX black-brown 2x2 29 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX white 2x4",
+              "text": "KALLAX white 2x4 49 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX white 1x4",
+              "text": "KALLAX white 1x4 39 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "BILLY birch bookcase",
+              "text": "BILLY birch bookcase 59 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "LINNMON table",
+              "text": "LINNMON table 25 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "HB pencil pack",
+              "text": "HB pencil pack 3 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Dust-free eraser",
+              "text": "Dust-free eraser 2 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Steel ruler 30cm",
+              "text": "Steel ruler 30cm 4 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Masking tape",
+              "text": "Masking tape 6 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Craft glue",
+              "text": "Craft glue 5 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Binder clips x12",
+              "text": "Binder clips x12 4 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Kraft folder",
+              "text": "Kraft folder 7 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Desk stapler",
+              "text": "Desk stapler 12 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Reading lamp",
+              "text": "Reading lamp 35 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Swivel chair",
+              "text": "Swivel chair 89 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": "blocked",
+          "target": null
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [
+        {
+          "step": 1,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 2,
+          "operation": "blocked",
+          "target": null
+        }
+      ],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "url=/bag",
+      "text_count=1:KALLAX white 2x2"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "model_blocked",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "bag": [],
+      "wanted": "ddbfb2bf46fa0652"
+    }
+  },
+  "verificationMs": 0.033500000000458385,
+  "verifiedSuccess": false,
+  "taskMs": 349.16541699999925,
+  "finalizationMs": 5.020790999999917,
+  "totalMs": 354.1883749999997,
+  "cleanupMs": 4.867500000000291
+}

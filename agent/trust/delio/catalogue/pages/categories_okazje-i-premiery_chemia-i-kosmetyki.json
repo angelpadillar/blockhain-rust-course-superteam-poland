@@ -1,0 +1,1018 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0025677",
+        "title": "Listki zmiękczające Tropical Orchid Dr.Beckmann",
+        "packSize": "14 szt.",
+        "unitPriceMinor": 1673,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025677-listki-zmiekczajace-tropical-orchid-dr_beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_a_e_a_2aea1ccf16ee85d246e59545c55bdb11908fd9f0_64802_894037_2508_PL_Softener_TropicalOr_FOIL_14sh_FOP_Standard_Packshot-small.png&w=1920&q=80",
+        "cardSha256": "4b9b7be3ac5bcd73737e9c2606ae8457ace7cc08886be512bcee6c2fbfdbbc13",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025676",
+        "title": "Listki zmiękczające Summer Blossom Dr.Beckmann",
+        "packSize": "14 szt.",
+        "unitPriceMinor": 1649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025676-listki-zmiekczajace-summer-blossom-dr_beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_d_4_0_1d40f12394fa2e85a3e270740324498fd64c9bdc_64792_894034_PL_Softener_SummerBl_FOIL_14sh_2508_FOP_Standard_Packshot-small.png&w=1920&q=80",
+        "cardSha256": "b22c5a1656b62bc5fc95c63759005f08da5c94cedcd7aa2d92599e5007f60116",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025675",
+        "title": "Listki zmiękczające Floral Fresh Dr.Beckmann",
+        "packSize": "14 szt.",
+        "unitPriceMinor": 1649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025675-listki-zmiekczajace-floral-fresh-dr_beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_3_b_6_63b660eccbc33821eafb5d4b166f4af5022afe5c_Dr__Beckmann_Listki_do_p_ukania__Floral_Fresh__14_szt_-small.png&w=1920&q=80",
+        "cardSha256": "cc6166a633d4de3e981e458d62d983f7858a37c133c9cf99b38ecfebe6f809cd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025132",
+        "title": "Kapsułki do prania tkanin color PERLUX",
+        "packSize": "20 szt.",
+        "unitPriceMinor": 2699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025132-kapsulki-do-prania-tkanin-color-perlux",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_0_2_f_b02f507ebb3ca4a2b550e08fceb67a3cf05fa44d__5902986213274_1-small.png&w=1920&q=80",
+        "cardSha256": "4e0dc1c337cad65fb3edc40b6753dc759f4696536db5dec958d90ccfbcd7bc48",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024350",
+        "title": "Perfume & Care Passion Flower & Bergamot Coccolino",
+        "packSize": "943 ml",
+        "unitPriceMinor": 1414,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024350-perfume-care-passion-flower-bergamot-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_b_8_a_8b8a003cf0def15d80f2b6c112b88321ed0dc664_8720181929786_1-small.png&w=1920&q=80",
+        "cardSha256": "2a88d7c266144deaa7b0d07e42337f8bcf65a581260b78dfde3038b31a0134e8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024349",
+        "title": "Wonder Wash Fruity Fiesta Coccolino",
+        "packSize": "1.48 l",
+        "unitPriceMinor": 6499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024349-wonder-wash-fruity-fiesta-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_7_b_5_97b5ff335f7eb9535937b2dead59e1493823285c_8720181920486_1-small.png&w=1920&q=80",
+        "cardSha256": "276534a55320d3d6411f22bf2a19928cbd1c6f5da3d66dc048b49e7b5f2bd295",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024348",
+        "title": "Wonder Wash Sensitive Coccolino",
+        "packSize": "1.48 l",
+        "unitPriceMinor": 6499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024348-wonder-wash-sensitive-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_c_0_b_9c0be59a7d60c56f566bf4367397c41f32673469_8720181920264_1-small.png&w=1920&q=80",
+        "cardSha256": "6bd69bac2f59ac2437c2d4cdd2f8daa45ce9aa4b75c44a51edc60896777c042f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024239",
+        "title": "Infinite Clean Antibac Cif",
+        "packSize": "280 ml",
+        "unitPriceMinor": 3499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024239-infinite-clean-antibac-cif",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_5_6_1_f561cbe88c801e44346d9d7e4076c5dc19dc4413_8720181915246_1-small.png&w=1920&q=80",
+        "cardSha256": "907100b96c0de271e42b8c9dc9ec0bb6f9708d5d5e3654aa0203285a87a39b7d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023179",
+        "title": "Chusteczki zapobiegające farbowaniu i wyłapujące brud 3w1 Dr Beckmann",
+        "packSize": "40 szt.",
+        "unitPriceMinor": 1599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023179-chusteczki-zapobiegajace-farbowaniu-i-wylapujace-brud-3w1-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_8_4_8_a84874fc2c16206b5d5addcc5c61a8b07b5772aa_62952_893859_PL_CDC_3in1_40sh_45mm_2504_FOP_Standard_Packshot-small.png&w=1920&q=80",
+        "cardSha256": "7befe697090e9255ebe52df67e3edd37a50171a78419e29d1f89e78f187f523c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0021327",
+        "title": "Perfumy do prania diamond orchid 30 prań Silan",
+        "packSize": "540 ml",
+        "unitPriceMinor": 2299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0021327-perfumy-do-prania-diamond-orchid-30-pran-silan",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_a_2_c_1a2cdef086fab4698572ed6d6ed98c4e788eca6d_bb_4e3fadd2f84b50d357d8c5086486d4e4-small.png&w=1920&q=80",
+        "cardSha256": "986b8a7c4769cd80c629aa9acd5593367eddb453aba960f57546123649ab8831",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0021288",
+        "title": "Proszek czyszczący do zmywarek Dr Beckmann",
+        "packSize": "75 g",
+        "unitPriceMinor": 949,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0021288-proszek-czyszczacy-do-zmywarek-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_c_8_4_7c845a7fc3ab565ead3a2ffce25b563afde91a6d_4008455496016_Dr._Beckmann_Proszek_Czyszcz__cy_do_zmywarek_75_g-small.png&w=1920&q=80",
+        "cardSha256": "7970d99ed5fc956633461437796352f11f872e74b946db99b21abd1c5bff82af",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018451",
+        "title": "Żel do prania tkanin białych active gel 22 prania Persil",
+        "packSize": "990 ml",
+        "unitPriceMinor": 3399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018451-zel-do-prania-tkanin-bialych-active-gel-22-prania-persil",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_8_2_3_e82356ec15212f3f1181afeb039bbb58feeda4fa_bb_27ec27d5d7df1c2f9639f8fcc454ae83-small.png&w=1920&q=80",
+        "cardSha256": "740173ddca810c9cf3ea74da044e4e546e64fe545985ca1327674847e2adbf6f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018373",
+        "title": "Kapsułki do zmywarki excellence premium 5in1 caps Somat",
+        "packSize": "24 szt.",
+        "unitPriceMinor": 3459,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018373-kapsulki-do-zmywarki-excellence-premium-5in1-caps-somat",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_5_5_2_8552d6b809ae20ec2fcd59a7639d932d0eb9be44_bb_Txgkd9GD2YRfOCuoiWH4Zg__-small.png&w=1920&q=80",
+        "cardSha256": "a5976fb95d290a831ba25e11c69b6d4c8bc330cdc6e396b915eeb71bdbf8af01",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018357",
+        "title": "Płyn do płukania tkanin fresh sky 50 prań Silan",
+        "packSize": "1100 ml",
+        "unitPriceMinor": 1749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018357-plyn-do-plukania-tkanin-fresh-sky-50-pran-silan",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_4_3_7_c437fb3d6a333d422de9b5af1a9bab7cdb3423ba_bb_19b5a01b170e9ea36170e0d69029ccaf-small.png&w=1920&q=80",
+        "cardSha256": "b9acfbe29307c27b49e5d1795e52d76814ec53b1c5a70d9e215165c5d06bfd83",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018356",
+        "title": "Płyn do płukania tkanin aromatherapy relaxing maldives 46 prań Silan",
+        "packSize": "1012 ml",
+        "unitPriceMinor": 1359,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018356-plyn-do-plukania-tkanin-aromatherapy-relaxing-maldives-46-pran-silan",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_1_a_7_71a7dcb4d5d7858b606437745d482bb29e7ce09a_bb_fd91167c5c021d09827e8a98d4482af8-small.png&w=1920&q=80",
+        "cardSha256": "35ff9eebd342fef4145c1fbb3097cc9511fc7b2f325d7d01cdff3b4d6260d61e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018334",
+        "title": "Proszek do prania białych i jasnych tkanin 20 prań Persil",
+        "packSize": "1.1 kg",
+        "unitPriceMinor": 3499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018334-proszek-do-prania-bialych-i-jasnych-tkanin-20-pran-persil",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_d_a_1_2da1683a0d32a43e7bb16d39a990b6a094d3e7be_bb_d9234179d87ac5826c2481b788b3d537-small.png&w=1920&q=80",
+        "cardSha256": "63b76f8a2a31c7d244ab153bf59798971b308fe1116395addb3a8175938edf73",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018331",
+        "title": "Proszek do prania kolorowych i ciemnych tkanin color 20 prań Persil",
+        "packSize": "1.1 kg",
+        "unitPriceMinor": 3499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018331-proszek-do-prania-kolorowych-i-ciemnych-tkanin-color-20-pran-persil",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_e_a_1_bea15e2e035d124b080a3e3818421b6d97d4e198_bb_614fd73bd6db3a1ea911a1c640d25f6c-small.png&w=1920&q=80",
+        "cardSha256": "8eea7503ab6863ce1f035f8cfb80987b7f3f3dce75165610d8393b6a37f9571d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016810",
+        "title": "Spray perfect finish przeciw pleśni Cif",
+        "packSize": "435 ml",
+        "unitPriceMinor": 2699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016810-spray-perfect-finish-przeciw-plesni-cif",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_2_b_b_f2bbce4162b796203f4cbb5e18612433b7d5a10d_bb_bfba1be31c86327467623fa2d742a57c-small.png&w=1920&q=80",
+        "cardSha256": "6f14b654d46e33cc173f62d210463ebaeede9233050bdf3b96904a11bc19243c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016798",
+        "title": "Żel do prania wonderwash odor protection 37 prań Coccolino",
+        "packSize": "1480 ml",
+        "unitPriceMinor": 6499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016798-zel-do-prania-wonderwash-odor-protection-37-pran-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_7_3_1_273154b50a98d379cc7fecf051d08bb3b523f0ff_bb_2ec737bdf9b8540648019dde4cbc2b9f-small.png&w=1920&q=80",
+        "cardSha256": "584727be7f6243d6ce538663502687f3081648f4686ee7bf67e2a46f95df5dad",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016797",
+        "title": "Żel do prania wonderwash ultra care 37 prań Coccolino",
+        "packSize": "1480 ml",
+        "unitPriceMinor": 6499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016797-zel-do-prania-wonderwash-ultra-care-37-pran-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_5_5_5_a5555a0e9565b166f5c8b384b013812afede104c_bb_9337acd3747dfab1a6d0f87125ec35fa-small.png&w=1920&q=80",
+        "cardSha256": "8b5fdb69088d563b4b68700bc2ec289d714fb83e0d3961b10b1b7edfeeca3a47",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016796",
+        "title": "Żel do prania wonderwash speed clean 37 prań Coccolino",
+        "packSize": "1480 ml",
+        "unitPriceMinor": 6499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016796-zel-do-prania-wonderwash-speed-clean-37-pran-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_d_1_5_bd15702088425c8395ef9b2555445db7b81ae2ad_bb_244024b810254f6744f4e1faa85d7967-small.png&w=1920&q=80",
+        "cardSha256": "1bbc203ed38c8e048dca88787f378031b386b71ac3efc4925d3a73d378a00c27",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016788",
+        "title": "Płyn do czyszczenia toalety i łazienki power foam zero limescale Domestos",
+        "packSize": "435 ml",
+        "unitPriceMinor": 2499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016788-plyn-do-czyszczenia-toalety-i-lazienki-power-foam-zero-limescale-domestos",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_2_0_4_f2046762344e2c3f71723dbf3e6a5a48833de45f_bb_9c4316da1c11c5ed1ed1ae642fb681e6-small.png&w=1920&q=80",
+        "cardSha256": "8c61e85434ac41d0455f6a4733e4366370ac1fb3b69233a6e03b4ee00f17a7a4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015342",
+        "title": "Zawieszki do toalet Fiji Unicorn Rainbow Domestos",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 2399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015342-zawieszki-do-toalet-fiji-unicorn-rainbow-domestos",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_c_f_5_fcf5ee54b0b90696fa6affbb7426d7820abd7eee_bb_bcd4f80205a134e2e10a9d9c77474db9-small.png&w=1920&q=80",
+        "cardSha256": "c296228399d9327ef78165d8dc4f3134dd4b83801b8249520ff16b4fdb9735ca",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012957",
+        "title": "OXI Power Odplamiacz do bieli Dr Beckmann",
+        "packSize": "400 g",
+        "unitPriceMinor": 1999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012957-oxi-power-odplamiacz-do-bieli-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_b_d_b_2bdbfef03472415fc1819012a2dfad10f63ff12b_62892_893844_PL_Power_White_Stain_Remover_with_spoon_400g_2507_Standard_Packshot-small.png&w=1920&q=80",
+        "cardSha256": "fba8e2f70191c4878fa0ed0c0bffb1b9f65f3cfc094ae89fa7330bd9fe71bc39",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012956",
+        "title": "OXI Power Odplamiacz do koloru Dr Beckmann",
+        "packSize": "400 g",
+        "unitPriceMinor": 1999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012956-oxi-power-odplamiacz-do-koloru-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_d_7_d_6d7d0e579c5902cc8384737436c08bb2a940d621_62902_893846_PL_Oxi_Power_Stain_Remover_with_spoon_400g_2507_Standard_Packshot-small.png&w=1920&q=80",
+        "cardSha256": "efa8e78b0ff6528c49b4c107ef398cec3182dc2702e6852b3d1d35e863b114b4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012953",
+        "title": "Odkamieniacz do pralek Dr Beckmann",
+        "packSize": "250 ml",
+        "unitPriceMinor": 1214,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012953-odkamieniacz-do-pralek-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_1_4_8_e14818e2db2dd4eccb6d27efd5bc4bac9ead89aa_bb_4661d42c31408157a3d2a126284743a9-small.png&w=1920&q=80",
+        "cardSha256": "ad19fee43f4e35403c1b322e9cd11ebee2181cd89783c9e3d71d6682898553a4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012947",
+        "title": "Super biel Dr Beckmann",
+        "packSize": "80 g",
+        "unitPriceMinor": 559,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012947-super-biel-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_f_7_e_8f7ee5c12057c1689be68411267e9e221f465728_bb_b5050d8c831fb41950ece136a4b175b7-small.png&w=1920&q=80",
+        "cardSha256": "638137fec2e51b97b174c12fcd96b7f78d108f237a23bef597e4ec34f4b5d944",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012945",
+        "title": "Chusteczki do prania przywracające czerń Dr Beckmann",
+        "packSize": "6 szt.",
+        "unitPriceMinor": 949,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012945-chusteczki-do-prania-przywracajace-czern-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_3_7_f_337f23f5acfc831481237fe157df3f02d9c58b49_bb_d4a4f6a437d51970fe88423b7cc07d75-small.png&w=1920&q=80",
+        "cardSha256": "889b4e8ab4d6629c6b6cd707d4f7067085c0b5ff5bcf642103391a2e8a7cb472",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012939",
+        "title": "Listki czyszczące uniwersalne spring fresh Dr Beckmann",
+        "packSize": "20 szt.",
+        "unitPriceMinor": 1599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012939-listki-czyszczace-uniwersalne-spring-fresh-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_5_2_1_35216ff58916075844e9968b3b6795e6f6af171f_bb_a70aad738dc5e19ee06afdcf47061144-small.png&w=1920&q=80",
+        "cardSha256": "b59dde80190ea9bd456d99fc3be6ee9736e4870d5fc66bafad6a9312fe9e80ad",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012106",
+        "title": "Żel do prania dla osób o wrażliwej skórze sensitive Coccolino",
+        "packSize": "1.72 l",
+        "unitPriceMinor": 6999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012106-zel-do-prania-dla-osob-o-wrazliwej-skorze-sensitive-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_6_6_5_d66574902e614ffcc17f33a7ec076e70611d23b9_bb_d314db3afdb1ee87674c003151f15024-small.png&w=1920&q=80",
+        "cardSha256": "89a14a2f17fcca1848895f5ce0783b214e82fcc55d46ec06fb1d44593fc825bb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012103",
+        "title": "Zawieszki do toalet blue water duo ocean Domestos",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 1499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012103-zawieszki-do-toalet-blue-water-duo-ocean-domestos",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_5_1_7_4517e4e299fb38404bd72cfe8da1d655b7aa5574_bb_7a0421d3fdfeb5a204f4be4aa6cfe4f1-small.png&w=1920&q=80",
+        "cardSha256": "09704c723f5d7db2883b05053c7f14419ad7898d86fae76b71a3efa20cdb7823",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012101",
+        "title": "Zawieszki do toalet power 5 duo ocean Domestos",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012101-zawieszki-do-toalet-power-5-duo-ocean-domestos",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_b_c_3_ebc3191ba58ee9dfeff5c3543b71540fb43751e0_bb_56b498f3a8d73888c5f05b50afa20b4c-small.png&w=1920&q=80",
+        "cardSha256": "79d55d2b07f1a35bc83af890615d93c6e5cd017544f25dbe1ac1dcfabb822dc5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012095",
+        "title": "Żel pod prysznic extra fresh Men+Care Dove",
+        "packSize": "400 ml",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012095-zel-pod-prysznic-extra-fresh-men-care-dove",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_c_7_b_9c7b8eff0ca2feb515383d2a38c74bcb96ce7be6_bb_d7390a1aeeda7d169eb28a6a5012b0f4-small.png&w=1920&q=80",
+        "cardSha256": "bce1f125cf36dfa28358adc7db40c83136a03aab1cf7483fd7d7104279016617",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012088",
+        "title": "Żel pod prysznic essential silky velvet Dove",
+        "packSize": "450 ml",
+        "unitPriceMinor": 2299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012088-zel-pod-prysznic-essential-silky-velvet-dove",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_b_e_1_1be18f25dfa74154b029e53d3ae865e1ba4b1a4c_bb_5dabe723df34695034eff259036494ee-small.png&w=1920&q=80",
+        "cardSha256": "ba35ac33825cec6338ef599deb5419bed34026d35434fa155fd4835a8009d169",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012087",
+        "title": "Żel pod prysznic essential hydrate Dove",
+        "packSize": "450 ml",
+        "unitPriceMinor": 2299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012087-zel-pod-prysznic-essential-hydrate-dove",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_f_e_4_1fe422327c7c257591135477a13193b28bfd8bae_bb_57ce73e7882cd31f88e25c3cc20d1d45-small.png&w=1920&q=80",
+        "cardSha256": "05e918da51ffa1e18f1d21162e6e5d910618f5559f57d4113b58ae9bc63dfdaf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012085",
+        "title": "Mydło w płynie zapas deeply nourishing Dove",
+        "packSize": "500 ml",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012085-mydlo-w-plynie-zapas-deeply-nourishing-dove",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_3_3_9_13399549f54189ec52df57b7882018d0d96599a5_bb_KcyKkwoWSVVJYrDqawbufg__-small.png&w=1920&q=80",
+        "cardSha256": "b81e9761409f0055584b493e862c216e1902c8b36018ac8d6b9d732af3a74e1d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012062",
+        "title": "Żel do toalet przedłużona moc citrus fresh Domestos",
+        "packSize": "750 ml",
+        "unitPriceMinor": 810,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012062-zel-do-toalet-przedluzona-moc-citrus-fresh-domestos",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_f_b_b_3fbb4c16e7e92ca4ef9e8e285a70e2d6f8101e1b_bb_616d841c349a1749b2f4be65be2e5430-small.png&w=1920&q=80",
+        "cardSha256": "b3455ad987bbdc83be82526d3b2c804b2b293dafdb70a427da5f02034f3fe4a1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011331",
+        "title": "Środek usuwający plamy i zapachy po zwierzętach ze szczotką Dr Beckmann",
+        "packSize": "650 ml",
+        "unitPriceMinor": 1599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011331-srodek-usuwajacy-plamy-i-zapachy-po-zwierzetach-ze-szczotka-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_3_b_c_e3bcd603275d556cba4f45894bbc4e210e9a359b_bb_1980f35ac345cac03e7e97119e4e5fad-small.png&w=1920&q=80",
+        "cardSha256": "2adf44605e47962fd95e5e51bd2e7b259a5278df464503b5a6b65a1b2755bfd6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010847",
+        "title": "Płyn do mycia uniwersalny cytrynowy Sidolux",
+        "packSize": "1 l",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010847-plyn-do-mycia-uniwersalny-cytrynowy-sidolux",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_e_2_c_4e2cce258b131cfc465c59da91a0074639c443be_5902986248269_F-small.png&w=1920&q=80",
+        "cardSha256": "5b938d73c7d18f2bfd103765a7614212335e5f24ddac826247de1a44fafa05e9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010846",
+        "title": "Uniwersalny płyn do mycia powierzchni lawendowe pole Sidolux",
+        "packSize": "1 l",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010846-uniwersalny-plyn-do-mycia-powierzchni-lawendowe-pole-sidolux",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_1_c_bf1c65152e7e4ca19fa362db46cf2ff56ceade62_5902986270178_F-small.png&w=1920&q=80",
+        "cardSha256": "12e678f669353ae9e61d73356ecca66506ed5013d2f43991e4b82c33393e3480",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010113",
+        "title": "Płyn do mycia paneli i drewna z olejkiem arganowym Sidolux",
+        "packSize": "750 ml",
+        "unitPriceMinor": 1059,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010113-plyn-do-mycia-paneli-i-drewna-z-olejkiem-arganowym-sidolux",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_7_1_4_c71425d510457c30e2c47e7d8fce4f777029317f_F_5902986213472_SIDOLUX_EXPERT__DO_MYCIA_DREWNA_i_PANELI_olejek_ARGANOWY_750_ml_6000x6000-small.png&w=1920&q=80",
+        "cardSha256": "03e69bf5939df63d492d1085d9c156338ca8bb1fd3279e1e9572d6947b9fb2f4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009968",
+        "title": "Mydło w płynie deeply nourishing Dove",
+        "packSize": "250 ml",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009968-mydlo-w-plynie-deeply-nourishing-dove",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_5_1_6_951666c49bcb6e33f18fae736b9874f38c90da21_bb_HWmN5TINUXTZaHZliGhfIg__-small.png&w=1920&q=80",
+        "cardSha256": "b8e323920ed5a30d0df7ef6b401f1b245af9a02ddaa5d265508ce2ae69323aa2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008283",
+        "title": "Płyn do czyszczenia łazienki mydło marsylskie & pomarańcza Sidolux",
+        "packSize": "500 ml",
+        "unitPriceMinor": 1012,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008283-plyn-do-czyszczenia-lazienki-mydlo-marsylskie-pomarancza-sidolux",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_1_a_9_d1a9be7717138f6c27636d62c7ee036ccd89d484_front_5902986290695-small.png&w=1920&q=80",
+        "cardSha256": "89ab63390ca9cdce93506f1aff44b0edb5283e09a64d647d929492a051766e5a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008280",
+        "title": "Płyn uniwersalny kwiat japońskiej wiśni Sidolux",
+        "packSize": "1 l",
+        "unitPriceMinor": 656,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008280-plyn-uniwersalny-kwiat-japonskiej-wisni-sidolux",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_7_5_5_b755ace4afd1b22bc20a88da6f3cb952da005115_front_5902986201226-small.png&w=1920&q=80",
+        "cardSha256": "ea0bd9f88375524c38a41da6994710567a1bb4613e974fb0ce80591275454255",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008277",
+        "title": "Płyn do mycia mydło marsylskie Sidolux",
+        "packSize": "1 l",
+        "unitPriceMinor": 869,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008277-plyn-do-mycia-mydlo-marsylskie-sidolux",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_2_b_5_22b5bb09ca575a754ced10acfe4951f4f0763e7f_front_5902986248207-small.png&w=1920&q=80",
+        "cardSha256": "b4a538d0f4174e24638856a34b192f0705aecaa5d44bb9d2752db7f8bb1f17bd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005778",
+        "title": "Środek czyszczący do pralek Dr Beckmann",
+        "packSize": "250 ml",
+        "unitPriceMinor": 1214,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005778-srodek-czyszczacy-do-pralek-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_6_e_3_66e3acb000c155286eeed708f5325ac449232f3e_bb_ba347e7c0cb33654e224ba2620a7aefe-small.png&w=1920&q=80",
+        "cardSha256": "42a5e1bff1c83b43f5d3f7a29109970f170cab2ed67c8a89ae879fb2b9655496",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005776",
+        "title": "Spray do plam z dezodorantu i potu Dr Beckmann",
+        "packSize": "250 ml",
+        "unitPriceMinor": 1459,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005776-spray-do-plam-z-dezodorantu-i-potu-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_3_f_b_53fbf4cfd5d85163baf83e713ac053a24773496d_bb_24543fe18cef7e5b935a78b5e5ab055d-small.png&w=1920&q=80",
+        "cardSha256": "045a9ecff452491c266871fed9d956872b9e0b76e950d8527eeb957bd2d63248",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004261",
+        "title": "Mleczko do czyszczenia kuchni i łazienki cream lemon Cif",
+        "packSize": "780 g",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004261-mleczko-do-czyszczenia-kuchni-i-lazienki-cream-lemon-cif",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_e_4_6_ee462d4ddd16e2676985d73bee20e4ee196eee31_bb_ea0021acd08e88d6f7f31d5a67aec5d5-small.png&w=1920&q=80",
+        "cardSha256": "1f8a170f62877991387cd1a09c52ce1b71fc99bda00cbc0303b5d3e1311a240b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003330",
+        "title": "Środek do odkamieniania Dr Beckmann",
+        "packSize": "250 ml",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003330-srodek-do-odkamieniania-dr-beckmann",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_8_1_5_f815d5f268bea306a99e5509fa08f25cab7ebce5_bb_921f59393e174c02269bbb0d8df8595f-small.png&w=1920&q=80",
+        "cardSha256": "2b626cc66a483b5dbf84965f6536e9f6fc1398fa0a636bd181212ba1da8edad9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/nowosci",
+        "label": "Nowości"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/zestawy-okazje",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/goraco-polecam",
+        "label": "Gorąco Polecam"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/chemia-i-kosmetyki",
+        "label": "Chemia i kosmetyki"
+      },
+      {
+        "path": "/categories/okazje-i-premiery/spizarnia",
+        "label": "Spiżarnia"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/okazje-i-premiery/chemia-i-kosmetyki",
+    "observedAt": 1789906446026,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906446026-f072c5fb28dc",
+        "observationSha256": "f072c5fb28dcc162fa3fa8491301e688c0f9f8f8a5bb99cc13f811026883568e",
+        "screenshotSha256": "e518e87da13989f98747467fe8246c7f62fe34bb28cd0eb8db16142fdd74db93",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2186,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

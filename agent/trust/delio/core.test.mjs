@@ -23,6 +23,7 @@ function fixture(options = {}) {
     async catalog() { return { location: null, cacheRetrievedAt: now - 1000, items: [{ productId: 'coffee', title: 'Fixture coffee', priceMinor: 500, currency: 'PLN', privateAccount: 'must-not-leak' }] }; },
     async observeCart(args) { calls.observe++; now++; if (hooks.observe) return hooks.observe(args); return observed(args.accountId); },
     async mutateCart(args) { calls.mutate++; now++; if (hooks.mutate) return hooks.mutate(args); cart.set(args.accountId, structuredClone(args.lines)); return observed(args.accountId); },
+    async applyCoupon(args) { if (hooks.applyCoupon) return hooks.applyCoupon(args); return { coupon: { accepted: true, code: 'fixture-coupon', discountMinor: 0 } }; },
     async quote(args) {
       calls.quote++; now++; if (hooks.quote) return hooks.quote(args);
       const value = observed(args.accountId);

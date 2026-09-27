@@ -1,0 +1,279 @@
+{
+  "attempt": 5,
+  "caseId": "two-cheapest",
+  "runId": "run-f929ec92f0",
+  "repeat": 1,
+  "picker": "oracle",
+  "status": "completed",
+  "events": [
+    {
+      "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.39487499999995634
+    },
+    {
+      "step": 1,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 24.534709000000475
+    },
+    {
+      "step": 2,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 59.2948750000005
+    },
+    {
+      "step": 3,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 133.94579200000044
+    },
+    {
+      "step": 4,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 173.82687499999975
+    },
+    {
+      "step": 5,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 232.49895900000047
+    },
+    {
+      "step": 6,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 257.0855840000004
+    }
+  ],
+  "journalMs": 36.197917999998026,
+  "journalWrites": 9,
+  "blockedRequests": 0,
+  "contextSetupMs": 101.84620799999993,
+  "navigationMs": 14.541791000000558,
+  "spec": {
+    "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "values": {}
+  },
+  "runtime": {
+    "status": "completed",
+    "reason": null,
+    "steps": [
+      {
+        "step": 1,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 19.773415999999997,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 2,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.677958000000217,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 3,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 15.802749999999833,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 4,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.792583000000377,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 5,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 17.70325000000048,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 6,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.862375000000611,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 7,
+        "picker": "jev",
+        "operation": "done",
+        "ref": null,
+        "what": null,
+        "snapMs": 17.371667000000343,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "done_when_satisfied",
+        "doneWhen": [
+          {
+            "clause": "url=/bag",
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalMs": 316.60883400000057,
+      "snapMs": 82.03912400000081,
+      "pickMs": 0,
+      "actMs": 181.6524989999998,
+      "settleMs": 0,
+      "eventMs": 26.6436649999996,
+      "protocolCalls": 62,
+      "observations": 7,
+      "revalidations": 6,
+      "browserScans": 13,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 6,
+      "nativeActionsCompleted": 6,
+      "jevCalls": 0,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 6,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "clickAttempts": 6
+    },
+    "final": {
+      "url": "http://127.0.0.1:59942/s/run-f929ec92f0/bag",
+      "title": "Your bag"
+    },
+    "events": [
+      {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.39487499999995634
+      },
+      {
+        "step": 1,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 24.534709000000475
+      },
+      {
+        "step": 2,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 59.2948750000005
+      },
+      {
+        "step": 3,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 133.94579200000044
+      },
+      {
+        "step": 4,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 173.82687499999975
+      },
+      {
+        "step": 5,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 232.49895900000047
+      },
+      {
+        "step": 6,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 257.0855840000004
+      }
+    ],
+    "escalation": null,
+    "independentlyVerified": true,
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": null,
+  "verification": {
+    "expectation": "complete",
+    "passed": true,
+    "detail": {
+      "bag": [
+        "429f741bbab487f5",
+        "d0012786d26a1878"
+      ],
+      "wanted": [
+        "429f741bbab487f5",
+        "d0012786d26a1878"
+      ]
+    }
+  },
+  "verificationMs": 0.07116599999972095,
+  "verifiedSuccess": true,
+  "taskMs": 331.3003749999998,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 3.827957999999853,
+  "totalMs": 335.12954100000024,
+  "cleanupMs": 3.8528750000004948
+}

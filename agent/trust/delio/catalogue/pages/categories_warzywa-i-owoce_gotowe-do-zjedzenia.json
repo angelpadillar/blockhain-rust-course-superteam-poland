@@ -1,0 +1,718 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0008794",
+        "title": "Pomidorki daktylowe \"shake\"",
+        "packSize": "250 g",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008794-pomidorki-daktylowe-shake",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_4_8_3_24832669b7d26d0e55334c897ec1d57f467ac7b9_ChatGPT_Image_5_sie_2025__08_39_40-small.png&w=1920&q=80",
+        "cardSha256": "1e1145a26dbf73dd94d034e5bbeb227292b19ec700338375edabd26ccc0bae8e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009616",
+        "title": "Kubek ananas",
+        "packSize": "150 g",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009616-kubek-ananas",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_f_a_bffa2ddba9ca1542a1efbf309da6405a84ad43a7_36b45f1362be4e87c86d09e3895bcfa41d2b8304-small.png&w=1920&q=80",
+        "cardSha256": "e304e14d5ef4b377cc0c07bd89a5aedbfb2bb92a4db6d1fac7b3e39fea1ecfcf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009607",
+        "title": "Mix sałat z rukolą Sole Gusto",
+        "packSize": "160 g",
+        "unitPriceMinor": 569,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009607-mix-salat-z-rukola-sole-gusto",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_1_2_a_f12ad8a56672fb40a5edb6e1ef7ad509a2dd60fa_58857b4efe2b5e303ba9989a6bbfbc1e1446562b-small.png&w=1920&q=80",
+        "cardSha256": "17a723a31b356355afae667dc69ddd6262eaaf3700448c879b57339f1973115e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015239",
+        "title": "Cebula obrana",
+        "packSize": "4 szt.",
+        "unitPriceMinor": 529,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015239-cebula-obrana",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_1_7_7_31775bfd11302055cf2d05de0a10a28aa49f3abe_81fb252de10ad9eb117cb8009b730461f6d820e2-small.png&w=1920&q=80",
+        "cardSha256": "6b08564011069f376bbd8038404cb0fb6def1621c9868f4378f47c75a1d56d84",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000930",
+        "title": "Hummus Dobra Karma klasyczny",
+        "packSize": "110 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000930-hummus-dobra-karma-klasyczny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_0_1_6_c016d643ec998ddec557a7e62d3ce4b78e842f15_A0000930-small.png&w=1920&q=80",
+        "cardSha256": "efc4e56cb4f0f633363ba748e42f37fc5c1bd618633b459308c61e79c301d3c4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015237",
+        "title": "Kubek marchew obrana",
+        "packSize": "150 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015237-kubek-marchew-obrana",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_b_e_4_9be4d12d263bea3b97a0b34673ddb3176b8c5349_c4a7ccd4fbe8c94e438fc5996334992253c5604a-small.png&w=1920&q=80",
+        "cardSha256": "bd2bcf2a8e5c80abc8c7d96fffb48bd25e7d78b97197b27e19d0afcac4626e3c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009606",
+        "title": "Mix sałat z roszponką Sole Gusto",
+        "packSize": "160 g",
+        "unitPriceMinor": 569,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009606-mix-salat-z-roszponka-sole-gusto",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_0_7_2_10721f923974ee0ccb55511175b85f690ed32022_550eded0eb56d4605176351733e7437a883b1183-small.png&w=1920&q=80",
+        "cardSha256": "c59c8bbf44ba1f1e7d70b1032bc7a4a7d592f5afa3c2e4f61328a66a7e414fe0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009613",
+        "title": "Kubek nasion granatu",
+        "packSize": "100 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009613-kubek-nasion-granatu",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_7_1_7_c7174a6f8579ddd71891264b418628427636a88d_4b06aba84484d4947da32e8ae2ceca0032ee129a-small.png&w=1920&q=80",
+        "cardSha256": "1c57ac6d8b4f4f33898075bb2dc46c293537bfa03b05894ff96f5ce8d6bf54d0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007497",
+        "title": "Buraki gotowane Kraszkiewicz",
+        "packSize": "500 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007497-buraki-gotowane-kraszkiewicz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_2_4_44248f89509aea598a4a3ff22437f2628646d1c1_4f687360274a6ecded52beae2de8a9dbbf284f08-small.png&w=1920&q=80",
+        "cardSha256": "6cc2c8df5b7e2f731d5a05cd6ffe1f861b5004c60a8e9eaac5a68e0779204046",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009615",
+        "title": "Kubek mix melonów",
+        "packSize": "150 g",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009615-kubek-mix-melonow",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_a_8_9_6a891c05a12ee5a1f69590980d3d846dee16e071_aa6241b50938bd5ca5a639f9b134d88e42c72270-small.png&w=1920&q=80",
+        "cardSha256": "17d5920e5a534f95d8a2c1f6f9e858e3736f3b9eec4f853209a5d0c38be1eca8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024787",
+        "title": "Kubek soczystego arbuza",
+        "packSize": "150 g",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024787-kubek-soczystego-arbuza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_4_f_5_d4f5cc7225e0663ddb5f6dcff3349f08ee8c7c43_Kubek__soczystego_arbuza_150_g-small.png&w=1920&q=80",
+        "cardSha256": "c1d49e629f6bf093446e9099475629be8f2225050ef689ac57c0cd3a5633b431",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008608",
+        "title": "Surówka colesław łagodny Maga Foods",
+        "packSize": "300 g",
+        "unitPriceMinor": 489,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008608-surowka-coleslaw-lagodny-maga-foods",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_9_1_6_a9160447d4d160581bbf5094a1f38aad192e2373_maga_coles__aw-small.png&w=1920&q=80",
+        "cardSha256": "81d465ce2f490855ea41da7d581a95d43cea8c63c55f5fea9dacb5d047c8bd38",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008606",
+        "title": "Surówka z buraczków Maga Foods",
+        "packSize": "300 g",
+        "unitPriceMinor": 489,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008606-surowka-z-buraczkow-maga-foods",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_7_9_4_a7942ef48e277ac24643a932e341c910e77301d5_Maga_buraczki-small.png&w=1920&q=80",
+        "cardSha256": "c35e08e3aef83cd8994aea6bbec3ade34545bce7ddcf08bba87dd0835a12da8c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015959",
+        "title": "Buraki gotowane Bio",
+        "packSize": "500 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015959-buraki-gotowane-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_f_5_9_5f59cc4cecb60324ef05cee49dd9fc1fb03896fb_90935994e0fef59b138931ab1e6c9ebb85427330-small.png&w=1920&q=80",
+        "cardSha256": "0bb4f467d844f9eeb7e927aacafd64c199affd40d5fb61aae8be191cb8566cfc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009469",
+        "title": "Guacamole śródziemnomorskie",
+        "packSize": "200 g",
+        "unitPriceMinor": 1049,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009469-guacamole-srodziemnomorskie",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_a_b_2_bab2b167a95463973836dbd564fb192888ba8656_3c0213712ea70829cc6ccf3aeadbe58d3a934660-small.png&w=1920&q=80",
+        "cardSha256": "019df28fc07ae8ad5157d7f758711b18a7fa68f25e7eaefe6540e5078289a061",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024482",
+        "title": "Hummus klasyczny topping ciecierzyca Perla",
+        "packSize": "160 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024482-hummus-klasyczny-topping-ciecierzyca-perla",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_2_5_8_12589a4e2718b98ef50d30273b6d5570885e24e5_Hummus_classic_topping_ciecierzyca_PL-small.png&w=1920&q=80",
+        "cardSha256": "6d34a5fd2e75e47bee5977ca3cf0f858095508e72a65546e602b6fbe4d303e63",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011336",
+        "title": "Kubek kiwi",
+        "packSize": "150 g",
+        "unitPriceMinor": 849,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011336-kubek-kiwi",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_b_7_6_cb7670dcc5d0735037aa1a4c689974713d48e6d1_5b0d17e87934c394d40eafa34dc31a409df99b5e-small.png&w=1920&q=80",
+        "cardSha256": "edbdca37379302b2bb65e836774030f961ba55e4f31c5b3cb04e69a090c38590",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001374",
+        "title": "Kukurydza gotowana kolba Kraszkiewicz",
+        "packSize": "350 g",
+        "unitPriceMinor": 769,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001374-kukurydza-gotowana-kolba-kraszkiewicz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_7_b_9_47b97375ea26bc7baa4c084a9584807ac76ccce9_8d676fdabcab43643e3a9048a292e5ef0dd75345-small.png&w=1920&q=80",
+        "cardSha256": "097223fa10f9bb6361ea0114389961677efd3e06a3ce306fe8e0a9aa4e3d59ef",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024480",
+        "title": "Hummus klasyczny topping guacamole Perla",
+        "packSize": "160 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024480-hummus-klasyczny-topping-guacamole-perla",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_2_b_6_a2b6ebf551a861b479b1bfc1dfae6e1d6c42473d_Hummus_classic_topping_guacamole_PL-small.png&w=1920&q=80",
+        "cardSha256": "2746c534cc167dd3f9a15342e77e07b5a98f6b78998bff5739cde55d9b82dadc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024477",
+        "title": "Miodowe papryczki nadziane serkiem Perla",
+        "packSize": "150 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024477-miodowe-papryczki-nadziane-serkiem-perla",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_c_f_e_acfed3a38eda1bd8cf7dc7432cdcc92faa42630c_miodowe_papryczki_nadziewane_serkiem-small.png&w=1920&q=80",
+        "cardSha256": "0681c454306ce7b46984a2fa5ba993fc7f37bcac27091eaffff093825eef84e6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024481",
+        "title": "Antipasti mix: zielone papryczki pepperoni, czerwone papryczki, wiśniowe papryczki nadziewane serkiem Perla",
+        "packSize": "210 g",
+        "unitPriceMinor": 1399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024481-antipasti-mix-zielone-papryczki-pepperoni-czerwone-papryczki-wisniowe-papryczki-nadziewane-serkiem-perla",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_5_4_f_554f0c39e4f6cb5ca05f06bbf11ca15e9ab06078_ANTIPASTI_MIX_PEPERONI__CZERWONE_I_WI__NIOWE-small.png&w=1920&q=80",
+        "cardSha256": "36e44d6c8765b355c2d378f3f58b9146ec9ec65797b8edf56b1e86958031b4fd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009470",
+        "title": "Guacamole ostrawe",
+        "packSize": "200 g",
+        "unitPriceMinor": 1049,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009470-guacamole-ostrawe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_0_4_1_4041c6eb36822e65a48484dbe9244b80078630c6_f84ca491a7a57abd486d8ae931fe39792448f402-small.png&w=1920&q=80",
+        "cardSha256": "adcd2c7f94719a1093b129578a52a51ffc6fd6deaafd280a793f6dc619483d50",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024562",
+        "title": "Surówka z czerwonej kapusty Maga Foods",
+        "packSize": "300 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024562-surowka-z-czerwonej-kapusty-maga-foods",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_a_8_b_1a8ba95ab903a62ee90c276d67f406fab53d4cee_kapusta_-small.png&w=1920&q=80",
+        "cardSha256": "b505fa38f04075d76f118c932818c85359bf34807b4c961cb499ed3aca2dc453",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024476",
+        "title": "Czerwone papryczki nadziewane serkiem Perla",
+        "packSize": "150 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024476-czerwone-papryczki-nadziewane-serkiem-perla",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_f_4_1_3f41cce67cbccf46cef7ca1c2de6f1dd5c056a61_Czerwone_papryczki_nadziewane_serkiem-small.png&w=1920&q=80",
+        "cardSha256": "e5ac51908b51c621b3c9059e73c3a03c680add8d5b3e2e09c31b31d57b17af50",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+    "observedAt": 1789906476633,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906476633-166f9e5f4e66",
+        "observationSha256": "166f9e5f4e66d84cc916635eb020d5574c23ce4ed250b93d84dc163d84438a05",
+        "screenshotSha256": "45ff48fdd7cc20797c940716490c322c7cd27b1a62b0baf9477c6ac9a1af9353",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2244,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

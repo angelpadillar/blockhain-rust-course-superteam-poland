@@ -1,0 +1,32 @@
+{
+  "counts": {
+    "OBSERVED_SUCCESSFUL_ACTION": 85,
+    "CURATED_REQUIRED_ACTION": 59,
+    "AMBIGUOUS": 29,
+    "FAILED_ACTION": 106,
+    "VERIFIED_SUCCESSFUL_ACTION": 89
+  },
+  "by_split": {
+    "train": {
+      "OBSERVED_SUCCESSFUL_ACTION": 52,
+      "CURATED_REQUIRED_ACTION": 6,
+      "AMBIGUOUS": 23,
+      "FAILED_ACTION": 74,
+      "VERIFIED_SUCCESSFUL_ACTION": 39
+    },
+    "valid": {
+      "CURATED_REQUIRED_ACTION": 3,
+      "VERIFIED_SUCCESSFUL_ACTION": 25,
+      "OBSERVED_SUCCESSFUL_ACTION": 18,
+      "FAILED_ACTION": 14,
+      "AMBIGUOUS": 3
+    },
+    "test": {
+      "CURATED_REQUIRED_ACTION": 1,
+      "VERIFIED_SUCCESSFUL_ACTION": 25,
+      "OBSERVED_SUCCESSFUL_ACTION": 15,
+      "AMBIGUOUS": 3,
+      "FAILED_ACTION": 18
+    }
+  }
+}

@@ -1,0 +1,3 @@
+Jev browser benchmark upload fixture.
+Contents are deliberately benign: a plain-text marker used only to satisfy
+required file inputs on public test forms. Never put real user data here.

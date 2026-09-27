@@ -1,0 +1,78 @@
+{
+  "schema": "buena.browser-decision.snapshot/1",
+  "version": "browser-decision-v003",
+  "created_at": "2026-09-25T15:39:05.051Z",
+  "tool": {
+    "record_schema": "buena.browser-decision.record/1",
+    "dhash_available": true
+  },
+  "source_checkout": {
+    "main": "/Users/buena/Code/blockchain-rust-superteam-poland",
+    "browser": "/Users/buena/Code/blockchain-rust-superteam-poland-browser",
+    "checkout": "/Users/buena/Code/blockchain-rust-superteam-poland; browser worktree /Users/buena/Code/blockchain-rust-superteam-poland-browser"
+  },
+  "source_commit": null,
+  "counts": {
+    "total_decisions": 441,
+    "canonical_decisions": 319,
+    "near_duplicates_removed": 122,
+    "clusters": 319,
+    "image_records": 51,
+    "security_examples": 13,
+    "failed_action_negatives": 113,
+    "page_families": 30
+  },
+  "page_families": [
+    "altitude.altitude-balance",
+    "altitude.altitude-card-create-error",
+    "altitude.altitude-card-create-form",
+    "altitude.altitude-card-freeze",
+    "captions.authenticated-home",
+    "captions.captions-home",
+    "captions.navigation-ready",
+    "captions.upload-failure",
+    "glovo.glovo-checkout",
+    "glovo.glovo-delivered",
+    "glovo.glovo-payment-confirmation",
+    "jev-bench.all",
+    "jev-bench.local",
+    "jev-bench.stress",
+    "journal.account_menu",
+    "journal.authenticator_challenge",
+    "journal.checkpoint:human_verification_required",
+    "journal.login_form",
+    "journal.other",
+    "router.account_menu",
+    "router.authenticator_challenge",
+    "router.checkpoint:human_verification_required",
+    "router.login_form",
+    "router.other",
+    "trust-demo.approval",
+    "trust-demo.confirmation",
+    "trust-demo.quote",
+    "trust.approval",
+    "trust.confirmation",
+    "trust.quote"
+  ],
+  "label_quality": {
+    "OBSERVED_SUCCESSFUL_ACTION": 120,
+    "VERIFIED_SUCCESSFUL_ACTION": 116,
+    "VERIFIED_HUMAN_ESCALATION": 2,
+    "CURATED_REQUIRED_ACTION": 59,
+    "AMBIGUOUS": 31,
+    "FAILED_ACTION": 113
+  },
+  "splits": {
+    "train": 194,
+    "valid": 63,
+    "test": 62
+  },
+  "leakage": {
+    "sha256_crossing": [],
+    "trajectory_crossing": [],
+    "duplicate_in_eval": [],
+    "clean": true
+  },
+  "secrets_checked": true,
+  "notes": "Immutable snapshot; no secrets, cookies, tokens, proxy credentials or webhook URLs."
+}

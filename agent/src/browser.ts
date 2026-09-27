@@ -978,6 +978,7 @@ export async function handleThreeDs(
   config: AgentConfig,
   options: RuntimeOptions,
   fallbackMerchant = "WOLT",
+  onChallenge?: () => void,
 ): Promise<ThreeDsAudit> {
   const quote = readJson<QuoteOutput>("quote.json");
   if (quote.charge_currency === null || quote.charge_amount === null) {
@@ -1042,12 +1043,13 @@ export async function handleThreeDs(
   }
 
   const attemptStartedAt = new Date();
+  onChallenge?.();
   const otp = await pollForOtp(options, attemptStartedAt, config);
   console.log(`3DS message from: ${otp.from}`);
   console.log(
     `3DS payment: ${otp.currency} ${otp.amount.toFixed(2)} to ${otp.merchant}`,
   );
-  console.log(`3DS OTP: ${otp.otp}`);
+  console.log("3DS OTP received (not printed); bound to the active attempt.");
   if (!options.allowThreeDsSubmit) {
     console.log(
       "ALLOW_3DS_SUBMIT=false. Complete 3DS manually; the agent will not type the code.",
@@ -1074,7 +1076,7 @@ export async function handleThreeDs(
   }
 
   await requireExactConfirmation(
-    `The agent is ready to transmit OTP ${otp.otp} to the visible card-network 3DS page.`,
+    `The agent is ready to transmit the validated 3DS code (…${otp.otp.slice(-2)}) to the visible card-network 3DS page.`,
     "SUBMIT OTP",
   );
   await otpInput.fill(otp.otp);

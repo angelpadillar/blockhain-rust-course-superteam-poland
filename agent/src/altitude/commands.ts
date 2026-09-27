@@ -129,14 +129,14 @@ export function parseCardRows(text: string): CardSummary[] {
       )
         ? preceding
         : null;
-    const window = lines.slice(index, index + 6).join(" ");
+    const window = lines.slice(index, index + 10).join(" ");
     const status =
       window.match(
         /\b(Active|Frozen|Closed|Pending|Blocked|Canceled|Cancelled)\b/i,
       )?.[1] ?? "";
     const limit =
       window.match(
-        /\$[\d,]+(?:\.\d{2})?\s*(?:\/\s*\d+\s*days?|Per authorization|All time)/i,
+        /\$[\d,]+(?:\.\d{2})?\s*\/?\s*(?:per\s*authorization|\d+\s*days?|all\s*time)/i,
       )?.[0] ?? "";
     rows.push({
       cardholder,

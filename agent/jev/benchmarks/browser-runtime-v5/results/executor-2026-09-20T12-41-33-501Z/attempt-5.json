@@ -1,0 +1,1297 @@
+{
+  "attempt": 5,
+  "caseId": "two-cheapest",
+  "runId": "run-49ff34b3a7",
+  "repeat": 1,
+  "picker": "oracle",
+  "status": "incomplete",
+  "events": [
+    {
+      "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+      "maxSteps": 30,
+      "type": "loop_started",
+      "elapsedMs": 0.3686670000001868
+    },
+    {
+      "step": 1,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 28.531792000000223
+    },
+    {
+      "step": 2,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 59.960417000000234
+    },
+    {
+      "step": 3,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 138.98516700000027
+    },
+    {
+      "step": 4,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 175.068084
+    },
+    {
+      "step": 5,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 248.87900000000036
+    },
+    {
+      "step": 6,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 274.11579200000006
+    },
+    {
+      "step": 7,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 342.4492500000001
+    },
+    {
+      "step": 8,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 373.628334
+    },
+    {
+      "step": 9,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 430.8647920000003
+    },
+    {
+      "step": 10,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 456.82658400000037
+    },
+    {
+      "step": 11,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 513.5122500000002
+    },
+    {
+      "step": 12,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 540.0398340000002
+    },
+    {
+      "step": 13,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 599.0631250000001
+    },
+    {
+      "step": 14,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 624.067
+    },
+    {
+      "step": 15,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 680.5375840000002
+    },
+    {
+      "step": 16,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 707.8247500000002
+    },
+    {
+      "step": 17,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 763.4979170000001
+    },
+    {
+      "step": 18,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 793.1077500000001
+    },
+    {
+      "step": 19,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 864.2197920000003
+    },
+    {
+      "step": 20,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 890.3870420000003
+    },
+    {
+      "step": 21,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 947.700875
+    },
+    {
+      "step": 22,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 974.5858750000002
+    },
+    {
+      "step": 23,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1046.9683750000004
+    },
+    {
+      "step": 24,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 1073.7491250000003
+    },
+    {
+      "step": 25,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1131.5925000000002
+    },
+    {
+      "step": 26,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 1157.3298750000004
+    },
+    {
+      "step": 27,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1214.3420420000002
+    },
+    {
+      "step": 28,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 1241.5029170000003
+    },
+    {
+      "step": 29,
+      "name": "consent_dismiss",
+      "type": "handler_fired",
+      "elapsedMs": 1315.025709
+    },
+    {
+      "step": 30,
+      "name": "cheapest_adds",
+      "type": "handler_fired",
+      "elapsedMs": 1340.8408750000003
+    }
+  ],
+  "journalMs": 155.91470700000036,
+  "journalWrites": 33,
+  "blockedRequests": 0,
+  "contextSetupMs": 286.23462500000005,
+  "navigationMs": 29.546542000000045,
+  "spec": {
+    "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "values": {}
+  },
+  "runtime": {
+    "status": "incomplete",
+    "reason": "step_limit",
+    "steps": [
+      {
+        "step": 1,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 21.425125000000207,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 2,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.236667000000125,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 3,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 18.11091600000009,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 4,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.499374999999873,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 5,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.58862500000032,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 6,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.89908400000013,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 7,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 22.344666000000416,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 8,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.7987499999999272,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 9,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.986374999999953,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 10,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.12637500000028,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 11,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.127124999999978,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 12,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.686541000000034,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 13,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.25604199999998,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 14,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.020166000000245,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 15,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.239292000000205,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 16,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.557416000000103,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 17,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.69191600000022,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 18,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 5.839958000000024,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 19,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.3394159999998,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 20,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.8125410000002375,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 21,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.649708000000373,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 22,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.073499999999967,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 23,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.21075000000019,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 24,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.726666000000023,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 25,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.82450000000017,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 26,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 3.874457999999777,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 27,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.77366600000005,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 28,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.599834000000101,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 29,
+        "picker": "deterministic",
+        "operation": "consent_dismiss",
+        "ref": null,
+        "what": null,
+        "snapMs": 16.59683300000006,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      },
+      {
+        "step": 30,
+        "picker": "deterministic",
+        "operation": "cheapest_adds",
+        "ref": null,
+        "what": null,
+        "snapMs": 4.020582999999988,
+        "pickMs": 0,
+        "actMs": 0,
+        "settleMs": 0,
+        "unsure": false,
+        "outcome": "handled"
+      }
+    ],
+    "metrics": {
+      "totalMs": 1383.959875,
+      "snapMs": 318.7622489999999,
+      "pickMs": 0,
+      "actMs": 793.4702940000016,
+      "settleMs": 0,
+      "eventMs": 148.63095999999905,
+      "protocolCalls": 287,
+      "observations": 30,
+      "revalidations": 30,
+      "browserScans": 60,
+      "observerWakeups": 0,
+      "nativeActionAttempts": 30,
+      "nativeActionsCompleted": 30,
+      "jevCalls": 0,
+      "unsurePicks": 0,
+      "abstains": 0,
+      "wastedSteps": 0,
+      "deterministicSteps": 30,
+      "staleRefreshes": 0,
+      "blockedRequests": 0,
+      "prematureDone": 0,
+      "clickAttempts": 30
+    },
+    "final": {
+      "url": "http://127.0.0.1:58305/s/run-49ff34b3a7/listing?added=429f741bbab487f5",
+      "title": "Stationery listing"
+    },
+    "events": [
+      {
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "maxSteps": 30,
+        "type": "loop_started",
+        "elapsedMs": 0.3686670000001868
+      },
+      {
+        "step": 1,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 28.531792000000223
+      },
+      {
+        "step": 2,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 59.960417000000234
+      },
+      {
+        "step": 3,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 138.98516700000027
+      },
+      {
+        "step": 4,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 175.068084
+      },
+      {
+        "step": 5,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 248.87900000000036
+      },
+      {
+        "step": 6,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 274.11579200000006
+      },
+      {
+        "step": 7,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 342.4492500000001
+      },
+      {
+        "step": 8,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 373.628334
+      },
+      {
+        "step": 9,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 430.8647920000003
+      },
+      {
+        "step": 10,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 456.82658400000037
+      },
+      {
+        "step": 11,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 513.5122500000002
+      },
+      {
+        "step": 12,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 540.0398340000002
+      },
+      {
+        "step": 13,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 599.0631250000001
+      },
+      {
+        "step": 14,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 624.067
+      },
+      {
+        "step": 15,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 680.5375840000002
+      },
+      {
+        "step": 16,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 707.8247500000002
+      },
+      {
+        "step": 17,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 763.4979170000001
+      },
+      {
+        "step": 18,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 793.1077500000001
+      },
+      {
+        "step": 19,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 864.2197920000003
+      },
+      {
+        "step": 20,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 890.3870420000003
+      },
+      {
+        "step": 21,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 947.700875
+      },
+      {
+        "step": 22,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 974.5858750000002
+      },
+      {
+        "step": 23,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1046.9683750000004
+      },
+      {
+        "step": 24,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 1073.7491250000003
+      },
+      {
+        "step": 25,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1131.5925000000002
+      },
+      {
+        "step": 26,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 1157.3298750000004
+      },
+      {
+        "step": 27,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1214.3420420000002
+      },
+      {
+        "step": 28,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 1241.5029170000003
+      },
+      {
+        "step": 29,
+        "name": "consent_dismiss",
+        "type": "handler_fired",
+        "elapsedMs": 1315.025709
+      },
+      {
+        "step": 30,
+        "name": "cheapest_adds",
+        "type": "handler_fired",
+        "elapsedMs": 1340.8408750000003
+      }
+    ],
+    "escalation": {
+      "reason": "step_limit",
+      "permittedContext": {
+        "origin": "http://127.0.0.1:58305",
+        "title": "Stationery listing",
+        "goal": "Put the two cheapest stationery items in the shopping bag, then open the bag.",
+        "controls": [
+          {
+            "what": "View bag (1)",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main",
+              "navigation"
+            ],
+            "component": null,
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX white 2x2",
+              "text": "KALLAX white 2x2 29 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX black-brown 2x2",
+              "text": "KALLAX black-brown 2x2 29 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX white 2x4",
+              "text": "KALLAX white 2x4 49 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "KALLAX white 1x4",
+              "text": "KALLAX white 1x4 39 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "BILLY birch bookcase",
+              "text": "BILLY birch bookcase 59 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "LINNMON table",
+              "text": "LINNMON table 25 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "HB pencil pack",
+              "text": "HB pencil pack 3 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Dust-free eraser",
+              "text": "Dust-free eraser 2 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Steel ruler 30cm",
+              "text": "Steel ruler 30cm 4 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Masking tape",
+              "text": "Masking tape 6 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Craft glue",
+              "text": "Craft glue 5 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Binder clips x12",
+              "text": "Binder clips x12 4 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Kraft folder",
+              "text": "Kraft folder 7 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Desk stapler",
+              "text": "Desk stapler 12 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Reading lamp",
+              "text": "Reading lamp 35 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          },
+          {
+            "what": "Add to bag",
+            "role": "a",
+            "kind": "link",
+            "where": [
+              "main"
+            ],
+            "component": {
+              "kind": "card",
+              "label": "Swivel chair",
+              "text": "Swivel chair 89 PLN Add to bag"
+            },
+            "supports": [
+              "click"
+            ]
+          }
+        ],
+        "observationScope": "Last observed permitted controls; reacquire before any future action.",
+        "lastStep": {
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        "independentlyVerified": false
+      },
+      "completedSteps": [
+        {
+          "step": 1,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 2,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 3,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 4,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 5,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 6,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 7,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 8,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 9,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 10,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 11,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 12,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 13,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 14,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 15,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 16,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 17,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 18,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 19,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 20,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 21,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 22,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 23,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 24,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 25,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 26,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 27,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 28,
+          "operation": "cheapest_adds",
+          "target": null
+        },
+        {
+          "step": 29,
+          "operation": "consent_dismiss",
+          "target": null
+        },
+        {
+          "step": 30,
+          "operation": "cheapest_adds",
+          "target": null
+        }
+      ],
+      "uncertainAction": false,
+      "automaticRetryAllowed": false
+    },
+    "independentlyVerified": false,
+    "doneWhen": [
+      "url=/bag"
+    ],
+    "scope": "Stepwise goal loop: one batched typed decision per step over observed permitted controls; deterministic finish checks decide completion; model output never becomes selectors, code, navigation or typed text beyond supplied values."
+  },
+  "reason": "step_limit",
+  "verification": {
+    "expectation": "complete",
+    "passed": false,
+    "detail": {
+      "bag": [
+        "429f741bbab487f5"
+      ],
+      "wanted": [
+        "429f741bbab487f5",
+        "d0012786d26a1878"
+      ]
+    }
+  },
+  "verificationMs": 0.028832999999849562,
+  "verifiedSuccess": false,
+  "taskMs": 1413.8172920000002,
+  "accounting": {
+    "calls": [],
+    "modelCalls": 0,
+    "modelMs": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usageComplete": true,
+    "costComplete": true,
+    "costUsd": 0,
+    "knownCostUsd": 0,
+    "costBasis": "provider_reported",
+    "screenshotCalls": 0
+  },
+  "finalizationMs": 4.468459000000166,
+  "totalMs": 1418.2879590000002,
+  "cleanupMs": 4.687582999999904
+}

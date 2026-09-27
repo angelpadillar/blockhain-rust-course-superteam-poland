@@ -1,0 +1,618 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0025183",
+        "title": "Chipsy Bitter&Sweet Crunchips",
+        "packSize": "130 g",
+        "unitPriceMinor": 489,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025183-chipsy-bitter-sweet-crunchips",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_c_8_7_ec87079e2787e632d45b1138c61b255efd02d709_Crunchips_BITTERSweet_130g-small.png&w=1920&q=80",
+        "cardSha256": "d97b44c418b6cf758c5729e9eacdeb2e67ec8e370ecb21d61a1e7dc5b11f2eaa",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025281",
+        "title": "Piwo 0% Tyskie 0,33L",
+        "packSize": "330 ml",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025281-piwo-0-tyskie-0-33l",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_6_5_0_4650333da0c6eb4f8497fbb193750e38fa7bbb62_5901359224756-small.png&w=1920&q=80",
+        "cardSha256": "f314e8116060019032cbaea77add37003721168781594d1c376ac1514a62bbd4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022217",
+        "title": "Kolagen 20 tabletki musujące",
+        "packSize": "20 szt.",
+        "unitPriceMinor": 779,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022217-kolagen-20-tabletki-musujace",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_c_7_8_1c78dfefad7172044e405844993d9f9be8a5771d_5904139421673-small.png&w=1920&q=80",
+        "cardSha256": "4125a384d6ed313362a6adb3bca9d1a5124fcbb44ea2e0e0d7a02944c48dad3a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024718",
+        "title": "Premium Snack Exotic dream",
+        "packSize": "140 g",
+        "unitPriceMinor": 2379,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024718-premium-snack-exotic-dream",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_9_7_2_f97244efb3401c30904bc07b9278522bfe01f5f0_5907177775944-small.png&w=1920&q=80",
+        "cardSha256": "c3befefde2e3821381045cb16a96e0b1613b50a7ea6810b843725e8e64fe1b04",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025171",
+        "title": "Piwo 0% Słodka Gruszka Łomża",
+        "packSize": "330 ml",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025171-piwo-0-slodka-gruszka-lomza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_2_0_6_22062c3ec6ed7d23e9cd4f9cc9d6c8066d324f90_5900535029901-small.png&w=1920&q=80",
+        "cardSha256": "417bfbb513ac8ae3b7269a3fa8ebf74230c24adc6e32fcad1d2b052b0715767d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024566",
+        "title": "Żelki do obierania o smaku białej brzoskwini Qlove Peelable",
+        "packSize": "75 g",
+        "unitPriceMinor": 359,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024566-zelki-do-obierania-o-smaku-bialej-brzoskwini-qlove-peelable",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_f_a_4_cfa44056b36af99457538608cf8edf6c3bf28c94_6975231002212-small.png&w=1920&q=80",
+        "cardSha256": "77b8b6a9438d97a2623fff59c3394c47accbf0ed010e6dab336b2391923ba161",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022202",
+        "title": "Witamina C 150 g",
+        "packSize": "150 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022202-witamina-c-150-g",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_8_6_4486a4436caf0de9a09b57c5b50257c72011e8a9_5902150285892-small.png&w=1920&q=80",
+        "cardSha256": "0f8e2a70d539d14388f28d0dd543172e1ca53779b4542ca312556f8af9e5ebe8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024565",
+        "title": "Żelki do obierania o smaku mixu owocowego Lądowe zwierzątka Qlove Peelable",
+        "packSize": "60 g",
+        "unitPriceMinor": 359,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024565-zelki-do-obierania-o-smaku-mixu-owocowego-ladowe-zwierzatka-qlove-peelable",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_6_4_4_8644cd6ed27b6ccce57c6a7b8280f7e1ea44d401_6975231002250-small.png&w=1920&q=80",
+        "cardSha256": "813919a63c48bda2de76bb0917ae87905446fa4040828f0e5d9c10ca126ebf9c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025170",
+        "title": "Piwo 0% Kwaśne Jabłko Łomża",
+        "packSize": "330 ml",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025170-piwo-0-kwasne-jablko-lomza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_e_c_3_0ec323049eaed8507d85709cb5394af7d94148b3_5900535029895-small.png&w=1920&q=80",
+        "cardSha256": "e4bfc422978188ecc83cd6d31c20d6128f4501f4230657cb0c43b59ad0a18f8d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022184",
+        "title": "Shot Curcuma bez dodatku cukru 60 ml Welsom",
+        "packSize": "60 ml",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022184-shot-curcuma-bez-dodatku-cukru-60-ml-welsom",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_2_e_8_22e8d71081a5b2afb57f181b728a6986d32afc50_5906395231607-small.png&w=1920&q=80",
+        "cardSha256": "0fd17cf72b28d222ddbcbf7218daf4c232fbcfe0f7e67ff30910fc718fd79fad",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024564",
+        "title": "Żelki do obierania o smaku owocowej oranżady Morskie zwierzątka Qlove Peelable",
+        "packSize": "60 g",
+        "unitPriceMinor": 359,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024564-zelki-do-obierania-o-smaku-owocowej-oranzady-morskie-zwierzatka-qlove-peelable",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_3_e_a_d3ea64ca082341789a09c884255b363e1efce339_6975231002267-small.png&w=1920&q=80",
+        "cardSha256": "ab595cf1c3bfd6cd76b9a2bf17e61de5b102ac5abb0478383d94b77781a39635",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018363",
+        "title": "Płyn do płukania tkanin derma & care 46 prań Silan",
+        "packSize": "1012 ml",
+        "unitPriceMinor": 1150,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018363-plyn-do-plukania-tkanin-derma-care-46-pran-silan",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_5_e_f_35efa63b945db911d205e7a301d1d654690a9e1d_bb_724caa4f9d72db186c458103fded3705-small.png&w=1920&q=80",
+        "cardSha256": "f9dd28b0739542145e3c8d63474f01b532f41d7f5f8e397e216c9f1877f9df08",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023916",
+        "title": "Wafelki WW w mlecznej czekoladzie z nadzieniem orzechowym Wedel",
+        "packSize": "230 g",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023916-wafelki-ww-w-mlecznej-czekoladzie-z-nadzieniem-orzechowym-wedel",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_5_f_c_95fc9bc42c4e9af903dab60ebf3a9ca462b2b637_5901588402864-small.png&w=1920&q=80",
+        "cardSha256": "d53c2284ea3aeecc36fe4d34f384817917e4a0dfcc5cfc65b3fdaac0fe7faa4f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024128",
+        "title": "Piwo Premium Lager Książęce",
+        "packSize": "500 ml",
+        "unitPriceMinor": 419,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024128-piwo-premium-lager-ksiazece",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_2_1_a_b21a94520caa0a90b9e43d1fbb41fbc6d6c0f075_PACKSHOTY_JUSH_DELIO_KSI_PREMIUM_kopia-small.png&w=1920&q=80",
+        "cardSha256": "4659295145a9b88d7943df8751d6a2c9d191860a1a71b53941a82227abcae517",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022175",
+        "title": "Kolagen 500MG w proszku 60 g",
+        "packSize": "60 g",
+        "unitPriceMinor": 1559,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022175-kolagen-500mg-w-proszku-60-g",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_8_3_9_0839d55dc46ffebefa0698f273ef73ab6a0dd119_5903242582820-small.png&w=1920&q=80",
+        "cardSha256": "3542a09b79f1a082218cedcdbf02dbaa49c515a27ff82e6713c00ff2aa2a1b92",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023855",
+        "title": "Czekolada mleczna z płynnym nadzieniem z dodatkiem Whisky Lindt",
+        "packSize": "100 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023855-czekolada-mleczna-z-plynnym-nadzieniem-z-dodatkiem-whisky-lindt",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_3_d_b_13db54a20c087c57f37c51fe9de98f7306dc3575_4000539004704-small.png&w=1920&q=80",
+        "cardSha256": "b6e46521bef4a2f4e053b278e629317b4d23ced46f30fc267712a030361130e7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024112",
+        "title": "Piwo Salty Żywiec",
+        "packSize": "330 ml",
+        "unitPriceMinor": 300,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024112-piwo-salty-zywiec",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_b_7_0_cb70f8806064c3e1eab5da82d34cd2dab233996d_Salty_nowos__c__-small.png&w=1920&q=80",
+        "cardSha256": "d924c8b6f2b4dae80654c4b94758d5c79dc67c83294e05074c23503760ec2356",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023846",
+        "title": "Chipsy Mexican Salsa X-Cut Crunchips",
+        "packSize": "130 g",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023846-chipsy-mexican-salsa-x-cut-crunchips",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_f_3_0_df300ebf3c53e5341f586fe187f9ec071cb6ea2c_bb_aa6453a6dd13d47246d734d50252f696-small.png&w=1920&q=80",
+        "cardSha256": "b61741910c231d597a785e51d332c38e1dd545848752d2439ac2146c67a90a51",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020864",
+        "title": "Szampon moisturizing care Head&Shoulders",
+        "packSize": "400 ml",
+        "unitPriceMinor": 1949,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020864-szampon-moisturizing-care-head-shoulders",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_3_7_2_3372bb364b10764b387d04e97e22448022ba6002_bb_a8105251fcffdfafc3734be617cb60a0-small.png&w=1920&q=80",
+        "cardSha256": "e780109e5cd4fb6150ad8fe10130f2aeafb34627ec4fcbef953da41304d9f9db",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023303",
+        "title": "Kanapka proteinowa Crunch & Cream o smaku czekoladowym Corny",
+        "packSize": "35 g",
+        "unitPriceMinor": 479,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023303-kanapka-proteinowa-crunch-cream-o-smaku-czekoladowym-corny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_8_e_f_a8ef6bdc3d656cc92b51239fe44a6ffc4d7a921b_Crunch___Cream_Czekoladowy-small.png&w=1920&q=80",
+        "cardSha256": "260f3ee15fd109b01f627f20cc24903958bd3f5bc28792145b178403b24b93f3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023009",
+        "title": "Eatyx posiłek w płynie sakura",
+        "packSize": "300 ml",
+        "unitPriceMinor": 1119,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023009-eatyx-posilek-w-plynie-sakura",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_2_2_e_522e9f08bf06c43e183b7e1846a677201e17002c_5905741545658___eatyx___proteins___PROTEIN_FOOD_300_ml___sakura_bloom___01___PL_EN_PL-small.png&w=1920&q=80",
+        "cardSha256": "c06339d453d57ddac8ddd632378b7c20e16b255869b6cadbf41697e6f9098d6c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016834",
+        "title": "Antyperspirant w sprayu advanced aloe vera Rexona",
+        "packSize": "150 ml",
+        "unitPriceMinor": 1319,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016834-antyperspirant-w-sprayu-advanced-aloe-vera-rexona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_3_0_3_730304b3793e5e30314843ad1561b4647b3dc073_bb_3b279054eac84e90e83ca46a3a2819a5-small.png&w=1920&q=80",
+        "cardSha256": "faf502911815f270daf5ebc050763e2b90fe7acbee1530b0290ec72e5cd09a86",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022255",
+        "title": "Piwo passion fruit Desperados",
+        "packSize": "400 ml",
+        "unitPriceMinor": 433,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022255-piwo-passion-fruit-desperados",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_8_e_c_68ec78c65b6b613ae5c331d3f4aad16d10d7a10b_5900699113454-small.png&w=1920&q=80",
+        "cardSha256": "24b0032f773d26fae7348c5c5066f1103fd465177ecae48ec1c0b74f2d9f6246",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023007",
+        "title": "Eatyx posiłek w płynie matcha latte",
+        "packSize": "300 ml",
+        "unitPriceMinor": 1119,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023007-eatyx-posilek-w-plynie-matcha-latte",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_2_a_a_c2aad9c718db15fa09539f8829e98dddcf0ac2ac_5905741545634___eatyx___proteins___PROTEIN_FOOD_300_ml___strawberry_matcha___01___PL_EN_PL-small.png&w=1920&q=80",
+        "cardSha256": "ff924e27b5ec25eacdf21f8a256d96ae6b5c9dede4d6379cc043692a79dd082c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022734",
+        "title": "Mleczne czekoladki serce Lindt",
+        "packSize": "50 g",
+        "unitPriceMinor": 959,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022734-mleczne-czekoladki-serce-lindt",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_a_b_0_8ab08e9e43417c44b8a2f2c036e9b1121e870f53_lindor_heart-small.png&w=1920&q=80",
+        "cardSha256": "ae498c027e00e269042e3a009451d227dc80d83d17da67857a9617888ab9179e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013623",
+        "title": "Szczoteczka do zębów allrounder Oral-B",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 844,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013623-szczoteczka-do-zebow-allrounder-oral-b",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_3_4_3_e34369462cd506614a6e0f5385e50aa0a3dc7eb2_bb_939b3856fb6fb40de9563d306fd33d5a-small.png&w=1920&q=80",
+        "cardSha256": "e07f5fd54b3d7f3fd3b67402d59a414a828ad64fa0c255ca5f8c8c4656710b93",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022254",
+        "title": "Piwo mango Desperados",
+        "packSize": "400 ml",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022254-piwo-mango-desperados",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_4_c_b_54cb599eee0e5ee376dd84328656d52e6e590f37_5900699113430-small.png&w=1920&q=80",
+        "cardSha256": "9b7f01d6f827a2d3312c1b4e9d64b18f37641312ef04aec0f0ab918ba5d95713",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022666",
+        "title": "Bombonierka Geisha",
+        "packSize": "190 g",
+        "unitPriceMinor": 1499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022666-bombonierka-geisha",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_8_c_8_b8c806ab16572a9d05bc8c4c83826fa2fd25ad63_fazer_geisha_heart_190g_405329_web-small.png&w=1920&q=80",
+        "cardSha256": "8b0a99fb19006c2863383e305bc4915fd2845688e2617d32f743aaddffbc09ba",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012072",
+        "title": "Antyperspirant w sprayu aloe vera Rexona",
+        "packSize": "150 ml",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012072-antyperspirant-w-sprayu-aloe-vera-rexona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_1_1_c_b11c5e5c75483d3dd80dfd1b2236bfbd7de1ea3c_bb_3c43f9badc82c4135912290e1f6d1ffa-small.png&w=1920&q=80",
+        "cardSha256": "c85abd765791395ccb5014bb3829052c0b09d67eab38730caf3ea9ce32ce6938",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020942",
+        "title": "Czekolada z migdałami z Olejem MCT BeKeto",
+        "packSize": "80 g",
+        "unitPriceMinor": 779,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020942-czekolada-z-migdalami-z-olejem-mct-beketo",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_1_c_7_b1c7c6ebab44d70a8a8fb72192777c56716a563d_A0020942_-small.png&w=1920&q=80",
+        "cardSha256": "63cf12c3eb007fb2db0c0022ac341cdbecb946e26db5b4efeca6eae516f54ac6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016804",
+        "title": "Płyn do płukania tkanin perfume & care honeysuckle & sandalwood Coccolino",
+        "packSize": "925 ml",
+        "unitPriceMinor": 1421,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016804-plyn-do-plukania-tkanin-perfume-care-honeysuckle-sandalwood-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_0_a_c_90ac0da55e1a1b25643429b9394fd50a7884972b_bb_bc0c9ca3b7128cf23aedcbcc42802853-small.png&w=1920&q=80",
+        "cardSha256": "3ef1c2669b8844451b47df4cffa0f49db59fec06853e2f2861b46afb1749f714",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022239",
+        "title": "Wino musujące Martini Mimosa",
+        "packSize": "750 ml",
+        "unitPriceMinor": 3079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022239-vermouth-mimosa-martini",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_e_1_f_fe1f74f053da7a9c2c7003f6b79ff84156dc33f4_2c5e04b0e9ebedbbe3cfd701d83439891e2d0539-small.png&w=1920&q=80",
+        "cardSha256": "015347aabc739dc10d4d252dbecc8a48fd5f151d273dc06a959a3c0aef432dd6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020941",
+        "title": "Wegańska Keto Czekolada z Olejem MCT – Ciemna Klasyczna",
+        "packSize": "80 g",
+        "unitPriceMinor": 779,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020941-weganska-keto-czekolada-z-olejem-mct-ciemna-klasyczna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_f_0_4_4f04bad87f8385a7077890c901d6da4fafc2a80f_5060834810256-small.png&w=1920&q=80",
+        "cardSha256": "1e51ee477ca5b513742ef919a3ab9b4416e516a8987b4c2a199fdb900ef344a8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011827",
+        "title": "Mus owocowy w tubce z morelami, jabłkiem i gruszką dla dzieci po 6. miesiącu życia BoboVita",
+        "packSize": "80 g",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011827-mus-owocowy-w-tubce-z-morelami-jablkiem-i-gruszka-dla-dzieci-po-6-miesiacu-zycia-bobovita",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_7_c_d_07cdc259a60b27684e87b51e981bb7862f9c5879_bb_dbcaa50a1a9d03b4870bd98105eef9a3-small.png&w=1920&q=80",
+        "cardSha256": "e4956815315fa807eb4d2b1e5dd5455e15dbc7963c9d8516b51e11e5ff98901b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020083",
+        "title": "Posiłek w płynie waniliowy bez laktozy Eatyx",
+        "packSize": "500 ml",
+        "unitPriceMinor": 1329,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020083-posilek-w-plynie-waniliowy-bez-laktozy-eatyx",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_c_c_e_dcce2af548b5ce57309a09d65e62e7e04843fd18_5905741541629___EATYX_ZBILANSOWANY_PE__NOWARTO__CIOWY_POSI__EK_GOTOWY_DO_SPO__YCIA_WANILIA_LACT-small.png&w=1920&q=80",
+        "cardSha256": "788e3f0e0e461b516710f4e4f5f2dcaf6e452abcf8b18a8ba831b69fe8564ecf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018268",
+        "title": "Hyper 18 vitamins&minerals Eatyx",
+        "packSize": "95 ml",
+        "unitPriceMinor": 489,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018268-hyper-18-vitamins-minerals-eatyx",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_c_7_d_7c7db382809f2fada7b76316fdf9677d7cf5b50a_5905741541339___18_VITAMINS___MINERALS_POMARA__CZA_MALINA_95_ML_01-small.png&w=1920&q=80",
+        "cardSha256": "6ff733b3bdef29f5123a109d0f5cb2c1d74f84a75e6c3c216df38d3d76dd62f5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016902",
+        "title": "Piwo 0% jabłko trawa cytrynowa Free Lech",
+        "packSize": "500 ml",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016902-piwo-jablko-cytryna-0-free-lech",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_f_8_6_2f86fe278ab59ba614417d48c6b7be7bfd76e08e_aa6a5c7b_e299_4a5e_949e_67d5e52c94df-small.png&w=1920&q=80",
+        "cardSha256": "b2872e1550094e6e0d00cf91e3d804da2682ff6aa601aad5a55b89ac3d105c90",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011769",
+        "title": "Żel pod prysznic odświeżający bubble tea Niezłe Ziółko",
+        "packSize": "300 ml",
+        "unitPriceMinor": 659,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011769-zel-pod-prysznic-odswiezajacy-bubble-tea-niezle-ziolko",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_7_d_0_a7d066e727894055421ea2491539554fc48923ea_bb_7nCzVvTz6Qp2HaWHm_pCfw__-small.png&w=1920&q=80",
+        "cardSha256": "908478d00e20d9941d013ebd79ac15c64f0fd2e2bbe147539461b5c9d3265656",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014736",
+        "title": "Zbilansowany posiłek w płynie czekolada Eatyx",
+        "packSize": "300 ml",
+        "unitPriceMinor": 1139,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014736-zbilansowany-posilek-w-plynie-czekolada-eatyx",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_0_9_8_7098b681c421ff5027ba0d9711f3b964d3697ae1_5905741542176___eatyx___proteins___PROTEIN_FOOD_300_ml___rich_chocolate___01___PL_EN_PL-small.png&w=1920&q=80",
+        "cardSha256": "da9ef6512190a7fd3d2a1ee80cbe6a10ec864ad0a4cd9adc4367861b564fbc0b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011568",
+        "title": "Gin Bombay Sapphire Premier Cru",
+        "packSize": "700 ml",
+        "unitPriceMinor": 11899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011568-gin-bombay-sapphire-premier-cru",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_7_d_bf7d66a81b9b814b7eabf5b7c83c7366d7fef091_ba1367e1590f600bf2005cefa8bdbc232a9a607c-small.png&w=1920&q=80",
+        "cardSha256": "7bffd6c09f5c59351f5e1239c2f76296e9359eb435953aa21998f9a6e6a81800",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014732",
+        "title": "Hyper Protein Eatyx",
+        "packSize": "95 ml",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014732-hyper-protein-eatyx",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_5_b_9_45b9ad251320b24615b290c388c286e3aad94a78_5905741541247___PROTEIN_BOOSTER_WI__NIA_JAB__KO_GRUSZKA_95_ML_01-small.png&w=1920&q=80",
+        "cardSha256": "bf54b97646dc3859016e1c1b9e3c9242d4ca3d1523b93a3ed6069fa45d63e42c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011285",
+        "title": "Antyperspirant w kulce invisible protection Garnier",
+        "packSize": "50 ml",
+        "unitPriceMinor": 1639,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011285-antyperspirant-w-kulce-invisible-protection-garnier",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_f_2_a_9f2a41ca6a89bcedd44bc6dfd26610661fce160c_bb_h0fB3VDRwm8TwkK37CuX7w__-small.png&w=1920&q=80",
+        "cardSha256": "eabfa197d93fedda43fc4978c43e2d7a78aae83903724f7a8c34bf8f8251139c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010696",
+        "title": "Piwo bily lehky Kozel",
+        "packSize": "500 ml",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010696-piwo-bily-lehky-kozel",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_c_7_8_5c78da39138d5c4c7fe278a292e2f9638edceaab_0da3d216_dc43_4aac_b40d_6b898a8f7993-small.png&w=1920&q=80",
+        "cardSha256": "e7aeb0d478fb75b29ac9d744db1f7408247f948e3bd554300d015b36b93b5543",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009493",
+        "title": "Gulasz drobiowy z pieczarkami po 15 miesiącu Bobovita",
+        "packSize": "250 g",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009493-gulasz-drobiowy-z-pieczarkami-po-15-miesiacu-bobovita",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_2_f_0_32f0d9774b013d03a92bfe7762730e7485b6564d_bb_yb4xsRJLfgxNwdHk9ZwczQ__-small.png&w=1920&q=80",
+        "cardSha256": "b23842e78b837c3b56981d60c8a6566a64cbcce0545ebe4c18638e98a4d923e0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010654",
+        "title": "Piwo nocturno Desperados",
+        "packSize": "400 ml",
+        "unitPriceMinor": 433,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010654-piwo-nocturno-desperados",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_9_c_c_59cc7f247773a01490a880aa6242ac5f601bc58a_5900699109211-small.png&w=1920&q=80",
+        "cardSha256": "6ef367b629eb12576408150eb4b93b0c1a12b9ad1148d22d0d66a4e5d69f5827",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011712",
+        "title": "Pralinki z mlecznej czekolady Strawberry Lindt Lindor",
+        "packSize": "100 g",
+        "unitPriceMinor": 1379,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011712-pralinki-z-mlecznej-czekolady-strawberry-lindt-lindor",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_6_5_8_f658e0a4c87fad2f6a1781b87aaf3e192c82c4e7_bb_70092774b1b2bccd81f8ad90876340c0-small.png&w=1920&q=80",
+        "cardSha256": "5ada741a44c860e8e998b9a85c0652954cb69c80915e42d93aee4ca15dbc393b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wszystkie"
+      },
+      {
+        "path": "/categories/wyprzedaze/krotkie-terminy",
+        "label": "Krótkie terminy"
+      },
+      {
+        "path": "/categories/wyprzedaze/uroda-i-higiena",
+        "label": "Uroda i higiena"
+      },
+      {
+        "path": "/categories/wyprzedaze/domowe-zapasy",
+        "label": "Domowe zapasy"
+      },
+      {
+        "path": "/categories/wyprzedaze/pozostale",
+        "label": "Pozostałe"
+      },
+      {
+        "path": "/categories/wyprzedaze/mocne-trunki",
+        "label": "Mocne trunki"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/wyprzedaze",
+    "observedAt": 1789906422066,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906422066-1cdb6436129d",
+        "observationSha256": "1cdb6436129d7ff6b59e2bea19e5c4a24c905a96cc5a385d601905f328b9fbb0",
+        "screenshotSha256": "efa01b32b071ef61b15fa8cabc5d1e892767d3278267df0831979d8264954a75",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2502,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}
