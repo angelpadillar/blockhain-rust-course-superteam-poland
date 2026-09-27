@@ -21,3 +21,8 @@ agent/playwright-report/
 jobs/*.json
 !jobs/*.example.json
 .browser-jobs/
+
+# Agent Efficiency Runtime local telemetry (never committed)
+.jev-efficiency/
+# The installed observer plugin ships only its built runtime; keep it tracked.
+!.opencode/plugins/jev-efficiency-observer/runtime/dist/

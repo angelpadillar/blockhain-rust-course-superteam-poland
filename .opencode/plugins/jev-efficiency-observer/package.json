@@ -1,0 +1,17 @@
+{
+  "name": "opencode-plugin-jev-efficiency-observer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Observe-only OpenCode V2 adapter over the Agent Efficiency Runtime.",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.0.16"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2"
+  }
+}

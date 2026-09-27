@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "mode": "observe",
+  "resultAdmissionMode": "deterministic",
+  "shortlistMode": "soft",
+  "toolExposureMode": "off",
+  "routerMode": "observe",
+  "routerThreshold": 0.6,
+  "singleActionThreshold": 0,
+  "maxTools": 3,
+  "requiredTools": [],
+  "preset": "safe"
+}
