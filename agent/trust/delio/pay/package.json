@@ -1,0 +1,22 @@
+{
+  "name": "buena-delio-pay-island",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Build-only package: bundles the Privy wallet pay island for the Delio groceries page into ui/pay.js. The server itself stays zero-dependency.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@privy-io/react-auth": "3.42.0",
+    "@solana-program/memo": "0.8.0",
+    "@solana-program/system": "0.8.1",
+    "@solana-program/token": "0.6.0",
+    "@solana/kit": "3.0.3",
+    "@solana/spl-token": "0.4.14",
+    "@solana/web3.js": "1.98.4",
+    "esbuild": "0.25.10",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  }
+}

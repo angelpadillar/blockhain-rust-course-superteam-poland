@@ -1,0 +1,296 @@
+{
+  "images/ca4737a3cb60-01-browser_ready.png": {
+    "sha256": "ca4737a3cb60aee1ef9da57a1bbc5f489ff33ded919418260bb1486e49ea434c",
+    "bytes": 2943,
+    "dhash": "0000000000000000",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/.browser-jobs/youtube-live-01-reopened-mirror/jobs/youtube-live-01-reopened/screenshots/01-browser_ready.png"
+  },
+  "images/95c2db7ce037-approval-95c2db7ce037.png": {
+    "sha256": "95c2db7ce037d9fbe9a43fa63a1539a62deb82518a611f8cf5c70f9ab5662b69",
+    "bytes": 1070444,
+    "dhash": "848d8c8c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/543c84cd-9ce7-44f1-b3c1-5cc66bc02477/approval-95c2db7ce037.png"
+  },
+  "images/5c8ec9d30fef-quote-5c8ec9d30fef.png": {
+    "sha256": "5c8ec9d30fef3a79e96d6d3581c510dcef9636cf050552251d6db218b06ccaa6",
+    "bytes": 63530,
+    "dhash": "33c3a3a38b636798",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/f3e5c8bc-db4f-450c-83f2-583c456b77a5/quote-5c8ec9d30fef.png"
+  },
+  "images/0a1c6d71923c-confirmation-0a1c6d71923c.png": {
+    "sha256": "0a1c6d71923c782d3f6cf27aa9bdaefffb63592ea93e17e0198dc1bddb77e3af",
+    "bytes": 79887,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/543c84cd-9ce7-44f1-b3c1-5cc66bc02477/confirmation-0a1c6d71923c.png"
+  },
+  "images/df616a1d6325-quote.jpg": {
+    "sha256": "df616a1d63256b8c7de6b633ee060d62f0d31c6646e748d7479046aad4efe147",
+    "bytes": 59828,
+    "dhash": "174ac4e19e44440e",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/quote.jpg"
+  },
+  "images/cac718541146-approval.jpg": {
+    "sha256": "cac718541146aa369a116bbba40da3ec6ca5604fe5e85ddb3abcda6207033ace",
+    "bytes": 67688,
+    "dhash": "0c444c0ecc70240c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/approval.jpg"
+  },
+  "images/ba4ceeb34540-confirmation.jpg": {
+    "sha256": "ba4ceeb34540e3e62f34b6471806810de5a44bf9aa37239275608da897c9d2be",
+    "bytes": 67501,
+    "dhash": "0c444c0c40700404",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/confirmation.jpg"
+  },
+  "images/6da995b1d66a-price-quote.jpg": {
+    "sha256": "6da995b1d66a98e0211b223d79879e352dbbbe987a9f4527d34506034fa71591",
+    "bytes": 69318,
+    "dhash": "2760619664660e66",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/price-quote.jpg"
+  },
+  "images/56665aefbf23-price-approval.jpg": {
+    "sha256": "56665aefbf23a5111fc35506fbd5a012ea0a3f0f13665953aeda4fa84e8b1090",
+    "bytes": 68632,
+    "dhash": "1664660e62720406",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/price-approval.jpg"
+  },
+  "images/199aa0fde2c6-merchant-approval.jpg": {
+    "sha256": "199aa0fde2c6d79e39185cbd00c3b40b6ea56a96afa9df932c369ce07a78a5a5",
+    "bytes": 70324,
+    "dhash": "1e64660e62620505",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/merchant-approval.jpg"
+  },
+  "images/7eb188239e3c-altitude-balance.png": {
+    "sha256": "7eb188239e3c816fd51bf2ffa7173252131a7b614133d9dc674a443350a1d7b7",
+    "bytes": 239357,
+    "dhash": "4b444b3373512219",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/out/screenshots/altitude-balance.png"
+  },
+  "images/743df463c07f-altitude-card-freeze.png": {
+    "sha256": "743df463c07f99084fd5912c89fc9c353f1567f6a130dd6f0325fa9f25044dc2",
+    "bytes": 372023,
+    "dhash": "4b484b3275522119",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/out/screenshots/altitude-card-freeze.png"
+  },
+  "images/07c04b75663a-altitude-card-create-form.png": {
+    "sha256": "07c04b75663a7ef8b30cd7c58ed3bbbab8f7f1e70a2ac17d5039922641ff8ded",
+    "bytes": 294483,
+    "dhash": "494b4c3a081a0313",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/out/screenshots/altitude-card-create-form.png"
+  },
+  "images/65541b39c93f-altitude-card-create-error.png": {
+    "sha256": "65541b39c93f1bb94b91bbc980c37567891dee3ce823846a0e1bf098f6e425e6",
+    "bytes": 259985,
+    "dhash": "4b444b3377530619",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/out/screenshots/altitude-card-create-error.png"
+  },
+  "images/780baf02c65d-glovo-final-checkout.jpg": {
+    "sha256": "780baf02c65dd887d259549219bdaba4156a8372055bdebb005289c75c0fafc6",
+    "bytes": 92184,
+    "dhash": "80b28a8ea6c29080",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/out/screenshots/glovo-final-checkout.jpg"
+  },
+  "images/f8158d6c7668-glovo-confirmation.jpg": {
+    "sha256": "f8158d6c766839bfe6d0ba65815a104948dbc762263393c16a41d04ffacd9495",
+    "bytes": 71351,
+    "dhash": "86ae5eb032848280",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/out/screenshots/glovo-confirmation.jpg"
+  },
+  "images/0e3be0e8c64c-glovo-delivered.jpg": {
+    "sha256": "0e3be0e8c64c0f754b35b4aed77c25566f0a04e7fd3436c9f989a16be4670fc8",
+    "bytes": 85083,
+    "dhash": "928e8e9610a2c282",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland/agent/out/screenshots/glovo-delivered.jpg"
+  },
+  "images/f97cf60a99fa-captions-home.png": {
+    "sha256": "f97cf60a99fa75dd08ae08a46412624c323069777f0adbc23e2e912076751f48",
+    "bytes": 1227992,
+    "dhash": "0f7173f1f1e0f0e8",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/captions-editor/artifacts/captions-home.png"
+  },
+  "images/a614856a6010-authenticated-home.png": {
+    "sha256": "a614856a60102edec400e8709504af9eced766540c2955bf73b1bed2a5a298a0",
+    "bytes": 231050,
+    "dhash": "39d8cdc4cfcbc3c3",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/captions-editor/artifacts/authenticated-home.png"
+  },
+  "images/16a72757e26b-navigation-ready.png": {
+    "sha256": "16a72757e26be25d5a68b315aeecbccb6a2dff08041afbeb5beb6d9496589321",
+    "bytes": 784338,
+    "dhash": "d4c6c6c6cecce6c6",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/captions-editor/artifacts/navigation-ready.png"
+  },
+  "images/2df12a8521ba-upload-failure.png": {
+    "sha256": "2df12a8521bafd02541faf259fc6565ebc3fe18a2eec79cd18efd502fa9aa7d4",
+    "bytes": 690655,
+    "dhash": "39d8cbcbcb93938f",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/captions-editor/artifacts/upload-failure.png"
+  },
+  "images/c3f91c56b3df-approval-c3f91c56b3df.png": {
+    "sha256": "c3f91c56b3df26456b4c43f5e4c53de90a069261344829344a97dfc4ab0ceaa6",
+    "bytes": 1067399,
+    "dhash": "848d848c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/25b1fb8f-d66c-4f9e-961b-82a8a8c5f88b/approval-c3f91c56b3df.png"
+  },
+  "images/fcaabb1a75dd-approval-fcaabb1a75dd.png": {
+    "sha256": "fcaabb1a75ddeaa298feb8e9667c89225b3978390eddea476573e8886c410c16",
+    "bytes": 1071575,
+    "dhash": "848d848c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/77c7a776-e117-4c40-84b2-3f8d6f49fe09/approval-fcaabb1a75dd.png"
+  },
+  "images/1b59eeab95c5-confirmation-1b59eeab95c5.png": {
+    "sha256": "1b59eeab95c51685f421990b43fcf1b7b499297534ebfecb85ddafdf8a84d274",
+    "bytes": 78975,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/77c7a776-e117-4c40-84b2-3f8d6f49fe09/confirmation-1b59eeab95c5.png"
+  },
+  "images/72e05b6eefbe-approval-72e05b6eefbe.png": {
+    "sha256": "72e05b6eefbe8a7407dd8ce423269a61a5ddda6721dea9f1128ae8408d6a1e31",
+    "bytes": 1072871,
+    "dhash": "848d8c8c8c8c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/8eccf1cd-e7b4-4ebb-9d99-357be5178801/approval-72e05b6eefbe.png"
+  },
+  "images/f9c36c01158f-confirmation-f9c36c01158f.png": {
+    "sha256": "f9c36c01158f9aa0e1925eeb64e217457d458301272e45fd30db13dd45949dd5",
+    "bytes": 79122,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/8eccf1cd-e7b4-4ebb-9d99-357be5178801/confirmation-f9c36c01158f.png"
+  },
+  "images/4e3af0f74844-approval-4e3af0f74844.png": {
+    "sha256": "4e3af0f74844edd60e5bd985cd070efae9b298bb40e3f6a84362989f4a58537b",
+    "bytes": 1070759,
+    "dhash": "848d8c8c8c8c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/9626277f-7a35-4de6-a1d9-37c7e3878662/approval-4e3af0f74844.png"
+  },
+  "images/ebec5fff2726-confirmation-ebec5fff2726.png": {
+    "sha256": "ebec5fff2726a77b38f5d24cbb992ed9a9ffa1b0045e386e95772b1c545d27b3",
+    "bytes": 80611,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/9626277f-7a35-4de6-a1d9-37c7e3878662/confirmation-ebec5fff2726.png"
+  },
+  "images/99a0322f517c-approval-99a0322f517c.png": {
+    "sha256": "99a0322f517cfa7b70e8144f66323cd9b7fd1bc24d8928a6bd21d83dedf2fa59",
+    "bytes": 1071818,
+    "dhash": "848d848c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/a0be920b-ed5c-44ab-b453-da905372927b/approval-99a0322f517c.png"
+  },
+  "images/0ba2225c0a62-confirmation-0ba2225c0a62.png": {
+    "sha256": "0ba2225c0a62c8b1ea5406f201b839d418f3a436e061103cdca16e753caa32cc",
+    "bytes": 79683,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/a0be920b-ed5c-44ab-b453-da905372927b/confirmation-0ba2225c0a62.png"
+  },
+  "images/ad7b275a3e54-approval-ad7b275a3e54.png": {
+    "sha256": "ad7b275a3e5425e355d6e355ee61a6a76d36222690b1cda269bfda3b0ebae5dd",
+    "bytes": 1072366,
+    "dhash": "848d8c8c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/a5a1d4d4-0dcb-43d3-adaf-cfefda63fa5d/approval-ad7b275a3e54.png"
+  },
+  "images/78ae73e00086-confirmation-78ae73e00086.png": {
+    "sha256": "78ae73e000861c4a727b9def7848f4ae8afa9deb20bab84b491628a8690eb80a",
+    "bytes": 80239,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/a5a1d4d4-0dcb-43d3-adaf-cfefda63fa5d/confirmation-78ae73e00086.png"
+  },
+  "images/e75b1f5e4bee-approval-e75b1f5e4bee.png": {
+    "sha256": "e75b1f5e4bee26a6974089dbf80f7c0b3eb577808cd98b10895aee750a73cb33",
+    "bytes": 1071783,
+    "dhash": "848d8c8c8c8c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-41-40-013Z/b6a21539-b555-4853-8c58-0d956b840330/approval-e75b1f5e4bee.png"
+  },
+  "images/e001556a2a7a-approval-e001556a2a7a.png": {
+    "sha256": "e001556a2a7ae4212a89a4e9a9eb0dd61f95bf2602cfb01bf1986776725fc08e",
+    "bytes": 1068424,
+    "dhash": "848d848c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/0e656124-e6a9-40b2-8f99-740b97ab4914/approval-e001556a2a7a.png"
+  },
+  "images/1a6702fce0b3-approval-1a6702fce0b3.png": {
+    "sha256": "1a6702fce0b358aeb64c0834357e199a9f00ff0be4c3dfc84437871301684aab",
+    "bytes": 1071864,
+    "dhash": "848d8c8c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/51fa4ca0-751a-423e-a2bd-02aff3ea5892/approval-1a6702fce0b3.png"
+  },
+  "images/226e14e6d6ba-confirmation-226e14e6d6ba.png": {
+    "sha256": "226e14e6d6ba1dc41d1e722c0f6abb723934e377548f281d73ccae314e1a6b79",
+    "bytes": 80982,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/51fa4ca0-751a-423e-a2bd-02aff3ea5892/confirmation-226e14e6d6ba.png"
+  },
+  "images/f98bfaa504a3-approval-f98bfaa504a3.png": {
+    "sha256": "f98bfaa504a3ae4442ff2fdac1a5ec14f19d5457ea9a0168e2f29f7eebace07b",
+    "bytes": 1067965,
+    "dhash": "848d8c8c8c8c8c8d",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/5432e633-55d6-401e-a0a4-ecc887e501dc/approval-f98bfaa504a3.png"
+  },
+  "images/6ecbc675c4ac-approval-6ecbc675c4ac.png": {
+    "sha256": "6ecbc675c4acd7e909c1f4f1a61c1ce1eaead614881684a971a5ec653ffd4579",
+    "bytes": 1068696,
+    "dhash": "848d8c8c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/6a78b231-3235-43b9-bc23-acabce9baa25/approval-6ecbc675c4ac.png"
+  },
+  "images/f0ea59ed09aa-confirmation-f0ea59ed09aa.png": {
+    "sha256": "f0ea59ed09aad67a5b01d04579cae070678ebcd6116d084dad2b4f20d79f2c24",
+    "bytes": 80650,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/6a78b231-3235-43b9-bc23-acabce9baa25/confirmation-f0ea59ed09aa.png"
+  },
+  "images/2ab77ce7b8af-approval-2ab77ce7b8af.png": {
+    "sha256": "2ab77ce7b8afd9db24cc6388ab5d8a5e32f01353faecf062cc96e6f74b5d9402",
+    "bytes": 1070587,
+    "dhash": "848d8c8c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/9a4250da-3818-4e60-b1e3-63cc65727c23/approval-2ab77ce7b8af.png"
+  },
+  "images/b99f1c3aa9eb-confirmation-b99f1c3aa9eb.png": {
+    "sha256": "b99f1c3aa9eb5e7dc0b0c5cc7bb2663b8bbeb01d5a36c248fe5503b70be0c2ad",
+    "bytes": 81381,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/9a4250da-3818-4e60-b1e3-63cc65727c23/confirmation-b99f1c3aa9eb.png"
+  },
+  "images/60facc1e411f-approval-60facc1e411f.png": {
+    "sha256": "60facc1e411fb013a5f99f599fdd2dbca8ddb0d8458ec77ebd31cc44c02bbc6b",
+    "bytes": 1067667,
+    "dhash": "848d8c8c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/e3733b89-abc8-4b24-9a37-84519b48f124/approval-60facc1e411f.png"
+  },
+  "images/9b4c87df6123-confirmation-9b4c87df6123.png": {
+    "sha256": "9b4c87df6123e22dfb60d1829733881258c1b26b70e75cbb6a10e98043c333c8",
+    "bytes": 79982,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/e3733b89-abc8-4b24-9a37-84519b48f124/confirmation-9b4c87df6123.png"
+  },
+  "images/13fbbe39f0c8-approval-13fbbe39f0c8.png": {
+    "sha256": "13fbbe39f0c8c63729cb326802bcdc5291e2587fcf4a3bb67b6e4bda43747194",
+    "bytes": 1070646,
+    "dhash": "848d8c8c8c8c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/e9a6c0e5-9a4f-423f-a845-79516f57708f/approval-13fbbe39f0c8.png"
+  },
+  "images/3c367bdf3b2f-confirmation-3c367bdf3b2f.png": {
+    "sha256": "3c367bdf3b2fd997c3843c0a43d2950869bd32f05ab85d3bea1fae11a4636a2f",
+    "bytes": 80849,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/e9a6c0e5-9a4f-423f-a845-79516f57708f/confirmation-3c367bdf3b2f.png"
+  },
+  "images/e6b2098ab901-approval-e6b2098ab901.png": {
+    "sha256": "e6b2098ab901dc7aab1eeae252d57d5a4812b8e1aac8310b21f4b3a2a64325d6",
+    "bytes": 1072472,
+    "dhash": "848d8c8c848c8c8c",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/f3e5c8bc-db4f-450c-83f2-583c456b77a5/approval-e6b2098ab901.png"
+  },
+  "images/bad76f98b628-confirmation-bad76f98b628.png": {
+    "sha256": "bad76f98b628e983e14fd2ab1d58b31cfdace2006f4d2404bb224ba4b63adce0",
+    "bytes": 80125,
+    "dhash": "33c3a3a323c3c31b",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/integrated/validation-runs/2026-09-19T08-47-52-554Z/f3e5c8bc-db4f-450c-83f2-583c456b77a5/confirmation-bad76f98b628.png"
+  },
+  "images/95c7a7349d05-merchant-quote.jpg": {
+    "sha256": "95c7a7349d051f60fea5d97fdff12ab6ecc01011d948ec584bd18321170e39fb",
+    "bytes": 72052,
+    "dhash": "2761619f64640e66",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/merchant-quote.jpg"
+  },
+  "images/b9aafb49df4b-expired-quote.jpg": {
+    "sha256": "b9aafb49df4bfa78ca11a2d96a5a5ff1e1da8fb622c62ca5c724363ba7d88fb8",
+    "bytes": 69249,
+    "dhash": "2760619e64660e62",
+    "source_path": "/Users/buena/Code/blockchain-rust-superteam-poland-browser/agent/trust/demo/evidence-captures/expired-quote.jpg"
+  }
+}

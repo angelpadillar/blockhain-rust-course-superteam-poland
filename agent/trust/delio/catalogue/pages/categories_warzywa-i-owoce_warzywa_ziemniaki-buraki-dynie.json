@@ -1,0 +1,562 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0026056",
+        "title": "Dynia Gomez prosto od rolnika",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026056-dynia-gomez-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_e_b_f_bebf82b28b4a985ac3594cc7e0999f1925ea0fce_gomez-small.png&w=1920&q=80",
+        "cardSha256": "7cd9b3a2bc787dc8f3c7f9653d9aa5fb96c0792feb43e17268b997b77107a0e8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0026048",
+        "title": "Dynia Muskat prosto od rolnika",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026048-dynia-muskat-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_d_1_4_2d140d0913911c57c43ce349598b1f1e7ec63944_dynia_muskat-small.png&w=1920&q=80",
+        "cardSha256": "64e892084d3f0a03031ff1657e124ec5ab2d3905566d84621d10a3ed01670b07",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007285",
+        "title": "Dynia Hokkaido",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007285-dynia-hokkaido",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_2_d_e_92dea388022d1dea71ab62fb03e67c1553dc677b_A0007285-small.png&w=1920&q=80",
+        "cardSha256": "d3b2f82d708f61ad8668f1877c26045c290f41daeb6563f59fd3c8592c84a2f0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025303",
+        "title": "Ziemniaki prosto od rolnika",
+        "packSize": "2.5 kg",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025303-ziemniaki-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_2_f_f_f2ff1ecc2ebbe6a4ae7d057d6bb632e27bbdfd97_ziemniaki_od_rolnika__1_-small.png&w=1920&q=80",
+        "cardSha256": "283b33b79670d8acd2c31c5c4b21682b88abe8dc6787c122e59fe4dc9b6f5dc5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000750",
+        "title": "Ziemniaki siatka",
+        "packSize": "1.5 kg",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000750-ziemniaki-siatka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_7_3_2_3732a20414b75958f3410b67c0da908fc34e7130_A0000750-small.png&w=1920&q=80",
+        "cardSha256": "4cba2c3c24a891bf096ded949ad60ccb0879cc3a8dfc6909e78b69c4b3593557",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001136",
+        "title": "Ziemniaki bataty słodkie",
+        "packSize": "1 kg",
+        "unitPriceMinor": 1049,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001136-ziemniaki-bataty-slodkie",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_0_4_3_8043f06c23cf60b9a25a7e2902dccc306d2374b1_3a244a7acdd7dbef5e86f3196388432afb992627-small.png&w=1920&q=80",
+        "cardSha256": "69ff149881345881b0c566816586a290480fbf7b12562914e72ab8920aaaa551",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025267",
+        "title": "Buraki czerwone prosto od rolnika",
+        "packSize": "500 g",
+        "unitPriceMinor": 199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025267-buraki-czerwone-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_9_2_c_192c8b3c95ec7333688f0d962d51ae0a9ef694a3_Buraki_czerwone_prosto_od_rolnika-small.png&w=1920&q=80",
+        "cardSha256": "bc26a7e87f00b81492f53b4b1f15d479fba9d7e879ef9dde46a8608deec28fd2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007497",
+        "title": "Buraki gotowane Kraszkiewicz",
+        "packSize": "500 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007497-buraki-gotowane-kraszkiewicz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_2_4_44248f89509aea598a4a3ff22437f2628646d1c1_4f687360274a6ecded52beae2de8a9dbbf284f08-small.png&w=1920&q=80",
+        "cardSha256": "6cc2c8df5b7e2f731d5a05cd6ffe1f861b5004c60a8e9eaac5a68e0779204046",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0015959",
+        "title": "Buraki gotowane Bio",
+        "packSize": "500 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0015959-buraki-gotowane-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_f_5_9_5f59cc4cecb60324ef05cee49dd9fc1fb03896fb_90935994e0fef59b138931ab1e6c9ebb85427330-small.png&w=1920&q=80",
+        "cardSha256": "0bb4f467d844f9eeb7e927aacafd64c199affd40d5fb61aae8be191cb8566cfc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009142",
+        "title": "Dynia piżmowa",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009142-dynia-pizmowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_8_0_0_2800e87ee9df749c98b6eea7cbe1d17bd782cdc7_37be6753f0777208bda4d7997bc3e5380fd95ae7-small.png&w=1920&q=80",
+        "cardSha256": "385c90f560a765b96500048e595c6f3c10c7507a4c8a62e902775f4ee4537b0a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020893",
+        "title": "Dynia ozdobna niespodzianka mix",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020893-dynia-ozdobna-niespodzianka-mix",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_9_1_b_391bd4048812f011f9a76a801a52a61af780aca5_0600e32b9f551e9c56396469a12bb6c2dd0d939c-small.png&w=1920&q=80",
+        "cardSha256": "adac9d10c874f5cfe10d8f57e1d52a6877586a710b1895762a78237e5559e93b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+    "observedAt": 1789906732297,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906732297-c901971a47d9",
+        "observationSha256": "c901971a47d9469520eec5fe19f7f065542abae49aefc4c86ec63c79fd69d69f",
+        "screenshotSha256": "670400e9a28fbb7e884fff74b450b7d48697f7c36d68ae6cebc424e7ff8346d5",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2200,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

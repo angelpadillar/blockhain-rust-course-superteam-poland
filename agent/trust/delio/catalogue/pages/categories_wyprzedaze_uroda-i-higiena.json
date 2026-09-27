@@ -1,0 +1,598 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0022217",
+        "title": "Kolagen 20 tabletki musujące",
+        "packSize": "20 szt.",
+        "unitPriceMinor": 779,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022217-kolagen-20-tabletki-musujace",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_c_7_8_1c78dfefad7172044e405844993d9f9be8a5771d_5904139421673-small.png&w=1920&q=80",
+        "cardSha256": "b28dae1e2456a9f2f20651fc08987a29b62f7e74de22ac66ff97419d66ce13e3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022202",
+        "title": "Witamina C 150 g",
+        "packSize": "150 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022202-witamina-c-150-g",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_8_6_4486a4436caf0de9a09b57c5b50257c72011e8a9_5902150285892-small.png&w=1920&q=80",
+        "cardSha256": "aef807294dc78b4a025e7377ac58f16b9a53d3163a1b0d19aaccec8a84ccd70f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022184",
+        "title": "Shot Curcuma bez dodatku cukru 60 ml Welsom",
+        "packSize": "60 ml",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022184-shot-curcuma-bez-dodatku-cukru-60-ml-welsom",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_2_e_8_22e8d71081a5b2afb57f181b728a6986d32afc50_5906395231607-small.png&w=1920&q=80",
+        "cardSha256": "ffef8617b485a7b1d2f0deb8526c72a0e44e51fa00deeafe96cdf634c9be11db",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022175",
+        "title": "Kolagen 500MG w proszku 60 g",
+        "packSize": "60 g",
+        "unitPriceMinor": 1559,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022175-kolagen-500mg-w-proszku-60-g",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_8_3_9_0839d55dc46ffebefa0698f273ef73ab6a0dd119_5903242582820-small.png&w=1920&q=80",
+        "cardSha256": "09201dec459dcfab920371b26bd28acd086c8e1c57a6d45b2f9af8ad98c2c69d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020864",
+        "title": "Szampon moisturizing care Head&Shoulders",
+        "packSize": "400 ml",
+        "unitPriceMinor": 1949,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020864-szampon-moisturizing-care-head-shoulders",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_3_7_2_3372bb364b10764b387d04e97e22448022ba6002_bb_a8105251fcffdfafc3734be617cb60a0-small.png&w=1920&q=80",
+        "cardSha256": "e780109e5cd4fb6150ad8fe10130f2aeafb34627ec4fcbef953da41304d9f9db",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016834",
+        "title": "Antyperspirant w sprayu advanced aloe vera Rexona",
+        "packSize": "150 ml",
+        "unitPriceMinor": 1319,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016834-antyperspirant-w-sprayu-advanced-aloe-vera-rexona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_3_0_3_730304b3793e5e30314843ad1561b4647b3dc073_bb_3b279054eac84e90e83ca46a3a2819a5-small.png&w=1920&q=80",
+        "cardSha256": "faf502911815f270daf5ebc050763e2b90fe7acbee1530b0290ec72e5cd09a86",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013623",
+        "title": "Szczoteczka do zębów allrounder Oral-B",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 844,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013623-szczoteczka-do-zebow-allrounder-oral-b",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_3_4_3_e34369462cd506614a6e0f5385e50aa0a3dc7eb2_bb_939b3856fb6fb40de9563d306fd33d5a-small.png&w=1920&q=80",
+        "cardSha256": "e07f5fd54b3d7f3fd3b67402d59a414a828ad64fa0c255ca5f8c8c4656710b93",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0012072",
+        "title": "Antyperspirant w sprayu aloe vera Rexona",
+        "packSize": "150 ml",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0012072-antyperspirant-w-sprayu-aloe-vera-rexona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_1_1_c_b11c5e5c75483d3dd80dfd1b2236bfbd7de1ea3c_bb_3c43f9badc82c4135912290e1f6d1ffa-small.png&w=1920&q=80",
+        "cardSha256": "c85abd765791395ccb5014bb3829052c0b09d67eab38730caf3ea9ce32ce6938",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011827",
+        "title": "Mus owocowy w tubce z morelami, jabłkiem i gruszką dla dzieci po 6. miesiącu życia BoboVita",
+        "packSize": "80 g",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011827-mus-owocowy-w-tubce-z-morelami-jablkiem-i-gruszka-dla-dzieci-po-6-miesiacu-zycia-bobovita",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_7_c_d_07cdc259a60b27684e87b51e981bb7862f9c5879_bb_dbcaa50a1a9d03b4870bd98105eef9a3-small.png&w=1920&q=80",
+        "cardSha256": "e4956815315fa807eb4d2b1e5dd5455e15dbc7963c9d8516b51e11e5ff98901b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011769",
+        "title": "Żel pod prysznic odświeżający bubble tea Niezłe Ziółko",
+        "packSize": "300 ml",
+        "unitPriceMinor": 659,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011769-zel-pod-prysznic-odswiezajacy-bubble-tea-niezle-ziolko",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_7_d_0_a7d066e727894055421ea2491539554fc48923ea_bb_7nCzVvTz6Qp2HaWHm_pCfw__-small.png&w=1920&q=80",
+        "cardSha256": "908478d00e20d9941d013ebd79ac15c64f0fd2e2bbe147539461b5c9d3265656",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011285",
+        "title": "Antyperspirant w kulce invisible protection Garnier",
+        "packSize": "50 ml",
+        "unitPriceMinor": 1639,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011285-antyperspirant-w-kulce-invisible-protection-garnier",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_f_2_a_9f2a41ca6a89bcedd44bc6dfd26610661fce160c_bb_h0fB3VDRwm8TwkK37CuX7w__-small.png&w=1920&q=80",
+        "cardSha256": "eabfa197d93fedda43fc4978c43e2d7a78aae83903724f7a8c34bf8f8251139c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009493",
+        "title": "Gulasz drobiowy z pieczarkami po 15 miesiącu Bobovita",
+        "packSize": "250 g",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009493-gulasz-drobiowy-z-pieczarkami-po-15-miesiacu-bobovita",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_2_f_0_32f0d9774b013d03a92bfe7762730e7485b6564d_bb_yb4xsRJLfgxNwdHk9ZwczQ__-small.png&w=1920&q=80",
+        "cardSha256": "b23842e78b837c3b56981d60c8a6566a64cbcce0545ebe4c18638e98a4d923e0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008754",
+        "title": "Podpaski soft night Cleanic",
+        "packSize": "8 szt.",
+        "unitPriceMinor": 359,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008754-podpaski-soft-night-cleanic",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_3_3_f_d33f5ba3b63f060ce498d319c1159a0936f7f0d0_bb_b6sCd7aPJrJd4mtXVrKC4Q__-small.png&w=1920&q=80",
+        "cardSha256": "9147d945da0cee7bf0a444b594ffcd46e4fb5b85b13332a182814b226bac4c12",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008751",
+        "title": "Podpaski pure cotton night Cleanic",
+        "packSize": "8 szt.",
+        "unitPriceMinor": 659,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008751-podpaski-pure-cotton-night-cleanic",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_0_9_bf09b60b3e9b85606d6acb7bb0947d7dd1ce1c03_bb__IqjBx1BlOClhbgrF6kHlQ__-small.png&w=1920&q=80",
+        "cardSha256": "ba91187180cbef6feb5a8bac2faccafbb2a8a5325b460eac4920885fe4c396eb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/wyprzedaze/krotkie-terminy",
+        "label": "Krótkie terminy"
+      },
+      {
+        "path": "/categories/wyprzedaze/uroda-i-higiena",
+        "label": "Uroda i higiena"
+      },
+      {
+        "path": "/categories/wyprzedaze/domowe-zapasy",
+        "label": "Domowe zapasy"
+      },
+      {
+        "path": "/categories/wyprzedaze/pozostale",
+        "label": "Pozostałe"
+      },
+      {
+        "path": "/categories/wyprzedaze/mocne-trunki",
+        "label": "Mocne trunki"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/wyprzedaze/uroda-i-higiena",
+    "observedAt": 1789906455018,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906455018-5af62ad5e13a",
+        "observationSha256": "5af62ad5e13a3cf28898e05172a188a838497f5ded46bbc4e7d031b95bb5901c",
+        "screenshotSha256": "d3081cd58e3bd49772d7dc8779b3093b129f0b8b2cb0fd87778b269a0e50a92a",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1904,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

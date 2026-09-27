@@ -1,0 +1,385 @@
+{
+  "schema": "buena.browser-decision.heldout/1",
+  "immutable_test": true,
+  "created_at": "2026-09-25T12:22:13.364Z",
+  "updated_at": "2026-09-25T15:39:05.050Z",
+  "seed": 42,
+  "assignments": {
+    "jev-bench-2026-09-21T10-24-28-413Z-62b7ff95": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-11-13-786Z-06c0c765": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-51-41-903Z-34d14b20": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-55-19-539Z-fcef497a": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-39-48-913Z-070299fa": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T11-00-23-719Z-5f1ffd74": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-43-59-783Z-7dea5454": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-37-59-960Z-999b66f3": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-14-09-490Z-cc5ede13": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-12-17-432Z-dc6d8fef": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-41-10-836Z-1fc4dd37": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-50-35-405Z-0ef30c6d": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-41-05-218Z-1b1d10dc": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-38-22-925Z-1c923a4f": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-55-23-345Z-f7dccd03": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-03-38-424Z-43e1d31b": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-40-37-330Z-fcb1f25b": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-38-41-345Z-678d39c8": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "captions-editor-2026-09-18": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-46-44-289Z-914c33ea": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-44-06-409Z-6fcc6465": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-51-28-653Z-3005f591": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T11-00-35-106Z-3682eb7c": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-09-25-967Z-cad43b3d": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-46-33-064Z-8ad73bff": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-25T09-10-02-605Z-1a252928": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-21-01-583Z-b1cddad0": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-02-00-582Z-c61794af": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "trust-demo-price_increase": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-14-43-938Z-6ca36910": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "glovo-order-2026-08-30": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-40-53-438Z-c52c636b": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-10-58-487Z-b81e225f": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-04-57-713Z-d8f696b7": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-43-27-992Z-0041a9ab": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T11-27-53-170Z-045a573d": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-32-06-614Z-8a7d75f6": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-51-43-314Z-f8fc691d": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-02-06-438Z-72ce4036": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-25-28-886Z-8f0502d5": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T11-28-30-133Z-42e37083": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "trust-543c84cd-9ce7-44f1-b3c1-5cc66bc02477": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-20-26-671Z-68f5884e": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "altitude-2026-09-20": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-47-44-768Z-6c80fbe2": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-27-14-142Z-be2d1b3c": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-38-17-904Z-23aa2688": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-47-38-224Z-91e6d53d": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-30-53-461Z-47cdbd80": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-58-48-778Z-0339a872": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-31-14-346Z-516d7d7b": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-46-30-287Z-558521bf": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "trust-demo-merchant_mismatch": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-25T09-09-59-727Z-c09058b8": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-29-44-507Z-8608b7bf": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-37-54-779Z-e33a3c80": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-23-23-763Z-7159432d": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-40-00-092Z-0d174dd9": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-38-46-454Z-916b4440": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-23-00-048Z-28ea47cd": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-02-32-484Z-0f699a22": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-02-26-976Z-2b062f0b": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-15-40-235Z-c8967b38": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-13-52-840Z-6c5b5943": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-50-09-407Z-18f36f69": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-40-39-969Z-2adb75ee": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-09-23-174Z-1d79d626": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-03-41-990Z-f87e12d0": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-23-21-104Z-768a0659": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-25-15-110Z-04017b10": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-57-42-765Z-b1a33328": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-20-23-861Z-fdec2847": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-50-42-133Z-a37fa2bc": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-47-28-573Z-4c129e67": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-49-58-741Z-a02e6d09": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "trust-demo-happy": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-24-46-943Z-fb2db751": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-04-49-587Z-0a6f60b7": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-47-20-290Z-c53fa533": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-51-25-412Z-8a968090": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-45-54-397Z-8ec3e7e5": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-50-38-407Z-b383b5f4": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-39-05-227Z-12e41178": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-03-26-029Z-aa5c5bb0": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-30-54-028Z-6433fe4e": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T09-39-38-800Z-42d42a13": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-17-04-051Z-9eeadfd7": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T11-22-42-403Z-ed96229f": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T09-52-40-023Z-59b0d837": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "youtube-live-01-reopened": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T13-05-45-511Z-88051998": {
+      "split": "valid",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T12-24-00-037Z-c19536a9": {
+      "split": "test",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "jev-bench-2026-09-21T10-54-46-382Z-8646f7eb": {
+      "split": "train",
+      "frozen_at": "2026-09-25T12:22:13.366Z"
+    },
+    "youtube-live-04-fresh": {
+      "split": "train",
+      "frozen_at": "2026-09-25T15:30:02.532Z"
+    }
+  }
+}

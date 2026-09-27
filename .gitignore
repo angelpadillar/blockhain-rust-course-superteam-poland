@@ -14,6 +14,8 @@ agent/chrome-profile/
 agent/glovo-profile/
 agent/pyszne-profile/
 agent/altitude-profile/
+agent/secrets/
 agent/node_modules/
 agent/dist/
 agent/playwright-report/
+agent/jev/bench/results/

@@ -52,11 +52,11 @@ function deliveryHash(value) {
  * No checkout or payment execution method exists here. SMS has its own budget.
  */
 export function createPilot({ adapter, storeDir, clock = Date.now, limits = {}, buenaFeeMinor = 0, accounts = [] }) {
-  if (!adapter || ['observeCart', 'mutateCart', 'quote'].some(key => typeof adapter[key] !== 'function')
+  if (!adapter || ['observeCart', 'mutateCart', 'quote', 'applyCoupon'].some(key => typeof adapter[key] !== 'function')
       || typeof clock !== 'function' || !integer(buenaFeeMinor)) fail('invalid_pilot_config');
   const caps = { ...DEFAULTS, ...limits };
   for (const key of Object.keys(DEFAULTS)) if (!integer(caps[key]) || (!COUNTERS.includes(key) && caps[key] === 0)) fail('invalid_limits');
-  const models = { observeCart: 0, mutateCart: 0, quote: 0, authorize: 0, ...limits.modelCallsPerOperation };
+  const models = { observeCart: 0, mutateCart: 0, quote: 0, authorize: 0, applyCoupon: 0, ...limits.modelCallsPerOperation };
   for (const value of Object.values(models)) if (!integer(value)) fail('invalid_limits');
   const registry = new Map(), customerCaps = new Map(), tails = new Map(), workers = new Set();
   for (const account of accounts) {
@@ -147,7 +147,7 @@ export function createPilot({ adapter, storeDir, clock = Date.now, limits = {}, 
       if (prices) {
         for (const key of ['unitPriceMinor', 'lineTotalMinor']) if (!(estimates && line[key] === null) && !integer(line[key])) fail('invalid_quote_amount');
         if (line.unitPriceMinor !== null && line.lineTotalMinor !== null
-            && BigInt(line.unitPriceMinor) * BigInt(line.quantity) !== BigInt(line.lineTotalMinor)) fail('quote_line_total_mismatch');
+            && (line.lineTotalMinor < 0 || BigInt(line.lineTotalMinor) > BigInt(line.unitPriceMinor) * BigInt(line.quantity))) fail('quote_line_total_mismatch');
       }
       if (line.quantity) result.push(clone(line));
     }
@@ -217,7 +217,7 @@ export function createPilot({ adapter, storeDir, clock = Date.now, limits = {}, 
     const state = stateFor(account); available(state);
     if (workers.size >= caps.maxConcurrent) fail('global_concurrency_exhausted');
     const customer = data.customers[account.customerId], allowance = customerCaps.get(account.customerId);
-    const reserve = emptyUsage(); reserve.liveQuotes = operation === 'quote' ? 1 : 0; reserve.cartUpdates = operation === 'mutateCart' ? 1 : 0;
+    const reserve = emptyUsage(); reserve.liveQuotes = operation === 'quote' ? 1 : 0; reserve.cartUpdates = operation === 'mutateCart' || operation === 'applyCoupon' ? 1 : 0;
     reserve.modelCalls = models[operation];
     reserve.runtimeMs = Math.min(caps.operationRuntimeMs, allowance.runtimeMs - customer.usage.runtimeMs, caps.runtimeMs - data.globalUsage.runtimeMs);
     if (reserve.runtimeMs <= 0) fail('runtime_budget_exhausted');
@@ -293,7 +293,13 @@ export function createPilot({ adapter, storeDir, clock = Date.now, limits = {}, 
     },
     getState(actor) { return snapshot(owned(actor)); },
     updateCart(actor, request) {
-      exact(request, ['version', 'lines']); const desired = lines(request.lines, true);
+      // 'selection' is optional: 'jev' asks the worker to choose controls
+      // semantically among observed candidates (default is exact matching).
+      if (!request || typeof request !== 'object' || Array.isArray(request)
+        || Object.keys(request).some(k => !['version', 'lines', 'selection'].includes(k))
+        || !Object.hasOwn(request, 'version') || !Object.hasOwn(request, 'lines')) fail('invalid_request_fields');
+      if (request.selection !== undefined && !['deterministic', 'jev'].includes(request.selection)) fail('invalid_request_fields');
+      const desired = lines(request.lines, true);
       return serial(actor, async account => {
         const state = stateFor(account); available(state, true); version(state, request.version);
         if (state.cart.status !== 'observed') fail('cart_requires_reconciliation');
@@ -302,13 +308,43 @@ export function createPilot({ adapter, storeDir, clock = Date.now, limits = {}, 
           const result = await worker(account, 'mutateCart', async context => {
             dispatched = true; state.version++; state.quote = null; state.authorization = null;
             state.cart.status = 'needs_reconciliation'; persist();
-            return adapter.mutateCart({ accountId: account.merchantAccountId, lines: clone(desired), ...context });
+            return adapter.mutateCart({ accountId: account.merchantAccountId, lines: clone(desired), ...(request.selection === 'jev' ? { selection: 'jev' } : {}), ...context });
           });
           const observed = cartObservation(result);
-          if (!sameLines(observed.lines, desired)) fail('mutation_result_mismatch');
+          // A partial sync is data, not a crash: keep the observed cart and
+          // report exactly which lines did not land, with the worker's
+          // per-product blockers, so the caller can correct the plan.
+          if (!sameLines(observed.lines, desired)) {
+            const missing = desired.filter(d => !observed.lines.some(l => l.productId === d.productId && l.quantity === d.quantity));
+            state.cart = observed; persist();
+            throw Object.assign(new Error('basket_partial'), { code: 'basket_partial', dispatched: true,
+              missing, ...(result?.blockers ? { blockers: result.blockers } : {}), ...(result?.blocked ? { blocked: result.blocked } : {}) });
+          }
           state.cart = observed; persist(); return snapshot(account);
         } catch (error) {
-          if (dispatched) { if (error.dispatched === false) state.cart = previousCart; else state.cart.status = 'needs_reconciliation'; persist(); }
+          // basket_partial carries a fresh worker observation — the cart is
+          // known, not suspect, so the next round needs no reconcile.
+          if (dispatched && error.code !== 'basket_partial') { if (error.dispatched === false) state.cart = previousCart; else state.cart.status = 'needs_reconciliation'; persist(); }
+          throw error;
+        }
+      });
+    },
+    applyCartCoupon(actor, request) {
+      exact(request, ['version']);
+      return serial(actor, async account => {
+        const state = stateFor(account); available(state, true); version(state, request.version);
+        if (state.cart.status !== 'observed' || !state.cart.lines.length) fail('observed_cart_required');
+        let dispatched = false;
+        try {
+          const result = await worker(account, 'applyCoupon', async context => {
+            dispatched = true; state.version++; state.quote = null; state.authorization = null; persist();
+            return adapter.applyCoupon({ accountId: account.merchantAccountId, ...context });
+          });
+          if (result?.coupon?.accepted !== true) fail('coupon_not_applied');
+          state.quote = null; state.authorization = null; persist();
+          return snapshot(account);
+        } catch (error) {
+          if (dispatched && error.dispatched !== false) { state.cart.status = 'needs_reconciliation'; persist(); }
           throw error;
         }
       });

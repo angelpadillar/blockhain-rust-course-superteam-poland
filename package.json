@@ -15,7 +15,15 @@
     "test:gifting": "node --test agent/trust/integrated/encoding.test.mjs agent/trust/integrated/integration.test.mjs",
     "build:gifting:bridge": "cargo build --locked --example gifting_bridge",
     "demo:delio": "node agent/trust/delio/server.mjs",
-    "test:delio": "node --test agent/trust/delio/*.test.mjs agent/trust/delio/sms/*.test.mjs agent/trust/delio/worker/*.test.mjs"
+    "test:delio": "node --test agent/trust/delio/*.test.mjs agent/trust/delio/sms/*.test.mjs agent/trust/delio/worker/*.test.mjs",
+    "browser:bench": "node agent/jev/bench/cli.mjs",
+    "browser:bench:report": "node agent/jev/bench/cli.mjs --report",
+    "test:browser:bench": "node --test agent/jev/bench/*.test.mjs",
+    "test:browser:kernel": "node --test agent/jev/tests/kernel-v6.test.mjs",
+    "browser:flywheel:build": "node agent/jev/evals/browser-routing/cli/build.mjs",
+    "browser:valen-readiness": "node agent/jev/evals/browser-routing/cli/readiness.mjs",
+    "browser:valen-shadow": "node agent/jev/evals/browser-routing/cli/shadow.mjs",
+    "test:browser:flywheel": "node --test agent/jev/evals/browser-routing/test/*.test.mjs"
   },
   "dependencies": {
     "@anchor-lang/core": "^1.1.2"

@@ -1,0 +1,10 @@
+# Browser execution work
+
+- General benchmark entry point: `agent/jev/experimental/browser-runtime-v5/runtime.mjs:runLoop`. The benchmark baseline is frozen in `agent/jev/bench/frozen-v5`; do not modify the frozen files or their manifest.
+- `npm run browser:bench -- --driver scripted` measures kernel compatibility with a deterministic form policy, not Jev accuracy. The default driver is real Jev and requires an operator-provisioned `TYPESAFE_API_KEY`; missing credentials produce explicit BLOCKED rows. Never read private stores or scan files for keys.
+- `npm run test:browser:bench` verifies the benchmark's oracles and metrics. Playwright is installed under `agent/jev`; the local provider uses the installed Chrome channel by default.
+- `BROWSER_STRESS_ROOT` points to an unmodified checkout of `browser-use/stress-tests`, pinned to `b3600b683ec97236866d77e31200fa24ec8c8f3f`. Challenge files are enumerated automatically. The default local research checkout is `/tmp/jev-bench-stress-tests`.
+- Iterate on DEV only. HELDOUT may be run as a regression gate but its individual failures must not drive task-specific changes. Keep benchmark definitions, oracles, budgets and environment identical when comparing architectures.
+- Success requires independent outcome evidence. Do not equate DONE, native action completion, or a hidden success string with task success. Do not treat unknown browser/runtime cost or uninstrumented CDP round trips as zero.
+- New browser experiments must not bypass Delio account serialization, quote authorization, reconciliation or payment replay protection. The active external Delio workspace is `/Users/buena/Documents/ChatGPT/typesafe-ai-experiment/trust-layer/delio`; it differs from the repository's `agent/trust/delio` copy.
+- Benchmark artifacts live under ignored `agent/jev/bench/results/`. Do not publish private authenticated evidence or decrypted official BU tasks. The public stress fixtures contain fictitious data only; local submissions are explicitly isolated from external sites.

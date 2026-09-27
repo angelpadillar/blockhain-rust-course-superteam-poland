@@ -1,0 +1,12 @@
+{
+  "version": "v5-frozen",
+  "git_sha": "6d077dd9bc723c67c5cba117ac80a5f0aa2c07dc",
+  "files": {
+    "runtime.mjs": "cdd61990ac58922ee6f74e809b6b08c52d10f5f71aaaf4e23bf540e115e66142",
+    "session.mjs": "a95c0cf117ff77263aadfd3d83438f0df4b5c68912e291fe24eb55982433d773",
+    "snapshot.mjs": "f11fb2d6cfe4812cfce32c7ac90e882f33cc06b3e81b5105de72b5ce9e792f5d",
+    "questions.mjs": "098b5d786696035b36762e74e3f2ba6c7cd44256e295d5d65555f7d4e3f8de79",
+    "policy.mjs": "41a1d64b3001492eb25480443f71130c43d5fb18b457c79d95d5f332f63afb26",
+    "donewhen.mjs": "692b6de6aec74acd6c04d4014d523fe63565d535f204625aa259e442ad082732"
+  }
+}

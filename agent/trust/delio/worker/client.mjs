@@ -10,7 +10,7 @@ export async function runClient(input, {readToken=()=>readFile('/run/secrets/del
     const token=(await readToken()).trim();
     if(!/^[a-f0-9]{64}$/.test(token))throw new WorkerError('worker_unavailable');
     startedRequest=true;
-    const result=await fetchImpl('http://127.0.0.1:8794/rpc',{method:'POST',headers:{authorization:`Bearer ${token}`,'content-type':'application/json'},body:JSON.stringify(request),signal:AbortSignal.timeout(29500)});
+    const result=await fetchImpl('http://127.0.0.1:8794/rpc',{method:'POST',headers:{authorization:`Bearer ${token}`,'content-type':'application/json'},body:JSON.stringify(request),signal:AbortSignal.timeout(290000)});
     const response=await result.json();
     if(!response||typeof response!=='object'||Array.isArray(response)||typeof response.ok!=='boolean')throw new Error('invalid_worker_response');
     // A valid known blocker is application data, not an SSH/transport failure.

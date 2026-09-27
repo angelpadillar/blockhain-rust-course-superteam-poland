@@ -21,6 +21,7 @@ function fixture(overrides={},clock=Date.now) {
   const adapter={getAccess:()=>({status:'ready',blockers:[]}),catalog:async()=>({items:[{productId:'fixture-pasta',title:'Fictional test pasta',unitPriceMinor:500}]}),
     async observeCart({accountId}){calls++;return observation(accountId);},
     async mutateCart({accountId,lines}){calls++;carts.set(accountId,structuredClone(lines));return observation(accountId);},
+    async applyCoupon(){calls++;return {coupon:{accepted:true,code:'z5913',discountMinor:0}};},
     async quote({accountId,delivery}){calls++;const result=observation(accountId),subtotal=result.lines.reduce((sum,line)=>sum+line.quantity*500,0);
       return {...result,deliveryCommitment:delivery,currency:'PLN',expiresAt:clock()+120000,lines:result.lines.map(line=>({...line,unitPriceMinor:500,lineTotalMinor:line.quantity*500})),
         amounts:{itemSubtotalMinor:subtotal,deliveryFeeMinor:100,serviceFeeMinor:20,smallOrderFeeMinor:0,otherFeesMinor:0,depositsMinor:0,discountMinor:0,merchantTotalMinor:subtotal+120}};}
@@ -132,9 +133,20 @@ test('coupon status is owned server data and catalogue module/images use the nar
   const f=fixture({couponCode:'z5913'}),configured={...account,couponCode:'z5913'};
   const server=createDelioServer({...f,accounts:[configured],authorizer:async()=>{}});server.listen(0,'127.0.0.1');await once(server,'listening');t.after(()=>server.close());
   const origin='http://127.0.0.1:'+server.address().port;
-  const response=await fetch(origin+'/catalogue-view.mjs');assert.equal(response.status,200);assert.match(response.headers.get('content-type'),/javascript/);assert.ok(response.headers.get('content-security-policy').includes("img-src 'self' https://delio.com.pl;"));
+  const response=await fetch(origin+'/catalogue-view.mjs');assert.equal(response.status,200);assert.match(response.headers.get('content-type'),/javascript/);assert.ok(response.headers.get('content-security-policy').includes("img-src 'self' data: blob: https://auth.privy.io https://explorer-api.walletconnect.com https://*.walletconnect.com https://*.walletconnect.org https://delio.com.pl;"));
   const publicState=await(await fetch(origin+'/api/state')).json();assert.equal(publicState.promotion,null);
   const login=await fetch(origin+'/api/session',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({accessCode:configured.accessCode})});
   const cookie=login.headers.get('set-cookie').split(';')[0];const owned=await(await fetch(origin+'/api/state',{headers:{Cookie:cookie}})).json();
   assert.equal(owned.promotion.code,'z5913');assert.equal(owned.promotion.merchantAccepted,false);assert.equal(owned.promotion.discountMinor,0);assert.equal(owned.promotion.expiryVerified,false);
+});
+
+test('grocery catalogue requires owned admission; reading and planning never call merchant cart operations',async t=>{
+ const f=fixture();let groceryReads=0;
+ const server=createDelioServer({...f,accounts:[account],readGroceries:who=>{assert.deepEqual(who,actor(account));groceryReads++;return {regionId:'krakow',items:[{productId:'A0000953',title:'Fictional product'}]};}});
+ server.listen(0,'127.0.0.1');await once(server,'listening');t.after(()=>server.close());const origin='http://127.0.0.1:'+server.address().port;
+ assert.equal((await fetch(origin+'/api/groceries')).status,401);assert.equal(groceryReads,0);
+ const login=await fetch(origin+'/api/session',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({accessCode:account.accessCode})});
+ const cookie=login.headers.get('set-cookie').split(';')[0];const r=await fetch(origin+'/api/groceries',{headers:{Cookie:cookie}});
+ assert.equal(r.status,200);assert.equal((await r.json()).regionId,'krakow');assert.equal(groceryReads,1);assert.equal(f.calls(),0);
+ const page=await fetch(origin+'/groceries');assert.equal(page.status,200);assert.match(await page.text(),/Your basket plan/);
 });

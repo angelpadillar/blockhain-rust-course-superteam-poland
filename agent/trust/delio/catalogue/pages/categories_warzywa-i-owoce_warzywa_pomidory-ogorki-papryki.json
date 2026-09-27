@@ -1,0 +1,574 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0008152",
+        "title": "Papryka czerwona luz",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008152-papryka-czerwona-luz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_7_e_0_57e06122b62631d8fb2e7f019f70705dcc7d834d_a3441ae976ca3855c7db339d4d7680dc26bd786d-small.png&w=1920&q=80",
+        "cardSha256": "4269cd5af088935abdb5d9323e07cc698717f9664337d10743a340d2cb4d6668",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009626",
+        "title": "Pomidor Kumato (czekoladowy)",
+        "packSize": "500 g",
+        "unitPriceMinor": 1079,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009626-pomidor-kumato-czekoladowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_6_3_8_b63807b1563235adc120b4a75a6f9405b2adec3e_45ce44e58e844982fe98ae77c28ce3a15889e04a-small.png&w=1920&q=80",
+        "cardSha256": "9da51df40ee75f3ccb59f49548ac17ee51af13448546153ec85302a5e657a86b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008801",
+        "title": "Pomidory malinowe krajowe prosto od rolnika",
+        "packSize": "3 szt.",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008801-pomidory-malinowe-krajowe-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_2_b_6_e2b632203180118432dcc7fb717ec6c0393d9684_pomidory_malinowe_polskie_1-small.png&w=1920&q=80",
+        "cardSha256": "d769763754101e02cb9edfd7fd80fb34a692661f102cdd342176dc992fd01e11",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008139",
+        "title": "Pomidory malinowe na gałązce",
+        "packSize": "500 g",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008139-pomidory-malinowe-na-galazce",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_e_8_3_0e832376a08ba61dec444e5a3f60d04b4cb8248d_994c49505eaebdb2a126b211bc86745928b01119-small.png&w=1920&q=80",
+        "cardSha256": "e54eaf77733434e7fae34c5614888fec767666a202df8fd29282a7dca03555d0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003081",
+        "title": "Pomidory truskawkowe gałązka",
+        "packSize": "300 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003081-pomidory-truskawkowe-galazka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_5_2_b_152b8bd53ea369c2ede458d72d53fed84734aa1d_6bca1c2f8b3110bc9d1159ba82efb9878a46b500-small.png&w=1920&q=80",
+        "cardSha256": "9d0515e780dc16f4c99864dcb8d3e37d276270817fc888b5e401fd07cf8e26d7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008794",
+        "title": "Pomidorki daktylowe \"shake\"",
+        "packSize": "250 g",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008794-pomidorki-daktylowe-shake",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_4_8_3_24832669b7d26d0e55334c897ec1d57f467ac7b9_ChatGPT_Image_5_sie_2025__08_39_40-small.png&w=1920&q=80",
+        "cardSha256": "a87394345407c3e28041e2d812e2f1e9067fb5dfefdcbda018763b6e74b089c0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009609",
+        "title": "Pomidor cherry gałązka",
+        "packSize": "500 g",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009609-pomidor-cherry-galazka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_4_f_f_24ffc870417d0ad0e0cbaff1270e0806369478ec_7d102f069804671c0b6e823438a7253749d8f5dc-small.png&w=1920&q=80",
+        "cardSha256": "19c442c7ab3c9a51de8dfaa4842dac2ba0be9ba47aeff35de0d2e5475417ed88",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025140",
+        "title": "Pomidory żółte",
+        "packSize": "500 g",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025140-pomidory-zolte",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_a_0_4_ea0412f35df33c69bbe06051eb5b7078e95ebdbc_pomiodry_______te-small.png&w=1920&q=80",
+        "cardSha256": "ccde051108405502136b6d46f4c0e8973adf2c6b12a6990c8e2fc5dfbea2e092",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023949",
+        "title": "Ogórek krótki polski",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023949-ogorek-krotki-polski",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_7_6_b_f76b89ef69394838e54e6e34d9dfc2ebcb452f15_og__rek_kr__tki_polski-small.png&w=1920&q=80",
+        "cardSha256": "58eee536a4a22bbb6b83e6fdedcf64e35ee14327cb7aba4b0bb9de8e4030b987",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003078",
+        "title": "Papryka czerwona BIO",
+        "packSize": "450 g",
+        "unitPriceMinor": 1749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003078-papryka-czerwona-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_f_d_c_ffdc6eec5d04a971d4639934b44ffc985bc79839_big_PAPRYKA_CZERWONA_SWIEZA_BIO_okolo_0_60_kg_10290462_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "6263763095050f357e592222d16817465024d5452db19e81ea5446d6a4c7ea66",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008148",
+        "title": "Papryka słodka Ramiro",
+        "packSize": "500 g",
+        "unitPriceMinor": 989,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008148-papryka-slodka-ramiro",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_8_1_0_6810bce839837ae17d67a6c027f35cd968cad8d3_A0003079-small.jpg&w=1920&q=80",
+        "cardSha256": "b71b2f2addfb3438a05fddfe7951a227cd5cee39934b57e941ce9ce6d36f9439",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003100",
+        "title": "Papryka pepperoni czerwona",
+        "packSize": "150 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003100-papryka-pepperoni-czerwona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_3_4_8_b348f337e9ac7f8384f7b936f8b4b54c9fac0d63_8816ef8028873e5bc541c3854aa0848634c5db4e-small.png&w=1920&q=80",
+        "cardSha256": "3403b692f26520cc46454dadde58f69f9b85de4afd320a3cedaada50ebd6a4c1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+    "observedAt": 1789906729286,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906729286-8f849b507441",
+        "observationSha256": "8f849b50744192b8a3fef88f10a9ba50836eb6f7e274783f8738f192ded0dd95",
+        "screenshotSha256": "573d299f2b0eaa400eff86aa89ed543e3572db6b9b956f125f702ac7dda72aef",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1782,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

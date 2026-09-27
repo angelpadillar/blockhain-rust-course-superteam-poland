@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { isAbsolute, resolve } from "node:path";
 import dotenv from "dotenv";
+import { readFulfillmentCardFile } from "./order/secrets.js";
 import { agentRoot, configPath, envPath } from "./paths.js";
 import type {
   AdapterName,
@@ -592,27 +593,21 @@ export function citySlug(city: string): string {
     .replace(/^-|-$/g, "");
 }
 
-export function loadCardSecrets(options: RuntimeOptions): CardSecrets {
-  if (!options.allowPay)
-    throw new Error("card secrets cannot be loaded while ALLOW_PAY=false");
-  if (options.cardRail === "revolut") {
-    throw new Error(
-      "Revolut is a human-present fallback only. Approve 3DS in the Revolut app; automated card submission is disabled.",
-    );
-  }
+export function parseCardSecrets(
+  vars: Record<string, string | undefined>,
+  options: RuntimeOptions,
+): CardSecrets {
   if (options.cardRail !== "altitude")
     throw new Error("CARD_RAIL must be altitude for automated payment");
-  const pan = (process.env.CARD_PAN ?? "").replace(/[\s-]/g, "");
-  const exp = (process.env.CARD_EXP ?? "").trim();
-  const cvc = (process.env.CARD_CVC ?? "").trim();
-  const name = (process.env.CARD_NAME ?? "").trim();
-  const billingAddressLine = (
-    process.env.CARD_BILLING_ADDRESS_LINE ?? ""
-  ).trim();
-  const billingCity = (process.env.CARD_BILLING_CITY ?? "").trim();
-  const billingRegion = (process.env.CARD_BILLING_REGION ?? "").trim();
-  const billingPostalCode = (process.env.CARD_BILLING_POSTAL_CODE ?? "").trim();
-  const billingCountry = (process.env.CARD_BILLING_COUNTRY ?? "")
+  const pan = (vars.CARD_PAN ?? "").replace(/[\s-]/g, "");
+  const exp = (vars.CARD_EXP ?? "").trim();
+  const cvc = (vars.CARD_CVC ?? "").trim();
+  const name = (vars.CARD_NAME ?? "").trim();
+  const billingAddressLine = (vars.CARD_BILLING_ADDRESS_LINE ?? "").trim();
+  const billingCity = (vars.CARD_BILLING_CITY ?? "").trim();
+  const billingRegion = (vars.CARD_BILLING_REGION ?? "").trim();
+  const billingPostalCode = (vars.CARD_BILLING_POSTAL_CODE ?? "").trim();
+  const billingCountry = (vars.CARD_BILLING_COUNTRY ?? "")
     .trim()
     .toLocaleUpperCase();
   if (!/^\d{12,19}$/.test(pan))
@@ -652,4 +647,17 @@ export function loadCardSecrets(options: RuntimeOptions): CardSecrets {
     billingPostalCode,
     billingCountry: "PL",
   };
+}
+
+export function loadCardSecrets(options: RuntimeOptions): CardSecrets {
+  if (!options.allowPay)
+    throw new Error("card secrets cannot be loaded while ALLOW_PAY=false");
+  if (options.cardRail === "revolut") {
+    throw new Error(
+      "Revolut is a human-present fallback only. Approve 3DS in the Revolut app; automated card submission is disabled.",
+    );
+  }
+  const fileVars = readFulfillmentCardFile();
+  if (fileVars) return parseCardSecrets(fileVars, options);
+  return parseCardSecrets(process.env, options);
 }

@@ -1,0 +1,890 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0001092",
+        "title": "Awokado dojrzałe",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001092-awokado-dojrzale",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_a_d_6_ead661db03c900fc99a7180a3f1ea80fec0abca9_b3f67b05c20955b8d5b6aa4c8a3a2c01645a663f-small.png&w=1920&q=80",
+        "cardSha256": "e54eb298881e2368a9a6c43777e5c43f19c0845cbdade0193a68f20573c4fd39",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024282",
+        "title": "Napój mleczny proteinowy smak wanilia SBA",
+        "packSize": "265 g",
+        "unitPriceMinor": 419,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024282-napoj-mleczny-proteinowy-smak-wanilia-sba",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_4_e_8_a4e862ef647cb5d190e1086a87db6bedd9bf7a9a_sbaproteinmilkshakewaniliauhtkarto-small.png&w=1920&q=80",
+        "cardSha256": "42118263d8c9a4e34a97efeda3e57a6365a4000eadc4f30e4578ea3d3bd30a86",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000398",
+        "title": "Chipsy masło z solą Wiejskie Ziemniaczki",
+        "packSize": "130 g",
+        "unitPriceMinor": 769,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000398-wiejskie-ziemniaczki-maslo-z-sola",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_1_4_0_9140296e5850181c03228747164313ff96e4dc77_bb_c23d6b5ca92eef98331e741af255a28e-small.png&w=1920&q=80",
+        "cardSha256": "2aa36f26ae766dde0d2e0e993053bdef189aa11b8191663f74d6075ab43297db",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024546",
+        "title": "Ser Feta Vacuum",
+        "packSize": "150 g",
+        "unitPriceMinor": 1189,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024546-ser-feta-vacuum",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_5_9_2_c59288f4a15c83586e3763a224a84bb448c0a17b_MEVGAL_FETA_150g_vacuum__EN_-small.png&w=1920&q=80",
+        "cardSha256": "6c48e323662b9ca7d2bd3607846981b395aed2d5c98cb19f33034116e43a8b2b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025194",
+        "title": "Oddly Kawa mrożona o smaku waniliowym",
+        "packSize": "1 l",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025194-oddly-kawa-mrozona-o-smaku-waniliowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_6_3_7_16373baa6bda193b990856e5a7daacc8b11d01e8_ICE_COFFEE_VANILIA_6430081491130.1-small.png&w=1920&q=80",
+        "cardSha256": "00767dfe9785c0c02c23d945e1582306a2424da108a4ba4fa7bcd30febe24e5b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018229",
+        "title": "Sos śmietanowy w stylu francuskim Food Trip Develey",
+        "packSize": "315 ml",
+        "unitPriceMinor": 629,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018229-sos-smietanowy-w-stylu-francuskim-food-trip-develey",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_e_f_7_1ef7629d5e221ac53c8495b8c3734d53d09e090c_5906425145836-small.png&w=1920&q=80",
+        "cardSha256": "d1b085fbdf6dee301b077288c75931d231576054767a70b8b52a006e42dc3824",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004740",
+        "title": "Dolina Dobra Szynka 100% mięsa - plastry",
+        "packSize": "100 g",
+        "unitPriceMinor": 629,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004740-dolina-dobra-szynka-100-miesa-plastry",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_f_b_4_7fb44119b84a248e06686f5812a860f1dad75229_bb_8c3eedcfbe95d9e8466369e812771cff-small.png&w=1920&q=80",
+        "cardSha256": "6b11e1fa461970e44f468c204b1555ca2ba6feb5972e25e7c1619df56ddf0a75",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0019112",
+        "title": "Wafle orzechowe Manner",
+        "packSize": "200 g",
+        "unitPriceMinor": 879,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0019112-wafle-orzechowe-manner",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_2_3_5_823548f62d08d3542652b10e2d7d7c04cc62e289_bb_hynAyCoxRJ2JRXZAwDN1cg__-small.png&w=1920&q=80",
+        "cardSha256": "b86cc1dfaf0b3638047a57b121ad0e8c442932fe6d9e2327c3209c2d02336eaa",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008420",
+        "title": "Chipsy Lay's zielona cebulka",
+        "packSize": "130 g",
+        "unitPriceMinor": 879,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008420-chipsy-lays-zielona-cebulka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_d_8_e_1d8e15f7080966f3559c18f47d4f0c4a7011b0ab_bb_e3feb3ba00a48b4c897b5b023e45adda-small.png&w=1920&q=80",
+        "cardSha256": "fb6554ed67991ce10dac7501faa8cfd0dd2e860c917a9960ed7ad812328b081c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020283",
+        "title": "Lody Szarlotka z Kruszonką Widziały Gały Co Brały",
+        "packSize": "220 ml",
+        "unitPriceMinor": 1699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020283-lody-szarlotka-z-kruszonka-widzialy-galy-co-braly",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_a_4_c_9a4c7329d722284afc2c5941eda2bb87346f2fe6_a5b5f485e1092bf447870224cf55263a46efa2b7-small.png&w=1920&q=80",
+        "cardSha256": "7b388773c3470042a3d19b48aa8dd765042bbaa746be83be9bee37680ef701d1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002254",
+        "title": "Fasola masłowa bio La Bio Idea",
+        "packSize": "400 g",
+        "unitPriceMinor": 849,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002254-fasola-maslowa-bio-la-bio-idea",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_a_9_7_ea9721c0316ff35725924955fb3529dfb0497309_ce2b007b104374a4376c569afee5d6c35aeeb3bd-small.png&w=1920&q=80",
+        "cardSha256": "2d632896809b2f1b6907b54a4c7c1d9056f36293b4d626d54189c29d2d6a9286",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016796",
+        "title": "Żel do prania wonderwash speed clean 37 prań Coccolino",
+        "packSize": "1480 ml",
+        "unitPriceMinor": 6499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016796-zel-do-prania-wonderwash-speed-clean-37-pran-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_d_1_5_bd15702088425c8395ef9b2555445db7b81ae2ad_bb_244024b810254f6744f4e1faa85d7967-small.png&w=1920&q=80",
+        "cardSha256": "1bbc203ed38c8e048dca88787f378031b386b71ac3efc4925d3a73d378a00c27",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010780",
+        "title": "Karma tacka mus z łososia Sheba",
+        "packSize": "85 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010780-karma-tacka-mus-z-lososia-sheba",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_5_7_2_c57244f9578c39db6b6ad226f055fa8bcf74a27f_bb_5784872cb12e4d6e20abfbbba5480022-small.png&w=1920&q=80",
+        "cardSha256": "be40ae80bc3fd60efe1ee3fe6e1364925ac5f02e487ba76379f6f736140ba511",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018270",
+        "title": "Lovege Napój migdałowy Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018270-lovege-napoj-migdalowy-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_2_0_6_c2062facfa91293b3f2d4a1b89fbea5a60136823_v55_wiz_Lovege_BARISTA_MIGDAL_APR2026-small.png&w=1920&q=80",
+        "cardSha256": "f9ab3870496d85d884fa81eda9481040846be2e01b4ba7f78e6405afb19eeba7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025643",
+        "title": "Turek Camembert Lekki z chili",
+        "packSize": "120 g",
+        "unitPriceMinor": 759,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025643-turek-camembert-lekki-z-chili",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_5_3_445333b360b6aa06194f3dba9f787602b14f5fa9_bb_0bb03cef3d407fa5888161d3bd2527f0-small.png&w=1920&q=80",
+        "cardSha256": "086b90f9f23ef0e4a10cde9959bf8173f8ac2956fec2c729ee2aea23ee9df915",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000102",
+        "title": "Kawa mielona Qualita Oro Lavazza",
+        "packSize": "250 g",
+        "unitPriceMinor": 3099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000102-kawa-mielona-qualita-oro-lavazza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_2_5_3_b253e3d3e92a1929a6101f1cf204b1a92b19e410_swfZA54j3g__-small.png&w=1920&q=80",
+        "cardSha256": "b3525af4e3332ee3d642324012cf00d53f3cc53fec79de062b9f7a9b39dd3646",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025061",
+        "title": "Sokołów PRZEkąski Polska Dojrzewająca",
+        "packSize": "60 g",
+        "unitPriceMinor": 589,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025061-sokolow-przekaski-polska-dojrzewajaca",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_0_8_6_2086449d34eac31faaee7866ab15ccd98618d83f_PRZEKASKI_polska_dojrzewajaca_1_remo-small.png&w=1920&q=80",
+        "cardSha256": "f35d56b4d668b58d21502626d684562f20560e5a30c90a3a30c2a1233407443e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013863",
+        "title": "Kurczak Zagrodowy Mięso mielone z kurczaka",
+        "packSize": "380 g",
+        "unitPriceMinor": 1249,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013863-kurczak-zagrodowy-mieso-mielone-z-kurczaka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_4_b_3_74b30de32508b495a25b1e8dc708037b6b556463_6d9ca75316698f96ea7413d659b7774607f73a84-small.png&w=1920&q=80",
+        "cardSha256": "b44695df2febfb5ac7590192feeb1ddb13f8a7fd063e3f3098c9f424be398687",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011635",
+        "title": "Serek Mascarpone Kuchmistrza",
+        "packSize": "500 g",
+        "unitPriceMinor": 1599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011635-serek-mascarpone-kuchmistrza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_b_e_6_7be6ee97d2c0a18c37f1a5d409db60b4c814a9d3_Kubek_Mascarpone_500g_2024_02_26___w06_0020_copy-small.png&w=1920&q=80",
+        "cardSha256": "790d7a1805630fbae38bfc2b2065f01e2a16c069c5f513c76df2b10bd0500b7c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002091",
+        "title": "Paluszki Junior Lajkonik",
+        "packSize": "150 g",
+        "unitPriceMinor": 479,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002091-paluszki-junior-lajkonik",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_2_5_2_62529bc140d7140339c4e0863b6e47f05b2200eb_5900320006117-small.png&w=1920&q=80",
+        "cardSha256": "29a3d468409ba1b7cd8327c49514ab70237534491a727cad6654a5dc178e7ec7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013095",
+        "title": "Ravioli ricotta i szpinak Rana",
+        "packSize": "250 g",
+        "unitPriceMinor": 1269,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013095-ravioli-ricotta-i-szpinak-rana",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_1_e_bf1e92b1d9c590b731c71c6a0a76e7b15ee31968_ravioli-small.png&w=1920&q=80",
+        "cardSha256": "96b44009063b64811a040da8ded48bddfce79a76b24f5428cf96fa71be686a08",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009249",
+        "title": "Śliwki suszone Helcom",
+        "packSize": "150 g",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009249-sliwki-suszone-helcom",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_b_a_5_2ba51c17a8ada5dab232be0022e932d28565aa1a_ff1e30323749065aaa86765e93b28dd79bd2118e-small.png&w=1920&q=80",
+        "cardSha256": "33ec3a7c9d2332883b8cdef387e8f2c7808fbbfbb97ab2f02c8ee7d0967e4bfa",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020119",
+        "title": "Parówki Berlinki",
+        "packSize": "225 g",
+        "unitPriceMinor": 439,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020119-parowki-berlinki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_0_6_3_9063e9a6754071d8cc0d30462e50a50d5080bb2e_21c27e4e7f498d87c909cf5ba2c428222d857508-small.png&w=1920&q=80",
+        "cardSha256": "3c9c5f99b662f35d9c31a8c910ad365515c4cab90b79ed9b5547f755323af48e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022501",
+        "title": "Oddly Napój owsiany Barista o smaku orzecha laskowego",
+        "packSize": "1 l",
+        "unitPriceMinor": 1169,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022501-oddly-napoj-owsiany-barista-o-smaku-orzecha-laskowego",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_d_3_3_5d331d3e033822f206c4b7c9981dc86673ad5080_VAL_OG_orzech_barista_1l-small.png&w=1920&q=80",
+        "cardSha256": "26d6e36b7265920ff1b87a74395141df68fed10d3d08ece0772a5f64cb59caae",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000725",
+        "title": "Dolina Dobra Parówki 100% mięsa",
+        "packSize": "200 g",
+        "unitPriceMinor": 659,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000725-dolina-dobra-parowki-100-miesa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_2_d_7_82d76ea99e899bfc61005fbd750a3f1b8b239d4a_4219_3224_parowki_100proc_wiz__1_-small.png&w=1920&q=80",
+        "cardSha256": "fc9eb5b852511d719b96f9e19b47f6fa61c418ffc4474792e7cc1aaaff4ea034",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022282",
+        "title": "Czekolada mleczna z kawałkami prażonych i solonych pistacji Ritter Sport",
+        "packSize": "100 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022282-czekolada-mleczna-z-kawalkami-prazonych-i-solonych-pistacji-ritter-sport",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_a_3_0_6a309295d40e8323f3c8dd64db7c83fc6cbbd126_pistacja-small.png&w=1920&q=80",
+        "cardSha256": "5e729a8cd7c19550b28fed90fc5c07c35995d9ffbcd6be7f84cb313ccc13abd2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011671",
+        "title": "SBA Jogurt pitny bez laktozy mango banan",
+        "packSize": "250 g",
+        "unitPriceMinor": 319,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011671-sba-jogurt-pitny-bez-laktozy-mango-banan",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_5_0_2_85022347438641cf0c5db09f94db0f59134eed95_23432-small.png&w=1920&q=80",
+        "cardSha256": "e00ace94da932a220fadc3fb61ea6c4ce34130638505e405faf3023addeb290e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024460",
+        "title": "Chipsy Z Ziołami Wiejskie Ziemniaczki",
+        "packSize": "130 g",
+        "unitPriceMinor": 769,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024460-chipsy-z-ziolami-wiejskie-ziemniaczki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_a_9_b_7a9b3a03c57c7436594478f222f050905fd1f827_bb_b4666da8790a556a51b117ecb5de6112-small.png&w=1920&q=80",
+        "cardSha256": "a1ca2f642fc538207c51140ec094caeed1980eaeded99ea888aad08581510a2d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000865",
+        "title": "Wydojone mleko bez laktozy UHT 1,5%",
+        "packSize": "1 l",
+        "unitPriceMinor": 529,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000865-wydojone-mleko-bez-laktozy-uht-1-5",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_8_f_3_88f3b3a7f2fa48bb845b78e818117c9e39a1210f_32ae6c8169791e7e751dbd28b3798f12ff987be3-small.jpg&w=1920&q=80",
+        "cardSha256": "ca751bd7bd662c02f9df0cea0020203bb6d5bd5de10b6b99f62de2a82304cfb9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024889",
+        "title": "Lody Sorbet Aloes Widziały Gały Co Brały",
+        "packSize": "220 ml",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024889-lody-sorbet-aloes-widzialy-galy-co-braly",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_4_d_5_d4d5aeb552808a13609097aae795d8967f7a6dc8_5906154288606-small.png&w=1920&q=80",
+        "cardSha256": "dc470edafa835f979b2c6a05cd3a047333713f74bd4c3ac50064340da6a1e12f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002263",
+        "title": "Tuńczyk bonito w sosie własnym Pan do Mar",
+        "packSize": "120 g",
+        "unitPriceMinor": 1439,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002263-tunczyk-bonito-w-sosie-wlasnym-pan-do-mar",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_3_c_b_03cbceb9f020983d32a90f91759b353b6530923c_13a4a801113c069e5eaf8638b04f6c89a333f3b9-small.jpg&w=1920&q=80",
+        "cardSha256": "0be1d3dfe0568bfb5726bcccd82c4c8d9f73a31cd4e722687aaf8e4b7c0181ce",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007758",
+        "title": "Mozzarella Buona",
+        "packSize": "125 g",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007758-mozzarella-buona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_1_b_4_f1b459bb838df457c0a9595065970822cd1d1038_mozzarella125-small.png&w=1920&q=80",
+        "cardSha256": "6d6e684122f8e9a87d6134dd8a54e218c46e6b95320586f6f8bb7c52a72b0f5c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024350",
+        "title": "Perfume & Care Passion Flower & Bergamot Coccolino",
+        "packSize": "943 ml",
+        "unitPriceMinor": 1414,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024350-perfume-care-passion-flower-bergamot-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_b_8_a_8b8a003cf0def15d80f2b6c112b88321ed0dc664_8720181929786_1-small.png&w=1920&q=80",
+        "cardSha256": "2a88d7c266144deaa7b0d07e42337f8bcf65a581260b78dfde3038b31a0134e8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016543",
+        "title": "Saturator do wody gazowanej czarny SodaStream Terra",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 28999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016543-saturator-do-wody-gazowanej-czarny-sodastream-terra",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_2_f_4_92f4af10c4bc0307e6ad37ed18fe6b96612c6d4a_7290113763784-small.png&w=1920&q=80",
+        "cardSha256": "0882342b81014bf6bb201435c9326028942f21db5b1a0a67dca45dc9b3391564",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010987",
+        "title": "Karma Drobiowa Uczta Whiskas",
+        "packSize": "340 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010987-karma-drobiowa-uczta-whiskas",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_a_a_1_2aa1f56f085bdf624babb590d64b146789cde405_f_2_a_e_f2aea2a6efbf47963bfbcc1ffe713195bf7a1019_a_5_3_0_a5304834811207c2a7dc7995bc8b02f91e1598-small.png&w=1920&q=80",
+        "cardSha256": "9e03d01f3640c11b7c74f2a50c62045b2ce081dcf35608d214bb45a409abe28c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005350",
+        "title": "Kotlina Natury Jaja ściółkowe 10 szt. rozmiar L",
+        "packSize": "10 szt.",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005350-kotlina-natury-jaja-sciolkowe-10-szt-rozmiar-l",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_2_5_d_f25d8fee05e493f00f1afbbe2b944fc7b078f89f_JELUE3A__-small.png&w=1920&q=80",
+        "cardSha256": "76687da8565d2db3da30bec6c8bcef789b58a0dd7384a0f5a5e4df48f039e3a2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022497",
+        "title": "BEL Kiri przekąska paluszki o smaku pizzy",
+        "packSize": "35 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022497-bel-kiri-przekaska-paluszki-o-smaku-pizzy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_6_0_f_160ffa3b0db98950343ae6e2b5f37e8f10d38036_Kiri_Przekaska_Pizza_35g_PL_Dis-small.png&w=1920&q=80",
+        "cardSha256": "18721383b00e90577e1ac4d024356c09228e3210e63fdb3391838e13beea44e3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006254",
+        "title": "Musztarda miodowa Develey",
+        "packSize": "270 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006254-musztarda-miodowa-develey",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_9_2_3_f923551c078891f3035ad10572d1310d36d8c7c6_Develey_Musztarda_Miodowa_270g_675-small.png&w=1920&q=80",
+        "cardSha256": "0a95c7691b0f87b9f44d9767ba534242716ac35234b59e970a1f86f3a6502427",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024266",
+        "title": "Jogurt SKYR typu islandzkiego owoce ogrodowe SBA",
+        "packSize": "330 g",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024266-jogurt-skyr-typu-islandzkiego-owoce-ogrodowe-sba",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_f_c_a_2fca7f1aec148edc2eede9ea11af8710eff16814_sbaskyrpitnybutelkasqpet330gw02owoceogrodow-small.png&w=1920&q=80",
+        "cardSha256": "b93f882f677903a0aeb672e28796ae00cd4e9662112419e2ed783d75c131f32c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000428",
+        "title": "Precelki Junior Safari Lajkonik",
+        "packSize": "125 g",
+        "unitPriceMinor": 489,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000428-precelki-junior-safari-lajkonik",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_9_b_b_89bb0566079ec20a5a3c8a3b60302a3bce3137c3_bb_faef0d1422158e39705ca361d2d6b46f-small.png&w=1920&q=80",
+        "cardSha256": "172beb1a9943c76fafeaad01abe94e577771675b500050b5509231b1eb14662c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024540",
+        "title": "Dolina Dobra Szynka drobiowa 100% mięsa",
+        "packSize": "100 g",
+        "unitPriceMinor": 849,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024540-dolina-dobra-szynka-drobiowa-100-miesa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_6_0_8_46084393fa262e08e7ee6594d7fa87301d217e1c_DD_drobiowa_szynka__2__removebg_preview-small.png&w=1920&q=80",
+        "cardSha256": "04d90a741d2efc47113d7ba548d18bec6f10710c92e0f2e29af981e616adb594",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011929",
+        "title": "Lovege Napój owsiany Barista",
+        "packSize": "1 l",
+        "unitPriceMinor": 544,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011929-lovege-napoj-owsiany-barista",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_9_8_3_39830c6c8d4ac26bef365a2f144338a098138ee4_A0011929-small.png&w=1920&q=80",
+        "cardSha256": "ab4f52e5f89a71e7c45681e8be8f2dc0a67f4712190c49fc53cd3d32038302a5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025642",
+        "title": "Turek Camembert Lekki Naturalny",
+        "packSize": "120 g",
+        "unitPriceMinor": 759,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025642-turek-camembert-lekki-naturalny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_3_0_e_230e767d9b14bed1a4ec7f6df28a0fccef12e79d_bb_0737b44899ebaa840357253935f3a1af-small.png&w=1920&q=80",
+        "cardSha256": "96fc4bef1761807976933e37e5845fb690e234410150912ea5fde468d539af41",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024739",
+        "title": "Czekolada mleczna z nadzieniem nugat z orzechów laskowych Ritter Sport",
+        "packSize": "100 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024739-czekolada-mleczna-z-nadzieniem-nugat-z-orzechow-laskowych-ritter-sport",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_f_6_7_6f670fa21b30d7a147701f0b45266783c9bc406b_4000417026002-small.png&w=1920&q=80",
+        "cardSha256": "4a192196eaea9cd3ce1be2c75bfbd5bb24e4c11f8ce5837c9d3854ca91fd0552",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023164",
+        "title": "Lody Tiramisu Widziały Gały Co Brały",
+        "packSize": "220 ml",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023164-lody-tiramisu-widzialy-galy-co-braly",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_2_f_d_e2fd73b216faf7eba7381d9f105474079e169792_5906154288514-small.png&w=1920&q=80",
+        "cardSha256": "2289103c4e8991e6ad0c590fb52838df5cdf879210c40a1221c13ede3a8f73bc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025056",
+        "title": "Sokołów Kabanosy wieprzowo - drobiowe serowe",
+        "packSize": "80 g",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025056-sokolow-kabanosy-serowe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_d_5_a_2d5a2d6f339a3dc62f1726248d8871d7cc50f365_Kabanosy_serowe_rem-small.png&w=1920&q=80",
+        "cardSha256": "960e6f74edfad9c7feafe4313798383537c1d4cc76d82e97b8d24b88c27795f7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007241",
+        "title": "Syrop daktylowy ekologiczny Bio Planet",
+        "packSize": "250 ml",
+        "unitPriceMinor": 1799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007241-syrop-daktylowy-ekologiczny-bio-planet",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_8_0_5_78051deb3f3161914d349de7c4095d89eb905b63_03b6d6c4413b0c125ea2e25bb285ddb12b6f4f9d-small.png&w=1920&q=80",
+        "cardSha256": "f7d92b0092ca0d630419e8451e621ffdc06a2cd0b30337cd42e0d8cb2c970ea4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023719",
+        "title": "Kurczak Zagrodowy Mięso z uda kurczaka",
+        "packSize": "530 g",
+        "unitPriceMinor": 1849,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023719-kurczak-zagrodowy-mieso-z-uda-kurczaka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_5_3_7_f537254184523823df7a6262c5994e36091cd842_85709_SEDAR_016a_Mie__so_z_ud_Kurczka_Zagrodowego-small.png&w=1920&q=80",
+        "cardSha256": "794900fe214fc6a7945220215d46abe50c96be032d0f84cac173ecf66e78e22a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024265",
+        "title": "Jogurt SKYR typu islandzkiego naturalny SBA",
+        "packSize": "330 g",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024265-jogurt-skyr-typu-islandzkiego-naturalny-sba",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_e_1_c_7e1c83528cc2798b00b43b9e75c517c312771894_sbaskyrhighproteinbutelkasqpet330gw02natural-small.png&w=1920&q=80",
+        "cardSha256": "c2d6f16bc79e8770f4dcde0b790e6e851025e59d939c759a40237787e5b7cb0e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014184",
+        "title": "BEL Przekąska Kiri",
+        "packSize": "35 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014184-bel-przekaska-kiri",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_c_6_c_ec6ce8bddfc77b746de0cc9700ac66068730ff29_Kiri_Przekaska_Plain_35g_PL_Disney-small.png&w=1920&q=80",
+        "cardSha256": "a974e50c3020fa4de342b5b509cedfcc5f61ac7ce56481061f91c49edda9bb75",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006248",
+        "title": "Ketchup premium classic Develey",
+        "packSize": "460 g",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006248-ketchup-premium-classic-develey",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_a_b_44ab4fae9939fd07358c8a1d2d47b8d9a6f3af11_Develey_Ketchup_Classic_460g_3742-small.png&w=1920&q=80",
+        "cardSha256": "c95bb1d03b98b61c7ee8f29022f9d12cf6ebf31f80b81d99a8c46ec601fa4aeb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024349",
+        "title": "Wonder Wash Fruity Fiesta Coccolino",
+        "packSize": "1.48 l",
+        "unitPriceMinor": 6499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024349-wonder-wash-fruity-fiesta-coccolino",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_7_b_5_97b5ff335f7eb9535937b2dead59e1493823285c_8720181920486_1-small.png&w=1920&q=80",
+        "cardSha256": "276534a55320d3d6411f22bf2a19928cbd1c6f5da3d66dc048b49e7b5f2bd295",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005111",
+        "title": "Karma soczysty smak Sheba Selection",
+        "packSize": "340 g",
+        "unitPriceMinor": 1499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005111-karma-soczysty-smak-sheba-selection",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_5_3_c_853c2d10803057b9d557a443556993d1840647fa_bb_dznQxTxHUUaDozHJzna51A__-small.png&w=1920&q=80",
+        "cardSha256": "ea2807535f74b86d8400e7ac15fb1f07b22e5db5b1e2b8ee28b272f62d68d4a4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001053",
+        "title": "Dolina Dobra Filet ze schabu wieprzowego w plastrach",
+        "packSize": "300 g",
+        "unitPriceMinor": 1249,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001053-dolina-dobra-filet-ze-schabu-wieprzowego-w-plastrach",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_c_d_b_5cdbf6a8f6a62f09c8fe15742257f6230291abcc_1667512_3271_Filet_ze_Schabu_removebg_preview-small.png&w=1920&q=80",
+        "cardSha256": "67bcbb65b8dc47c76698586762089c30eb52ad870ce8de07ad8a84b0b4faca9c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022609",
+        "title": "Kurczak Zagrodowy Filet z piersi kurczaka klasa A",
+        "packSize": "400 g",
+        "unitPriceMinor": 1649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022609-kurczak-zagrodowy-filet-z-piersi-kurczaka-klasa-a",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_b_5_c_2b5c0beee3f9bd855cdce21216ad11568b77855f_bd112381bdf2bbe064fdbe77f0931276f1737c67-small.png&w=1920&q=80",
+        "cardSha256": "69c444349be44978714bfee7918db149f66f23587d5b93eb85f1ae27ca389e5a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009256",
+        "title": "Słonecznik łuskany Helcom",
+        "packSize": "200 g",
+        "unitPriceMinor": 369,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009256-slonecznik-luskany-helcom",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_b_0_d_bb0d8ca59ddcc84f554da0cbb3a69118c1ab93b6_2f7bf1ba8772b3f6238878b562e4bd529a08d3a5-small.png&w=1920&q=80",
+        "cardSha256": "ea848e19a41070cd4d7400d9fd5efa51e836040f138315813a0a0300c49f8b1c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0018071",
+        "title": "SBA ser wysokobiałkowy niskotłuszczowy wiórki",
+        "packSize": "300 g",
+        "unitPriceMinor": 1349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0018071-sba-ser-wysokobialkowy-niskotluszczowy-wiorki",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_9_5_3_a95388b7b201e2949e2d563da5c1714131823ccf_7ae9cd9227c80454b45aad6fbdbb6f5c9136400f-small.png&w=1920&q=80",
+        "cardSha256": "93417eb910ced4a82699c682756593bc7b79319ec365a12be360c7ff4f3ff089",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025262",
+        "title": "Talarki o smaku sera i jalapeno Lajkonik",
+        "packSize": "100 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025262-talarki-o-smaku-sera-i-jalapeno",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_a_8_0_ca80fbcfc127f6cdf6f89eb80e81b441e2cea9a5_bb_f9856ad3e29b8876e82a325546ae5d55-small.png&w=1920&q=80",
+        "cardSha256": "60daf879ad058928bd9ae43225bb7d6110af9c1c973dc1b4ceff9deb1ce9a357",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023963",
+        "title": "Piwo 0% Melonżada Żywiec",
+        "packSize": "500 ml",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023963-piwo-melonzada-0-zywiec",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_2_b_8_62b89d736faf32dafb1a5571561aff8a3b523b29_nowos__c_melonz__ada-small.png&w=1920&q=80",
+        "cardSha256": "73e47f52d049bbb3e2506b74b1559d3678ad473435a13025995a346fb69ca018",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023303",
+        "title": "Kanapka proteinowa Crunch & Cream o smaku czekoladowym Corny",
+        "packSize": "35 g",
+        "unitPriceMinor": 479,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023303-kanapka-proteinowa-crunch-cream-o-smaku-czekoladowym-corny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_8_e_f_a8ef6bdc3d656cc92b51239fe44a6ffc4d7a921b_Crunch___Cream_Czekoladowy-small.png&w=1920&q=80",
+        "cardSha256": "260f3ee15fd109b01f627f20cc24903958bd3f5bc28792145b178403b24b93f3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022911",
+        "title": "Serenada Ser Gouda",
+        "packSize": "135 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022911-serenada-ser-gouda",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_9_c_9_d9c960aff9943cd65974bfcf39157a68c212a190_Gouda_135g_koperta_packshot-small.png&w=1920&q=80",
+        "cardSha256": "2aabace5d6ca5285dfa85d8b8d624461da767330ccdd2b2f303ba62171fa09dc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014183",
+        "title": "BEL Kiri naturalny ser topiony z twarożku śmietankowego",
+        "packSize": "100 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014183-bel-kiri-naturalny-ser-topiony-z-twarozku-smietankowego",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_9_1_a_291ab275b570fd47a249d021b453b0017c219450_Kiri_100g_PL_Disney-small.png&w=1920&q=80",
+        "cardSha256": "1d75cb0dce593551f872fd7b48edb456f360d1729590cb87fe156604b5e37239",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013311",
+        "title": "Majonez premium bez dodatku cukru Develey",
+        "packSize": "400 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013311-majonez-premium-bez-dodatku-cukru-develey",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_d_d_0_6dd0e2a056a6c5af935014f588c4f4e783e0e022_Develey_Majonez_Premium_400ml_9459-small.png&w=1920&q=80",
+        "cardSha256": "aafbdd9c6b571e79bc9c3eb8d66562680726dfcd2650ba4023b2e0ce453817b2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 1,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Wszystkie"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/promocje/top-przeceny",
+        "label": "TOP przeceny"
+      },
+      {
+        "path": "/categories/promocje/top-produkty",
+        "label": "Top produkty"
+      },
+      {
+        "path": "/categories/promocje/napoje-roslinne",
+        "label": "Napoje roślinne"
+      },
+      {
+        "path": "/categories/promocje/wloskie-delikatesy",
+        "label": "Włoskie delikatesy"
+      },
+      {
+        "path": "/categories/promocje/lody-widzialy-galy-co-braly",
+        "label": "Lody Widziały Gały Co Brały"
+      },
+      {
+        "path": "/categories/promocje/zdrowy-wybor",
+        "label": "Zdrowy wybór"
+      },
+      {
+        "path": "/categories/promocje/miesne-przekaski-sokolow",
+        "label": "Mięsne przekąski Sokołów"
+      },
+      {
+        "path": "/categories/promocje/strefa-bio",
+        "label": "Strefa BIO"
+      },
+      {
+        "path": "/categories/promocje/przysmaki-super-benek",
+        "label": "Przysmaki Super Benek"
+      },
+      {
+        "path": "/categories/promocje/wedliny-dolina-dobra",
+        "label": "Wędliny Dolina Dobra"
+      },
+      {
+        "path": "/categories/promocje/jedz-lepiej",
+        "label": "Jedz lepiej"
+      },
+      {
+        "path": "/categories/promocje/drob-zagrodowy",
+        "label": "Drób zagrodowy"
+      },
+      {
+        "path": "/categories/promocje/nabial-mlekovita",
+        "label": "Nabiał Mlekovita"
+      },
+      {
+        "path": "/categories/promocje/sosy-develey",
+        "label": "Sosy Develey"
+      },
+      {
+        "path": "/categories/promocje/porzadki-w-domu",
+        "label": "Porządki w domu"
+      },
+      {
+        "path": "/categories/promocje/przekaski-helcom",
+        "label": "Przekąski Helcom"
+      },
+      {
+        "path": "/categories/promocje/swiat-sodastream",
+        "label": "Świat SodaStream"
+      },
+      {
+        "path": "/categories/promocje/przekaski-lajkonik",
+        "label": "Przekąski Lajkonik"
+      },
+      {
+        "path": "/categories/promocje/whiskas-i-sheba",
+        "label": "Whiskas i Sheba"
+      },
+      {
+        "path": "/categories/promocje/strefa-piwa",
+        "label": "Strefa piwa"
+      },
+      {
+        "path": "/categories/promocje/czekolady-i-wafle",
+        "label": "Czekolady i wafle"
+      },
+      {
+        "path": "/categories/promocje/camembert-turek",
+        "label": "Camembert Turek"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/promocje",
+    "observedAt": 1789827583520,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789827583520-d3b0d8949d93",
+        "observationSha256": "d3b0d8949d93fe858b762d43680cd74c21aa45f2f45fec1894e578e1bb986a93",
+        "screenshotSha256": "0ed3a6864d53f919b2eaf57bfe12619c8076a9e9a79f26635489f35a7dce4a59",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2399,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

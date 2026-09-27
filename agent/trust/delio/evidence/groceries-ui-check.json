@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-09-20T12:44:40.829Z",
+  "origin": "http://127.0.0.1:4319",
+  "page": "/groceries",
+  "controllerMs": 1232,
+  "operatorAdmission": true,
+  "catalogue": {
+    "renderedCards": 862,
+    "categoryButtons": [
+      "All groceries",
+      "Fruit & vegetables",
+      "Bread & bakery",
+      "Dairy & eggs",
+      "Meat & fish",
+      "Pantry",
+      "Non-alcoholic drinks",
+      "Snacks & sweets",
+      "Home & personal care",
+      "Alcohol, tobacco, medicinal, infant or children products",
+      "Needs review"
+    ],
+    "notice": "862 groceries collected for Kraków. Build a plan below; no order is submitted.",
+    "freshness": "Kraków listing snapshot · 20 Sept, 14:19 · Stock is rechecked before ordering."
+  },
+  "coupon": {
+    "statusLine": "Saved to this account · valid through 30 September 2026. Activate in Delio’s cart.",
+    "appliedToDraft": 0,
+    "merchantAccepted": false
+  },
+  "search": {
+    "query": "maslo",
+    "resultCount": 9,
+    "firstTitles": [
+      "Masło Polskie extra",
+      "Sałata masłowa prosto od rolnika",
+      "Masło Extra 82%",
+      "YoPro Kubeczek proteinowy Banan i masło orzechowe",
+      "Lurpak masło klasyczne"
+    ]
+  },
+  "categoryFilter": {
+    "category": "Bread & bakery",
+    "resultCount": 37
+  },
+  "basketDraft": {
+    "afterThreeAdds": {
+      "count": "2",
+      "lines": 1,
+      "progress": "148,62 zł to the 150 zł milestone",
+      "saveEnabled": true
+    },
+    "afterOneRemove": {
+      "count": "1",
+      "progress": "149,31 zł to the 150 zł milestone"
+    },
+    "merchantOrderSubmitted": false,
+    "storage": "browser-local draft only"
+  },
+  "regionSwitch": {
+    "warsawProducts": 0,
+    "warsawFreshness": "Warsaw has not been collected. Choose Kraków to use this catalogue; its prices do not transfer to another city.",
+    "krakowPricesCarryOver": false
+  },
+  "renderedPhoto": {
+    "present": true,
+    "loaded": true,
+    "naturalWidth": 150,
+    "naturalHeight": 150,
+    "srcHost": "delio.com.pl"
+  },
+  "unexpectedExternalOrigins": []
+}

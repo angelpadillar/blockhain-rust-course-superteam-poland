@@ -1,0 +1,598 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0000735",
+        "title": "Piątnica śmietana 18%",
+        "packSize": "200 g",
+        "unitPriceMinor": 269,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000735-piatnica-smietana-18",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_2_a_0_b2a0665b343fb9d904df52d6de2642d0a4f1eab1_686a4b5a36f129513b0042d1d27abd119b93d870-small.png&w=1920&q=80",
+        "cardSha256": "bdc4434d8847a72f6115d3604ba5760d71e859725ca4a05aab96ba71a6562ac2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002957",
+        "title": "Łaciata śmietanka UHT 30%",
+        "packSize": "250 ml",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002957-laciata-smietanka-uht-30",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_2_3_d_623ddaffe73ad69236de8920139ab0a59aee6bee_f8TNbaxlIPcnhQ__-small.png&w=1920&q=80",
+        "cardSha256": "903f3e399cf256043cf62b820d4003b81e41173b2772933166e52dee072adbb6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006646",
+        "title": "Piątnica śmietana 18%",
+        "packSize": "400 g",
+        "unitPriceMinor": 519,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006646-piatnica-smietana-18",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_6_3_7_4637b2f180e91eff19e2f2b7de072fe2c7277207_3b3dCJTrUg2i_Xy3ZRyQ__-small.png&w=1920&q=80",
+        "cardSha256": "6f6d8cc8fb7444ea95b64007e3c36fa2251a7838d6072a8bda0b51cc95d53d88",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002956",
+        "title": "Łaciata śmietanka UHT 18%",
+        "packSize": "250 ml",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002956-laciata-smietanka-uht-18",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_f_2_f_4f2f46e4ab10174f99dea4f71b5cd4ac1845e09e_g__-small.png&w=1920&q=80",
+        "cardSha256": "e753a8d7972a23712656df8187d9d49fbcbbf68f7bfe5b6787262daf6fba509d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002955",
+        "title": "Piątnica śmietanka 30% do ubijania",
+        "packSize": "400 ml",
+        "unitPriceMinor": 939,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002955-piatnica-smietanka-30-do-ubijania",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_d_8_5_3d8562eae55d2e3d360524e2737a429e22d49590_bb_UtAkettFmWPbCnkxXM1Wcw__-small.png&w=1920&q=80",
+        "cardSha256": "41580450717e1da3dd53cec334288d8e89ac5eac52d6cc69592b8e303652f54f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002965",
+        "title": "Bakoma bita śmietanka w sprayu",
+        "packSize": "250 g",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002965-bakoma-bita-smietanka-w-sprayu",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_4_7_bf477501a413642cd24b9ad22cad7a3e25bd3db2_bb_zzMN50DYdNixCjRRKlKiaA__-small.png&w=1920&q=80",
+        "cardSha256": "e0660aba3b4686e3adab5f5fcbd24f6f7e4ebfc78307c2ec0728b5c1fc8c9082",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002964",
+        "title": "Śmietana 18% bez laktozy",
+        "packSize": "200 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002964-smietana-18-bez-laktozy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_c_d_f_5cdf57827e6e18ab4b5c0684caa9317bf52c0886_b958d6817311f3844b1b1fa29e6441fdb7c88f0a-small.png&w=1920&q=80",
+        "cardSha256": "7ade451be2bf0a429aaedf878e2bb9c69d73eb9e53e6381cd244daea5638b4a9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000933",
+        "title": "Piątnica śmietana 12%",
+        "packSize": "200 g",
+        "unitPriceMinor": 329,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000933-piatnica-smietana-12",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_e_0_2_be02b70848473d1d3c210590280dd8a788f07169_bb_32FMsm58dnhHaMFQnKJGuw__-small.png&w=1920&q=80",
+        "cardSha256": "edc197634c30c254086a8b91b4a5eb6897ac16d9585b6700c0e350a11551a097",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002961",
+        "title": "Piątnica śmietanka gęsta 36%",
+        "packSize": "200 g",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002961-piatnica-smietanka-gesta-36",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_6_1_f_261f858428b35c0970865cabccd2b6791d71007f_bb_iv1zlIYFNj9YPZayukhxxg__-small.png&w=1920&q=80",
+        "cardSha256": "7c13ffe90dfb2978fb11aad867fac2aaf12d7534be855b40e32fc48fea755a60",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006645",
+        "title": "Łaciate śmietanka UHT 12%",
+        "packSize": "250 ml",
+        "unitPriceMinor": 469,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006645-laciate-smietanka-uht-12",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_5_3_d_753d87fe4c88d00e54c0e444ca6df8d8e01a9a61_bb_z636oMHFW9x9gWZklqsoug__-small.png&w=1920&q=80",
+        "cardSha256": "a53cc94c4247834c3062f7b8fa597b10bff8bc4010fa4b89590a9aec38cbc4c9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009813",
+        "title": "Krasnystaw Śmietana 18%",
+        "packSize": "150 g",
+        "unitPriceMinor": 249,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009813-krasnystaw-smietana-18",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_1_0_2_0102d6edb0f14ff377066af70ac716d1d3ef0477_bb_a6fd692c95c317627cd404cc370b8f17-small.png&w=1920&q=80",
+        "cardSha256": "230069f8e4514a4497afe9ff6091cd962d022e8047fda8f18f003f57da57c2b1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013057",
+        "title": "Łaciata śmietanka 30%",
+        "packSize": "200 ml",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013057-laciata-smietanka-30",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_6_2_3_9623e07e707db02c62ed9d38d4630127824333a7_bb_lj_fAeWqdByJlBSQTac0nQ__-small.png&w=1920&q=80",
+        "cardSha256": "3eb5249b501e09921f526f9d3a65ff66cb38f92f36b4e7e19dd076582597a0fb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009812",
+        "title": "Krasnystaw Śmietana 12%",
+        "packSize": "150 g",
+        "unitPriceMinor": 169,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009812-krasnystaw-smietana-12",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_c_7_1_7c71ee62d6d490afdf2f9b4597028832ff131bc3_bb_4823c8e12f7d306eef8032e751ec6ba1-small.png&w=1920&q=80",
+        "cardSha256": "e900c9c5d33c00deb3ffc98b5271a1b122847bafd5089988182ba068b60cc816",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002954",
+        "title": "Łaciata śmietanka UHT do kawy",
+        "packSize": "100 ml",
+        "unitPriceMinor": 259,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002954-laciata-smietanka-uht-do-kawy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_3_b_6_73b615a4f797825944ed4f6e5ebe3b145df787a8_bb_NhFjqTHHwdVVbIEU6xb1hg__-small.png&w=1920&q=80",
+        "cardSha256": "db540f99ac0042b368e1b6c4a8768c9d395f843fd68fc9a58b3509b7e9e6e139",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/nabial/smietany",
+    "observedAt": 1789906533933,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906533933-6ccd7291470d",
+        "observationSha256": "6ccd7291470d304a2b22f79b25bcd8b2b2abe9a63d1443147ca98088e8c53401",
+        "screenshotSha256": "bf38973068bd44c59fde5517add942b83f0feaee36f0d0fd1b414b46f2473c5c",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1931,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

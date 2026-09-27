@@ -1,0 +1,910 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0001092",
+        "title": "Awokado dojrzałe",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001092-awokado-dojrzale",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_a_d_6_ead661db03c900fc99a7180a3f1ea80fec0abca9_b3f67b05c20955b8d5b6aa4c8a3a2c01645a663f-small.png&w=1920&q=80",
+        "cardSha256": "92a41228a10e37a55304e9390388fbfe71b0818152831dbafeac9033ec839a3c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000722",
+        "title": "Cytryna",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 389,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000722-cytryna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_a_c_1_4ac10da12210d1ab7b710f3b2874a4ff2caea9c8_edf3cb4255fe19a75413a56c400f97cdf57b3b7e-small.png&w=1920&q=80",
+        "cardSha256": "4ad36f4eeddf59ea935ef97132670d4bfa9d04ad6568d840c43df2b6f54643e8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0026055",
+        "title": "Gruszka konferencja prosto od rolnika",
+        "packSize": "800 g",
+        "unitPriceMinor": 764,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026055-gruszka-konferencja-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_9_1_5_e915d04fa9ce0661c2325d605b66f07e9c591e2c_gruszka_konferencja-small.png&w=1920&q=80",
+        "cardSha256": "661c1eebf243f2e8d01e003fb9e430d08edddcc5f84158ab271a400842520c09",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001108",
+        "title": "Kiwi",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 219,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001108-kiwi",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_d_c_c_8dcc034331417b120d1b1e965497d071e4cb82eb_41b909bc35ff46e3464e5f3bcf37dcdc7a8ee66f-small.png&w=1920&q=80",
+        "cardSha256": "b3703e1e899a70e2a5450929f06d101e53b8229c3440d7bcd27b02c2d1ace639",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0026052",
+        "title": "Śliwka ciemna prosto od rolnika",
+        "packSize": "700 g",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026052-sliwka-ciemna-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_d_6_b_ed6b3f24640027aa79702b41c6d38121caca6097_sliwka_ciemna-small.png&w=1920&q=80",
+        "cardSha256": "1fe68d5cc4d08b50fc2861a1fbb9d8eb1ff2f1af9e8ff5e9d34d70f75cf0dc92",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0010047",
+        "title": "Winogrono jasne",
+        "packSize": "500 g",
+        "unitPriceMinor": 989,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0010047-winogrono-jasne",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_2_1_d_521d1f1bf08f7aa2846410d02a3744a4f298fe46_71c10c77b7b7fc1f77442150a0db56cd508fc0dd-small.png&w=1920&q=80",
+        "cardSha256": "6ce9f08e52bf76f7ce662b3aea281367b1ad81c33b98918a82902aeef7189749",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007812",
+        "title": "Arbuz bezpestkowy",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 2999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007812-arbuz-bezpestkowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_a_0_f_ea0fd0ce8feec459da43f29adbf48b3b00c615d7_e54950414eeeb230cc83fa2056de2ccd34a2e885-small.png&w=1920&q=80",
+        "cardSha256": "3c0d1af90824a95a2e734adb72f86e3444172d4bde4eb53a183e82a64d4708ae",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001116",
+        "title": "Nektarynka",
+        "packSize": "500 g",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001116-nektarynka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_a_f_a_7afa6d8e26aac716d83bd8134e149f2e00d1490a_6ff6923abba3a6dc591f3c8f07503c8bcdeaf7a8-small.png&w=1920&q=80",
+        "cardSha256": "dd3362552475a3903f1b432be046e8321cf1310d5cbc8fefaff0edf9b03d76d2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024315",
+        "title": "Borówka amerykańska prosto od rolnika",
+        "packSize": "250 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024315-borowka-amerykanska-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_4_4_a_e44a242cd9fa430d73e33c11deddaca6a670fff0_boro_____wka_polska_250g-small.png&w=1920&q=80",
+        "cardSha256": "8eaa38b4315d8ef354a723c654da4fdece571a44e453a2f1043efdba1059b5a2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001113",
+        "title": "Mango gotowe do spożycia",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 849,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001113-mango-gotowe-do-spozycia",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_1_0_0_410073fbaeefa5b5fe9bee1f748af6fa53d00352_924dbc9332b2b2725b3bb8c91d5c5c2250f3d283-small.png&w=1920&q=80",
+        "cardSha256": "9038dbb97a236bb182c4b76b2fb4a14f40140a8126a322f4fe38bd38fd2c7a6b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009616",
+        "title": "Kubek ananas",
+        "packSize": "150 g",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009616-kubek-ananas",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_f_f_a_bffa2ddba9ca1542a1efbf309da6405a84ad43a7_36b45f1362be4e87c86d09e3895bcfa41d2b8304-small.png&w=1920&q=80",
+        "cardSha256": "39173f66f578500fb4b91364f7719809c2f830af1493eb63cb299bde73f92dc7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006341",
+        "title": "Figa",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 339,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006341-figa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_c_1_1_cc11a0be959838f19aaf67555fffc52b0178345d_e02bd73ffc5ffe8c368c41e12c1893435266de52-small.png&w=1920&q=80",
+        "cardSha256": "d493ea47e89c9d96befa48a0974fc74145a4a1831661ae4e29fcc9ab2a8a5304",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001122",
+        "title": "Pomarańcze deserowe",
+        "packSize": "4 szt.",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001122-pomarancze-deserowe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_1_a_7_51a77eea2cc93b1f42b4925a06213fce7133225f_8d26d22c95e587261f7d9e42f9871e8bc959bcbc-small.png&w=1920&q=80",
+        "cardSha256": "6f6e2f9264af2051741c8e35e421cfa07bae4ffcc5fd70dc449f5ba33c0378b4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0026050",
+        "title": "Jabłka Gala prosto od rolnika",
+        "packSize": "4 szt.",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026050-jablka-gala-prosto-od-rolnika",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_b_4_1_db4178f35cb037960c6290df66f13a109049ce1c_jab__ko_gala-small.png&w=1920&q=80",
+        "cardSha256": "976f5571ea21fd606823ec094356f4ea700bc19c7b61e8cd720eab8adaaf65b1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0019867",
+        "title": "Brzoskwinia żółty miąższ",
+        "packSize": "500 g",
+        "unitPriceMinor": 579,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0019867-brzoskwinia-zolty-miazsz",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_8_1_f_281fbed076b6e0a9175d6a04c9264d26b1bb03c3_brzoskwinia_______ty_miazsz_removebg_preview-small.png&w=1920&q=80",
+        "cardSha256": "c657c5497bbbb628929e71a2605e16b968ed826614c35500a3d17db9ee211936",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024891",
+        "title": "Mix owoców jagodowych - „3 Vibe'y Dnia”",
+        "packSize": "300 g",
+        "unitPriceMinor": 1949,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024891-mix-owocow-jagodowych-3-vibe-y-dnia",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_5_4_b_054b7b1929ff5faf9ed12987fc39d4315add42b4_mix_bez_logo-small.png&w=1920&q=80",
+        "cardSha256": "58a5be9d354b74a12d9a6aab2ca467e917a50a71d22d0c5ea6489e6c3b0d35db",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0026045",
+        "title": "Jabłka Gold Millenium",
+        "packSize": "1 kg",
+        "unitPriceMinor": 539,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0026045-jablka-gold-millenium",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_b_3_8_cb38baa299a7c32b092437545d4831426a14d0a0_GM_1__1_-small.png&w=1920&q=80",
+        "cardSha256": "15abcd50f7ec51dd31d12a9ff29dfaa7a143a447d1d62f3215e5e76c45169e3e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001335",
+        "title": "Jabłka Granny Smith",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 749,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001335-jablka-granny-smith",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_e_6_b_8e6bcd7aa27be0e66d5a71db120d811356ed10cc_73db5675548fd5bbe90635901ec4115acc8fb496-small.png&w=1920&q=80",
+        "cardSha256": "fd01af37d48261b5e81acb8be9e7f44857200e55b6a6dd38b95af467e77d4ee3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001112",
+        "title": "Mandarynka",
+        "packSize": "600 g",
+        "unitPriceMinor": 609,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001112-mandarynka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_5_d_c_95dcbdd0f98e1cf825f3c80f0064ef242e1331d4_2596b553ef268bbff14375b4adec88ba151de243-small.png&w=1920&q=80",
+        "cardSha256": "7ee4af7e01e6940b6b5922faccfd0fef851d033ec878ffcbf9e0991312a1e7c8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0004273",
+        "title": "Jabłka Szampion",
+        "packSize": "4 szt.",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0004273-jablka-szampion",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_e_4_e_3e4e20c93c81dc293ef5f7b1d268ca4c2533ba40_b63c79f8a4dc5a6b1a799198820a0400384c8813-small.png&w=1920&q=80",
+        "cardSha256": "973f19854bf71fd59b4ffae33bb43e81cbe66aa25c8de33483de41c7cd7f6ecd",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0025276",
+        "title": "Porzeczka czerwona",
+        "packSize": "125 g",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0025276-porzeczka-czerwona",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_b_8_0_1b80ee97a6c3baf3875e88f0c20b563f7647db04_porzeczka_czerwona-small.png&w=1920&q=80",
+        "cardSha256": "a89d562be3f5f532750b6ef84df924049f47d677d8b42dcf331215b25270c87d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001111",
+        "title": "Limonka",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001111-limonka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_6_1_f_861f91f7c717d4ef191118e36824dbadbd0703c9_148833460be194bcec9adb68ac9524960111c9b4-small.png&w=1920&q=80",
+        "cardSha256": "f1c9303ae02a774a621f2c18304f2ff496b3ca5ef1cceb87eee0ad35bd205e82",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005057",
+        "title": "Marakuja ciemna",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005057-marakuja-ciemna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_3_7_1_c3711edfde170d85f0f0fef45b56e18681beb0ab_marakuja-small.png&w=1920&q=80",
+        "cardSha256": "029e99544266daf057751d9c41f20d8d562dd732ffc117e54693b42cb7a2491e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022617",
+        "title": "Mango suszone",
+        "packSize": "200 g",
+        "unitPriceMinor": 1649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022617-mango-suszone",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_4_5_8_c458f0d0abe3d715b5274f677308ecaca95e11fd_mamgo_suszone-small.png&w=1920&q=80",
+        "cardSha256": "cf40e887f1d5de222222f9d1fcffe293723b72533cbc1e261f137408fee58585",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006340",
+        "title": "Malina",
+        "packSize": "125 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006340-malina",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_7_7_6_8776263dd40d12f1724cd829981d049ff8fbe0b5_A0006340-small.png&w=1920&q=80",
+        "cardSha256": "bfc3c906cf1664054ed074ef004db9131c9f5818e8bfc99eb0421dc8c226fb8b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009613",
+        "title": "Kubek nasion granatu",
+        "packSize": "100 g",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009613-kubek-nasion-granatu",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_7_1_7_c7174a6f8579ddd71891264b418628427636a88d_4b06aba84484d4947da32e8ae2ceca0032ee129a-small.png&w=1920&q=80",
+        "cardSha256": "1c57ac6d8b4f4f33898075bb2dc46c293537bfa03b05894ff96f5ce8d6bf54d0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003292",
+        "title": "Melon żółty",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 1499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003292-melon-zolty",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_a_b_0_6ab05b4aeff667e38de72f963212e4cb8c5db344_835d1dc628f3f468381d9105b1271bb578297d22-small.png&w=1920&q=80",
+        "cardSha256": "30b7ad1f70524f79b2e854431819691ca593efba2ae069af00de40a3d3d923a6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003065",
+        "title": "Awokado BIO",
+        "packSize": "2 szt.",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003065-awokado-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_7_2_a_b72a6fd42461279ce9e0486e47e0cae00d25e647_awokado-small.png&w=1920&q=80",
+        "cardSha256": "497b330a696ad995e2268757c2aeccf7e8f25aadab3b68a419720dfe9ca91458",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001091",
+        "title": "Ananas miodowy królewski",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001091-ananas-miodowy-krolewski",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_7_5_8_d7582ff326f3e0c9366922e6792960b381d70741_6f93d33ffedce4250c65691002c779bafca0dbc2-small.png&w=1920&q=80",
+        "cardSha256": "cdb7f10ea2971e8d2b5d36b39018f5f85f081d4b95381c2aab15c2b66a8f0ed6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009615",
+        "title": "Kubek mix melonów",
+        "packSize": "150 g",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009615-kubek-mix-melonow",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_a_8_9_6a891c05a12ee5a1f69590980d3d846dee16e071_aa6241b50938bd5ca5a639f9b134d88e42c72270-small.png&w=1920&q=80",
+        "cardSha256": "17d5920e5a534f95d8a2c1f6f9e858e3736f3b9eec4f853209a5d0c38be1eca8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0003068",
+        "title": "Cytryna BIO",
+        "packSize": "400 g",
+        "unitPriceMinor": 1499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0003068-cytryna-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_0_a_2_10a2c45885dba14021c10c39a9df6d3f168ba70a_pol_pl_CYTRYNY_SWIEZE_BIO_okolo_1_00_kg_15200_1_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "636bd5b692f896ad4396af30c6d50d0d2fc8b07c3225cd51ca0185c0f5f3fd2b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006667",
+        "title": "Gruszki BIO",
+        "packSize": "540 g",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006667-gruszki-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_3_c_f_d3cf1e02db88cbebc0765121d10b9505782012b4_254105-small.jpg&w=1920&q=80",
+        "cardSha256": "961141b231566c0a18a9bbf5ff8003fc371bafb519d7f0343606e783255d201b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0024787",
+        "title": "Kubek soczystego arbuza",
+        "packSize": "150 g",
+        "unitPriceMinor": 649,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0024787-kubek-soczystego-arbuza",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_4_f_5_d4f5cc7225e0663ddb5f6dcff3349f08ee8c7c43_Kubek__soczystego_arbuza_150_g-small.png&w=1920&q=80",
+        "cardSha256": "c1d49e629f6bf093446e9099475629be8f2225050ef689ac57c0cd3a5633b431",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007897",
+        "title": "Jabłka Gala BIO",
+        "packSize": "1 kg",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007897-jablka-gala-bio",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_7_e_b_57ebb6ca1f81a2ff7fa375a15f2f75c8f0f56f10_385eff4bde2890d0e5d3273aa0896351d3be3ece-small.png&w=1920&q=80",
+        "cardSha256": "b937e325ea643e6d33aebecd342e76f8830eb506e28c581a33eb966f4092db64",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0008693",
+        "title": "Awokado zielone",
+        "packSize": "175 g",
+        "unitPriceMinor": 579,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0008693-awokado-zielone",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_c_a_e_acae78ee98e6122aebb4abdec6c9b22b39f0cb5f_avocado_preview_rev_1-small.png&w=1920&q=80",
+        "cardSha256": "ca54b8e0eedca6cc3908a7998fdd9365b61577880cc7ca61047ee979795f0e38",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0022387",
+        "title": "Zestaw do herbaty zimowej",
+        "packSize": "150 g",
+        "unitPriceMinor": 1899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0022387-zestaw-do-herbaty-zimowej",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_a_8_1_ca814ae0ea4da0a896ac1ecd2f8d7a2aab9c93e8_zestaw_do_herbaty_zimowej-small.png&w=1920&q=80",
+        "cardSha256": "4ebb5c38b341c718e61d0849a3844246ae9c7050be31df3766b9df390d335bc4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011336",
+        "title": "Kubek kiwi",
+        "packSize": "150 g",
+        "unitPriceMinor": 849,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011336-kubek-kiwi",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_b_7_6_cb7670dcc5d0735037aa1a4c689974713d48e6d1_5b0d17e87934c394d40eafa34dc31a409df99b5e-small.png&w=1920&q=80",
+        "cardSha256": "edbdca37379302b2bb65e836774030f961ba55e4f31c5b3cb04e69a090c38590",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006339",
+        "title": "Granat",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006339-granat",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_3_9_7_a39715f794c01a56c25935c584befe195cc46b69_b87a39ad2745841b1c1a23ab18075c5080b0d288-small.png&w=1920&q=80",
+        "cardSha256": "f5e6ec5249fac3d2daca98f2233d30b75a3eda619a9b5e43e2b2c6af3114db14",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020894",
+        "title": "Chlebowiec (Jackfruit) suszony",
+        "packSize": "200 g",
+        "unitPriceMinor": 1999,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020894-chlebowiec-jackfruit-suszony",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_b_7_5_6b75e2730e1fbc8ffd64c0e5030515da975bde93_4c5f2fab774d099581528dcfe58d6f183b41306e-small.png&w=1920&q=80",
+        "cardSha256": "a46bb1a58c2014124f72756a885694182e80c731a87e9b5a4829689cc06718c5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007159",
+        "title": "Pomelo",
+        "packSize": "1 szt.",
+        "unitPriceMinor": 1199,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007159-pomelo",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_8_b_6_38b6a338c961fd1493c34335bf4cd4e095ba36ec_4267a51aa4be7c14ecb2bc4311be44d42ff49d8a-small.png&w=1920&q=80",
+        "cardSha256": "0b515c89525c04d93c8293e66f14a3a1e547a756b43a58df3e82a5c4c3964a91",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/warzywa-i-owoce/owoce",
+    "observedAt": 1789906468796,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906468796-64093603284e",
+        "observationSha256": "64093603284e7ce850fb2cf06eac8a55727c159a55d591ca992bd64129854bf5",
+        "screenshotSha256": "99766427a57d385d093be6cc5e18bc8ff9f67ef6daecfd19c939ae1184040ddd",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 2178,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

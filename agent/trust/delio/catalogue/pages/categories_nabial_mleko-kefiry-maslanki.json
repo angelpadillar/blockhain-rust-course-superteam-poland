@@ -1,0 +1,982 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0000709",
+        "title": "Łaciate mleko UHT 2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000709-laciate-mleko-uht-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fb_9_c_5_b9c5f90e9155f565f2aee910a3a6bc7191beaaaf_7d912427231393d0e17d2a4eb59f316d5ace162d-small.png&w=1920&q=80",
+        "cardSha256": "0c023fba0639be4e7e1b90922bf5a282f22930e89fb6fd42360356fc9f9908ab",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000865",
+        "title": "Wydojone mleko bez laktozy UHT 1,5%",
+        "packSize": "1 l",
+        "unitPriceMinor": 529,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000865-wydojone-mleko-bez-laktozy-uht-1-5",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_8_f_3_88f3b3a7f2fa48bb845b78e818117c9e39a1210f_32ae6c8169791e7e751dbd28b3798f12ff987be3-small.jpg&w=1920&q=80",
+        "cardSha256": "2050215fc1bf21d3fa0eddb9cbd7838b96e7de47993f65b349946e656ba04ad3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009810",
+        "title": "Krasnystaw Kefir butelka",
+        "packSize": "420 g",
+        "unitPriceMinor": 279,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009810-krasnystaw-kefir-butelka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_4_6_e_a46e749587cdd8bbc7181e229102d43bbcb58573_ab7a21bc6ecf4d3c8c09112c3dc26a376d9a1cc9-small.png&w=1920&q=80",
+        "cardSha256": "10870e5bdcd2e7136f64e26df963a347608aaf545e2f12659efa8011c103bbcf",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000866",
+        "title": "Wydojone mleko bez laktozy UHT 3,2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000866-wydojone-mleko-bez-laktozy-uht-3-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_d_9_0_3d9023f647231954187d7404628bd91625d56218_8d94975ce135ff8c93eceb7c6e182ec9e78fc14a-small.png&w=1920&q=80",
+        "cardSha256": "5afe42c00efc8970bcf56927f9cf62c951664e02843038cb3f48409a3bdc92cc",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000862",
+        "title": "Łaciate mleko UHT 3,2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 459,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000862-laciate-mleko-uht-3-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_e_d_a_cedae11fd77b20ae6faf7db68fee575a5a183f3d_FNS7EA8fw__-small.png&w=1920&q=80",
+        "cardSha256": "880964489ade6091fafe78199f9d8de6194062b20833cbce1650c3995516263f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011868",
+        "title": "Łaciate mleko UHT bez laktozy 1,5 %",
+        "packSize": "1 l",
+        "unitPriceMinor": 529,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011868-laciate-mleko-uht-bez-laktozy-1-5",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_7_0_44702dbd9501c5c280efef5a4a1c8c7c37a02950_bb_kibE3TzyNpkX13_F8j9d4Q__-small.png&w=1920&q=80",
+        "cardSha256": "a4e95f93ee62f66007d2243ecf07cddccbdfb7efc040414a51ae1f94cbe59587",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000708",
+        "title": "Piątnica Wiejskie bez laktozy 2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 669,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000708-piatnica-mleko-but-2-bez-laktozy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_f_f_1_2ff1700cb2429080e3d74b809b658eb97df675b7_bb_hbsuBjPVu2wWHAvIIbqtIQ__-small.png&w=1920&q=80",
+        "cardSha256": "525ba741b4500d022897ce8c076c0e2c28f694ead8ac4f5ff83969ed5de57249",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006797",
+        "title": "Piątnica mleko wiejskie 2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 439,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006797-piatnica-mleko-wiejskie-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_6_a_9_a6a9237ca51405a8e062b117d568d08debeeafd9_bb_7tZqAXSeYDzW05AOiX6Xeg__-small.png&w=1920&q=80",
+        "cardSha256": "cc45a9a2b0aedc8312db6f5964d14908f352c5b073732a8d37620b5ed2976a3f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002856",
+        "title": "Piątnica mleko ekologiczne 3,9%",
+        "packSize": "1 l",
+        "unitPriceMinor": 729,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002856-piatnica-mleko-ekologiczne-3-9",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_4_0_c_e40c652a245355e5b09e8c72cc9efefd410a0d6a_G5JHcWzXE_fNTg__-small.png&w=1920&q=80",
+        "cardSha256": "4c97cd7452b6f8ee6ee8cf2d3092eca0f22ff626d439be4b2bfc6e60181c1b72",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006796",
+        "title": "Mleko wiejskie świeże 3,2% Piątnica",
+        "packSize": "1 l",
+        "unitPriceMinor": 479,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006796-mleko-wiejskie-swieze-3-2-piatnica",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_5_d_9_75d98d9970efe242aaae7d744b204dfb8a64f76d_bb_kbU8ft8BZC8eApuJPs4hhA__-small.png&w=1920&q=80",
+        "cardSha256": "4bd04b4d961ac03157308da6d2f29a4940af3c50c6250492a83dfb98e7a8a0f3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000860",
+        "title": "Mleko polskie spożywcze 3,2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 439,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000860-mleko-polskie-spozywcze-3-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_2_7_2_42722fe431548819d7e28cea2e006b02362b29b4_b5ed20191c58f5c56e27e74a30743303df432b7a-small.png&w=1920&q=80",
+        "cardSha256": "8a126539a6ca99949f47ba4851315bfa26db3f2c4db88ab2cb30f9d667bce696",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000861",
+        "title": "Mleko polskie spożywcze 2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000861-mleko-polskie-spozywcze-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_0_1_c_f01c3a9cf7f1310120f0052f045bf76451bba0b4_dbb2886be18ac3698d4e8967134042a55555da69-small.png&w=1920&q=80",
+        "cardSha256": "6c521eb31c62266d3f232c1f498d0993a13081d18e9094df75e3263452754826",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009811",
+        "title": "Krasnystaw Kefir wysokobiałkowy",
+        "packSize": "420 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009811-krasnystaw-kefir-wysokobialkowy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_d_0_6_3d063eab7b5716c25f332ecbd783ca73e012c15b_bb_15921e4a49c9ad89dcd8e29fa2a55eb5-small.png&w=1920&q=80",
+        "cardSha256": "4aac9ae6415fb23b0698fb9867e3c43e04a70d3917fa4140f1969c72a9d67aa1",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009527",
+        "title": "Łaciate mleko bez laktozy 2,0%",
+        "packSize": "1 l",
+        "unitPriceMinor": 559,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009527-laciate-mleko-bez-laktozy-2-0",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_9_d_1_e9d1b5be2f541fb0f56ce351d9ee1b4f928c1190_bb_e1682e90052013b04ef031b9c35dceee-small.png&w=1920&q=80",
+        "cardSha256": "f1b121d378435ca68c81f34afe9fa1844df25dee71ba97e0430214ae35b935d6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000846",
+        "title": "Robico kefir tradycyjny",
+        "packSize": "400 g",
+        "unitPriceMinor": 369,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000846-robico-kefir-tradycyjny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_3_3_5_c3354ab42c5172f609a23837cd54d569eb9a6fbe_bb_441d6255477cca0d007948e102e419f5-small.png&w=1920&q=80",
+        "cardSha256": "9f2e95c71afdda95206a0f43739b269bffda8cf88ceadb7492e1d8fe75fd5981",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000847",
+        "title": "Robico kefir tradycyjny bez laktozy 1,5%",
+        "packSize": "400 g",
+        "unitPriceMinor": 329,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000847-robico-kefir-tradycyjny-bez-laktozy-1-5",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_4_9_c_e49c609f11878340227a16e3ca4a2e2543bce2c9_bb_efc04a94f31e9eb3742e05bba2c2bac1-small.png&w=1920&q=80",
+        "cardSha256": "e0d8ab726c898c9cdc121e83ea4c3ed15440893c531c0a7fc8b95c48f9d96c81",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002857",
+        "title": "Łaciate mleko UHT 3,8%",
+        "packSize": "1 l",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002857-laciate-mleko-uht-3-8",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F6_d_9_b_6d9ba7396856f4a7095f63ef5274ffa7b6c51e7b_bb_0wgVbSNojRc5NadlJJ_Aag__-small.png&w=1920&q=80",
+        "cardSha256": "1943876d07da3dc06b980c6a53ca27b30f8ef12a59419e28a8d397eccd2837e4",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000710",
+        "title": "Łaciate mleko UHT 2%",
+        "packSize": "500 ml",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000710-laciate-mleko-uht-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_1_f_7_51f75b34eca08e50eeb3dac91aec8050aecc09d6_bb_d32ca51de4c2ce9e570852349238fe35-small.png&w=1920&q=80",
+        "cardSha256": "296856a7c05e0d3e68832e08c826566aa8b2def71a7ef0519c29d6764df80cae",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000867",
+        "title": "Gostyń mleko zagęszczone niesłodzone",
+        "packSize": "500 g",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000867-gostyn-mleko-zageszczone-nieslodzone",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_8_4_7_0847e4d42658f10578bc1259665726af650c7841_bb_gCfH2kO1BylOxuntcXFUuw__-small.png&w=1920&q=80",
+        "cardSha256": "5debcb0772f7e8198e633828de5e4e70520e6fc251df7a3e9dba0bdfcb599a78",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005731",
+        "title": "Maluta Ayran",
+        "packSize": "330 g",
+        "unitPriceMinor": 389,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005731-maluta-ayran",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_a_8_3_ca835900b7d30aa57731c4d754367abbd7328ccd_bb_yB3cz79iUo9clyr2903ggg__-small.png&w=1920&q=80",
+        "cardSha256": "c0e00558026b49510018868e22bc23b63a778dd757ed6eea6e6b6099e3388995",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000836",
+        "title": "Mrągowska maślanka naturalna",
+        "packSize": "1 l",
+        "unitPriceMinor": 549,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000836-mragowska-maslanka-naturalna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_5_8_0_058042bd2b404fd6b5120bac1fcbb94ecdd23e4e_7H2qeILLwFw__-small.png&w=1920&q=80",
+        "cardSha256": "1e6ccc049abdb24d261c9e4fe63c10146f55c1a6248cf4790ef4b66761d0151b",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009472",
+        "title": "Gostyń mleko zagęszczone słodzone",
+        "packSize": "530 g",
+        "unitPriceMinor": 1099,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009472-gostyn-mleko-zageszczone-slodzone",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fa_d_f_7_adf761d7933fbd5b1df22e37a149b5761fb0059d_bb_fUcF_HLbNZusCyDZ0ZSRfw__-small.png&w=1920&q=80",
+        "cardSha256": "24f70b1564ca03364eaf94b0402717159c5d6b6190ac0b193bca7f4049270681",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0005337",
+        "title": "Mleko wydojone UHT bez laktozy 3,2%",
+        "packSize": "500 ml",
+        "unitPriceMinor": 349,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0005337-mleko-wydojone-uht-bez-laktozy-3-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_1_1_3_c1135a1eb942e3594f837fa17a6461bb001607ae_13de6d68d182d8b11bc0f943a7ffc194036a5be3-small.jpg&w=1920&q=80",
+        "cardSha256": "ec5d9d3feecfb6b803b3988881122244b59570e6cd1f06af2e1b020ada77dd2e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0016651",
+        "title": "Łaciate Mleko UHT Bez Laktozy 3,2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0016651-laciate-mleko-uht-bez-laktozy-3-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_7_a_4_e7a4b7229b136df4a9dc8fbc7f2a41fee29413fc_bb_B4bcQpnBAXKvvbnkHiBN4Q__-small.png&w=1920&q=80",
+        "cardSha256": "1a1e08de664c4fdfaab2765868c85ec9ed05d7c60b7f5c71634b085b004f0481",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0017770",
+        "title": "Wypasione Mleko Czekoladowe UHT",
+        "packSize": "1 l",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0017770-wypasione-mleko-czekoladowe-uht",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_d_b_1_9db126b3431af30759631b9359c778ab68268f41_eae56df0_c251_4e0e_b622_a015b1509e43__1_-small.png&w=1920&q=80",
+        "cardSha256": "997ead21fb9f0ec4211cb44dd60fcd5bcfbe380f4be3f6a479f1fc4b49b139f9",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011641",
+        "title": "SBA Mleko wysokobiałkowe klasyczne",
+        "packSize": "1 l",
+        "unitPriceMinor": 769,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011641-sba-mleko-wysokobialkowe-klasyczne",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_0_a_0_30a0eeaed5628260714edb3c9ac64941ef3ed507_d981cdaf2b25b1dd1eba268201566f815f6a75b2-small.png&w=1920&q=80",
+        "cardSha256": "2c2456a3ec61ae8d412f64849250140f01ce8172a06c76be6f3d9a61a94d5b6c",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011654",
+        "title": "Kefir Polski naturalny",
+        "packSize": "1 kg",
+        "unitPriceMinor": 599,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011654-kefir-polski-naturalny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_c_7_9_1c790d025197bfb125c2ed3eddd646b3ef3793e0_25e310a03f974fe2fa47f8a3389b0d772ce09c1b-small.png&w=1920&q=80",
+        "cardSha256": "db5c90c11f1c35bd1c08f7f45f0a1febe05e7c7bd9b360aa3aae52cda066c3df",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006793",
+        "title": "Łaciate mleko 3.2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 469,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006793-laciate-mleko-3-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_a_2_2_2a227883d669c0a1c0e5a812b7842a45579f420a_bb_cl1h00ReoXOb4q4hFkHT1g__-small.png&w=1920&q=80",
+        "cardSha256": "883888bbd1dceb286c57e3cc60ba72ba3294607fd2085c2f063dd9011b6fb409",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014206",
+        "title": "Gostyń Mleko Zagęszczone Light",
+        "packSize": "500 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014206-gostyn-mleko-zageszczone-light",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_c_2_c_1c2cbdd53316ddbca51bdecd779cac6414e09326_bb_bdkAjQkuFNgn_F64rPfxGw__-small.png&w=1920&q=80",
+        "cardSha256": "82f7023e892524a8054677ab64998e1c86c293f50ff4190aab7215f95646e8b2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0014822",
+        "title": "Łaciaty Kefir Pitny Protein+",
+        "packSize": "360 g",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0014822-laciaty-kefir-pitny-protein",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_a_0_c_0a0ce91c5afcd192a3da5290cd63590255949db5_bb__LcqoH6tk5ggyO9_0Gn9Sw__-small.png&w=1920&q=80",
+        "cardSha256": "2fefdedac6b105523307df237a0ceb9fa8a2bc10c41ee304a0d89538b684204d",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0000864",
+        "title": "Wypasione mleko UHT 2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 419,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0000864-wypasione-mleko-uht-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_4_f_9_24f9152090bf991127e6e59de58f85fc7f342b14_A0000864-small.png&w=1920&q=80",
+        "cardSha256": "b80b2bc353e51fea923c878655c4189019869106b4a2364f4b5bfea361ff0afa",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006794",
+        "title": "Łaciate mleko 2%",
+        "packSize": "1 l",
+        "unitPriceMinor": 429,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006794-laciate-mleko-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_5_b_3_55b350c1a0bc965b20a4cc3a46e1e14ff3f89589_bb_K5fL2junhahttue8xOAf_A__-small.png&w=1920&q=80",
+        "cardSha256": "792ccdd2d29c21dc86cf46e2d485e300b1298dec0c9478a2d8529d0b70115d69",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009430",
+        "title": "Mlekpol Maślanka naturalna",
+        "packSize": "360 ml",
+        "unitPriceMinor": 239,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009430-mlekpol-maslanka-naturalna",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Ff_4_e_c_f4ec105ed5ba870d97bf6ec49f300c3a954465d2_bb_buM4wuVKN1wYAwQpNbQKyQ__-small.png&w=1920&q=80",
+        "cardSha256": "41f8577005ea2eb3997c6ee9ae26b2b0fa027e1baba83b0ec3cf2c4bffd4f7ba",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002849",
+        "title": "Robico kefir tradycyjny",
+        "packSize": "900 g",
+        "unitPriceMinor": 679,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002849-robico-kefir-tradycyjny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_a_d_e_cade9b57fedfbdd8c42a297769f386d7d087f762_bb_cd45e55ae8b904d9cade2eb37971bd8e-small.png&w=1920&q=80",
+        "cardSha256": "f5fae4080eebcbcc2aef61e0eec4bb7f81d7b5ff18cd8c4116ba8c1ac0d3e4e7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011865",
+        "title": "Łaciate Mleko UHT 3,2 %",
+        "packSize": "500 ml",
+        "unitPriceMinor": 299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011865-laciate-mleko-uht-3-2",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_b_8_f_db8f1b971149edb642b3facf1067c83421248bae_bb_662e629a83fddb36e80b5113f99aa17e-small.png&w=1920&q=80",
+        "cardSha256": "11cb99b9e86cee499959a0ebb3bffb9a4e54184face3da9721f750b13e564070",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002848",
+        "title": "Robico kefir tradycyjny",
+        "packSize": "280 g",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002848-robico-kefir-tradycyjny",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_d_2_3_3d23fafda2eefaaf18e6e0b68138ad6aab4ab0fe_bb_08795597fcb29ef5bd6c9c47e82a2aa4-small.png&w=1920&q=80",
+        "cardSha256": "239fd25a2b5918b301b7626cf6c4d5587cfbebbf76d8385ba27ca509af047547",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023852",
+        "title": "Activia Kefir jogurtowy o smaku truskawkowym",
+        "packSize": "280 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023852-activia-kefir-jogurtowy-o-smaku-truskawkowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_d_3_5_0d35d2fe451bc9c912719b4c232c632537a5340e_ACTIVIA_DRINK_280g_Kefir_Truskawka-small.png&w=1920&q=80",
+        "cardSha256": "c63aa7ced81ee0673b91357f1b1894f0b8faedc38c22c0ca3cfe6b02dadaf050",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007783",
+        "title": "Milko kefir",
+        "packSize": "1 l",
+        "unitPriceMinor": 719,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007783-milko-kefir",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_d_4_f_5d4f64d1617001b2c8229e08ebafc206a0425349_U3C6zcoa9ase3hrg__-small.png&w=1920&q=80",
+        "cardSha256": "5dd00234ded2e0ab37fce0214c1315251755d52a69d36d05581459cef8ed5f96",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002865",
+        "title": "Krasnystaw Zsiadłe mleko",
+        "packSize": "400 g",
+        "unitPriceMinor": 439,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002865-krasnystaw-zsiadle-mleko",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_5_4_2_c542607bd9cbbfa88141196b027def198fea228e_bb_MwqIf6UQMVsm0hLjQBzVmQ__-small.png&w=1920&q=80",
+        "cardSha256": "974debcea0923f5fdffe3d40946277cb9ef68aa3f74e6e85cef4b450cce25ca5",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011651",
+        "title": "Wypasione Mleko zagęszczone słodzone",
+        "packSize": "150 g",
+        "unitPriceMinor": 659,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011651-wypasione-mleko-zageszczone-slodzone",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_6_9_2_4692c4f43a9a64c8a05c13acb12ff94fd51a9879_463140093b7b574ce5a5462807f8da283ee645cf-small.png&w=1920&q=80",
+        "cardSha256": "1b63a341be6b2bdd21d31234a207495aef5ded65f158a9fc1c3923bbf3ada4e2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023851",
+        "title": "Activia Kefir jogurtowy o smaku borówkowym",
+        "packSize": "280 g",
+        "unitPriceMinor": 499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023851-activia-kefir-jogurtowy-o-smaku-borowkowym",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_f_a_8_2fa805deb481d1bb20cc0bb85e1dcdc8e17bf652_bb_7790df5f41b4b0675cd12934a62533a0-small.png&w=1920&q=80",
+        "cardSha256": "7176358c82c6039ff1d9e0fb8984dfc86b79ceb2ccece9a41f72d0d130590906",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0017480",
+        "title": "Kefir naturalny bez laktozy",
+        "packSize": "375 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0017480-kefir-naturalny-bez-laktozy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F9_8_0_a_980abe32eb7149b9995503f35c7947f0a8522638_3f7c7cac1a3d02d7b05b389b32a546b1f07f8197-small.png&w=1920&q=80",
+        "cardSha256": "3476922179088245de6cba7e750deafdb049354c8b7e53750e52b08aa4320fdb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0002867",
+        "title": "Wypasione mleko UHT czekoladowe",
+        "packSize": "200 ml",
+        "unitPriceMinor": 239,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0002867-wypasione-mleko-uht-czekoladowe",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F4_4_9_f_449f7126cf65b00c757e1c382db6b2dc02d46129_54bf7d67d533fd52c9df1c3fc51b0a0077a667cb-small.png&w=1920&q=80",
+        "cardSha256": "a010f650e01f222fd3efd5ce513351b0e3ea2a9c5ab69a731e12a86d9ef9627a",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0013290",
+        "title": "Gostyń Masa krówkowa",
+        "packSize": "510 g",
+        "unitPriceMinor": 1299,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0013290-gostyn-masa-krowkowa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_a_1_0_5a10316d26a133339b544d3a939baa55e9d3a495_bb_W4ECWovpkWmK34sxIGsjIw__-small.png&w=1920&q=80",
+        "cardSha256": "fbdd623ef246dcfa923c85abc3d0c1952dc9eeb00a24a0fcd00d280e21b6fecb",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0009057",
+        "title": "Gostyń Mleko zagęszczone niesłodzone z magnezem",
+        "packSize": "350 g",
+        "unitPriceMinor": 629,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0009057-gostyn-mleko-zageszczone-nieslodzone-z-magnezem",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fd_e_5_1_de51a729c4bedc2742d6ca7dc5760b012623927e_bb_4ddRA7Hr9TqGDMJMoa7zJw__-small.png&w=1920&q=80",
+        "cardSha256": "b3b1df9d3df466fe1215c00288bc39a22a2355a73f2dc3f5562887b4698035b6",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011056",
+        "title": "Chłodnik szefa",
+        "packSize": "370 g",
+        "unitPriceMinor": 449,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011056-chlodnik-szefa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_e_c_a_ceca934794bccc689e98da9c986da40a6b70433b_bb_389fe6e65c462565da6caa5f2b52ea26-small.png&w=1920&q=80",
+        "cardSha256": "02e4c572b860ab92b202fd63f488cdfe8488750b13aaa578121fa3ba3251bace",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/nabial/mleko-kefiry-maslanki",
+    "observedAt": 1789906531010,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906531010-9216029b1f3c",
+        "observationSha256": "9216029b1f3c680ea214eb4b7c691865ad3473990396af358a370971b9099bbf",
+        "screenshotSha256": "ff5a470cbfe8460d1d03cb228a00fbf503e684fae9544f6facca676968a11677",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1946,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}

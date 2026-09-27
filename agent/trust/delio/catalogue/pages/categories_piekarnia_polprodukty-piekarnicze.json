@@ -1,0 +1,622 @@
+{
+  "ok": true,
+  "result": {
+    "items": [
+      {
+        "productId": "A0023662",
+        "title": "Dan Cake Pinsa",
+        "packSize": "230 g",
+        "unitPriceMinor": 1169,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023662-dan-cake-pinsa",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F1_f_9_d_1f9d29f70d32977d6df02c2ee1ff0ce4869708ef_PINSA_2024_02_70mm_112893_final_j-small.png&w=1920&q=80",
+        "cardSha256": "9db6e16af65bec28e2395a17357397ad680fb74b961c6245bcada93f4cb8b2c2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0017123",
+        "title": "Turka tortilla soft",
+        "packSize": "240 g",
+        "unitPriceMinor": 399,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0017123-turka-tortilla-soft",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_9_a_d_79ad13094db9704f7f3a31dfb5aca1488bcfdf04_9153d5af50052062504c9980c56986d8e7f34f2e-small.png&w=1920&q=80",
+        "cardSha256": "72f56ee13974e0e98902b0770a9b5d714c0927d63db78f58edfb4639015ec9b7",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001507",
+        "title": "Wrapy 25 cm Casa de Mexico",
+        "packSize": "240 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001507-wrapy-25-cm-casa-de-mexico",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F3_2_2_5_3225a652cbe6bfa4b51b81b6f7679fb39c756f14_bb_9ihgQh2tc7M9Nvh31sINWw__-small.png&w=1920&q=80",
+        "cardSha256": "0ecbc3980ff0c9ceb36e7f23823aeb196d35bea7afde38a7bd62e9288994c2a2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006221",
+        "title": "Ciasto francuskie XXL",
+        "packSize": "375 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006221-ciasto-francuskie-xxl",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_c_e_1_8ce17cecefb1b5cd8a6ff86f630019de1c3802de_0koKQP0sUBtrFGsN_NKg__-small.png&w=1920&q=80",
+        "cardSha256": "5de96abefb90d5a28b6f55b5f2e9cad04d8badc72629845f98aa5e5691abda20",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0011000",
+        "title": "Bułka hamburgerowa w stylu Brioche",
+        "packSize": "300 g",
+        "unitPriceMinor": 769,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0011000-bulka-hamburgerowa-w-stylu-brioche",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F7_2_a_f_72afa955bb441e98a5471cf57b94cad63bd63fc7_Packshot_BakerVille_HB_Brioche__002_-small.png&w=1920&q=80",
+        "cardSha256": "294e4c9eac61128f886c037970bed3adb27ea9f7ab621c6a8b9e6e306c02d4f0",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023660",
+        "title": "Dan Cake Brioche Burger",
+        "packSize": "300 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023660-dan-cake-brioche-burger",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_4_2_7_c427588376af52ec8f8acab14c086a60046ce838_BURGER_BRIOCHE_2024_03_70mm_89919-small.png&w=1920&q=80",
+        "cardSha256": "84ce93c36da827447cbcf4c894f2bc510c70f8db94d34a69740c83ed5e31a230",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0006222",
+        "title": "Spód włoski do pizzy",
+        "packSize": "400 g",
+        "unitPriceMinor": 889,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0006222-spod-wloski-do-pizzy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_7_b_9_27b99f1b791e8b48e0c74c7fe7450f9408df2205_gw__-small.png&w=1920&q=80",
+        "cardSha256": "989113d45f1c0e464029b0c70e4773ae98a5116e5193f4e894f2f8689c36b8d2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0007490",
+        "title": "Spody do pizzy 33 Fine Foods",
+        "packSize": "280 g",
+        "unitPriceMinor": 629,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0007490-spody-do-pizzy-33-fine-foods",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_d_2_3_5d2364cdad7c492d41943a963ab53952bce6a7ad_2a443bb713706c9573fc85dc3abf051b207f7482-small.png&w=1920&q=80",
+        "cardSha256": "a063fd112f71c43f2852b879735e3ab27381033e3ac5afb2982ce12229ab0b6f",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020417",
+        "title": "Keto Tortilla",
+        "packSize": "160 g",
+        "unitPriceMinor": 2499,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020417-keto-tortilla",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F8_b_2_6_8b26370738466acc906ca834a5546d59385dd0cf_5060834811048-small.png&w=1920&q=80",
+        "cardSha256": "6e9a7d6eee7ed25d1801b242435060d3c936ffd96049e0058ffc482417aeca76",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0019359",
+        "title": "Dan Cake Hot Dog Buns",
+        "packSize": "250 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0019359-dan-cake-hot-dog-buns",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_7_5_a_c75a5606f9b4a056ee70c5a3741c6aaf90c4841f_bb_c9207e462edde09ca6ca74c7f9a6d8fa-small.png&w=1920&q=80",
+        "cardSha256": "508051fc7c1beb0dc30d7e965c7c9230f63b9d28fa628749641d8cb2a68e34a2",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0001508",
+        "title": "Wrap pszenny 20 cm Casa de Mexico",
+        "packSize": "240 g",
+        "unitPriceMinor": 729,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0001508-wrap-pszenny-20-cm-casa-de-mexico",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F5_9_5_1_5951b65bb6a92d9b30714b3bb428dfcdd59023e7_8wgDg__-small.png&w=1920&q=80",
+        "cardSha256": "c401e0f5d68c1e7ebb3767d7f78049290c75b69785c5cd9d8e9c096f07bb8fb3",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0020418",
+        "title": "Włoski Keto Spód do Pizzy",
+        "packSize": "100 g",
+        "unitPriceMinor": 1259,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0020418-wloski-keto-spod-do-pizzy",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F2_3_c_e_23ce146acceddfa9db44ff696a54bcb8abdd429c_A0020418__-small.png&w=1920&q=80",
+        "cardSha256": "90e161ed225e8da880ff36c94358b6512f5bb6e6dccf408cb8b06d4dbd338e92",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023659",
+        "title": "Dan Cake Graham Burger",
+        "packSize": "330 g",
+        "unitPriceMinor": 699,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023659-dan-cake-graham-burger",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_f_7_e_ef7ea1aef95113292cdd4546130bf948394a136e_BURGER_GRAHAM_2024_03_70mm_76135-small.png&w=1920&q=80",
+        "cardSha256": "2912deb003f692f7215432b53ca3df01fbe8bdcc6568620a6d4133b522a72fa8",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023661",
+        "title": "Dan Cake Pita pszenna kieszonka",
+        "packSize": "400 g",
+        "unitPriceMinor": 739,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023661-dan-cake-pita-pszenna-kieszonka",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fe_8_3_0_e83030851a1d670777bc107a636bf572696e1b0e_PITA_KIESZONKI_400g_2025_02_70mm_v017698-small.jpg&w=1920&q=80",
+        "cardSha256": "bde94a30520222142777407cfc29b69ae06b0827cea127374b8241af261d458e",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0023658",
+        "title": "Dan Cake Hot Dog MAXI",
+        "packSize": "320 g",
+        "unitPriceMinor": 899,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0023658-dan-cake-hot-dog-maxi",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2Fc_a_0_6_ca0622355a4a92727a196e44a0528de51c512965_MAXI_HOT_DOG_2024_02_11538_bun-small.png&w=1920&q=80",
+        "cardSha256": "506d49c151a8e07a9bc2d65175a394f0ba60a47aefa815456b065de611e90385",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      },
+      {
+        "productId": "A0019361",
+        "title": "Dan Cake Hamburger z sezamem",
+        "packSize": "300 g",
+        "unitPriceMinor": 799,
+        "currency": "PLN",
+        "sourceUrl": "https://delio.com.pl/products/A0019361-dan-cake-hamburger-z-sezamem",
+        "imageUrl": "https://delio.com.pl/_next/image?url=https%3A%2F%2Fimages.prod.lait.app%2Fpim_prod%2Fproduct-images%2F0_1_6_b_016b15688b24be6187882568cb727c32e985ed2e_bb_367fadf22a96ff87fd0d2a1be0d6971d-small.png&w=1920&q=80",
+        "cardSha256": "edb698fedc9bbd3131cabb89ec7064cfb79c5d339edbaa5778af7437844e1e98",
+        "stock": "not_verified",
+        "couponEligibility": "unknown"
+      }
+    ],
+    "incompleteCards": 0,
+    "conflictingProducts": 0,
+    "completeInventory": false,
+    "links": [
+      {
+        "path": "/categories/promocje",
+        "label": "Promocje"
+      },
+      {
+        "path": "/categories/delio-najtaniej-online",
+        "label": "Najtaniej online"
+      },
+      {
+        "path": "/categories/okazje-i-premiery",
+        "label": "Okazje i premiery"
+      },
+      {
+        "path": "/categories/wyprzedaze",
+        "label": "Wyprzedaże"
+      },
+      {
+        "path": "/categories/piekarnia",
+        "label": "Piekarnia"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze",
+        "label": "Półprodukty piekarnicze"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/tortille-i-pity",
+        "label": "Tortille i pity"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/bulki-do-hotdogow-i-hamburgerow",
+        "label": "Bułki do hotdogów i hamburgerów"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/ciasta-francuskie-spody-do-ciast",
+        "label": "Ciasta francuskie, spody do ciast"
+      },
+      {
+        "path": "/categories/piekarnia/polprodukty-piekarnicze/spody-do-pizzy-pinsy",
+        "label": "Spody do pizzy, pinsy"
+      },
+      {
+        "path": "/categories/od-rolnika",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce",
+        "label": "Warzywa i owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/prosto-od-rolnika1",
+        "label": "Prosto od rolnika"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce",
+        "label": "Owoce"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/truskawki-maliny-borowki",
+        "label": "Truskawki, maliny, borówki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/banany-i-owoce-egzotyczne",
+        "label": "Banany i owoce egzotyczne"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/cytrusy",
+        "label": "Cytrusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/jablka-gruszki-sliwki",
+        "label": "Jabłka, gruszki, śliwki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/winogrona-arbuzy-melony",
+        "label": "Winogrona, arbuzy, melony"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/pozostale-owoce-sezonowe",
+        "label": "Pozostałe owoce sezonowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/owoce/zestawy",
+        "label": "Zestawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa",
+        "label": "Warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pomidory-ogorki-papryki",
+        "label": "Pomidory, ogórki, papryki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/ziemniaki-buraki-dynie",
+        "label": "Ziemniaki, buraki, dynie"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/salaty-kapusty-brukselki",
+        "label": "Sałaty, kapusty, brukselki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/szpinak-jarmuz-rzodkiewki",
+        "label": "Szpinak, jarmuż, rzodkiewki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/marchew-pietruszka-wloszczyzna",
+        "label": "Marchew, pietruszka, włoszczyzna"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cebula-czosnek-por",
+        "label": "Cebula, czosnek, por"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/brokul-kalafior-szparagi",
+        "label": "Brokuł, kalafior, szparagi"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/cukinie-baklazany-kukurydza",
+        "label": "Cukinie, bakłażany, kukurydza"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa/pozostale-warzywa",
+        "label": "Pozostałe warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia",
+        "label": "Gotowe do zjedzenia"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/warzywa-i-owoce-w-kubkach",
+        "label": "Warzywa i owoce w kubkach"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/surowki-i-mixy",
+        "label": "Surówki i mixy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/obrane-warzywa",
+        "label": "Obrane warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/gotowe-do-zjedzenia/swieze-przetwory-hummusy",
+        "label": "Świeże przetwory, hummusy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy",
+        "label": "Zioła, kiełki, przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/kielki-i-mikroliscie",
+        "label": "Kiełki i mikroliście"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/przyprawy-ziola",
+        "label": "Przyprawy"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/ziola-kielki-przyprawy/ziola-i-natki",
+        "label": "Zioła, natki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby",
+        "label": "Grzyby"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/swieze",
+        "label": "Grzyby świeże"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/suszone",
+        "label": "Grzyby suszone"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/grzyby/marynowane",
+        "label": "Grzyby marynowane"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty",
+        "label": "Kwiaty"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-ciete",
+        "label": "Kwiaty cięte"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/warzywa-i-owoce-kwiaty/kwiaty-doniczkowe",
+        "label": "Kwiaty doniczkowe"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki",
+        "label": "Kiszonki"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/kiszone-warzywa",
+        "label": "Kiszone warzywa"
+      },
+      {
+        "path": "/categories/warzywa-i-owoce/kiszonki/soki-z-kiszonek",
+        "label": "Soki z kiszonek"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki",
+        "label": "Bułki i bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bulki",
+        "label": "Świeże bułki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/swieze-bagietki",
+        "label": "Świeże bagietki"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulki-pakowane",
+        "label": "Bułki pakowane"
+      },
+      {
+        "path": "/categories/piekarnia/bulki-i-bagietki/bulka-tarta-i-panierki",
+        "label": "Bułka tarta i panierki"
+      },
+      {
+        "path": "/categories/piekarnia/chleby",
+        "label": "Chleby"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/swiezy-chleb",
+        "label": "Świeży chleb"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-pakowany",
+        "label": "Chleb pakowany"
+      },
+      {
+        "path": "/categories/piekarnia/chleby/chleb-tostowy",
+        "label": "Chleb tostowy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta",
+        "label": "Przekąski i ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/paczki-muffiny",
+        "label": "Pączki, muffiny"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ptysie-gofry-babeczki",
+        "label": "Ptysie, gofry, babeczki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/wypieki-z-ciasta-francuskiego",
+        "label": "Wypieki z ciasta francuskiego"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/drozdzowki-chalki",
+        "label": "Drożdżówki, chałki"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciastka-bezy",
+        "label": "Ciastka, bezy"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/ciasta",
+        "label": "Ciasta"
+      },
+      {
+        "path": "/categories/piekarnia/przekaski-ciasta/slone-przekaski",
+        "label": "Słone przekąski"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe",
+        "label": "Chrupkie i ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-kukurydziane",
+        "label": "Wafle kukurydziane"
+      },
+      {
+        "path": "/categories/piekarnia/chrupkie-i-ryzowe/wafle-ryzowe",
+        "label": "Wafle ryżowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe",
+        "label": "Bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/bulki-bezglutenowe",
+        "label": "Bułki bezglutenowe"
+      },
+      {
+        "path": "/categories/piekarnia/bezglutenowe/chleb-bezglutenowy",
+        "label": "Chleb bezglutenowy"
+      },
+      {
+        "path": "/categories/nabial",
+        "label": "Nabiał"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe",
+        "label": "Sery białe i pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/twarog",
+        "label": "Twaróg"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/serki-wiejskie",
+        "label": "Serki wiejskie"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/kanapkowe",
+        "label": "Kanapkowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/topione",
+        "label": "Topione"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-plesniowe",
+        "label": "Pleśniowe"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/typu-feta-halloumi",
+        "label": "Typu feta, halloumi"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/mozzarella-ricotta-mascarpone",
+        "label": "Mozzarella, ricotta, mascarpone"
+      },
+      {
+        "path": "/categories/nabial/sery-biale-i-plesniowe/sery-kozie",
+        "label": "Sery kozie"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte",
+        "label": "Sery żółte"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/tradycyjne-w-plastrach",
+        "label": "Tradycyjne w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/z-dziurami-w-plastrach",
+        "label": "Z dziurami w plastrach"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/dlugodojrzewajace-twarde",
+        "label": "Długodojrzewające, twarde"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-wedzone-i-z-dodatkami",
+        "label": "Sery wędzone i z dodatkami"
+      },
+      {
+        "path": "/categories/nabial/sery-zolte/sery-w-kawalku-w-wiorkach-i-przekaski",
+        "label": "Sery w kawałku, w wiórkach i przekąski"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki",
+        "label": "Mleko, kefiry, maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/nabial-mleko",
+        "label": "Mleko"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-smakowe",
+        "label": "Mleko smakowe"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/kefir",
+        "label": "Kefiry"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/maslanka",
+        "label": "Maślanki"
+      },
+      {
+        "path": "/categories/nabial/mleko-kefiry-maslanki/mleko-zageszczone-skondensowane",
+        "label": "Mleko zagęszczone, skondensowane"
+      },
+      {
+        "path": "/categories/nabial/smietany",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietany1",
+        "label": "Śmietany"
+      },
+      {
+        "path": "/categories/nabial/smietany/smietanki-slodkie",
+        "label": "Śmietanki słodkie"
+      },
+      {
+        "path": "/categories/nabial/smietany/bita-smietana",
+        "label": "Bita śmietana"
+      },
+      {
+        "path": "/categories/nabial/jogurty",
+        "label": "Jogurty"
+      }
+    ],
+    "sourceUrl": "https://delio.com.pl/categories/piekarnia/polprodukty-piekarnicze",
+    "observedAt": 1789906515496,
+    "regionId": "krakow",
+    "addressHeaderMatched": true,
+    "deliverySlotSelected": false,
+    "stockVerified": false,
+    "checkoutVerified": false,
+    "artifacts": [
+      {
+        "id": "catalogue-1789906515496-5626d5db0d05",
+        "observationSha256": "5626d5db0d05c9f6897337e7531593f9a95d0b92bdd5d6d8075f1e77941a4743",
+        "screenshotSha256": "db3e10fdc9693de47f138b34c976dee401b9960a022895d28ad8401955d68ec9",
+        "private": true
+      }
+    ],
+    "browserRuntimeMs": 1574,
+    "modelCalls": 0,
+    "readOnly": true
+  }
+}
