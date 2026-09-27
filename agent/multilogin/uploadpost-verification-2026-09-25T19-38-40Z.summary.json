@@ -1,0 +1,52 @@
+{
+  "schema": "buena.tiktok-uploadpost-verification/1",
+  "verifiedAt": "2026-09-25T19-38-40Z",
+  "source": "GET https://api.upload-post.com/api/uploadposts/users",
+  "plan": "professional",
+  "rawFile": "uploadpost-evidence/tiktok-verification-2026-09-25T19-38-40Z.json",
+  "allSixLinked": true,
+  "checks": [
+    {
+      "uploadPostProfile": "default",
+      "expectedHandle": "saleswithsophia",
+      "linked": true,
+      "reauthRequired": false,
+      "capabilities": 10
+    },
+    {
+      "uploadPostProfile": "rubyfindsai",
+      "expectedHandle": "rubyfindsai",
+      "linked": true,
+      "reauthRequired": false,
+      "capabilities": 10
+    },
+    {
+      "uploadPostProfile": "lenatalkssales",
+      "expectedHandle": "lenatalkssales",
+      "linked": true,
+      "reauthRequired": false,
+      "capabilities": 10
+    },
+    {
+      "uploadPostProfile": "mayagrowthtips",
+      "expectedHandle": "mayagrowthtips",
+      "linked": true,
+      "reauthRequired": false,
+      "capabilities": 10
+    },
+    {
+      "uploadPostProfile": "b2bwithnina",
+      "expectedHandle": "b2bwithnina",
+      "linked": true,
+      "reauthRequired": false,
+      "capabilities": 10
+    },
+    {
+      "uploadPostProfile": "chloesalestips",
+      "expectedHandle": "chloesalestips",
+      "linked": true,
+      "reauthRequired": false,
+      "capabilities": 10
+    }
+  ]
+}

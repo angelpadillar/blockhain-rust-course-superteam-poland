@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createCheckpoint, createCheckpointStore, createTelegramNotifier, parseCommand,
@@ -135,20 +135,22 @@ test('the synthetic checkpoint fixture: notify, wait, /done, re-observe, resume'
   assert.equal(classifyPage(challenge.snapshot()), 'human_verification_required');
 
   // A synthetic PNG stands in for the safe capture the runtime takes.
-  const screenshotPath = join(directory, 'checkpoint.png');
-  await writeFile(screenshotPath, Buffer.from('89504e470d0a1a0a', 'hex'), { mode: 0o600 });
+  const screenshotPath = join(directory, '02-checkpoint_human_verification_required.png');
+  const sourceBytes = Buffer.from('89504e470d0a1a0a0302', 'hex');
+  await writeFile(screenshotPath, sourceBytes, { mode: 0o600 });
 
   const checkpoint = createCheckpoint({ jobId: 'youtube-live-fixture', accountRef: 'yt-live-01',
     origin: 'https://accounts.google.com', reason: 'human_verification_required', seconds: 600,
     screenshotPath });
   await store.save(checkpoint);
 
-  // 1. One photo plus safe metadata is delivered.
+  // 1. A photo preview AND the original PNG document are delivered, both from the
+  //    same source bytes, with safe metadata.
   const send = telegram();
   const notifier = createTelegramNotifier({ ...paths, fetchImpl: send.fetchImpl });
   const delivery = await notifier.notify({ checkpoint });
-  assert.equal(delivery.delivered, 'photo');
-  assert.equal(send.calls[0].method, 'sendPhoto');
+  assert.equal(delivery.delivered, 'photo+document');
+  assert.deepEqual(send.calls.map(call => call.method), ['sendPhoto', 'sendDocument']);
   const form = send.calls[0].options.body;
   assert.equal(form.get('chat_id'), '4242');
   const caption = form.get('caption');
@@ -156,6 +158,17 @@ test('the synthetic checkpoint fixture: notify, wait, /done, re-observe, resume'
   assert.equal(caption.includes('same profile preserved: yes'), true);
   assert.equal(caption.includes('youtube-live-fixture'), true);
   assert.equal(caption.includes('bot-fixture-token'), false, 'never the token');
+
+  // The document is the ORIGINAL screenshot: same bytes, same source filename, so
+  // the operator is never handed a Telegram-recompressed copy.
+  const documentForm = send.calls[1].options.body;
+  assert.equal(documentForm.get('chat_id'), '4242');
+  assert.equal(documentForm.get('document').name, '02-checkpoint_human_verification_required.png');
+  assert.equal(delivery.documentName, '02-checkpoint_human_verification_required.png');
+  assert.deepEqual(Buffer.from(await form.get('photo').arrayBuffer()), sourceBytes);
+  assert.deepEqual(Buffer.from(await documentForm.get('document').arrayBuffer()), sourceBytes,
+    'the document carries the source bytes, not a resized copy');
+  assert.match(documentForm.get('caption'), new RegExp(checkpoint.id));
 
   // 2. The job waits; /status from the allowlisted account reports the checkpoint.
   assert.equal((await store.load()).state, 'waiting');
@@ -264,6 +277,120 @@ test('/status, /done and /cancel with a checkpoint act on the checkpoint only', 
     checkpointId: checkpoint.id }, notifier, store,
   loadCheckpoint: async () => ({ ...checkpoint, state: 'waiting' }) });
   assert.equal(cancelled.action, 'cancelled');
+});
+
+test('the poll offset survives a restart and a replayed update is never handled twice', async t => {
+  const paths = await secretFiles(t);
+  const directory = await mkdtemp(join(tmpdir(), 'telegram-offset-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const offsetPath = join(directory, 'telegram-offset.json');
+  const updates = [{ update_id: 500, message: { chat: { id: 4242 }, from: { id: 77 }, text: '/status' } }];
+
+  const first = createTelegramNotifier({ ...paths, offsetPath,
+    fetchImpl: telegram({ updates }).fetchImpl });
+  assert.deepEqual((await first.poll()).map(entry => entry.command), ['/status']);
+  const state = JSON.parse(await readFile(offsetPath, 'utf8'));
+  assert.equal(state.offset, 501, 'the offset is persisted');
+  assert.deepEqual(state.processed, [500], 'handled update ids are remembered');
+  assert.equal(((await stat(offsetPath)).mode & 0o077) === 0, true, 'the state file is private');
+
+  // A fresh notifier (restart) picks up the stored offset and asks from there.
+  const session = telegram({ updates });
+  const restarted = createTelegramNotifier({ ...paths, offsetPath, fetchImpl: session.fetchImpl });
+  await restarted.poll();
+  assert.equal(JSON.parse(session.calls[0].options.body).offset, 501, 'resumes, it does not replay');
+
+  // Even with an offset that rolled back, a replayed update is deduped.
+  await writeFile(offsetPath, JSON.stringify({ offset: 0, processed: [500] }), { mode: 0o600 });
+  const replay = createTelegramNotifier({ ...paths, offsetPath,
+    fetchImpl: telegram({ updates }).fetchImpl });
+  assert.deepEqual(await replay.poll(), []);
+  assert.equal(replay.diagnostics.duplicates, 1);
+  assert.equal(replay.diagnostics.commands, 0);
+});
+
+test('polling backs off after a Telegram outage instead of retrying hard', async t => {
+  const paths = await secretFiles(t);
+  const clock = { value: 1_000_000 };
+  const failing = createTelegramNotifier({ ...paths, now: () => clock.value,
+    fetchImpl: telegram({ fail: true }).fetchImpl });
+  await assert.rejects(failing.poll(), /telegram_unreachable/);
+  assert.equal(failing.backoffMs(), 4000, 'the first failure doubles the base backoff');
+  assert.deepEqual(await failing.poll(), [], 'the API is not called inside the window');
+  clock.value += failing.backoffMs() + 1;
+  await assert.rejects(failing.poll(), /telegram_unreachable/, 'the retry happens after the window');
+  assert.equal(failing.backoffMs(), 8000, 'a second failure doubles again');
+  assert.equal(failing.diagnostics.pollFailures >= 2, true);
+
+  // One failing attempt, then a skip: inside the window the API is not called.
+  const calls = [];
+  let attempt = 0;
+  const flaky = createTelegramNotifier({ ...paths, now: () => clock.value,
+    fetchImpl: async url => { calls.push(url); attempt++;
+      if (attempt === 1) throw new Error('offline');
+      return { ok: true, json: async () => ({ ok: true, result: [] }) }; } });
+  await assert.rejects(flaky.poll(), /telegram_unreachable/);
+  assert.deepEqual(await flaky.poll(), [], 'a call inside the backoff window is skipped');
+  assert.equal(flaky.diagnostics.backoffSkips, 1);
+  assert.equal(calls.length, 1, 'no second network call while backing off');
+  // Once the window passes, polling resumes normally.
+  clock.value += flaky.backoffMs() + 1;
+  assert.deepEqual(await flaky.poll(), []);
+  assert.equal(calls.length, 2);
+});
+
+test('terminal and expired checkpoints answer idempotently and never resume', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'checkpoint-terminal-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const store = createCheckpointStore({ directory });
+  const sent = [];
+  const notifier = { name: 'telegram', send: async ({ text }) => { sent.push(text); return { ok: true }; } };
+
+  // An already cancelled checkpoint: the same answer, no exception.
+  const cancelled = { ...createCheckpoint({ jobId: 'j1', reason: 'human_verification_required' }),
+    state: 'cancelled' };
+  const again = await handleCommand({ parsed: { recognized: true, command: '/cancel',
+    checkpointId: cancelled.id }, notifier, store, loadCheckpoint: async () => cancelled });
+  assert.equal(again.action, 'noop');
+  assert.equal(again.reply.includes('already cancelled'), true);
+  assert.equal((await store.load()), null, 'a terminal checkpoint is not rewritten');
+
+  // A /done on a resumed checkpoint is not a second resume either.
+  const resumed = { ...createCheckpoint({ jobId: 'j2', reason: 'human_verification_required' }),
+    state: 'resumed' };
+  const secondDone = await handleCommand({ parsed: { recognized: true, command: '/done',
+    checkpointId: resumed.id }, notifier, store, loadCheckpoint: async () => resumed,
+  verify: async () => ({ cleared: true, reason: 'challenge_absent' }) });
+  assert.equal(secondDone.action, 'noop');
+  assert.equal(secondDone.reply.includes('already resumed'), true);
+
+  // An expired checkpoint is moved to expired and refuses to resume even if the
+  // page would pass verification.
+  const expired = createCheckpoint({ jobId: 'j3', reason: 'human_verification_required', seconds: 600,
+    now: 1_000_000 });
+  const jobStore = createCheckpointStore({ directory: join(directory, 'jobs', 'j3') });
+  await jobStore.save(expired);
+  let verified = 0;
+  // The store that owns the checkpoint is the one the handler must write through,
+  // exactly as the CLI passes it per job directory.
+  const late = await handleCommand({ parsed: { recognized: true, command: '/done',
+    checkpointId: expired.id }, notifier, store: jobStore, now: () => 1_000_000 + 600_001,
+  loadCheckpoint: async () => jobStore.load(),
+  verify: async () => { verified++; return { cleared: true, reason: 'challenge_absent' }; } });
+  assert.equal(late.action, 'expired');
+  assert.equal(verified, 0, 'an expired checkpoint is not re-observed for resume');
+  assert.equal((await jobStore.load()).state, 'expired');
+  assert.equal(late.reply.includes('expired'), true);
+
+  // An expired checkpoint is no longer counted as waiting.
+  // The same directory still counts a live checkpoint, so the exclusion is real.
+  const live = createCheckpoint({ jobId: 'j4', reason: 'human_verification_required', seconds: 600,
+    now: 1_000_000 });
+  await createCheckpointStore({ directory: join(directory, 'jobs', 'j4') }).save(live);
+  assert.equal((await countActiveCheckpoints({ directory,
+    now: () => 1_000_000 + 600_001 })).active, 0, 'the expired one is not waiting');
+  assert.equal((await countActiveCheckpoints({ directory,
+    now: () => 1_000_000 + 1 })).active, 1, 'a live checkpoint still counts');
 });
 
 test('a challenge that is still present after /done never resumes', async () => {

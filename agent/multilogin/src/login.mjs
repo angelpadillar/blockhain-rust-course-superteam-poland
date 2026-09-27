@@ -5,6 +5,7 @@ import { maxRecoverySteps, recoveryObservation, recoveryCandidates, validateReco
 import { BrowserExecutionKernel, decisionSourceFor } from './execution.mjs';
 import { createValueResolver, valueRefForOperation } from './secrets.mjs';
 import { attachObservation } from './observation.mjs';
+import { installDialogGuard } from './dialog-containment.mjs';
 
 export const defaultLoginGoal = 'Sign in to the supplied existing account and confirm the expected '
   + 'identity. Do not create an account, change account settings, or post content. Human confirmation '
@@ -39,6 +40,115 @@ function signature(control) {
 function fieldStage(snapshot) {
   return JSON.stringify(snapshot.controls.filter(control => control.tag === 'input' && control.type !== 'checkbox')
     .map(control => [control.type, control.label, control.autocomplete]));
+}
+
+// Reversible-navigation links (YouTube's masthead "Sign in", "try another way")
+// are occasionally covered by an SPA overlay that swallows the pointer event,
+// so Playwright's actionability check times out while the link itself is valid.
+// The control has just been re-read (tag/label/href verified) before this call,
+// so the fallback navigates to that same href provided its origin is already an
+// allowed credential origin. It never resolves a secret and never touches an
+// origin the site does not already allow; the caller's waitForChange still has
+// to observe the resulting page change.
+export const navigationFallbackKinds = new Set(['open_login', 'try_another_way']);
+
+// YouTube's cookie-consent interstitial ("Before you continue to YouTube") is
+// not a login screen and not a security control. A person simply clicks its own
+// reject/accept button, so the same deterministic click is legitimate automated
+// navigation: no cookie is fabricated and no challenge is answered. The dialog's
+// buttons are clicked by accessible name because the overlay's controls can be
+// absent from the generic control snapshot.
+export const consentButtonPatterns = [
+  /^(reject all|odrzuć wszystko|odrzuc wszystko|reject optional cookies|decline optional cookies)$/i,
+  /^(accept all|zaakceptuj wszystko|akceptuję wszystko|zaakceptuj wszystkie|i agree)$/i,
+];
+
+export function isConsentScreen(snapshot) {
+  const url = snapshot?.url || '';
+  let origin = '';
+  try { origin = new URL(url).origin; } catch { return false; }
+  if (origin !== 'https://www.youtube.com') return false;
+  const text = String(snapshot?.text || '').toLowerCase();
+  return /before you continue to youtube|zanim przejdziesz do youtube|przed kontynuowaniem/.test(text);
+}
+
+// Google post-auth interstitials (birthday, recovery-info prompt, landing pages)
+// are optional account-onboarding surfaces: a person can simply continue to the
+// destination service. They are not security challenges and we must never fill
+// recovery/account settings, so they are skipped by navigating home.
+export function isPostAuthInterstitial(url) {
+  try {
+    const parsed = new URL(url);
+    if (parsed.origin === 'https://myaccount.google.com') return parsed.pathname.includes('/interstitials/');
+    if (parsed.origin === 'https://gds.google.com') return /^\/web\/(recoveryoptions|landing)/.test(parsed.pathname);
+    return false;
+  } catch { return false; }
+}
+
+export async function dismissConsent(page) {
+  for (const pattern of consentButtonPatterns) {
+    try {
+      const locator = page.getByRole('button', { name: pattern }).first();
+      await locator.waitFor({ state: 'visible', timeout: 2000 });
+      await locator.click({ timeout: 5000 });
+      return true;
+    } catch { /* try the next label/fallback */ }
+  }
+  try {
+    const fallback = page.locator('ytd-consent-bump-v2-lightbox button, tp-yt-paper-dialog button')
+      .filter({ hasText: /reject all|odrzuć wszystko|accept all|zaakceptuj wszystko/i }).first();
+    await fallback.waitFor({ state: 'visible', timeout: 2000 });
+    await fallback.click({ timeout: 5000 });
+    return true;
+  } catch { return false; }
+}
+
+// A page can expose the same link twice (YouTube's signed-out home has a
+// masthead "Sign in" and a body "Sign in" pointing at the same Google
+// destination). Identical destinations are one capability, not two choices:
+// collapsing them keeps the deterministic single-match shortcut instead of
+// buying a model call that has nothing to distinguish. Only links with a
+// non-empty href are collapsed, and only when kind + origin + path match.
+export function dedupeLinkActions(actions) {
+  const seen = new Set();
+  return actions.filter(action => {
+    const href = action?.control?.href;
+    if (!href) return true;
+    let destination = null;
+    try { const url = new URL(href); destination = `${action.kind}|${url.origin}${url.pathname}`; } catch { return true; }
+    if (seen.has(destination)) return false;
+    seen.add(destination);
+    return true;
+  });
+}
+
+export async function clickWithNavigationFallback({ kind, control, current, site, page, clickTimeoutMs = 5000,
+  fallbackTimeoutMs = 20000 } = {}) {
+  const generous = navigationFallbackKinds.has(kind) || kind === 'submit_login' || kind === 'dismiss_cookies';
+  try {
+    await control.handle.click({ timeout: generous ? clickTimeoutMs + 3000 : clickTimeoutMs, noWaitAfter: true });
+    return { method: 'click' };
+  } catch (error) {
+    const href = current?.href || '';
+    let allowed = false;
+    try { allowed = Boolean(href) && site.credentialOrigins.includes(new URL(href).origin); } catch { allowed = false; }
+    if (navigationFallbackKinds.has(kind) && allowed) {
+      await page.goto(href, { waitUntil: 'domcontentloaded', timeout: fallbackTimeoutMs });
+      return { method: 'href_navigation', hrefOrigin: new URL(href).origin };
+    }
+    // Google's "Next" button can sit under a transient "Loading" overlay that
+    // swallows the pointer event. The control was verified visible/enabled and
+    // its signature was just re-read, so press Enter with the button focused —
+    // exactly the keyboard path a person would use when the pointer is blocked.
+    if (kind === 'submit_login') {
+      try {
+        await control.handle.focus({ timeout: 2000 });
+        await page.keyboard.press('Enter');
+        return { method: 'keyboard_submit' };
+      } catch { throw error; }
+    }
+    throw error;
+  }
 }
 export function classifyPage(snapshot) {
   const text = normalize(snapshot.text);
@@ -152,7 +262,10 @@ export class LoginBrowser {
       }));
       control.key = signature(control); control.handle = handle; controls.push(control);
     }
-    const text = (await this.page.locator('body').innerText({ timeout: 5000 })).slice(0, 14000);
+    // A stalled or restored-blank tab can exceed the body read timeout; an empty
+    // text is a valid observation (the loop's patience window retries) and must
+    // not kill the run with an unclassified error.
+    const text = (await this.page.locator('body').innerText({ timeout: 5000 }).catch(() => '')).slice(0, 14000);
     const challengeFrame = await this.page.locator('iframe[src*="recaptcha"],iframe[src*="hcaptcha"],iframe[src*="challenges.cloudflare.com"]').count() > 0;
     const snapshot = { url, controls, text, challengeFrame };
     snapshot.fingerprint = createHash('sha256').update(JSON.stringify([url, text, controls.map(control => control.key)])).digest('hex');
@@ -166,7 +279,7 @@ export class LoginBrowser {
     return snapshot;
   }
   candidates(snapshot, { verifyOnly = false } = {}) {
-    const actions = []; const fieldActions = []; let unknownRequiredField = false; let unhandledField = false;
+    let actions = []; const fieldActions = []; let unknownRequiredField = false; let unhandledField = false;
     const authOrigin = this.site.credentialOrigins.includes(new URL(snapshot.url).origin);
     const authenticatorScreen = /go to your authentication app|authenticator app|code.{0,160}(authenticator|authentication app)/s.test(normalize(snapshot.text));
     for (const control of snapshot.controls) {
@@ -226,6 +339,7 @@ export class LoginBrowser {
       }
       actions.push({ kind, control, clickKey });
     }
+    actions = dedupeLinkActions(actions);
     // Resolve an observed cookie prompt before interacting with the form behind it.
     const cookieActions = actions.filter(action => action.kind === 'dismiss_cookies');
     // The known two-field form has a deterministic order. Duplicate/ambiguous
@@ -331,7 +445,7 @@ export class LoginBrowser {
     // budget here.
     this.recoverySteps = 0;
     // Our own transition check handles both navigation and asynchronous form submissions.
-    await control.handle.click({ timeout: 5000, noWaitAfter: true });
+    await clickWithNavigationFallback({ kind, control, current, site: this.site, page: this.page });
   }
   async waitForChange(previous, action) {
     const end = Date.now() + (action.kind === 'submit_login' ? 35000 : 10000);
@@ -351,11 +465,33 @@ export class LoginBrowser {
   }
 }
 
+// One compact causal episode per correction: the action that did not move the
+// page, and the action that did. Only a fingerprint change is recorded; page
+// text, credentials and query strings never are.
+async function rememberCorrection({ memory, browser, account, snapshot, classifiedReason, action, scope }) {
+  const after = await browser.observe().catch(() => null);
+  const changed = Boolean(after && after.fingerprint !== snapshot.fingerprint);
+  if (!changed) { browser.recovery.lastFailedAction = action.kind; return null; }
+  const failedAction = browser.recovery.lastFailedAction || null;
+  browser.recovery.lastFailedAction = null;
+  const match = memory.observeCorrection?.({ correction: action.kind }) || { matchedRecall: false };
+  let statePath = null;
+  try { const url = new URL(snapshot.url); statePath = `${url.origin}${url.pathname}`; } catch {}
+  return memory.record({ reason: classifiedReason || 'unexpected_state', statePath, failedAction,
+    correction: action.kind, verification: 'page_changed', platform: account.platform,
+    jobId: scope?.jobId || null, memoryMatched: match.matchedRecall === true });
+}
+
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
   verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform],
-  goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 5000,
-  receipts = null, scope = null }) {
+  goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 15000,
+  receipts = null, scope = null, recoveryMemory = null, startUrl = null }) {
   const browser = new LoginBrowser(page, account, { site });
+  // A stale dialog race must never kill the process (ported canary guard): the
+  // dismissal happens inside the guard and is journalled as a diagnostic.
+  const dialogGuard = typeof page.on === 'function'
+    ? installDialogGuard(page, { onDiagnostic: async detail => { try { await onStep({ phase: 'dialog', ...detail }); } catch {} } })
+    : null;
   // The single execution path for this run. The deterministic flow and the Jev
   // recovery episode both go through it; nothing else performs a browser
   // operation. Roles come from this workflow, never from a model.
@@ -369,6 +505,7 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     receipts, scope,
   });
   let interstitialBypassed = false;
+  let homeRefreshed = false;
   // Recent deterministic actions, so a recovery observation carries context
   // without ever carrying page content that is not already redacted.
   const recentActions = [];
@@ -378,8 +515,11 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   // Visual escalations are capped for the whole run, so a vision advisor can never
   // be asked to look more than a handful of times.
   const visualEpisode = { escalations: 0 };
-  const finish = result => ({ ...result, visualEscalations: visualEpisode.escalations,
-    recovery: { ...browser.recovery, menuActions: browser.menuActionCount } });
+  const finish = result => {
+    if (result.verified && recoveryMemory) recoveryMemory.markVerified().catch(() => {});
+    return { ...result, visualEscalations: visualEpisode.escalations,
+      recovery: { ...browser.recovery, menuActions: browser.menuActionCount } };
+  };
   const network = [];
   const recordNetwork = (request, status, error) => {
     const url = new URL(request.url());
@@ -394,7 +534,10 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   page.on('response', responseListener); page.on('requestfailed', failureListener);
   try {
   const started = performance.now(); let deadline = Date.now() + maxSeconds * 1000;
-  await navigate(page, verifyOnly ? site.homeUrl : site.loginUrl);
+  // The start surface is the cheapest authenticated-state check: for a YouTube
+  // job the home page verifies an existing session directly and offers the
+  // observed sign-in control when there is none. `verifyOnly` has always used it.
+  await navigate(page, startUrl || (verifyOnly ? site.homeUrl : site.loginUrl));
   for (let step = 0; step < maxSteps; step++) {
     requireThat(Date.now() < deadline, 'login_time_budget_exceeded');
     // Client-rendered login pages can expose text before their controls exist.
@@ -415,6 +558,16 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       }
     }
     if (!hasCandidates()) emptyFingerprints.add(snapshot.fingerprint);
+    // A fresh profile lands on YouTube's cookie-consent interstitial before any
+    // login control exists. Dismiss it deterministically (its own button), then
+    // re-observe; credentials and TOTP stay automated. The consent text only
+    // exists while the dialog is present, so this cannot loop on a cleared page.
+    if (isConsentScreen(snapshot)) {
+      const dismissed = await dismissConsent(page);
+      await onStep({ step, phase: 'login', action: 'dismiss_consent', state: dismissed ? 'after' : 'failed' });
+      await new Promise(resolve => setTimeout(resolve, 500));
+      continue;
+    }
     // The decision and its execution share ONE observation epoch: every control
     // id below is only meaningful against this epoch.
     const observation = kernel.observe(snapshot).observation;
@@ -445,13 +598,20 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       const candidates = recoveryCandidates({ snapshot, browser, site,
         classifiedReason: classifiedReason || null });
       if (!candidates.length) return { exhausted: false };
+      // Compact causal hints: at most a couple of past corrections relevant to
+      // this state. No transcripts, no page content, no credentials.
+      const memoryHints = recoveryMemory
+        ? await recoveryMemory.hints({ reason: classifiedReason || 'unexpected_state', url: snapshot.url,
+          failedAction: browser.recovery.lastFailedAction || null, limit: 2 }).catch(() => [])
+        : [];
       const modelView = recoveryObservation({ goal, snapshot, browser, recentActions,
         deterministicState: { step, classifiedReason: classifiedReason || null, verifyOnly,
-          menuOpenedBefore: browser.menuOpenedKeys.size > 0 } });
+          menuOpenedBefore: browser.menuOpenedKeys.size > 0 },
+        memory: memoryHints });
       let decision;
       try {
         decision = await choose({ page: modelView, observation, snapshot,
-          classifiedReason: classifiedReason || null, episode: visualEpisode,
+          classifiedReason: classifiedReason || null, episode: visualEpisode, phase: 'jev_recovery', step,
           actions: candidates.map(({ id, description }) => ({ id, description })) });
       } catch (error) {
         await onStep({ step, phase: 'jev_recovery', state: 'selection_failed',
@@ -474,7 +634,11 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       // existing executor -> postcondition).
       const outcome = await executeRecoveryAction({ action, snapshot, observation, browser, site, navigate,
         kernel, source: decisionSourceFor(decision), justification: decision.reason || null });
-      if (outcome.performed) recentActions.push({ step, action: action.kind, via: 'jev_recovery' });
+      if (outcome.performed) {
+        recentActions.push({ step, action: action.kind, via: 'jev_recovery' });
+        if (recoveryMemory) await rememberCorrection({ memory: recoveryMemory, browser, account, snapshot,
+          classifiedReason, action, scope }).catch(() => {});
+      }
       return outcome;
     };
     const failure = classifyPage(snapshot);
@@ -517,10 +681,24 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     // data we do not have. If one appears after authentication, check whether
     // the destination service itself is already usable before giving up.
     if (!actions.length && !verifyOnly && !interstitialBypassed
-      && new URL(snapshot.url).origin === 'https://myaccount.google.com'
-      && new URL(snapshot.url).pathname.includes('/interstitials/')) {
+      && isPostAuthInterstitial(snapshot.url)) {
       interstitialBypassed = true;
       await onStep({ step, phase: 'login', action: 'bypass_interstitial', state: 'before' });
+      await navigate(page, site.homeUrl);
+      continue;
+    }
+    // A signed-in YouTube home sometimes renders its shell (Home/Shorts/You)
+    // before the masthead account-menu control exists. One bounded refresh is
+    // the same thing a person does with a stalled page; it never changes
+    // credentials, settings or identity. The signed-in-shell text keeps this
+    // from interfering with menu/recovery fixtures.
+    const signedInShell = /shorts/.test(String(snapshot.text || '').toLowerCase())
+      && /subscriptions/.test(String(snapshot.text || '').toLowerCase())
+      && !/sign in|zaloguj/.test(String(snapshot.text || '').toLowerCase());
+    if (!actions.length && !verifyOnly && !homeRefreshed && signedInShell
+      && new URL(snapshot.url).origin === new URL(site.homeUrl).origin) {
+      homeRefreshed = true;
+      await onStep({ step, phase: 'login', action: 'refresh_home', state: 'before' });
       await navigate(page, site.homeUrl);
       continue;
     }
@@ -537,7 +715,8 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     // The decision carries the observation it was taken against, so an advisor can
     // bind a screenshot to this epoch and execution can refuse another one.
     try { decision = await choose({ page: browser.publicPage(snapshot), observation, snapshot,
-      episode: visualEpisode, actions: actions.map(({ id, description }) => ({ id, description })) }); }
+      episode: visualEpisode, phase: verifyOnly ? 'verify_reopen' : 'login', step,
+      actions: actions.map(({ id, description }) => ({ id, description })) }); }
     catch (error) { await attention(error instanceof PilotError ? error.code : 'selection_failed'); throw error; }
     if (decision?.episode) visualEpisode.escalations = decision.episode.escalations;
     // An L3 decision taken on another epoch is never executed here.
@@ -584,6 +763,16 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     }
     await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', action: action.kind, state: 'after' });
     recentActions.push({ step, action: action.kind, method: decision.method, via: 'deterministic' });
+    // A performed action usually navigates: the next observation deserves a
+    // fresh client-render patience window even if this fingerprint was already
+    // seen (Google's redirects render an empty document first).
+    emptyFingerprints.clear();
+    // The account menu is client-rendered; without a bounded settle the next
+    // observation can miss it and the deterministic policy would toggle the menu
+    // closed again instead of verifying the identity inside it.
+    if (['open_account_menu', 'open_switch_account'].includes(action.kind)) {
+      await new Promise(resolve => setTimeout(resolve, 800));
+    }
   }
   throw new PilotError('login_step_budget_exceeded');
   } catch (error) {
@@ -595,5 +784,6 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     throw error;
   } finally {
     page.off('response', responseListener); page.off('requestfailed', failureListener);
+    dialogGuard?.dispose();
   }
 }

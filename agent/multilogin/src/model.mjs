@@ -8,7 +8,7 @@ export const providers = ['typesafe', 'fireworks'];
 export const defaultFireworksModel = 'accounts/fireworks/models/deepseek-v4p1-flash';
 
 export function createFireworksJev({ apiKey, model = defaultFireworksModel, goal, fetchImpl = fetch,
-  endpoint = 'https://api.fireworks.ai/inference/v1/chat/completions', maxTokens = 256 }) {
+  endpoint = 'https://api.fireworks.ai/inference/v1/chat/completions', maxTokens = 2048 }) {
   requireThat(typeof apiKey === 'string' && apiKey.length > 10, 'missing_fireworks_key');
   const metrics = { calls: 0, latencyMs: 0, inputTokens: 0, outputTokens: 0, usageComplete: true,
     model: null, provider: 'fireworks' };
@@ -34,8 +34,16 @@ export function createFireworksJev({ apiKey, model = defaultFireworksModel, goal
     if (!response.ok) { metrics.usageComplete = false; throw new PilotError(`provider_http_${response.status}`); }
     let payload;
     try { payload = await response.json(); } catch { metrics.usageComplete = false; throw new PilotError('invalid_provider_json'); }
+    // Reasoning models (deepseek-v4p1-flash) spend completion tokens on
+    // `reasoning_content` first; a too-small max_tokens leaves `content` empty.
+    // Surface that distinctly instead of a generic parse failure.
+    const content = payload?.choices?.[0]?.message?.content ?? '';
+    const reasoning = payload?.choices?.[0]?.message?.reasoning_content ?? '';
+    if (!String(content).trim() && String(reasoning).trim()) {
+      metrics.usageComplete = false; throw new PilotError('provider_reasoning_only');
+    }
     let answer;
-    try { answer = JSON.parse(payload?.choices?.[0]?.message?.content ?? ''); }
+    try { answer = JSON.parse(content); }
     catch { metrics.usageComplete = false; throw new PilotError('invalid_provider_choice'); }
     const data = { model: payload?.model, answers: { action: { type: 'choice', ...answer } },
       usage: { input_tokens: payload?.usage?.prompt_tokens, output_tokens: payload?.usage?.completion_tokens } };

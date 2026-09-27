@@ -80,6 +80,22 @@ export class Multilogin {
     catch (error) { if (error.code === 'profile_already_stopped') return { alreadyStopped: true }; throw error; }
   }
   status(profileId) { return this.request(this.launcher, `/api/v1/profile/status/p/${id(profileId)}`); }
+  // Read-only profile metadata. Used by reuse-existing-proxy mode to prove a
+  // proxy is already attached before anything is started; it never prints or
+  // returns proxy credentials.
+  async profileMeta(profileId) {
+    const data = await this.cloud('/profile/metas', { ids: [id(profileId)] });
+    return data?.profiles?.find(profile => profile.id === profileId) || null;
+  }
+  // Rename/metadata update that must carry the profile's own parameters back
+  // unchanged. The caller (profile-labels.mjs) re-reads and verifies that the
+  // fingerprint/proxy/session configuration did not move.
+  updateProfile({ profileId, name, autoUpdateCore, parameters }) {
+    requireThat(typeof name === 'string' && name.length > 0 && name.length <= 120, 'invalid_profile_name');
+    requireThat(parameters && typeof parameters === 'object', 'profile_parameters_required');
+    return this.cloud('/profile/update', { profile_id: id(profileId), name,
+      auto_update_core: autoUpdateCore === true, parameters });
+  }
   async changeProxy(profileId, proxy) {
     const data = await this.cloud('/profile/metas', { ids: [id(profileId)] });
     const meta = data?.profiles?.find(profile => profile.id === profileId);

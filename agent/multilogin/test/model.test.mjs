@@ -65,6 +65,16 @@ test('an alternative provider cannot weaken validation, invent actions or hide u
   await assert.rejects(offline({ page: {}, actions }), /provider_network_error/);
 });
 
+test('reasoning-only responses and small max_tokens are surfaced distinctly', async () => {
+  const bodies = [];
+  const reasoningOnly = createChooser({ provider: 'fireworks', apiKey: 'test-fireworks-key', environment: {},
+    fetchImpl: async (url, options) => { bodies.push(JSON.parse(options.body)); return { ok: true, json: async () => ({
+      model: defaultFireworksModel, usage: { prompt_tokens: 174, completion_tokens: 256 },
+      choices: [{ message: { content: '', reasoning_content: 'thinking...'.repeat(40) } }] }) }; } });
+  await assert.rejects(reasoningOnly({ page: { text: 'Sign in' }, actions }), /provider_reasoning_only/);
+  assert.equal(bodies[0].max_tokens >= 1024, true, 'reasoning models need completion headroom');
+});
+
 test('the Fireworks key and model come from the environment or explicit options', async () => {
   const chooser = createChooser({ provider: 'fireworks', environment: { FIREWORKS_API_KEY: 'env-fireworks-key',
     FIREWORKS_MODEL: 'accounts/fireworks/models/other' }, fetchImpl: async (url, options) => {

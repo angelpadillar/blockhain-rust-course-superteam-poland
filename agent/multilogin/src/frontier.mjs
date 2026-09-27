@@ -231,6 +231,8 @@ async function request({ context = {}, apiKey, model, endpoint, fetchImpl, timeo
       usageSource: usage.available ? 'provider' : 'unavailable',
       uncachedInputTokens: usage.uncachedInputTokens, cachedInputTokens: usage.cachedInputTokens,
       outputTokens: usage.outputTokens, totalTokens: usage.totalTokens,
+      // Diagnostic only: a detail of outputTokens that is already priced inside it.
+      reasoningTokens: usage.reasoningTokens,
       imageWidth: screenshot.width ?? null, imageHeight: screenshot.height ?? null,
       imageBytes: screenshot.bytes ?? null,
       pricing: { uncachedInput: pricing.uncachedInput, cachedInput: pricing.cachedInput,

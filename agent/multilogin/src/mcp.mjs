@@ -149,10 +149,21 @@ export function createMcpToolset({ kernel, browser, page = null, site = null, ob
     },
   };
 
+  // Every tool declares a closed schema; an unknown field (a selector, a script, a
+  // url passed to click) is refused rather than silently ignored.
+  const rejectUnknownArguments = (name, args) => {
+    const definition = mcpTools.find(tool => tool.name === name);
+    const allowed = Object.keys(definition?.inputSchema?.properties || {});
+    for (const key of Object.keys(args || {})) {
+      requireThat(allowed.includes(key), `unknown_tool_argument:${key}`);
+    }
+  };
+
   return {
     tools,
     async call(name, args = {}) {
       requireThat(mcpToolNames.includes(name), 'unknown_tool');
+      rejectUnknownArguments(name, args);
       try { return await tools[name](args); }
       catch (error) {
         // A tool failure is reported as a code, never as page or credential content.

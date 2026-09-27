@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { existsSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 import { PilotError, errorCode, requireThat } from './src/core.mjs';
 import { Multilogin } from './src/multilogin.mjs';
@@ -48,15 +49,23 @@ async function readJsonFile(path, code) {
   try { return JSON.parse(text); } catch { throw new PilotError(code); }
 }
 
+// Defaults resolve beside this package so `npm run browser:batch` works from the
+// repository root as well as from the worker image.
+const here = dirname(fileURLToPath(import.meta.url));
+const packageDefault = (cwd, relative) => existsSync(resolve(cwd, relative)) ? resolve(cwd, relative)
+  : resolve(here, relative);
+const packageFirst = (cwd, relative) => existsSync(resolve(cwd, relative)) ? resolve(cwd, relative)
+  : existsSync(resolve(here, relative)) ? resolve(here, relative) : resolve(cwd, relative);
+
 export async function main(argv = process.argv.slice(2)) {
   const options = parseArguments(argv);
   if (options.help || !options.positional.length) { console.log(usage); return; }
-  const directory = resolve(options.data || 'private/state');
+  const directory = resolve(options.data || packageDefault(process.cwd(), 'private/state'));
   const jobs = validateJobs(await readJsonFile(resolve(options.positional[0]), 'invalid_jobs_file'));
   const accountIndex = await loadAccountIndex({
-    path: options.accounts !== undefined ? resolve(options.accounts) : 'private/accounts.json',
+    path: options.accounts !== undefined ? resolve(options.accounts) : packageFirst(process.cwd(), 'private/accounts.json'),
     directory: options['accounts-dir'] ? resolve(options['accounts-dir']) : undefined });
-  const supplied = await readJsonFile(resolve(options.config || 'config.vps.json'), 'invalid_config_file');
+  const supplied = await readJsonFile(packageFirst(process.cwd(), options.config || 'config.vps.json'), 'invalid_config_file');
   const concurrency = options.concurrency === undefined ? 2 : Number(options.concurrency);
   // The Studio workflow is login and session verification, so merchant visits
   // stay off unless the config explicitly keeps them.

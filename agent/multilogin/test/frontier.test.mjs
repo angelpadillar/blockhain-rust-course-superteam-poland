@@ -247,6 +247,49 @@ test('the ledger persists bounded metadata without prompt or image content', asy
   assert.equal(((await stat(ledger.path)).mode & 0o077) === 0, true, 'the ledger is private');
 });
 
+test('reasoning tokens are recorded as diagnostics and never double-counted', async t => {
+  const path = await secretFile(t);
+  const content = JSON.stringify({ decision: 'action', actionId: 'a0', confidence: 0.9 });
+  const usageWithDetail = { prompt_tokens: 549, completion_tokens: 214, total_tokens: 763,
+    prompt_tokens_details: { cached_tokens: 0 },
+    completion_tokens_details: { reasoning_tokens: 180 }, output_tokens_details: { reasoning_tokens: 180 } };
+
+  // Field present: recorded, and the priced output is still completion_tokens.
+  const withDetail = { recorded: [], async record(metric) { this.recorded.push(metric); } };
+  const vision = createFireworksVision({ secretPath: path, ledger: withDetail, mode: 'json',
+    capture: async () => screenshot, fetchImpl: responder({ id: 'r1', usage: usageWithDetail,
+      choices: [{ message: { content } }] }).fetchImpl });
+  await vision.decide({ observation: OBSERVATION, permittedActions: ACTIONS, screenshot });
+  const metric = withDetail.recorded[0];
+  assert.equal(metric.reasoningTokens, 180);
+  assert.equal(metric.outputTokens, 214, 'reasoning tokens are a subset of the output tokens');
+  assert.equal(metric.uncachedInputTokens, 549);
+  assert.equal(metric.estimatedUsd,
+    estimatedUsd({ uncachedInputTokens: 549, cachedInputTokens: 0, outputTokens: 214 }, defaultPricing));
+
+  // Field absent: null, and the same cost for the same reported usage.
+  const withoutDetail = { recorded: [], async record(value) { this.recorded.push(value); } };
+  const plain = createFireworksVision({ secretPath: path, ledger: withoutDetail, mode: 'json',
+    capture: async () => screenshot, fetchImpl: responder({ id: 'r2',
+      usage: { prompt_tokens: 549, completion_tokens: 214, total_tokens: 763 },
+      choices: [{ message: { content } }] }).fetchImpl });
+  await plain.decide({ observation: OBSERVATION, permittedActions: ACTIONS, screenshot });
+  assert.equal(withoutDetail.recorded[0].reasoningTokens, null);
+  assert.equal(withoutDetail.recorded[0].estimatedUsd, metric.estimatedUsd, 'no double counting');
+
+  // The mapping itself carries the rule, including when only one detail field exists.
+  assert.equal(mapUsage({ prompt_tokens: 10, completion_tokens: 40,
+    completion_tokens_details: { reasoning_tokens: 30 } }).outputTokens, 40);
+  assert.equal(mapUsage({ prompt_tokens: 10, completion_tokens: 40,
+    output_tokens_details: { reasoning_tokens: 30 } }).reasoningTokens, 30);
+  assert.equal(mapUsage({ prompt_tokens: 10, completion_tokens: 40 }).reasoningTokens, null);
+  assert.equal(mapUsage(null).reasoningTokens, null);
+  const base = { uncachedInputTokens: 1_000_000, cachedInputTokens: 0, outputTokens: 1_000_000 };
+  assert.equal(estimatedUsd(base, defaultPricing),
+    estimatedUsd({ ...base, reasoningTokens: 900_000 }, defaultPricing),
+    'a reasoning-token diagnostic never changes the price');
+});
+
 test('pricing is configurable and the summary aggregates what the report needs', async t => {
   const directory = await mkdtemp(join(tmpdir(), 'frontier-pricing-'));
   t.after(() => rm(directory, { recursive: true, force: true }));
@@ -267,7 +310,7 @@ test('pricing is configurable and the summary aggregates what the report needs',
 
   // No provider usage means no cost: never estimated from image size.
   assert.deepEqual(mapUsage(null), { available: false, uncachedInputTokens: null, cachedInputTokens: null,
-    outputTokens: null, totalTokens: null });
+    outputTokens: null, totalTokens: null, reasoningTokens: null });
   assert.equal(mapUsage({ prompt_tokens: 100, completion_tokens: 10 }).available, true);
 
   const summary = summarizeFrontierMetrics([

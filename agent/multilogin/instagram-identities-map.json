@@ -1,0 +1,23 @@
+{
+  "schema": "buena.instagram-identities-map/1",
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25T21:15:00Z",
+  "source": "account-pilot registry (/opt/buena-multilogin/private/account-pilot/profiles.json) + Multilogin /profile/search (folder 2b104092-39f8-459e-be4c-74e037507dd3)",
+  "status": "in_progress",
+  "uploadPostRequirement": "Upload-Post connects Instagram via Instagram Login; a Business or Creator account is required (no Facebook Page needed).",
+  "mappingNote": "Pairing by account-pilot registry order. No spare Instagram identities exist (accounts.json is YouTube-only; account-pilot holds exactly six IG accounts; the Multilogin workspace has exactly six IG profiles).",
+  "accounts": [
+    { "code": "K01", "character": "Sophia Reed", "tiktokHandle": "saleswithsophia", "igProfileId": "d4c3ac13-ffc8-43c0-af5d-2523e4f70274", "oldIgHandle": "rinayuki6153", "igUsername": "sales.with.sophia", "igName": "Sophia Reed", "photoApplied": true, "setupStatus": "completed" },
+    { "code": "K02", "character": "Ruby Hayes", "tiktokHandle": "rubyfindsai", "igProfileId": "a04d004b-14a6-44e2-80b5-d25c99541dcc", "oldIgHandle": "yumihana7634", "igUsername": "rubyfindsai", "igName": "Ruby Hayes", "photoApplied": true, "setupStatus": "completed" },
+    { "code": "K03", "character": "Lena Cole", "tiktokHandle": "lenatalkssales", "igProfileId": "f7cae3d4-52f8-4a61-b1fc-bf4f62b7fe4d", "oldIgHandle": "sakuhana5179", "igUsername": "lenatalkssales", "igName": "Lena Cole", "photoApplied": false, "setupStatus": "photo_pending", "note": "Name and username saved; the profile browser closes mid photo-upload on both Change-photo menu and direct file-input paths. Retry via the Accounts Center avatar surface, or after the profile storage settles." },
+    { "code": "K04", "character": "Maya Bell", "tiktokHandle": "mayagrowthtips", "igProfileId": "5a9caf38-b961-45f0-8ba5-910614ae6eba", "oldIgHandle": "hinakiyo3496", "igUsername": null, "igName": null, "photoApplied": false, "setupStatus": "burned_logged_out", "note": "Instagram session is logged out; login demands a 6-digit SMS code to +48 576 *** 42. Treat as burned unless the operator controls that number or the SMS provider used at setup. No spare IG account exists to substitute." },
+    { "code": "K05", "character": "Nina Brooks", "tiktokHandle": "b2bwithnina", "igProfileId": "d97923dd-56db-432f-b640-b3381bc5efaf", "oldIgHandle": "rinayume4682", "igUsername": "b2bwithnina", "igName": "Nina Brooks", "photoApplied": true, "setupStatus": "completed" },
+    { "code": "K06", "character": "Chloe Quinn", "tiktokHandle": "chloesalestips", "igProfileId": "a51b5e8d-6103-410e-8f8f-25b95fbc5617", "oldIgHandle": "kaito_3449", "igUsername": "chloesalestips", "igName": "Chloe Quinn", "photoApplied": true, "setupStatus": "completed" }
+  ],
+  "tooling": {
+    "connector": "agent/multilogin/scripts/instagram-profile.mjs (check|inspect|update; Accounts Center name/username, direct-input or menu photo upload)",
+    "runner": "agent/multilogin/scripts/run-instagram-account.sh",
+    "batch": "agent/multilogin/scripts/run-instagram-batch.sh",
+    "vpsCopies": ["/opt/buena-multilogin-orchestrator/scripts/instagram-profile.mjs", "/opt/buena-multilogin-orchestrator/scripts/run-instagram-account.sh", "/opt/buena-multilogin-orchestrator/scripts/run-instagram-batch.sh"]
+  }
+}
