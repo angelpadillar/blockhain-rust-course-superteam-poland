@@ -76,7 +76,14 @@ export async function connect(port, config) {
   const context = browser.contexts()[0];
   requireThat(context, 'missing_multilogin_context');
   context.setDefaultTimeout(7000);
-  return { browser, context, page: await context.newPage() };
+  const working = await context.newPage();
+  // Tab hygiene: Multilogin profiles persist tabs across runs, and verification
+  // flows open popups. Keep only the working page so browsers stay fast.
+  for (const existing of context.pages()) {
+    if (existing === working) continue;
+    await existing.close().catch(() => {});
+  }
+  return { browser, context, page: working };
 }
 
 export async function stopBrowserProfile(api, profileId, browser) {

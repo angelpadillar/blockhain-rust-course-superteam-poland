@@ -9,6 +9,7 @@ import { createBandwidthMeter } from './bandwidth.mjs';
 import { createLifecycle, loadLifecycle, isResumableLifecycle, isTerminalLifecycleState,
   actionSourceForMethod } from './lifecycle.mjs';
 import { createRouterObserver, wrapGuideForObservation } from './action-router.mjs';
+import { createDecisionJournal } from './decision-journal.mjs';
 import { loadHealthStore, recordFromResult, writeHealthRecord, labelForHealth,
   buildHealthReport } from './profile-health.mjs';
 import { announceCheckpoint, createCheckpointStore, handleCommand, countActiveCheckpoints } from './human-checkpoint.mjs';
@@ -130,7 +131,7 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
   connectImpl = undefined, seedImpl = undefined, flowImpl = runLogin, studioImpl = inspectStudio,
   notifier = null, notify = true, cancel = new CancelToken(), humanCheckpointPollMs = 2000,
   telegramPollMs = 2000, telegram = true, memory = null, resume = null, preserveOnCheckpoint = false,
-  routerObservation = true, resumeCommand = null, onEvent = null, now = Date.now,
+  routerObservation = true, decisionJournal = true, resumeCommand = null, onEvent = null, now = Date.now,
   elapsed = () => performance.now() } = {}) {
   requireThat(directory, 'orchestrator_directory_required');
   requireThat(accountIndex instanceof Map, 'account_source_required');
@@ -176,13 +177,18 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
 
   // Observation mode: every live decision is recorded next to its outcome. The
   // router NEVER changes a decision in this phase.
-  const routerObserver = routerObservation === false ? null : createRouterObserver({ directory: jobDirectory });
+  const journal = decisionJournal === false ? null : createDecisionJournal({ directory: jobDirectory,
+    jobId: job.id, platform: job.platform, accountRef: job.accountRef, profileRef: job.profileRef });
+  const routerObserver = routerObservation === false ? null : createRouterObserver({ directory: jobDirectory, journal });
   // --- Action evidence -------------------------------------------------------
   let lastRecoveryStep = 0;
   const recordStep = async detail => {
     if (!detail || typeof detail !== 'object') return;
     await routerObserver?.observeStep(detail).catch(() => {});
     if (detail.phase === 'receipt') {
+      await journal?.receipt({ operation: detail.operation, state: detail.state,
+        postconditionMet: detail.postconditionMet === true ? true : detail.postconditionMet === false ? false : null,
+        decisionSource: detail.decisionSource || null }).catch(() => {});
       await lifecycle.recordAction({ action: detail.operation, actionSource: detail.decisionSource || 'none',
         phase: 'receipt', result: detail.state, verification: detail.postconditionMet === true ? 'postcondition_met' : null });
       return;
@@ -370,7 +376,7 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
       ? () => wrapGuideForObservation(guideFactory(), routerObserver)
       : guideFactory;
     batch = await runJobBatch({ jobs: [job], accountIndex, config, directory, concurrency: 1, api,
-      guideFactory: observedGuideFactory, connectImpl: meteredConnect,
+      guideFactory: observedGuideFactory, connectImpl: meteredConnect, journal,
       ...(seedImpl ? { seedImpl } : {}),
       ...(preserveOnCheckpoint ? { preserveOnCheckpoint } : {}),
       onJobState, humanCheckpointPollMs, cancel,
@@ -449,6 +455,7 @@ export async function runSingleJob({ job, accountIndex, config, directory, api, 
       attachedProfileId: existingProxy?.profileId ?? null,
       rotations: lifecycle.counters.proxySwitches },
     routerObservation: routerObserver ? { path: routerObserver.path, ...routerObserver.summary } : null,
+    decisionJournal: journal ? { path: journal.path, ...journal.summary } : null,
     memory: memory ? { path: memory.path, ...memory.diagnostics } : null,
     bandwidth: bandwidth.summary(),
   };

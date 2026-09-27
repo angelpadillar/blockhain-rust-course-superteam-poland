@@ -211,3 +211,64 @@ test('observation mode records a disagreement and a failed execution', async t =
   assert.equal(observer.summary.modelDecisions, 1);
   assert.equal(observer.summary.failed, 1);
 });
+
+test('a broken decision journal can never change a decision, a record or a result', async t => {
+  const { createRouterObserver, wrapGuideForObservation } = await import('../src/action-router.mjs');
+  const { mkdtemp, readFile, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const directory = await mkdtemp(join(tmpdir(), 'router-observer-journal-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  // Every method throws synchronously: the harshest possible journal failure.
+  const broken = { decision() { throw new Error('journal exploded'); },
+    execution() { throw new Error('journal exploded'); },
+    outcome() { throw new Error('journal exploded'); },
+    receipt() { throw new Error('journal exploded'); },
+    checkpointPending() { throw new Error('journal exploded'); },
+    checkpointCleared() { throw new Error('journal exploded'); } };
+  const observer = createRouterObserver({ directory, journal: broken });
+  const expectedDecision = { action: { id: 'a1' }, method: 'exact-single-match', confidence: null, probability: null };
+  const guide = async () => expectedDecision;
+  const wrapped = wrapGuideForObservation(guide, observer);
+  const result = await wrapped({ phase: 'login', step: 1,
+    actions: [{ id: 'a1', description: 'open_login: Open the sign-in page' }] });
+  assert.equal(result, expectedDecision, 'the exact decision object is returned unchanged');
+  await observer.observeStep({ phase: 'login', state: 'before', action: 'open_login' });
+  await observer.observeStep({ phase: 'login', state: 'after', action: 'open_login' });
+  const lines = (await readFile(observer.path, 'utf8')).trim().split('\n').map(line => JSON.parse(line));
+  assert.equal(lines.length, 3);
+  assert.equal(lines[0].chosen.tool, 'open_login');
+  assert.equal(lines[1].kind, 'execution');
+  assert.equal(lines[2].kind, 'outcome');
+  assert.equal(observer.summary.executionChanged, false);
+  assert.equal(observer.summary.decisions, 1);
+});
+
+test('a working journal records the same decision and outcome evidence', async t => {
+  const { createRouterObserver, wrapGuideForObservation } = await import('../src/action-router.mjs');
+  const { mkdtemp, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const directory = await mkdtemp(join(tmpdir(), 'router-observer-journal-good-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const calls = [];
+  const journal = {
+    decision: async record => calls.push({ kind: 'decision', record }),
+    execution: async record => calls.push({ kind: 'execution', record }),
+    outcome: async record => calls.push({ kind: 'outcome', record }),
+    receipt: async record => calls.push({ kind: 'receipt', record }),
+    checkpointPending: async record => calls.push({ kind: 'checkpointPending', record }),
+    checkpointCleared: async record => calls.push({ kind: 'checkpointCleared', record }),
+  };
+  const observer = createRouterObserver({ directory, journal });
+  const wrapped = wrapGuideForObservation(async request => ({ action: request.actions[0], method: 'exact-single-match' }), observer);
+  await wrapped({ phase: 'login', step: 2, actions: [{ id: 'a1', description: 'fill_username: Type the account email' }] });
+  await observer.observeStep({ phase: 'login', state: 'before', action: 'fill_username' });
+  await observer.observeStep({ phase: 'login', state: 'stale', action: 'fill_username' });
+  assert.equal(calls[0].kind, 'decision');
+  assert.equal(calls[0].record.chosen.tool, 'fill_username');
+  assert.equal(calls[1].kind, 'execution');
+  assert.equal(calls[2].kind, 'outcome');
+  assert.equal(calls[2].record.receipt.state, 'failed');
+  assert.equal(calls[2].record.recovery, 'reobserve');
+});

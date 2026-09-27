@@ -11,6 +11,13 @@ import { CancelToken } from '../src/jobs.mjs';
 import { defaultPaths } from '../job-runner.mjs';
 import { parseArguments as parseWrapperArguments, remoteCommands } from '../scripts/job.mjs';
 
+test('the wrapper keeps every passthrough flag even when one follows another', () => {
+  const parsed = parseWrapperArguments(['jobs/x.json', '--remote', '--reuse-existing-proxy',
+    '--human-checkpoint-seconds', '3600', '--no-notify']);
+  assert.deepEqual(parsed.passthrough, ['--reuse-existing-proxy', '--human-checkpoint-seconds', '3600', '--no-notify']);
+  assert.deepEqual(parsed.positional, ['jobs/x.json']);
+});
+
 const scratch = async t => {
   const directory = await mkdtemp(join(tmpdir(), 'orchestrator-'));
   t.after(() => rm(directory, { recursive: true, force: true }));
@@ -146,7 +153,7 @@ test('the remote wrapper builds the exact one-command pipeline and never prints 
   assert.match(commands[2], /-v \/opt\/buena-multilogin-orchestrator\/src:\/app\/src:ro/);
   assert.match(commands[2], /--data \/data\/account-pilot/);
   assert.match(commands[2], /--human-checkpoint-seconds 1800 --json/);
-  assert.match(commands[3], /tar -C \/data\/account-pilot\/jobs\/yt-live-05 -czf - \./);
+  assert.match(commands[3], /tar -C \/opt\/buena-multilogin\/private\/account-pilot\/jobs\/yt-live-05 -czf - \./);
   // File-path flags are fine; a secret VALUE never is.
   for (const command of commands) {
     assert.equal(/Bearer\s|sk-[a-zA-Z0-9]|xoxb-|https:\/\/discord\.com\/api\/webhooks/.test(command), false,

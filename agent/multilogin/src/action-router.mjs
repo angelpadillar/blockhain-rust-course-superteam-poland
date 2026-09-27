@@ -246,7 +246,7 @@ export { decisionSourceFor };
 // One append-only NDJSON line per decision and per execution/outcome. Nothing
 // here mutates a decision, calls a model, or records page text: candidates are
 // reduced to their tool name, and descriptions are never stored.
-export function createRouterObserver({ directory, now = Date.now } = {}) {
+export function createRouterObserver({ directory, now = Date.now, journal = null } = {}) {
   requireThat(typeof directory === 'string' && directory.length > 0, 'router_observer_directory_required');
   const path = resolve(directory, 'router-observations.ndjson');
   const summary = { decisions: 0, deterministicShortcuts: 0, modelDecisions: 0, agreements: 0,
@@ -260,6 +260,10 @@ export function createRouterObserver({ directory, now = Date.now } = {}) {
     await mkdir(directory, { recursive: true, mode: 0o700 });
     await appendFile(path, `${JSON.stringify(record)}\n`, { mode: 0o600 });
   };
+  // A journal is pure instrumentation: even a synchronous throw from a broken
+  // implementation must not affect the decision, the observation record or the
+  // job. Every call is wrapped.
+  const journalSafely = async fn => { try { await fn(); } catch { /* instrumentation only */ } };
   const toolOf = description => /^([a-z][a-z0-9_]{1,47}):/.exec(String(description || ''))?.[1] || null;
   const stateClassFor = ({ phase, classifiedReason, tools }) => {
     if (classifiedReason) return `checkpoint:${classifiedReason}`;
@@ -305,6 +309,15 @@ export function createRouterObserver({ directory, now = Date.now } = {}) {
       if (agreed) summary.agreements++; else summary.disagreements++;
       if (source === 'deterministic') summary.deterministicShortcuts++; else if (source === 'jev') summary.modelDecisions++;
       summary.lastStateClass = record.stateClass;
+      // Passive journal: the same evidence, in the flywheel's record shape. It is
+      // best-effort by construction and cannot alter the decision or the record.
+      if (journal) {
+        await journalSafely(() => journal.decision({ phase, step: record.step, stateClass: record.stateClass,
+          candidates: tools.map(entry => ({ id: entry.id, tool: entry.tool })),
+          chosen: { id: chosenId, tool: record.chosen.tool },
+          method: record.chosen.method, confidence: record.chosen.confidence, probability: record.chosen.probability,
+          source, topCandidate, agreed }));
+      }
       return record;
     },
     // Correlates the executor's own step events with the decision that preceded
@@ -319,6 +332,7 @@ export function createRouterObserver({ directory, now = Date.now } = {}) {
           lastExecution = record;
           summary.executions++;
           await append(record);
+          await journalSafely(() => journal.execution({ phase: detail.phase, action: detail.action ?? null, result: 'selected' }));
           return record;
         }
         if (detail.state === 'after') {
@@ -327,6 +341,7 @@ export function createRouterObserver({ directory, now = Date.now } = {}) {
           closed.add(open.id); open = null; lastExecution = null;
           summary.succeeded++;
           await append(record);
+          await journalSafely(() => journal.outcome({ phase: detail.phase, action: detail.action ?? null, succeeded: true }));
           return record;
         }
         if (detail.state === 'stale' || detail.state === 'stale_decision') {
@@ -336,6 +351,8 @@ export function createRouterObserver({ directory, now = Date.now } = {}) {
           closed.add(open.id); open = null; lastExecution = null;
           summary.stale++;
           await append(record);
+          await journalSafely(() => journal.outcome({ phase: detail.phase, action: detail.action ?? null, succeeded: false,
+            receipt: { state: 'failed', postconditionMet: false }, recovery: 'reobserve' }));
           return record;
         }
       }
@@ -346,6 +363,8 @@ export function createRouterObserver({ directory, now = Date.now } = {}) {
         closed.add(lastExecution.decisionId); open = null; lastExecution = null;
         summary.failed++;
         await append(record);
+        await journalSafely(() => journal.outcome({ phase: 'attention', action: record.executed?.action ?? null, succeeded: false,
+          receipt: { state: 'failed', postconditionMet: false }, recovery: detail.reason || 'attention' }));
         return record;
       }
       return null;

@@ -38,11 +38,20 @@ export function parseArguments(argv) {
     else if (token === '--dry-run-remote') options['dry-run-remote'] = true;
     else if (token === '--build') options.build = true;
     else if (passthrough.has(token)) {
-      options.passthrough.push(token); index++;
-      if (argv[index] !== undefined && !argv[index].startsWith('--')) options.passthrough.push(argv[index]);
+      options.passthrough.push(token);
+      const next = argv[index + 1];
+      if (next !== undefined && !next.startsWith('--')) { options.passthrough.push(next); index++; }
     } else options.positional.push(token);
   }
   return options;
+}
+
+export function hostArtifactDirectory({ directory, dataDirectory } = {}) {
+  const data = dataDirectory || '/data/account-pilot';
+  // The worker mounts `${directory}/private` at /data, so the container's data
+  // path maps onto the host filesystem differently from the run flag.
+  if (data.startsWith('/data/')) return `${directory}/private/${data.slice('/data/'.length)}`;
+  return data;
 }
 
 export function remoteCommands({ host, directory, jobFile, jobId, extra = [], dataDirectory = null } = {}) {
@@ -57,7 +66,7 @@ export function remoteCommands({ host, directory, jobFile, jobId, extra = [], da
     `ssh ${host} "mkdir -p ${directory}/private/jobs ${directory}/private/state && chmod 700 ${directory}/private/jobs && chown 1000:1000 ${directory}/private/jobs"`,
     `cat ${jobFile} | ssh ${host} "cat > ${remoteJob} && chmod 600 ${remoteJob} && chown 1000:1000 ${remoteJob}"`,
     `ssh ${host} "cd ${directory} && docker compose run --rm --no-deps -T ${mounts} --entrypoint node worker job-runner.mjs /data/jobs/${name} ${flags.join(' ')} ${extra.join(' ')}"`,
-    `ssh ${host} "cd ${directory} && tar -C ${data}/jobs/${jobId} -czf - ." | tar -xzf - -C .browser-jobs/${jobId}`,
+    `ssh ${host} "cd ${directory} && tar -C ${hostArtifactDirectory({ directory, dataDirectory })}/jobs/${jobId} -czf - ." | tar -xzf - -C .browser-jobs/${jobId}`,
   ];
 }
 
@@ -143,7 +152,7 @@ export async function main(argv = process.argv.slice(2)) {
   if (mirrorId) {
     const destination = resolve(process.cwd(), '.browser-jobs', mirrorId);
     await mkdir(destination, { recursive: true });
-    const tar = spawn('ssh', [host, `cd ${directory} && tar -C ${dataDirectory}/jobs/${mirrorId} -czf - .`], { stdio: ['ignore', 'pipe', 'inherit'] });
+    const tar = spawn('ssh', [host, `cd ${directory} && tar -C ${hostArtifactDirectory({ directory, dataDirectory })}/jobs/${mirrorId} -czf - .`], { stdio: ['ignore', 'pipe', 'inherit'] });
     const extract = spawn('tar', ['-xzf', '-', '-C', destination], { stdio: ['pipe', 'inherit', 'inherit'] });
     tar.stdout.pipe(extract.stdin);
     const [tarCode, extractCode] = await Promise.all([

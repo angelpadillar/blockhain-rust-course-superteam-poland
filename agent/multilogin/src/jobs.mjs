@@ -259,21 +259,25 @@ function wrapProfileApi({ api, log, preserved, preserveOnCheckpoint }) {
 
 // Studio may itself raise a security checkpoint. It uses the same observing
 // wait as the login flow and never answers the challenge.
-async function studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt = 0 }) {
+async function studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt = 0, journal = null }) {
   const studio = await studioImpl({ page, account, onStep: emit });
   if (studio.state === 'checkpoint' && attempt < 2) {
     await log.screenshot(page, `studio_checkpoint_${attempt + 1}`, [], checkpointCapture);
     const reason = humanCheckpointReasons.includes(studio.reason) ? studio.reason : 'human_verification_required';
+    const bundle = log.screenshots.at(-1) || null;
+    await journal?.checkpointPending({ reason, stateClass: reason,
+      bundle: bundle ? { canonical: bundle.path ?? null, region: bundle.regionPath ?? null, context: bundle.contextPath ?? null } : null }).catch(() => {});
     const paused = await waitForHuman({ reason, observe: () => observeStudio(page), log, config, cancel,
       pollMs, onStep: emit });
+    if (paused?.resumed) await journal?.checkpointCleared({ reason, postClearVerified: true }).catch(() => {});
     if (paused.resumed) {
-      return studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt: attempt + 1 });
+      return studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt: attempt + 1, journal });
     }
   }
   return studio;
 }
 
-async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, studioImpl, pollMs }) {
+async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, studioImpl, pollMs, journal = null }) {
   const { page, verifyOnly = false, onStep = async () => {} } = args;
   const site = sites[account.platform];
   const emit = async detail => {
@@ -301,8 +305,14 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
     // the PNG is suspiciously small (a near-blank page).
     await log.screenshot(context.page, `checkpoint_${context.reason}`, site.credentialOrigins,
       checkpointCapture);
-    return waitForHuman({ reason: context.reason, observe: () => context.browser.observe(),
+    const bundle = log.screenshots.at(-1) || null;
+    await journal?.checkpointPending({ reason: context.reason, stateClass: `${context.reason}`,
+      bundle: bundle ? { canonical: bundle.path ?? null, region: bundle.regionPath ?? null, context: bundle.contextPath ?? null } : null }).catch(() => {});
+    const paused = await waitForHuman({ reason: context.reason, observe: () => context.browser.observe(),
       log, config, cancel, pollMs, onStep: emit });
+    if (paused?.resumed) await journal?.checkpointCleared({ reason: context.reason,
+      postClearVerified: true }).catch(() => {});
+    return paused;
   };
   await log.transition('running', { phase: verifyOnly ? 'session_reopen' : 'login' });
   // Durable receipts for this job: written before every dispatch, kept beside the
@@ -314,7 +324,7 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
       accountId: account.id, profileId: log.profileId || null } });
   await log.screenshot(page, verifyOnly ? 'session_persisted' : 'login_verified', site.credentialOrigins);
   if (job.platform === 'youtube') {
-    const studio = await studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs });
+    const studio = await studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, journal });
     await log.screenshot(page, verifyOnly ? 'youtube_studio_after_restart' : 'youtube_studio', []);
     await log.record({ event: 'youtube_studio', verifyOnly, authenticated: studio.authenticated, state: studio.state,
       url: studio.url || null, channel: studio.channel ? { name: studio.channel.name } : null,
@@ -330,7 +340,7 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
 export async function runJobBatch({ jobs, accountIndex, config: supplied, directory, concurrency = 2,
   api, guideFactory, cancel = new CancelToken(), connectImpl = defaultConnect, flowImpl = runLogin,
   seedImpl = seedSites, studioImpl = inspectStudio, humanCheckpointPollMs = 2000, preserveOnCheckpoint = false,
-  onJobState = null }) {
+  onJobState = null, journal = null }) {
   const config = validateConfig(supplied);
   requireThat(Number.isInteger(concurrency) && concurrency >= 1 && concurrency <= 5, 'invalid_concurrency');
   requireThat(/^[a-zA-Z0-9-]{8,80}$/.test(config.folderId || '') && !config.folderId.includes('REPLACE'), 'folder_id_required');
@@ -395,7 +405,7 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
         guideFactory, directory: childDirectory, seedImpl,
         connectImpl: attach,
         loginImpl: args => runJobFlow({ job, account, log, args, config: childConfig, cancel, flowImpl, studioImpl,
-          pollMs: humanCheckpointPollMs }),
+          pollMs: humanCheckpointPollMs, journal }),
       });
       const outcome = result.report.accounts[0] || {};
       const state = jobStateForResult(outcome);
