@@ -168,6 +168,10 @@ the second typed load before two references exist. See `src/state.rs`.
 - **The customer after approval.** The customer cannot cancel once a quote is
   approved. If the operator stalls, the funds wait for the job timeout or an
   operator cancel.
+- **Operator cancel can be front-run with dust.** The operator's cancel must
+  return exactly what the vault is missing. A 1-unit donation to the vault in
+  the same slot makes it fail. Recovery: transfer the shortfall into the vault
+  directly, then cancel with `returned = 0`.
 - **Disputes depend on the admin.** A disputed job is resolved by the
   multisig. If it never acts, the customer gets everything back after the
   dispute timeout and the operator forfeits the fee.

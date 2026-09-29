@@ -26,6 +26,10 @@ https://explorer.solana.com/address/Gb6xwa6T348n7d67Ri5c42ENeQqbwLuf4d6W9an9rbZb
     rent credit): `44CXgN1TJju2od8VGzQyW3fqygJvTTRLdGyxNZC7Vc8TQ9cWAWRfr9npi9iRsGojVTsqXz5mszoznSCNpQiPJEQR`,
     slot 505,695,531. The on-chain program bytes match a local
     `cargo build-sbf` of that commit.
+- **Layout changes.** This upgrade grew Job from 326 to 334 bytes. No job
+  existed on devnet then, only the config. A binary cannot load jobs written
+  under an older layout, so before any future upgrade that changes a layout,
+  close every open job, or deploy under a fresh program id.
 - **Config.** 5% fee, 24 h dispute window, 7-day job timeout, 14-day dispute
   timeout.
 - **Mint.** The devnet mint is our own, so devnet runs can be funded freely.

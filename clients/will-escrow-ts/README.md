@@ -18,6 +18,9 @@ const [job] = await findJobPda({ customer: customer.address, jobId: 1n });
   write (`programs/will_escrow/tests/vectors`), and that `src/generated` is
   current.
 
+A customer's early `settle` must land in a later slot than `submit_proof`. If
+it is rejected with `SignOffTooEarly` (6017), retry in the next slot.
+
 `scripts/codegen.mjs` adds what the IDL does not carry: PDA helpers, default
 accounts (config, job, vault, token and system programs, ProgramData), account
 tags and sizes, and hidden instruction discriminators.
