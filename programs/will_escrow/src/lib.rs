@@ -4,17 +4,27 @@
 #![cfg_attr(not(test), no_std)]
 
 pub mod error;
+pub mod instructions;
 pub mod state;
 #[cfg(test)]
 mod test_utils;
 pub mod util;
 
+pub use pinocchio::Address;
 use {
     error::{Error, Result},
-    pinocchio::{AccountView, Address},
+    pinocchio::AccountView,
 };
 
 pub const ID: Address = Address::from_str_const("Gb6xwa6T348n7d67Ri5c42ENeQqbwLuf4d6W9an9rbZb");
+
+/// This program's ProgramData account under the upgradeable loader, which
+/// records the upgrade authority allowed to initialize the config.
+pub const PROGRAM_DATA: Address =
+    Address::from_str_const("CcHoibXJsxpAt7eYd3WDtMNR4dHpAZ1P8aDA4egXxGo2");
+
+/// Upper bound on the configurable protocol fee (10%).
+pub const MAX_FEE_BPS: u16 = 1_000;
 
 #[cfg(not(feature = "no-entrypoint"))]
 mod entrypoint {
@@ -88,7 +98,10 @@ type Handler = fn(&mut [AccountView], &[u8]) -> Result;
 /// Handlers indexed by the 1-byte instruction discriminator. The table holds
 /// only function pointers: platform-tools v1.52 zeroes the upper half of plain
 /// 64-bit words that share a static with relocated pointers.
-static HANDLERS: [Handler; 0] = [];
+static HANDLERS: [Handler; 2] = [
+    instructions::initialize_config::process,
+    instructions::update_config::process,
+];
 
 pub fn process_instruction(accounts: &mut [AccountView], data: &[u8]) -> Result {
     let Some((&tag, args)) = data.split_first() else {

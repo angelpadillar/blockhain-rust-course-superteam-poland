@@ -224,8 +224,14 @@ unsafe fn load<T>(account: &AccountView, tag: u8) -> Result<&mut T> {
 impl Config {
     /// The config PDA, checked against its stored bump.
     pub fn load(account: &AccountView) -> Result<&Config> {
-        // SAFETY: shared view; see the module docs.
-        let config: &Config = unsafe { load(account, CONFIG_TAG)? };
+        Self::load_mut(account).map(|config| &*config)
+    }
+
+    /// `load` for a writable config. Call at most once per instruction.
+    #[allow(clippy::mut_from_ref)]
+    pub fn load_mut(account: &AccountView) -> Result<&mut Config> {
+        // SAFETY: see the module docs.
+        let config: &mut Config = unsafe { load(account, CONFIG_TAG)? };
         check_pda(account, [CONFIG_SEED, &[config.bump], &[], &[]])?;
         Ok(config)
     }

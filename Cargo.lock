@@ -4628,12 +4628,15 @@ dependencies = [
  "serde_json",
  "solana-account",
  "solana-address 2.7.0",
+ "solana-clock",
  "solana-instruction",
  "solana-keypair",
  "solana-message",
  "solana-sha256-hasher",
  "solana-signer",
+ "solana-system-interface 3.3.0",
  "solana-transaction",
+ "spl-token-interface",
 ]
 
 [[package]]

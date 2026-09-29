@@ -1,4 +1,4 @@
-use core::num::NonZeroU64;
+use {core::num::NonZeroU64, pinocchio::error::ProgramError};
 
 /// Program errors, returned as `custom program error` codes from 6000. The
 /// numbering is part of the client ABI: append new variants, never reorder.
@@ -63,6 +63,15 @@ impl Error {
         Self::builtin(pinocchio::error::ACCOUNT_DATA_TOO_SMALL);
     pub const INVALID_SEEDS: Self = Self::builtin(pinocchio::error::INVALID_SEEDS);
     pub const INVALID_ACCOUNT_OWNER: Self = Self::builtin(pinocchio::error::INVALID_ACCOUNT_OWNER);
+    pub const MISSING_REQUIRED_SIGNATURE: Self =
+        Self::builtin(pinocchio::error::MISSING_REQUIRED_SIGNATURES);
+    pub const IMMUTABLE: Self = Self::builtin(pinocchio::error::IMMUTABLE);
+    pub const INCORRECT_PROGRAM_ID: Self = Self::builtin(pinocchio::error::INCORRECT_PROGRAM_ID);
+    pub const UNINITIALIZED_ACCOUNT: Self = Self::builtin(pinocchio::error::UNINITIALIZED_ACCOUNT);
+    pub const NOT_ENOUGH_ACCOUNT_KEYS: Self =
+        Self::builtin(pinocchio::error::NOT_ENOUGH_ACCOUNT_KEYS);
+    pub const ARITHMETIC_OVERFLOW: Self = Self::builtin(pinocchio::error::ARITHMETIC_OVERFLOW);
+    pub const UNSUPPORTED_SYSVAR: Self = Self::builtin(pinocchio::error::UNSUPPORTED_SYSVAR);
 
     /// The value the entrypoint returns to the runtime.
     #[inline(always)]
@@ -86,5 +95,17 @@ pub fn require(condition: bool, error: WillError) -> Result {
         Ok(())
     } else {
         Err(error.into())
+    }
+}
+
+/// Errors surfaced by Pinocchio calls (sysvars, CPI pre-checks).
+impl From<ProgramError> for Error {
+    #[cold]
+    fn from(error: ProgramError) -> Self {
+        // `ProgramError` never encodes to 0 (`Custom(0)` becomes `CUSTOM_ZERO`).
+        Self(
+            NonZeroU64::new(u64::from(error))
+                .unwrap_or(Self::builtin(pinocchio::error::CUSTOM_ZERO).0),
+        )
     }
 }
