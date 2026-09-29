@@ -15,12 +15,16 @@ use {
     solana_transaction::versioned::VersionedTransaction,
     will_escrow::{
         instructions::{
+            approve_quote::{self, ApproveQuote},
             cancel::{self, Cancel},
             create_job::{self, CreateJob},
             initialize_config::{self, InitializeConfig},
             refund_expired::{self, RefundExpired},
+            submit_quote::{self, SubmitQuote},
         },
-        state::{Config, Job, LeI64, LeU16, LeU32, LeU64, CONFIG_SEED, JOB_SEED, VAULT_SEED},
+        state::{
+            Config, Job, LeI64, LeU16, LeU32, LeU64, Quote, CONFIG_SEED, JOB_SEED, VAULT_SEED,
+        },
         util::bytes_of,
         Address, ID, PROGRAM_DATA,
     },
@@ -301,7 +305,70 @@ pub fn job_args(job_id: u64, budget: u64) -> CreateJob {
     args
 }
 
+/// A 53.98 zł Glovo lunch (45.00 + 2.99 service + 5.99 delivery), ceiling
+/// 60.00 zł, releasing up to 15 USDC, valid for 30 minutes from `now`.
+pub fn quote_args(now: i64) -> SubmitQuote {
+    let mut quote = Quote::default();
+    quote.item.set(4_500);
+    quote.service_fee.set(299);
+    quote.delivery_fee.set(599);
+    quote.ceiling.set(6_000);
+    let mut args = SubmitQuote {
+        quote_currency: *b"PLN",
+        quote_exponent: 2,
+        quote,
+        total: LeU64::default(),
+        release_cap: LeU64::default(),
+        quote_expires_at: LeI64::default(),
+        quote_hash: [7; 32],
+    };
+    args.total.set(5_398);
+    args.release_cap.set(15 * USDC);
+    args.quote_expires_at.set(now + 1_800);
+    args
+}
+
 impl Harness {
+    pub fn submit_quote_ix(
+        &self,
+        job: &Address,
+        signer: Address,
+        args: &SubmitQuote,
+    ) -> Instruction {
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(signer, false, true),
+            ],
+            data: data(submit_quote::DISCRIMINATOR, args),
+        }
+    }
+
+    pub fn submit_quote(&mut self, job: &Address, args: &SubmitQuote) -> TransactionResult {
+        let instruction = self.submit_quote_ix(job, self.operator.pubkey(), args);
+        let operator = copy(&self.operator);
+        self.send(instruction, &[&operator])
+    }
+
+    pub fn approve_ix(&self, job: &Address, signer: Address, terms_hash: [u8; 32]) -> Instruction {
+        Instruction {
+            program_id: ID,
+            accounts: vec![meta(*job, true, false), meta(signer, false, true)],
+            data: data(approve_quote::DISCRIMINATOR, &ApproveQuote { terms_hash }),
+        }
+    }
+
+    /// Approves the job's current quote as its customer.
+    pub fn approve(&mut self, job: &Address) -> TransactionResult {
+        let terms = approve_quote::terms_hash(job, &self.job(job));
+        let instruction = self.approve_ix(job, self.customer.pubkey(), terms);
+        let customer = copy(&self.customer);
+        let operator = copy(&self.operator);
+        self.send(instruction, &[&operator, &customer])
+    }
+
     pub fn init_config(&mut self) {
         let mut args = InitializeConfig {
             fee_bps: LeU16::default(),

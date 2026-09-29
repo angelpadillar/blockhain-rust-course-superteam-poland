@@ -6,8 +6,10 @@
 // duplicated attributes; each describes a different account.
 #![allow(clippy::duplicated_attributes)]
 
+pub mod approve_quote;
 pub mod cancel;
 pub mod create_job;
 pub mod initialize_config;
 pub mod refund_expired;
+pub mod submit_quote;
 pub mod update_config;
