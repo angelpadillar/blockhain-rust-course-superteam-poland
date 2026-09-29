@@ -112,16 +112,11 @@ static HANDLERS: [Handler; 13] = [
     instructions::record_purchase::process,
     instructions::submit_proof::process,
     instructions::dispute::process,
-    not_yet,
-    not_yet,
+    instructions::settle::process,
+    instructions::resolve_dispute::process,
     instructions::cancel::process,
     instructions::refund_expired::process,
 ];
-
-/// Placeholder for discriminators whose instruction is not implemented yet.
-fn not_yet(_accounts: &mut [AccountView], _args: &[u8]) -> Result {
-    Err(Error::INVALID_INSTRUCTION_DATA)
-}
 
 pub fn process_instruction(accounts: &mut [AccountView], data: &[u8]) -> Result {
     let Some((&tag, args)) = data.split_first() else {

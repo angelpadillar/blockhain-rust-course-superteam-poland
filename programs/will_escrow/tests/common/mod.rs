@@ -23,6 +23,8 @@ use {
             record_purchase::{self, RecordPurchase},
             refund_expired::{self, RefundExpired},
             release_for_purchase::{self, ReleaseForPurchase},
+            resolve_dispute::{self, ResolveDispute},
+            settle::{self, Settle},
             submit_proof::{self, SubmitProof},
             submit_quote::{self, SubmitQuote},
             update_config::{self, UpdateConfig},
@@ -489,6 +491,71 @@ impl Harness {
         let instruction = self.dispute_ix(job, self.customer.pubkey());
         let (operator, customer) = (copy(&self.operator), copy(&self.customer));
         self.send(instruction, &[&operator, &customer])
+    }
+
+    pub fn settle_ix(
+        &self,
+        job: &Address,
+        caller: Address,
+        customer_token: Address,
+        treasury_token: Address,
+    ) -> Instruction {
+        let rent_payer = self.job(job).rent_payer;
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(vault_address(job), true, false),
+                meta(customer_token, true, false),
+                meta(treasury_token, true, false),
+                meta(rent_payer, true, false),
+                meta(caller, false, true),
+                meta(TOKEN_PROGRAM, false, false),
+            ],
+            data: data(settle::DISCRIMINATOR, &Settle {}),
+        }
+    }
+
+    /// Settles with the default recipients; `caller` signs and pays the fee.
+    pub fn settle(&mut self, job: &Address, caller: &Keypair) -> TransactionResult {
+        let instruction = self.settle_ix(
+            job,
+            caller.pubkey(),
+            self.customer_token,
+            self.treasury_token,
+        );
+        let caller = copy(caller);
+        self.send(instruction, &[&caller])
+    }
+
+    pub fn resolve_ix(&self, job: &Address, admin: Address, fee_to_operator: u64) -> Instruction {
+        let mut args = ResolveDispute {
+            fee_to_operator: LeU64::default(),
+        };
+        args.fee_to_operator.set(fee_to_operator);
+        let rent_payer = self.job(job).rent_payer;
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(vault_address(job), true, false),
+                meta(self.customer_token, true, false),
+                meta(self.treasury_token, true, false),
+                meta(rent_payer, true, false),
+                meta(admin, false, true),
+                meta(TOKEN_PROGRAM, false, false),
+            ],
+            data: data(resolve_dispute::DISCRIMINATOR, &args),
+        }
+    }
+
+    /// A job with proof submitted: 13.5 USDC charged, 7.5 USDC left in the vault.
+    pub fn proven_job(&mut self, job_id: u64) -> Address {
+        let job = self.purchased_job(job_id);
+        self.prove(&job).unwrap();
+        job
     }
 
     /// Budget 20 USDC, 15 released, purchase recorded at 13.5 USDC.
