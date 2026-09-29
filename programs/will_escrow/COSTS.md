@@ -12,32 +12,35 @@ which is SIMD-0437 step 2. The compute-unit table is checked by
 | --- | ---: | ---: |
 | Anchor 1.1.2 (`gift_campaign`, v1) | 425,568 B | — |
 | Pinocchio port of v1 (`gift_campaign_pinocchio`) | 43,032 B | −89.9% |
-| **will_escrow (Pinocchio 0.11.2, `opt-level = "s"`)** | **32,136 B** | **−92.4%** (13.2× smaller) |
+| **will_escrow (Pinocchio 0.11.2, `opt-level = "s"`)** | **32,472 B** | **−92.4%** (13.1× smaller) |
 
 ## Deploy rent
 
-`scripts/deploy.sh` sets `--max-len` to the binary size plus 5% (33,743 B), so
-a small fix can be deployed without extending the account first.
+`scripts/deploy.sh` sets `--max-len` to the binary size plus 5% (34,096 B for
+a fresh deploy of this build), so a small fix can be deployed without
+extending the account first.
 
 | Account | Bytes (incl. 128 overhead) | Lamports | SOL |
 | --- | ---: | ---: | ---: |
-| ProgramData (45 + 33,743) | 33,916 | 172,293,280 | 0.1723 |
+| ProgramData (45 + 34,096) | 34,269 | 174,086,520 | 0.1741 |
 | Program | 164 | 833,120 | 0.0008 |
-| **Deploy total (locked while the program exists)** | | **173,126,400** | **0.1731** |
-| Buffer during a deploy or upgrade (37 + 32,136) | 32,301 | 164,089,080 | 0.1641 |
+| **Deploy total (locked while the program exists)** | | **174,919,640** | **0.1749** |
+| Buffer during a deploy or upgrade (37 + 32,472) | 32,637 | 165,795,960 | 0.1658 |
 
 - **Buffer.** The buffer is funded up front and refunded when the deploy
   lands, so the deployer needs about 0.34 SOL available at the peak.
-- **Devnet check.** The devnet deploy cost the deployer 173,317,377 lamports:
-  the rent above plus 190,977 lamports of transaction and priority fees
-  (10,000 micro-lamports per CU). The ProgramData account holds exactly
-  0.17229328 SOL. No buffers were left to close.
+- **Devnet check.** The first devnet deploy was an earlier 32,136 B build with
+  a 33,743 B `--max-len`. It cost the deployer 173,317,377 lamports: the
+  computed rent of 173,126,400 plus 190,977 lamports of transaction and
+  priority fees (10,000 micro-lamports per CU). The ProgramData account holds
+  exactly 0.17229328 SOL, as computed. No buffers were left to close. The
+  current build fits that account and was deployed to it as an upgrade.
 - **Anchor comparison.** The v1 Anchor binary under the same `--max-len` rule
   would lock **2.2717 SOL**, or 2.1636 SOL at its exact size.
 - **Getting the rent back.** Deploy rent comes back only when the program is
   closed, and a closed program id can never be reused. Upgrades need only the
-  temporary buffer and fees: a same-size upgrade through `scripts/deploy.sh`
-  cost 185,974 lamports on devnet.
+  temporary buffer and fees: each of the two devnet upgrades through
+  `scripts/deploy.sh` cost 185,974 lamports.
 
 ## Compute units
 
@@ -77,12 +80,14 @@ instruction, not the same one. One cross-check on a real cluster:
   average, so a typical `create_job` costs about 21,335 CU. That is the
   figure used below.
 - **The rest.** Instructions that only change job state cost under 1,000 CU.
+- **Re-measure on the cluster.** These figures come from LiteSVM 0.10's
+  runtime. Re-measure on the deployed cluster before quoting them to judges.
 
 ## Running 100 jobs
 
 The operator pays all fees and rent; the customer needs only USDC.
 
-**Happy path per job.** 55,196 CU on average (with `create_job` at 21,335),
+**Happy path per job.** 55,359 CU on average (with `create_job` at 21,335),
 in 5 transactions and 6 signatures:
 1. `create_job` + `submit_quote` + `approve_quote` in one transaction signed
    by the operator and the customer;
@@ -97,14 +102,14 @@ the limit to about the measured CU.
 | Priority fee (micro-lamports/CU) | Fees per job | Fees for 100 jobs |
 | ---: | ---: | ---: |
 | 0 | 30,000 lamports | 0.0030 SOL |
-| 10,000 | 30,552 lamports | 0.0031 SOL |
-| 100,000 | 35,520 lamports | 0.0036 SOL |
-| 1,000,000 | 85,196 lamports | 0.0085 SOL |
+| 10,000 | 30,554 lamports | 0.0031 SOL |
+| 100,000 | 35,536 lamports | 0.0036 SOL |
+| 1,000,000 | 85,359 lamports | 0.0085 SOL |
 
-**Rent float.** An open job holds its Job account (326 B) and its vault token
-account (165 B): 3,794,760 lamports (0.0038 SOL). Both return to the rent
+**Rent float.** An open job holds its Job account (334 B) and its vault token
+account (165 B): 3,835,400 lamports (0.0038 SOL). Both return to the rent
 payer when the job closes, in every exit path. With 100 jobs open at once the
-peak float is **0.3795 SOL**, all of it recovered. The config account is a
+peak float is **0.3835 SOL**, all of it recovered. The config account is a
 one-time 2,047,240 lamports (0.0020 SOL).
 
 **Total for 100 jobs.** About 0.003–0.009 SOL in fees that are spent, plus up
@@ -119,12 +124,12 @@ SIMD-0437 lowers the rent rate in five steps.
 
 | Rate (lamports/byte) | Step | Deploy | Buffer | Anchor v1 deploy | Rent per open job | 100 open jobs | Config |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 6,960 | before | 0.2372 | 0.2248 | 3.1124 | 0.005199 | 0.5199 | 0.002805 |
-| 6,333 | 1 | 0.2158 | 0.2046 | 2.8320 | 0.004731 | 0.4731 | 0.002552 |
-| **5,080** | **2 (live)** | **0.1731** | **0.1641** | **2.2717** | **0.003795** | **0.3795** | **0.002047** |
-| 2,575 | 3 | 0.0878 | 0.0832 | 1.1515 | 0.001924 | 0.1924 | 0.001038 |
-| 1,322 | 4 | 0.0451 | 0.0427 | 0.5912 | 0.000988 | 0.0988 | 0.000533 |
-| 696 | 5 | 0.0237 | 0.0225 | 0.3112 | 0.000520 | 0.0520 | 0.000280 |
+| 6,960 | before | 0.2397 | 0.2272 | 3.1124 | 0.005255 | 0.5255 | 0.002805 |
+| 6,333 | 1 | 0.2181 | 0.2067 | 2.8320 | 0.004781 | 0.4781 | 0.002552 |
+| **5,080** | **2 (live)** | **0.1749** | **0.1658** | **2.2717** | **0.003835** | **0.3835** | **0.002047** |
+| 2,575 | 3 | 0.0887 | 0.0840 | 1.1515 | 0.001944 | 0.1944 | 0.001038 |
+| 1,322 | 4 | 0.0455 | 0.0431 | 0.5912 | 0.000998 | 0.0998 | 0.000533 |
+| 696 | 5 | 0.0240 | 0.0227 | 0.3112 | 0.000525 | 0.0525 | 0.000280 |
 
 All amounts are in SOL. Anchor figures use the same `--max-len` rule (size +
 5%).
