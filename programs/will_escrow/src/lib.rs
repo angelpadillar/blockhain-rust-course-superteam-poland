@@ -4,6 +4,10 @@
 #![cfg_attr(not(test), no_std)]
 
 pub mod error;
+pub mod state;
+#[cfg(test)]
+mod test_utils;
+pub mod util;
 
 use {
     error::{Error, Result},

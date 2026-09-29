@@ -1,5 +1,45 @@
 use core::num::NonZeroU64;
 
+/// Program errors, returned as `custom program error` codes from 6000. The
+/// numbering is part of the client ABI: append new variants, never reorder.
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+#[repr(u32)]
+#[cfg_attr(feature = "idl", derive(codama::CodamaErrors))]
+pub enum WillError {
+    /// Config is paused: no new jobs or releases.
+    Paused = 6000,
+    /// The instruction is not valid in the job's current state.
+    BadState,
+    /// Only the configured operator may do this.
+    NotOperator,
+    /// Only the job's customer may do this.
+    NotCustomer,
+    /// Only the config admin may do this.
+    NotAdmin,
+    /// Only the program's upgrade authority may initialize the config.
+    NotUpgradeAuthority,
+    /// The amount exceeds the approved cap.
+    CapExceeded,
+    /// The destination is not an allowlisted funding account.
+    FundingNotAllowed,
+    /// The dispute window is still open.
+    WindowOpen,
+    /// The dispute window has closed.
+    WindowClosed,
+    /// The timeout has not passed yet.
+    NotExpired,
+    /// The signed terms do not match the job's quote.
+    TermsMismatch,
+    /// The quote has expired.
+    QuoteExpired,
+    /// A job kind or adapter code is outside 0..=15.
+    KindOutOfRange,
+    /// An amount, total or configuration value is invalid.
+    BadAmount,
+    /// Arithmetic overflowed.
+    Overflow,
+}
+
 /// A program error in its final `u64` entrypoint encoding. `Result<(), Error>`
 /// fits in one register, which keeps the many `?` sites small.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
@@ -18,10 +58,33 @@ impl Error {
 
     pub const INVALID_INSTRUCTION_DATA: Self =
         Self::builtin(pinocchio::error::INVALID_INSTRUCTION_DATA);
+    pub const INVALID_ACCOUNT_DATA: Self = Self::builtin(pinocchio::error::INVALID_ACCOUNT_DATA);
+    pub const ACCOUNT_DATA_TOO_SMALL: Self =
+        Self::builtin(pinocchio::error::ACCOUNT_DATA_TOO_SMALL);
+    pub const INVALID_SEEDS: Self = Self::builtin(pinocchio::error::INVALID_SEEDS);
+    pub const INVALID_ACCOUNT_OWNER: Self = Self::builtin(pinocchio::error::INVALID_ACCOUNT_OWNER);
 
     /// The value the entrypoint returns to the runtime.
     #[inline(always)]
     pub fn code(self) -> u64 {
         self.0.get()
+    }
+}
+
+impl From<WillError> for Error {
+    #[inline(always)]
+    fn from(error: WillError) -> Self {
+        // SAFETY: every variant is >= 6000.
+        Self(unsafe { NonZeroU64::new_unchecked(error as u64) })
+    }
+}
+
+/// `require!`: the custom error when `condition` is false.
+#[inline(always)]
+pub fn require(condition: bool, error: WillError) -> Result {
+    if condition {
+        Ok(())
+    } else {
+        Err(error.into())
     }
 }

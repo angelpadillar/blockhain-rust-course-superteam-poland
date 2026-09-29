@@ -30,3 +30,33 @@ fn idl_names_the_program_and_its_id() {
     assert_eq!(idl["program"]["name"], "willEscrow");
     assert_eq!(idl["program"]["publicKey"], will_escrow::ID.to_string());
 }
+
+/// Every `definedTypeLinkNode` must name a type the IDL defines, or the
+/// generated client will not compile.
+#[test]
+fn idl_type_links_resolve() {
+    fn links(value: &serde_json::Value, out: &mut Vec<String>) {
+        match value {
+            serde_json::Value::Object(map) => {
+                if map.get("kind").and_then(|k| k.as_str()) == Some("definedTypeLinkNode") {
+                    out.push(map["name"].as_str().unwrap().to_string());
+                }
+                map.values().for_each(|v| links(v, out));
+            }
+            serde_json::Value::Array(items) => items.iter().for_each(|v| links(v, out)),
+            _ => {}
+        }
+    }
+    let idl = generated();
+    let defined: Vec<&str> = idl["program"]["definedTypes"]
+        .as_array()
+        .map(|types| types.iter().map(|t| t["name"].as_str().unwrap()).collect())
+        .unwrap_or_default();
+    let mut used = Vec::new();
+    links(&idl, &mut used);
+    let missing: Vec<&String> = used
+        .iter()
+        .filter(|name| !defined.contains(&name.as_str()))
+        .collect();
+    assert!(missing.is_empty(), "undefined types: {missing:?}");
+}
