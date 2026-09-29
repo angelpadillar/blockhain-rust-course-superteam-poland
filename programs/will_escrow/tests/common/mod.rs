@@ -609,7 +609,7 @@ impl Harness {
             job_timeout: config.job_timeout,
             dispute_timeout: config.dispute_timeout,
             paused: u8::from(paused),
-            admin: config.admin,
+            new_admin: config.admin,
             operator: config.operator,
             treasury: config.treasury,
         });
@@ -624,7 +624,7 @@ impl Harness {
             job_timeout: config.job_timeout,
             dispute_timeout: config.dispute_timeout,
             paused: config.paused,
-            admin: config.admin,
+            new_admin: config.admin,
             operator: config.operator,
             treasury: config.treasury,
         };
@@ -634,16 +634,20 @@ impl Harness {
         self.update_config(args);
     }
 
-    pub fn update_config(&mut self, args: UpdateConfig) {
-        let instruction = Instruction {
+    pub fn update_config_ix(&self, args: &UpdateConfig) -> Instruction {
+        Instruction {
             program_id: ID,
             accounts: vec![
                 meta(config_address(), true, false),
                 meta(self.admin.pubkey(), false, true),
                 meta(self.funding, false, false),
             ],
-            data: data(update_config::DISCRIMINATOR, &args),
-        };
+            data: data(update_config::DISCRIMINATOR, args),
+        }
+    }
+
+    pub fn update_config(&mut self, args: UpdateConfig) {
+        let instruction = self.update_config_ix(&args);
         let admin = copy(&self.admin);
         self.send(instruction, &[&admin]).unwrap();
     }

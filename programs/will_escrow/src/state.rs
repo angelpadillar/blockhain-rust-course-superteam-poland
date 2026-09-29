@@ -154,6 +154,8 @@ pub struct Job {
     pub job_kind: u8,
     pub adapter: u8,
     pub quote_exponent: u8,
+    /// ISO 4217 code, e.g. `PLN`.
+    #[cfg_attr(feature = "idl", codama(type = fixed_size(string, 3)))]
     pub quote_currency: [u8; 3],
     pub flags: u8,
     /// The config fee rate when the job was created; fixed for its lifetime.

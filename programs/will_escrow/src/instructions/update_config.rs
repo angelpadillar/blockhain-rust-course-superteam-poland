@@ -40,8 +40,9 @@ pub struct UpdateConfig {
     #[cfg_attr(feature = "idl", codama(type = number(u32)))]
     pub dispute_timeout: LeU32,
     pub paused: u8,
+    /// The new admin (`admin` is the signing account).
     #[cfg_attr(feature = "idl", codama(type = public_key))]
-    pub admin: Address,
+    pub new_admin: Address,
     #[cfg_attr(feature = "idl", codama(type = public_key))]
     pub operator: Address,
     #[cfg_attr(feature = "idl", codama(type = public_key))]
@@ -64,7 +65,7 @@ pub fn process(accounts: &mut [AccountView], args: &[u8]) -> Result {
             args.job_timeout.get(),
             args.dispute_timeout.get(),
         ],
-        [&args.admin, &args.operator, &args.treasury],
+        [&args.new_admin, &args.operator, &args.treasury],
     )?;
     let (funding_count, funding) = funding_list(funding, &config.mint)?;
 
@@ -73,7 +74,7 @@ pub fn process(accounts: &mut [AccountView], args: &[u8]) -> Result {
     config.dispute_window = args.dispute_window;
     config.job_timeout = args.job_timeout;
     config.dispute_timeout = args.dispute_timeout;
-    config.admin = args.admin;
+    config.admin = args.new_admin;
     config.operator = args.operator;
     config.treasury = args.treasury;
     config.funding_count = funding_count;

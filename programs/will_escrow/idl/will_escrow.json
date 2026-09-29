@@ -213,16 +213,12 @@
               "kind": "structFieldTypeNode",
               "name": "quoteCurrency",
               "type": {
-                "count": {
-                  "kind": "fixedCountNode",
-                  "value": 3
-                },
-                "item": {
-                  "endian": "le",
-                  "format": "u8",
-                  "kind": "numberTypeNode"
-                },
-                "kind": "arrayTypeNode"
+                "kind": "fixedSizeTypeNode",
+                "size": 3,
+                "type": {
+                  "encoding": "utf8",
+                  "kind": "stringTypeNode"
+                }
               }
             },
             {
@@ -1544,7 +1540,8 @@
               "kind": "fixedSizeTypeNode",
               "size": 3,
               "type": {
-                "kind": "bytesTypeNode"
+                "encoding": "utf8",
+                "kind": "stringTypeNode"
               }
             }
           },
@@ -1690,7 +1687,7 @@
           },
           {
             "kind": "instructionArgumentNode",
-            "name": "admin",
+            "name": "newAdmin",
             "type": {
               "kind": "publicKeyTypeNode"
             }

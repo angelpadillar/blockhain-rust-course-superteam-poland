@@ -145,7 +145,7 @@ fn settle_uses_fee_rate_fixed_at_creation() {
         job_timeout: config.job_timeout,
         dispute_timeout: config.dispute_timeout,
         paused: config.paused,
-        admin: config.admin,
+        new_admin: config.admin,
         operator: config.operator,
         treasury: config.treasury,
     });

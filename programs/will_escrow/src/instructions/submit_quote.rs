@@ -28,7 +28,7 @@ pub const APPROVED_BY_MANDATE: u8 = 1;
 #[cfg_attr(feature = "idl", codama(account(name = "job", writable)))]
 #[cfg_attr(feature = "idl", codama(account(name = "operator", signer)))]
 pub struct SubmitQuote {
-    #[cfg_attr(feature = "idl", codama(type = fixed_size(bytes, 3)))]
+    #[cfg_attr(feature = "idl", codama(type = fixed_size(string, 3)))]
     pub quote_currency: [u8; 3],
     pub quote_exponent: u8,
     pub quote: Quote,

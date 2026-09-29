@@ -367,7 +367,7 @@ fn pause(h: &mut Harness) {
         job_timeout: config.job_timeout,
         dispute_timeout: config.dispute_timeout,
         paused: 1,
-        admin: config.admin,
+        new_admin: config.admin,
         operator: config.operator,
         treasury: config.treasury,
     };
