@@ -1,0 +1,11 @@
+{
+  "kind": "rootNode",
+  "program": {
+    "kind": "programNode",
+    "name": "willEscrow",
+    "publicKey": "Gb6xwa6T348n7d67Ri5c42ENeQqbwLuf4d6W9an9rbZb",
+    "version": "0.1.0"
+  },
+  "standard": "codama",
+  "version": "1.8.0"
+}

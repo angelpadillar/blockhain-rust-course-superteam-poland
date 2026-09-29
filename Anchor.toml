@@ -3,10 +3,10 @@ skip_local_validator = true
 [toolchain]
 
 [workspace]
-# The Pinocchio port is an alternative binary for the same program id, built
-# with `cargo build-sbf`. Keep Anchor from building, generating an IDL for, or
-# deploying it as a separate program.
-exclude = ["programs/gift_campaign_pinocchio"]
+# Pinocchio programs built with `cargo build-sbf`: the gift_campaign port (an
+# alternative binary for the same program id) and will_escrow (its own id).
+# Keep Anchor from building, generating an IDL for, or deploying them.
+exclude = ["programs/gift_campaign_pinocchio", "programs/will_escrow"]
 
 [features]
 resolution = true

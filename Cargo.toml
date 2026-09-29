@@ -18,6 +18,9 @@ codegen-units = 1
 [profile.release.package.gift_campaign_pinocchio]
 opt-level = "s"
 
+[profile.release.package.will_escrow]
+opt-level = "s"
+
 [profile.release.package.pinocchio]
 overflow-checks = false
 
