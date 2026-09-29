@@ -69,7 +69,7 @@ pub struct Harness {
     pub other_mint_funding: Address,
 }
 
-fn program_bytes() -> Vec<u8> {
+pub fn program_bytes() -> Vec<u8> {
     let path = concat!(
         env!("CARGO_MANIFEST_DIR"),
         "/../../target/deploy/will_escrow.so"

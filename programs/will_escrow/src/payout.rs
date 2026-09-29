@@ -1,6 +1,7 @@
 //! Every way a job ends goes through [`close_job`]: the vault pays the fee (if
 //! any) to the treasury and everything else to the customer, then the vault
-//! and the job are closed and their rent returns to the recorded rent payer.
+//! and the job are closed and their rent returns to the recorded rent payer
+//! through a single direct credit.
 //! Nothing is ever paid to the caller.
 
 use {
@@ -109,11 +110,15 @@ pub fn close_job(
         if refund > 0 {
             token_transfer(to.vault, to.customer_token, job_account, refund, signer)?;
         }
-        token_close(to.vault, to.rent_payer, job_account, signer)
+        // Into the job, not the rent payer: the runtime does not refresh an
+        // executable account's lamports after a CPI, so a CPI credit to a rent
+        // payer that became a program would unbalance every exit.
+        token_close(to.vault, job_account, job_account, signer)
     })?;
 
-    // The job's own lamports: move them out first, then zero the owner,
-    // lamports and length so the account cannot be revived.
+    // The job's lamports, now including the vault's rent, go to the rent
+    // payer in one direct credit. Then zero the owner, lamports and length so
+    // the account cannot be revived.
     let lamports = job_account.lamports();
     let rent_payer_lamports = to
         .rent_payer

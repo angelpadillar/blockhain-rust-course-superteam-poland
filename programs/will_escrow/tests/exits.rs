@@ -256,3 +256,38 @@ fn timeout_pays_only_customer_or_earned_fee_never_caller() {
         );
     }
 }
+
+/// Whoever holds the rent payer's key can turn that account into a program.
+/// The exits must still pay out, so the program credits the rent payer
+/// directly and never through a CPI.
+#[test]
+fn exits_work_when_the_rent_payer_is_executable() {
+    let mut h = setup();
+    let proven = h.job_in_state(1, PROVEN);
+    let purchased = h.job_in_state(2, PURCHASED);
+    let rent_payer = h.job(&proven).rent_payer;
+    let rent: u64 = [proven, purchased]
+        .iter()
+        .map(|job| h.lamports(job) + h.lamports(&vault_address(job)))
+        .sum();
+    let mut account = h.svm.get_account(&rent_payer).unwrap();
+    account.executable = true;
+    account.owner = Address::from_str_const("BPFLoader2111111111111111111111111111111111");
+    account.data = program_bytes();
+    h.svm.set_account(rent_payer, account).unwrap();
+    let before = h.lamports(&rent_payer);
+
+    let deadline = h
+        .job(&purchased)
+        .expires_at
+        .get()
+        .max(h.job(&proven).window_ends_at.get());
+    h.set_time(deadline);
+    let stranger = copy(&h.stranger);
+    h.settle(&proven, &stranger).unwrap();
+    let instruction = h.refund_expired_ix(&purchased, h.customer_token, rent_payer);
+    h.send(instruction, &[&stranger]).unwrap();
+
+    assert!(h.account(&proven).is_none() && h.account(&purchased).is_none());
+    assert_eq!(h.lamports(&rent_payer), before + rent);
+}

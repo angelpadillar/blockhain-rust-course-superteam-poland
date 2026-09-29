@@ -61,13 +61,13 @@ instruction, not the same one. One cross-check on a real cluster:
 | `release_for_purchase` | 7,140 | — | | |
 | `record_purchase (returns excess)` | 6,951 | `record_purchase` (no token transfer) | 7,673 | 1,051 |
 | `submit_proof` | 796 | — | | |
-| `settle (fee + refund + close)` | 17,252 | `settle_fulfillment` | 36,853 | 19,393 |
+| `settle (fee + refund + close)` | 17,151 | `settle_fulfillment` | 36,853 | 19,393 |
 | `submit_quote (mandate approves)` | 951 | `approve_quote_with_mandate` | 12,381 | 1,988 |
 | `dispute` | 786 | — | | |
-| `resolve_dispute` | 17,262 | — | | |
-| `cancel (customer, before approval)` | 11,267 | `cancel` | 19,908 | 7,396 |
-| `cancel (operator, returns release)` | 17,520 | — | | |
-| `refund_expired` | 11,355 | — | | |
+| `resolve_dispute` | 17,161 | — | | |
+| `cancel (customer, before approval)` | 11,168 | `cancel` | 19,908 | 7,396 |
+| `cancel (operator, returns release)` | 17,421 | — | | |
+| `refund_expired` | 11,256 | — | | |
 
 - **Token-moving instructions.** The instructions that move tokens are
   dominated by their SPL Token CPIs: `settle`, `resolve_dispute`, `cancel`
