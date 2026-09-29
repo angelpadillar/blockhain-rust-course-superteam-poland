@@ -38,6 +38,8 @@ pub enum WillError {
     BadAmount,
     /// Arithmetic overflowed.
     Overflow,
+    /// A payout or rent destination does not belong to the recorded party.
+    WrongRecipient,
 }
 
 /// A program error in its final `u64` entrypoint encoding. `Result<(), Error>`
@@ -58,6 +60,7 @@ impl Error {
 
     pub const INVALID_INSTRUCTION_DATA: Self =
         Self::builtin(pinocchio::error::INVALID_INSTRUCTION_DATA);
+    pub const INVALID_ARGUMENT: Self = Self::builtin(pinocchio::error::INVALID_ARGUMENT);
     pub const INVALID_ACCOUNT_DATA: Self = Self::builtin(pinocchio::error::INVALID_ACCOUNT_DATA);
     pub const ACCOUNT_DATA_TOO_SMALL: Self =
         Self::builtin(pinocchio::error::ACCOUNT_DATA_TOO_SMALL);

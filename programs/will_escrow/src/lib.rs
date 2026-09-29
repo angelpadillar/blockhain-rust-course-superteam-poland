@@ -5,6 +5,7 @@
 
 pub mod error;
 pub mod instructions;
+pub mod payout;
 pub mod state;
 #[cfg(test)]
 mod test_utils;
@@ -25,6 +26,9 @@ pub const PROGRAM_DATA: Address =
 
 /// Upper bound on the configurable protocol fee (10%).
 pub const MAX_FEE_BPS: u16 = 1_000;
+
+/// Fees are in basis points of the amount spent.
+pub const BASIS_POINTS: u64 = 10_000;
 
 #[cfg(not(feature = "no-entrypoint"))]
 mod entrypoint {
@@ -98,10 +102,26 @@ type Handler = fn(&mut [AccountView], &[u8]) -> Result;
 /// Handlers indexed by the 1-byte instruction discriminator. The table holds
 /// only function pointers: platform-tools v1.52 zeroes the upper half of plain
 /// 64-bit words that share a static with relocated pointers.
-static HANDLERS: [Handler; 2] = [
+static HANDLERS: [Handler; 13] = [
     instructions::initialize_config::process,
     instructions::update_config::process,
+    instructions::create_job::process,
+    not_yet,
+    not_yet,
+    not_yet,
+    not_yet,
+    not_yet,
+    not_yet,
+    not_yet,
+    not_yet,
+    instructions::cancel::process,
+    instructions::refund_expired::process,
 ];
+
+/// Placeholder for discriminators whose instruction is not implemented yet.
+fn not_yet(_accounts: &mut [AccountView], _args: &[u8]) -> Result {
+    Err(Error::INVALID_INSTRUCTION_DATA)
+}
 
 pub fn process_instruction(accounts: &mut [AccountView], data: &[u8]) -> Result {
     let Some((&tag, args)) = data.split_first() else {

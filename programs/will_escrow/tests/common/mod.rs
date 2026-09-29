@@ -14,9 +14,15 @@ use {
     solana_signer::Signer,
     solana_transaction::versioned::VersionedTransaction,
     will_escrow::{
-        state::{Config, Job, CONFIG_SEED, JOB_SEED, VAULT_SEED},
+        instructions::{
+            cancel::{self, Cancel},
+            create_job::{self, CreateJob},
+            initialize_config::{self, InitializeConfig},
+            refund_expired::{self, RefundExpired},
+        },
+        state::{Config, Job, LeI64, LeU16, LeU32, LeU64, CONFIG_SEED, JOB_SEED, VAULT_SEED},
         util::bytes_of,
-        Address, ID,
+        Address, ID, PROGRAM_DATA,
     },
 };
 
@@ -277,6 +283,158 @@ impl Harness {
         let result = self.svm.send_transaction(transaction);
         self.svm.expire_blockhash();
         result
+    }
+}
+
+/// Job defaults for tests: food via Glovo, no mandate.
+pub fn job_args(job_id: u64, budget: u64) -> CreateJob {
+    let mut args = CreateJob {
+        job_id: LeU64::default(),
+        budget: LeU64::default(),
+        job_kind: 0,
+        adapter: 1,
+        mandate_cap: LeU64::default(),
+        mandate_expires_at: LeI64::default(),
+    };
+    args.job_id.set(job_id);
+    args.budget.set(budget);
+    args
+}
+
+impl Harness {
+    pub fn init_config(&mut self) {
+        let mut args = InitializeConfig {
+            fee_bps: LeU16::default(),
+            dispute_window: LeU32::default(),
+            job_timeout: LeU32::default(),
+            dispute_timeout: LeU32::default(),
+            admin: self.admin.pubkey(),
+            operator: self.operator.pubkey(),
+            treasury: self.treasury.pubkey(),
+        };
+        args.fee_bps.set(FEE_BPS);
+        args.dispute_window.set(DISPUTE_WINDOW);
+        args.job_timeout.set(JOB_TIMEOUT);
+        args.dispute_timeout.set(DISPUTE_TIMEOUT);
+        let instruction = Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), true, false),
+                meta(self.upgrade_authority.pubkey(), true, true),
+                meta(PROGRAM_DATA, false, false),
+                meta(self.mint, false, false),
+                meta(SYSTEM_PROGRAM, false, false),
+                meta(self.funding, false, false),
+            ],
+            data: data(initialize_config::DISCRIMINATOR, &args),
+        };
+        let authority = copy(&self.upgrade_authority);
+        self.send(instruction, &[&authority]).unwrap();
+    }
+
+    pub fn create_job_ix(
+        &self,
+        args: &CreateJob,
+        customer: Address,
+        customer_token: Address,
+        rent_payer: Address,
+        mint: Address,
+    ) -> Instruction {
+        let job = job_address(&customer, args.job_id.get());
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(job, true, false),
+                meta(vault_address(&job), true, false),
+                meta(customer, false, true),
+                meta(customer_token, true, false),
+                meta(rent_payer, true, true),
+                meta(mint, false, false),
+                meta(TOKEN_PROGRAM, false, false),
+                meta(SYSTEM_PROGRAM, false, false),
+            ],
+            data: data(create_job::DISCRIMINATOR, args),
+        }
+    }
+
+    /// A funded job for `self.customer`; the operator pays fees and rent.
+    pub fn create_job(&mut self, job_id: u64, budget: u64) -> Address {
+        let args = job_args(job_id, budget);
+        let instruction = self.create_job_ix(
+            &args,
+            self.customer.pubkey(),
+            self.customer_token,
+            self.operator.pubkey(),
+            self.mint,
+        );
+        let (operator, customer) = (copy(&self.operator), copy(&self.customer));
+        self.send(instruction, &[&operator, &customer]).unwrap();
+        job_address(&self.customer.pubkey(), job_id)
+    }
+
+    /// Rewrites a job's stored fields directly (only a test can do this).
+    pub fn set_job(&mut self, job: &Address, edit: impl FnOnce(&mut Job)) {
+        let mut account = self.svm.get_account(job).unwrap();
+        // SAFETY: Job is alignment 1 and the account holds at least its size.
+        edit(unsafe { &mut *(account.data.as_mut_ptr() as *mut Job) });
+        self.svm.set_account(*job, account).unwrap();
+    }
+
+    pub fn cancel_ix(
+        &self,
+        job: &Address,
+        signer: Address,
+        customer_token: Address,
+        returned: u64,
+        source_token: Option<Address>,
+    ) -> Instruction {
+        let mut args = Cancel {
+            returned: LeU64::default(),
+        };
+        args.returned.set(returned);
+        let rent_payer = self.job(job).rent_payer;
+        let mut accounts = vec![
+            meta(config_address(), false, false),
+            meta(*job, true, false),
+            meta(vault_address(job), true, false),
+            meta(customer_token, true, false),
+            meta(rent_payer, true, false),
+            meta(signer, false, true),
+            meta(TOKEN_PROGRAM, false, false),
+        ];
+        accounts.extend(source_token.map(|token| meta(token, true, false)));
+        Instruction {
+            program_id: ID,
+            accounts,
+            data: data(cancel::DISCRIMINATOR, &args),
+        }
+    }
+
+    pub fn refund_expired_ix(
+        &self,
+        job: &Address,
+        customer_token: Address,
+        rent_payer: Address,
+    ) -> Instruction {
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(vault_address(job), true, false),
+                meta(customer_token, true, false),
+                meta(rent_payer, true, false),
+                meta(TOKEN_PROGRAM, false, false),
+            ],
+            data: data(refund_expired::DISCRIMINATOR, &RefundExpired {}),
+        }
+    }
+
+    pub fn lamports(&self, address: &Address) -> u64 {
+        self.svm
+            .get_account(address)
+            .map_or(0, |account| account.lamports)
     }
 }
 

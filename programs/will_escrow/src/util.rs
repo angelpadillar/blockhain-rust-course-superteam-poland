@@ -318,3 +318,92 @@ fn minimum_balance(space: usize) -> Result<u64> {
         _ => Err(Error::UNSUPPORTED_SYSVAR),
     }
 }
+
+/// Balance of an already validated token account (re-read after CPIs).
+#[inline(always)]
+pub fn token_amount(account: &AccountView) -> u64 {
+    // SAFETY: only called after `token_account_owner` validated the account.
+    u64::from_le_bytes(unsafe { (*(account.data_ptr() as *const TokenAccount)).amount })
+}
+
+/// The same account may not fill two writable slots.
+pub fn check_distinct(a: &AccountView, b: &AccountView) -> Result {
+    if a.address() == b.address() {
+        Err(Error::INVALID_ARGUMENT)
+    } else {
+        Ok(())
+    }
+}
+
+/// SPL Token `Transfer`.
+pub fn token_transfer(
+    from: &AccountView,
+    to: &AccountView,
+    authority: &AccountView,
+    amount: u64,
+    signers: &[Signer],
+) -> Result {
+    let [a0, a1, a2, a3, a4, a5, a6, a7] = amount.to_le_bytes();
+    let data = [3, a0, a1, a2, a3, a4, a5, a6, a7];
+    let metas = [
+        InstructionAccount::writable(from.address()),
+        InstructionAccount::writable(to.address()),
+        InstructionAccount::readonly_signer(authority.address()),
+    ];
+    invoke(
+        &TOKEN_PROGRAM_ID,
+        &metas,
+        &[from, to, authority],
+        &data,
+        signers,
+    )
+}
+
+/// SPL Token `InitializeAccount3`.
+pub fn token_initialize_account(
+    account: &AccountView,
+    mint: &AccountView,
+    owner: &Address,
+) -> Result {
+    #[repr(C)]
+    struct Data {
+        tag: u8,
+        owner: Address,
+    }
+    let data = Data {
+        tag: 18,
+        owner: *owner,
+    };
+    let metas = [
+        InstructionAccount::writable(account.address()),
+        InstructionAccount::readonly(mint.address()),
+    ];
+    invoke(
+        &TOKEN_PROGRAM_ID,
+        &metas,
+        &[account, mint],
+        bytes_of(&data),
+        &[],
+    )
+}
+
+/// SPL Token `CloseAccount`: the (empty) account's rent goes to `destination`.
+pub fn token_close(
+    account: &AccountView,
+    destination: &AccountView,
+    authority: &AccountView,
+    signers: &[Signer],
+) -> Result {
+    let metas = [
+        InstructionAccount::writable(account.address()),
+        InstructionAccount::writable(destination.address()),
+        InstructionAccount::readonly_signer(authority.address()),
+    ];
+    invoke(
+        &TOKEN_PROGRAM_ID,
+        &metas,
+        &[account, destination, authority],
+        &[9],
+        signers,
+    )
+}

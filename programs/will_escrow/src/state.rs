@@ -72,6 +72,12 @@ macro_rules! le_accessors {
             pub fn set(&mut self, value: $int) {
                 self.0 = value.to_le_bytes();
             }
+
+            /// The stored little-endian bytes (for PDA seeds and hashing).
+            #[inline(always)]
+            pub fn bytes(&self) -> &[u8] {
+                &self.0
+            }
         }
     )*};
 }
@@ -150,6 +156,9 @@ pub struct Job {
     pub quote_exponent: u8,
     pub quote_currency: [u8; 3],
     pub flags: u8,
+    /// The config fee rate when the job was created; fixed for its lifetime.
+    #[cfg_attr(feature = "idl", codama(type = number(u16)))]
+    pub fee_bps: LeU16,
     #[cfg_attr(feature = "idl", codama(type = public_key))]
     pub customer: Address,
     /// Paid the job and vault rent; receives it back at close.
@@ -195,7 +204,7 @@ pub struct Job {
 }
 
 const _: () = assert!(size_of::<Config>() == 275 && align_of::<Config>() == 1);
-const _: () = assert!(size_of::<Job>() == 324 && align_of::<Job>() == 1);
+const _: () = assert!(size_of::<Job>() == 326 && align_of::<Job>() == 1);
 
 /// Owned by this program, at least `size_of::<T>()` bytes, and tagged `tag`.
 ///
@@ -242,6 +251,7 @@ impl Job {
     /// most once per account per instruction (see the module docs).
     #[allow(clippy::mut_from_ref)]
     pub fn load_mut(account: &AccountView) -> Result<&mut Job> {
+        crate::util::check_writable(account)?;
         // SAFETY: see the module docs.
         let job: &mut Job = unsafe { load(account, JOB_TAG)? };
         check_pda(
@@ -297,13 +307,14 @@ mod tests {
     #[test]
     fn layout_sizes_and_offsets() {
         assert_eq!((size_of::<Config>(), align_of::<Config>()), (275, 1));
-        assert_eq!((size_of::<Job>(), align_of::<Job>()), (324, 1));
+        assert_eq!((size_of::<Job>(), align_of::<Job>()), (326, 1));
         assert_eq!(offset_of!(Config, admin), 18);
         assert_eq!(offset_of!(Config, funding_count), 146);
-        assert_eq!(offset_of!(Job, customer), 12);
-        assert_eq!(offset_of!(Job, quote), 124);
-        assert_eq!(offset_of!(Job, quote_hash), 188);
-        assert_eq!(offset_of!(Job, disputed_at), 316);
+        assert_eq!(offset_of!(Job, fee_bps), 12);
+        assert_eq!(offset_of!(Job, customer), 14);
+        assert_eq!(offset_of!(Job, quote), 126);
+        assert_eq!(offset_of!(Job, quote_hash), 190);
+        assert_eq!(offset_of!(Job, disputed_at), 318);
     }
 
     #[test]
@@ -374,7 +385,7 @@ mod tests {
         let mut job = job(0, 0);
         job.budget.set(0x0102_0304_0506_0708);
         let bytes = bytes_of(&job);
-        assert_eq!(&bytes[84..92], &[8, 7, 6, 5, 4, 3, 2, 1]);
+        assert_eq!(&bytes[86..94], &[8, 7, 6, 5, 4, 3, 2, 1]);
         job.expires_at.set(-2);
         assert_eq!(job.expires_at.get(), -2);
     }
