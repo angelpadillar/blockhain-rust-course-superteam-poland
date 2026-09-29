@@ -210,7 +210,7 @@ All in USDC base units (6 decimals); checked arithmetic throughout.
 
 Phase 1 changed some of the details above. Where this section and the rest
 of the spec disagree, this section describes the program as built. The
-reasons are in the plan's ledger (`.superpowers/sdd/2026-09-29-will-escrow-v2/progress.md`)
+reasons are in the plan's ledger (`docs/superpowers/plans/2026-09-29-will-escrow-v2-ledger.md`)
 and the final-review fix commits.
 
 - **Job layout: 334 bytes.** `src/state.rs` has the byte-exact list; the
