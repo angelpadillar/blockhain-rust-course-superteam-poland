@@ -722,6 +722,7 @@
             "docs": [
               "Operator USDC account the return comes from (only when returned > 0)."
             ],
+            "isWritable": true,
             "kind": "instructionRemainingAccountsNode",
             "value": {
               "kind": "argumentValueNode",

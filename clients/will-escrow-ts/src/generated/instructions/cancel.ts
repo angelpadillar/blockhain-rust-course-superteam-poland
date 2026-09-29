@@ -258,7 +258,7 @@ export async function getCancelInstructionAsync<
       getAccountMeta("returnSource", {
         value,
         isSigner: false,
-        isWritable: false,
+        isWritable: true,
       }),
     ),
   );
@@ -433,7 +433,7 @@ export function getCancelInstruction<
       getAccountMeta("returnSource", {
         value,
         isSigner: false,
-        isWritable: false,
+        isWritable: true,
       }),
     ),
   );

@@ -38,6 +38,7 @@ pub const DISCRIMINATOR: u8 = 11;
     feature = "idl",
     codama(remaining_accounts(
         argument("return_source"),
+        writable,
         docs = "Operator USDC account the return comes from (only when returned > 0)."
     ))
 )]

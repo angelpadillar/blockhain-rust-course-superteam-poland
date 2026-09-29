@@ -5,7 +5,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
-import { address, createNoopSigner, getAddressDecoder } from '@solana/kit';
+import { AccountRole, address, createNoopSigner, getAddressDecoder } from '@solana/kit';
 import * as client from '../dist/index.js';
 
 const program = new URL('../../../programs/will_escrow/', import.meta.url);
@@ -162,4 +162,5 @@ test('cancel appends the optional return source', async () => {
   const withSource = await client.getCancelInstructionAsync({ ...base, returned: 5n, returnSource: [key(0x55)] });
   assert.equal(withSource.accounts.length, 8);
   assert.equal(withSource.accounts[7].address, key(0x55));
+  assert.equal(withSource.accounts[7].role, AccountRole.WRITABLE, 'the program debits the return source');
 });

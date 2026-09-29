@@ -66,6 +66,20 @@ fn check(
         .map(|m| m.pubkey)
         .collect();
     assert_eq!(rest, trailing, "{name}: trailing accounts");
+    // Trailing accounts take their flags from the IDL's remaining-accounts node.
+    let remaining = &node["remainingAccounts"][0];
+    for meta in &instruction.accounts[accounts.len()..] {
+        assert_eq!(
+            meta.is_writable,
+            remaining["isWritable"] == true,
+            "{name}: trailing writable"
+        );
+        assert_eq!(
+            meta.is_signer,
+            remaining["isSigner"] == true,
+            "{name}: trailing signer"
+        );
+    }
 }
 
 #[test]
