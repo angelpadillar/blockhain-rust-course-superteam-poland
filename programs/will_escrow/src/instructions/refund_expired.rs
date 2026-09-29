@@ -12,7 +12,7 @@ pub const DISCRIMINATOR: u8 = 12;
 
 /// Permissionless exit so funds can never get stuck: anyone may refund an
 /// unfinished job (FUNDED..=PURCHASED) once `expires_at` has passed, or a
-/// dispute once `dispute_timeout` has passed since it opened. Everything goes
+/// dispute once its `dispute_expires_at` has passed. Everything goes
 /// to the customer and the rent to the rent payer; the caller gets nothing.
 #[repr(C)]
 #[cfg_attr(feature = "idl", derive(codama::CodamaInstruction))]
@@ -43,11 +43,7 @@ pub fn process(accounts: &mut [AccountView], args: &[u8]) -> Result {
     let now = now()?;
     let deadline = match job.status {
         status::FUNDED..=status::PURCHASED => job.expires_at.get(),
-        status::DISPUTED => job
-            .disputed_at
-            .get()
-            .checked_add(i64::from(config.dispute_timeout.get()))
-            .ok_or(WillError::Overflow)?,
+        status::DISPUTED => job.dispute_expires_at.get(),
         _ => return Err(WillError::BadState.into()),
     };
     require(now >= deadline, WillError::NotExpired)?;

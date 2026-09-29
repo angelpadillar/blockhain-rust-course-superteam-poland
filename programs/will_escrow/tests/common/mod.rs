@@ -18,10 +18,12 @@ use {
             approve_quote::{self, ApproveQuote},
             cancel::{self, Cancel},
             create_job::{self, CreateJob},
+            dispute::{self, Dispute},
             initialize_config::{self, InitializeConfig},
             record_purchase::{self, RecordPurchase},
             refund_expired::{self, RefundExpired},
             release_for_purchase::{self, ReleaseForPurchase},
+            submit_proof::{self, SubmitProof},
             submit_quote::{self, SubmitQuote},
             update_config::{self, UpdateConfig},
         },
@@ -448,6 +450,55 @@ impl Harness {
         self.send(instruction, &[&operator])
     }
 
+    pub fn proof_ix(&self, job: &Address, signer: Address, proof_hash: [u8; 32]) -> Instruction {
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(signer, false, true),
+            ],
+            data: data(submit_proof::DISCRIMINATOR, &SubmitProof { proof_hash }),
+        }
+    }
+
+    pub fn prove(&mut self, job: &Address) -> TransactionResult {
+        let instruction = self.proof_ix(job, self.operator.pubkey(), [6; 32]);
+        let operator = copy(&self.operator);
+        self.send(instruction, &[&operator])
+    }
+
+    pub fn dispute_ix(&self, job: &Address, signer: Address) -> Instruction {
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(signer, false, true),
+            ],
+            data: data(
+                dispute::DISCRIMINATOR,
+                &Dispute {
+                    reason_hash: [3; 32],
+                },
+            ),
+        }
+    }
+
+    pub fn dispute(&mut self, job: &Address) -> TransactionResult {
+        let instruction = self.dispute_ix(job, self.customer.pubkey());
+        let (operator, customer) = (copy(&self.operator), copy(&self.customer));
+        self.send(instruction, &[&operator, &customer])
+    }
+
+    /// Budget 20 USDC, 15 released, purchase recorded at 13.5 USDC.
+    pub fn purchased_job(&mut self, job_id: u64) -> Address {
+        let job = self.approved_job(job_id, 20 * USDC);
+        self.release(&job, 15 * USDC).unwrap();
+        self.record(&job, 13_500_000).unwrap();
+        job
+    }
+
     /// A job with an approved default quote (release cap 15 USDC).
     pub fn approved_job(&mut self, job_id: u64, budget: u64) -> Address {
         let job = self.create_job(job_id, budget);
@@ -458,7 +509,7 @@ impl Harness {
 
     pub fn set_paused(&mut self, paused: bool) {
         let config = self.config();
-        let args = UpdateConfig {
+        self.update_config(UpdateConfig {
             fee_bps: config.fee_bps,
             dispute_window: config.dispute_window,
             job_timeout: config.job_timeout,
@@ -467,7 +518,29 @@ impl Harness {
             admin: config.admin,
             operator: config.operator,
             treasury: config.treasury,
+        });
+    }
+
+    /// Changes the configured dispute window, job timeout and dispute timeout.
+    pub fn set_timeouts(&mut self, dispute_window: u32, job_timeout: u32, dispute_timeout: u32) {
+        let config = self.config();
+        let mut args = UpdateConfig {
+            fee_bps: config.fee_bps,
+            dispute_window: config.dispute_window,
+            job_timeout: config.job_timeout,
+            dispute_timeout: config.dispute_timeout,
+            paused: config.paused,
+            admin: config.admin,
+            operator: config.operator,
+            treasury: config.treasury,
         };
+        args.dispute_window.set(dispute_window);
+        args.job_timeout.set(job_timeout);
+        args.dispute_timeout.set(dispute_timeout);
+        self.update_config(args);
+    }
+
+    pub fn update_config(&mut self, args: UpdateConfig) {
         let instruction = Instruction {
             program_id: ID,
             accounts: vec![

@@ -9,9 +9,11 @@
 pub mod approve_quote;
 pub mod cancel;
 pub mod create_job;
+pub mod dispute;
 pub mod initialize_config;
 pub mod record_purchase;
 pub mod refund_expired;
 pub mod release_for_purchase;
+pub mod submit_proof;
 pub mod submit_quote;
 pub mod update_config;

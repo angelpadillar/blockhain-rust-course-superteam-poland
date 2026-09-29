@@ -197,10 +197,12 @@ pub struct Job {
     pub order_ref_hash: Hash,
     #[cfg_attr(feature = "idl", codama(type = fixed_size(bytes, 32)))]
     pub proof_hash: Hash,
+    /// End of the dispute window, fixed when the proof is submitted.
     #[cfg_attr(feature = "idl", codama(type = number(i64)))]
-    pub proof_at: LeI64,
+    pub window_ends_at: LeI64,
+    /// When an open dispute may be refunded, fixed when it is opened.
     #[cfg_attr(feature = "idl", codama(type = number(i64)))]
-    pub disputed_at: LeI64,
+    pub dispute_expires_at: LeI64,
 }
 
 const _: () = assert!(size_of::<Config>() == 275 && align_of::<Config>() == 1);
@@ -314,7 +316,8 @@ mod tests {
         assert_eq!(offset_of!(Job, customer), 14);
         assert_eq!(offset_of!(Job, quote), 126);
         assert_eq!(offset_of!(Job, quote_hash), 190);
-        assert_eq!(offset_of!(Job, disputed_at), 318);
+        assert_eq!(offset_of!(Job, window_ends_at), 310);
+        assert_eq!(offset_of!(Job, dispute_expires_at), 318);
     }
 
     #[test]

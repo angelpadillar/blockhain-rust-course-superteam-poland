@@ -321,20 +321,20 @@ fn refund_expired_per_state() {
         custom_error(&refund_by_stranger(&mut h, &job)),
         Some(WillError::BadState as u32)
     );
-    // A dispute waits for the dispute timeout, measured from the dispute.
+    // A dispute waits until the deadline stored when it was opened.
     let mut h = setup();
     let job = h.create_job(1, USDC);
-    let disputed_at = START + 100;
+    let dispute_expires_at = START + 100 + i64::from(DISPUTE_TIMEOUT);
     h.set_job(&job, |j| {
         j.status = status::DISPUTED;
-        j.disputed_at.set(disputed_at);
+        j.dispute_expires_at.set(dispute_expires_at);
     });
-    h.set_time(disputed_at + i64::from(DISPUTE_TIMEOUT) - 1);
+    h.set_time(dispute_expires_at - 1);
     assert_eq!(
         custom_error(&refund_by_stranger(&mut h, &job)),
         Some(WillError::NotExpired as u32)
     );
-    h.set_time(disputed_at + i64::from(DISPUTE_TIMEOUT));
+    h.set_time(dispute_expires_at);
     refund_by_stranger(&mut h, &job).unwrap();
 }
 
