@@ -720,7 +720,19 @@
           }
         ],
         "kind": "instructionNode",
-        "name": "cancel"
+        "name": "cancel",
+        "remainingAccounts": [
+          {
+            "docs": [
+              "Operator USDC account the return comes from (only when returned > 0)."
+            ],
+            "kind": "instructionRemainingAccountsNode",
+            "value": {
+              "kind": "argumentValueNode",
+              "name": "returnSource"
+            }
+          }
+        ]
       },
       {
         "accounts": [

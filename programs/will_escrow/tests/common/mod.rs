@@ -551,6 +551,33 @@ impl Harness {
         }
     }
 
+    /// A job for `self.customer` driven through real transitions to `state`.
+    /// Vault afterwards: 21 USDC before release, 6 released, 7.5 purchased on.
+    pub fn job_in_state(&mut self, job_id: u64, state: u8) -> Address {
+        use will_escrow::state::status::*;
+        let job = self.create_job(job_id, 20 * USDC);
+        if state >= QUOTED {
+            self.submit_quote(&job, &quote_args(self.now())).unwrap();
+        }
+        if state >= APPROVED {
+            self.approve(&job).unwrap();
+        }
+        if state >= RELEASED {
+            self.release(&job, 15 * USDC).unwrap();
+        }
+        if state >= PURCHASED {
+            self.record(&job, 13_500_000).unwrap();
+        }
+        if state >= PROVEN {
+            self.prove(&job).unwrap();
+        }
+        if state >= DISPUTED {
+            self.dispute(&job).unwrap();
+        }
+        assert_eq!(self.job(&job).status, state);
+        job
+    }
+
     /// A job with proof submitted: 13.5 USDC charged, 7.5 USDC left in the vault.
     pub fn proven_job(&mut self, job_id: u64) -> Address {
         let job = self.purchased_job(job_id);
