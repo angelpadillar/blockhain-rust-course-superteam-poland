@@ -89,6 +89,7 @@ export type Job = {
   proofHash: ReadonlyUint8Array;
   windowEndsAt: bigint;
   disputeExpiresAt: bigint;
+  proofSlot: bigint;
 };
 
 export type JobArgs = {
@@ -121,6 +122,7 @@ export type JobArgs = {
   proofHash: ReadonlyUint8Array;
   windowEndsAt: number | bigint;
   disputeExpiresAt: number | bigint;
+  proofSlot: number | bigint;
 };
 
 /** Gets the encoder for {@link JobArgs} account data. */
@@ -157,6 +159,7 @@ export function getJobEncoder(): FixedSizeEncoder<JobArgs> {
       ["proofHash", fixEncoderSize(getBytesEncoder(), 32)],
       ["windowEndsAt", getI64Encoder()],
       ["disputeExpiresAt", getI64Encoder()],
+      ["proofSlot", getU64Encoder()],
     ]),
     (value) => ({ ...value, tag: JOB_TAG }),
   );
@@ -195,6 +198,7 @@ export function getJobDecoder(): FixedSizeDecoder<Job> {
     ["proofHash", fixDecoderSize(getBytesDecoder(), 32)],
     ["windowEndsAt", getI64Decoder()],
     ["disputeExpiresAt", getI64Decoder()],
+    ["proofSlot", getU64Decoder()],
   ]);
 }
 
@@ -257,7 +261,7 @@ export async function fetchAllMaybeJob(
 }
 
 export function getJobSize(): number {
-  return 326;
+  return 334;
 }
 
 export async function fetchJobFromSeeds(

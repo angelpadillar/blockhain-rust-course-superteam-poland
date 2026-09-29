@@ -60,8 +60,8 @@ instruction, not the same one. One cross-check on a real cluster:
 | `approve_quote` | 778 | `approve_quote` | 5,325 | 750 |
 | `release_for_purchase` | 7,140 | — | | |
 | `record_purchase (returns excess)` | 6,951 | `record_purchase` (no token transfer) | 7,673 | 1,051 |
-| `submit_proof` | 796 | — | | |
-| `settle (fee + refund + close)` | 17,151 | `settle_fulfillment` | 36,853 | 19,393 |
+| `submit_proof` | 927 | — | | |
+| `settle (fee + refund + close)` | 17,284 | `settle_fulfillment` | 36,853 | 19,393 |
 | `submit_quote (mandate approves)` | 951 | `approve_quote_with_mandate` | 12,381 | 1,988 |
 | `dispute` | 786 | — | | |
 | `resolve_dispute` | 17,161 | — | | |

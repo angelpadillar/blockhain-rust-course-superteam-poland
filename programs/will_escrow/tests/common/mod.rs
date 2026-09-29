@@ -180,8 +180,16 @@ impl Harness {
         let transaction =
             VersionedTransaction::try_new(VersionedMessage::Legacy(message), signers).unwrap();
         let result = self.svm.send_transaction(transaction);
-        self.svm.expire_blockhash();
+        self.next_slot();
         result
+    }
+
+    /// Each transaction lands in a new slot with a new blockhash, as on a
+    /// cluster.
+    fn next_slot(&mut self) {
+        self.svm.expire_blockhash();
+        let slot = self.svm.get_sysvar::<solana_clock::Clock>().slot;
+        self.svm.warp_to_slot(slot + 1);
     }
 
     pub fn set_time(&mut self, unix_timestamp: i64) {
@@ -292,7 +300,7 @@ impl Harness {
         let transaction =
             VersionedTransaction::try_new(VersionedMessage::Legacy(message), signers).unwrap();
         let result = self.svm.send_transaction(transaction);
-        self.svm.expire_blockhash();
+        self.next_slot();
         result
     }
 }

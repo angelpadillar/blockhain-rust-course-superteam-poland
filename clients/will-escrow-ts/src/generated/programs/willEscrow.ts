@@ -111,7 +111,7 @@ export function identifyWillEscrowAccount(
   if (containsBytes(data, getU8Encoder().encode(1), 0) && data.length === 275) {
     return WillEscrowAccount.Config;
   }
-  if (containsBytes(data, getU8Encoder().encode(2), 0) && data.length === 326) {
+  if (containsBytes(data, getU8Encoder().encode(2), 0) && data.length === 334) {
     return WillEscrowAccount.Job;
   }
   throw new SolanaError(

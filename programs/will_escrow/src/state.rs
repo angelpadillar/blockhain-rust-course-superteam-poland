@@ -205,10 +205,14 @@ pub struct Job {
     /// When an open dispute may be refunded, fixed when it is opened.
     #[cfg_attr(feature = "idl", codama(type = number(i64)))]
     pub dispute_expires_at: LeI64,
+    /// Slot of the proof. The customer's early sign-off must come later, so it
+    /// cannot share a transaction with the proof.
+    #[cfg_attr(feature = "idl", codama(type = number(u64)))]
+    pub proof_slot: LeU64,
 }
 
 const _: () = assert!(size_of::<Config>() == 275 && align_of::<Config>() == 1);
-const _: () = assert!(size_of::<Job>() == 326 && align_of::<Job>() == 1);
+const _: () = assert!(size_of::<Job>() == 334 && align_of::<Job>() == 1);
 
 /// Owned by this program, at least `size_of::<T>()` bytes, and tagged `tag`.
 ///
@@ -311,7 +315,7 @@ mod tests {
     #[test]
     fn layout_sizes_and_offsets() {
         assert_eq!((size_of::<Config>(), align_of::<Config>()), (275, 1));
-        assert_eq!((size_of::<Job>(), align_of::<Job>()), (326, 1));
+        assert_eq!((size_of::<Job>(), align_of::<Job>()), (334, 1));
         assert_eq!(offset_of!(Config, admin), 18);
         assert_eq!(offset_of!(Config, funding_count), 146);
         assert_eq!(offset_of!(Job, fee_bps), 12);
@@ -320,6 +324,7 @@ mod tests {
         assert_eq!(offset_of!(Job, quote_hash), 190);
         assert_eq!(offset_of!(Job, window_ends_at), 310);
         assert_eq!(offset_of!(Job, dispute_expires_at), 318);
+        assert_eq!(offset_of!(Job, proof_slot), 326);
     }
 
     #[test]

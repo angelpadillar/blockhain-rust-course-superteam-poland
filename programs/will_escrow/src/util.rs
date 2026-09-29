@@ -55,6 +55,11 @@ pub fn now() -> Result<i64> {
     Ok(Clock::get()?.unix_timestamp)
 }
 
+/// The current slot.
+pub fn slot() -> Result<u64> {
+    Ok(Clock::get()?.slot)
+}
+
 /// The account signed the transaction.
 #[inline(always)]
 pub fn check_signer(account: &AccountView) -> Result {

@@ -69,7 +69,7 @@ for (const vector of instructionVectors) {
   });
 }
 
-for (const [name, size] of [['config', 275], ['job', 326]]) {
+for (const [name, size] of [['config', 275], ['job', 334]]) {
   test(`decodes and encodes a ${name} account`, () => {
     const { data, fields } = accountVectors[name];
     const node = idl.accounts.find((account) => account.name === name);

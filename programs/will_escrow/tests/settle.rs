@@ -269,3 +269,42 @@ fn disputed_job_cannot_be_settled() {
         Some(WillError::BadState as u32)
     );
 }
+
+/// The operator builds the transaction the customer signs to approve a quote.
+/// Proof and the customer's sign-off in that one transaction must not skip
+/// the dispute window.
+#[test]
+fn customer_sign_off_in_the_proof_transaction_rejected() {
+    let mut h = Harness::new();
+    h.init_config();
+    let job = h.purchased_job(1);
+    let (operator, customer) = (copy(&h.operator), copy(&h.customer));
+    let prove = h.proof_ix(&job, operator.pubkey(), [6; 32]);
+    let settle = h.settle_ix(&job, customer.pubkey(), h.customer_token, h.treasury_token);
+    let result = h.send_many(&[prove, settle], &[&operator, &customer]);
+    assert_eq!(
+        custom_error(&result),
+        Some(WillError::SignOffTooEarly as u32)
+    );
+    assert_eq!(h.job(&job).status, status::PURCHASED);
+}
+
+/// Sign-off must come in a later slot than the proof; the next one is enough.
+#[test]
+fn customer_sign_off_needs_a_later_slot_than_the_proof() {
+    let (mut h, job) = proven();
+    let proof_slot = h.job(&job).proof_slot.get();
+    let customer = copy(&h.customer);
+    h.svm.warp_to_slot(proof_slot);
+    assert_eq!(
+        custom_error(&h.settle(&job, &customer)),
+        Some(WillError::SignOffTooEarly as u32)
+    );
+    h.svm.warp_to_slot(proof_slot + 1);
+    let (customer_before, treasury_before) = (
+        h.token_balance(&h.customer_token),
+        h.token_balance(&h.treasury_token),
+    );
+    h.settle(&job, &customer).unwrap();
+    assert_settled(&h, &job, customer_before, treasury_before);
+}

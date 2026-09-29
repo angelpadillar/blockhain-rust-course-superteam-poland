@@ -2,7 +2,7 @@ use {
     crate::{
         error::{require, Error, Result, WillError},
         state::{status, Config, Job},
-        util::{check_signer, now, parse},
+        util::{check_signer, now, parse, slot},
     },
     pinocchio::AccountView,
 };
@@ -48,6 +48,7 @@ pub fn process(accounts: &mut [AccountView], args: &[u8]) -> Result {
         .ok_or(WillError::Overflow)?;
     job.proof_hash = args.proof_hash;
     job.window_ends_at.set(window_ends_at);
+    job.proof_slot.set(slot()?);
     job.status = status::PROVEN;
     Ok(())
 }

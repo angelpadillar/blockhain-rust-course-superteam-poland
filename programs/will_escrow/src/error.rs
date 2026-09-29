@@ -40,6 +40,8 @@ pub enum WillError {
     Overflow,
     /// A payout or rent destination does not belong to the recorded party.
     WrongRecipient,
+    /// The customer's sign-off must come in a later slot than the proof.
+    SignOffTooEarly,
 }
 
 /// A program error in its final `u64` entrypoint encoding. `Result<(), Error>`

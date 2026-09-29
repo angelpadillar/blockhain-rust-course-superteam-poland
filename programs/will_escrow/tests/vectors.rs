@@ -278,6 +278,7 @@ fn accounts() -> Value {
         proof_hash: hash(0xa0),
         window_ends_at: i64le(1_800_090_000),
         dispute_expires_at: i64le(-1),
+        proof_slot: u64le(505_684_614),
     };
     let default = Address::default().to_string();
     json!({
@@ -305,7 +306,7 @@ fn accounts() -> Value {
                 "released": "15000000", "charged": "13333337",
                 "chargedQuoteAmount": "5398", "orderRefHash": hex(&hash(0x80)),
                 "proofHash": hex(&hash(0xa0)), "windowEndsAt": "1800090000",
-                "disputeExpiresAt": "-1",
+                "disputeExpiresAt": "-1", "proofSlot": "505684614",
             },
         },
     })
@@ -359,7 +360,7 @@ fn instruction_vectors_are_current() {
 fn account_vectors_are_current() {
     let value = accounts();
     assert_eq!(value["config"]["data"].as_str().unwrap().len(), 2 * 275);
-    assert_eq!(value["job"]["data"].as_str().unwrap().len(), 2 * 326);
+    assert_eq!(value["job"]["data"].as_str().unwrap().len(), 2 * 334);
     check("accounts", value);
 }
 

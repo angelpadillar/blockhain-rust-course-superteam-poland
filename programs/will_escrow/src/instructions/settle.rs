@@ -3,7 +3,7 @@ use {
         error::{require, Error, Result, WillError},
         payout::{close_job, Recipients},
         state::{status, Config, Job},
-        util::{check_address, check_signer, mul, now, parse, TOKEN_PROGRAM_ID},
+        util::{check_address, check_signer, mul, now, parse, slot, TOKEN_PROGRAM_ID},
         BASIS_POINTS,
     },
     pinocchio::AccountView,
@@ -54,7 +54,11 @@ pub fn process(accounts: &mut [AccountView], args: &[u8]) -> Result {
     check_signer(caller)?;
     check_address(token_program, &TOKEN_PROGRAM_ID)?;
     require(job.status == status::PROVEN, WillError::BadState)?;
-    if caller.address() != &job.customer {
+    if caller.address() == &job.customer {
+        // Early sign-off, but never in the proof's own transaction: a
+        // customer-signed bundle built by the operator must not skip the window.
+        require(slot()? > job.proof_slot.get(), WillError::SignOffTooEarly)?;
+    } else {
         require(now()? >= job.window_ends_at.get(), WillError::WindowOpen)?;
     }
     let fee = earned_fee(job)?;
