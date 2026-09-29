@@ -648,7 +648,9 @@ impl Harness {
         self.send(instruction, &[&admin]).unwrap();
     }
 
-    pub fn init_config(&mut self) {
+    /// The standard config: 5% fee, 24 h window, 7-day job and 14-day dispute
+    /// timeouts, one funding account.
+    pub fn init_config_ix(&self) -> Instruction {
         let mut args = InitializeConfig {
             fee_bps: LeU16::default(),
             dispute_window: LeU32::default(),
@@ -662,7 +664,7 @@ impl Harness {
         args.dispute_window.set(DISPUTE_WINDOW);
         args.job_timeout.set(JOB_TIMEOUT);
         args.dispute_timeout.set(DISPUTE_TIMEOUT);
-        let instruction = Instruction {
+        Instruction {
             program_id: ID,
             accounts: vec![
                 meta(config_address(), true, false),
@@ -673,7 +675,11 @@ impl Harness {
                 meta(self.funding, false, false),
             ],
             data: data(initialize_config::DISCRIMINATOR, &args),
-        };
+        }
+    }
+
+    pub fn init_config(&mut self) {
+        let instruction = self.init_config_ix();
         let authority = copy(&self.upgrade_authority);
         self.send(instruction, &[&authority]).unwrap();
     }

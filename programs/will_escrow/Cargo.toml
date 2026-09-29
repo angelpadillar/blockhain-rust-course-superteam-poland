@@ -36,6 +36,7 @@ solana-clock = "3.0.0"
 solana-system-interface = { version = "3.0.0", features = ["bincode"] }
 spl-token-interface = "2.0.0"
 sha2 = "0.10"
+proptest = "1.11"
 
 [package.metadata.solana]
 program-id = "Gb6xwa6T348n7d67Ri5c42ENeQqbwLuf4d6W9an9rbZb"
