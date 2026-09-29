@@ -19,6 +19,7 @@ use {
             cancel::{self, Cancel},
             create_job::{self, CreateJob},
             initialize_config::{self, InitializeConfig},
+            record_purchase::{self, RecordPurchase},
             refund_expired::{self, RefundExpired},
             release_for_purchase::{self, ReleaseForPurchase},
             submit_quote::{self, SubmitQuote},
@@ -399,6 +400,50 @@ impl Harness {
     /// Releases `amount` to the allowlisted funding account as the operator.
     pub fn release(&mut self, job: &Address, amount: u64) -> TransactionResult {
         let instruction = self.release_ix(job, self.funding, self.operator.pubkey(), amount);
+        let operator = copy(&self.operator);
+        self.send(instruction, &[&operator])
+    }
+
+    pub fn record_ix(
+        &self,
+        job: &Address,
+        signer: Address,
+        operator_token: Address,
+        order_ref_hash: [u8; 32],
+        charged: u64,
+        charged_quote_amount: u64,
+    ) -> Instruction {
+        let mut args = RecordPurchase {
+            order_ref_hash,
+            charged: LeU64::default(),
+            charged_quote_amount: LeU64::default(),
+        };
+        args.charged.set(charged);
+        args.charged_quote_amount.set(charged_quote_amount);
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(vault_address(job), true, false),
+                meta(signer, false, true),
+                meta(operator_token, true, false),
+                meta(TOKEN_PROGRAM, false, false),
+            ],
+            data: data(record_purchase::DISCRIMINATOR, &args),
+        }
+    }
+
+    /// Records a 53.98 zł purchase that cost `charged` USDC, as the operator.
+    pub fn record(&mut self, job: &Address, charged: u64) -> TransactionResult {
+        let instruction = self.record_ix(
+            job,
+            self.operator.pubkey(),
+            self.operator_token,
+            [5; 32],
+            charged,
+            5_398,
+        );
         let operator = copy(&self.operator);
         self.send(instruction, &[&operator])
     }
