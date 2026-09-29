@@ -53,6 +53,18 @@ pub fn check_vault(
     )
 }
 
+/// Runs `f` with the job PDA's signer seeds (the vault's authority).
+pub fn with_job_signer<R>(job: &Job, f: impl FnOnce(&[Signer]) -> Result<R>) -> Result<R> {
+    let bump = [job.bump];
+    let seeds = [
+        Seed::from(JOB_SEED),
+        Seed::from(job.customer.as_ref()),
+        Seed::from(job.job_id.bytes()),
+        Seed::from(&bump),
+    ];
+    f(&[Signer::from(&seeds)])
+}
+
 /// Pays `fee` to the treasury and the rest of the vault to the customer, then
 /// closes the vault and the job. Returns the customer's refund.
 pub fn close_job(
@@ -77,29 +89,28 @@ pub fn close_job(
 
     let balance = token_amount(to.vault);
     let refund = balance.checked_sub(fee).ok_or(WillError::Overflow)?;
-    let bump = [job.bump];
-    let seeds = [
-        Seed::from(JOB_SEED),
-        Seed::from(job.customer.as_ref()),
-        Seed::from(job.job_id.bytes()),
-        Seed::from(&bump),
-    ];
-    let signer = [Signer::from(&seeds)];
-
-    if fee > 0 {
-        let treasury_token = to.treasury_token.ok_or(WillError::WrongRecipient)?;
-        check_writable(treasury_token)?;
-        require(
-            token_account_owner(treasury_token, &config.mint)? == &config.treasury,
-            WillError::WrongRecipient,
-        )?;
-        check_distinct(to.vault, treasury_token)?;
-        token_transfer(to.vault, treasury_token, job_account, fee, &signer)?;
-    }
-    if refund > 0 {
-        token_transfer(to.vault, to.customer_token, job_account, refund, &signer)?;
-    }
-    token_close(to.vault, to.rent_payer, job_account, &signer)?;
+    let treasury_token = match fee {
+        0 => None,
+        _ => {
+            let treasury_token = to.treasury_token.ok_or(WillError::WrongRecipient)?;
+            check_writable(treasury_token)?;
+            require(
+                token_account_owner(treasury_token, &config.mint)? == &config.treasury,
+                WillError::WrongRecipient,
+            )?;
+            check_distinct(to.vault, treasury_token)?;
+            Some(treasury_token)
+        }
+    };
+    with_job_signer(job, |signer| {
+        if let Some(treasury_token) = treasury_token {
+            token_transfer(to.vault, treasury_token, job_account, fee, signer)?;
+        }
+        if refund > 0 {
+            token_transfer(to.vault, to.customer_token, job_account, refund, signer)?;
+        }
+        token_close(to.vault, to.rent_payer, job_account, signer)
+    })?;
 
     // The job's own lamports: move them out first, then zero the owner,
     // lamports and length so the account cannot be revived.

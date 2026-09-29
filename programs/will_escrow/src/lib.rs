@@ -108,7 +108,7 @@ static HANDLERS: [Handler; 13] = [
     instructions::create_job::process,
     instructions::submit_quote::process,
     instructions::approve_quote::process,
-    not_yet,
+    instructions::release_for_purchase::process,
     not_yet,
     not_yet,
     not_yet,

@@ -20,7 +20,9 @@ use {
             create_job::{self, CreateJob},
             initialize_config::{self, InitializeConfig},
             refund_expired::{self, RefundExpired},
+            release_for_purchase::{self, ReleaseForPurchase},
             submit_quote::{self, SubmitQuote},
+            update_config::{self, UpdateConfig},
         },
         state::{
             Config, Job, LeI64, LeU16, LeU32, LeU64, Quote, CONFIG_SEED, JOB_SEED, VAULT_SEED,
@@ -367,6 +369,71 @@ impl Harness {
         let customer = copy(&self.customer);
         let operator = copy(&self.operator);
         self.send(instruction, &[&operator, &customer])
+    }
+
+    pub fn release_ix(
+        &self,
+        job: &Address,
+        funding: Address,
+        signer: Address,
+        amount: u64,
+    ) -> Instruction {
+        let mut args = ReleaseForPurchase {
+            amount: LeU64::default(),
+        };
+        args.amount.set(amount);
+        Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), false, false),
+                meta(*job, true, false),
+                meta(vault_address(job), true, false),
+                meta(funding, true, false),
+                meta(signer, false, true),
+                meta(TOKEN_PROGRAM, false, false),
+            ],
+            data: data(release_for_purchase::DISCRIMINATOR, &args),
+        }
+    }
+
+    /// Releases `amount` to the allowlisted funding account as the operator.
+    pub fn release(&mut self, job: &Address, amount: u64) -> TransactionResult {
+        let instruction = self.release_ix(job, self.funding, self.operator.pubkey(), amount);
+        let operator = copy(&self.operator);
+        self.send(instruction, &[&operator])
+    }
+
+    /// A job with an approved default quote (release cap 15 USDC).
+    pub fn approved_job(&mut self, job_id: u64, budget: u64) -> Address {
+        let job = self.create_job(job_id, budget);
+        self.submit_quote(&job, &quote_args(self.now())).unwrap();
+        self.approve(&job).unwrap();
+        job
+    }
+
+    pub fn set_paused(&mut self, paused: bool) {
+        let config = self.config();
+        let args = UpdateConfig {
+            fee_bps: config.fee_bps,
+            dispute_window: config.dispute_window,
+            job_timeout: config.job_timeout,
+            dispute_timeout: config.dispute_timeout,
+            paused: u8::from(paused),
+            admin: config.admin,
+            operator: config.operator,
+            treasury: config.treasury,
+        };
+        let instruction = Instruction {
+            program_id: ID,
+            accounts: vec![
+                meta(config_address(), true, false),
+                meta(self.admin.pubkey(), false, true),
+                meta(self.funding, false, false),
+            ],
+            data: data(update_config::DISCRIMINATOR, &args),
+        };
+        let admin = copy(&self.admin);
+        self.send(instruction, &[&admin]).unwrap();
     }
 
     pub fn init_config(&mut self) {
