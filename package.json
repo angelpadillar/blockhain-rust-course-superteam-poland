@@ -23,7 +23,9 @@
     "browser:flywheel:build": "node agent/jev/evals/browser-routing/cli/build.mjs",
     "browser:valen-readiness": "node agent/jev/evals/browser-routing/cli/readiness.mjs",
     "browser:valen-shadow": "node agent/jev/evals/browser-routing/cli/shadow.mjs",
-    "test:browser:flywheel": "node --test agent/jev/evals/browser-routing/test/*.test.mjs"
+    "test:browser:flywheel": "node --test agent/jev/evals/browser-routing/test/*.test.mjs",
+    "codegen:will-escrow": "npm --prefix clients/will-escrow-ts run codegen",
+    "test:will-escrow-client": "npm --prefix clients/will-escrow-ts test"
   },
   "dependencies": {
     "@anchor-lang/core": "^1.1.2"

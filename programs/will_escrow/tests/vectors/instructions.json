@@ -1,0 +1,122 @@
+[
+  {
+    "args": {
+      "admin": "29d2S7vB453rNYFdR5Ycwt7y9haRT5fwVwL9zTmBhfV2",
+      "disputeTimeout": 1209600,
+      "disputeWindow": 86400,
+      "feeBps": 500,
+      "jobTimeout": 604800,
+      "operator": "3JF3sEqM796hk5WFqA6EtmEwJQ9quALszsfJyvXNQKy3",
+      "treasury": "4Ss5JMkXAD9Z7cktFEdrqeMuT6jGMF1pVozTyPHZ6zT4"
+    },
+    "data": "00f40180510100803a090000751200111111111111111111111111111111111111111111111111111111111111111122222222222222222222222222222222222222222222222222222222222222223333333333333333333333333333333333333333333333333333333333333333",
+    "name": "initializeConfig"
+  },
+  {
+    "args": {
+      "disputeTimeout": 151653132,
+      "disputeWindow": 16909060,
+      "feeBps": 1000,
+      "jobTimeout": 84281096,
+      "newAdmin": "4Ss5JMkXAD9Z7cktFEdrqeMuT6jGMF1pVozTyPHZ6zT4",
+      "operator": "29d2S7vB453rNYFdR5Ycwt7y9haRT5fwVwL9zTmBhfV2",
+      "paused": 1,
+      "treasury": "3JF3sEqM796hk5WFqA6EtmEwJQ9quALszsfJyvXNQKy3"
+    },
+    "data": "01e80304030201080706050c0b0a0901333333333333333333333333333333333333333333333333333333333333333311111111111111111111111111111111111111111111111111111111111111112222222222222222222222222222222222222222222222222222222222222222",
+    "name": "updateConfig"
+  },
+  {
+    "args": {
+      "adapter": 15,
+      "budget": "1234605616436508552",
+      "jobId": "72623859790382856",
+      "jobKind": 3,
+      "mandateCap": "15000000",
+      "mandateExpiresAt": "-2"
+    },
+    "data": "0208070605040302018877665544332211030fc0e1e40000000000feffffffffffffff",
+    "name": "createJob"
+  },
+  {
+    "args": {
+      "quote": {
+        "ceiling": "6000",
+        "deliveryFee": "599",
+        "item": "4500",
+        "other": "2",
+        "serviceFee": "299",
+        "tip": "1"
+      },
+      "quoteCurrency": "PLN",
+      "quoteExpiresAt": "1800001800",
+      "quoteExponent": 2,
+      "quoteHash": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "releaseCap": "15000000",
+      "total": "5401"
+    },
+    "data": "03504c4e0294110000000000002b0100000000000057020000000000000100000000000000020000000000000070170000000000001915000000000000c0e1e4000000000008d9496b00000000000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "name": "submitQuote"
+  },
+  {
+    "args": {
+      "termsHash": "404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f"
+    },
+    "data": "04404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f",
+    "name": "approveQuote"
+  },
+  {
+    "args": {
+      "amount": "18446744073709551615"
+    },
+    "data": "05ffffffffffffffff",
+    "name": "releaseForPurchase"
+  },
+  {
+    "args": {
+      "charged": "13333337",
+      "chargedQuoteAmount": "5398",
+      "orderRefHash": "808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9f"
+    },
+    "data": "06808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9f5973cb00000000001615000000000000",
+    "name": "recordPurchase"
+  },
+  {
+    "args": {
+      "proofHash": "a0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf"
+    },
+    "data": "07a0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf",
+    "name": "submitProof"
+  },
+  {
+    "args": {
+      "reasonHash": "c0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedf"
+    },
+    "data": "08c0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedf",
+    "name": "dispute"
+  },
+  {
+    "args": {},
+    "data": "09",
+    "name": "settle"
+  },
+  {
+    "args": {
+      "feeToOperator": "666666"
+    },
+    "data": "0a2a2c0a0000000000",
+    "name": "resolveDispute"
+  },
+  {
+    "args": {
+      "returned": "1"
+    },
+    "data": "0b0100000000000000",
+    "name": "cancel"
+  },
+  {
+    "args": {},
+    "data": "0c",
+    "name": "refundExpired"
+  }
+]
