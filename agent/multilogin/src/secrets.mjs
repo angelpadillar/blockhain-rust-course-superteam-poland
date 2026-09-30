@@ -27,6 +27,8 @@ export const minimumCodeValidityMs = 5000;
 export function createValueResolver({ account, shippingAddress = null,
   sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), now = Date.now }) {
   requireThat(account && typeof account === 'object', 'account_required');
+  // A verification code read from the account's own mailbox for this run only.
+  const mailboxCode = { value: null, expiresAt: 0 };
   const stored = () => ({
     account_username: account.username,
     account_password: account.password,
@@ -39,6 +41,10 @@ export function createValueResolver({ account, shippingAddress = null,
     // reference fails closed instead of returning an empty value.
     resolve: async ref => {
       requireThat(resolver.refs.includes(ref), 'unknown_value_ref');
+      if (ref === 'verification_code') {
+        requireThat(mailboxCode.value !== null && mailboxCode.expiresAt > now(), 'verification_code_unavailable');
+        return mailboxCode.value;
+      }
       if (timeBasedValueRefs.includes(ref)) {
         requireThat(typeof account.totp === 'string' && account.totp.length > 0, 'secret_unavailable');
         let code = totp(account.totp, now());
@@ -52,6 +58,13 @@ export function createValueResolver({ account, shippingAddress = null,
       requireThat(typeof value === 'string' && value.length > 0, 'secret_unavailable');
       return value;
     },
+    // Trusted code stores a code fetched from the account's own mailbox; it is
+    // short-lived, never persisted and never returned outside resolution.
+    setVerificationCode(value, { ttlMs = 5 * 60 * 1000 } = {}) {
+      requireThat(typeof value === 'string' && value.length > 0, 'invalid_verification_code');
+      mailboxCode.value = value; mailboxCode.expiresAt = now() + ttlMs;
+    },
+    verificationCodeAvailable: () => mailboxCode.value !== null && mailboxCode.expiresAt > now(),
   };
   return resolver;
 }

@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { sites, verifyIdentity, classifyPage, LoginBrowser, isMicrosoftPortalSignedIn } from '../src/login.mjs';
-import { operationKinds, riskByOperation, defaultPostconditions } from '../src/execution.mjs';
+import { sites, verifyIdentity, classifyPage, LoginBrowser, isMicrosoftPortalSignedIn } from '../src/login.mjs';import { operationKinds, riskByOperation, defaultPostconditions } from '../src/execution.mjs';
 import { validateJobs } from '../src/jobs.mjs';
 import { parseAccounts } from '../src/core.mjs';
 

@@ -6,6 +6,7 @@ import { BrowserExecutionKernel, decisionSourceFor } from './execution.mjs';
 import { createValueResolver, valueRefForOperation } from './secrets.mjs';
 import { attachObservation } from './observation.mjs';
 import { installDialogGuard } from './dialog-containment.mjs';
+import { readOutlookVerificationCode } from './mailbox-code.mjs';
 
 export const defaultLoginGoal = 'Sign in to the supplied existing account and confirm the expected '
   + 'identity. Do not create an account, change account settings, or post content. Human confirmation '
@@ -308,6 +309,10 @@ export class LoginBrowser {
     // account_password, current_totp ... and only this object resolves them,
     // only at fill time, and never towards a model, receipt or log.
     this.secrets = secrets || createValueResolver({ account });
+    // Trusted code hands a mailbox-fetched code to the resolver for this run only.
+    this.setVerificationCode = value => this.secrets.setVerificationCode?.(value);
+    this.verificationCodeAvailable = () => this.secrets.verificationCodeAvailable?.() === true;
+    this.mailboxCodeTried = false;
     this.filled = new Set(); this.clicked = new Set(); this.documentKey = null;
     this.submittedStages = new Set();
     this.redact = createRedactor([account.username, account.password, account.totp, account.recoveryEmail]);
@@ -414,6 +419,7 @@ export class LoginBrowser {
           || (authenticatorScreen && /^(enter |type )?(your |the )?code$/.test(normalize(control.label))
             && ['text', 'tel', 'number'].includes(control.type))) {
           if (this.account.totp) kind = 'fill_totp';
+          else if (this.verificationCodeAvailable()) kind = 'fill_verification_code';
         } else if (/recovery|backup|odzyskiwania/.test(label)) {
           if (this.account.recoveryEmail) kind = 'fill_recovery_email';
         } else if (/username|identifier|e.?mail|phone number|nazwa użytkownika/.test(label)) kind = 'fill_username';
@@ -634,7 +640,7 @@ async function rememberCorrection({ memory, browser, account, snapshot, classifi
 export async function runLogin({ page, account, choose, maxSteps = 20, maxSeconds = 180,
   verifyOnly = false, onStep = async () => {}, requestHumanCheckpoint = null, site = sites[account.platform],
   goal = defaultLoginGoal, recoveryBudget = maxRecoverySteps, readyWindowMs = 15000,
-  receipts = null, scope = null, recoveryMemory = null, startUrl = null }) {
+  receipts = null, scope = null, recoveryMemory = null, startUrl = null, requestMailboxCode = null }) {
   const browser = new LoginBrowser(page, account, { site });
   // A stale dialog race must never kill the process (ported canary guard): the
   // dismissal happens inside the guard and is journalled as a diagnostic.
@@ -719,6 +725,23 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       await onStep({ step, phase: 'login', action: 'dismiss_consent', state: dismissed ? 'after' : 'failed' });
       await new Promise(resolve => setTimeout(resolve, 500));
       continue;
+    }
+    // A verification code emailed to the account's own Microsoft mailbox: read
+    // it (read-only, bounded) and fill it rather than asking a person. This runs
+    // once per run, only when the page actually shows a code field.
+    const codeField = snapshot.controls.some(control => control.tag === 'input'
+      && /code|pin|otp|verification/i.test(`${control.name} ${control.autocomplete} ${control.label}`));
+    if (codeField && !account.totp && requestMailboxCode && !browser.mailboxCodeTried) {
+      browser.mailboxCodeTried = true;
+      const fetched = await requestMailboxCode({ platform: account.platform, page }).catch(() => null);
+      if (fetched?.code) {
+        browser.setVerificationCode(fetched.code);
+        await onStep({ step, phase: 'login', action: 'mailbox_code', state: 'after',
+          verification: 'code_from_mailbox' });
+        continue;
+      }
+      await onStep({ step, phase: 'login', action: 'mailbox_code', state: 'failed',
+        reason: fetched?.reason || 'no_matching_code' });
     }
     // The decision and its execution share ONE observation epoch: every control
     // id below is only meaningful against this epoch.
@@ -852,10 +875,22 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     }
     if (!account.totp && snapshot.controls.some(control => /one-time-code|totp|verificationcode|security.code/i.test(
       `${control.autocomplete} ${control.name}`))) {
-      // A code we do not hold (LinkedIn emails one, or the account carries an
-      // authenticator we were not given) is a genuine human checkpoint. The
-      // person can read it and enter it in the preserved browser; it is never
-      // guessed, generated or bypassed.
+      // The code was emailed to the account's own mailbox: read it there first
+      // (same authenticated profile), fill it, and let the normal flow submit.
+      // Reading is bounded and read-only; nothing is clicked, sent or deleted.
+      if (requestMailboxCode && !browser.mailboxCodeTried) {
+        browser.mailboxCodeTried = true;
+        const fetched = await requestMailboxCode({ platform: account.platform, page }).catch(() => null);
+        if (fetched?.code) {
+          browser.setVerificationCode(fetched.code);
+          await onStep({ step, phase: 'login', action: 'mailbox_code', state: 'after',
+            verification: 'code_from_mailbox' });
+          continue;
+        }
+        await onStep({ step, phase: 'login', action: 'mailbox_code', state: 'failed',
+          reason: fetched?.reason || 'no_matching_code' });
+      }
+      // A code we do not hold (or could not read) is a genuine human checkpoint.
       const reason = 'email_or_sms_verification_required';
       await onStep({ step, phase: 'attention', reason, page: browser.publicPage(snapshot) });
       const paused = requestHumanCheckpoint

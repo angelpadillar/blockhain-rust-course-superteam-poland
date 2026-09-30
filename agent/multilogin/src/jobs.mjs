@@ -326,6 +326,15 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
   // Durable receipts for this job: written before every dispatch, kept beside the
   // job's own evidence, and reconcilable read-only by a later worker.
   const result = await flowImpl({ ...args, site, onStep: emit, requestHumanCheckpoint,
+    // The step's own platform drives identity, candidates and the site; the
+    // account keeps its primary platform for the registry and health.
+    account: { ...account, platform: job.platform },
+    // A code emailed to the account's own Microsoft mailbox is read from the
+    // same authenticated profile (read-only, bounded) instead of asking a person.
+    ...(account.platform === 'outlook' && job.platform !== 'outlook' && args.verifyOnly !== true
+      ? { requestMailboxCode: async ({ platform }) => readOutlookVerificationCode({
+          context: args.page.context(), platform }) }
+      : {}),
     startUrl: job.platform === 'youtube' && config.youtubeStartAtHome === true ? site.homeUrl : null,
     // A session re-verification for Microsoft starts on the portal, which is the
     // stable signed-in surface; the mailbox hand-off remains best-effort.
