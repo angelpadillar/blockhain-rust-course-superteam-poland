@@ -860,12 +860,20 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     };
     const failure = classifyPage(snapshot);
     if (failure) {
+      // A mailbox-backed code challenge: the page may first offer the platform's
+      // own "send code" control. With a mailbox reader available, let the normal
+      // deterministic candidates click it and fill the code on the next
+      // observation instead of routing straight to recovery/checkpoint.
+      const mailboxFlow = failure === 'email_or_sms_verification_required' && requestMailboxCode && !account.totp
+        && snapshot.controls.some(control => control.enabled
+          && /^(wyślij|wyslij|send|send code|wyślij kod)$/.test(normalize(control.label)));
       // An email/SMS or device challenge may still offer a path to the
       // authenticator method we can complete; use the escape before stopping.
-      const escape = ['email_or_sms_verification_required', 'device_verification_required'].includes(failure)
+      const escape = !mailboxFlow
+        && ['email_or_sms_verification_required', 'device_verification_required'].includes(failure)
         && account.totp && browser.candidates(snapshot, { verifyOnly })
           .some(action => action.kind === 'choose_totp' || action.kind === 'try_another_way');
-      if (!escape) {
+      if (!mailboxFlow && !escape) {
         // An unfamiliar security-looking page is offered to recovery before a
         // person is asked. Recovery can only resume normal navigation or escalate;
         // no capability answers a challenge. A definitive credential outcome
