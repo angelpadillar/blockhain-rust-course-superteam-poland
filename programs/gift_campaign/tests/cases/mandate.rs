@@ -1,6 +1,7 @@
 use super::*;
 use gift_campaign::{
     constants::MANDATE_SEED,
+    errors::GiftCampaignError,
     mandate::{quote_terms_hash, validate_mandate_quote},
     state::{Config, Mandate, MandateStatus},
 };
@@ -27,11 +28,15 @@ fn signer_copy(key: &Keypair) -> Keypair {
     Keypair::try_from(key.to_bytes().as_slice()).unwrap()
 }
 
-fn rejected(result: TransactionResult, name: &str) {
+/// Asserts the exact custom error code, which both the Anchor program and the
+/// Pinocchio port return (the port does not log Anchor's error names).
+fn rejected(result: TransactionResult, expected: GiftCampaignError) {
     let error = result.expect_err("instruction unexpectedly succeeded");
-    assert!(
-        error.meta.logs.iter().any(|line| line.contains(name)),
-        "expected {name}, got {:?}",
+    let code = u32::from(expected);
+    assert_eq!(
+        format!("{:?}", error.err),
+        format!("InstructionError(0, Custom({code}))"),
+        "expected {expected:?}, logs: {:?}",
         error.meta.logs
     );
 }
@@ -168,24 +173,39 @@ fn mandate_is_consumed_once_and_purchased_funds_settle_after_expiry() {
     f.submit_exact_quote(campaign, QUOTE_TOTAL_MINOR).unwrap();
     f.authorize_mandate(campaign, &sender, terms(executor.pubkey()))
         .unwrap();
-    rejected(f.approve_exact_quote(campaign), "MandateRequired");
-    rejected(f.approve(campaign, GIFT_HASH), "MandateRequired");
+    rejected(
+        f.approve_exact_quote(campaign),
+        GiftCampaignError::MandateRequired,
+    );
+    rejected(
+        f.approve(campaign, GIFT_HASH),
+        GiftCampaignError::MandateRequired,
+    );
     let hash = f.terms_hash(campaign);
-    rejected(f.approve_mandate(campaign, &executor, [0; 32]), "ZeroHash");
+    rejected(
+        f.approve_mandate(campaign, &executor, [0; 32]),
+        GiftCampaignError::ZeroHash,
+    );
     rejected(
         f.approve_mandate(campaign, &executor, [1; 32]),
-        "TermsMismatch",
+        GiftCampaignError::TermsMismatch,
     );
     f.approve_mandate(campaign, &executor, hash).unwrap();
-    rejected(f.record_payment_attempt(campaign), "MandateRequired");
-    rejected(f.confirm_delivery(campaign, vault), "LegacyPathForbidden");
+    rejected(
+        f.record_payment_attempt(campaign),
+        GiftCampaignError::MandateRequired,
+    );
+    rejected(
+        f.confirm_delivery(campaign, vault),
+        GiftCampaignError::LegacyPathForbidden,
+    );
     rejected(
         f.attempt_mandate(campaign, &executor, [1; 32], PAYMENT_ATTEMPT_HASH),
-        "TermsMismatch",
+        GiftCampaignError::TermsMismatch,
     );
     rejected(
         f.attempt_mandate(campaign, &executor, hash, [0; 32]),
-        "ZeroHash",
+        GiftCampaignError::ZeroHash,
     );
     f.attempt_mandate(campaign, &executor, hash, PAYMENT_ATTEMPT_HASH)
         .unwrap();
@@ -197,15 +217,18 @@ fn mandate_is_consumed_once_and_purchased_funds_settle_after_expiry() {
     f.svm.expire_blockhash(); // A new signature must still fail; not merely transaction deduplication.
     rejected(
         f.attempt_mandate(campaign, &executor, hash, [201; 32]),
-        "InvalidCampaignState",
+        GiftCampaignError::InvalidCampaignState,
     );
-    rejected(f.revoke_mandate(campaign, &sender), "InactiveMandate");
+    rejected(
+        f.revoke_mandate(campaign, &sender),
+        GiftCampaignError::InactiveMandate,
+    );
     assert!(f
         .authorize_mandate(campaign, &sender, terms(executor.pubkey()))
         .is_err());
     rejected(
         f.cancel_with(campaign, vault, &sender),
-        "UnauthorizedCancellation",
+        GiftCampaignError::UnauthorizedCancellation,
     );
     f.record_payment_auth(campaign, CHARGE_TOTAL_MINOR).unwrap();
     f.record_purchase(campaign).unwrap();
@@ -233,54 +256,54 @@ fn mandate_authorization_rejects_non_owner_and_invalid_terms() {
     let (campaign, _) = f.create_campaign(31, FUTURE_EXPIRY);
     rejected(
         f.authorize_mandate(campaign, &other, terms(other.pubkey())),
-        "UnauthorizedSender",
+        GiftCampaignError::UnauthorizedSender,
     );
     for index in 0..11 {
         let mut args = terms(other.pubkey());
         let expected = match index {
             0 => {
                 args.merchant_hash = [0; 32];
-                "ZeroHash"
+                GiftCampaignError::ZeroHash
             }
             1 => {
                 args.spec_hash = [0; 32];
-                "ZeroHash"
+                GiftCampaignError::ZeroHash
             }
             2 => {
                 args.recipient_hash = [0; 32];
-                "ZeroHash"
+                GiftCampaignError::ZeroHash
             }
             3 => {
                 args.executor = Pubkey::default();
-                "UnauthorizedExecutor"
+                GiftCampaignError::UnauthorizedExecutor
             }
             4 => {
                 args.charge_currency = *b"eur";
-                "UnsupportedCurrency"
+                GiftCampaignError::UnsupportedCurrency
             }
             5 => {
                 args.charge_currency_exponent = 5;
-                "UnsupportedCurrency"
+                GiftCampaignError::UnsupportedCurrency
             }
             6 => {
                 args.max_charge_amount_minor = 0;
-                "InvalidBudget"
+                GiftCampaignError::InvalidBudget
             }
             7 => {
                 args.max_escrow_debit = 0;
-                "InvalidBudget"
+                GiftCampaignError::InvalidBudget
             }
             8 => {
                 args.max_escrow_debit = BUDGET + 1;
-                "InvalidBudget"
+                GiftCampaignError::InvalidBudget
             }
             9 => {
                 args.expires_at = 0;
-                "InvalidExpiry"
+                GiftCampaignError::InvalidExpiry
             }
             _ => {
                 args.expires_at = FUTURE_EXPIRY + 1;
-                "InvalidExpiry"
+                GiftCampaignError::InvalidExpiry
             }
         };
         rejected(f.authorize_mandate(campaign, &owner, args), expected);
@@ -302,27 +325,27 @@ fn quote_must_match_owner_terms_and_both_caps_including_fee() {
         let expected = match index {
             0 => {
                 args.merchant_hash = [202; 32];
-                "MandateMismatch"
+                GiftCampaignError::MandateMismatch
             }
             1 => {
                 args.spec_hash = [203; 32];
-                "MandateMismatch"
+                GiftCampaignError::MandateMismatch
             }
             2 => {
                 args.charge_currency = *b"PLN";
-                "MandateMismatch"
+                GiftCampaignError::MandateMismatch
             }
             3 => {
                 args.charge_currency_exponent = 3;
-                "MandateMismatch"
+                GiftCampaignError::MandateMismatch
             }
             4 => {
                 args.max_charge_amount_minor -= 1;
-                "MandateLimitExceeded"
+                GiftCampaignError::MandateLimitExceeded
             }
             _ => {
                 args.max_escrow_debit -= 1;
-                "MandateLimitExceeded"
+                GiftCampaignError::MandateLimitExceeded
             }
         };
         f.authorize_mandate(campaign, &owner, args).unwrap();
@@ -350,15 +373,21 @@ fn executor_and_campaign_binding_are_enforced_at_approval_and_attempt() {
     let hash_a = f.terms_hash(a);
     let hash_b = f.terms_hash(b);
     assert_ne!(hash_a, hash_b);
-    rejected(f.approve_mandate(a, &other, hash_a), "UnauthorizedExecutor");
+    rejected(
+        f.approve_mandate(a, &other, hash_a),
+        GiftCampaignError::UnauthorizedExecutor,
+    );
     assert!(f
         .approve_mandate_account(b, mandate_address(a), &executor, hash_a)
         .is_err());
-    rejected(f.approve_mandate(b, &executor, hash_a), "TermsMismatch");
+    rejected(
+        f.approve_mandate(b, &executor, hash_a),
+        GiftCampaignError::TermsMismatch,
+    );
     f.approve_mandate(a, &executor, hash_a).unwrap();
     rejected(
         f.attempt_mandate(a, &other, hash_a, PAYMENT_ATTEMPT_HASH),
-        "UnauthorizedExecutor",
+        GiftCampaignError::UnauthorizedExecutor,
     );
     f.attempt_mandate(a, &executor, hash_a, PAYMENT_ATTEMPT_HASH)
         .unwrap();
@@ -376,7 +405,10 @@ fn only_owner_can_revoke_and_revocation_blocks_approval_or_consumption() {
             .unwrap();
         f.submit_exact_quote(campaign, QUOTE_TOTAL_MINOR).unwrap();
         let hash = f.terms_hash(campaign);
-        rejected(f.revoke_mandate(campaign, &executor), "UnauthorizedSender");
+        rejected(
+            f.revoke_mandate(campaign, &executor),
+            GiftCampaignError::UnauthorizedSender,
+        );
         if approve_first {
             f.approve_mandate(campaign, &executor, hash).unwrap();
         }
@@ -384,12 +416,12 @@ fn only_owner_can_revoke_and_revocation_blocks_approval_or_consumption() {
         if approve_first {
             rejected(
                 f.attempt_mandate(campaign, &executor, hash, PAYMENT_ATTEMPT_HASH),
-                "InactiveMandate",
+                GiftCampaignError::InactiveMandate,
             );
         } else {
             rejected(
                 f.approve_mandate(campaign, &executor, hash),
-                "InactiveMandate",
+                GiftCampaignError::InactiveMandate,
             );
         }
         assert_eq!(f.mandate(campaign).status, MandateStatus::Revoked);
@@ -418,12 +450,12 @@ fn expiry_is_checked_again_before_consuming_authorization() {
         if approve_first {
             rejected(
                 f.attempt_mandate(campaign, &executor, hash, PAYMENT_ATTEMPT_HASH),
-                "MandateExpired",
+                GiftCampaignError::MandateExpired,
             );
         } else {
             rejected(
                 f.approve_mandate(campaign, &executor, hash),
-                "MandateExpired",
+                GiftCampaignError::MandateExpired,
             );
         }
         assert_eq!(f.mandate(campaign).status, MandateStatus::Active);
@@ -438,10 +470,13 @@ fn modern_quote_cannot_use_legacy_settlement_or_late_mandate_attachment() {
     let (campaign, vault) = f.create_campaign(38, FUTURE_EXPIRY);
     f.submit_exact_quote(campaign, QUOTE_TOTAL_MINOR).unwrap();
     f.approve_exact_quote(campaign).unwrap();
-    rejected(f.confirm_delivery(campaign, vault), "LegacyPathForbidden");
+    rejected(
+        f.confirm_delivery(campaign, vault),
+        GiftCampaignError::LegacyPathForbidden,
+    );
     rejected(
         f.authorize_mandate(campaign, &owner, terms(owner.pubkey())),
-        "InvalidCampaignState",
+        GiftCampaignError::InvalidCampaignState,
     );
     assert_eq!(token_balance(&f.svm, vault), BUDGET);
     assert_eq!(f.campaign(campaign).status, CampaignStatus::Approved);

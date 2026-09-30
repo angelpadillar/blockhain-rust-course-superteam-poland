@@ -2,6 +2,12 @@ skip_local_validator = true
 
 [toolchain]
 
+[workspace]
+# Pinocchio programs built with `cargo build-sbf`: the gift_campaign port (an
+# alternative binary for the same program id) and will_escrow (its own id).
+# Keep Anchor from building, generating an IDL for, or deploying them.
+exclude = ["programs/gift_campaign_pinocchio", "programs/will_escrow"]
+
 [features]
 resolution = true
 skip-lint = false

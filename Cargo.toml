@@ -11,6 +11,25 @@ overflow-checks = true
 lto = "fat"
 codegen-units = 1
 
+# Size-optimise the Pinocchio port (deploy rent scales with binary size). Its
+# own arithmetic is explicitly checked; Pinocchio parses the runtime-provided
+# input buffer with trusted pointer arithmetic, where overflow checks would
+# only add panic paths.
+[profile.release.package.gift_campaign_pinocchio]
+opt-level = "s"
+
+[profile.release.package.will_escrow]
+opt-level = "s"
+
+[profile.release.package.pinocchio]
+overflow-checks = false
+
+[profile.release.package.solana-account-view]
+overflow-checks = false
+
+[profile.release.package.solana-instruction-view]
+overflow-checks = false
+
 [profile.release.build-override]
 opt-level = 3
 incremental = false

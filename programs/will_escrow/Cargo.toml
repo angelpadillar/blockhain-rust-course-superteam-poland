@@ -1,0 +1,45 @@
+[package]
+name = "will_escrow"
+version = "0.1.0"
+description = "Applied Will escrow: customer funds pay each purchase at checkout; the fee is released only with proof of delivery"
+edition.workspace = true
+rust-version.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "will_escrow"
+
+[features]
+default = []
+no-entrypoint = []
+# Host-only. Enables the Codama derives that describe the wire format. Never
+# enable for SBF builds: the codama crate links std.
+idl = ["dep:codama"]
+
+[dependencies]
+pinocchio = { version = "0.11.2", default-features = false, features = ["cpi", "copy"] }
+solana-address = { version = "2.7", default-features = false, features = ["decode"] }
+solana-sha256-hasher = { version = "3.1", features = ["sha2"] }
+codama = { version = "0.13.2", optional = true }
+
+[dev-dependencies]
+codama = "0.13.2"
+serde_json = "1.0"
+litesvm = "0.10.0"
+solana-account = "3.0.0"
+solana-instruction = "3.0.0"
+solana-keypair = "3.0.1"
+solana-message = "3.0.1"
+solana-signer = "3.0.0"
+solana-transaction = "3.0.2"
+solana-clock = "3.0.0"
+solana-system-interface = { version = "3.0.0", features = ["bincode"] }
+spl-token-interface = "2.0.0"
+sha2 = "0.10"
+proptest = "1.11"
+
+[package.metadata.solana]
+program-id = "Gb6xwa6T348n7d67Ri5c42ENeQqbwLuf4d6W9an9rbZb"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

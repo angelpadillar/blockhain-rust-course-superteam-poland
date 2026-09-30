@@ -1,0 +1,19 @@
+{
+  "config": {
+    "address": "9jnLCBjyzjqTSAa6Y6K8VJnVmQo1bvi19vU4kUMgZbtR",
+    "bump": 255
+  },
+  "job": {
+    "address": "JBmchkTKLt9PczzTQTUw4dHoDNAEFdLWhTgh579F6DT9",
+    "bump": 254,
+    "customer": "29d2S7vB453rNYFdR5Ycwt7y9haRT5fwVwL9zTmBhfV2",
+    "jobId": "72623859790382856"
+  },
+  "programData": "CcHoibXJsxpAt7eYd3WDtMNR4dHpAZ1P8aDA4egXxGo2",
+  "programId": "Gb6xwa6T348n7d67Ri5c42ENeQqbwLuf4d6W9an9rbZb",
+  "vault": {
+    "address": "BWWTL6zUuU5xSrq64myc9YkqXbg6U9dQrLT56sQt6g5o",
+    "bump": 254,
+    "job": "JBmchkTKLt9PczzTQTUw4dHoDNAEFdLWhTgh579F6DT9"
+  }
+}

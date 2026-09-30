@@ -59,8 +59,14 @@ mod mandate_cases;
 impl Fixture {
     fn new() -> Self {
         let mut svm = LiteSVM::new();
-        let program_path =
-            PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../target/deploy/gift_campaign.so");
+        // GIFT_CAMPAIGN_SO runs the same suite against another build, e.g. the
+        // wire-compatible Pinocchio port.
+        let program_path = std::env::var_os("GIFT_CAMPAIGN_SO")
+            .map(PathBuf::from)
+            .unwrap_or_else(|| {
+                PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+                    .join("../../target/deploy/gift_campaign.so")
+            });
         let program_bytes = std::fs::read(&program_path).unwrap_or_else(|_| {
             panic!(
                 "Missing {}. Run `anchor build` before `cargo test`.",
