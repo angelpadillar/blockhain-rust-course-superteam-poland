@@ -31,18 +31,23 @@ const jobIdPattern = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}$/;
 export function validateJobs(input) {
   const jobs = Array.isArray(input) ? input : input?.jobs;
   requireThat(Array.isArray(jobs) && jobs.length > 0, 'invalid_jobs_file');
-  requireThat(jobs.length <= 6, 'too_many_jobs');
-  const ids = new Set(); const profileRefs = new Set(); const accountRefs = new Set();
+  requireThat(jobs.length <= 24, 'too_many_jobs');
+  const ids = new Set(); const profileRefs = new Map(); const accountRefs = new Map();
   return jobs.map(raw => {
     requireThat(raw && typeof raw === 'object', 'invalid_job');
     const job = { id: raw.id, platform: raw.platform, accountRef: raw.accountRef, profileRef: raw.profileRef };
     requireThat(typeof job.id === 'string' && jobIdPattern.test(job.id), 'invalid_job_id');
-    requireThat(['instagram', 'youtube'].includes(job.platform), 'unsupported_platform');
+    requireThat(['instagram', 'youtube', 'outlook', 'linkedin'].includes(job.platform), 'unsupported_platform');
     requireThat(typeof job.accountRef === 'string' && refPattern.test(job.accountRef), 'invalid_account_ref');
     requireThat(typeof job.profileRef === 'string' && refPattern.test(job.profileRef), 'invalid_profile_ref');
     requireThat(!ids.has(job.id), 'duplicate_job_id'); ids.add(job.id);
-    requireThat(!profileRefs.has(job.profileRef), 'duplicate_profile_ref'); profileRefs.add(job.profileRef);
-    requireThat(!accountRefs.has(job.accountRef), 'duplicate_account_ref'); accountRefs.add(job.accountRef);
+    // A multi-step identity (Outlook first, then LinkedIn on the SAME profile)
+    // repeats the account/profile pair; a pair must stay 1:1 and may never be
+    // shared with a different account or split across profiles.
+    if (profileRefs.has(job.profileRef)) requireThat(profileRefs.get(job.profileRef) === job.accountRef, 'duplicate_profile_ref');
+    else profileRefs.set(job.profileRef, job.accountRef);
+    if (accountRefs.has(job.accountRef)) requireThat(accountRefs.get(job.accountRef) === job.profileRef, 'duplicate_account_ref');
+    else accountRefs.set(job.accountRef, job.profileRef);
     return job;
   });
 }
@@ -201,9 +206,12 @@ export async function registerProfileRefs({ directory, jobs, jobAccounts }) {
     jobs.forEach((job, index) => {
       const account = jobAccounts[index];
       const existing = registry.refs[job.profileRef];
-      if (existing) requireThat(existing.accountId === account.id && existing.platform === job.platform, 'profile_ref_conflict');
+      // One profile = one ACCOUNT. A multi-step identity (Outlook then LinkedIn)
+      // legitimately uses the same profile for a different platform step, so the
+      // account is the invariant and the primary platform is kept.
+      if (existing) requireThat(existing.accountId === account.id, 'profile_ref_conflict');
       registry.refs[job.profileRef] = { ...(existing || { profileId: null, createdAt: new Date().toISOString() }),
-        accountId: account.id, platform: job.platform, lastJobId: job.id };
+        accountId: account.id, platform: existing?.platform || job.platform, lastJobId: job.id };
     });
     return registry;
   });
@@ -218,7 +226,7 @@ async function updateProfileRef({ directory, job, accountId, profileId, state, p
       await withProfileRefRegistry(directory, registry => {
         const entry = registry.refs[job.profileRef];
         requireThat(entry, 'profile_ref_missing');
-        registry.refs[job.profileRef] = { ...entry, accountId, platform: job.platform,
+        registry.refs[job.profileRef] = { ...entry, accountId, platform: entry.platform || job.platform,
           profileId: profileId || entry.profileId || null, state, preserved: preserved === true,
           updatedAt: new Date().toISOString() };
       });
@@ -279,7 +287,7 @@ async function studioWithCheckpoints({ account, page, log, config, cancel, studi
 
 async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, studioImpl, pollMs, journal = null }) {
   const { page, verifyOnly = false, onStep = async () => {} } = args;
-  const site = sites[account.platform];
+  const site = sites[job.platform] || sites[account.platform];
   const emit = async detail => {
     await cancel.throwIfCancelled(log.directory);
     await log.record({ event: 'browser_action', ...detail });
@@ -317,8 +325,13 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
   await log.transition('running', { phase: verifyOnly ? 'session_reopen' : 'login' });
   // Durable receipts for this job: written before every dispatch, kept beside the
   // job's own evidence, and reconcilable read-only by a later worker.
-  const result = await flowImpl({ ...args, onStep: emit, requestHumanCheckpoint,
+  const result = await flowImpl({ ...args, site, onStep: emit, requestHumanCheckpoint,
     startUrl: job.platform === 'youtube' && config.youtubeStartAtHome === true ? site.homeUrl : null,
+    // A session re-verification for Microsoft starts on the portal, which is the
+    // stable signed-in surface; the mailbox hand-off remains best-effort.
+    ...(job.platform === 'outlook' && args.verifyOnly === true && site.sessionUrl
+      ? { startUrl: site.sessionUrl } : {}),
+    ...(job.platform === 'outlook' ? { readyWindowMs: 15000 } : {}),
     receipts: createReceiptStore({ directory: log.directory }),
     scope: { jobId: job.id, platform: job.platform, profileRef: job.profileRef,
       accountId: account.id, profileId: log.profileId || null } });
@@ -419,12 +432,16 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
       return result;
     } catch (error) {
       const reason = errorCode(error);
-      // An unexpected (non-pilot) failure keeps only its error type, which is
-      // enough to diagnose it without recording any page or credential content.
-      log.failure(reason === 'unexpected_error' ? `unexpected_error:${error?.name || 'unknown'}` : reason);
-      await log.finish({ state: jobStateForResult({ status: 'needs_attention', reason }), reason,
-        durationMs: Math.round(performance.now() - began) });
-      return syntheticResult(account, reason);
+      // An unexpected (non-pilot) failure keeps only its error type and a bounded
+      // message, which is enough to diagnose it without recording page or
+      // credential content.
+      const detail = String(error?.message || '').replace(/\s+/g, ' ').slice(0, 140);
+      const failureReason = reason === 'unexpected_error'
+        ? `unexpected_error:${error?.name || 'unknown'}${detail ? `:${detail}` : ''}` : reason;
+      log.failure(failureReason);
+      await log.finish({ state: jobStateForResult({ status: 'needs_attention', reason: failureReason }),
+        reason: failureReason, durationMs: Math.round(performance.now() - began) });
+      return syntheticResult(account, failureReason);
     } finally {
       // Ownership is released through the same abstraction that took it, after the
       // graceful stop/sync (a preserved browser is left running on purpose).

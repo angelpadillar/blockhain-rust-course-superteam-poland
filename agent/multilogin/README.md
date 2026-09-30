@@ -179,6 +179,25 @@ budget. Recovery episodes can be remembered in a compact causal store under
 most a couple of relevant episodes recalled into a model request; page text,
 credentials and query strings never are.
 
+## Prompt → action interface
+
+```sh
+npm run browser:prompt -- "status"
+npm run browser:prompt -- "setup outlook+linkedin for ol-01..ol-05" --remote
+npm run browser:prompt -- "login outlook for ol-02..ol-05" --remote
+npm run browser:prompt -- "run jobs/youtube-live-batch.example.json"
+```
+
+The sentence is parsed deterministically (no model call) into a plan: one
+Multilogin profile per account, one sequential job per platform step. A
+multi-step identity (Outlook first, then LinkedIn) runs on the SAME profile,
+strictly sequentially. `--dry-run` prints the plan and the exact commands; a
+failure stops the plan; a human checkpoint pauses it with the resume command.
+Microsoft sessions are verified on the account portal (the mailbox hand-off is a
+client-side redirect that can bounce under automation); LinkedIn is verified on
+the member feed. An email/authenticator code we do not hold becomes a genuine
+human checkpoint with a Discord alert — never a guessed code.
+
 ## Profile health, labels and Discord
 
 The live browser objective is YouTube session triage. `npm run browser:profiles`

@@ -1,6 +1,5 @@
 import { existsSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
-import { createInterface } from 'node:readline';
+import { readFile } from 'node:fs/promises';import { createInterface } from 'node:readline';
 import { basename, dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { PilotError, errorCode, requireThat } from './src/core.mjs';
@@ -204,8 +203,12 @@ export async function main(argv = process.argv.slice(2)) {
   const requestCancel = () => { cancel.abort('cancelled_by_signal');
     console.error(JSON.stringify({ event: 'cancel_requested', detail: 'finishing the current browser step first' })); };
   process.once('SIGINT', requestCancel); process.once('SIGTERM', requestCancel);
-  const notifier = options['no-notify'] ? null : createDiscordNotifier(options['discord-webhook-file']
-    ? { webhookPath: options['discord-webhook-file'] } : {});
+  // Inside the worker container the private directory is mounted at /data, so the
+  // webhook lives at a different path than it does on the host.
+  const containerWebhook = '/data/discord-webhook-url';
+  const webhookPath = options['discord-webhook-file']
+    || (existsSync(containerWebhook) ? containerWebhook : undefined);
+  const notifier = options['no-notify'] ? null : createDiscordNotifier(webhookPath ? { webhookPath } : {});
   const memory = options['no-memory'] ? null : createRecoveryMemory({ directory: resolve(directory, 'memory') });
   const resume = await inspectOrchestratorResume({ directory, job, accountIndex, jobs: [job] });
   const resumeCommand = options['resume-command']

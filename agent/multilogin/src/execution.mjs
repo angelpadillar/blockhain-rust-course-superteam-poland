@@ -20,6 +20,7 @@ export const operationKinds = {
   fill_verification_code: 'fill',
   submit_login: 'submit', choose_totp: 'choose', try_another_way: 'click', open_login: 'click',
   dismiss_cookies: 'dismiss', open_account_menu: 'click', open_switch_account: 'click',
+  stay_signed_in: 'click', open_outlook: 'click',
   retry_observation: 'wait', wait: 'wait', navigate_home: 'navigate',
   reopen_account_menu: 'click', dismiss_onboarding: 'dismiss', escalate_security_checkpoint: 'wait',
   complete: 'wait',
@@ -37,6 +38,7 @@ export const riskByOperation = {
   submit_login: 'authentication',
   choose_totp: 'form_preparation', try_another_way: 'reversible_navigation', open_login: 'reversible_navigation',
   dismiss_cookies: 'reversible_navigation', open_account_menu: 'read_only', open_switch_account: 'read_only',
+  stay_signed_in: 'reversible_navigation', open_outlook: 'reversible_navigation',
   retry_observation: 'read_only', wait: 'read_only', navigate_home: 'reversible_navigation',
   reopen_account_menu: 'read_only', dismiss_onboarding: 'reversible_navigation',
   escalate_security_checkpoint: 'read_only', complete: 'read_only',
@@ -55,7 +57,8 @@ export const workflowRoles = { login: loginWorkflowRoles, recovery: recoveryWork
 // A dispatch that may have reached the platform is uncertain when it fails, even
 // if the local call reported an error. Local, repeatable edits are certain.
 const uncertainOnFailure = new Set(['submit_login', 'dismiss_cookies', 'open_login', 'try_another_way',
-  'choose_totp', 'open_account_menu', 'open_switch_account', 'reopen_account_menu', 'dismiss_onboarding']);
+  'choose_totp', 'open_account_menu', 'open_switch_account', 'reopen_account_menu', 'dismiss_onboarding',
+  'stay_signed_in', 'open_outlook']);
 
 // What a visible browser action must be able to show afterwards. Reads, waits and
 // navigation have their own error handling in the executor and declare none.
@@ -67,6 +70,8 @@ export const defaultPostconditions = {
   choose_totp: { type: 'page_fingerprint_changed', timeoutMs: 10000 },
   open_account_menu: { type: 'page_fingerprint_changed', timeoutMs: 10000 },
   open_switch_account: { type: 'page_fingerprint_changed', timeoutMs: 10000 },
+  stay_signed_in: { type: 'page_fingerprint_changed', timeoutMs: 10000 },
+  open_outlook: { type: 'page_fingerprint_changed', timeoutMs: 10000 },
   reopen_account_menu: { type: 'page_fingerprint_changed', timeoutMs: 2000 },
   dismiss_onboarding: { type: 'page_fingerprint_changed', timeoutMs: 2000 },
   click_observed: { type: 'page_fingerprint_changed', timeoutMs: 2000 },

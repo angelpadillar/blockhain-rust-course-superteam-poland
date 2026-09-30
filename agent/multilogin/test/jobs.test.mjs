@@ -111,9 +111,12 @@ test('a profile lock is atomic: one owner, and no second owner while a job holds
 test('job definitions reject duplicate ids, repeated references and unknown platforms', () => {
   const base = { id: 'youtube-01', platform: 'youtube', accountRef: 'yt-account-01', profileRef: 'yt-profile-01' };
   assert.equal(validateJobs({ jobs: [base] }).length, 1);
+  // The same account on the same profile is a multi-step identity (Outlook then
+  // LinkedIn) and is allowed; a different account or a split profile is not.
+  assert.equal(validateJobs({ jobs: [base, { ...base, id: 'youtube-02', platform: 'linkedin' }] }).length, 2);
   for (const [jobs, expected] of [
     [[base, { ...base, accountRef: 'yt-account-02' }], /duplicate_job_id/],
-    [[base, { ...base, id: 'youtube-02' }], /duplicate_profile_ref/],
+    [[base, { ...base, id: 'youtube-02', accountRef: 'yt-account-02' }], /duplicate_profile_ref/],
     [[base, { ...base, id: 'youtube-02', profileRef: 'yt-profile-02' }], /duplicate_account_ref/],
     [[{ ...base, platform: 'tiktok' }], /unsupported_platform/],
     [[{ ...base, profileRef: '../escape' }], /invalid_profile_ref/],

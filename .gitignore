@@ -20,6 +20,7 @@ agent/playwright-report/
 # Live operator job files and mirrored remote evidence.
 jobs/*.json
 !jobs/*.example.json
+jobs/generated/
 .browser-jobs/
 
 # Agent Efficiency Runtime local telemetry (never committed)

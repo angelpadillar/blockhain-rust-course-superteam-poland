@@ -73,7 +73,7 @@ export function parseAccounts(text, platform) {
   requireThat(Array.isArray(records) && records.length > 0, 'empty_account_import');
   const ids = new Set(); const bindings = new Set();
   return records.map(record => {
-    requireThat(record && ['instagram', 'youtube'].includes(record.platform), 'unsupported_platform');
+    requireThat(record && ['instagram', 'youtube', 'outlook', 'linkedin'].includes(record.platform), 'unsupported_platform');
     requireThat(typeof record.username === 'string' && record.username.length <= 254
       && record.username.trim() === record.username && !/[\s<>]/.test(record.username), 'invalid_username');
     requireThat(record.platform !== 'instagram' || /^[\w.]{1,64}$/.test(record.username), 'invalid_instagram_username');

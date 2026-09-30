@@ -111,11 +111,14 @@ export async function writeHealthRecord({ directory, record, previous = null, no
   } finally { await release(); }
 }
 
-// The operator-facing label, e.g. "YT-01 | GOOD | Studio verified".
+// The operator-facing label, e.g. "YT-01 | GOOD | Studio verified" or
+// "OL-03 | GOOD | identity verified". The prefix comes from the account ref
+// (yt-live-01 -> YT, ol-03 -> OL), never from a fixed string.
 export function labelForHealth({ record = {} } = {}) {
-  const suffix = /(\d+)\s*$/.exec(String(record.accountRef || record.profileRef || ''))?.[1];
-  const id = suffix ? `YT-${suffix.padStart(2, '0')}`
-    : String(record.accountRef || record.profileRef || 'profile').toUpperCase().slice(0, 24);
+  const ref = String(record.accountRef || record.profileRef || '');
+  const suffix = /(\d+)\s*$/.exec(ref)?.[1];
+  const prefix = /^([a-z]+)/i.exec(ref)?.[1]?.toUpperCase() || 'PROFILE';
+  const id = suffix ? `${prefix}-${suffix.padStart(2, '0')}` : prefix.slice(0, 24);
   const status = healthStatuses.includes(record.status) ? record.status : 'UNKNOWN';
   return `${id} | ${healthBadge[status]} | ${healthDetail[status]}`;
 }

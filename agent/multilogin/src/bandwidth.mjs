@@ -6,7 +6,9 @@ export const mediaUrlPatterns = ['**/*videoplayback*', '**/*.mp4', '**/*.webm', 
   '**/googlevideo.com/**'];
 // The same selection expressed for CDP `Network.setBlockedURLs`, which blocks at
 // the network layer on a connected browser without intercepting every request.
-export const mediaCdpPatterns = ['*videoplayback*', '*.mp4', '*.webm', '*.m3u8', '*googlevideo.com*'];
+// Streaming segments (.m4s/.mpd/.ism) cover MSN/Outlook-adjacent autoplay.
+export const mediaCdpPatterns = ['*videoplayback*', '*.mp4', '*.webm', '*.m3u8', '*googlevideo.com*',
+  '*.m4s', '*.mpd', '*.ism/manifest*', '*.isml*'];
 
 export function shouldBlockMedia({ url = '', resourceType = '' } = {}) {
   if (resourceType === 'media') return true;

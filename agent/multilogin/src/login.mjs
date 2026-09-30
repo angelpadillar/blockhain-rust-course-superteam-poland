@@ -32,6 +32,35 @@ export const sites = {
       'https://gds.google.com', 'https://accounts.youtube.com'],
     credentialOrigins: ['https://accounts.google.com'],
   },
+  // Consumer Microsoft accounts: sign-in is on login.live.com, the signed-in
+  // mailbox is on outlook.live.com. Credentials may only be typed on the
+  // sign-in origin; the mailbox and the Office redirects are navigation-only.
+  outlook: {
+    loginUrl: 'https://login.live.com/',
+    homeUrl: 'https://outlook.live.com/mail/0/',
+    // The Microsoft account portal is the stable signed-in surface (the mailbox
+    // hand-off is a client-side redirect that can bounce under automation); it is
+    // used for session re-verification.
+    sessionUrl: 'https://account.microsoft.com/',
+    origins: ['https://login.live.com', 'https://outlook.live.com', 'https://outlook.office.com',
+      'https://login.microsoftonline.com', 'https://account.live.com', 'https://account.microsoft.com',
+      // Consumer Microsoft sessions are regularly handed off to these
+      // navigation-only origins before the mailbox settles.
+      'https://www.office.com', 'https://www.microsoft365.com', 'https://www.msn.com',
+      'https://www.microsoft.com', 'https://outlook.office365.com', 'https://login.microsoft.com',
+      // The account portal's Outlook tile links to outlook.com, which then
+      // hands the session to outlook.live.com.
+      'https://outlook.com', 'https://www.outlook.com'],
+    credentialOrigins: ['https://login.live.com'],
+  },
+  // LinkedIn signs in on its own origin and then shows the member feed. No
+  // third-party credential origin is ever allowed.
+  linkedin: {
+    loginUrl: 'https://www.linkedin.com/login',
+    homeUrl: 'https://www.linkedin.com/feed/',
+    origins: ['https://www.linkedin.com', 'https://linkedin.com'],
+    credentialOrigins: ['https://www.linkedin.com', 'https://linkedin.com'],
+  },
 };
 const normalize = value => String(value || '').trim().toLowerCase().replace(/\s+/g, ' ');
 function signature(control) {
@@ -161,11 +190,11 @@ export function classifyPage(snapshot) {
   if (/couldn.t sign you in|could not sign you in|didn.t provide enough info/.test(text)
     || String(snapshot.url || '').includes('/signin/rejected')) return 'signin_rejected';
   if (/wants to access your google account|grant.{0,20}access|create your account|agree to the terms/.test(text)) return 'account_setup_requires_attention';
-  if (/captcha|verify you are human|confirm you.re human|unusual traffic|automated queries/.test(text)
+  if (/captcha|verify you are human|confirm you.re human|unusual traffic|unusual activity|automated queries|quick security check/.test(text)
     || snapshot.challengeFrame) return 'human_verification_required';
   if (/check your phone|tap yes on|approve.{0,25}(phone|device)|security key|passkey/.test(text)
     && !/authenticator|authentication app/.test(text)) return 'device_verification_required';
-  if (/code.{0,60}(sent|email|sms)|sent.{0,60}(code|email)|text message/.test(text)
+  if (/(emailed|email|sent|send).{0,40}code|code.{0,60}(sent|email|sms)|text message/.test(text)
     && !/authenticator|authentication app/.test(text)) return 'email_or_sms_verification_required';
   return null;
 }
@@ -181,7 +210,13 @@ function recoverableClassification(reason) {
 }
 
 export function verifyIdentity(account, snapshot, site = sites[account.platform]) {
-  if (new URL(snapshot.url).origin !== new URL(site.homeUrl).origin) return false;
+  const origin = new URL(snapshot.url).origin;
+  // Outlook accepts its own account portal as a signed-in surface in addition to
+  // the mailbox; every other platform verifies on its home origin only.
+  const allowedOrigins = account.platform === 'outlook'
+    ? [new URL(site.homeUrl).origin, 'https://account.microsoft.com', 'https://account.live.com']
+    : [new URL(site.homeUrl).origin];
+  if (!allowedOrigins.includes(origin)) return false;
   if (snapshot.controls.some(control => control.type === 'password')) return false;
   const username = account.username.toLowerCase();
   if (account.platform === 'instagram') {
@@ -191,12 +226,67 @@ export function verifyIdentity(account, snapshot, site = sites[account.platform]
     });
     return paths.includes(`/${username}/`) && paths.some(path => path.startsWith('/direct/inbox'));
   }
+  // Outlook: the signed-in Microsoft account surface. The mailbox hand-off is a
+  // client-side redirect that can bounce under automation, so the portal itself
+  // is accepted when the account surface names the expected identity. The email
+  // is often not rendered as text, so the account-manager control (which carries
+  // the display name derived from the account's own address) is accepted too.
+  // A page that still offers a password field is never a signed-in surface.
+  if (account.platform === 'outlook') {
+    const mailboxOrigin = new URL(site.homeUrl).origin;
+    const text = snapshot.text.toLowerCase();
+    const localPart = username.split('@')[0];
+    // The display name heuristic needs the ORIGINAL casing: ShawnteLaden13841 ->
+    // "Shawnte Laden". The lowercased local part is used for text matching only.
+    const displayName = account.username.split('@')[0].replace(/\d+$/, '')
+      .replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
+    const labelMatch = snapshot.controls.some(control => {
+      const label = normalize(control.label);
+      return label.includes(localPart) || (displayName.length >= 6 && label.includes(displayName));
+    });
+    const identity = text.includes(username) || (localPart.length >= 6 && text.includes(localPart)) || labelMatch;
+    const accountSurface = /(sign out|wyloguj)/.test(text)
+      || snapshot.controls.some(control => /account manager/i.test(normalize(control.label)));
+    const mailboxSurface = origin === mailboxOrigin
+      ? /(inbox|new mail|skrzynka odbiorcza|nowa wiadomość)/.test(text) : true;
+    return accountSurface && mailboxSurface && identity && !/enter password|hasło/.test(text);
+  }
+  // LinkedIn: the member feed's own navigation. A logged-out page offers
+  // "Join now"/"Sign in" instead, which disqualifies it.
+  if (account.platform === 'linkedin') {
+    const text = snapshot.text.toLowerCase();
+    return /start a post|rozpocznij post/.test(text)
+      && /my network|sieć/.test(text)
+      && !/join now|dołącz teraz/.test(text)
+      && !/sign in to linkedin|zaloguj się/.test(text);
+  }
   // Account-menu evidence, not a public channel name or the model's completion judgment.
   const text = snapshot.text.toLowerCase();
   const emails = [...new Set(text.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/g) || [])];
   return emails.length === 1 && emails[0] === username && /sign out|wyloguj/.test(text)
     && /switch account|przełącz konto|google account|konto google|add account|dodaj konto/.test(text)
     && !/choose an account|wybierz konto/.test(text);
+}
+
+// Known post-auth Microsoft surfaces that may appear between sign-in and the
+// mailbox. Navigation only; credentials are still restricted to login.live.com.
+// login.live.com is deliberately absent: it is the auth hand-off itself and
+// must be allowed to finish.
+export const microsoftPostAuthOrigins = new Set(['https://www.microsoft.com', 'https://www.office.com',
+  'https://www.microsoft365.com', 'https://www.msn.com']);
+
+// A signed-in Microsoft account portal page: the expected address (or its local
+// part) plus a sign-out control. Masked addresses (s•••@hotmail.com) never match,
+// so a pending verification screen is not mistaken for a session.
+export function isMicrosoftPortalSignedIn(account, snapshot) {
+  let origin = null;
+  try { origin = new URL(snapshot.url).origin; } catch { return false; }
+  if (!['https://account.microsoft.com', 'https://account.live.com'].includes(origin)) return false;
+  const text = String(snapshot.text || '').toLowerCase();
+  const username = account.username.toLowerCase();
+  const localPart = username.split('@')[0];
+  const identity = text.includes(username) || (localPart.length >= 6 && text.includes(localPart));
+  return identity && /(sign out|wyloguj)/.test(text);
 }
 
 export async function navigate(page, url) {
@@ -240,9 +330,36 @@ export class LoginBrowser {
   get menuActionCount() {
     return [...this.menuClicks.values()].reduce((total, count) => total + count, 0);
   }
+  // A Microsoft/SPA redirect can replace the document while a handle is being
+  // evaluated; that is a transient navigation race, not a login failure, so a
+  // bounded retry re-observes instead of killing the run.
   async observe() {
+    let lastError = null;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try { return await this.observeOnce(); }
+      catch (error) {
+        lastError = error;
+        if (error instanceof PilotError) throw error;
+        if (attempt === 2 || (!error?.transient && !/execution context was destroyed|target closed|frame was detached|navigation|detached from/i.test(String(error?.message || '')))) throw error;
+        await new Promise(resolve => setTimeout(resolve, 250 * (attempt + 1)));
+      }
+    }
+    throw lastError;
+  }
+
+  async observeOnce() {
     const url = this.page.url();
-    requireThat(this.site.origins.includes(new URL(url).origin), 'unexpected_login_destination');
+    const origin = (() => { try { return new URL(url).origin; } catch { return null; } })();
+    // A navigation can leave the page on an empty/about:blank URL for a moment;
+    // that is transient, not an unknown destination, and is retried above.
+    if (!origin) {
+      const error = new Error('transient_page_url');
+      error.transient = true;
+      throw error;
+    }
+    // The destination origin is part of the diagnostic so an unknown hand-off
+    // can be allow-listed deliberately; it is never a credential or a path.
+    requireThat(this.site.origins.includes(origin), `unexpected_login_destination:${origin}`);
     for (const handle of this.ownedHandles) await handle.dispose().catch(() => {});
     const handles = await this.page.$$('input,button,a,[role="button"],[role="link"],[role="option"],[role="listitem"],[role="menuitem"],[data-challengeid],[data-challengetype],[jsaction][tabindex="0"],tp-yt-paper-item'); this.ownedHandles = handles;
     const controls = [];
@@ -312,9 +429,24 @@ export class LoginBrowser {
       if (!control.enabled || control.tag === 'input') continue;
       const label = normalize(control.label);
       let kind;
-      if (/^(reject all|decline optional cookies|only allow essential cookies|odrzuć wszystkie|odrzuć opcjonalne pliki cookie)$/.test(label)) kind = 'dismiss_cookies';
+      if (/^(reject all|reject optional cookies|reject|decline optional cookies|only allow essential cookies|odrzuć wszystkie|odrzuć opcjonalne pliki cookie)$/.test(label)) kind = 'dismiss_cookies';
       if (this.account.platform === 'youtube' && /^(account|account menu|avatar image|google account: .+|konto|menu konta)$/.test(label)) kind = 'open_account_menu';
       if (this.account.platform === 'youtube' && /^(switch account|przełącz konto)$/.test(label)) kind = 'open_switch_account';
+      // Outlook's account manager flyout is where the exact address and the sign
+      // out control appear; LinkedIn's "Me" menu is the signed-in account entry.
+      if (this.account.platform === 'outlook' && /^(account manager.*|account|my account|moje konto)$/.test(label)) kind = 'open_account_menu';
+      if (this.account.platform === 'linkedin' && /^(me|me menu|account|my account|moje konto)$/.test(label)) kind = 'open_account_menu';
+      // The Microsoft account portal's own Outlook tile performs the SSO
+      // hand-off into the mailbox; it is the site's intended navigation path.
+      // Only links with an href are offered: the executor navigates that href in
+      // the same tab instead of clicking (the tile often targets a new tab).
+      if (this.account.platform === 'outlook' && control.tag === 'a' && control.href
+        && /^(open )?outlook(\.com)?$/.test(label)) kind = 'open_outlook';
+      // Microsoft's post-sign-in convenience prompt. Clicking Yes keeps the
+      // session, which is exactly the session this job is establishing; it is a
+      // login-flow step, never a security control.
+      if (!verifyOnly && authOrigin && /^(yes|tak)$/.test(label)
+        && /stay signed in|pozostań zalogowany/.test(normalize(snapshot.text))) kind = 'stay_signed_in';
       if (!verifyOnly && authOrigin && !unknownRequiredField && fieldActions.length === 0
         && !this.submittedStages.has(fieldStage(snapshot))
         && /^(log in|login|sign in|next|continue|confirm|verify|i agree|accept|zaloguj się|dalej|kontynuuj|potwierdź)$/.test(label)) kind = 'submit_login';
@@ -350,6 +482,9 @@ export class LoginBrowser {
     const totpOptions = actions.filter(action => action.kind === 'choose_totp');
     const escapeActions = actions.filter(action => action.kind === 'try_another_way');
     const submitActions = actions.filter(action => action.kind === 'submit_login');
+    // The portal's Outlook tile is the SSO hand-off; it outranks a menu toggle
+    // that only reveals identity evidence.
+    const outlookActions = actions.filter(action => action.kind === 'open_outlook');
     // Equivalent menu entries are interchangeable; pick one deterministically.
     const switchActions = actions.filter(action => action.kind === 'open_switch_account');
     const menuActions = actions.filter(action => action.kind === 'open_account_menu');
@@ -362,6 +497,7 @@ export class LoginBrowser {
       : totpOptions.length ? totpOptions
       : unhandledField && escapeActions.length ? escapeActions
       : submitActions.length && !unhandledField ? submitActions
+      : outlookActions.length ? outlookActions.slice(0, 1)
       : switchActions.length ? switchActions.slice(0, 1)
       : menuActions.length ? menuActions.slice(0, 1)
       : actions;
@@ -434,7 +570,20 @@ export class LoginBrowser {
       const value = await this.secrets.resolve(action.valueRef);
       await control.handle.fill(value, { timeout: 5000 }); return;
     }
-    requireThat(['submit_login', 'open_login', 'choose_totp', 'try_another_way', 'dismiss_cookies', 'open_account_menu', 'open_switch_account', 'click_observed'].includes(kind), 'unsupported_action');
+    if (kind === 'open_outlook') {
+      // The portal's Outlook tile is often a target=_blank link; navigating its
+      // own allowed href keeps the session in THIS page instead of spawning a tab
+      // the flow cannot see.
+      const href = control.href || action.destination || null;
+      requireThat(href, 'outlook_link_missing');
+      const destination = new URL(href).origin;
+      requireThat(this.site.origins.includes(destination), 'unexpected_navigation_destination');
+      await this.page.goto(href, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      return;
+    }
+    requireThat(['submit_login', 'open_login', 'choose_totp', 'try_another_way', 'dismiss_cookies',
+      'open_account_menu', 'open_switch_account', 'click_observed', 'stay_signed_in'].includes(kind),
+    'unsupported_action');
     this.clicked.add(action.clickKey || `${snapshot.fingerprint}:${control.key}`);
     if (kind === 'submit_login') this.submittedStages.add(fieldStage(snapshot));
     if (['open_account_menu', 'open_switch_account'].includes(kind)) {
@@ -506,6 +655,9 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
   });
   let interstitialBypassed = false;
   let homeRefreshed = false;
+  // Microsoft post-auth hand-offs are normalised to the mailbox, at most twice
+  // per run, so an unexpected redirect cannot ping-pong.
+  let microsoftPortalRedirects = 0;
   // Recent deterministic actions, so a recovery observation carries context
   // without ever carrying page content that is not already redacted.
   const recentActions = [];
@@ -573,6 +725,30 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     const observation = kernel.observe(snapshot).observation;
     if (verifyIdentity(account, snapshot, site)) {
       return finish({ verified: true, steps: step, durationMs: Math.round(performance.now() - started) });
+    }
+    // Microsoft can land a signed-in session anywhere in its account portal.
+    // When the portal shows the expected identity, or the page is a known
+    // post-auth Microsoft surface with no password field and no classified
+    // challenge, the flow continues to the mailbox the job is actually about.
+    // Navigation only: no credential, consent or challenge is involved.
+    const portalOrigin = (() => { try { return new URL(snapshot.url).origin; } catch { return null; } })();
+    const microsoftPortal = account.platform === 'outlook'
+      && (isMicrosoftPortalSignedIn(account, snapshot) || microsoftPostAuthOrigins.has(portalOrigin));
+    // The portal's own Outlook tile is the intended SSO hand-off; when it is
+    // present the flow must use it instead of a direct mailbox navigation.
+    const hasOutlookHandoff = account.platform === 'outlook' && snapshot.controls.some(control => {
+      if (control.tag !== 'a' || !control.href) return false;
+      if (!/^(open )?outlook(\.com)?$/.test(normalize(control.label))) return false;
+      try { return site.origins.includes(new URL(control.href).origin); } catch { return false; }
+    });
+    if (!verifyOnly && microsoftPortal && !hasOutlookHandoff && !classifyPage(snapshot)
+      && !snapshot.controls.some(control => control.type === 'password') && microsoftPortalRedirects < 1) {
+      microsoftPortalRedirects++;
+      await onStep({ step, phase: 'login', action: 'navigate_home', state: 'before', reason: 'post_auth_portal' });
+      await navigate(page, site.homeUrl);
+      await onStep({ step, phase: 'login', action: 'navigate_home', state: 'after' });
+      step++;
+      continue;
     }
     const attention = async reason => onStep({ step, phase: 'attention', reason, page: browser.publicPage(snapshot) });
     // Level 2 recovery episode. The model may only name a typed capability from
@@ -675,7 +851,19 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       }
     }
     if (!account.totp && snapshot.controls.some(control => /one-time-code|totp|verificationcode|security.code/i.test(
-      `${control.autocomplete} ${control.name}`))) throw new PilotError('totp_secret_missing');
+      `${control.autocomplete} ${control.name}`))) {
+      // A code we do not hold (LinkedIn emails one, or the account carries an
+      // authenticator we were not given) is a genuine human checkpoint. The
+      // person can read it and enter it in the preserved browser; it is never
+      // guessed, generated or bypassed.
+      const reason = 'email_or_sms_verification_required';
+      await onStep({ step, phase: 'attention', reason, page: browser.publicPage(snapshot) });
+      const paused = requestHumanCheckpoint
+        ? await requestHumanCheckpoint({ reason, page, browser, account, site, snapshot, step, onStep })
+        : null;
+      if (paused?.resumed) { deadline += Number(paused.waitedMs) || 0; continue; }
+      throw new PilotError(reason);
+    }
     const actions = browser.candidates(snapshot, { verifyOnly });
     // Google post-auth interstitials (for example a missing birthday) can lack
     // data we do not have. If one appears after authentication, check whether

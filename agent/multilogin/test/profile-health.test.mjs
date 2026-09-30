@@ -27,9 +27,11 @@ test('job outcomes map to the canonical health statuses', () => {
     stateTransitions: [{ state: 'waiting_for_human' }] }), 'BAD_LOGIN');
 });
 
-test('the label is the operator-facing YT-NN | BADGE | detail string', () => {
+test('the label is the operator-facing NN | BADGE | detail string', () => {
   assert.equal(labelForHealth({ record: { accountRef: 'yt-live-01', status: 'GOOD_PERSISTED' } }),
     'YT-01 | GOOD | Studio verified');
+  assert.equal(labelForHealth({ record: { accountRef: 'ol-03', status: 'GOOD_AUTHENTICATED' } }),
+    'OL-03 | GOOD | identity verified');
   assert.equal(labelForHealth({ record: { accountRef: 'yt-live-04', status: 'WAITING_FOR_HUMAN' } }),
     'YT-04 | HUMAN | security verification');
   assert.equal(labelForHealth({ record: { accountRef: 'yt-live-05', status: 'CANCELLED' } }),
