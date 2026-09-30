@@ -6,7 +6,9 @@ import { readJson, writeJson } from './storage.mjs';
 import { runBatch, validateConfig, connect as defaultConnect, seedSites } from './runner.mjs';
 import { runConcurrentBatch } from './batch.mjs';
 import { runLogin, sites, classifyPage } from './login.mjs';
-import { acquireNamedLock, acquireProfileLock } from './profile-lock.mjs';
+import { acquireNamedLock } from './profile-lock.mjs';
+import { createReceiptStore } from './receipts.mjs';
+import { MultiloginSessionProvider } from './session-provider.mjs';
 import { captureSafeScreenshot } from './screenshots.mjs';
 import { inspectStudio, observeStudio } from './youtube.mjs';
 import { selectJobAccounts, refPattern } from './accounts.mjs';
@@ -17,6 +19,13 @@ export const jobStates = ['queued', 'starting_profile', 'browser_ready', 'runnin
   'success', 'failed', 'cancelled'];
 export const humanCheckpointReasons = ['human_verification_required', 'email_or_sms_verification_required',
   'device_verification_required', 'account_setup_requires_attention'];
+// A checkpoint screenshot is read by a person, so it is captured at the native
+// viewport with a small bounded settle and at most three attempts: a frame under
+// minBytes is treated as blank/half-rendered and retried. Never network-idle.
+// `bundle: true` adds the full-page frame, a focused challenge region when one is
+// detectable, and a JSON context sidecar (url, title, visible-text summary,
+// viewport, timestamp, job/profile identity) next to the canonical PNG.
+export const checkpointCapture = { settleMs: 300, minBytes: 8000, attempts: 3, bundle: true };
 const jobIdPattern = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}$/;
 
 export function validateJobs(input) {
@@ -128,10 +137,13 @@ export class JobLog {
     }
     return record;
   }
-  async screenshot(page, label, credentialOrigins = []) {
+  async screenshot(page, label, credentialOrigins = [], options = {}) {
     this.screenIndex++;
     const result = await captureSafeScreenshot({ page, directory: resolve(this.directory, 'screenshots'), label,
-      index: this.screenIndex, credentialOrigins });
+      index: this.screenIndex, credentialOrigins, redact: this.redact,
+      context: { jobId: this.job.id, platform: this.job.platform, accountRef: this.job.accountRef,
+        profileRef: this.job.profileRef, profileId: this.profileId ?? null },
+      ...options });
     this.screenshots.push({ label, ...result });
     await this.record({ event: 'screenshot', label, ...result });
     return result;
@@ -247,21 +259,25 @@ function wrapProfileApi({ api, log, preserved, preserveOnCheckpoint }) {
 
 // Studio may itself raise a security checkpoint. It uses the same observing
 // wait as the login flow and never answers the challenge.
-async function studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt = 0 }) {
+async function studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt = 0, journal = null }) {
   const studio = await studioImpl({ page, account, onStep: emit });
   if (studio.state === 'checkpoint' && attempt < 2) {
-    await log.screenshot(page, `studio_checkpoint_${attempt + 1}`, []);
+    await log.screenshot(page, `studio_checkpoint_${attempt + 1}`, [], checkpointCapture);
     const reason = humanCheckpointReasons.includes(studio.reason) ? studio.reason : 'human_verification_required';
+    const bundle = log.screenshots.at(-1) || null;
+    await journal?.checkpointPending({ reason, stateClass: reason,
+      bundle: bundle ? { canonical: bundle.path ?? null, region: bundle.regionPath ?? null, context: bundle.contextPath ?? null } : null }).catch(() => {});
     const paused = await waitForHuman({ reason, observe: () => observeStudio(page), log, config, cancel,
       pollMs, onStep: emit });
+    if (paused?.resumed) await journal?.checkpointCleared({ reason, postClearVerified: true }).catch(() => {});
     if (paused.resumed) {
-      return studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt: attempt + 1 });
+      return studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, attempt: attempt + 1, journal });
     }
   }
   return studio;
 }
 
-async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, studioImpl, pollMs }) {
+async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, studioImpl, pollMs, journal = null }) {
   const { page, verifyOnly = false, onStep = async () => {} } = args;
   const site = sites[account.platform];
   const emit = async detail => {
@@ -270,15 +286,45 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
     await onStep(detail);
   };
   const requestHumanCheckpoint = async context => {
-    await log.screenshot(context.page, `checkpoint_${context.reason}`, site.credentialOrigins);
-    return waitForHuman({ reason: context.reason, observe: () => context.browser.observe(),
+    // A client-rendered challenge can classify before it finishes loading: wait a
+    // bounded moment, re-observe ONCE, and continue the normal flow when the
+    // surface has cleared on its own. Only a genuine, still-present security
+    // surface becomes a human checkpoint.
+    const settleMs = Number(config.challengeSettleMs) || 0;
+    if (settleMs > 0) {
+      await new Promise(resolve => setTimeout(resolve, settleMs));
+      const settled = await context.browser.observe().catch(() => null);
+      if (settled && settled.challengeFrame !== true && classifyPage(settled) !== context.reason) {
+        await emit({ phase: 'human_checkpoint', reason: context.reason, state: 'cleared_during_settle',
+          waitedMs: settleMs });
+        return { resumed: true, waitedMs: settleMs };
+      }
+    }
+    // A person has to read this frame: capture the native viewport, let a
+    // half-painted first frame settle, and retry a bounded number of times when
+    // the PNG is suspiciously small (a near-blank page).
+    await log.screenshot(context.page, `checkpoint_${context.reason}`, site.credentialOrigins,
+      checkpointCapture);
+    const bundle = log.screenshots.at(-1) || null;
+    await journal?.checkpointPending({ reason: context.reason, stateClass: `${context.reason}`,
+      bundle: bundle ? { canonical: bundle.path ?? null, region: bundle.regionPath ?? null, context: bundle.contextPath ?? null } : null }).catch(() => {});
+    const paused = await waitForHuman({ reason: context.reason, observe: () => context.browser.observe(),
       log, config, cancel, pollMs, onStep: emit });
+    if (paused?.resumed) await journal?.checkpointCleared({ reason: context.reason,
+      postClearVerified: true }).catch(() => {});
+    return paused;
   };
   await log.transition('running', { phase: verifyOnly ? 'session_reopen' : 'login' });
-  const result = await flowImpl({ ...args, onStep: emit, requestHumanCheckpoint });
+  // Durable receipts for this job: written before every dispatch, kept beside the
+  // job's own evidence, and reconcilable read-only by a later worker.
+  const result = await flowImpl({ ...args, onStep: emit, requestHumanCheckpoint,
+    startUrl: job.platform === 'youtube' && config.youtubeStartAtHome === true ? site.homeUrl : null,
+    receipts: createReceiptStore({ directory: log.directory }),
+    scope: { jobId: job.id, platform: job.platform, profileRef: job.profileRef,
+      accountId: account.id, profileId: log.profileId || null } });
   await log.screenshot(page, verifyOnly ? 'session_persisted' : 'login_verified', site.credentialOrigins);
   if (job.platform === 'youtube') {
-    const studio = await studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs });
+    const studio = await studioWithCheckpoints({ account, page, log, config, cancel, studioImpl, emit, pollMs, journal });
     await log.screenshot(page, verifyOnly ? 'youtube_studio_after_restart' : 'youtube_studio', []);
     await log.record({ event: 'youtube_studio', verifyOnly, authenticated: studio.authenticated, state: studio.state,
       url: studio.url || null, channel: studio.channel ? { name: studio.channel.name } : null,
@@ -294,7 +340,7 @@ async function runJobFlow({ job, account, log, args, config, cancel, flowImpl, s
 export async function runJobBatch({ jobs, accountIndex, config: supplied, directory, concurrency = 2,
   api, guideFactory, cancel = new CancelToken(), connectImpl = defaultConnect, flowImpl = runLogin,
   seedImpl = seedSites, studioImpl = inspectStudio, humanCheckpointPollMs = 2000, preserveOnCheckpoint = false,
-  onJobState = null }) {
+  onJobState = null, journal = null }) {
   const config = validateConfig(supplied);
   requireThat(Number.isInteger(concurrency) && concurrency >= 1 && concurrency <= 5, 'invalid_concurrency');
   requireThat(/^[a-zA-Z0-9-]{8,80}$/.test(config.folderId || '') && !config.folderId.includes('REPLACE'), 'folder_id_required');
@@ -327,10 +373,25 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
     const log = logs.get(job.id);
     const began = performance.now();
     const preserved = { active: false, port: null };
-    let release = null;
+    // The wrapped api keeps the existing state transitions and the
+    // preserve-on-checkpoint behaviour; the provider drives that same api.
+    const jobApi = wrapProfileApi({ api: batchApi, log, preserved, preserveOnCheckpoint });
+    const attach = async (port, connectionConfig) => {
+      const session = await connectImpl(port, connectionConfig);
+      await log.transition('browser_ready', { port });
+      await log.screenshot(session.page, 'browser_ready');
+      return session;
+    };
+    // ONE profile/session ownership abstraction: the provider owns the ownership
+    // lock, the launcher start, the launcher-returned CDP endpoint, the existing
+    // context and the graceful stop/sync for this job.
+    const provider = new MultiloginSessionProvider({
+      api: jobApi, config: childConfig, directory,
+      connectImpl: attach, lockDetails: { jobId: job.id, platform: job.platform },
+    });
+    if (log.profileId) provider.bindProfileId(log.profileId);
     try {
-      release = await acquireProfileLock(directory, job.profileRef,
-        { accountId: account.id, jobId: job.id, platform: job.platform });
+      await provider.claimOwnership({ profileRef: job.profileRef, accountId: account.id });
     } catch (error) {
       const reason = log.failure(errorCode(error));
       await log.finish({ state: 'failed', reason, durationMs: Math.round(performance.now() - began) });
@@ -340,16 +401,11 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
       await cancel.throwIfCancelled(log.directory);
       const result = await runBatch({
         accounts: [account], config: childConfig,
-        api: wrapProfileApi({ api: batchApi, log, preserved, preserveOnCheckpoint }),
+        api: jobApi, provider,
         guideFactory, directory: childDirectory, seedImpl,
-        connectImpl: async (port, connectionConfig) => {
-          const session = await connectImpl(port, connectionConfig);
-          await log.transition('browser_ready', { port });
-          await log.screenshot(session.page, 'browser_ready');
-          return session;
-        },
+        connectImpl: attach,
         loginImpl: args => runJobFlow({ job, account, log, args, config: childConfig, cancel, flowImpl, studioImpl,
-          pollMs: humanCheckpointPollMs }),
+          pollMs: humanCheckpointPollMs, journal }),
       });
       const outcome = result.report.accounts[0] || {};
       const state = jobStateForResult(outcome);
@@ -370,7 +426,9 @@ export async function runJobBatch({ jobs, accountIndex, config: supplied, direct
         durationMs: Math.round(performance.now() - began) });
       return syntheticResult(account, reason);
     } finally {
-      await release().catch(() => {});
+      // Ownership is released through the same abstraction that took it, after the
+      // graceful stop/sync (a preserved browser is left running on purpose).
+      await provider.detach().catch(() => {});
       await updateProfileRef({ directory, job, accountId: account.id, profileId: log.profileId,
         state: log.state, preserved: preserved.active });
     }

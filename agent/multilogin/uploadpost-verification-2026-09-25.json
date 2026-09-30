@@ -1,0 +1,133 @@
+{
+  "schema": "buena.uploadpost-verification/1",
+  "verifiedAt": "2026-09-25T18:03:00Z",
+  "source": "GET https://api.upload-post.com/api/uploadposts/users",
+  "plan": "professional",
+  "profileLimit": 25,
+  "profiles": [
+    {
+      "username": "default",
+      "tiktok": {
+        "handle": "saleswithsophia",
+        "display_name": "Sophia Reed B2B",
+        "reauth_required": false,
+        "capabilities": [
+          "music",
+          "location",
+          "cover_image",
+          "cover_timestamp",
+          "draft",
+          "video_privacy",
+          "photo_privacy",
+          "profile_analytics",
+          "comments",
+          "trend_search"
+        ]
+      }
+    },
+    {
+      "username": "saleswithsophia",
+      "tiktok": null
+    },
+    {
+      "username": "rubyfindsai",
+      "tiktok": {
+        "handle": "rubyfindsai",
+        "display_name": "Ruby Hayes",
+        "reauth_required": false,
+        "capabilities": [
+          "music",
+          "location",
+          "cover_image",
+          "cover_timestamp",
+          "draft",
+          "video_privacy",
+          "photo_privacy",
+          "profile_analytics",
+          "comments",
+          "trend_search"
+        ]
+      }
+    },
+    {
+      "username": "lenatalkssales",
+      "tiktok": {
+        "handle": "lenatalkssales",
+        "display_name": "Lena Cole | Sales",
+        "reauth_required": false,
+        "capabilities": [
+          "music",
+          "location",
+          "cover_image",
+          "cover_timestamp",
+          "draft",
+          "video_privacy",
+          "photo_privacy",
+          "profile_analytics",
+          "comments",
+          "trend_search"
+        ]
+      }
+    },
+    {
+      "username": "mayagrowthtips",
+      "tiktok": {
+        "handle": "mayagrowthtips",
+        "display_name": "Maya Bell",
+        "reauth_required": false,
+        "capabilities": [
+          "music",
+          "location",
+          "cover_image",
+          "cover_timestamp",
+          "draft",
+          "video_privacy",
+          "photo_privacy",
+          "profile_analytics",
+          "comments",
+          "trend_search"
+        ]
+      }
+    },
+    {
+      "username": "b2bwithnina",
+      "tiktok": {
+        "handle": "b2bwithnina",
+        "display_name": "Nina Brooks | B2B with Nina",
+        "reauth_required": false,
+        "capabilities": [
+          "music",
+          "location",
+          "cover_image",
+          "cover_timestamp",
+          "draft",
+          "video_privacy",
+          "photo_privacy",
+          "profile_analytics",
+          "comments",
+          "trend_search"
+        ]
+      }
+    },
+    {
+      "username": "chloesalestips",
+      "tiktok": {
+        "handle": "chloesalestips",
+        "display_name": "Chloe Quinn",
+        "reauth_required": false,
+        "capabilities": [
+          "music",
+          "location",
+          "cover_image",
+          "cover_timestamp",
+          "draft",
+          "video_privacy",
+          "photo_privacy",
+          "profile_analytics",
+          "comments",
+          "trend_search"
+        ]
+      }
+    }
+  ]
+}

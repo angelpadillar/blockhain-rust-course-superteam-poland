@@ -20,6 +20,15 @@ export const defaults = {
   maxAccounts: 6, maxProxySwitches: 1, maxSteps: 20, maxSeconds: 180, verifyRestart: true,
   humanCheckpointSeconds: 600,
   seedSites: ['https://www.amazon.pl/', 'https://www.ebay.com/'], proxyMode: 'multilogin', proxyCountry: null, proxyPool: [],
+  // Degraded mode: the profile's ALREADY-ATTACHED proxy is the only one allowed.
+  // Provisioning and rotation are refused; a failing proxy fails closed.
+  reuseExistingProxy: false,
+  // Bandwidth discipline: a genuine security surface gets a bounded settle and
+  // one re-observe before a person is asked, media is not fetched during a job,
+  // and a YouTube run checks the home/auth surface before any Google redirect.
+  challengeSettleMs: 1500,
+  blockMedia: true,
+  youtubeStartAtHome: true,
 };
 export function validateConfig(supplied) {
   const config = { ...defaults, ...supplied };
@@ -33,6 +42,11 @@ export function validateConfig(supplied) {
   requireThat(Number.isInteger(config.humanCheckpointSeconds) && config.humanCheckpointSeconds >= 1
     && config.humanCheckpointSeconds <= 7200, 'invalid_human_checkpoint_limit');
   requireThat(['multilogin', 'pool', 'none'].includes(config.proxyMode), 'invalid_proxy_mode');
+  requireThat(typeof config.reuseExistingProxy === 'boolean', 'invalid_proxy_reuse_flag');
+  requireThat(Number.isInteger(config.challengeSettleMs) && config.challengeSettleMs >= 0
+    && config.challengeSettleMs <= 10000, 'invalid_challenge_settle');
+  requireThat(typeof config.blockMedia === 'boolean' && typeof config.youtubeStartAtHome === 'boolean',
+    'invalid_bandwidth_flags');
   requireThat(config.proxyCountry === null || /^[a-z]{2}$/.test(config.proxyCountry), 'invalid_proxy_country');
   requireThat(Array.isArray(config.proxyPool), 'invalid_proxy_pool');
   requireThat(typeof config.cdpHost === 'string' && /^[a-zA-Z0-9.-]+$/.test(config.cdpHost), 'invalid_cdp_host');
@@ -62,7 +76,14 @@ export async function connect(port, config) {
   const context = browser.contexts()[0];
   requireThat(context, 'missing_multilogin_context');
   context.setDefaultTimeout(7000);
-  return { browser, context, page: await context.newPage() };
+  const working = await context.newPage();
+  // Tab hygiene: Multilogin profiles persist tabs across runs, and verification
+  // flows open popups. Keep only the working page so browsers stay fast.
+  for (const existing of context.pages()) {
+    if (existing === working) continue;
+    await existing.close().catch(() => {});
+  }
+  return { browser, context, page: working };
 }
 
 export async function stopBrowserProfile(api, profileId, browser) {
@@ -78,8 +99,12 @@ export async function stopBrowserProfile(api, profileId, browser) {
   await api.stop(profileId);
 }
 
+// `provider` (a MultiloginSessionProvider) is the production profile/session
+// lifecycle: ownership lock, launcher start, launcher-returned CDP endpoint, the
+// existing context and the graceful stop. When it is supplied this function does
+// not start, attach or stop a profile itself.
 export async function runBatch({ accounts, config: supplied, api, guideFactory, directory,
-  connectImpl = connect, loginImpl = runLogin, seedImpl = seedSites }) {
+  connectImpl = connect, loginImpl = runLogin, seedImpl = seedSites, provider = null }) {
   const config = validateConfig(supplied);
   requireThat(accounts.length <= config.maxAccounts, 'too_many_accounts');
   requireThat(/^[a-zA-Z0-9-]{8,80}$/.test(config.folderId || '') && !config.folderId.includes('REPLACE'), 'folder_id_required');
@@ -88,7 +113,8 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
   }
   const release = await lock(directory);
   const statePath = resolve(directory, 'profiles.json');
-  const report = { id: randomUUID(), startedAt: new Date().toISOString(), mode: 'live-jev', accounts: [] };
+  const report = { id: randomUUID(), startedAt: new Date().toISOString(), mode: 'live-jev',
+    reuseExistingProxy: config.reuseExistingProxy === true, accounts: [] };
   const reportPath = resolve(directory, 'reports', `${report.id}.json`);
   try {
     const state = await readJson(statePath, { version: 1, folderId: config.folderId, profiles: {} });
@@ -114,17 +140,34 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
       const stop = async () => {
         if (!started) return;
         record.pending = 'stop'; await save();
-        await stopBrowserProfile(api, record.profileId, session?.browser); started = false;
-        record.pending = null; await save();
-        await session?.browser?.close().catch(() => {}); session = null;
+        // One ownership abstraction: with a provider, the graceful stop (Chromium
+        // flushed, then Multilogin stop/sync) is its job; ownership stays held.
+        if (provider) await provider.suspend();
+        else await stopBrowserProfile(api, record.profileId, session?.browser);
+        started = false; record.pending = null; await save();
+        if (!provider) { await session?.browser?.close().catch(() => {}); session = null; }
       };
       const start = async () => {
         record.pending = 'start'; await save();
-        const port = await api.start(config.folderId, record.profileId, config.headless);
-        started = true; record.pending = null; await save();
-        session = await connectImpl(port, config);
+        // The pending marker is cleared before the attach can fail, exactly as in
+        // the direct path, so an interrupted attach is never left unreconciled.
+        if (provider) {
+          await provider.start();
+          started = true; record.pending = null; await save();
+          session = await provider.connect();
+        } else {
+          const port = await api.start(config.folderId, record.profileId, config.headless);
+          started = true; record.pending = null; await save();
+          session = await connectImpl(port, config);
+        }
       };
       const newProxy = async index => {
+        // Degraded mode never provisions or rotates: the profile's own attached
+        // proxy is the only one allowed, and a missing profile is refused.
+        if (config.reuseExistingProxy) {
+          const error = new PilotError('reuse_existing_proxy_requires_profile');
+          error.proxyReuseBlocked = true; throw error;
+        }
         if (config.proxyMode === 'multilogin') return api.premiumProxy(account.proxyCountry || config.proxyCountry);
         if (config.proxyMode === 'pool') {
           requireThat(config.proxyPool[index], 'proxy_pool_exhausted'); return resolveProxy(config.proxyPool[index]);
@@ -155,6 +198,9 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
           record.pending = null; await save();
         }
         result.profileId = record.profileId;
+        // The provider wraps the SAME profile the record layer resolved (or just
+        // created): it is bound before it is started.
+        if (provider) provider.bindProfileId(record.profileId);
         const withRecovery = async task => { for (;;) {
           try {
             await start();
@@ -166,6 +212,9 @@ export async function runBatch({ accounts, config: supplied, api, guideFactory, 
               record.pending = null; await save();
             }
             if (!failurePolicy(code).rotateProxy || config.proxyMode === 'none' || result.proxySwitches >= config.maxProxySwitches) throw error;
+            // The rotation the policy would allow is disabled in degraded mode:
+            // the original failure is re-thrown, marked, and nothing is provisioned.
+            if (config.reuseExistingProxy) { error.proxyRotationDisabled = true; throw error; }
             const proxy = await newProxy(record.proxyIndex + 1);
             record.pending = 'proxy_change'; await save();
             await api.changeProxy(record.profileId, proxy);

@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "c35667da0fca37456f42bea96a851c50ba31ef5e",
+  "runtimeVersion": "1.0.0",
+  "pluginVersion": "1.0.0",
+  "runtimeBuildId": "jev-aer-v1-20260925",
+  "installedAt": "2026-09-25T19:12:22Z",
+  "policyPreset": "safe",
+  "runtimeBundleHash": "sha256:cda7b3138573415dc17f514a605cb64f27a92732ace160c2dde006830adeb39e",
+  "payloadHash": "sha256:2616353f490be9a0babdf3d611cbd625e2fff81bb053111644ff9f1c52dc11fd",
+  "payloadHashMethod": "tree-sha256-v1 (sorted relpath\\0file-sha256 lines)",
+  "payloadFiles": 67,
+  "toolsVersion": "aer-tools-1",
+  "verifiedAt": "2026-09-25T20:37:43.796Z"
+}

@@ -4,4 +4,8 @@ reports
 test
 .env*
 *.local.json
-accounts*
+# Real credential files stay out of the build context. accounts.example.json
+# is a placeholder the Dockerfile copies, so the rule is narrowed rather than
+# widened: only the exact real account file names are excluded.
+accounts.json
+accounts.txt

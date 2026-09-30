@@ -111,3 +111,27 @@ test('browser exits gracefully before Multilogin stop/sync is requested', async 
   await stopBrowserProfile({ stop: async () => { assert.equal(connected, false); calls.push('api_stop'); } }, 'profile-0001', browser);
   assert.deepEqual(calls, ['Browser.close', 'api_stop']);
 });
+test('reuse-existing-proxy never provisions or rotates; it fails closed on a proxy error', async t => {
+  const input = await fixture(t);
+  const first = await runBatch(input);
+  assert.equal(first.report.completed, 1);
+  const boundary = input.calls.length;
+  input.config = { ...input.config, reuseExistingProxy: true };
+  input.loginImpl = async () => { throw new PilotError('proxy_connection_failed'); };
+  const { report } = await runBatch(input);
+  assert.equal(report.accounts[0].reason, 'proxy_connection_failed');
+  assert.equal(report.accounts[0].proxySwitches, 0, 'no rotation is attempted in degraded mode');
+  const after = input.calls.slice(boundary);
+  assert.equal(after.includes('proxy'), false, 'no premium proxy was provisioned');
+  assert.equal(after.includes('changeProxy'), false, 'the profile proxy was not modified');
+  assert.equal(input.calls.filter(call => call === 'create').length, 1, 'the same profile is reused');
+});
+test('reuse-existing-proxy refuses to create a profile instead of silently going proxy-less', async t => {
+  const input = await fixture(t);
+  input.config = { ...input.config, reuseExistingProxy: true };
+  const { report } = await runBatch(input);
+  assert.equal(report.accounts[0].reason, 'reuse_existing_proxy_requires_profile');
+  assert.equal(input.calls.includes('proxy'), false);
+  assert.equal(input.calls.includes('create'), false);
+  assert.equal(report.reuseExistingProxy, true);
+});

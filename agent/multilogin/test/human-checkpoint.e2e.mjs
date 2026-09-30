@@ -133,7 +133,11 @@ function connectFactory({ browser, contexts }) {
   };
 }
 
-const batchConfig = { folderId: 'folder-0001', proxyMode: 'none', seedSites: [], verifyRestart: true };
+// The concurrency test below measures isolation and timing, not the checkpoint
+// settle: the bounded settle-before-alert is covered by orchestrator.e2e.mjs,
+// so it is disabled here to keep this scenario's original timing semantics.
+const batchConfig = { folderId: 'folder-0001', proxyMode: 'none', seedSites: [], verifyRestart: true,
+  challengeSettleMs: 0 };
 // Deterministic model stand-in: the login flow is recognized, so the only
 // decision it can need is the first permitted action of a multi-field screen.
 const guideFactory = () => {

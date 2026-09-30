@@ -6,6 +6,7 @@ import {
   parseLast4,
   parseRevealedCard,
   parseSpendableBalance,
+  panelShowsMember,
   resolveAttachMode,
   resolveLimitFrequency,
   validateCardCommand,
@@ -88,6 +89,55 @@ $40.00 Per authorization`);
     { pan: "4413 6965 4615 9243", exp: "10/31", cvv: "052" },
   );
   assert.equal(parseRevealedCard("4413 6965 4615 9243\n10/31"), null);
+});
+
+test("parses tab-separated card rows with a header", () => {
+  const rows = parseCardRows(
+    [
+      "Cardholder\tCard\tStatus\tLimit",
+      "Fulfillment Demo\tSOL-FULFILL-DEMO-01 •••• 2027\tActive\t$100.00 / 7 days",
+      "Angel Padilla-Ramos\tAngel Test •••• 9243\tActive\t$40.00 Per authorization",
+      "Natalia\tNatalia Test •••• 8539\tFrozen\t$10.00 / 30 days",
+    ].join("\n"),
+  );
+  assert.deepEqual(rows, [
+    {
+      cardholder: "Fulfillment Demo",
+      name: "SOL-FULFILL-DEMO-01",
+      last4: "2027",
+      status: "Active",
+      limit: "$100.00 / 7 days",
+    },
+    {
+      cardholder: "Angel Padilla-Ramos",
+      name: "Angel Test",
+      last4: "9243",
+      status: "Active",
+      limit: "$40.00 Per authorization",
+    },
+    {
+      cardholder: "Natalia",
+      name: "Natalia Test",
+      last4: "8539",
+      status: "Frozen",
+      limit: "$10.00 / 30 days",
+    },
+  ]);
+});
+
+test("checks selected cardholder text in the issue panel", () => {
+  assert.equal(
+    panelShowsMember(
+      "Cardholder Fulfillment Demo fulfillment-demo@example.com",
+      "fulfillment-demo@example.com",
+      "Fulfillment Demo",
+    ),
+    true,
+  );
+  assert.equal(
+    panelShowsMember("Cardholder Fulfillment Demo", "member@example.com", ""),
+    false,
+  );
 });
 
 test("Altitude card settings validate frequency and reveal", () => {

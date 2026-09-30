@@ -18,4 +18,13 @@ agent/secrets/
 agent/node_modules/
 agent/dist/
 agent/playwright-report/
+# Live operator job files and mirrored remote evidence.
+jobs/*.json
+!jobs/*.example.json
+.browser-jobs/
+
+# Agent Efficiency Runtime local telemetry (never committed)
+.jev-efficiency/
+# The installed observer plugin ships only its built runtime; keep it tracked.
+!.opencode/plugins/jev-efficiency-observer/runtime/dist/
 agent/jev/bench/results/
