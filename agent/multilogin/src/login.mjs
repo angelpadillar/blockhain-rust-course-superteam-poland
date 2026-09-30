@@ -456,6 +456,13 @@ export class LoginBrowser {
       if (!verifyOnly && authOrigin && !unknownRequiredField && fieldActions.length === 0
         && !this.submittedStages.has(fieldStage(snapshot))
         && /^(log in|login|sign in|next|continue|confirm|verify|i agree|accept|zaloguj się|dalej|kontynuuj|potwierdź)$/.test(label)) kind = 'submit_login';
+      // LinkedIn's suspicious-login check asks you to SEND the code first; that
+      // is the platform's own step and it delivers to the account's own inbox.
+      // Scoped to the challenge text so a generic "Send" button elsewhere is
+      // never touched.
+      if (!verifyOnly && authOrigin && this.account.platform === 'linkedin'
+        && /^(wyślij|wyslij|send|send code|wyślij kod)$/.test(label)
+        && /weryfikacj|verification code|podejrzan|suspicious/i.test(normalize(snapshot.text))) kind = 'submit_login';
       if (!verifyOnly && authOrigin && fieldActions.length === 0 && this.account.totp
         && (/authenticator|aplikacji uwierzytelniaj/.test(label)
           || /^(use (an )?authenticator app|authentication app|use a verification code|użyj aplikacji uwierzytelniającej)$/.test(label))) kind = 'choose_totp';
@@ -730,7 +737,11 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     // it (read-only, bounded) and fill it rather than asking a person. This runs
     // once per run, only when the page actually shows a code field.
     const codeField = snapshot.controls.some(control => control.tag === 'input'
-      && /code|pin|otp|verification/i.test(`${control.name} ${control.autocomplete} ${control.label}`));
+      && (/code|pin|otp|verification/i.test(`${control.name} ${control.autocomplete} ${control.label}`)
+        // LinkedIn's challenge inputs carry obfuscated names: the challenge text
+        // plus any visible free-text input is the code field.
+        || (account.platform === 'linkedin' && ['text', 'tel', 'number', ''].includes(control.type)
+          && /weryfikacj|verification code|podejrzan|suspicious|wpisz kod/i.test(normalize(snapshot.text)))));
     if (codeField && !account.totp && requestMailboxCode && !browser.mailboxCodeTried) {
       browser.mailboxCodeTried = true;
       const fetched = await requestMailboxCode({ platform: account.platform, page }).catch(() => null);
