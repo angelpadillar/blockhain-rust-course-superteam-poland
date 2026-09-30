@@ -374,7 +374,8 @@ export class LoginBrowser {
         tag: element.tagName.toLowerCase(), type: element.getAttribute('type') || '',
         name: element.getAttribute('name') || element.id || '',
         label: element.getAttribute('aria-label') || [...(element.labels || [])].map(label => label.innerText).join(' ')
-          || element.getAttribute('placeholder') || element.innerText?.slice(0, 180) || element.querySelector('img')?.alt || '',
+          || element.getAttribute('placeholder') || element.innerText?.slice(0, 180) || element.querySelector('img')?.alt
+          || (element.tagName === 'INPUT' && ['submit', 'button', 'reset'].includes(element.type) ? element.value : '') || '',
         autocomplete: element.getAttribute('autocomplete') || '',
         role: element.getAttribute('role') || '',
         href: element.tagName === 'A' ? element.href : '',
@@ -461,7 +462,7 @@ export class LoginBrowser {
       // Scoped to the challenge text so a generic "Send" button elsewhere is
       // never touched.
       if (!verifyOnly && authOrigin && this.account.platform === 'linkedin'
-        && /^(wyślij|wyslij|send|send code|wyślij kod)$/.test(label)
+        && /^(wyślij|wyslij|send|send code|wyślij kod|wyślij ponownie|resend|send again|send a new code)$/.test(label)
         && /weryfikacj|verification code|podejrzan|suspicious/i.test(normalize(snapshot.text))) kind = 'submit_login';
       if (!verifyOnly && authOrigin && fieldActions.length === 0 && this.account.totp
         && (/authenticator|aplikacji uwierzytelniaj/.test(label)
@@ -558,7 +559,8 @@ export class LoginBrowser {
       tag: element.tagName.toLowerCase(), type: element.getAttribute('type') || '',
       name: element.getAttribute('name') || element.id || '',
       label: element.getAttribute('aria-label') || [...(element.labels || [])].map(label => label.innerText).join(' ')
-        || element.getAttribute('placeholder') || element.innerText?.slice(0, 180) || element.querySelector('img')?.alt || '',
+        || element.getAttribute('placeholder') || element.innerText?.slice(0, 180) || element.querySelector('img')?.alt
+        || (element.tagName === 'INPUT' && ['submit', 'button', 'reset'].includes(element.type) ? element.value : '') || '',
       href: element.tagName === 'A' ? element.href : '', formAction: element.form ? element.form.action : '',
     }));
     requireThat(signature(current) === control.key, 'stale_control');
@@ -866,7 +868,7 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
       // observation instead of routing straight to recovery/checkpoint.
       const mailboxFlow = failure === 'email_or_sms_verification_required' && requestMailboxCode && !account.totp
         && snapshot.controls.some(control => control.enabled
-          && /^(wyślij|wyslij|send|send code|wyślij kod)$/.test(normalize(control.label)));
+          && /^(wyślij|wyslij|send|send code|wyślij kod|wyślij ponownie|resend|send again|send a new code)$/.test(normalize(control.label)));
       // An email/SMS or device challenge may still offer a path to the
       // authenticator method we can complete; use the escape before stopping.
       const escape = !mailboxFlow
