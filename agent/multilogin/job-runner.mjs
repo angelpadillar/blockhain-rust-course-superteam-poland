@@ -6,6 +6,10 @@ import { PilotError, errorCode, requireThat } from './src/core.mjs';
 import { readPrivate } from './src/storage.mjs';
 import { Multilogin } from './src/multilogin.mjs';
 import { createChooser } from './src/model.mjs';
+import { createAdvisorChain, createJevAdvisor, createFrontierVisionAdvisor,
+  createVisionScreenshotter } from './src/advisor.mjs';
+import { createFireworksVision } from './src/frontier.mjs';
+import { classifyPage } from './src/login.mjs';
 import { createDiscordNotifier } from './src/discord-notifier.mjs';
 import { loadAccountIndex } from './src/accounts.mjs';
 import { validateConfig } from './src/runner.mjs';
@@ -28,9 +32,9 @@ const here = dirname(fileURLToPath(import.meta.url));
 const valueFlags = ['--config', '--data', '--accounts', '--accounts-dir', '--concurrency',
   '--human-checkpoint-seconds', '--seed-sites', '--provider', '--model', '--token-file', '--key-file',
   '--mode', '--telegram-poll-ms', '--checkpoint-poll-ms', '--resume-command', '--discord-webhook-file',
-  '--challenge-settle-ms'];
+  '--challenge-settle-ms', '--vision-key-file'];
 const switchFlags = ['--dry-run', '--stdin-secrets', '--no-notify', '--no-telegram', '--no-memory',
-  '--preserve-on-checkpoint', '--reuse-existing-proxy', '--load-media', '--json', '--help'];
+  '--preserve-on-checkpoint', '--reuse-existing-proxy', '--load-media', '--no-vision', '--json', '--help'];
 
 export function parseArguments(argv) {
   const options = { positional: [] };
@@ -214,8 +218,40 @@ export async function main(argv = process.argv.slice(2)) {
   const resumeCommand = options['resume-command']
     || (jobPath.includes('/jobs/') ? `npm run browser:job -- jobs/${basename(jobPath)}`
       : `npm run browser:job -- ${jobPath}`);
+  // Live guide: L1 deterministic -> L2 JEV -> L3 frontier vision, bounded. The
+  // security-checkpoint classifier keeps genuine verification surfaces out of
+  // the vision path entirely; a frontier request for a human becomes a real
+  // checkpoint instead of a failure.
+  const pageHolder = { current: null };
+  const visionKeyPath = options['vision-key-file']
+    || (existsSync('/data/fireworks-api-key') ? '/data/fireworks-api-key' : resolve(here, 'private/fireworks-api-key'));
+  const fireworks = options['no-vision'] ? null : createFireworksVision({ secretPath: visionKeyPath });
+  const vision = fireworks ? {
+    capture: async ({ observation }) => {
+      const livePage = pageHolder.current;
+      if (!livePage) return { skipped: 'page_unavailable' };
+      return createVisionScreenshotter({ page: livePage, directory: resolve(directory, 'vision'),
+        credentialOrigins: ['https://accounts.google.com', 'https://login.live.com', 'https://www.linkedin.com',
+          'https://www.instagram.com', 'https://www.youtube.com'] })({ observation });
+    },
+    decide: context => fireworks.decide(context),
+    available: () => fireworks.available(),
+  } : null;
+  const guideFactory = () => {
+    if (!vision) return createChooser({ provider, apiKey, model: options.model });
+    const jev = createJevAdvisor({ choose: createChooser({ provider, apiKey, model: options.model }) });
+    const frontier = createFrontierVisionAdvisor({ vision, maxEscalations: 2 });
+    const chain = createAdvisorChain({ jev, frontier, maxEscalations: 2,
+      classifySecurityCheckpoint: snapshot => classifyPage(snapshot) });
+    const guide = async request => {
+      pageHolder.current = request?.livePage || pageHolder.current;
+      return chain(request);
+    };
+    guide.metrics = chain.metrics || { deterministic: 0, jev: 0, frontier: 0, abstained: 0, escalations: 0 };
+    return guide;
+  };
   const { result } = await runSingleJob({ job, accountIndex, config, directory, api,
-    guideFactory: () => createChooser({ provider, apiKey, model: options.model }),
+    guideFactory,
     notifier, notify: !options['no-notify'], telegram: !options['no-telegram'],
     humanCheckpointPollMs: Number(options['checkpoint-poll-ms'] || 2000),
     telegramPollMs: Number(options['telegram-poll-ms'] || 2000),

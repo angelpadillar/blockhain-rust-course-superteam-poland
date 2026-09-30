@@ -820,7 +820,7 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
         memory: memoryHints });
       let decision;
       try {
-        decision = await choose({ page: modelView, observation, snapshot,
+        decision = await choose({ page: modelView, observation, snapshot, livePage: page,
           classifiedReason: classifiedReason || null, episode: visualEpisode, phase: 'jev_recovery', step,
           actions: candidates.map(({ id, description }) => ({ id, description })) });
       } catch (error) {
@@ -828,6 +828,13 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
           reason: classifiedReason || 'no_actions',
           detail: error instanceof PilotError ? error.code : 'selection_failed' });
         return { failed: true };
+      }
+      // The advisor chain (or frontier vision) may conclude a person is required.
+      // That ends the recovery episode; the caller requests a real checkpoint.
+      if (decision?.humanVerificationRequired === true) {
+        await onStep({ step, phase: 'jev_recovery', state: 'human_required',
+          reason: decision.reason || 'frontier_requested_human' });
+        return { exhausted: true };
       }
       browser.recovery.calls++;
       let action;
@@ -948,11 +955,22 @@ export async function runLogin({ page, account, choose, maxSteps = 20, maxSecond
     let decision;
     // The decision carries the observation it was taken against, so an advisor can
     // bind a screenshot to this epoch and execution can refuse another one.
-    try { decision = await choose({ page: browser.publicPage(snapshot), observation, snapshot,
+    try { decision = await choose({ page: browser.publicPage(snapshot), observation, snapshot, livePage: page,
       episode: visualEpisode, phase: verifyOnly ? 'verify_reopen' : 'login', step,
       actions: actions.map(({ id, description }) => ({ id, description })) }); }
     catch (error) { await attention(error instanceof PilotError ? error.code : 'selection_failed'); throw error; }
     if (decision?.episode) visualEpisode.escalations = decision.episode.escalations;
+    // The advisor chain (or frontier vision) may conclude a person is required.
+    // That is a checkpoint, never a crash and never a guessed action.
+    if (decision?.humanVerificationRequired === true) {
+      await attention('human_verification_required');
+      const paused = requestHumanCheckpoint
+        ? await requestHumanCheckpoint({ reason: 'human_verification_required', page, browser, account, site,
+          snapshot, step, onStep })
+        : null;
+      if (paused?.resumed) { deadline += Number(paused.waitedMs) || 0; continue; }
+      throw new PilotError('human_verification_required');
+    }
     // An L3 decision taken on another epoch is never executed here.
     if (decision?.decisionEpoch && decision.decisionEpoch !== observation.epoch) {
       await onStep({ step, phase: verifyOnly ? 'verify_reopen' : 'login', state: 'stale_decision',
